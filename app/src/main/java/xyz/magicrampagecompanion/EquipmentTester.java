@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -67,10 +68,14 @@ public class EquipmentTester extends AppCompatActivity {
     Elements initialWeaponElement;
     Elements initialRingElement;
 
+    private MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equipment_tester);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.metallic_button);
 
         TextView fireValueTextView = findViewById(R.id.fireResistance);
         String helpText = getString(R.string.fire_resistance) + "  ";
@@ -125,7 +130,8 @@ public class EquipmentTester extends AppCompatActivity {
         armorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openItemSelection(1); // 1 for "armor" button
+                openItemSelection(1);
+                playSound();// 1 for "armor" button
             }
         });
 
@@ -133,7 +139,8 @@ public class EquipmentTester extends AppCompatActivity {
         ringButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openItemSelection(2); // 2 for "ring" button
+                openItemSelection(2);
+                playSound(); // 2 for "ring" button
             }
         });
 
@@ -141,7 +148,8 @@ public class EquipmentTester extends AppCompatActivity {
         weaponButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openItemSelection(3); // 3 for "weapon" button
+                openItemSelection(3);
+                playSound();// 3 for "weapon" button
             }
         });
 
@@ -149,7 +157,8 @@ public class EquipmentTester extends AppCompatActivity {
         classButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openItemSelection(4); // 4 for "class" button
+                openItemSelection(4);
+                playSound();// 4 for "class" button
             }
         });
 
@@ -157,7 +166,8 @@ public class EquipmentTester extends AppCompatActivity {
         skillButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSkillPicker(); // 4 for "class" button
+                openSkillPicker();
+                playSound();// 4 for "class" button
             }
         });
 
@@ -917,6 +927,29 @@ public class EquipmentTester extends AppCompatActivity {
         } else {
             skillButton.setImageResource(R.drawable.select_skill_tree_button_grey);
             Log.d("EquipmentTester", "Changing to grey picture");
+        }
+    }
+
+    private void playSound() {
+        // Check if MediaPlayer is null or not
+        if (mediaPlayer != null) {
+            // Reset MediaPlayer if it's already playing
+            mediaPlayer.seekTo(0);
+
+            // Set volume to 50%
+            float volume = 0.5f; // 50%
+            mediaPlayer.setVolume(volume, volume);
+
+            mediaPlayer.start();
+        }
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        // Release MediaPlayer resources when the activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
     }
 }

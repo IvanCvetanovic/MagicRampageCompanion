@@ -3,22 +3,28 @@ package xyz.magicrampagecompanion;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
 public class Chapter4 extends AppCompatActivity {
 
+    private MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter4);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.button);
 
         ImageButton dungeon31 = findViewById(R.id.Dungeon31Button);
         dungeon31.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v) {
                 openDungeon31();
+                playSound();
             }
         });
 
@@ -27,6 +33,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon31bonus();
+                playSound();
             }
         });
 
@@ -35,6 +42,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon32();
+                playSound();
             }
         });
 
@@ -43,6 +51,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon33();
+                playSound();
             }
         });
 
@@ -51,6 +60,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon34();
+                playSound();
             }
         });
 
@@ -59,6 +69,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon35();
+                playSound();
             }
         });
 
@@ -67,6 +78,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon36();
+                playSound();
             }
         });
 
@@ -75,6 +87,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon37();
+                playSound();
             }
         });
 
@@ -83,6 +96,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon38();
+                playSound();
             }
         });
 
@@ -91,6 +105,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon39();
+                playSound();
             }
         });
 
@@ -99,6 +114,7 @@ public class Chapter4 extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 openDungeon40();
+                playSound();
             }
         });
     }
@@ -167,5 +183,28 @@ public class Chapter4 extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Dungeon40.class);
         startActivity(intent);
+    }
+
+    private void playSound() {
+        // Check if MediaPlayer is null or not
+        if (mediaPlayer != null) {
+            // Reset MediaPlayer if it's already playing
+            mediaPlayer.seekTo(0);
+
+            // Set volume to 50%
+            float volume = 0.5f; // 50%
+            mediaPlayer.setVolume(volume, volume);
+
+            mediaPlayer.start();
+        }
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        // Release MediaPlayer resources when the activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }

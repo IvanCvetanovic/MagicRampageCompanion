@@ -3,22 +3,29 @@ package xyz.magicrampagecompanion;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
 public class Chapter2 extends AppCompatActivity
 {
+
+    private MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter2);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.button);
 
         ImageButton dungeon11 = findViewById(R.id.Dungeon11Button);
         dungeon11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 opendungeon11();
+                playSound();
             }
         });
 
@@ -27,6 +34,7 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 opendungeon11bonus();
+                playSound();
             }
         });
 
@@ -36,6 +44,7 @@ public class Chapter2 extends AppCompatActivity
             public void onClick(View view)
             {
                 opendungeon12();
+                playSound();
             }
         });
 
@@ -44,6 +53,7 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 opendungeon13();
+                playSound();
             }
         });
 
@@ -52,6 +62,7 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 opendungeon13bonus();
+                playSound();
             }
         });
 
@@ -60,6 +71,7 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 opendungeon14();
+                playSound();
             }
         });
 
@@ -68,6 +80,7 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 opendungeon15();
+                playSound();
             }
         });
 
@@ -76,6 +89,7 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 opendungeon16();
+                playSound();
             }
         });
 
@@ -84,6 +98,7 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 opendungeon17();
+                playSound();
             }
         });
 
@@ -92,6 +107,7 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 opendungeon17bonus();
+                playSound();
             }
         });
 
@@ -100,19 +116,25 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 opendungeon18();
+                playSound();
             }
         });
 
         ImageButton dungeon19button = findViewById(R.id.Dungeon19Button);
         dungeon19button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { openDungeon19(); }
+            public void onClick(View view) {
+                openDungeon19();
+                playSound();
+            }
         });
 
         ImageButton dungeon19bonusbutton = findViewById(R.id.Dungeon19BonusButton);
         dungeon19bonusbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { openDungeon19Bonus(); }
+            public void onClick(View view) {
+                openDungeon19Bonus();
+                playSound();}
         });
 
         ImageButton dungeon20button = findViewById(R.id.Dungeon20Button);
@@ -120,6 +142,7 @@ public class Chapter2 extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 openDungeon20();
+                playSound();
             }
         });
     }
@@ -206,5 +229,29 @@ public class Chapter2 extends AppCompatActivity
     {
         Intent intent = new Intent(this, Dungeon20.class);
         startActivity(intent);
+    }
+
+
+    private void playSound() {
+        // Check if MediaPlayer is null or not
+        if (mediaPlayer != null) {
+            // Reset MediaPlayer if it's already playing
+            mediaPlayer.seekTo(0);
+
+            // Set volume to 50%
+            float volume = 0.5f; // 50%
+            mediaPlayer.setVolume(volume, volume);
+
+            mediaPlayer.start();
+        }
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        // Release MediaPlayer resources when the activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }

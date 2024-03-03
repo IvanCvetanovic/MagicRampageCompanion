@@ -2,6 +2,7 @@ package xyz.magicrampagecompanion;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,11 +23,14 @@ public class SkillPicker extends AppCompatActivity {
     private int skillPointsLeft = 20;
     private TextView skillPointsTextView;
     private boolean[] skillsPicked = new boolean[27];
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skill_picker);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.click);
 
         setupLongClickListener(R.id.frameEnhancedVelocity, 0);
         setupLongClickListener(R.id.frameSwordMaster, 1);
@@ -68,6 +72,7 @@ public class SkillPicker extends AppCompatActivity {
             public void onClick(View v) {
                 setResult(RESULT_OK);
                 finish();
+                playSound();
             }
         });
 
@@ -106,6 +111,7 @@ public class SkillPicker extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 deselectAllSkills();
+                playSound();
             }
         });
 
@@ -433,5 +439,28 @@ public class SkillPicker extends AppCompatActivity {
         }
 
         editor.apply();
+    }
+
+    private void playSound() {
+        // Check if MediaPlayer is null or not
+        if (mediaPlayer != null) {
+            // Reset MediaPlayer if it's already playing
+            mediaPlayer.seekTo(0);
+
+            // Set volume to 50%
+            float volume = 0.5f; // 50%
+            mediaPlayer.setVolume(volume, volume);
+
+            mediaPlayer.start();
+        }
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        // Release MediaPlayer resources when the activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }

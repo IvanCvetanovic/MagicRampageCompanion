@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,10 +20,15 @@ import java.util.List;
 
 public class ItemSelection extends AppCompatActivity {
 
+    private MediaPlayer mediaPlayerTopTab;
+    private MediaPlayer mediaPlayerItemPick;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_selection);
+
+        mediaPlayerTopTab = MediaPlayer.create(this, R.raw.click);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView1);
         recyclerView.setHasFixedSize(true);
@@ -56,6 +62,7 @@ public class ItemSelection extends AppCompatActivity {
                 ImageAdapter adapter = new ImageAdapter(swordList, new ImageAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
+                        playSound(mediaPlayerTopTab);
                         Weapon selectedWeapon = swordList.get(position);
                         Intent resultIntent = new Intent();
                         resultIntent.putExtra("selectedWeapon", selectedWeapon);
@@ -73,6 +80,7 @@ public class ItemSelection extends AppCompatActivity {
                 ImageAdapter adapter = new ImageAdapter(staffList, new ImageAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
+                        playSound(mediaPlayerTopTab);
                         Weapon selectedWeapon = staffList.get(position);
                         Intent resultIntent = new Intent();
                         resultIntent.putExtra("selectedWeapon", selectedWeapon);
@@ -90,6 +98,7 @@ public class ItemSelection extends AppCompatActivity {
                 ImageAdapter adapter = new ImageAdapter(daggerList, new ImageAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
+                        playSound(mediaPlayerTopTab);
                         Weapon selectedWeapon = daggerList.get(position);
                         Intent resultIntent = new Intent();
                         resultIntent.putExtra("selectedWeapon", selectedWeapon);
@@ -107,6 +116,7 @@ public class ItemSelection extends AppCompatActivity {
                 ImageAdapter adapter = new ImageAdapter(axeList, new ImageAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
+                        playSound(mediaPlayerTopTab);
                         Weapon selectedWeapon = axeList.get(position);
                         Intent resultIntent = new Intent();
                         resultIntent.putExtra("selectedWeapon", selectedWeapon);
@@ -124,6 +134,7 @@ public class ItemSelection extends AppCompatActivity {
                 ImageAdapter adapter = new ImageAdapter(hammerList, new ImageAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
+                        playSound(mediaPlayerTopTab);
                         Weapon selectedWeapon = hammerList.get(position);
                         Intent resultIntent = new Intent();
                         resultIntent.putExtra("selectedWeapon", selectedWeapon);
@@ -141,6 +152,7 @@ public class ItemSelection extends AppCompatActivity {
                 ImageAdapter adapter = new ImageAdapter(spearList, new ImageAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
+                        playSound(mediaPlayerTopTab);
                         Weapon selectedWeapon = spearList.get(position);
                         Intent resultIntent = new Intent();
                         resultIntent.putExtra("selectedWeapon", selectedWeapon);
@@ -252,10 +264,12 @@ public class ItemSelection extends AppCompatActivity {
             armorList.add(createArmor(R.string.vest_of_blessed_glory, Elements.LIGHT, false, 38, 174, 15, 4, 3, 100, 120, 0, 100, 0, 0, 150, R.drawable.armor_vest_of_blessed_glory));
             armorList.add(createArmor(R.string.barrenlands_bandit, Elements.NEUTRAL, false, 34, 156, 15, 2, 3, 70, 180, 0, 130, 0, 80, 0, R.drawable.armor_barrenlands_bandit));
             armorList.add(createArmor(R.string.enchanted_nutcracker, Elements.NEUTRAL, false, 30, 138, 15, 2, 4, 100, 120, 120, 0, 0, 0, 0, R.drawable.armor_enchanted_nutcracker));
-
+            mediaPlayerItemPick = MediaPlayer.create(this, R.raw.bag);
             ImageAdapter adapter = new ImageAdapter(armorList, new ImageAdapter.OnItemClickListener() {
+
                 @Override
                 public void onItemClick(View view, int position) {
+                    playSound(mediaPlayerItemPick);
                     Armor selectedArmor = armorList.get(position);
                     Intent resultIntent = new Intent();
                     resultIntent.putExtra("selectedArmor", selectedArmor);
@@ -309,10 +323,11 @@ public class ItemSelection extends AppCompatActivity {
             ringList.add(createRing(R.string.ghostwalker, Elements.NEUTRAL, 50, 150, 0, 0, 80, 0, 0, 0, 0, 0, 0, R.drawable.ring_ghostwalker));
             ringList.add(createRing(R.string.trickytreat, Elements.NEUTRAL, 20, 0, 3, 3, 30, 20, 20, 20, 20, 20, 20, R.drawable.ring_trickytreat));
             ringList.add(createRing(R.string.jellybunny, Elements.NEUTRAL, 15, 0, 0, 10, 60, 0, 60, 70, 0, 0, 60, R.drawable.ring_jellybunny));
-
+            mediaPlayerItemPick = MediaPlayer.create(this, R.raw.bag);
             ImageAdapter adapter = new ImageAdapter(ringList, new ImageAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position) {
+                    playSound(mediaPlayerItemPick);
                     Ring selectedRing = ringList.get(position);
                     Intent resultIntent = new Intent();
                     resultIntent.putExtra("selectedRing", selectedRing);
@@ -495,10 +510,11 @@ public class ItemSelection extends AppCompatActivity {
             hammerList.add(createWeapon(R.string.wooden_hawaiian, WeaponTypes.HAMMER, Elements.NEUTRAL, 10, 17, 3, 0, 0, 0, R.drawable.mace_wooden_hawaiian));
             hammerList.add(createWeapon(R.string.toxic_mace, WeaponTypes.HAMMER, Elements.EARTH, 46, 211, 15, 50, 2, 0, R.drawable.mace_toxic_mace));
             hammerList.add(createWeapon(R.string.wealthy_crusher, WeaponTypes.HAMMER, Elements.NEUTRAL, 46, 211, 15, 70, 2, 0, R.drawable.mace_wealthy_crusher));
-
+            mediaPlayerItemPick = MediaPlayer.create(this, R.raw.projectile_heavy_blade_withdraw);
             ImageAdapter adapter = new ImageAdapter(swordList, new ImageAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position) {
+                    playSound(mediaPlayerItemPick);
                     Weapon selectedWeapon = swordList.get(position);
                     Intent resultIntent = new Intent();
                     resultIntent.putExtra("selectedWeapon", selectedWeapon);
@@ -525,10 +541,11 @@ public class ItemSelection extends AppCompatActivity {
             characterList.add(createCharacterClass(ClassNames.RANGER, 20, 0, 35, 0, 0, 25, 25, 0, 0, 5, R.drawable.class_ranger));
             characterList.add(createCharacterClass(ClassNames.WITCHDOCTOR, 0, 30, 0, 25, 0, 0, 0, 25, 0, 6, R.drawable.class_witchdoctor));
             characterList.add(createCharacterClass(ClassNames.DRUID, 0, 30, 0, 0, 0, 0, 30, 20, 3, 6, R.drawable.class_druid));
-
+            mediaPlayerItemPick = MediaPlayer.create(this, R.raw.bag);
             ImageAdapter adapter = new ImageAdapter(characterList, new ImageAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position) {
+                    playSound(mediaPlayerItemPick);
                     CharacterClass selectedClass = characterList.get(position);
                     Intent resultIntent = new Intent();
                     resultIntent.putExtra("selectedClass", selectedClass);
@@ -546,14 +563,15 @@ public class ItemSelection extends AppCompatActivity {
     private Armor createArmor(int nameResId, Elements element, boolean frostImmune, int minArmor, int maxArmor, int upgrades, int speed, int jump, int magic, int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResourceId) {
         String name = getResources().getString(nameResId);
         Bitmap armorBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
-        return new Armor(name, element, frostImmune, minArmor, maxArmor, upgrades, speed, jump, magic, sword, staff, dagger, axe, hammer, spear, armorBitmap);
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(armorBitmap, 300, 300, true);
+        return new Armor(name, element, frostImmune, minArmor, maxArmor, upgrades, speed, jump, magic, sword, staff, dagger, axe, hammer, spear, resizedBitmap);
     }
 
 
     private Ring createRing(int nameResId, Elements element, int armor, int armorBonus, int speed, int jump, int magic, int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResourceId) {
         String name = getResources().getString(nameResId);
-        Bitmap originalBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
-        Bitmap resizedBitmap = Bitmap.createScaledBitmap(originalBitmap, 350, 350, true);
+        Bitmap ringBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(ringBitmap, 300, 300, true);
         return new Ring(name, element, armor, armorBonus, speed, jump, magic, sword, staff, dagger, axe, hammer, spear, resizedBitmap);
     }
 
@@ -567,6 +585,29 @@ public class ItemSelection extends AppCompatActivity {
     private CharacterClass createCharacterClass(ClassNames name, int armorBonus, int magicBonus, int swordBonus, int daggerBonus, int hammerBonus, int axeBonus, int spearBonus, int staffBonus, int speedBonus, int jumpImpulseBonus, int imageResourceId) {
         Bitmap classBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
         return new CharacterClass(name, armorBonus, magicBonus, swordBonus, daggerBonus, hammerBonus, axeBonus, spearBonus, staffBonus,  speedBonus, jumpImpulseBonus, classBitmap);
+    }
+
+    private void playSound(MediaPlayer mediaPlayer) {
+        // Check if MediaPlayer is null or not
+        if (mediaPlayer != null) {
+            // Reset MediaPlayer if it's already playing
+            mediaPlayer.seekTo(0);
+
+            // Set volume to 50%
+            float volume = 0.5f; // 50%
+            mediaPlayer.setVolume(volume, volume);
+
+            mediaPlayer.start();
+        }
+    }
+
+    protected void onDestroy(MediaPlayer mediaPlayer) {
+        super.onDestroy();
+        // Release MediaPlayer resources when the activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 
 }

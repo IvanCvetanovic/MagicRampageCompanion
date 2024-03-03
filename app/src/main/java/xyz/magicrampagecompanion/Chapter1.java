@@ -3,22 +3,31 @@ package xyz.magicrampagecompanion;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
 public class Chapter1 extends AppCompatActivity
 {
+
+    private MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter1);
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.button);
+
         final ImageButton dungeon1 = findViewById(R.id.Dungeon1Button);
         dungeon1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { openDungeon1(); }
+            public void onClick(View v) {
+                openDungeon1();
+                playSound();
+            }
         });
 
         ImageButton dungeon2 = findViewById(R.id.Dungeon2Button);
@@ -26,6 +35,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon2();
+                playSound();
             }
         });
 
@@ -34,6 +44,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon3();
+                playSound();
             }
         });
 
@@ -42,6 +53,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon3bonus();
+                playSound();
             }
         });
 
@@ -50,6 +62,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon4();
+                playSound();
             }
         });
 
@@ -58,6 +71,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon5();
+                playSound();
             }
         });
 
@@ -66,6 +80,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon5bonus();
+                playSound();
             }
         });
 
@@ -74,6 +89,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon6();
+                playSound();
             }
         });
 
@@ -82,6 +98,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon7();
+                playSound();
             }
         });
 
@@ -90,6 +107,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon7bonus();
+                playSound();
             }
         });
 
@@ -98,6 +116,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon8();
+                playSound();
             }
         });
 
@@ -106,6 +125,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon9();
+                playSound();
             }
         });
 
@@ -114,6 +134,7 @@ public class Chapter1 extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 openDungeon10();
+                playSound();
             }
         });
     }
@@ -192,5 +213,29 @@ public class Chapter1 extends AppCompatActivity
     {
         Intent intent = new Intent(this, Dungeon10.class);
         startActivity(intent);
+    }
+
+
+    private void playSound() {
+        // Check if MediaPlayer is null or not
+        if (mediaPlayer != null) {
+            // Reset MediaPlayer if it's already playing
+            mediaPlayer.seekTo(0);
+
+            // Set volume to 50%
+            float volume = 0.5f; // 50%
+            mediaPlayer.setVolume(volume, volume);
+
+            mediaPlayer.start();
+        }
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        // Release MediaPlayer resources when the activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
     }

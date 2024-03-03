@@ -1,6 +1,7 @@
 package xyz.magicrampagecompanion;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -9,11 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ChapterSelection extends AppCompatActivity {
 
+    private MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_chapter_selection);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.click);
 
         ImageButton chapter1 = findViewById(R.id.Chapter1Button);
         chapter1.setOnClickListener(new View.OnClickListener()
@@ -22,6 +26,7 @@ public class ChapterSelection extends AppCompatActivity {
             public void onClick(View v)
             {
                 openChapter1();
+                playSound();
             }
         });
 
@@ -32,6 +37,7 @@ public class ChapterSelection extends AppCompatActivity {
             public void onClick(View v)
             {
                 openChapter2();
+                playSound();
             }
         });
 
@@ -41,6 +47,7 @@ public class ChapterSelection extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openChapter3();
+                playSound();
             }
         });
 
@@ -50,6 +57,7 @@ public class ChapterSelection extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openChapter4();
+                playSound();
             }
         });
 
@@ -59,6 +67,7 @@ public class ChapterSelection extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openChapter5();
+                playSound();
             }
         });
 
@@ -91,5 +100,28 @@ public class ChapterSelection extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Chapter5.class);
         startActivity(intent);
+    }
+
+    private void playSound() {
+        // Check if MediaPlayer is null or not
+        if (mediaPlayer != null) {
+            // Reset MediaPlayer if it's already playing
+            mediaPlayer.seekTo(0);
+
+            // Set volume to 50%
+            float volume = 0.5f; // 50%
+            mediaPlayer.setVolume(volume, volume);
+
+            mediaPlayer.start();
+        }
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        // Release MediaPlayer resources when the activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }
