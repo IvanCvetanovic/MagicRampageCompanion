@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_background"
+    android:outlineAmbientShadowColor="#FFFFFF"
+    android:outlineSpotShadowColor="#1E0D0D"
+    tools:context=".EquipmentTester">
+
+    <TextView
+        android:id="@+id/ChapterSelectionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginEnd="175dp"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/choose_your_equipment"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageButton
+        android:id="@+id/SkillTreeButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@android:color/transparent"
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ChapterSelectionText"
+        app:layout_constraintVertical_bias="0.426"
+        app:srcCompat="@drawable/select_skill_tree_button_grey" />
+
+    <ImageButton
+        android:id="@+id/ClassButton"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
+        android:background="@android:color/transparent"
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ChapterSelectionText"
+        app:layout_constraintVertical_bias="0.426"
+        app:srcCompat="@drawable/select_class_button_grey" />
+
+    <RelativeLayout
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476">
+
+        <ImageButton
+            android:id="@+id/RingButton"
+            android:layout_width="106dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/dummy_ring" />
+
+        <ImageButton
+            android:id="@+id/ButtonElement3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@id/RingButton"
+            android:layout_alignEnd="@id/RingButton"
+            android:layout_marginTop="-9dp"
+            android:layout_marginEnd="-13dp"
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_lock" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="172dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.302"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/lockButton1"
+            android:layout_width="43dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:importantForAccessibility="no"
+            android:src="@drawable/icon_lock" />
+
+        <LinearLayout
+            android:id="@+id/upgradeArmorButtonsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintHorizontal_bias="0.1">
+
+            <ImageButton
+                android:id="@+id/ButtonMinusMax1"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:importantForAccessibility="no"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_minus_max" />
+
+            <ImageButton
+                android:id="@+id/ButtonMinus1"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:importantForAccessibility="no"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_minus" />
+
+            <ImageButton
+                android:id="@+id/ButtonPlus1"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:importantForAccessibility="no"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_plus" />
+
+            <ImageButton
+                android:id="@+id/ButtonPlusMax1"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:importantForAccessibility="no"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_plus_max" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/armorUpgradesView"
+            android:layout_width="158dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:text="@string/upgrades"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="172dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.302"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/lockButton2"
+            android:layout_width="43dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:importantForAccessibility="no"
+            android:src="@drawable/icon_lock" />
+
+        <LinearLayout
+            android:id="@+id/upgradeWeaponButtonsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintHorizontal_bias="0.1">
+
+            <ImageButton
+                android:id="@+id/ButtonMinusMax2"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:importantForAccessibility="no"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_minus_max" />
+
+            <ImageButton
+                android:id="@+id/ButtonMinus2"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:importantForAccessibility="no"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_minus" />
+
+            <ImageButton
+                android:id="@+id/ButtonPlus2"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:importantForAccessibility="no"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_plus" />
+
+            <ImageButton
+                android:id="@+id/ButtonPlusMax2"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:importantForAccessibility="no"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow_plus_max" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/weaponUpgradesView"
+            android:layout_width="158dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:text="@string/upgrades"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/frostResistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/frost_resistance"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
+
+    <TextView
+        android:id="@+id/currentDamage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/damage"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
+
+    <TextView
+        android:id="@+id/currentArmor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/armor"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662" />
+
+    <TextView
+        android:id="@+id/currentSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/speed"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
+
+    <TextView
+        android:id="@+id/currentJumpImpulse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/jump_impulse"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.764" />
+
+    <TextView
+        android:id="@+id/fireResistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/fire_resistance"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.863" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/rating_start"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
+    <TextView
+        android:id="@+id/spikeResistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/spike_resistance"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
+
+    <RelativeLayout
+        android:layout_width="137dp"
+        android:layout_height="139dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.097">
+
+        <ImageButton
+            android:id="@+id/ArmorButton"
+            android:layout_width="106dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/dummy_armor" />
+
+        <ImageButton
+            android:id="@+id/ButtonElement1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@id/ArmorButton"
+            android:layout_alignEnd="@id/ArmorButton"
+            android:layout_marginTop="-9dp"
+            android:layout_marginEnd="-13dp"
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_lock" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="137dp"
+        android:layout_height="139dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.097">
+
+        <ImageButton
+            android:id="@+id/WeaponButton"
+            android:layout_width="106dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/dummy_sword" />
+
+        <ImageButton
+            android:id="@+id/ButtonElement2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@id/WeaponButton"
+            android:layout_alignEnd="@id/WeaponButton"
+            android:layout_marginTop="-9dp"
+            android:layout_marginEnd="-13dp"
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_lock" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

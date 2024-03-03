@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_background"
+    android:outlineAmbientShadowColor="#FFFFFF"
+    android:outlineSpotShadowColor="#1E0D0D"
+    tools:context=".SurvivalModeSelection">
+
+    <ImageButton
+        android:id="@+id/SurvivalButton1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/grey_background"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/SurvivalButton3"
+        app:layout_constraintEnd_toStartOf="@+id/SurvivalButton2"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705"
+        app:srcCompat="@drawable/survival_image1"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/SurvivalButton2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/grey_background"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/SurvivalButton4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705"
+        app:srcCompat="@drawable/survival_image2"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/SurvivalButton3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/grey_background"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/SurvivalButton5"
+        app:layout_constraintEnd_toStartOf="@+id/SurvivalButton4"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/survival_image3"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/SurvivalButton4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/grey_background"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/SurvivalButton6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/survival_image4"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/SurvivalButton5"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="92dp"
+        android:background="@drawable/grey_background"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/SurvivalButton6"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/survival_image5"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/SurvivalButton6"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="92dp"
+        android:background="@drawable/grey_background"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/survival_image6"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

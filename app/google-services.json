@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "684050227877",
+    "project_id": "magic-rampage-companion",
+    "storage_bucket": "magic-rampage-companion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684050227877:android:78ed1ee49da3a48972a34c",
+        "android_client_info": {
+          "package_name": "xyz.magicrampagecompanion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684050227877-ruq616q8je0sf8b1p9olnbgh2195f4kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5BlAlfog8MoAiLWUSHLhfs4lVirBrpyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684050227877-ruq616q8je0sf8b1p9olnbgh2195f4kr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

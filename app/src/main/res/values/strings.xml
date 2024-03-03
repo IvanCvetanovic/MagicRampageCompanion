@@ -1,0 +1,939 @@
+<resources>
+    <string name="app_name">Magic Rampage Companion</string>
+    <string name="dungeon1text">All three 💎 are in the golden pots.\n\n
+There are many potions in the upper invisible areas. For example, above secret area 1 and ending area.\n\n
+After meeting captain, you wil come across two boxes. Destroy the upper one to gain access to the area you have previously been to.\n\n
+If you go to the place where the cinematic starts, you will find good sword and armor in the two white pots.\n\n
+Second secret area is not reachable without the use of jumpman suit or special abilities, you cannot obtain it in the first try.\n\n
+    </string>
+
+    <string name="dungeon2text">All three 💎 are in the golden pots.\n\n
+If you save the Dude he will gift you with a good early game sword and you will also receive an achievement.\n\n
+On the ceiling above the secret area 5, there is a poison dagger, which is really good for early and mid game.\n\n
+    </string>
+
+    <string name="dungeon3text">All three 💎 are in the golden pots.\n\n
+Collect all three 💎 to unlock bonus level.\n\n
+You cannot open the chest in the first secret area on the first try, since you need one key for it and you can only buy it in the shop, which unlocks after this level find it in the future dungeons.\n\n
+You can reach secret area 3 by using one box plus jumpman suit or two boxes instead. In case you are using the two boxes strategy. first bring the left one under the right one and then push the right on the top. Afterwards push the both of them carefully until you reach the destination. \n\n
+Above the third golden pot, there is a dagger of light, which is very good for early game.\n\n
+    </string>
+
+    <string name="dungeon3bonus1">
+        Unlock this bonus by getting all three 💎 in dungeon 3.\n\n
+        Step 1 is optional and will get you a small amount of gold.\n\n
+        Step 2: Find the red button on the ceiling.\n\n
+    </string>
+
+    <string name="dungeon3bonus2">
+        Step 3: In order to activate the button, you can use different strategies. The easiest one is to just use jumpman suit, which will be available in the future dungeons. In the picture you can see that it is also possible without it, just jump on the zombies head and then double jump to activate the button. Be sure to have an armor which provides you with at least 2\% jump impulse.\n\n
+    </string>
+
+    <string name="dungeon3bonus3">
+        Step 4: After activating the button, an zombie will appear, step in front of him to make him attack you and then avoid the attack. This will destroy the wall and you will be able to obtain the goods.\n\n
+    </string>
+
+    <string name="dungeon4text">
+        All three 💎 are in the golden pots.\n\n
+        The captain is invincible and cannot die. If you proceed to the dungeon on the top platforms, she will kill all the bottom enemies by herself.\n\n
+    </string>
+
+    <string name="dungeon5text">
+        All three 💎 are in the golden pots.\n\n
+        Be sure to use the wind element armors to avoid spike damage.\n\n
+        The tanky zombie is easier to beat if you fight him from the high ground.\n\n
+    </string>
+
+    <string name="dungeon5bonustext1">
+        Unlock this bonus by getting all three 💎 in dungeon 5.\n\n
+        First pick the left entrance.\n\n
+    </string>
+
+    <string name="dungeon5bonustext2">
+        Just continue up the path.\n\n
+    </string>
+
+    <string name="dungeon5bonustext3">
+        Now choose the middle path, which contains the previously mentioned item - Insect Crusher.\n\n
+        This item will help you if you are having difficulties with the  next chapter!\n\n
+    </string>
+
+    <string name="dungeon6text">
+        All three 💎 are in the golden pots.\n\n
+        You can now use the hammer, which you obtained in the previous bonus dungeon to deal with spiders easier.\n\n
+        The first secret area contains Hero\'s set, which is good for swords, daggers and hammers. It also gives you spike protection, which allows you to play the dungeon safer.\n\n
+    </string>
+
+    <string name="dungeon7text">
+        Two 💎 are in the golden pots. One is in the area, which can be unlocked by clicking the button.\n\n
+        Be sure to have at least one iron key for the bonus stage.\n\n
+        You can use the box at the beginning to activate the button for the bottom area with the 💎.\n\n
+        The third secret are can be reached by jumping above the flames.\n\n
+    </string>
+
+    <string name="dungeon7bonustext1">
+        Unlock this bonus by getting all three 💎 in dungeon 7.\n\n
+        You will have to be fast, since the platforms get destroyed in three seconds after you jump on them.\n\n
+        Just follow the line made out of gold 🪙.\n\n
+    </string>
+
+    <string name="dungeon7bonustext2">
+        Once you reach the highest one, jump at the top of the square and the jump in the area with the chest.\n\n
+        After this, just jump back down to the next platform and finish the dungeon.\n\n
+    </string>
+
+    <string name="dungeon8text">
+        All three 💎 are in the golden pots.\n\n
+        You can bring the Dude to the Fire Spear at the beginning of the dungeon to unlock an achievement.\n\n
+        Be sure to always stand in front of the dude to soak all the damage if necessary. You can use potions but he cannot.\n\n
+        If the Dude survives, he will give you a nice axe.\n\n
+    </string>
+
+    <string name="dungeon9text">
+        All three 💎 are in the golden pots.\n\n
+        A really good dungeon, which trains your aim for the next chapter. The easiest way to get the box to activate the button is by using non-spinning daggers, like poison dagger, which you found in one of the previous dungeons.\n\n
+        Preferably use air armor to avoid spike damage.\n\n
+        When you finish the dungeon, be sure to check out new items in the shop.\n\n
+    </string>
+
+    <string name="dungeon10text">
+        All three 💎 are in the golden pots.\n\n
+        You do not necessarily need a hammer for these spiders, since they are bigger than the poisonous ones.\n\n
+        You can use time-slowing special skills if you want to run under the falling traps.\n\n
+    </string>
+
+    <string name="dungeon10bossfighttext">
+        The boss attack pattern is pretty simple. He attacks four times in a row to the position you are in at the time of his attack.\n\n
+        What you should do is remain at the floor and avoid his projectiles by going slightly forward.\n\n
+        After he fires his fourth projectile, you can just jump to his height and deal damage to him. Rinse and repeat.\n\n
+    </string>
+
+    <string name="dungeon11text">
+        All three 💎 are in the golden pots.\n\n
+        Collect all three 💎 to unlock bonus level.\n\n
+        If you are struggling to avoid projectiles, you could use class like Warrior or Priest.\n\n
+        First secret area contains <font color="#A020F0"> Nazguh </font> ring, which can be used for multiple item combinations.\n\n
+    </string>
+
+    <string name="dungeon11bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 11.\n\n
+        Step 1: Trigger the skeleton on the top platfrom to start following you. You can do this by just letting him see you.\n\n
+        Step 2: Run away from him when he starts chasing you.\n\n
+    </string>
+
+    <string name="dungeon11bonustext2">
+        Step 3: Run towards the left side wall and wait for the skeleton to arrive.\n\n
+        Step 4: When skeleton attacks you, jump on the top platform and wait for him to destroy the block and press the button.\n\n
+    </string>
+
+    <string name="dungeon11bonustext3">
+        Bonus: Jump above the area above the crate to collect some gold!\n\n
+        Step 5: Move the crate carefully to the button. Be careful not to drop it to the bottom where the skeleton is!\n\n
+        Step 6: Quickly enter the room and then go back up to the platform, where you dodged skeleton projectiles. Repeat this few times until all the spiders are out of the room.\n\n
+    </string>
+
+    <string name="dungeon11bonustext4">
+        Step 7: After you have baited all enemies in the left area, you can collect all the gold in the room and finish the dungeon!\n\n
+    </string>
+
+    <string name="dungeon12text">
+        First 💎 is in second secret area. The second one is in the golden pot and the third one is in front of the fire launcher.\n\n
+        Jumpman armor is really ueful here, since it allows you to jump to the certain areas without dying or getting damaged.\n\n
+        Fourth secret areas contains <font color="#FFA500"> Narya </font> fire ring, which is very good for Mage and High Mage.\n\n
+    </string>
+
+    <string name="dungeon13text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        The using a fire armor or ring gives you protection against lava, enabling you to open two secret areas.\n\n
+        To open the first secret area you have to activate the button in the nearby lava pool.\n\n
+        The second secret area contains <font color="#00FF00"> Ring of Protection </font>.\n\n
+    </string>
+
+    <string name="dungeon13bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 13.\n\n
+        Step 1: Destroy the vases pm the left and then follow the path like in the picture shown.\n\n
+        Watch out on the fire projectiles and use an air armor or ring to avoid spike damage.\n\n
+    </string>
+
+    <string name="dungeon13bonustext2">
+        Step 2: Now go back but use the road under the platforms. Again, be careful about the projectiles and use lava armor or ring.\n\n
+    </string>
+
+    <string name="dungeon14text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        To pierce the yellow barrier and obtain the first 💎, you need a weapon with light element or a weapon that pierces barriers.\n\n
+        The second secret area contains <font color="#FFFF00"> Cleric Ring </font>, which is really good for Witchdoctor, Paladin and Priest.\n\n
+        Keep The Dude alive in order to get the achievement.\n\n
+    </string>
+
+    <string name="dungeon15text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        Using an <font color="#00FF00"> earth </font>-based armor or ring will make it easier to reach secret areas and complete the dungeon.\n\n
+        If you are struggling to hit the spiders, use a hammer you obtained in previous dungeons.\n\n
+    </string>
+
+    <string name="dungeon16text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        Using an <font color="#00FF00"> earth </font>-based armor or ring will make it easier to reach secret areas and complete the dungeon.\n\n
+        You can kill the unreachable ghost by standing under him and waiting for the lightning to strike few times.\n\n
+    </string>
+
+    <string name="dungeon17text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        Using an <font color="#A020F0"> darkness </font>-based equipment will make the ghost attack when facing them directly.\n\n
+        Use Supersonic ring or classes that slow down time for the fourth secret area.\n\n
+    </string>
+
+    <string name="dungeon17bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 17.\n\n
+        The only thing about this bonus stage is having enough keys to open all the chests, there is no specific strategy.\n\n
+    </string>
+
+    <string name="dungeon17bonustext2">
+        If you open all the chests, there is a guaranteed drop for <font color="#FFA500"> Fireskull Sword </font>, which is good for Warrior, Ranger etc.\n\n
+        You will also get <font color="#FFFF00"> Faldang\'s Vest </font>, which is good for Paladin, Priest and Witchdoctor.\n\n
+    </string>
+
+    <string name="dungeon18text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        The second secret area contains <font color="#ADD8E6"> Swordsman\'s Ring </font>, which is extremely good for swords.\n\n
+        Be sure to combine one fire and one air piece of equipment in order to avoid the damage done by the traps.\n\n
+    </string>
+
+    <string name="dungeon19text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        The dungeon is full of spikes and lava. Try using the right equipment to at least avoid one of these hazards.\n\n
+        Creeps spawned by the summoner will automatically die when you kill him.\n\n
+        If you go to the back of the dungeon with the captain, you will unlock the \"The Untold Story 2\" achievement.\n\n
+    </string>
+
+    <string name="dungeon19bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 19.\n\n
+        This is a pretty simple one. Just destroy the vases on your left and then jump into the lava to collect all the bonus 🪙.\n\n
+        After that jump to the green platform. There you will find two chests, which usually drop runes.\n\n
+    </string>
+
+    <string name="dungeon19bonustext2">
+        After you do that you can also open a hidden chest, which is in the second lava pool.\n\n
+    </string>
+
+    <string name="dungeon20text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them. The last 💎 is obtainable only after you kill the boss.\n\n
+        The summoner you encounter cannot be killed, you have to kill the boss first, then come back and collect the key, 💎 and explore the secret area.\n\n
+        When it comes to equipment, the sets, which are the best are the ones that are agile and deal a lot of damage.\n\n
+    </string>
+
+    <string name="dungeon20bossfighttext1">
+        Don\'t let the size of this boss fool you, he is pretty easy to beat.\n\n
+        He first start attacking five times in a row, his projectiles have high area of damage and are poisonous. With most equipment, you will be able to dodge by just going from side to side.\n\n
+    </string>
+
+    <string name="dungeon20bossfighttext2">
+        After he fires his fifth projectile, he lowers himself down to release two eggs. One will be released one the left and one on the right side.\n\n
+        While he is doing this, you have a chance to damage him. Be sure, that when you fall down after double jumping, you also hit the eggs once and destroy them.\n\n
+        This ensures, that you don\'t have to worry about projectiles and spiders at the same time.\n\n
+        After the spider releases his second egg, he will return to his start position and start firing you again. Rinse and repeat until you kill him.\n\n
+    </string>
+
+    <string name="dungeon21text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        Killing the summoners will also destroy the minions they possess.\n\n
+        The first secret area contains <font color="#FFFF00"> Lightning Axe </font>, which is very good for mid game light classes, like Priest, Witchdoctor or Paladin.\n\n
+        This level unlocks more items in the shop, check them out and prepare for the upcoming boss.\n\n
+    </string>
+
+    <string name="dungeon22text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        The first secret area is in the upper left corner immediately when you start the dungeon.\n\n
+        Be sure to have at least one golden key. You will need it to open one unofficial secret area, which can be found above the exit of the dungeon.\n\n
+        Using weapons with big hit-box will help you in killing the exploding spiders, otherwise you can just run away from them and wait for the explosion.\n\n
+    </string>
+
+    <string name="dungeon23text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        Be sure to get both silver and golden keys, you will need it for the bonus stage, which can be unlocked by collecting all three 💎 .\n\n
+        Using weapons with big hit-box will help you in killing the exploding spiders, otherwise you can just run away from them and wait for the explosion.\n\n
+        The skeletons with <font color="#A020F0"> Darkskull Sword </font> become invulnerable when they see you, try to avoid that.\n\n
+    </string>
+
+    <string name="dungeon23bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 23.\n\n
+        First, start off by going from one side of the map to the other. Try to collect as much 🪙 and 💎 as you can.\n\n
+    </string>
+
+    <string name="dungeon23bonustext2">
+        You should also completely avoid the spiders, do not attack them at all and if you cannot collect all the 🪙 at once, that is also fine.\n\n
+    </string>
+
+    <string name="dungeon23bonustext3">
+        Once you reach the end of the map, you can turn around and start going back while you spam your attacks to the left.\n\n
+        This way you can kill all the spiders an collect the remaining 🪙.\n\n
+        Be sure to open the doors that lead to the chests. An item awaits you in there.\n\n
+        Above this room, you also have more 🪙 a goodies you can pick up.\n\n
+    </string>
+
+    <string name="dungeon24text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        For the first two secret areas, you need to activate the button. The button for the first secret area is hidden by a block, which you have to destroy, and the button for the second secret area is partially visually blocked by grass.\n\n
+        The third secret area can be found after you open the first doors with the golden key.\n\n
+        The fifth secret area is above the dungeon exit.\n\n
+    </string>
+
+    <string name="dungeon25text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        First secret are is right above the starting point, you will need <font color="#ADD8E6"> Jumpman\'s suit </font> to get there. Keep in mind that there is an invisible wall, which does not allow you to directly jump to the platform. you need to go a bit to the left and the jump from there. You could also use the nearby geyser to boost you up. You could also use classes that slow down time.\n\n
+        In this dungeon you also get to control the dude\'s father. You can command him to follow you or to stay at one place by coming near him and pressing the button above him.\n\n
+        For the second secret area, you will need to order dude\'s father to stand at the button, while you pick everything up.\n\n
+    </string>
+
+    <string name="dungeon26text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        First secret are is right above the start position, however it is too far high. You will need to activate the magic mushroom to get there.\n\n
+        The second secret area is on the right side of the big hole.\n\n
+        Third secret are is above the castle, to the right.\n\n
+        If you play this dungeon at 4:20 or 16:20, you will be able to get the secret achievement. Just collect the flying coins with the diamond on the top.\n\n
+    </string>
+
+    <string name="dungeon27text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        Be sure to get one golden key for the bonus stage!\n\n
+        There are many ways of killing the clones. First option is to spam attack the area while the clone is spawning. Second option is to go to a higher area, attack once and jump, so that the enemy clone gets hit by your attack. The third option is to spam attack from the distance, where the evil clone does not mimic your action and then follow the projectiles to the clone\'s location, so that they hit him. You can also try equipping a weaker armor and then when the clone starts spawning, change it to a better one and kill it by brute force.\n\n
+        For the second secret area, please keep the second evil clone alive, as it makes it a lot more easier to get there this way.\n\n
+        Be sure to use the magic mushrooms to your advantage, especially if you are struggling to kill the evil clones.\n\n
+    </string>
+
+    <string name="dungeon27bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 27.\n\n
+        Above the chest you can find additional goodies.\n\n
+        First, activate the magic mushroom and follow the zig zag route until the end. Be sure not to spend a lot of time in the middle.\n\n
+    </string>
+
+    <string name="dungeon27bonustext2">
+        Afterwards, activate the mushroom again, and follow the other zig zag route. That is it!\n\n
+    </string>
+
+    <string name="dungeon28text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        Be sure to have at least one fire-based piece of equipment! Otherwise you will need a lot of potions to heal yourself from the damage.\n\n
+        Just spam attack the area where the evil clone is going to spawn, this is the best way to kill him in this dungeon.\n\n
+        Using Warrior, Elite Warrior and Priest is a really good idea here, since there are so many projectiles.\n\n
+    </string>
+
+    <string name="dungeon29text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        The first secret area contains <font color="#00FF00"> Gadarast\'s Staff </font>and the third <font color="#FFA500"> Fireskull Sword </font>.\n\n
+        The giant mini boss has a simple attack pattern, he just jumps and slam the ground, causing an explosion. The best way to  kill him is to attack him when he jumps. Just jump at the same time as him.
+    </string>
+
+    <string name="dungeon29bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 29.\n\n
+        This one looks tricky, but it just requires a specific strategy.\n\n
+        You have to coordinate your movements an position yourself right in the middle between the balls, the position is marked with a black box. You should move from one box to another when the balls are in horizontal position (when you can\'t see them).\n\n
+    </string>
+
+    <string name="dungeon30text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        Do not lose your health on nothing, you will need it for the bossfight, unless you have many potions.
+    </string>
+
+    <string name="dungeon30bossfighttext1">
+        You can use the captain as the shield, since she cannot die at all.\n\n
+        If you are on the same height as the boss (if you are standing on one of the platforms) you can just jump and avoid his projectiles, otherwise, if you\'re on the ground, you have to keep on moving.\n\n
+    </string>
+
+    <string name="dungeon30bossfighttext2">
+        The boss has three stages and in all of them you have around three to four seconds to damage him.\n\n
+        In the first stage he just attacks you slowly and after around 8 seconds, he becomes vulnerable.\n\n
+        When he is on 50\% of health, he starts attacking slightly faster and a thunder starts appearing.\n\n
+        When he is on 10\% of health, he starts attacking rapidly fast and the thunder appears way more often.\n\n
+        Depending on your equipment, you will maybe be able to avoid the third phase if you deal enough damage. Be sure to keep on attacking him in the head instead of body, it deals a lot more damage that way.
+    </string>
+
+    <string name="dungeon31text">
+        The first 💎 can be found to the right, of the spawn area. It is in the top right corner of the map. The other two are found on the way.\n\n
+        The fourth secret are can be opened by the button to the left of it, behind the wall.\n\n
+        Be sure to use weapons with big hit-box to kill the bats easier.\n\n
+        When bats come out of the egg, they have a small time window in which they are invulnerable.
+    </string>
+
+    <string name="dungeon31bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 31.\n\n
+        The only thing you need to watch out is not to die by falling in the abyss.\n\n
+        Just jump up, level by level and collect all the diamonds and keys.
+    </string>
+
+    <string name="dungeon31bonustext2">
+        There are few bats, but they pose no big threat to you, you can kill them quickly. \n\n
+    </string>
+
+    <string name="dungeon32text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        In this dungeon, you get to try the elixirs, which have unique effect. When you pick up the first elixir, you will be shooting an additional bouncing fireball with each shot. With the second elixir you wil be able to stand on green platforms and with the third elixir, your shots will follow the target. \n\n
+        The first chest has<font color="#ADD8E6"> Jumpman\'s suit </font>, which allows you to access the first three secret areas.\n\n
+        The final mini-boss is easy if you come prepared. Use the fire armor in the chests before the mini-boss to boost your damage and pick up the elixir in the room of the mini-boss. This way, you will need 4-5 shots to kill that spider.\n\n
+    </string>
+
+    <string name="dungeon33text">
+        All three 💎 can be found to the way, however, the last one can be accessed if you activate the button before the water pool with chest in it.\n\n
+        The tornadoes deal damage on touch, cast thunders randomly or when they die and they also pull you towards them. Be sure to keep your distance before and after killing them. \n\n
+        The second secret area is right above the first one.\n\n
+        The third secret area cannot be seen that good on the picture, but you will be able to see the particles coming from the green platform on your screen.\n\n
+    </string>
+
+    <string name="dungeon34text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        The first secret area is right to the left of the start area and the third is right above the meeting place of the Moonkeeper. The second one can be opened by throwing swords to the jumping orb, so that it presses the button above it. \n\n
+        Having equipment with a lot of speed and jump impulse is really helpful in the dungeon.\n\n
+    </string>
+
+    <string name="dungeon35text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        This is the first dungeon, which is considered as hard in the community. \n\n
+        The dragon attacks every few seconds and his fireball goes to the position you were at the point when he fired it. You can use this advantage and hide behind blocks or jump really high so that the fireball does not hit you.\n\n
+    </string>
+
+    <string name="dungeon36text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        This is one of the previous dungeon you played as the dirty faced soldier, therefore, the first secret area is also the same. \n\n
+        You have an additional fire elixir, which you can use if you prefer the fireball instead of homing missiles.\n\n
+    </string>
+
+    <string name="dungeon37text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        The first secret are is under the starting position, the second is on the right side of the first tower, and the third is on the left side of the second tower. \n\n
+        Classes like Ranger, Rogue and Thief are really useful, since they provide the necessary agility for this dungeon.\n\n
+    </string>
+
+    <string name="dungeon38text">
+        All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
+        If you had problems with killing your enemies because you have low damage, this is the place where you should maybe stop and farm more gold and get better equipment. Try getting at least 2 thousand weapon damage. \n\n
+        The first secret are is above the first tree you find in the dungeon. Just jump on the tree and you will see a small platform on the top left. The second secret area is above the first jumping giant you meet.\n\n
+    </string>
+
+    <string name="dungeon39text">
+        All three 💎 are after the portal in the middle of the map. Do not enter the portal immediately with the king. Jump over it and continue to the left.\n\n
+        The first secret area can be accessed with the minion that spawns to the left of it. When the minion starts spawning, go to the doors of the secret area and just keep on going to the right until the minion steps on the button.\n\n
+        The second secret area is at the left side of the last tower to the left. You have to climb there from the left side, too.\n\n
+    </string>
+
+    <string name="dungeon40boss1">
+        There are no secret areas in this dungeon, it is a one big bossfight.\n\n
+        The boss-fight includes fighting the warlock in his normal and beast form. While he is in his normal form, he will attack you by shooting fireballs, throwing lightning from the above and spawning his minions.\n\n
+        You do not need any specific strategy to beat him, just be sure to have enough damage to quickly deal with him.\n\n
+    </string>
+
+    <string name="dungeon40boss2">
+        The second part is a bit more tricky, mainly because his beast form has three attack patterns, which change depending on how much damage you dealt to him.\n\n
+        Remember, the hardest part about this boss is realizing when he is about to change his attack pattern!\n\n
+        In the first stage, he will come near you and attack you just like the jumping giant. This attack is easily avoidable. \n\n
+        In the second stage he will slide towards you and then cause an are of effect explosion.\n\n
+        In the third stage he will jump towards you and then when he comes to the ground he will also slide a bit. It is basically a combination of the first two stages.\n\n
+    </string>
+
+    <string name="dungeon41text">
+        Two 💎 are visible and on the way to the dungeon\'s end. One of them is hidden behind the destroyable rock in the rom of the second rolling mini-boss.\n\n
+        The homing missiles of the flying spiked boss first targets the destructible rocks. Be sure not to destroy them in the room. If you do actually destroy the rocks, you can just step under the boss, so that the projectiles do not follow you.\n\n
+        The fifth secret area can be opened by the button to the right of it.\n\n
+    </string>
+
+    <string name="dungeon42text">
+        The 💎 are hidden behind destructible rocks. Be sure to destroy everything in order to get them.\n\n
+        Regarding the riddle: Look at the nearby stone, it shows you in which order you have to do the riddle.\n\n
+        Be carefu about the rats that throw the poison bombs. After exploding, they release a poison cloud, which lasts for a few seconds.\n\n
+    </string>
+
+    <string name="dungeon42bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 42.\n\n
+        In order to open the doors to the mini-boss room you have to activate the valves in the right order.\n\n
+    </string>
+
+    <string name="dungeon42bonustext2">
+        The boss drops a decent ring called "Creepy Crawler", which can be used for all weapon types. \n\n
+    </string>
+
+    <string name="dungeon43text">
+        The first 💎 is after the first block boss. The other two are necessary to be collected if you want to make golems vulnerable.\n\n
+        In order to deal damage to the block boss, he needs to land on the red barrels. Just stand on the side of a barrel and when the boss starts going down, go to the opposite direction.\n\n
+        The boss at the end is also pretty easy to defeat, if you have enough damage. Just stand on one of the blocks on the side and attack him and his cristal from afar.\n\n
+    </string>
+
+    <string name="dungeon43bonustext1">
+        Unlock this stage by getting all three 💎 in dungeon 43.\n\n
+        Before trying to kill the block boss, kill everyone else in the room.\n\n
+    </string>
+
+    <string name="dungeon43bonustext2">
+        After all other minions are dead, the way to the red barrels will be much easier to access. \n\n
+    </string>
+
+    <string name="dungeon44text">
+        All three 💎 are on the way, however, you mostly need a golden key to open the doors to get them. Do not skip any areas beforehand.\n\n
+        The third secret area is lso hidden behind destructible orange mass.\n\n
+        Be sure to visit the sixth secret area, since it has a nice armor that will help you with the boss.\n\n
+    </string>
+
+    <string name="dungeon44bossfighttext1">
+        Be sure to collect <font color="#FFA500"> Robe of Imminent Fires </font>from the sixth secret area in order to maximize your damage.\n\n
+        The boss has three main attacks: sliding icicle, falling icicles and boulder throw.\n\n
+        You are supposed to dodge while dealing damage at the same time while following the path shown in the picture.\n\n
+        Your attack should be the following: activate your special ability, then activate your super ability, then spam basic attacks. Rinse and repeat.\n\n
+    </string>
+
+    <string name="dungeon44bossfighttext2">
+        <font color="#FF0000">Warning:</font> If you do not deal enough damage until the sliding icicle breaks, the boss will start throwing boulders at you, which is pretty hard to dodge.\n\n
+        When the boss enters the second stage his sliding icicle moves faster, his falling icicles now target your current position and he throws multiple boulders.\n\n
+    </string>
+
+    <string name="enhanced_velocity">Enhanced Velocity</string>
+    <string name="sword_master">Sword Master</string>
+    <string name="dagger_specialist">Dagger Specialist</string>
+    <string name="obstinate_shot">Obstinate Shot</string>
+    <string name="corrosive_shot">Corrosive Shot</string>
+    <string name="spherical_shield_breaker">Spherical Shield Breaker</string>
+    <string name="voracious_shot">Voracious Shot</string>
+    <string name="monstrous_vigour">Monstrous Vigour</string>
+    <string name="charge_blast">Charge Blast</string>
+    <string name="skill_points_left">Skill points left: </string>
+    <string name="fearless_jump">Fearless Jump</string>
+    <string name="virtuous_wizard">Virtuous Wizard</string>
+    <string name="throwing_legend">Throwing Legend</string>
+    <string name="gold_magnet">Gold Magnet</string>
+    <string name="fireproof_skin">Fireproof Skin</string>
+    <string name="toxic_haze">Toxic Haze</string>
+    <string name="shadow_camouflage">Shadow Camouflage</string>
+    <string name="magic_jump">Magic Jump</string>
+    <string name="dark_twin">Dark Twin</string>
+    <string name="unstoppable_strength">Unstoppable Strength</string>
+    <string name="crushing_strength">Crushing Strength</string>
+    <string name="slicing_master">Slicing Master</string>
+    <string name="monstrous_metabolism">Monstrous Metabolism</string>
+    <string name="enhanced_vitality">Enhanced Vitality</string>
+    <string name="untouchable_skin">Untouchable Skin</string>
+    <string name="confident_move">Confident Move</string>
+    <string name="arcane_protection">Arcane Protection</string>
+    <string name="thunder_wave">Thunder Wave</string>
+    <string name="reset_all">Reset All</string>
+    <string name="damage">Damage: 0</string>
+    <string name="armor">Armor: 0</string>
+    <string name="speed">Speed: 0%</string>
+    <string name="jump_impulse">Jump Impulse: 0%</string>
+    <string name="select_skills">Select Skills</string>
+    <string name="choose_your_equipment">Choose your equipment!</string>
+    <string name="upgrades">Upgrades:</string>
+    <string name="max">(MAX)</string>
+    <string name="fire_resistance">Fire Resistance </string>
+    <string name="spike_resistance">Spike Resistance</string>
+    <string name="damage_in_calculation">"Damage: "</string>
+    <string name="armor_in_calculation">"Armor: "</string>
+    <string name="speed_in_calculation">"Speed: "</string>
+    <string name="jump_impulse_in_calculation">"Jump Impulse: "</string>
+    <string name="frost_resistance">Frost Resistance</string>
+    <string name="item_already_maxed">Item already at maximum upgrade!</string>
+    <string name="item_already_at_zero_upgrades">Item already at zero upgrades!</string>
+    <string name="element_cannot_be_picked">Element cannot be picked for this item!</string>
+    <string name="element_fire">Fire</string>
+    <string name="element_water">Water</string>
+    <string name="element_darkness">Darkness</string>
+    <string name="element_light">Light</string>
+    <string name="element_earth">Earth</string>
+    <string name="element_air">Air</string>
+
+    <string name="skill_description_0">Boosts speed by 4\%.</string>
+    <string name="skill_description_1">Boosts passive sword attack power by 20\%.</string>
+    <string name="skill_description_2">Boosts passive dagger attack power by 30\%.</string>
+    <string name="skill_description_3">All weapon projectiles will persist even when struck by other projectiles on the fly.</string>
+    <string name="skill_description_4">Weapon projectiles will instantly blow up defeated enemies.</string>
+    <string name="skill_description_5">Weapon projectiles instantly break enemies\' spherical shields.</string>
+    <string name="skill_description_6">All weapon projectiles have 55\% chance to cancel enemies\' projectiles on the fly.</string>
+    <string name="skill_description_7">Increases stamina regeneration speed.</string>
+    <string name="skill_description_8">Charge attack that deals 4 times weapon damage.</string>
+
+    <string name="skill_description_9">Boosts jump power by 3\%.</string>
+    <string name="skill_description_10">Boosts passive staff attack power by 25\%.</string>
+    <string name="skill_description_11">Boosts passive spear attack power by 35\%.</string>
+    <string name="skill_description_12">Attracts gold coins and XP dropped by enemies.</string>
+    <string name="skill_description_13">Grants passive protection against flames and lava.</string>
+    <string name="skill_description_14">All weapons deal extra poison damage.</string>
+    <string name="skill_description_15">Common enemies will take longer to detect the Dirty Faced Soldier.</string>
+    <string name="skill_description_16">Gives the ability to perform an extra jump while still in the air.</string>
+    <string name="skill_description_17">Summons a Dark Twin to fight alongside the Dirty Faced Soldier.</string>
+
+    <string name="skill_description_18">Boosts armor by 25\%.</string>
+    <string name="skill_description_19">Boosts passive hammer attack power by 45\%.</string>
+    <string name="skill_description_20">Boosts passive axe attack power by 30\%.</string>
+    <string name="skill_description_21">Potions heal 3 times more.</string>
+    <string name="skill_description_22">Increases the maximum number of hearts.</string>
+    <string name="skill_description_23">Passive protection against spikes.</string>
+    <string name="skill_description_24">The Dirty Faced Soldier can always step on magic green platforms.</string>
+    <string name="skill_description_25">Triggering the class\'s special ability creates a spherical shield.</string>
+    <string name="skill_description_26">Summons a wave of lightning bolts that strike all enemies around.</string>
+    <string name="skill_description_default">No description available.</string>
+    <string name="rating_start">Rating: 0/10 💩</string>
+
+    <string name="rogue">Rogue</string>
+    <string name="thief">Thief</string>
+    <string name="mage">Mage</string>
+    <string name="black_mage">Black Mage</string>
+    <string name="high_mage">High Mage</string>
+    <string name="priest">Priest</string>
+    <string name="warlock">Warlock</string>
+    <string name="warrior">Warrior</string>
+    <string name="elite_warrior">Elite Warrior</string>
+    <string name="paladin">Paladin</string>
+    <string name="ranger">Ranger</string>
+    <string name="witchdoctor">Witchdoctor</string>
+    <string name="druid">Druid</string>
+
+    <string name="recruit_set">Recruit Set</string>
+    <string name="soldier_set">Soldier Set</string>
+    <string name="elite_soldier_set">Elite Soldier Set</string>
+    <string name="ranger_set">Ranger Set</string>
+    <string name="umbranian_vest">Umbranian Vest</string>
+    <string name="brass_set">Brass Set</string>
+    <string name="elite_brass_set">Elite Brass Set</string>
+    <string name="obsidian_set">Obsidian Set</string>
+    <string name="elite_obsidian_set">Elite Obsidian Set</string>
+    <string name="umbranian_tanker">Umbranian Tanker</string>
+    <string name="jumpman_suit">Jumpman Suit</string>
+    <string name="improved_jumpman_suit">Improved Jumpman Suit</string>
+    <string name="tubeman_suit">Tubeman Suit</string>
+    <string name="twitch_suit">T\'Witch Suit</string>
+    <string name="nature_mage_vest">Nature Mage Vest</string>
+    <string name="fire_mage_vest">Fire Mage Vest</string>
+    <string name="faldangs_vest">Faldang\'s Vest</string>
+    <string name="plague_fighter_suit">Plague Fighter Suit</string>
+    <string name="warlock_vest">Warlock Vest</string>
+    <string name="high_elf_robe">High Elf Robe</string>
+    <string name="ifrits_disciple_robe">Ifrit\'s Disciple Robe</string>
+    <string name="cleric_vest">Cleric Vest</string>
+    <string name="high_cleric_tunic">High Cleric Tunic</string>
+    <string name="greenmoon_vest">Greenmoon Vest</string>
+    <string name="dragon_vest">Dragon Vest</string>
+    <string name="special_dragon_vest">Special Dragon Vest</string>
+    <string name="blue_wizard_suit">Blue Wizard Suit</string>
+    <string name="penumbra_suit">Penumbra Suit</string>
+    <string name="penumbra_suit_plus">Penumbra Suit+</string>
+    <string name="monks_tunic">Monk\'s Tunic</string>
+    <string name="bacoon_set">Bacoon Set</string>
+    <string name="bacoon_set_plus">Bacoon Set+</string>
+    <string name="druid_vest">Druid Vest</string>
+    <string name="moonkeeper_set">Moonkeeper Set</string>
+    <string name="bankers_coat">Banker\'s Coat</string>
+    <string name="bankers_coat_plus">Banker\'s Coat+</string>
+    <string name="deathdoctor_set">Deathdoctor Set</string>
+    <string name="crow_set">Crow Set</string>
+    <string name="special_crow_set">Special Crow Set</string>
+    <string name="antiheros_set">Antihero\'s Set</string>
+    <string name="special_antiheros_set">Special Antihero\'s Set</string>
+    <string name="steelblow_armor">Steelblow Armor</string>
+    <string name="steelblow_armor_plus">Steelblow Armor+</string>
+    <string name="gorgons_skin">Gorgon\'s Skin</string>
+    <string name="dark_lord_set">Dark Lord Set</string>
+    <string name="light_spellmaster_suit">Light Spellmaster Suit</string>
+    <string name="liquid_assassin_suit">Liquid Assassin Suit</string>
+    <string name="light_champion_suit">Light Champion Set</string>
+    <string name="jungle_master">Jungle Master</string>
+    <string name="jungle_assassin_suit">Jungle Assassin Suit</string>
+    <string name="firestorm_armor">Firestorm Armor</string>
+    <string name="firestorm_armor_plus">Firestorm Armor+</string>
+    <string name="gayan_set">Gayan Set</string>
+    <string name="elite_assassin_suit">Elite Assassin Suit</string>
+    <string name="champion_set">Champion Set</string>
+    <string name="spider_exoskeleton">Spider Exoskeleton</string>
+    <string name="witch_dress">Witch Dress</string>
+    <string name="heros_set">Hero\'s Set</string>
+    <string name="heros_set_plus">Hero\'s Set+</string>
+    <string name="swamp_ranger_suit">Swamp Ranger Suit</string>
+    <string name="arcane_mage_suit">Arcane Mage Suit</string>
+    <string name="desert_rogue_suit">Desert Rogue Suit</string>
+    <string name="iron_widow">Iron Widow</string>
+    <string name="forest_witch_suit">Forest Witch Suit</string>
+    <string name="black_witch_suit">Black Witch Suit</string>
+    <string name="purple_witch_suit">Purple Witch Suit</string>
+    <string name="fire_moonkeeper_set">Fire Moonkeeper Set</string>
+    <string name="swamp_witch_suit">Swamp Witch Suit</string>
+    <string name="green_witch_suit">Green Witch Suit</string>
+    <string name="bunny_suit">Bunny Suit</string>
+    <string name="warden_of_demons">Warden of Demons</string>
+    <string name="tunic_of_the_relentless">Tunic of the Relentless</string>
+    <string name="wind_witch_dress">Wind Witch Dress</string>
+    <string name="destroyer_of_the_corrupted">Destroyer of the Corrupted</string>
+    <string name="interrogator">Interrogator</string>
+    <string name="protector_of_the_oracle">Protector of the Oracle</string>
+    <string name="death_stalker">Death Stalker</string>
+    <string name="tunic_of_endless_justice">Tunic of Endless Justice</string>
+    <string name="cataclysmic_plate">Cataclysmic Plate</string>
+    <string name="tunic_of_frozen_voices">Tunic of Frozen Voices</string>
+    <string name="robe_of_distant_visions">Robe of Distant Vision</string>
+    <string name="tunic_of_distant_ancestors">Tunic of Distant Ancestors</string>
+    <string name="vest_of_phantoms_keeper">Vest of Phantoms Keeper</string>
+    <string name="robe_of_imminent_fires">Robe of Imminent Fires</string>
+    <string name="vanquisher">Vanquisher</string>
+    <string name="winter_witch_armor">Winter Witch Armor</string>
+    <string name="easterminator">Easterminator</string>
+    <string name="vest_of_twisted_illusions">Vest of Twisted Illusions</string>
+    <string name="time_patroller_suit">Time Patroller Suit</string>
+    <string name="kings_spectre_tunic">King\'s Spectre Tunic</string>
+    <string name="cthulhu_armor">Cthulhu Armor</string>
+    <string name="barrenlands_banditin">Barren-lands Banditin</string>
+    <string name="tunic_of_ending_nights">Tunic of Ending Nights</string>
+    <string name="santa_claus">Santa Claus</string>
+    <string name="tunic_of_twisted_illusions">Tunic of Twisted Illusions</string>
+    <string name="vest_of_blessed_glory">Vest of Blessed Glory</string>
+    <string name="barrenlands_bandit">Barren-lands Bandit</string>
+    <string name="ring_of_agility">Ring of Agility</string>
+    <string name="shaman_ring">Shaman Ring</string>
+    <string name="supersonic_ring">Supersonic Ring</string>
+    <string name="narya">Narya</string>
+    <string name="spellmasters_ring">Spellmaster\'s Ring</string>
+    <string name="warlocks_ring">Warlock\'s Ring</string>
+    <string name="nazguh_ring">Nazguh Ring</string>
+    <string name="ring_of_protection">Ring of Protection</string>
+    <string name="cleric_ring">Cleric Ring</string>
+    <string name="swordsmans_ring">Swordsman\'s Ring</string>
+    <string name="nenya">Nenya</string>
+    <string name="dragon_eye_ring">Dragon Eye Ring</string>
+    <string name="white_pearl_ring">White Pearl Ring</string>
+    <string name="steelblow_ring">Steelblow Ring</string>
+    <string name="witchdoctor_ring">Witchdoctor Ring</string>
+    <string name="sea_wave_ring">Sea Wave Ring</string>
+    <string name="dragon_orb_ring">Dragon Orb Ring</string>
+    <string name="ring_of_light">Ring of Light</string>
+    <string name="volcano_ring">Volcano Ring</string>
+    <string name="all_seeing_ring">All Seeing Ring</string>
+    <string name="verdant_ring">Verdant Ring</string>
+    <string name="dragon_fang_ring">Dragon Fang Ring</string>
+    <string name="blue_ring">Blue Ring</string>
+    <string name="spektator">Spektator</string>
+    <string name="cuteulhu">Cuteulhu</string>
+    <string name="cait">Cait</string>
+    <string name="bunny_ring">Bunny Ring</string>
+    <string name="whisper_of_fire">Whisper of Fire</string>
+    <string name="creepy_crawler">Creepy Crawler</string>
+    <string name="whisper_of_death">Whisper of Death</string>
+    <string name="vina">Vina</string>
+    <string name="falcon_ring">Falcon Ring</string>
+    <string name="cursed_amethyst_ring">Cursed Amethyst Ring</string>
+    <string name="ancient_warden">Ancient Warden</string>
+    <string name="vindicator_guardian">Vindicator Guardian</string>
+    <string name="whisper_of_light">Whisper of Light</string>
+    <string name="eastercreep">Eastercreep</string>
+    <string name="ghostwalker">Ghostwalker</string>
+    <string name="trickytreat">Tricky-treat</string>
+    <string name="jellybunny">Jellybunny</string>
+    <string name="recruit_sword">Recruit Sword</string>
+    <string name="steel_blade">Steel Blade</string>
+    <string name="fire_sword">Fire Sword</string>
+    <string name="nobel_sword">Nobel Sword</string>
+    <string name="leaf_sword">Leaf Sword</string>
+    <string name="pirate_sword">Pirate Sword</string>
+    <string name="master_sword">Master Sword</string>
+    <string name="vorpal_sword">Vorpal Sword</string>
+    <string name="umbranian_short_sword">Umbranian Short Sword</string>
+    <string name="umbranian_long_sword">Umbranian Long Sword</string>
+    <string name="fireskull_sword">Fireskull Sword</string>
+    <string name="darkskull_sword">Darkskull Sword</string>
+    <string name="swords">Swords</string>
+    <string name="staffs_and_grimoires">Staffs and Grimoires</string>
+    <string name="daggers_and_shurikens">Daggers and Shurikens</string>
+    <string name="axes">Axes</string>
+    <string name="spears">Spears</string>
+    <string name="hammers_and_maces">Hammers and Maces</string>
+    <string name="nature_staff">Nature Staff</string>
+    <string name="iron_dagger">Iron Dagger</string>
+    <string name="silver_axe">Silver Axe</string>
+    <string name="obsidian_spear">Obsidian Spear</string>
+    <string name="insect_crusher">Insect Crusher</string>
+    <string name="fire_staff">Fire Staff</string>
+    <string name="light_staff">Light Staff</string>
+    <string name="oxymos_staff">Oxymo\'s Staff</string>
+    <string name="staff_of_darkness">Staff of Darkness</string>
+    <string name="gadarasts_staff">Gadarast\'s Staff</string>
+    <string name="epic_fire_staff">Epic Fire Staff</string>
+    <string name="firebane">Firebane</string>
+    <string name="dragonskull_staff">Dragonskull Staff</string>
+    <string name="dragonskull_staff_plus">Dragonskull Staff+</string>
+    <string name="death_scythe">Death Scythe</string>
+    <string name="death_scythe_plus">Death Scythe+</string>
+    <string name="hippie_dragon_staff">Hippie Dragon Staff</string>
+    <string name="hippie_dragon_staff_plus">Hippie Dragon Staff+</string>
+    <string name="dragon_orb_staff">Dragon Orb Staff</string>
+    <string name="water_staff">Water Staff</string>
+    <string name="golden_dragon_staff">Golden Dragon Staff</string>
+    <string name="golden_dragon_staff_plus">Golden Dragon Staff+</string>
+    <string name="dead_vulture_staff">Dead Vulture Staff</string>
+    <string name="broom_staff">Broom Staff</string>
+    <string name="ancient_stone_staff">Ancient Stone Staff</string>
+    <string name="cthulhu_staff">Cthulhu Staff</string>
+    <string name="toxic_staff">Toxic Staff</string>
+    <string name="windbane">Windbane</string>
+    <string name="legacy_of_the_oracle">Legacy of the Oracle</string>
+    <string name="seabane">Seabane</string>
+    <string name="royal_war_staff">Royal War Staff</string>
+    <string name="staff_of_the_wicked">Staff of the Wicked</string>
+    <string name="icebane">Icebane</string>
+    <string name="spider_staff">Spider Staff</string>
+    <string name="necromorphicon">Necromorphicon</string>
+    <string name="the_oxymos_codex">The Oxymo\'s Codex</string>
+    <string name="the_abyssal_scrolls">The Abyssal Scrolls</string>
+    <string name="iron_dagger_plus">Iron Dagger+</string>
+    <string name="fire_dagger">Fire Dagger</string>
+    <string name="kunai">Kunai</string>
+    <string name="steel_dagger">Steel Dagger</string>
+    <string name="poisoned_dagger">Poisoned Dagger</string>
+    <string name="ifrits_dagger">Ifrit\'s Dagger</string>
+    <string name="dagger_of_sand">Dagger of Sand</string>
+    <string name="undines_dagger">Undine\'s Dagger</string>
+    <string name="dark_dagger">Dark Dagger</string>
+    <string name="dark_dagger_plus">Dark Dagger+</string>
+    <string name="light_dagger">Light Dagger</string>
+    <string name="chef_knife">Chef Knife</string>
+    <string name="gorgon_dagger">Gorgon Dagger</string>
+    <string name="machete">Machete</string>
+    <string name="gayan">Gayan</string>
+    <string name="venomous_dagger">Venomous Dagger</string>
+    <string name="cthulhu_dagger">Cthulhu Dagger</string>
+    <string name="dragon_tooth_dagger">Dragon Tooth Dagger</string>
+    <string name="dual_dragon_fang">Dual Dragon Fang</string>
+    <string name="blood_swiftblade">Blood Swiftblade</string>
+    <string name="precious_dual_blade">Precious Dual-blade</string>
+    <string name="precious_skewer">Precious Skewer</string>
+    <string name="ice_dagger">Ice Dagger</string>
+    <string name="last_survivors_dagger">Last Survivor\'s Dagger</string>
+    <string name="survivors_double_dagger">Survivor\'s Double Dagger</string>
+    <string name="abyssal_dual_blade">Abyssal Dual-Blade</string>
+    <string name="malicious_quickblade">Malicious Quickblade</string>
+    <string name="gayan_shuriken">Gayan Shuriken</string>
+    <string name="undines_shuriken">Undine\'s Shuriken</string>
+    <string name="sword_of_light">Sword of Light</string>
+    <string name="sword_of_1000_lies">Sword of 1000 Lies</string>
+    <string name="magicsaber">Magicsaber</string>
+    <string name="air_striker">Air Striker</string>
+    <string name="ice_claw">Ice Claw</string>
+    <string name="light_piercer">Light Piercer</string>
+    <string name="throat_cutter">Throat Cutter</string>
+    <string name="air_piercer">Air Piercer</string>
+    <string name="cthulhu_blade">Cthulhu Blade</string>
+    <string name="glass_blade">Glass Blade</string>
+    <string name="haunted_slicer">Haunted Slicer</string>
+    <string name="moonlit_razor">Moonlit Razor</string>
+    <string name="bunny_sword">Bunny Sword</string>
+    <string name="blade_of_the_wicked">Blade of the Wicked</string>
+    <string name="goldsteel">Goldsteel</string>
+    <string name="abyssal_blade">Abyssal Blade</string>
+    <string name="golden_needle">Golden Needle</string>
+    <string name="blade_of_rusted_souls">Blade of Rusted Souls</string>
+    <string name="bunny_claymore">Bunny Claymore</string>
+    <string name="blade_of_survival">Blade of Survival</string>
+    <string name="gorgon_blade">Gorgon Blade</string>
+    <string name="volcano_sword">Volcano Sword</string>
+    <string name="all_seeing_sword">All Seeing Sword</string>
+    <string name="frost_heart">Frost-heart</string>
+    <string name="enchanted_nutcracker">Enchanted Nutcracker</string>
+    <string name="axe_of_fire">Axe of Fire</string>
+    <string name="bone_chopper">Bone Chopper</string>
+    <string name="lightning_axe">Lightning Axe</string>
+    <string name="umbranian_cutter">Umbranian Cutter</string>
+    <string name="flaming_cutter">Flaming Cutter</string>
+    <string name="spider_axe">Spider Axe</string>
+    <string name="all_seeing_axe">All Seeing Axe</string>
+    <string name="toxic_axe">Toxic Axe</string>
+    <string name="bone_axe">Bone Axe</string>
+    <string name="steel_axe">Steel Axe</string>
+    <string name="cthulhu_axe">Cthulhu Axe</string>
+    <string name="dawnlight">Dawnlight</string>
+    <string name="gorgon_axe">Gorgon Axe</string>
+    <string name="stormcaller">Stormcaller</string>
+    <string name="path_of_exile">Path of Exile</string>
+    <string name="fortunes_battleaxe">Fortune\'s Battleaxe</string>
+    <string name="axe_of_rusted_gods">Axe of Rusted Gods</string>
+    <string name="ice_axe">Ice Axe</string>
+    <string name="yansahn">Yansahn</string>
+    <string name="osun">Osun</string>
+    <string name="gayan_spear">Gayan Spear</string>
+    <string name="freyr">Freyr</string>
+    <string name="fire_pierce">Fire Pierce</string>
+    <string name="azatoth">Azatoth</string>
+    <string name="spider_spear">Spider Spear</string>
+    <string name="cthulhu_spear">Cthulhu Spear</string>
+    <string name="poisoned_spear">Poisoned Spear</string>
+    <string name="vindictive_piercer">Vindictive Piercer</string>
+    <string name="golden_piercer">Golden Piercer</string>
+    <string name="last_survivors_spear">Last Survivor\'s Spear</string>
+    <string name="gorgon_spear">Gorgon Spear</string>
+    <string name="wooden_hammer">Wooden Hammer</string>
+    <string name="warhammer">Warhammer</string>
+    <string name="spider_crusher">Spider Crusher</string>
+    <string name="bionic_hammer">Bionic Hammer</string>
+    <string name="thunder_hammer">Thunder Hammer</string>
+    <string name="volcano_hammer">Volcano Hammer</string>
+    <string name="verdant_hammer">Verdant Hammer</string>
+    <string name="mojaras_hammer">Mojara\'s Hammer</string>
+    <string name="liquid_hammer">Liquid Hammer</string>
+    <string name="hammer_of_light">Hammer of Light</string>
+    <string name="inquisidor">Inquisidor</string>
+    <string name="falcon_hammer">Falcon Hammer</string>
+    <string name="bone_hammer">Bone Hammer</string>
+    <string name="wit_of_ancient_power">Wit of Ancient Power</string>
+    <string name="war_forged_smasher">War-Forged Smasher</string>
+    <string name="toxic_hammer">Toxic Hammer</string>
+    <string name="wealthy_smasher">Wealthy Smasher</string>
+    <string name="smasher_of_decay">Smasher of Decay</string>
+    <string name="silver_mace">Silver Mace</string>
+    <string name="iron_mace">Iron Mace</string>
+    <string name="dark_mace">Dark Mace</string>
+    <string name="club">Club</string>
+    <string name="wooden_hawaiian">Wooden Hawaiian</string>
+    <string name="toxic_mace">Toxic Mace</string>
+    <string name="wealthy_crusher">Wealthy Crusher</string>
+
+    <string name="dungeons">Dungeons</string>
+    <string name="survival_mode">Survival Mode</string>
+    <string name="test_equipment">Test Equipment</string>
+    <string name="ten_kills">10</string>
+    <string name="twenty_kills">20</string>
+    <string name="thirty_kills">30</string>
+    <string name="kills">Kills</string>
+    <string name="rewards">Rewards</string>
+    <string name="fourty_kills">40</string>
+    <string name="fifty_kills">50</string>
+    <string name="sixty_kills">60</string>
+    <string name="seventy_kills">70</string>
+    <string name="eighty_kills">80</string>
+    <string name="hundred_kills">100</string>
+    <string name="hundred_fifty_kills">150</string>
+    <string name="two_hundred_kills">200</string>
+    <string name="three_hundred_kills">300</string>
+    <string name="survival_dungeon_1">Survival Dungeon 1</string>
+    <string name="survival_tutorial">Tutorial</string>
+    <string name="survival1_text">For this one you will need a weapon that does not hit the middle platform. This will allow you to hit the enemies on the other side and block the projectiles. If a spider spawns in front of you, just attack the stone behind you to kill it easily.</string>
+    <string name="survival_dungeon_2">Survival Dungeon 2</string>
+    <string name="rune_of_wind">Rune of Wind</string>
+    <string name="burning_rune">Burning Rune</string>
+    <string name="shiny_rune">Shiny Rune</string>
+    <string name="purple_rune">Purple Rune</string>
+    <string name="green_rune">Green Rune</string>
+    <string name="liquid_rune">Liquid Rune</string>
+    <string name="survival2_text">The second survival dungeon does not need a lot of movement. Stay in the middle and attack on the sides, eventually moving up and down to kill additional enemies and avoiding the lightning.</string>
+    <string name="survival_dungeon_3">Survival Dungeon 3</string>
+    <string name="survival3_text">The third survival dungeon will require you to use a weapon that can hit spiders easily. It also has the most \"complicated\" attack pattern out of all survival dungeons, meaning that you will need to invest more effort in it.</string>
+    <string name="survival_dungeon_4">Survival Dungeon 4</string>
+    <string name="survival4_text">For this dungeon, be sure to use a weapon with low piercing power, os that you can kill the swamp monster with one shot. It is pretty simple to follow the attack patterns of the dungeon. Additionally you can use Warrior class for some extra protection against the enemy that wis spawning to your right.</string>
+    <string name="survival_dungeon_5">Survival Dungeon 5</string>
+    <string name="survival5_text">The best and easiest dungeon for farming gold. Be sure to use a weapon with high area of damage and limited range, like hammers and axes in order to be able to stay at one place and kill the enemies from afar.</string>
+    <string name="survival_dungeon_6">Survival Dungeon 6</string>
+    <string name="golden_key">Golden Key</string>
+    <string name="survival6_text">The last survvial dungeon requires a bit more effort compared to others, as you need ot constantly change the location in order to avoid projectiles, hit the flying units amd avoid the thunder strikes.</string>
+    <string name="about">About</string>
+    <string name="about_author">About Author</string>
+    <string name="author_description">Hello! I\'m Ivan Cvetanović, also recognized as PrOfSeS within the Magic Rampage community. This application stands as my ultimate significant contribution to the game, as my enthusiasm for playing has waned over time. Should you encounter any bugs, feel free to reach out to me via Discord (click the button below) or email (check developer info on Google Play Games page. Your feedback is greatly appreciated!</string>
+    <string name="achievements">Achievements</string>
+    <string name="ifrits_shuriken">Ifrits Shuriken</string>
+    <string name="compendium_of_trees">Compendium of Trees</string>
+    <string name="the_testament_of_ifrit">The Testament of Ifrit</string>
+    <string name="the_arachnid_codex">The Arachnid Codex</string>
+    <string name="the_word_of_the_wind">The Word of the Wind</string>
+    <string name="enlightened_hammer">Enlightened Hammer</string>
+
+
+</resources>

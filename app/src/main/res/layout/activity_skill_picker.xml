@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/grey_background"
+        android:outlineAmbientShadowColor="#FFFFFF"
+        android:outlineSpotShadowColor="#1E0D0D"
+        tools:context=".SkillPicker">
+
+    <TextView
+        android:id="@+id/textSkillPointsLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skill_points_left"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"/>
+
+        <HorizontalScrollView
+            android:id="@+id/HorizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:paddingTop="34dp"
+            android:paddingBottom="8dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:ignore="UselessParent">
+
+                    <FrameLayout
+                        android:id="@+id/frameEnhancedVelocity"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView">
+
+                        <ImageView
+                            android:id="@+id/buttonEnhancedVelocity"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/skill_enhanced_velocity"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/enhanced_velocity"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root1"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameSwordMaster"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView">
+
+                        <ImageView
+                            android:id="@+id/buttonSwordMaster"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/skill_sword_master"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/sword_master"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root2"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameDaggerSpecialist"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView">
+
+                        <ImageView
+                            android:id="@+id/buttonDaggerSpecialist"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/skill_dagger_specialist"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/dagger_specialist"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView3"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root3"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameObstinateShot"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView">
+
+                        <ImageView
+                            android:id="@+id/buttonObstinateShot"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/skill_obstinate_shot"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/obstinate_shot"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView4"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root4"
+                        android:importantForAccessibility="no" />
+
+                    <FrameLayout
+                        android:id="@+id/frameCorrosiveShot"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView">
+
+                        <ImageView
+                            android:id="@+id/buttonCorrosiveShot"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/skill_corrosive_shot"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/corrosive_shot"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView5"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root1"
+                        android:importantForAccessibility="no" />
+
+                    <FrameLayout
+                        android:id="@+id/frameSphericalShieldBreaker"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView">
+
+                        <ImageView
+                            android:id="@+id/buttonSphericalShieldBreaker"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/skill_spherical_shield_breaker"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/spherical_shield_breaker"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView6"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root2"
+                        android:importantForAccessibility="no" />
+
+                    <FrameLayout
+                        android:id="@+id/frameVoraciousShot"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView">
+
+                        <ImageView
+                            android:id="@+id/buttonVoraciousShot"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/skill_voracious_shot"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/voracious_shot"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView7"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root3"
+                        android:importantForAccessibility="no" />
+
+                    <FrameLayout
+                        android:id="@+id/frameMonstrousVigour"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView">
+
+                        <ImageView
+                            android:id="@+id/buttonMonstrousVigour"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/skill_monstrous_vigour"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/monstrous_vigour"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView8"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root4"
+                        android:importantForAccessibility="no" />
+
+                    <FrameLayout
+                        android:id="@+id/frameChargeBlast"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView">
+
+                        <ImageView
+                            android:id="@+id/buttonChargeBlast"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/superskill_charge_blast"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/charge_blast"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView9"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="150dp">
+
+                    <FrameLayout
+                        android:id="@+id/frameFearlessJump"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonFearlessJump"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_fearless_jump" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/fearless_jump"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView10"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root1"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameVirtuousWizard"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonVirtuousWizard"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_virtuous_wizard" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/virtuous_wizard"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView11"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root2"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameThrowingLegend"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonThrowingLegend"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_throwing_legend" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/throwing_legend"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView12"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root3"
+                        android:importantForAccessibility="no"/>
+
+
+                    <FrameLayout
+                        android:id="@+id/frameGoldMagnet"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonGoldMagnet"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_gold_magnet" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/gold_magnet"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView13"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root4"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameFireproofSkin"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonFireproofSkin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_fireproof_skin" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/fireproof_skin"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView14"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root1"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameToxicHaze"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonToxicHaze"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_toxic_haze" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/toxic_haze"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView15"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root2"
+                        android:importantForAccessibility="no"
+                        tools:ignore="TooManyViews" />
+
+                    <FrameLayout
+                        android:id="@+id/frameShadowCamouflage"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonShadowCamouflage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_shadow_camouflage" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/shadow_camouflage"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView16"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root3"
+                        android:importantForAccessibility="no"
+                        tools:ignore="TooManyViews" />
+
+                    <FrameLayout
+                        android:id="@+id/frameMagicJump"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonMagicJump"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_magic_jump" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/magic_jump"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView17"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root4"
+                        android:importantForAccessibility="no"
+                        tools:ignore="TooManyViews" />
+
+                    <FrameLayout
+                        android:id="@+id/frameDarkTwin"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonDarkTwin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/superskill_dark_twin" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/dark_twin"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView18"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="300dp">
+
+                    <FrameLayout
+                        android:id="@+id/frameUnstoppableStrength"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonUnstoppableStrength"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_unstoppable_strength" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/unstoppable_strength"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView19"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root1"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameCrushingStrength"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonCrushingStrength"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_crushing_strength" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/crushing_strength"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView20"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root2"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameSlicingMaster"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonSlicingMaster"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_slicing_master" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/slicing_master"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView21"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root3"
+                        android:importantForAccessibility="no"/>
+
+
+                    <FrameLayout
+                        android:id="@+id/frameMonstrousMetabolism"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonMonstrousMetabolism"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_monstrous_metabolism" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/monstrous_metabolism"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView22"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root4"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameEnhancedVitality"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonEnhancedVitality"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_enhanced_vitality" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/enhanced_vitality"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView23"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root1"
+                        android:importantForAccessibility="no"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameUntouchableSkin"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonUntouchableSkin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_untouchable_skin" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/untouchable_skin"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView24"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root2"
+                        android:importantForAccessibility="no"
+                        tools:ignore="TooManyViews" />
+
+                    <FrameLayout
+                        android:id="@+id/frameConfidentMove"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonConfidentMove"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_confident_move" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/confident_move"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView25"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root3"
+                        android:importantForAccessibility="no"
+                        tools:ignore="TooManyViews" />
+
+                    <FrameLayout
+                        android:id="@+id/frameArcaneProtection"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonArcaneProtection"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/skill_arcane_protection" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/arcane_protection"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView26"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="66dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/root4"
+                        android:importantForAccessibility="no"
+                        tools:ignore="TooManyViews" />
+
+                    <FrameLayout
+                        android:id="@+id/frameThunderWave"
+                        android:layout_width="177dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tag="overlayView"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/buttonThunderWave"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:importantForAccessibility="no"
+                            app:srcCompat="@drawable/superskill_thunder_wave" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/thunder_wave"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="18dp"
+                            tools:ignore="RtlCompat" />
+
+                        <ImageView
+                            android:id="@+id/overlayView27"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/emoji_checkmark"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            android:layout_gravity="top|end"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+                </LinearLayout>
+
+        </RelativeLayout></HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btnDeselectAllSkills"
+        android:layout_width="180dp"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="640dp"
+        android:layout_marginEnd="225dp"
+        android:layout_marginBottom="20dp"
+        android:shadowColor="@color/black"
+        android:text="@string/reset_all"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/SelectSkills"
+        android:layout_width="180dp"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="640dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:shadowColor="@color/black"
+        android:text="@string/select_skills"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+</RelativeLayout >

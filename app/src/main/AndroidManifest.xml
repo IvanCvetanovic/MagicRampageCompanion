@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="MRC"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MagicRampageCompanion"
+        tools:targetApi="33">
+
+        <property
+            android:name="android.adservices.AD_SERVICES_CONFIG"
+            android:resource="@xml/gma_ad_services_config"
+            tools:replace="android:resource" />
+
+        <activity
+            android:name=".AchievementsPage"
+            android:exported="false" />
+        <activity
+            android:name=".About"
+            android:exported="false" />
+        <activity
+            android:name=".SurvivalDungeon6"
+            android:exported="false" />
+        <activity
+            android:name=".SurvivalDungeon5"
+            android:exported="false" />
+        <activity
+            android:name=".SurvivalDungeon4"
+            android:exported="false" />
+        <activity
+            android:name=".SurvivalDungeon3"
+            android:exported="false" />
+        <activity
+            android:name=".SurvivalDungeon2"
+            android:exported="false" />
+        <activity
+            android:name=".SurvivalDungeon1"
+            android:exported="false" />
+        <activity
+            android:name=".SkillPicker"
+            android:exported="false" />
+        <activity
+            android:name=".ItemSelection"
+            android:exported="false" />
+        <activity
+            android:name=".EquipmentTester"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon44"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon43Bonus"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon43"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon42Bonus"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon42"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon41"
+            android:exported="false" />
+        <activity
+            android:name=".Chapter5"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon40"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon39"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon38"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon37"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon36"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon35"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon34"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon33"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon32"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon31Bonus"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon31"
+            android:exported="false" />
+        <activity
+            android:name=".Chapter4"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon30"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon29Bonus"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon29"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon28"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon27Bonus"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon27"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon26"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon25"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon24"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon23Bonus"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon23"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon22"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon21"
+            android:exported="false" />
+        <activity
+            android:name=".Chapter3"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon20"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon19BonusButton"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon19"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon18"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon17Bonus"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon17"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon16"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon15"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon14"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon13Bonus"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon13"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon12"
+            android:exported="false" />
+        <activity
+            android:name=".SurvivalModeSelection"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon11Bonus"
+            android:exported="false" />
+        <activity
+            android:name=".Dungeon11"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Chapter2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon10"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon9"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon8"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon7Bonus"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon7"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon6"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon5Bonus"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon5"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon4"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon3Bonus"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon3"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Dungeon1"
+            android:exported="false"
+            android:parentActivityName=".Chapter1">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Chapter1"
+            android:exported="false"
+            android:parentActivityName=".ChapterSelection">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ChapterSelection"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity> <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9121645145370204~1734649227" />
+    </application>
+
+</manifest>
