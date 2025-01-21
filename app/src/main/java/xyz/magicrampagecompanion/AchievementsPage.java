@@ -109,12 +109,14 @@ public class AchievementsPage extends AppCompatActivity {
         achievements.add(new Achievement("It's time!", "Collect the 420 coins that float in the air at 3-6. Do it during a specific time of day.", Arrays.asList("", "", "Hippie Dragon Staff+")));
         achievements.add(new Achievement("Bullseye Wizard", "Score 990,000 or higher in the Darts game inside the Tavern.", Arrays.asList("", "", "Poisoned Dart")));
         achievements.add(new Achievement("Settle a score", "Score 35,000 or higher in the Salesman's Smackdown game inside the Tavern.", Arrays.asList("", "750")));
+        achievements.add(new Achievement("Meet me outside!", "Challenge a friend to a Duel match. You can add friends and challenge them to a Duel in the Tavern.", Arrays.asList("", "900")));
+        achievements.add(new Achievement("The taste of victory", "Win your first Duel. You can find opponents in the Tavern.", Arrays.asList("", "1200")));
         achievements.add(new Achievement("Veteran Rampager", "Be in top 500 list of best ranked players. You can see your current position in the ranking section of your inventory.", Arrays.asList("", "1800")));
         achievements.add(new Achievement("True hero", "Be in top 100 list of best ranked players. You can see your current position in the ranking section of your inventory.", Arrays.asList("", "2400")));
         achievements.add(new Achievement("We are the champions!", "Join the top 15 players featured in the Hall of Champions.", Arrays.asList("", "3600")));
         achievements.add(new Achievement("The number one!", "Get to the top of the Ranking leaderboard.", Arrays.asList("", "6000")));
         achievements.add(new Achievement("The End of the World", "Get to the surface for the first time in Dungeon -1.", Arrays.asList("", "", "Toxic Axe")));
-        achievements.add(new Achievement("A story to be told", "Listen to what the Dude has to say at 5-3 prologue about the turbulent portal crossing.", Arrays.asList("", "21000")));
+        achievements.add(new Achievement("A story to be told", "Listen to what the Dude has to say at 5-3 prologue about the turbulent portal crossing.", Arrays.asList("", "1500")));
         achievements.add(new Achievement("The Untold Story 3", "Listen to what the King ha to say in his lab at 5-3 prologue.", Arrays.asList("", "", "Moonlit Razor")));
         achievements.add(new Achievement("The ninth circle", "Get to the frozen underground chambers of the planet in Dungeon 5-4.", Arrays.asList("", "", "Winter WItch Armor")));
         achievements.add(new Achievement("The darkest side of the Moon", "Watch the bonus scene after finishing Dungeon 5-4 with all three diamonds.", Arrays.asList("", "", "Path of Exile", "+1")));

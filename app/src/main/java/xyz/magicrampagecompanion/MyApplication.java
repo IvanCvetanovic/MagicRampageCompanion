@@ -29,8 +29,6 @@ public class MyApplication extends Application implements Application.ActivityLi
     private Activity currentActivity;
     public long loadTime = 0;
 
-
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -50,12 +48,9 @@ public class MyApplication extends Application implements Application.ActivityLi
         appOpenAdManager.showAdIfAvailable(currentActivity);
     }
 
-
     private class AppOpenAdManager {
         private static final String LOG_TAG = "AppOpenAdManager";
-        // Testing ID: ca-app-pub-3940256099942544/9257395921
-        // Real ID: ca-app-pub-9121645145370204/9096469195
-        private static final String AD_UNIT_ID = "ca-app-pub-9121645145370204/9096469195";
+        private static final String AD_UNIT_ID = BuildConfig.realAPIKey;
 
         private AppOpenAd appOpenAd = null;
         private boolean isLoadingAd = false;
@@ -161,7 +156,6 @@ public class MyApplication extends Application implements Application.ActivityLi
 
     @Override
     public void onActivityStarted(Activity activity) {
-        // Updating the currentActivity only when an ad is not showing.
         if (!appOpenAdManager.isShowingAd) {
             currentActivity = activity;
         }

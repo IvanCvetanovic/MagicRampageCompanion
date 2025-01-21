@@ -12,10 +12,15 @@ android {
         applicationId "xyz.magicrampagecompanion"
         minSdk 29
         targetSdk 34
-        versionCode 5
-        versionName "0.8.2"
+        versionCode 6
+        versionName "0.8.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        buildConfigField "String", "realAPIKey", "\"${properties.getProperty("realAPIKey")}\""
+        buildConfigField "String", "testAPIKey", "\"${properties.getProperty("testAPIKey")}\""
     }
 
     buildTypes {

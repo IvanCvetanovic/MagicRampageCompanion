@@ -323,6 +323,7 @@ public class ItemSelection extends AppCompatActivity {
             ringList.add(createRing(R.string.ghostwalker, Elements.NEUTRAL, 50, 150, 0, 0, 80, 0, 0, 0, 0, 0, 0, R.drawable.ring_ghostwalker));
             ringList.add(createRing(R.string.trickytreat, Elements.NEUTRAL, 20, 0, 3, 3, 30, 20, 20, 20, 20, 20, 20, R.drawable.ring_trickytreat));
             ringList.add(createRing(R.string.jellybunny, Elements.NEUTRAL, 15, 0, 0, 10, 60, 0, 60, 70, 0, 0, 60, R.drawable.ring_jellybunny));
+            ringList.add(createRing(R.string.phoenix, Elements.FIRE, 40, 0, 0, 0, 100, 0, 0, 90, 0, 130, 90, R.drawable.ring_phoenix));
             mediaPlayerItemPick = MediaPlayer.create(this, R.raw.bag);
             ImageAdapter adapter = new ImageAdapter(ringList, new ImageAdapter.OnItemClickListener() {
                 @Override
