@@ -935,6 +935,35 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="the_word_of_the_wind">The Word of the Wind</string>
     <string name="enlightened_hammer">Enlightened Hammer</string>
     <string name="phoenix">Phoenix</string>
+    <string name="dancers_raiment_tiktok">Dancers Raiment TikTok</string>
+    <string name="storm">Storm</string>
+    <string name="tunic_of_hellish_illusions">Tunic of Hellish Illusions</string>
+    <string name="gatekeepers_bionic_arm">Gatekeepers Bionic Arm</string>
+    <string name="robe_of_eternal_fire">Robe of Eternal Fire</string>
+    <string name="scarlet_shadowweaver_garb">Scarlet Shadowweaver Garb</string>
+    <string name="unholy_storm">Unholy Storm</string>
+    <string name="innkeepers_costume">Innkeepers Costume</string>
+    <string name="greenfang_ensemble">Greenfang Ensemble</string>
+    <string name="golden_guardian">Golden Guardian</string>
+    <string name="magic_cog">Magic Cog</string>
+    <string name="nightshade">Nightshade</string>
+    <string name="pirouette_pointe">Pirouette Pointe</string>
+    <string name="windpearl_axe">Wind-Pearl Axe</string>
+    <string name="wicked_skewer">Wicked Skewer</string>
+    <string name="ruby_queens_spear">Ruby Queens Spear</string>
+    <string name="onyx_queens_lance">Onyx Queens Lance</string>
+    <string name="arachnid_sword">Arachnid Sword</string>
+    <string name="unleashed_kraken">Unleashed Kraken</string>
+    <string name="nightfall">Nightfall</string>
+    <string name="voidcaller_staff">Voidcaller Staff</string>
+    <string name="bunnyhop_dagger">Bunnyhop Dagger</string>
+    <string name="poisoned_dart">Poisoned Dart</string>
+    <string name="sapphire_pawns_dagger">Sapphire Pawns Dagger</string>
+    <string name="toxic_dual_dagger">Toxic Dual Dagger</string>
+    <string name="all_seeing_cleaver">All Seeing Cleaver</string>
+    <string name="ruby_pawns_edge">Ruby Pawns Edge</string>
+    <string name="shooting_star_shuriken">Shooting Star Shuriken</string>
+    <string name="tome_of_the_sands">Tome of the Sands</string>
 
 
 </resources>
