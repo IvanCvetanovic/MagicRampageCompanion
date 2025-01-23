@@ -28,11 +28,12 @@
         android:id="@+id/imageView8"
         android:layout_width="314dp"
         android:layout_height="266dp"
-        android:layout_marginBottom="420dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.116"
         app:srcCompat="@drawable/profses_author"
         tools:ignore="ContentDescription" />
 
@@ -49,10 +50,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.775" />
+        app:layout_constraintVertical_bias="0.677" />
 
     <ImageButton
         android:id="@+id/discordButton"
@@ -69,7 +70,7 @@
         app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.446" />
+        app:layout_constraintVertical_bias="0.344" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

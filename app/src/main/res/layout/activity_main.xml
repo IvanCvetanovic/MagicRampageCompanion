@@ -71,7 +71,7 @@
         android:text="@string/about"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
@@ -86,7 +86,7 @@
         android:text="@string/achievements"
         app:layout_constraintBottom_toTopOf="@+id/AboutButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
@@ -101,7 +101,7 @@
         android:text="@string/survival_mode"
         app:layout_constraintBottom_toTopOf="@+id/EquipmentTesterButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
