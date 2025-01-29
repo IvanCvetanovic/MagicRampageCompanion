@@ -14,7 +14,8 @@
         android:textStyle="bold"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginEnd="16dp"
+        android:textColor="@android:color/white" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -30,7 +31,8 @@
             android:textStyle="bold"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:id="@+id/achievementDescriptionTextView"
@@ -39,7 +41,8 @@
             android:textSize="14sp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:id="@+id/rewardsTextView"
@@ -47,7 +50,8 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:layout_gravity="center"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@android:color/white"/>
 
     </LinearLayout>
 

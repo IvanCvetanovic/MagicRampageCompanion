@@ -481,7 +481,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
 
     <string name="dungeon44bossfighttext2">
         <font color="#FF0000">Warning:</font> If you do not deal enough damage until the sliding icicle breaks, the boss will start throwing boulders at you, which is pretty hard to dodge.\n\n
-        When the boss enters the second stage his sliding icicle moves faster, his falling icicles now target your current position and he throws multiple boulders.\n\n
+        When the boss enters the second stage his sliding icicle move faster, his falling icicles now target your current position and he throws multiple boulders.\n\n
     </string>
 
     <string name="enhanced_velocity">Enhanced Velocity</string>
@@ -964,6 +964,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="ruby_pawns_edge">Ruby Pawns Edge</string>
     <string name="shooting_star_shuriken">Shooting Star Shuriken</string>
     <string name="tome_of_the_sands">Tome of the Sands</string>
+    <string name="choose_the_chapter">Choose the Chapter!</string>
 
 
 </resources>

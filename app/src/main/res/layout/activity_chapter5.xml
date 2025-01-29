@@ -86,8 +86,8 @@
 
         <ImageButton
             android:id="@+id/Dungeon44Button"
-            android:layout_width="510dp"
-            android:layout_height="610dp"
+            android:layout_width="810dp"
+            android:layout_height="910dp"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"

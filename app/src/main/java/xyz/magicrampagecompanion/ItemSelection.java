@@ -558,8 +558,8 @@ public class ItemSelection extends AppCompatActivity {
         } else if (buttonId == 4) {
             Log.d("ItemSelection", "Class button clicked");
 
-            characterList.add(createCharacterClass(ClassNames.ROGUE, 0, 0, -10, 45, -30, -30, 0, 0, 6, 5, R.drawable.class_rogue));
-            characterList.add(createCharacterClass(ClassNames.THIEF, 0, 0, 20, 30, 30, 0, 0, -30, 6, 7, R.drawable.class_thief));
+            characterList.add(createCharacterClass(ClassNames.ROGUE, 0, 0, -10, 50, -30, -30, 0, 0, 6, 5, R.drawable.class_rogue));
+            characterList.add(createCharacterClass(ClassNames.THIEF, 0, 0, 20, 40, 20, 0, 0, -30, 6, 7, R.drawable.class_thief));
             characterList.add(createCharacterClass(ClassNames.MAGE, 0, 30, 0, 0, -30, 20, 0, 30, 2, 4, R.drawable.class_mage));
             characterList.add(createCharacterClass(ClassNames.BLACK_MAGE, 0, 30, 0, 20, -30, 0, 0, 30, 4, 2, R.drawable.class_black_mage));
             characterList.add(createCharacterClass(ClassNames.HIGH_MAGE, 0, 35, 20, 0, -30, 0, 0, 30, 6, 4, R.drawable.class_high_mage));
@@ -569,7 +569,7 @@ public class ItemSelection extends AppCompatActivity {
             characterList.add(createCharacterClass(ClassNames.ELITE_WARRIOR, 40, 0, 35, 0, 35, 35, 0, -40, 0, 5, R.drawable.class_elite_warrior));
             characterList.add(createCharacterClass(ClassNames.PALADIN, 20, 20, 20, 0, 20, 20, 0, 0, 0, 0, R.drawable.class_paladin));
             characterList.add(createCharacterClass(ClassNames.RANGER, 20, 0, 35, 0, 0, 25, 25, 0, 0, 5, R.drawable.class_ranger));
-            characterList.add(createCharacterClass(ClassNames.WITCHDOCTOR, 0, 30, 0, 25, 0, 0, 0, 25, 0, 6, R.drawable.class_witchdoctor));
+            characterList.add(createCharacterClass(ClassNames.WITCHDOCTOR, 0, 30, 0, 25, 0, 0, 0, 25, 5, 6, R.drawable.class_witchdoctor));
             characterList.add(createCharacterClass(ClassNames.DRUID, 0, 30, 0, 0, 0, 0, 30, 20, 3, 6, R.drawable.class_druid));
             mediaPlayerItemPick = MediaPlayer.create(this, R.raw.bag);
             ImageAdapter adapter = new ImageAdapter(characterList, new ImageAdapter.OnItemClickListener() {
