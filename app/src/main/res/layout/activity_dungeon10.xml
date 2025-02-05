@@ -20,13 +20,13 @@
             android:layout_height="wrap_content"
             android:text="Dungeon 10"
             android:textColor="@color/white"
-            android:textSize="32dp"
+            android:textSize="32sp"
             android:textStyle="bold"
             android:shadowRadius="10"
             android:shadowColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/Dungeon9Secrets"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.313" />
@@ -37,13 +37,13 @@
             android:layout_height="wrap_content"
             android:text="Secret Areas:"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:shadowRadius="10"
             android:shadowColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
@@ -56,7 +56,7 @@
             android:background="@drawable/roundcorner"
             app:layout_constraintBottom_toTopOf="@+id/Dungeon1Info"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
@@ -69,13 +69,13 @@
             android:layout_marginBottom="4dp"
             android:text="Tips and Tricks:"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:shadowRadius="10"
             android:shadowColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/TipsandTricksText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.054"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -87,10 +87,10 @@
             android:shadowRadius="10"
             android:text="@string/dungeon10text"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -101,11 +101,11 @@
             android:shadowRadius="10"
             android:text="Bossfight Tips and Tricks"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/imageView4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.117"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
@@ -117,7 +117,7 @@
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/dungeon10boss" />
 
@@ -130,7 +130,7 @@
             android:shadowColor="@color/black"
             android:text="@string/dungeon10bossfighttext"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

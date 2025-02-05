@@ -20,33 +20,32 @@
             android:layout_height="wrap_content"
             android:text="Dungeon 43 Bonus"
             android:textColor="@color/white"
-            android:textSize="32dp"
+            android:textSize="32sp"
+
             android:textStyle="bold"
             android:shadowRadius="10"
             android:shadowColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/Dungeon9Secrets"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.313" />
+            app:layout_constraintVertical_bias="0.5" />
 
         <TextView
             android:id="@+id/Dungeon9Secrets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
             android:text="Tutorial:"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.037"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -56,10 +55,8 @@
             android:background="@drawable/roundcorner"
             app:layout_constraintBottom_toTopOf="@+id/TipsandTricksText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.903"
             app:srcCompat="@drawable/dungeon43bonus1" />
 
         <TextView
@@ -71,10 +68,10 @@
             android:shadowRadius="10"
             android:text="@string/dungeon43bonustext1"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
@@ -92,15 +89,14 @@
             android:id="@+id/textView4"
             android:layout_width="350dp"
             android:layout_height="80dp"
+            android:layout_marginBottom="180dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
             android:text="@string/dungeon43bonustext2"
             android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_marginBottom="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
