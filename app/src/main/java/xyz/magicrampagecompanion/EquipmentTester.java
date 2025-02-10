@@ -588,96 +588,100 @@ public class EquipmentTester extends AppCompatActivity {
             // Armor magic bonus
             if (selectedArmor != null && selectedWeapon!=null && !selectedWeapon.getElement().equals(Elements.NEUTRAL)) {
                 currentDamage = (currentDamage * (1 + selectedArmor.getMagic() / 100.0));
-                Log.d("EquipmentTester", "Weapon Bonus: Magic Bonus Added: " + currentDamage);
-            }
-            // Ring magic bonus
-            if (selectedRing != null  && selectedWeapon!=null && !selectedWeapon.getElement().equals(Elements.NEUTRAL)) {
-                currentDamage = (currentDamage * (1 + selectedRing.getMagic() / 100.0));
-                Log.d("EquipmentTester", "Ring Bonus: Magic Bonus Added: " + currentDamage);
+                Log.d("Equipmenttester", "Armor Magic Bonus: " + selectedArmor.getMagic());
+                Log.d("EquipmentTester", "Armor Bonus: Magic Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
             }
 
             // Armor weapon bonus
             if (selectedArmor != null && selectedWeapon != null) {
                 if (selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
                     currentDamage = (currentDamage * (1 + selectedArmor.getSword() / 100.0));
-                    Log.d("EquipmentTester", "Weapon Bonus: Sword Bonus Added: " + currentDamage);
+                    Log.d("Equipmenttester", "Armor Sword Bonus:" + selectedArmor.getSword());
+                    Log.d("EquipmentTester", "Armor Bonus: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
                     currentDamage = (currentDamage * (1 + selectedArmor.getDagger() / 100.0));
-                    Log.d("EquipmentTester", "Weapon Bonus: Dagger Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Armor Bonus: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
                     currentDamage = (currentDamage * (1 + selectedArmor.getStaff() / 100.0));
-                    Log.d("EquipmentTester", "Weapon Bonus: Staff Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Armor Bonus: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.AXE)) {
                     currentDamage = (currentDamage * (1 + selectedArmor.getAxe() / 100.0));
-                    Log.d("EquipmentTester", "Weapon Bonus: Axe Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Armor Bonus: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
                     currentDamage = (currentDamage * (1 + selectedArmor.getHammer() / 100.0));
-                    Log.d("EquipmentTester", "Weapon Bonus: Hammer Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Armor Bonus: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
                     currentDamage = (currentDamage * (1 + selectedArmor.getSpear() / 100.0));
-                    Log.d("EquipmentTester", "Weapon Bonus: Spear Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Armor Bonus: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
             }
+
+            // Ring magic bonus
+            if (selectedRing != null  && selectedWeapon!=null && !selectedWeapon.getElement().equals(Elements.NEUTRAL)) {
+                currentDamage = (currentDamage * (1 + selectedRing.getMagic() / 100.0));
+                Log.d("EquipmentTester", "Ring Bonus: Magic Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+            }
+
             // Ring weapon bonus
             if (selectedRing != null && selectedWeapon != null) {
                 if (selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
                     currentDamage = (currentDamage * (1 + selectedRing.getSword() / 100.0));
-                    Log.d("EquipmentTester", "Ring Weapon Bonus: Sword Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Ring Bonus: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
                     currentDamage = (currentDamage * (1 + selectedRing.getDagger() / 100.0));
-                    Log.d("EquipmentTester", "Ring Weapon Bonus: Dagger Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Ring Bonus: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
                     currentDamage = (currentDamage * (1 + selectedRing.getStaff() / 100.0));
-                    Log.d("EquipmentTester", "Ring Weapon Bonus: Staff Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Ring Bonus: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.AXE)) {
                     currentDamage = (currentDamage * (1 + selectedRing.getAxe() / 100.0));
-                    Log.d("EquipmentTester", "Ring Weapon Bonus: Axe Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Ring Bonus: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
                     currentDamage = (currentDamage * (1 + selectedRing.getHammer() / 100.0));
-                    Log.d("EquipmentTester", "Ring Weapon Bonus: Hammer Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Ring Bonus: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
                     currentDamage = (currentDamage * (1 + selectedRing.getSpear() / 100.0));
-                    Log.d("EquipmentTester", "Ring Weapon Bonus: Spear Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Ring Bonus: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
             }
 
-            // Class Bonuses
+            // Class Boni
             if (selectedClass != null && selectedWeapon != null) {
                 currentDamage = (currentDamage * (1 + selectedClass.getMagicBonus() / 100.0));
-                Log.d("EquipmentTester", "Class: Magic Bonus Added: " + currentDamage);
+                Log.d("EquipmentTester", "Class Bonus: Magic Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 if (selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
                     currentDamage = (currentDamage * (1 + selectedClass.getSwordBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class: Sword Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Class Bonus: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
                     currentDamage = (currentDamage * (1 + selectedClass.getDaggerBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class: Dagger Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Class Bonus: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
                     currentDamage = (currentDamage * (1 + selectedClass.getStaffBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class: Staff Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Class Bonus: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.AXE)) {
                     currentDamage = (currentDamage * (1 + selectedClass.getAxeBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class: Axe Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Class Bonus: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
                     currentDamage = (currentDamage * (1 + selectedClass.getHammerBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class: Hammer Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Class Bonus: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 else if (selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
                     currentDamage = (currentDamage * (1 + selectedClass.getSpearBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class: Spear Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Class Bonus: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
             }
 
@@ -685,43 +689,45 @@ public class EquipmentTester extends AppCompatActivity {
             if (skillsPicked != null) {
                 if (skillsPicked[1] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
                     currentDamage = (currentDamage * 1.2);
-                    Log.d("EquipmentTester", "Skill Tree: Sword Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Skill Tree: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 if (skillsPicked[2] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
-                    currentDamage = (currentDamage * 1.3);
-                    Log.d("EquipmentTester", "Skill Tree: Dagger Bonus Added: " + currentDamage);
+                    currentDamage = (currentDamage * 1.2);
+                    Log.d("EquipmentTester", "Skill Tree: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 if (skillsPicked[10] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
                     currentDamage = (currentDamage * 1.25);
-                    Log.d("EquipmentTester", "Skill Tree: Staff Bonus Added: " + currentDamage);
+                    Log.d("EquipmentTester", "Skill Tree: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 if (skillsPicked[11] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
-                    currentDamage = (currentDamage * 1.35);
-                    Log.d("EquipmentTester", "Skill Tree: Spear Bonus Added: " + currentDamage);
+                    currentDamage = (currentDamage * 1.40);
+                    Log.d("EquipmentTester", "Skill Tree: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 if (skillsPicked[19] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
-                    currentDamage = (currentDamage * 1.45);
-                    Log.d("EquipmentTester", "Skill Tree: Hammer Bonus Added: " + currentDamage);
+                    currentDamage = (currentDamage * 1.5);
+                    Log.d("EquipmentTester", "Skill Tree: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
                 if (skillsPicked[20] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.AXE)) {
-                    currentDamage = (currentDamage * 1.3);
-                    Log.d("EquipmentTester", "Skill Tree: Axe Bonus Added: " + currentDamage);
+                    currentDamage = (currentDamage * 1.45);
+                    Log.d("EquipmentTester", "Skill Tree: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
             }
 
-            // Armor - Weapon: Same element bonus
+            // Armor + Weapon: Same element bonus
             if (selectedArmor != null && selectedWeapon != null && selectedWeapon.getElement().equals(selectedArmor.getElement()))
             {
                 currentDamage =  (currentDamage * 1.25);
-                Log.d("EquipmentTester", "Armor and Weapon Same Element Bonus Added: " + currentDamage);
+                Log.d("EquipmentTester", "Armor and Weapon Same Element Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
             }
 
-            // Ring - Weapon: Same element Bonus
+            // Ring + Weapon: Same element Bonus
             if (selectedWeapon != null && selectedRing != null && selectedWeapon.getElement().equals(selectedRing.getElement()))
             {
                 currentDamage = (currentDamage * 1.2);
-                Log.d("EquipmentTester", "Ring and Weapon Same Element Bonus Added: " + currentDamage);
+                Log.d("EquipmentTester", "Ring and Weapon Same Element Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
             }
+
+            currentDamage = Math.ceil(currentDamage);
 
             Log.d("EquipmentTester", "Current Damage: " + currentDamage);
             Log.d("EquipmentTester", "Upgrades: " + currentWeaponUpgrades);
@@ -750,15 +756,15 @@ public class EquipmentTester extends AppCompatActivity {
 
             double helpArmorSpeed = 0;
             if(selectedArmor!=null)
-                helpArmorSpeed = selectedArmor.getSpeed() /100.0 +1;
+                helpArmorSpeed = selectedArmor.getSpeed() /100.0 + 1;
 
             double helpWeaponSpeed = 0;
             if(selectedWeapon!=null)
-                helpWeaponSpeed = selectedWeapon.getSpeed() /100.0 +1;
+                helpWeaponSpeed = selectedWeapon.getSpeed() /100.0 + 1;
 
             double helpRingSpeed = 0;
             if(selectedRing!=null)
-                helpRingSpeed = selectedRing.getSpeed() /100.0 +1;
+                helpRingSpeed = selectedRing.getSpeed() /100.0 + 1;
 
             currentSpeed = (int) ((helpArmorSpeed * helpWeaponSpeed * helpRingSpeed)*100-100);
 
@@ -853,10 +859,10 @@ public class EquipmentTester extends AppCompatActivity {
                 spikeValueTextView.setText(spannable);
             }
 
-            currentRating = ((currentDamage >= 10000.0 ? currentDamage/5000.0 : 0)
-                    + (currentArmor >= 200.0 ? currentArmor/200.0 : 0)
-                    + (currentSpeed >= 20.0 ? currentSpeed/20.0 : 0)
-                    + (currentJumpImpulse >= 20.0 ? currentJumpImpulse/20.0 : 0)
+            currentRating = ((currentDamage >= 10000.0 ? currentDamage/4000.0 : 0)
+                    + (currentArmor >= 200.0 ? currentArmor/150.0 : 0)
+                    + (currentSpeed >= 20.0 ? currentSpeed/15.0 : 0)
+                    + (currentJumpImpulse >= 20.0 ? currentJumpImpulse/15.0 : 0)
                     + (skillsPicked != null ? ((skillsPicked[3] ? 0.1 : 0) + (skillsPicked[4] ? 0.1 : 0)  +(skillsPicked[5] ? 0.1 : 0)  + (skillsPicked[6] ? 0.1 : 0)
             + (skillsPicked[7] ? 0.1 : 0)+ (skillsPicked[8] ? 0.1 : 0) +(skillsPicked[12] ? 0.1 : 0) +(skillsPicked[14] ? 0.1 : 0)
             + (skillsPicked[15] ? 0.1 : 0) + (skillsPicked[16] ? 0.1 : 0) + (skillsPicked[17] ? 0.1 : 0)+ (skillsPicked[21] ? 0.1 : 0)
