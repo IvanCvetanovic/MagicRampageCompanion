@@ -713,6 +713,7 @@ public class EquipmentTester extends AppCompatActivity {
                 }
             }
 
+
             // Armor + Weapon: Same element bonus
             if (selectedArmor != null && selectedWeapon != null && selectedWeapon.getElement().equals(selectedArmor.getElement()))
             {
@@ -734,15 +735,35 @@ public class EquipmentTester extends AppCompatActivity {
             TextView damageValueTextView = findViewById(R.id.currentDamage);
             damageValueTextView.setText(getString(R.string.damage_in_calculation) + (int) currentDamage);
 
-            currentArmor = (
-                    (
-                            (selectedArmor != null ? (selectedArmor.getMinArmor() + ((selectedArmor.getMaxArmor() - selectedArmor.getMinArmor()) / ((double) selectedArmor.getUpgrades())) * currentArmorUpgrades) : 0)
-                                    + (selectedRing != null ? selectedRing.getArmor() : 0))
-                            * (selectedRing != null ? 1 + (selectedRing.getArmorBonus() / 100.0) : 1)
-                            * (selectedWeapon != null ? 1 + (selectedWeapon.getArmorBonus() / 100.0) : 1)
-                            * (selectedClass != null ? 1 + (selectedClass.getArmorBonus() / 100.0) : 1)
-                            * (skillsPicked != null && skillsPicked[18] && selectedArmor != null ? 1.25 : 1)
-            );
+            if (selectedArmor.getUpgrades() == 0)
+                selectedArmor.setUpgrades(1);
+
+            currentArmor = (selectedArmor != null
+                    ? (selectedArmor.getMinArmor() + ((selectedArmor.getMaxArmor() - selectedArmor.getMinArmor())
+                    / ((double) selectedArmor.getUpgrades())) * currentArmorUpgrades) : 0);
+
+            Log.d("EquipmentTester", "Starting armor for current upgrades: " + currentArmor);
+
+            currentArmor += (selectedRing != null ? selectedRing.getArmor() : 0);
+
+            Log.d("EquipmentTester", "Adding Ring Armor:  " + currentArmor);
+
+            currentArmor *= (selectedRing != null ? 1 + (selectedRing.getArmorBonus() / 100.0) : 1);
+
+            Log.d("EquipmentTester", "Adding Ring Armor Bonus: " + currentArmor);
+
+            currentArmor *= (selectedWeapon != null ? 1 + (selectedWeapon.getArmorBonus() / 100.0) : 1);
+
+            Log.d("EquipmentTester", "Adding Weapon Armor Bonus: " + currentArmor);
+
+            currentArmor *= (selectedClass != null ? 1 + (selectedClass.getArmorBonus() / 100.0) : 1);
+
+            Log.d("EquipmentTester", "Adding Class Armor Bonus: " + currentArmor);
+
+            currentArmor *= (skillsPicked != null && skillsPicked[18] && selectedArmor != null ? 1.25 : 1);
+
+            Log.d("EquipmentTester", "Adding Skill Tree Armor Bonus: " + currentArmor);
+
 
             if(currentArmor >= 100)
                 currentArmor+=1;

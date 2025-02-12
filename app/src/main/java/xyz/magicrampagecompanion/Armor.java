@@ -102,6 +102,12 @@ public class Armor implements Parcelable {
         return picture;
     }
 
+    public double setUpgrades(int upgradeValue)
+    {
+        upgrades = upgradeValue;
+        return 0;
+    }
+
     @Override
     public int describeContents() {
         return 0;
