@@ -581,6 +581,9 @@ public class EquipmentTester extends AppCompatActivity {
         @SuppressLint("SetTextI18n")
         private void calculateStats()
         {
+            if(selectedArmor == null || selectedWeapon == null || selectedRing == null || selectedClass == null || skillsPicked == null)
+                return;
+
             Log.d("EquipmentTester", "Calculating the stats!");
             currentDamage = selectedWeapon != null ? (selectedWeapon.getMinDamage() + ((selectedWeapon.getMaxDamage() - selectedWeapon.getMinDamage()) / ((double) selectedWeapon.getUpgrades())) * currentWeaponUpgrades) : 0;
 
@@ -735,7 +738,7 @@ public class EquipmentTester extends AppCompatActivity {
             TextView damageValueTextView = findViewById(R.id.currentDamage);
             damageValueTextView.setText(getString(R.string.damage_in_calculation) + (int) currentDamage);
 
-            if (selectedArmor.getUpgrades() == 0)
+            if(selectedArmor != null && selectedArmor.getUpgrades() == 0)
                 selectedArmor.setUpgrades(1);
 
             currentArmor = (selectedArmor != null

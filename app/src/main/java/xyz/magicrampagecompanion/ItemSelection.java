@@ -424,7 +424,7 @@ public class ItemSelection extends AppCompatActivity {
             staffList.add(createWeapon(R.string.cthulhu_staff, WeaponTypes.STAFF, Elements.DARKNESS, 77, 354, 15, 30, 0, 3, R.drawable.staff_cthulhu_staff));
             staffList.add(createWeapon(R.string.death_scythe, WeaponTypes.STAFF, Elements.DARKNESS, 80, 368, 15, 0, 4, 1, R.drawable.staff_death_scythe));
             staffList.add(createWeapon(R.string.water_staff, WeaponTypes.STAFF, Elements.WATER, 80, 368, 15, 0, 3, 3, R.drawable.staff_water_staff));
-            staffList.add(createWeapon(R.string.death_scythe, WeaponTypes.STAFF, Elements.DARKNESS, 85, 391, 15, 0, 4, 3, R.drawable.staff_death_scythe));
+            staffList.add(createWeapon(R.string.death_scythe_plus, WeaponTypes.STAFF, Elements.DARKNESS, 85, 391, 15, 0, 4, 3, R.drawable.staff_death_scythe));
             staffList.add(createWeapon(R.string.dragonskull_staff, WeaponTypes.STAFF, Elements.FIRE, 90, 414, 15, 0, 4, 2, R.drawable.staff_dragonskull_staff));
             staffList.add(createWeapon(R.string.golden_dragon_staff, WeaponTypes.STAFF, Elements.LIGHT, 90, 414, 15, 25, 5, 3, R.drawable.staff_golden_dragon_staff));
             staffList.add(createWeapon(R.string.spider_staff, WeaponTypes.STAFF, Elements.DARKNESS, 90, 414, 15, 0, 4, 4, R.drawable.staff_spider_staff));
@@ -610,7 +610,25 @@ public class ItemSelection extends AppCompatActivity {
     private Weapon createWeapon(int nameResId, WeaponTypes type, Elements element, int minDamage, int maxDamage, int upgrades, int armorBonus, int speed, int jump, int imageResourceId) {
         String name = getResources().getString(nameResId);
         Bitmap weaponBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
-        return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, weaponBitmap);
+        if(type.equals(WeaponTypes.HAMMER) || type.equals(WeaponTypes.AXE)) {
+            if(weaponBitmap.getWidth() == weaponBitmap.getHeight()) {
+                Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, 300, 300, true);
+                return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
+            }
+            Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, weaponBitmap.getWidth(), weaponBitmap.getHeight(), true);
+            return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
+        }
+        else if (type.equals(WeaponTypes.STAFF)) {
+            Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, 300, 300, true);
+            return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
+        }
+        else if (type.equals(WeaponTypes.SPEAR) && weaponBitmap.getHeight() == 768) {
+            Log.d("EquipmentTester", "Spear name: " + name + " Spear height: " + weaponBitmap.getHeight());
+            Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, 100, 500, true);
+            return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
+        }
+        else
+            return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, weaponBitmap);
     }
 
     private CharacterClass createCharacterClass(ClassNames name, int armorBonus, int magicBonus, int swordBonus, int daggerBonus, int hammerBonus, int axeBonus, int spearBonus, int staffBonus, int speedBonus, int jumpImpulseBonus, int imageResourceId) {
