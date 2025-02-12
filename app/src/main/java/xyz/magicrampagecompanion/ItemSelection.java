@@ -262,7 +262,6 @@ public class ItemSelection extends AppCompatActivity {
             armorList.add(createArmor(R.string.tunic_of_the_relentless, Elements.WATER, true, 38, 174, 15, 6, 4, 155, 70, 80, 0, 0, 0, 90, R.drawable.armor_tunic_of_the_relentless));
             armorList.add(createArmor(R.string.special_dragon_vest, Elements.FIRE, false, 180, 180, 0, 6, 4, 80, 70, 90, 70, 90, 0, 0, R.drawable.armor_dragon_vest));
             armorList.add(createArmor(R.string.iron_widow, Elements.NEUTRAL, true, 56, 190, 10, 0, 0, 70, 140, 0, 0, 180, 140, 160, R.drawable.armor_iron_widow));
-            armorList.add(createArmor(R.string.unholy_storm, Elements.WATER, false, 42, 193, 15, 6, 4, 150, 0, 80, 80, 0, 0, 80, R.drawable.armor_unholy_storm));
             armorList.add(createArmor(R.string.umbranian_tanker, Elements.NEUTRAL, false, 80, 195, 6, 3, 2, 0, 60, 0, 0, 60, 60, 0, R.drawable.armor_umbranian_tanker));
             armorList.add(createArmor(R.string.time_patroller_suit, Elements.NEUTRAL, false, 60, 203, 10, 4, 4, 300, 0, 0, 0, 0, 0, 0, R.drawable.armor_time_patroller_suit));
             armorList.add(createArmor(R.string.easterminator, Elements.NEUTRAL, false, 46, 211, 15, 5, 18, 50, 50, 0, 50, 0, 50, 0, R.drawable.armor_easterminator));
@@ -618,12 +617,11 @@ public class ItemSelection extends AppCompatActivity {
             Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, weaponBitmap.getWidth(), weaponBitmap.getHeight(), true);
             return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
         }
-        else if (type.equals(WeaponTypes.STAFF)) {
+        else if (type.equals(WeaponTypes.STAFF) && weaponBitmap.getWidth() == weaponBitmap.getHeight()) {
             Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, 300, 300, true);
             return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
         }
         else if (type.equals(WeaponTypes.SPEAR) && weaponBitmap.getHeight() == 768) {
-            Log.d("EquipmentTester", "Spear name: " + name + " Spear height: " + weaponBitmap.getHeight());
             Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, 100, 500, true);
             return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
         }

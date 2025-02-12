@@ -581,9 +581,6 @@ public class EquipmentTester extends AppCompatActivity {
         @SuppressLint("SetTextI18n")
         private void calculateStats()
         {
-            if(selectedArmor == null || selectedWeapon == null || selectedRing == null || selectedClass == null || skillsPicked == null)
-                return;
-
             Log.d("EquipmentTester", "Calculating the stats!");
             currentDamage = selectedWeapon != null ? (selectedWeapon.getMinDamage() + ((selectedWeapon.getMaxDamage() - selectedWeapon.getMinDamage()) / ((double) selectedWeapon.getUpgrades())) * currentWeaponUpgrades) : 0;
 
@@ -767,9 +764,7 @@ public class EquipmentTester extends AppCompatActivity {
 
             Log.d("EquipmentTester", "Adding Skill Tree Armor Bonus: " + currentArmor);
 
-
-            if(currentArmor >= 100)
-                currentArmor+=1;
+            currentArmor = Math.round(currentArmor);
 
             if(selectedArmor != null && selectedArmor.getUpgrades() == 0)
                 currentArmor=selectedArmor.getMinArmor();
