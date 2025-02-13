@@ -581,6 +581,9 @@ public class EquipmentTester extends AppCompatActivity {
         @SuppressLint("SetTextI18n")
         private void calculateStats()
         {
+            if (currentWeaponUpgrades == 0)
+                currentWeaponUpgrades = 1;
+
             Log.d("EquipmentTester", "Calculating the stats!");
             currentDamage = selectedWeapon != null ? (selectedWeapon.getMinDamage() + ((selectedWeapon.getMaxDamage() - selectedWeapon.getMinDamage()) / ((double) selectedWeapon.getUpgrades())) * currentWeaponUpgrades) : 0;
 
