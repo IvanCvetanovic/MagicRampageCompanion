@@ -69,7 +69,6 @@ public class MyApplication extends Application implements Application.ActivityLi
             AdRequest request = new AdRequest.Builder().build();
             AppOpenAd.load(
                     context, AD_UNIT_ID, request,
-                    AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
                     new AppOpenAd.AppOpenAdLoadCallback() {
                         @Override
                         public void onAdLoaded(AppOpenAd ad) {
@@ -87,7 +86,7 @@ public class MyApplication extends Application implements Application.ActivityLi
                             isLoadingAd = false;
                         }
                     });
-    }
+        }
 
         public void showAdIfAvailable(
                 @NonNull final Activity activity){

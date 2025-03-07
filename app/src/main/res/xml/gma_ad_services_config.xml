@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gma-ad-services-config>
+    <app-settings>
+        <app-setting allow_ad_personalization_signals="true" />
+    </app-settings>
+</gma-ad-services-config>

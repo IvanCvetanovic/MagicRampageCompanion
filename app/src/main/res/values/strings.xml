@@ -244,7 +244,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
 
     <string name="dungeon22text">
         All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
-        The first secret area is in the upper left corner immediately when you start the dungeon.\n\n
+        The first secret area is in the upper left corner immediately when you start the dungeon. The second on is on the top of the almost invisible platforms.\n\n
         Be sure to have at least one golden key. You will need it to open one unofficial secret area, which can be found above the exit of the dungeon.\n\n
         Using weapons with big hit-box will help you in killing the exploding spiders, otherwise you can just run away from them and wait for the explosion.\n\n
     </string>
@@ -935,7 +935,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="the_word_of_the_wind">The Word of the Wind</string>
     <string name="enlightened_hammer">Enlightened Hammer</string>
     <string name="phoenix">Phoenix</string>
-    <string name="dancers_raiment_tiktok">Dancers Raiment TikTok</string>
+    <string name="dancers_raiment">Dancers Raiment</string>
     <string name="storm">Storm</string>
     <string name="tunic_of_hellish_illusions">Tunic of Hellish Illusions</string>
     <string name="gatekeepers_bionic_arm">Gatekeepers Bionic Arm</string>
@@ -965,6 +965,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="shooting_star_shuriken">Shooting Star Shuriken</string>
     <string name="tome_of_the_sands">Tome of the Sands</string>
     <string name="choose_the_chapter">Choose the Chapter!</string>
+    <string name="dark_lord_set_plus">Dark Lord Set+</string>
 
 
 </resources>

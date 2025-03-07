@@ -167,7 +167,7 @@ public class ItemSelection extends AppCompatActivity {
         if (buttonId == 1) {
             Log.d("ItemSelection", "Armor button clicked");
             armorList.add(createArmor(R.string.jumpman_suit, Elements.AIR, false, 0, 0, 0, -20, 28, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_jumpman_suit));
-            armorList.add(createArmor(R.string.dancers_raiment_tiktok, Elements.AIR, false, 10, 10, 0, 5, 28, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_dancers_raiment_tiktok));
+            armorList.add(createArmor(R.string.dancers_raiment, Elements.AIR, false, 10, 10, 0, 5, 28, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_dancers_raiment_tiktok));
             armorList.add(createArmor(R.string.improved_jumpman_suit, Elements.AIR, false, 10, 10, 0, 5, 28, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_jumpman_suit));
             armorList.add(createArmor(R.string.recruit_set, Elements.NEUTRAL, false, 6, 10, 3, 0, 0, 0, 10, 0, 15, 0, 0, 0, R.drawable.armor_recruit_soldier_set));
             armorList.add(createArmor(R.string.twitch_suit, Elements.AIR, false, 10, 10, 0, 5, 28, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_twitch_suit));
@@ -235,7 +235,7 @@ public class ItemSelection extends AppCompatActivity {
             armorList.add(createArmor(R.string.penumbra_suit, Elements.DARKNESS, false, 26, 125, 16, 6, 4, 140, 0, 50, 0, 0, 0, 60, R.drawable.armor_penumbra_suit));
             armorList.add(createArmor(R.string.storm, Elements.AIR, false, 28, 128, 15, 6, 4, 160, 0, 170, 0, 170, 0, 0, R.drawable.armor_storm));
             armorList.add(createArmor(R.string.tunic_of_twisted_illusions, Elements.EARTH, false, 28, 128, 15, 4, 8, 100, 0, 80, 100, 0, 0, 80, R.drawable.armor_tunic_of_twisted_illusions));
-            armorList.add(createArmor(R.string.dark_lord_set, Elements.DARKNESS, false, 45, 131, 8, 6, 4, 130, 80, 0, 80, 0, 0, 80, R.drawable.armor_dark_lord_set));
+            armorList.add(createArmor(R.string.dark_lord_set_plus, Elements.DARKNESS, false, 45, 131, 8, 6, 4, 130, 80, 0, 80, 0, 0, 80, R.drawable.armor_dark_lord_set));
             armorList.add(createArmor(R.string.robe_of_distant_visions, Elements.EARTH, false, 29, 133, 15, 4, 3, 170, 0, 130, 0, 0, 0, 160, R.drawable.armor_robe_of_distant_visions));
             armorList.add(createArmor(R.string.bacoon_set, Elements.WATER, false, 28, 135, 16, 5, 5, 75, 60, 0, 0, 0, 80, 60, R.drawable.armor_bacoon_set));
             armorList.add(createArmor(R.string.firestorm_armor, Elements.FIRE, true, 28, 135, 16, 8, 3, 80, 80, 0, 50, 70, 0, 70, R.drawable.armor_firestorm_armor));

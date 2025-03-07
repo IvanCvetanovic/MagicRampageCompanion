@@ -7,15 +7,33 @@
     android:gravity="center"
     android:layout_margin="8dp">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <!-- Image Container (Overlapping Images) -->
+    <FrameLayout
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-    android:layout_gravity="center"
-    tools:ignore="ContentDescription" />
+        android:layout_height="100dp">
 
+        <!-- Background Image -->
+        <ImageView
+            android:id="@+id/BackgroundImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/item_frame"
+            tools:ignore="ContentDescription" />
+
+        <!-- Foreground Image -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
+
+    <!-- Item Name Text -->
     <TextView
         android:id="@+id/itemName"
         android:layout_width="wrap_content"
