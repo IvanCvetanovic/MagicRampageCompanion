@@ -40,7 +40,7 @@ public class EquipmentTester extends AppCompatActivity {
     private double currentDamage = 0;
     private double currentArmor = 0;
     private int currentSpeed = 0;
-    private int currentJumpImpulse = 0;
+    private double currentJumpImpulse = 0;
 
     private boolean[] skillsPicked;
     private double currentRating = 0;
@@ -777,21 +777,31 @@ public class EquipmentTester extends AppCompatActivity {
             armorValueTextView.setText(getString(R.string.armor_in_calculation) + (int) currentArmor);
 
             double helpArmorSpeed = 0;
-            if(selectedArmor!=null)
-                helpArmorSpeed = selectedArmor.getSpeed() /100.0 + 1;
-
+            double helpArmorJump = 0;
+            if(selectedArmor!=null) {
+                helpArmorSpeed = selectedArmor.getSpeed() / 100.0 + 1;
+                helpArmorJump = selectedArmor.getJump() / 100.0 +1;
+            }
             double helpWeaponSpeed = 0;
-            if(selectedWeapon!=null)
-                helpWeaponSpeed = selectedWeapon.getSpeed() /100.0 + 1;
-
+            double helpWeaponJump = 0;
+            if(selectedWeapon!=null) {
+                helpWeaponSpeed = selectedWeapon.getSpeed() / 100.0 + 1;
+                helpWeaponJump = selectedWeapon.getJump() / 100.0 + 1;
+            }
             double helpRingSpeed = 0;
-            if(selectedRing!=null)
-                helpRingSpeed = selectedRing.getSpeed() /100.0 + 1;
+            double helpRingJump = 0;
+            if(selectedRing!=null) {
+                helpRingSpeed = selectedRing.getSpeed() / 100.0 + 1;
+                helpRingJump = selectedRing.getJump() / 100.0 + 1;
+            }
 
             currentSpeed = (int) ((helpArmorSpeed * helpWeaponSpeed * helpRingSpeed)*100-100);
 
-            if(selectedClass!=null)
-                currentSpeed+=selectedClass.getSpeedBonus();
+            double helpClassJump = 0;
+            if(selectedClass!=null) {
+                currentSpeed += selectedClass.getSpeedBonus();
+                helpClassJump = selectedClass.getJumpImpulseBonus() / 100.0 + 1;
+            }
 
 
             if (skillsPicked != null && skillsPicked[0]) {
@@ -800,13 +810,23 @@ public class EquipmentTester extends AppCompatActivity {
             TextView speedValueTextView = findViewById(R.id.currentSpeed);
             speedValueTextView.setText(getString(R.string.speed_in_calculation) + currentSpeed + "%");
 
-            currentJumpImpulse = (selectedArmor != null ? selectedArmor.getJump() : 0) + (selectedRing != null ? selectedRing.getJump() : 0)
-                    + (selectedClass != null ? selectedClass.getJumpImpulseBonus() : 0) + (selectedWeapon != null ? selectedWeapon.getJump() : 0);
-            if (skillsPicked != null && skillsPicked[9]) {
-                currentJumpImpulse += 3;
+            if(selectedArmor != null && selectedRing != null && selectedWeapon != null)
+            {
+                Log.d("EquipmentTester", "Armor Jump: " + selectedArmor.getJump());
+                Log.d("EquipmentTester", "Ring Jump: " + selectedRing.getJump());
+                Log.d("EquipmentTester", "Weapon Jump: " + selectedWeapon.getJump());
             }
+
+            currentJumpImpulse = (selectedArmor != null ? helpArmorJump : 0) * (selectedRing != null ? helpRingJump : 0)
+                    * (selectedWeapon != null ? helpWeaponJump : 0) * (selectedClass != null ? helpClassJump : 0);
+            if (skillsPicked != null && skillsPicked[9]) {
+                currentJumpImpulse += 0.03;
+            }
+            currentJumpImpulse = Math.floor(currentJumpImpulse * 100.0) / 100.0;
+            currentJumpImpulse *= 100;
+            currentJumpImpulse -= 100;
             TextView jumpImpulseValueTextView = findViewById(R.id.currentJumpImpulse);
-            jumpImpulseValueTextView.setText(getString(R.string.jump_impulse_in_calculation) + currentJumpImpulse + "%");
+            jumpImpulseValueTextView.setText(getString(R.string.jump_impulse_in_calculation) + (int) currentJumpImpulse + "%");
 
             if ((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || currentArmor >= 330 || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[13])) {
                 TextView fireValueTextView = findViewById(R.id.fireResistance);
