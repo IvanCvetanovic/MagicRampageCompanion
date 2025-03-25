@@ -1,7 +1,6 @@
 package xyz.magicrampagecompanion;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,19 +34,19 @@ public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageV
 
         if (item instanceof Armor) {
             Armor armor = (Armor) item;
-            holder.imageView.setImageBitmap(armor.getPicture());
+            holder.imageView.setImageResource(armor.getImageResId());
             holder.itemName.setText(armor.getName());
         } else if (item instanceof Ring) {
             Ring ring = (Ring) item;
-            holder.imageView.setImageBitmap(ring.getPicture());
+            holder.imageView.setImageResource(ring.getImageResId());
             holder.itemName.setText(ring.getName());
         } else if (item instanceof Weapon) {
             Weapon weapon = (Weapon) item;
-            holder.imageView.setImageBitmap(weapon.getPicture());
+            holder.imageView.setImageResource(weapon.getImageResId());
             holder.itemName.setText(weapon.getName());
         } else if (item instanceof CharacterClass) {
             CharacterClass characterClass = (CharacterClass) item;
-            holder.imageView.setImageBitmap(characterClass.getPicture());
+            holder.imageView.setImageResource(characterClass.getImageResId());
             holder.itemName.setText(characterClass.getName(holder.itemView.getContext()));
         }
 
@@ -87,6 +86,4 @@ public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageV
         itemList.addAll(newData); // Add the new data
         notifyDataSetChanged(); // Notify the adapter that the data has changed
     }
-
 }
-

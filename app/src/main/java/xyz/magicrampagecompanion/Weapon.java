@@ -1,6 +1,5 @@
 package xyz.magicrampagecompanion;
 
-import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -14,9 +13,10 @@ public class Weapon implements Parcelable {
     private double armorBonus;
     private int speed;
     private int jump;
-    private Bitmap picture;
+    private int imageResId; // Now storing the image resource ID
 
-    public Weapon(String name, WeaponTypes type, Elements element, int minDamage, int maxDamage, int upgrades, double armorBonus, int speed, int jump, Bitmap picture) {
+    public Weapon(String name, WeaponTypes type, Elements element, int minDamage, int maxDamage, int upgrades,
+                  double armorBonus, int speed, int jump, int imageResId) {
         this.name = name;
         this.type = type;
         this.element = element;
@@ -26,7 +26,7 @@ public class Weapon implements Parcelable {
         this.armorBonus = armorBonus;
         this.speed = speed;
         this.jump = jump;
-        this.picture = picture;
+        this.imageResId = imageResId;
     }
 
     public String getName() {
@@ -41,14 +41,21 @@ public class Weapon implements Parcelable {
         return element;
     }
 
-    public void setElement(Elements element) { this.element = element; }
+    public void setElement(Elements element) {
+        this.element = element;
+    }
 
     public int getMinDamage() {
         return minDamage;
     }
 
-    public int getMaxDamage() { return maxDamage; }
-    public int getUpgrades() { return upgrades; }
+    public int getMaxDamage() {
+        return maxDamage;
+    }
+
+    public int getUpgrades() {
+        return upgrades;
+    }
 
     public double getArmorBonus() {
         return armorBonus;
@@ -62,8 +69,8 @@ public class Weapon implements Parcelable {
         return jump;
     }
 
-    public Bitmap getPicture() {
-        return picture;
+    public int getImageResId() {
+        return imageResId;
     }
 
     @Override
@@ -82,7 +89,7 @@ public class Weapon implements Parcelable {
         dest.writeDouble(armorBonus);
         dest.writeInt(speed);
         dest.writeInt(jump);
-        dest.writeParcelable(picture, flags);
+        dest.writeInt(imageResId); // Write the resource ID
     }
 
     protected Weapon(Parcel in) {
@@ -95,7 +102,7 @@ public class Weapon implements Parcelable {
         armorBonus = in.readDouble();
         speed = in.readInt();
         jump = in.readInt();
-        picture = in.readParcelable(Bitmap.class.getClassLoader());
+        imageResId = in.readInt(); // Read the resource ID
     }
 
     public static final Creator<Weapon> CREATOR = new Creator<Weapon>() {

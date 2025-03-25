@@ -91,7 +91,7 @@ public class AchievementsPage extends AppCompatActivity {
         achievements.add(new Achievement("Did the whole thing!", "Complete 101% of the game. Find all secret areas and diamonds.", Arrays.asList("", "", "Spellmaster's Ring", "+1")));
         achievements.add(new Achievement("200 kills", "Kill 200 enemies in Survival Mode.", Arrays.asList("", "", "Dragon Orb Staff")));
         achievements.add(new Achievement("300 kills", "Kil 300 enemies in Survival Mode.", Arrays.asList("", "", "Warlock's Ring", "+1")));
-        achievements.add(new Achievement("100 kills? WTF!", "Kill 100 enemies in Survival Mode.", Arrays.asList("", "", "Sword of 100 Lies")));
+        achievements.add(new Achievement("1000 kills? WTF!", "Kill 100 enemies in Survival Mode.", Arrays.asList("", "", "Sword of 100 Lies")));
         achievements.add(new Achievement("Over 100% complete!", "Complete 101% of the game. Find all secret areas of the game, and reply Chapters 1, 2 and 3 without taking any damage.", Arrays.asList("", "", "Hippie Dragon Staff", "+1")));
         achievements.add(new Achievement("The Truth Is Out There", "Travel through the Portal and find out what is beyond.", Arrays.asList()));
         achievements.add(new Achievement("Chapter 4 is too difficult!", "Complete 102% of the game. Complete all Dungeons, find all secret areas and replay all dungeons up to the end of Chapter 4 without taking any damage.", Arrays.asList("", "", "Special Dragon Vest", "+1")));
@@ -108,7 +108,7 @@ public class AchievementsPage extends AppCompatActivity {
         achievements.add(new Achievement("Impossibly Huge", "Buy the third expansion chest.", Arrays.asList("", "1000/3000")));
         achievements.add(new Achievement("It's time!", "Collect the 420 coins that float in the air at 3-6. Do it during a specific time of day.", Arrays.asList("", "", "Hippie Dragon Staff+")));
         achievements.add(new Achievement("Bullseye Wizard", "Score 990,000 or higher in the Darts game inside the Tavern.", Arrays.asList("", "", "Poisoned Dart")));
-        achievements.add(new Achievement("Settle a score", "Score 35,000 or higher in the Salesman's Smackdown game inside the Tavern.", Arrays.asList("", "260/750")));
+        achievements.add(new Achievement("Settle a score", "Score 35,000 or higher in the Salesman's Smackdown game inside the Tavern.", Arrays.asList("", "250/750")));
         achievements.add(new Achievement("Meet me outside!", "Challenge a friend to a Duel match. You can add friends and challenge them to a Duel in the Tavern.", Arrays.asList("", "300/900")));
         achievements.add(new Achievement("The taste of victory", "Win your first Duel. You can find opponents in the Tavern.", Arrays.asList("", "400/1200")));
         achievements.add(new Achievement("Veteran Rampager", "Be in top 500 list of best ranked players. You can see your current position in the ranking section of your inventory.", Arrays.asList("", "600/1800")));
@@ -120,5 +120,17 @@ public class AchievementsPage extends AppCompatActivity {
         achievements.add(new Achievement("The Untold Story 3", "Listen to what the King ha to say in his lab at 5-3 prologue.", Arrays.asList("", "", "Moonlit Razor")));
         achievements.add(new Achievement("The ninth circle", "Get to the frozen underground chambers of the planet in Dungeon 5-4.", Arrays.asList("", "", "Winter Witch Armor")));
         achievements.add(new Achievement("The darkest side of the Moon", "Watch the bonus scene after finishing Dungeon 5-4 with all three diamonds.", Arrays.asList("", "", "Path of Exile", "+1")));
+        achievements.add(new Achievement("Master of Destiny!", "Win a Ranked Duel match. You can find opponents through the Duels of Destiny portal located in the Tavern", Arrays.asList("", "400/1200")));
+        achievements.add(new Achievement("First steps into destiny", "Explore every Combat Zone and complete your initial training for the Duels of Destiny", Arrays.asList("", "", "Gatekeeper's Bionic Arm")));
+        achievements.add(new Achievement("Rise of the Sentinel", "Raise your Rank up to Master Sentinel in the Duels.", Arrays.asList("", "200/600", "", "+1")));
+        achievements.add(new Achievement("Keeper of the Realm", "Raise your Rank up to the Grandmaster Sentinel in the Duels.", Arrays.asList("", "400/1200", "", "+1")));
+        achievements.add(new Achievement("Through the Rifts", "Raise your Rank up to Time Traveller in the Duels.", Arrays.asList("", "800/2400", "", "+1")));
+        achievements.add(new Achievement("Warden of Time", "Raise your Rank up to Time Patroller in the Duels.", Arrays.asList("", "1600/4800", "", "+1")));
+        achievements.add(new Achievement("Keeper of the Cosmos", "Raise your Rank up to Cosmic Patroller in the Duels!", Arrays.asList("", "1600/4800", "", "+1")));
+        achievements.add(new Achievement("Witch-hunt+", "Defeat The Warlock Boss on Rampage mode.", Arrays.asList("", "500/1500", "", "+1")));
+        achievements.add(new Achievement("Bound together+", "Join the King after defeating the Warlock on Rampage mode.", Arrays.asList("", "500/1500", "", "+1")));
+        achievements.add(new Achievement("Dirty-faced Souls", "Complete 100% on Rampage mode. Find all secret areas and diamonds.", Arrays.asList("", "Iron Dagger+", "", "+1")));
+        achievements.add(new Achievement("Like a Time Patroller!", "Complete 101% on Rampage Mode. Find all secret areas and replay Chapter 1, 2 and 3 without taking any damage.", Arrays.asList("", "", "Time Patroller Suit", "+1")));
+        achievements.add(new Achievement("Bow down to the King!", "Complete 102% of the game on Rampage mode. Complete all dungeons, find all secret areas and replay all dungeons up to the end of Chapter 4 without taking any damage.", Arrays.asList("", "", "King's Spectre Tunic", "+1")));
     }
 }

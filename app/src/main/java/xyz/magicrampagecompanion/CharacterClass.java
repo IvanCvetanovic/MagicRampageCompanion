@@ -1,12 +1,7 @@
 package xyz.magicrampagecompanion;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import java.io.ByteArrayOutputStream;
 
 public class CharacterClass implements Parcelable {
 
@@ -21,10 +16,10 @@ public class CharacterClass implements Parcelable {
     private int staffBonus;
     private int speedBonus;
     private int jumpImpulseBonus;
-    private Bitmap picture;
+    private int imageResId; // Now storing the image resource ID
 
-    public CharacterClass(ClassNames name, int armorBonus, int magicBonus, int swordBonus, int daggerBonus, int hammerBonus, int axeBonus, int spearBonus,
-                          int staffBonus, int speedBonus, int jumpImpulseBonus, Bitmap picture) {
+    public CharacterClass(ClassNames name, int armorBonus, int magicBonus, int swordBonus, int daggerBonus, int hammerBonus,
+                          int axeBonus, int spearBonus, int staffBonus, int speedBonus, int jumpImpulseBonus, int imageResId) {
         this.name = name;
         this.armorBonus = armorBonus;
         this.magicBonus = magicBonus;
@@ -36,10 +31,10 @@ public class CharacterClass implements Parcelable {
         this.staffBonus = staffBonus;
         this.speedBonus = speedBonus;
         this.jumpImpulseBonus = jumpImpulseBonus;
-        this.picture = picture;
+        this.imageResId = imageResId;
     }
 
-    public String getName(Context context) {
+    public String getName(android.content.Context context) {
         if (name.equals(ClassNames.ROGUE)) {
             return context.getString(R.string.rogue);
         } else if (name.equals(ClassNames.THIEF)) {
@@ -67,11 +62,8 @@ public class CharacterClass implements Parcelable {
         } else if (name.equals(ClassNames.DRUID)) {
             return context.getString(R.string.druid);
         }
-
         return null;
     }
-
-
 
     public int getArmorBonus() {
         return armorBonus;
@@ -113,10 +105,14 @@ public class CharacterClass implements Parcelable {
         return jumpImpulseBonus;
     }
 
-    public Bitmap getPicture() { return picture; }
+    public int getImageResId() {
+        return imageResId;
+    }
 
     @Override
-    public int describeContents() { return 0; }
+    public int describeContents() {
+        return 0;
+    }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -125,23 +121,13 @@ public class CharacterClass implements Parcelable {
         dest.writeInt(magicBonus);
         dest.writeInt(swordBonus);
         dest.writeInt(daggerBonus);
-        dest.writeInt(axeBonus);
         dest.writeInt(hammerBonus);
+        dest.writeInt(axeBonus);
         dest.writeInt(spearBonus);
         dest.writeInt(staffBonus);
         dest.writeInt(speedBonus);
         dest.writeInt(jumpImpulseBonus);
-
-        if (picture != null) {
-            dest.writeByte((byte) 1); // Bitmap is present
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            picture.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
-            dest.writeInt(byteArray.length);
-            dest.writeByteArray(byteArray);
-        } else {
-            dest.writeByte((byte) 0); // Bitmap is absent
-        }
+        dest.writeInt(imageResId); // Write the resource ID
     }
 
     protected CharacterClass(Parcel in) {
@@ -156,16 +142,7 @@ public class CharacterClass implements Parcelable {
         staffBonus = in.readInt();
         speedBonus = in.readInt();
         jumpImpulseBonus = in.readInt();
-
-        byte hasBitmap = in.readByte();
-        if (hasBitmap == 1) {
-            int byteArrayLength = in.readInt();
-            byte[] byteArray = new byte[byteArrayLength];
-            in.readByteArray(byteArray);
-            picture = BitmapFactory.decodeByteArray(byteArray, 0, byteArrayLength);
-        } else {
-            picture = null;
-        }
+        imageResId = in.readInt(); // Read the resource ID
     }
 
     public static final Creator<CharacterClass> CREATOR = new Creator<CharacterClass>() {
@@ -179,7 +156,4 @@ public class CharacterClass implements Parcelable {
             return new CharacterClass[size];
         }
     };
-
 }
-
-

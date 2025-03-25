@@ -1,6 +1,5 @@
 package xyz.magicrampagecompanion;
 
-import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -20,10 +19,11 @@ public class Armor implements Parcelable {
     private int axe;
     private int hammer;
     private int spear;
-    private Bitmap picture;
+    private int imageResId; // Now storing the image resource ID
 
-    public Armor(String name, Elements element, boolean frostImmune, int minArmor, int maxArmor, int upgrades, int speed, int jump, int magic,
-                 int sword, int staff, int dagger, int axe, int hammer, int spear, Bitmap picture) {
+    public Armor(String name, Elements element, boolean frostImmune, int minArmor, int maxArmor, int upgrades,
+                 int speed, int jump, int magic, int sword, int staff, int dagger, int axe, int hammer, int spear,
+                 int imageResId) {
         this.name = name;
         this.element = element;
         this.frostImmune = frostImmune;
@@ -39,7 +39,7 @@ public class Armor implements Parcelable {
         this.axe = axe;
         this.hammer = hammer;
         this.spear = spear;
-        this.picture = picture;
+        this.imageResId = imageResId;
     }
 
     public String getName() {
@@ -50,17 +50,25 @@ public class Armor implements Parcelable {
         return element;
     }
 
-    public void setElement(Elements element) { this.element = element; }
+    public void setElement(Elements element) {
+        this.element = element;
+    }
 
     public boolean isFrostImmune() {
         return frostImmune;
     }
 
-    public int getMinArmor() { return minArmor; }
+    public int getMinArmor() {
+        return minArmor;
+    }
 
-    public int getMaxArmor() { return maxArmor;}
+    public int getMaxArmor() {
+        return maxArmor;
+    }
 
-    public int getUpgrades() { return upgrades; }
+    public int getUpgrades() {
+        return upgrades;
+    }
 
     public int getSpeed() {
         return speed;
@@ -98,14 +106,8 @@ public class Armor implements Parcelable {
         return spear;
     }
 
-    public Bitmap getPicture() {
-        return picture;
-    }
-
-    public double setUpgrades(int upgradeValue)
-    {
-        upgrades = upgradeValue;
-        return 0;
+    public int getImageResId() {
+        return imageResId;
     }
 
     @Override
@@ -130,7 +132,7 @@ public class Armor implements Parcelable {
         dest.writeInt(axe);
         dest.writeInt(hammer);
         dest.writeInt(spear);
-        dest.writeParcelable(picture, flags);
+        dest.writeInt(imageResId); // Write the resource ID
     }
 
     protected Armor(Parcel in) {
@@ -149,7 +151,7 @@ public class Armor implements Parcelable {
         axe = in.readInt();
         hammer = in.readInt();
         spear = in.readInt();
-        picture = in.readParcelable(Bitmap.class.getClassLoader());
+        imageResId = in.readInt(); // Read the resource ID
     }
 
     public static final Creator<Armor> CREATOR = new Creator<Armor>() {
@@ -163,4 +165,8 @@ public class Armor implements Parcelable {
             return new Armor[size];
         }
     };
+
+    public void setUpgrades(int i) {
+        this.upgrades = i;
+    }
 }

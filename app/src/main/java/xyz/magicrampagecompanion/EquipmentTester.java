@@ -508,11 +508,7 @@ public class EquipmentTester extends AppCompatActivity {
         if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
             selectedArmor = data.getParcelableExtra("selectedArmor");
             if (selectedArmor != null) {
-
-                Bitmap armorBitmap = selectedArmor.getPicture();
-                if (armorBitmap != null) {
-                    armorButton.setImageBitmap(armorBitmap);
-                }
+                armorButton.setImageResource(selectedArmor.getImageResId());
             }
             currentArmorUpgrades = selectedArmor.getUpgrades();
             upgradeArmorButtonsLayout.setVisibility(View.VISIBLE);
@@ -520,7 +516,7 @@ public class EquipmentTester extends AppCompatActivity {
             armorElementButton.setVisibility(View.VISIBLE);
             armorUpgradesView.setVisibility(View.VISIBLE);
             armorUpgradesView.setText(getString(R.string.upgrades) + " " + currentArmorUpgrades + " " + getString(R.string.max));
-            if(selectedArmor.getElement().equals(Elements.NEUTRAL)) {
+            if (selectedArmor.getElement().equals(Elements.NEUTRAL)) {
                 armorElementButton.setImageResource(R.drawable.edit_icon);
             } else {
                 armorElementButton.setImageResource(R.drawable.icon_lock);
@@ -529,14 +525,11 @@ public class EquipmentTester extends AppCompatActivity {
         } else if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
             selectedRing = data.getParcelableExtra("selectedRing");
             if (selectedRing != null) {
-                Bitmap ringBitmap = selectedRing.getPicture();
-                if (ringBitmap != null) {
-                    ringButton.setImageBitmap(ringBitmap);
-                }
+                ringButton.setImageResource(selectedRing.getImageResId());
             }
             initialRingElement = selectedRing.getElement();
             ringElementButton.setVisibility(View.VISIBLE);
-            if(selectedRing.getElement().equals(Elements.NEUTRAL)) {
+            if (selectedRing.getElement().equals(Elements.NEUTRAL)) {
                 ringElementButton.setImageResource(R.drawable.edit_icon);
             } else {
                 ringElementButton.setImageResource(R.drawable.icon_lock);
@@ -544,10 +537,7 @@ public class EquipmentTester extends AppCompatActivity {
         } else if (requestCode == 3 && resultCode == RESULT_OK && data != null) {
             selectedWeapon = data.getParcelableExtra("selectedWeapon");
             if (selectedWeapon != null) {
-                Bitmap weaponBitmap = selectedWeapon.getPicture();
-                if (weaponBitmap != null) {
-                    weaponButton.setImageBitmap(weaponBitmap);
-                }
+                weaponButton.setImageResource(selectedWeapon.getImageResId());
             }
             currentWeaponUpgrades = selectedWeapon.getUpgrades();
             upgradeWeaponButtonsLayout.setVisibility(View.VISIBLE);
@@ -555,7 +545,7 @@ public class EquipmentTester extends AppCompatActivity {
             weaponElementButton.setVisibility(View.VISIBLE);
             weaponUpgradesView.setVisibility(View.VISIBLE);
             weaponUpgradesView.setText(getString(R.string.upgrades) + " " + currentWeaponUpgrades + " " + getString(R.string.max));
-            if(selectedWeapon.getElement().equals(Elements.NEUTRAL)) {
+            if (selectedWeapon.getElement().equals(Elements.NEUTRAL)) {
                 weaponElementButton.setImageResource(R.drawable.edit_icon);
             } else {
                 weaponElementButton.setImageResource(R.drawable.icon_lock);
@@ -564,10 +554,7 @@ public class EquipmentTester extends AppCompatActivity {
         } else if (requestCode == 4 && resultCode == RESULT_OK && data != null) {
             selectedClass = data.getParcelableExtra("selectedClass");
             if (selectedClass != null) {
-                Bitmap classBitmap = selectedClass.getPicture();
-                if (classBitmap != null) {
-                    classButton.setImageBitmap(classBitmap);
-                }
+                classButton.setImageResource(selectedClass.getImageResId());
             }
         } else if (requestCode == 5 && resultCode == RESULT_OK) {
             skillsPicked = retrieveSkillsPickedFromSharedPreferences();
@@ -576,370 +563,356 @@ public class EquipmentTester extends AppCompatActivity {
         }
 
         calculateStats();
-        }
+    }
 
-        @SuppressLint("SetTextI18n")
+
+    @SuppressLint("SetTextI18n")
         private void calculateStats()
         {
-            if (currentWeaponUpgrades == 0)
-                currentWeaponUpgrades = 1;
+            if (selectedClass != null && selectedArmor != null && selectedWeapon != null && selectedRing != null && skillsPicked != null) {
 
-            Log.d("EquipmentTester", "Calculating the stats!");
-            currentDamage = selectedWeapon != null ? (selectedWeapon.getMinDamage() + ((selectedWeapon.getMaxDamage() - selectedWeapon.getMinDamage()) / ((double) selectedWeapon.getUpgrades())) * currentWeaponUpgrades) : 0;
+                if (currentWeaponUpgrades == 0)
+                    currentWeaponUpgrades = 1;
 
-            //Magic Boni Apply only on non-neutral items
-            // Armor magic bonus
-            if (selectedArmor != null && selectedWeapon!=null && !selectedWeapon.getElement().equals(Elements.NEUTRAL)) {
-                currentDamage = (currentDamage * (1 + selectedArmor.getMagic() / 100.0));
-                Log.d("Equipmenttester", "Armor Magic Bonus: " + selectedArmor.getMagic());
-                Log.d("EquipmentTester", "Armor Bonus: Magic Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-            }
+                Log.d("EquipmentTester", "Calculating the stats!");
+                currentDamage = selectedWeapon != null ? (selectedWeapon.getMinDamage() + ((selectedWeapon.getMaxDamage() - selectedWeapon.getMinDamage()) / ((double) selectedWeapon.getUpgrades())) * currentWeaponUpgrades) : 0;
 
-            // Armor weapon bonus
-            if (selectedArmor != null && selectedWeapon != null) {
-                if (selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
-                    currentDamage = (currentDamage * (1 + selectedArmor.getSword() / 100.0));
-                    Log.d("Equipmenttester", "Armor Sword Bonus:" + selectedArmor.getSword());
-                    Log.d("EquipmentTester", "Armor Bonus: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                //Magic Boni Apply only on non-neutral items
+                // Armor magic bonus
+                if (selectedArmor != null && selectedWeapon != null && !selectedWeapon.getElement().equals(Elements.NEUTRAL)) {
+                    currentDamage = (currentDamage * (1 + selectedArmor.getMagic() / 100.0));
+                    Log.d("Equipmenttester", "Armor Magic Bonus: " + selectedArmor.getMagic());
+                    Log.d("EquipmentTester", "Armor Bonus: Magic Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
-                else if (selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
-                    currentDamage = (currentDamage * (1 + selectedArmor.getDagger() / 100.0));
-                    Log.d("EquipmentTester", "Armor Bonus: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
-                    currentDamage = (currentDamage * (1 + selectedArmor.getStaff() / 100.0));
-                    Log.d("EquipmentTester", "Armor Bonus: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.AXE)) {
-                    currentDamage = (currentDamage * (1 + selectedArmor.getAxe() / 100.0));
-                    Log.d("EquipmentTester", "Armor Bonus: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
-                    currentDamage = (currentDamage * (1 + selectedArmor.getHammer() / 100.0));
-                    Log.d("EquipmentTester", "Armor Bonus: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
-                    currentDamage = (currentDamage * (1 + selectedArmor.getSpear() / 100.0));
-                    Log.d("EquipmentTester", "Armor Bonus: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-            }
 
-            // Ring magic bonus
-            if (selectedRing != null  && selectedWeapon!=null && !selectedWeapon.getElement().equals(Elements.NEUTRAL)) {
-                currentDamage = (currentDamage * (1 + selectedRing.getMagic() / 100.0));
-                Log.d("EquipmentTester", "Ring Bonus: Magic Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-            }
+                // Armor weapon bonus
+                if (selectedArmor != null && selectedWeapon != null) {
+                    if (selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
+                        currentDamage = (currentDamage * (1 + selectedArmor.getSword() / 100.0));
+                        Log.d("Equipmenttester", "Armor Sword Bonus:" + selectedArmor.getSword());
+                        Log.d("EquipmentTester", "Armor Bonus: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
+                        currentDamage = (currentDamage * (1 + selectedArmor.getDagger() / 100.0));
+                        Log.d("EquipmentTester", "Armor Bonus: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
+                        currentDamage = (currentDamage * (1 + selectedArmor.getStaff() / 100.0));
+                        Log.d("EquipmentTester", "Armor Bonus: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.AXE)) {
+                        currentDamage = (currentDamage * (1 + selectedArmor.getAxe() / 100.0));
+                        Log.d("EquipmentTester", "Armor Bonus: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
+                        currentDamage = (currentDamage * (1 + selectedArmor.getHammer() / 100.0));
+                        Log.d("EquipmentTester", "Armor Bonus: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
+                        currentDamage = (currentDamage * (1 + selectedArmor.getSpear() / 100.0));
+                        Log.d("EquipmentTester", "Armor Bonus: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    }
+                }
 
-            // Ring weapon bonus
-            if (selectedRing != null && selectedWeapon != null) {
-                if (selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
-                    currentDamage = (currentDamage * (1 + selectedRing.getSword() / 100.0));
-                    Log.d("EquipmentTester", "Ring Bonus: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                // Ring magic bonus
+                if (selectedRing != null && selectedWeapon != null && !selectedWeapon.getElement().equals(Elements.NEUTRAL)) {
+                    currentDamage = (currentDamage * (1 + selectedRing.getMagic() / 100.0));
+                    Log.d("EquipmentTester", "Ring Bonus: Magic Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
-                else if (selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
-                    currentDamage = (currentDamage * (1 + selectedRing.getDagger() / 100.0));
-                    Log.d("EquipmentTester", "Ring Bonus: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
-                    currentDamage = (currentDamage * (1 + selectedRing.getStaff() / 100.0));
-                    Log.d("EquipmentTester", "Ring Bonus: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.AXE)) {
-                    currentDamage = (currentDamage * (1 + selectedRing.getAxe() / 100.0));
-                    Log.d("EquipmentTester", "Ring Bonus: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
-                    currentDamage = (currentDamage * (1 + selectedRing.getHammer() / 100.0));
-                    Log.d("EquipmentTester", "Ring Bonus: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
-                    currentDamage = (currentDamage * (1 + selectedRing.getSpear() / 100.0));
-                    Log.d("EquipmentTester", "Ring Bonus: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-            }
 
-            // Class Boni
-            if (selectedClass != null && selectedWeapon != null) {
-                currentDamage = (currentDamage * (1 + selectedClass.getMagicBonus() / 100.0));
-                Log.d("EquipmentTester", "Class Bonus: Magic Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                if (selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
-                    currentDamage = (currentDamage * (1 + selectedClass.getSwordBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class Bonus: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                // Ring weapon bonus
+                if (selectedRing != null && selectedWeapon != null) {
+                    if (selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
+                        currentDamage = (currentDamage * (1 + selectedRing.getSword() / 100.0));
+                        Log.d("EquipmentTester", "Ring Bonus: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
+                        currentDamage = (currentDamage * (1 + selectedRing.getDagger() / 100.0));
+                        Log.d("EquipmentTester", "Ring Bonus: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
+                        currentDamage = (currentDamage * (1 + selectedRing.getStaff() / 100.0));
+                        Log.d("EquipmentTester", "Ring Bonus: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.AXE)) {
+                        currentDamage = (currentDamage * (1 + selectedRing.getAxe() / 100.0));
+                        Log.d("EquipmentTester", "Ring Bonus: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
+                        currentDamage = (currentDamage * (1 + selectedRing.getHammer() / 100.0));
+                        Log.d("EquipmentTester", "Ring Bonus: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
+                        currentDamage = (currentDamage * (1 + selectedRing.getSpear() / 100.0));
+                        Log.d("EquipmentTester", "Ring Bonus: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    }
                 }
-                else if (selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
-                    currentDamage = (currentDamage * (1 + selectedClass.getDaggerBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class Bonus: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
-                    currentDamage = (currentDamage * (1 + selectedClass.getStaffBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class Bonus: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.AXE)) {
-                    currentDamage = (currentDamage * (1 + selectedClass.getAxeBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class Bonus: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
-                    currentDamage = (currentDamage * (1 + selectedClass.getHammerBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class Bonus: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-                else if (selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
-                    currentDamage = (currentDamage * (1 + selectedClass.getSpearBonus() / 100.0));
-                    Log.d("EquipmentTester", "Class Bonus: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-                }
-            }
 
-            // Skill Tree Boni
-            if (skillsPicked != null) {
-                if (skillsPicked[1] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
-                    currentDamage = (currentDamage * 1.2);
-                    Log.d("EquipmentTester", "Skill Tree: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                // Class Boni
+                if (selectedClass != null && selectedWeapon != null) {
+                    currentDamage = (currentDamage * (1 + selectedClass.getMagicBonus() / 100.0));
+                    Log.d("EquipmentTester", "Class Bonus: Magic Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    if (selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
+                        currentDamage = (currentDamage * (1 + selectedClass.getSwordBonus() / 100.0));
+                        Log.d("EquipmentTester", "Class Bonus: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
+                        currentDamage = (currentDamage * (1 + selectedClass.getDaggerBonus() / 100.0));
+                        Log.d("EquipmentTester", "Class Bonus: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
+                        currentDamage = (currentDamage * (1 + selectedClass.getStaffBonus() / 100.0));
+                        Log.d("EquipmentTester", "Class Bonus: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.AXE)) {
+                        currentDamage = (currentDamage * (1 + selectedClass.getAxeBonus() / 100.0));
+                        Log.d("EquipmentTester", "Class Bonus: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
+                        currentDamage = (currentDamage * (1 + selectedClass.getHammerBonus() / 100.0));
+                        Log.d("EquipmentTester", "Class Bonus: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    } else if (selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
+                        currentDamage = (currentDamage * (1 + selectedClass.getSpearBonus() / 100.0));
+                        Log.d("EquipmentTester", "Class Bonus: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    }
                 }
-                if (skillsPicked[2] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
-                    currentDamage = (currentDamage * 1.2);
-                    Log.d("EquipmentTester", "Skill Tree: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+
+                // Skill Tree Boni
+                if (skillsPicked != null) {
+                    if (skillsPicked[1] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
+                        currentDamage = (currentDamage * 1.2);
+                        Log.d("EquipmentTester", "Skill Tree: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    }
+                    if (skillsPicked[2] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
+                        currentDamage = (currentDamage * 1.2);
+                        Log.d("EquipmentTester", "Skill Tree: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    }
+                    if (skillsPicked[10] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
+                        currentDamage = (currentDamage * 1.25);
+                        Log.d("EquipmentTester", "Skill Tree: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    }
+                    if (skillsPicked[11] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
+                        currentDamage = (currentDamage * 1.40);
+                        Log.d("EquipmentTester", "Skill Tree: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    }
+                    if (skillsPicked[19] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
+                        currentDamage = (currentDamage * 1.5);
+                        Log.d("EquipmentTester", "Skill Tree: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    }
+                    if (skillsPicked[20] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.AXE)) {
+                        currentDamage = (currentDamage * 1.45);
+                        Log.d("EquipmentTester", "Skill Tree: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    }
                 }
-                if (skillsPicked[10] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
+
+
+                // Armor + Weapon: Same element bonus
+                if (selectedArmor != null && selectedWeapon != null && selectedWeapon.getElement().equals(selectedArmor.getElement())) {
                     currentDamage = (currentDamage * 1.25);
-                    Log.d("EquipmentTester", "Skill Tree: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                    Log.d("EquipmentTester", "Armor and Weapon Same Element Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
-                if (skillsPicked[11] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
-                    currentDamage = (currentDamage * 1.40);
-                    Log.d("EquipmentTester", "Skill Tree: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+
+                // Ring + Weapon: Same element Bonus
+                if (selectedWeapon != null && selectedRing != null && selectedWeapon.getElement().equals(selectedRing.getElement())) {
+                    currentDamage = (currentDamage * 1.2);
+                    Log.d("EquipmentTester", "Ring and Weapon Same Element Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                 }
-                if (skillsPicked[19] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
-                    currentDamage = (currentDamage * 1.5);
-                    Log.d("EquipmentTester", "Skill Tree: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+
+                currentDamage = Math.ceil(currentDamage);
+
+                Log.d("EquipmentTester", "Current Damage: " + currentDamage);
+                Log.d("EquipmentTester", "Upgrades: " + currentWeaponUpgrades);
+                TextView damageValueTextView = findViewById(R.id.currentDamage);
+                damageValueTextView.setText(getString(R.string.damage_in_calculation) + (int) currentDamage);
+
+                if (selectedArmor != null && selectedArmor.getUpgrades() == 0)
+                    selectedArmor.setUpgrades(1);
+
+                currentArmor = (selectedArmor != null
+                        ? (selectedArmor.getMinArmor() + ((selectedArmor.getMaxArmor() - selectedArmor.getMinArmor())
+                        / ((double) selectedArmor.getUpgrades())) * currentArmorUpgrades) : 0);
+
+                Log.d("EquipmentTester", "Starting armor for current upgrades: " + currentArmor);
+
+                currentArmor += (selectedRing != null ? selectedRing.getArmor() : 0);
+
+                Log.d("EquipmentTester", "Adding Ring Armor:  " + currentArmor);
+
+                currentArmor *= (selectedRing != null ? 1 + (selectedRing.getArmorBonus() / 100.0) : 1);
+
+                Log.d("EquipmentTester", "Adding Ring Armor Bonus: " + currentArmor);
+
+                currentArmor *= (selectedWeapon != null ? 1 + (selectedWeapon.getArmorBonus() / 100.0) : 1);
+
+                Log.d("EquipmentTester", "Adding Weapon Armor Bonus: " + currentArmor);
+
+                currentArmor *= (selectedClass != null ? 1 + (selectedClass.getArmorBonus() / 100.0) : 1);
+
+                Log.d("EquipmentTester", "Adding Class Armor Bonus: " + currentArmor);
+
+                currentArmor *= (skillsPicked != null && skillsPicked[18] && selectedArmor != null ? 1.25 : 1);
+
+                Log.d("EquipmentTester", "Adding Skill Tree Armor Bonus: " + currentArmor);
+
+                currentArmor = Math.round(currentArmor);
+
+                if (selectedArmor != null && selectedArmor.getUpgrades() == 0)
+                    currentArmor = selectedArmor.getMinArmor();
+
+                Log.d("EquipmentTester", "Current Armor: " + currentArmor);
+                TextView armorValueTextView = findViewById(R.id.currentArmor);
+                armorValueTextView.setText(getString(R.string.armor_in_calculation) + (int) currentArmor);
+
+                double helpArmorSpeed = 0;
+                double helpArmorJump = 0;
+                if (selectedArmor != null) {
+                    helpArmorSpeed = selectedArmor.getSpeed() / 100.0 + 1;
+                    helpArmorJump = selectedArmor.getJump() / 100.0 + 1;
                 }
-                if (skillsPicked[20] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.AXE)) {
-                    currentDamage = (currentDamage * 1.45);
-                    Log.d("EquipmentTester", "Skill Tree: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
+                double helpWeaponSpeed = 0;
+                double helpWeaponJump = 0;
+                if (selectedWeapon != null) {
+                    helpWeaponSpeed = selectedWeapon.getSpeed() / 100.0 + 1;
+                    helpWeaponJump = selectedWeapon.getJump() / 100.0 + 1;
                 }
+                double helpRingSpeed = 0;
+                double helpRingJump = 0;
+                if (selectedRing != null) {
+                    helpRingSpeed = selectedRing.getSpeed() / 100.0 + 1;
+                    helpRingJump = selectedRing.getJump() / 100.0 + 1;
+                }
+
+                currentSpeed = (int) ((helpArmorSpeed * helpWeaponSpeed * helpRingSpeed) * 100 - 100);
+
+                double helpClassJump = 0;
+                if (selectedClass != null) {
+                    currentSpeed += selectedClass.getSpeedBonus();
+                    helpClassJump = selectedClass.getJumpImpulseBonus() / 100.0 + 1;
+                }
+
+
+                if (skillsPicked != null && skillsPicked[0]) {
+                    currentSpeed += 4;
+                }
+                TextView speedValueTextView = findViewById(R.id.currentSpeed);
+                speedValueTextView.setText(getString(R.string.speed_in_calculation) + currentSpeed + "%");
+
+                if (selectedArmor != null && selectedRing != null && selectedWeapon != null) {
+                    Log.d("EquipmentTester", "Armor Jump: " + selectedArmor.getJump());
+                    Log.d("EquipmentTester", "Ring Jump: " + selectedRing.getJump());
+                    Log.d("EquipmentTester", "Weapon Jump: " + selectedWeapon.getJump());
+                }
+
+                currentJumpImpulse = (selectedArmor != null ? helpArmorJump : 0) * (selectedRing != null ? helpRingJump : 0)
+                        * (selectedWeapon != null ? helpWeaponJump : 0) * (selectedClass != null ? helpClassJump : 0);
+                if (skillsPicked != null && skillsPicked[9]) {
+                    currentJumpImpulse += 0.03;
+                }
+                currentJumpImpulse = Math.floor(currentJumpImpulse * 100.0) / 100.0;
+                currentJumpImpulse *= 100;
+                currentJumpImpulse -= 100;
+                TextView jumpImpulseValueTextView = findViewById(R.id.currentJumpImpulse);
+                jumpImpulseValueTextView.setText(getString(R.string.jump_impulse_in_calculation) + (int) currentJumpImpulse + "%");
+
+                if ((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || currentArmor >= 330 || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[13])) {
+                    TextView fireValueTextView = findViewById(R.id.fireResistance);
+                    String helpText = getString(R.string.fire_resistance) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
+                    int desiredWidth = 100;
+                    int desiredHeight = 100;
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    fireValueTextView.setText(spannable);
+                } else {
+                    TextView fireValueTextView = findViewById(R.id.fireResistance);
+                    String helpText = getString(R.string.fire_resistance) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+                    int desiredWidth = 100;
+                    int desiredHeight = 100;
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    fireValueTextView.setText(spannable);
+                }
+
+                if (selectedArmor != null && selectedArmor.isFrostImmune()) {
+                    TextView frostValueTextView = findViewById(R.id.frostResistance);
+                    String helpText = getString(R.string.frost_resistance) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
+                    int desiredWidth = 100;
+                    int desiredHeight = 100;
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    frostValueTextView.setText(spannable);
+                } else {
+                    TextView frostValueTextView = findViewById(R.id.frostResistance);
+                    String helpText = getString(R.string.frost_resistance) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+                    int desiredWidth = 100;
+                    int desiredHeight = 100;
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    frostValueTextView.setText(spannable);
+                }
+
+                if ((selectedRing != null && (Elements.AIR.equals(selectedRing.getElement()) || Elements.WATER.equals(selectedRing.getElement()))) ||
+                        (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[23])) {
+                    TextView spikeValueTextView = findViewById(R.id.spikeResistance);
+                    String helpText = getString(R.string.spike_resistance) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
+                    int desiredWidth = 100;
+                    int desiredHeight = 100;
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    spikeValueTextView.setText(spannable);
+                } else {
+                    TextView spikeValueTextView = findViewById(R.id.spikeResistance);
+                    String helpText = getString(R.string.spike_resistance) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+                    int desiredWidth = 100;
+                    int desiredHeight = 100;
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    spikeValueTextView.setText(spannable);
+                }
+
+                currentRating = ((currentDamage >= 10000.0 ? currentDamage / 4000.0 : 0)
+                        + (currentArmor >= 200.0 ? currentArmor / 150.0 : 0)
+                        + (currentSpeed >= 20.0 ? currentSpeed / 15.0 : 0)
+                        + (currentJumpImpulse >= 20.0 ? currentJumpImpulse / 15.0 : 0)
+                        + (skillsPicked != null ? ((skillsPicked[3] ? 0.1 : 0) + (skillsPicked[4] ? 0.1 : 0) + (skillsPicked[5] ? 0.1 : 0) + (skillsPicked[6] ? 0.1 : 0)
+                        + (skillsPicked[7] ? 0.1 : 0) + (skillsPicked[8] ? 0.1 : 0) + (skillsPicked[12] ? 0.1 : 0) + (skillsPicked[14] ? 0.1 : 0)
+                        + (skillsPicked[15] ? 0.1 : 0) + (skillsPicked[16] ? 0.1 : 0) + (skillsPicked[17] ? 0.1 : 0) + (skillsPicked[21] ? 0.1 : 0)
+                        + (skillsPicked[22] ? 0.1 : 0) + (skillsPicked[24] ? 0.1 : 0) + (skillsPicked[25] ? 0.1 : 0) + (skillsPicked[26] ? 0.1 : 0)
+                        + (((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[13])) ? 0.2 : 0)
+                        + (((selectedRing != null && (Elements.AIR.equals(selectedRing.getElement()) || Elements.WATER.equals(selectedRing.getElement()))) ||
+                        (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[23])) ? 0.2 : 0)) : 0));
+
+                DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                String formattedRating = decimalFormat.format(currentRating);
+
+                TextView rating = findViewById(R.id.rating);
+
+                if (currentRating < 1)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDCA9");
+                else if (currentRating >= 1 && currentRating < 2)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83E\uDD21");
+                else if (currentRating >= 2 && currentRating < 3)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE35");
+                else if (currentRating >= 3 && currentRating < 4)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE35\u200D\uD83D\uDCAB");
+                else if (currentRating >= 4 && currentRating < 5)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE36\u200D\uD83C\uDF2B️");
+                else if (currentRating >= 5 && currentRating < 6)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE42");
+                else if (currentRating >= 6 && currentRating < 7)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE00");
+                else if (currentRating >= 7 && currentRating < 8)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE0D");
+                else if (currentRating >= 8 && currentRating < 9)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE0E");
+                else if (currentRating >= 9 && currentRating < 10)
+                    rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDDFF");
+
+                Log.d("EquipmentTester", "Current Rating: " + currentRating);
             }
-
-
-            // Armor + Weapon: Same element bonus
-            if (selectedArmor != null && selectedWeapon != null && selectedWeapon.getElement().equals(selectedArmor.getElement()))
-            {
-                currentDamage =  (currentDamage * 1.25);
-                Log.d("EquipmentTester", "Armor and Weapon Same Element Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-            }
-
-            // Ring + Weapon: Same element Bonus
-            if (selectedWeapon != null && selectedRing != null && selectedWeapon.getElement().equals(selectedRing.getElement()))
-            {
-                currentDamage = (currentDamage * 1.2);
-                Log.d("EquipmentTester", "Ring and Weapon Same Element Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
-            }
-
-            currentDamage = Math.ceil(currentDamage);
-
-            Log.d("EquipmentTester", "Current Damage: " + currentDamage);
-            Log.d("EquipmentTester", "Upgrades: " + currentWeaponUpgrades);
-            TextView damageValueTextView = findViewById(R.id.currentDamage);
-            damageValueTextView.setText(getString(R.string.damage_in_calculation) + (int) currentDamage);
-
-            if(selectedArmor != null && selectedArmor.getUpgrades() == 0)
-                selectedArmor.setUpgrades(1);
-
-            currentArmor = (selectedArmor != null
-                    ? (selectedArmor.getMinArmor() + ((selectedArmor.getMaxArmor() - selectedArmor.getMinArmor())
-                    / ((double) selectedArmor.getUpgrades())) * currentArmorUpgrades) : 0);
-
-            Log.d("EquipmentTester", "Starting armor for current upgrades: " + currentArmor);
-
-            currentArmor += (selectedRing != null ? selectedRing.getArmor() : 0);
-
-            Log.d("EquipmentTester", "Adding Ring Armor:  " + currentArmor);
-
-            currentArmor *= (selectedRing != null ? 1 + (selectedRing.getArmorBonus() / 100.0) : 1);
-
-            Log.d("EquipmentTester", "Adding Ring Armor Bonus: " + currentArmor);
-
-            currentArmor *= (selectedWeapon != null ? 1 + (selectedWeapon.getArmorBonus() / 100.0) : 1);
-
-            Log.d("EquipmentTester", "Adding Weapon Armor Bonus: " + currentArmor);
-
-            currentArmor *= (selectedClass != null ? 1 + (selectedClass.getArmorBonus() / 100.0) : 1);
-
-            Log.d("EquipmentTester", "Adding Class Armor Bonus: " + currentArmor);
-
-            currentArmor *= (skillsPicked != null && skillsPicked[18] && selectedArmor != null ? 1.25 : 1);
-
-            Log.d("EquipmentTester", "Adding Skill Tree Armor Bonus: " + currentArmor);
-
-            currentArmor = Math.round(currentArmor);
-
-            if(selectedArmor != null && selectedArmor.getUpgrades() == 0)
-                currentArmor=selectedArmor.getMinArmor();
-
-            Log.d("EquipmentTester", "Current Armor: " + currentArmor);
-            TextView armorValueTextView = findViewById(R.id.currentArmor);
-            armorValueTextView.setText(getString(R.string.armor_in_calculation) + (int) currentArmor);
-
-            double helpArmorSpeed = 0;
-            double helpArmorJump = 0;
-            if(selectedArmor!=null) {
-                helpArmorSpeed = selectedArmor.getSpeed() / 100.0 + 1;
-                helpArmorJump = selectedArmor.getJump() / 100.0 +1;
-            }
-            double helpWeaponSpeed = 0;
-            double helpWeaponJump = 0;
-            if(selectedWeapon!=null) {
-                helpWeaponSpeed = selectedWeapon.getSpeed() / 100.0 + 1;
-                helpWeaponJump = selectedWeapon.getJump() / 100.0 + 1;
-            }
-            double helpRingSpeed = 0;
-            double helpRingJump = 0;
-            if(selectedRing!=null) {
-                helpRingSpeed = selectedRing.getSpeed() / 100.0 + 1;
-                helpRingJump = selectedRing.getJump() / 100.0 + 1;
-            }
-
-            currentSpeed = (int) ((helpArmorSpeed * helpWeaponSpeed * helpRingSpeed)*100-100);
-
-            double helpClassJump = 0;
-            if(selectedClass!=null) {
-                currentSpeed += selectedClass.getSpeedBonus();
-                helpClassJump = selectedClass.getJumpImpulseBonus() / 100.0 + 1;
-            }
-
-
-            if (skillsPicked != null && skillsPicked[0]) {
-                currentSpeed += 4;
-            }
-            TextView speedValueTextView = findViewById(R.id.currentSpeed);
-            speedValueTextView.setText(getString(R.string.speed_in_calculation) + currentSpeed + "%");
-
-            if(selectedArmor != null && selectedRing != null && selectedWeapon != null)
-            {
-                Log.d("EquipmentTester", "Armor Jump: " + selectedArmor.getJump());
-                Log.d("EquipmentTester", "Ring Jump: " + selectedRing.getJump());
-                Log.d("EquipmentTester", "Weapon Jump: " + selectedWeapon.getJump());
-            }
-
-            currentJumpImpulse = (selectedArmor != null ? helpArmorJump : 0) * (selectedRing != null ? helpRingJump : 0)
-                    * (selectedWeapon != null ? helpWeaponJump : 0) * (selectedClass != null ? helpClassJump : 0);
-            if (skillsPicked != null && skillsPicked[9]) {
-                currentJumpImpulse += 0.03;
-            }
-            currentJumpImpulse = Math.floor(currentJumpImpulse * 100.0) / 100.0;
-            currentJumpImpulse *= 100;
-            currentJumpImpulse -= 100;
-            TextView jumpImpulseValueTextView = findViewById(R.id.currentJumpImpulse);
-            jumpImpulseValueTextView.setText(getString(R.string.jump_impulse_in_calculation) + (int) currentJumpImpulse + "%");
-
-            if ((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || currentArmor >= 330 || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[13])) {
-                TextView fireValueTextView = findViewById(R.id.fireResistance);
-                String helpText = getString(R.string.fire_resistance) + "  ";
-                SpannableString spannable = new SpannableString(helpText);
-                Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
-                int desiredWidth = 100;
-                int desiredHeight = 100;
-                customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
-                ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
-                spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                fireValueTextView.setText(spannable);
-            } else {
-                TextView fireValueTextView = findViewById(R.id.fireResistance);
-                String helpText = getString(R.string.fire_resistance) + "  ";
-                SpannableString spannable = new SpannableString(helpText);
-                Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
-                int desiredWidth = 100;
-                int desiredHeight = 100;
-                customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
-                ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
-                spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                fireValueTextView.setText(spannable);
-            }
-
-            if (selectedArmor != null && selectedArmor.isFrostImmune()) {
-                TextView frostValueTextView = findViewById(R.id.frostResistance);
-                String helpText = getString(R.string.frost_resistance) + "  ";
-                SpannableString spannable = new SpannableString(helpText);
-                Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
-                int desiredWidth = 100;
-                int desiredHeight = 100;
-                customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
-                ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
-                spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                frostValueTextView.setText(spannable);
-            } else {
-                TextView frostValueTextView = findViewById(R.id.frostResistance);
-                String helpText = getString(R.string.frost_resistance) + "  ";
-                SpannableString spannable = new SpannableString(helpText);
-                Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
-                int desiredWidth = 100;
-                int desiredHeight = 100;
-                customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
-                ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
-                spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                frostValueTextView.setText(spannable);
-            }
-
-            if ((selectedRing != null && (Elements.AIR.equals(selectedRing.getElement()) || Elements.WATER.equals(selectedRing.getElement()))) ||
-                    (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[23])) {
-                TextView spikeValueTextView = findViewById(R.id.spikeResistance);
-                String helpText = getString(R.string.spike_resistance) + "  ";
-                SpannableString spannable = new SpannableString(helpText);
-                Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
-                int desiredWidth = 100;
-                int desiredHeight = 100;
-                customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
-                ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
-                spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                spikeValueTextView.setText(spannable);
-            } else {
-                TextView spikeValueTextView = findViewById(R.id.spikeResistance);
-                String helpText = getString(R.string.spike_resistance) + "  ";
-                SpannableString spannable = new SpannableString(helpText);
-                Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
-                int desiredWidth = 100;
-                int desiredHeight = 100;
-                customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
-                ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
-                spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                spikeValueTextView.setText(spannable);
-            }
-
-            currentRating = ((currentDamage >= 10000.0 ? currentDamage/4000.0 : 0)
-                    + (currentArmor >= 200.0 ? currentArmor/150.0 : 0)
-                    + (currentSpeed >= 20.0 ? currentSpeed/15.0 : 0)
-                    + (currentJumpImpulse >= 20.0 ? currentJumpImpulse/15.0 : 0)
-                    + (skillsPicked != null ? ((skillsPicked[3] ? 0.1 : 0) + (skillsPicked[4] ? 0.1 : 0)  +(skillsPicked[5] ? 0.1 : 0)  + (skillsPicked[6] ? 0.1 : 0)
-            + (skillsPicked[7] ? 0.1 : 0)+ (skillsPicked[8] ? 0.1 : 0) +(skillsPicked[12] ? 0.1 : 0) +(skillsPicked[14] ? 0.1 : 0)
-            + (skillsPicked[15] ? 0.1 : 0) + (skillsPicked[16] ? 0.1 : 0) + (skillsPicked[17] ? 0.1 : 0)+ (skillsPicked[21] ? 0.1 : 0)
-            + (skillsPicked[22] ? 0.1 : 0) + (skillsPicked[24] ? 0.1 : 0) + (skillsPicked[25] ? 0.1 : 0) + (skillsPicked[26] ? 0.1 : 0)
-            + (((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[13])) ? 0.2 : 0)
-            + (((selectedRing != null && (Elements.AIR.equals(selectedRing.getElement()) || Elements.WATER.equals(selectedRing.getElement()))) ||
-                    (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[23])) ? 0.2 : 0)) : 0));
-
-            DecimalFormat decimalFormat = new DecimalFormat("#.##");
-            String formattedRating = decimalFormat.format(currentRating);
-
-            TextView rating = findViewById(R.id.rating);
-
-            if(currentRating < 1)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDCA9");
-            else if (currentRating >= 1 && currentRating < 2)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83E\uDD21");
-            else if (currentRating >= 2 && currentRating < 3)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE35");
-            else if (currentRating >= 3 && currentRating < 4)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE35\u200D\uD83D\uDCAB");
-            else if (currentRating >= 4 && currentRating < 5)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE36\u200D\uD83C\uDF2B️");
-            else if (currentRating >= 5 && currentRating < 6)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE42");
-            else if (currentRating >= 6 && currentRating < 7)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE00");
-            else if (currentRating >= 7 && currentRating < 8)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE0D");
-            else if (currentRating >= 8 && currentRating < 9)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE0E");
-            else if (currentRating >= 9 && currentRating < 10)
-                rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDDFF");
-
-            Log.d("EquipmentTester", "Current Rating: " + currentRating);
         }
 
         private boolean[] retrieveSkillsPickedFromSharedPreferences() {
@@ -969,7 +942,7 @@ public class EquipmentTester extends AppCompatActivity {
 
     private void updateSkillButtonImage() {
         Log.d("EquipmentTester", "Current Selected Skills:" + countSelectedSkills());
-        if (countSelectedSkills() == 20) {
+        if (countSelectedSkills() == 22) {
             skillButton.setImageResource(R.drawable.select_skill_tree_button);
             Log.d("EquipmentTester", "Changing to color picture");
         } else {

@@ -7,6 +7,7 @@
     android:background="@drawable/grey_background"
     android:outlineAmbientShadowColor="#FFFFFF"
     android:outlineSpotShadowColor="#1E0D0D"
+    android:fitsSystemWindows="true"
     tools:context=".AchievementsPage">
 
 

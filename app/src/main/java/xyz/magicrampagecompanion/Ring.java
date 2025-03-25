@@ -1,6 +1,5 @@
 package xyz.magicrampagecompanion;
 
-import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -8,7 +7,6 @@ public class Ring implements Parcelable {
     private String name;
     private Elements element;
     private int armor;
-
     private double armorBonus;
     private int speed;
     private int jump;
@@ -19,10 +17,10 @@ public class Ring implements Parcelable {
     private int axe;
     private int hammer;
     private int spear;
-    private Bitmap picture;
+    private int imageResId; // Now storing the image resource ID
 
     public Ring(String name, Elements element, int armor, double armorBonus, int speed, int jump, int magic,
-                 int sword, int staff, int dagger, int axe, int hammer, int spear, Bitmap picture) {
+                int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResId) {
         this.name = name;
         this.element = element;
         this.armor = armor;
@@ -36,7 +34,7 @@ public class Ring implements Parcelable {
         this.axe = axe;
         this.hammer = hammer;
         this.spear = spear;
-        this.picture = picture;
+        this.imageResId = imageResId;
     }
 
     public String getName() {
@@ -47,7 +45,10 @@ public class Ring implements Parcelable {
         return element;
     }
 
-    public void setElement(Elements element) { this.element = element; }
+    public void setElement(Elements element) {
+        this.element = element;
+    }
+
     public int getArmor() {
         return armor;
     }
@@ -92,11 +93,10 @@ public class Ring implements Parcelable {
         return spear;
     }
 
-    public Bitmap getPicture() {
-        return picture;
+    public int getImageResId() {
+        return imageResId;
     }
 
-    // Implement the Parcelable methods
     @Override
     public int describeContents() {
         return 0;
@@ -117,7 +117,7 @@ public class Ring implements Parcelable {
         dest.writeInt(axe);
         dest.writeInt(hammer);
         dest.writeInt(spear);
-        dest.writeParcelable(picture, flags);
+        dest.writeInt(imageResId); // Write the resource ID
     }
 
     protected Ring(Parcel in) {
@@ -134,7 +134,7 @@ public class Ring implements Parcelable {
         axe = in.readInt();
         hammer = in.readInt();
         spear = in.readInt();
-        picture = in.readParcelable(Bitmap.class.getClassLoader());
+        imageResId = in.readInt(); // Read the resource ID
     }
 
     public static final Creator<Ring> CREATOR = new Creator<Ring>() {

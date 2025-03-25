@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.function.Function;
 
 public class SkillPicker extends AppCompatActivity {
-    private int skillPointsLeft = 20;
+    private int skillPointsLeft = 22;
     private TextView skillPointsTextView;
     private boolean[] skillsPicked = new boolean[27];
     private MediaPlayer mediaPlayer;
@@ -126,7 +126,7 @@ public class SkillPicker extends AppCompatActivity {
             }
         }
 
-        skillPointsLeft = preferences.getInt("skill_points_left", 20); // Default to 20 if not found
+        skillPointsLeft = preferences.getInt("skill_points_left", 22); // Default to 22 if not found
         Log.d("SkillPicker", "Skill points left: " + skillPointsLeft);
 
         updateSkillPointsText();
@@ -308,7 +308,7 @@ public class SkillPicker extends AppCompatActivity {
         }
 
         // Update the skill points left after deselecting skills
-        skillPointsLeft = 20 - countSelectedSkills();
+        skillPointsLeft = 22 - countSelectedSkills();
         updateSkillPointsText();
     }
 
@@ -404,7 +404,7 @@ public class SkillPicker extends AppCompatActivity {
                 skillsPicked[i] = false;
             }
         }
-        skillPointsLeft = 20;
+        skillPointsLeft = 22;
         updateSkillPointsText();
         updateSkillStateInSharedPreferences();
     }

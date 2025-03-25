@@ -232,14 +232,14 @@ public class ItemSelection extends AppCompatActivity {
             armorList.add(createArmor(R.string.firestorm_armor, Elements.FIRE, true, 50, 122, 6, 6, 2, 120, 0, 0, 30, 60, 0, 50, R.drawable.armor_firestorm_armor));
             armorList.add(createArmor(R.string.jungle_master, Elements.EARTH, false, 50, 122, 6, 4, 5, 80, 0, 80, 0, 0, 80, 100, R.drawable.armor_jungle_master));
             armorList.add(createArmor(R.string.robe_of_eternal_fire, Elements.FIRE, false, 27, 124, 15, 4, 3, 180, 120, 0, 0, 50, 0, 120, R.drawable.armor_robe_of_eternal_fire));
-            armorList.add(createArmor(R.string.penumbra_suit, Elements.DARKNESS, false, 26, 125, 16, 6, 4, 140, 0, 50, 0, 0, 0, 60, R.drawable.armor_penumbra_suit));
+            armorList.add(createArmor(R.string.penumbra_suit_plus, Elements.DARKNESS, false, 26, 125, 16, 6, 4, 140, 0, 50, 0, 0, 0, 60, R.drawable.armor_penumbra_suit));
             armorList.add(createArmor(R.string.storm, Elements.AIR, false, 28, 128, 15, 6, 4, 160, 0, 170, 0, 170, 0, 0, R.drawable.armor_storm));
             armorList.add(createArmor(R.string.tunic_of_twisted_illusions, Elements.EARTH, false, 28, 128, 15, 4, 8, 100, 0, 80, 100, 0, 0, 80, R.drawable.armor_tunic_of_twisted_illusions));
             armorList.add(createArmor(R.string.dark_lord_set_plus, Elements.DARKNESS, false, 45, 131, 8, 6, 4, 130, 80, 0, 80, 0, 0, 80, R.drawable.armor_dark_lord_set));
             armorList.add(createArmor(R.string.robe_of_distant_visions, Elements.EARTH, false, 29, 133, 15, 4, 3, 170, 0, 130, 0, 0, 0, 160, R.drawable.armor_robe_of_distant_visions));
-            armorList.add(createArmor(R.string.bacoon_set, Elements.WATER, false, 28, 135, 16, 5, 5, 75, 60, 0, 0, 0, 80, 60, R.drawable.armor_bacoon_set));
-            armorList.add(createArmor(R.string.firestorm_armor, Elements.FIRE, true, 28, 135, 16, 8, 3, 80, 80, 0, 50, 70, 0, 70, R.drawable.armor_firestorm_armor));
-            armorList.add(createArmor(R.string.steelblow_armor, Elements.AIR, false, 28, 135, 16, 9, 5, 65, 70, 0, 80, 0, 0, 0, R.drawable.armor_steelblow_armor));
+            armorList.add(createArmor(R.string.bacoon_set_plus, Elements.WATER, false, 28, 135, 16, 5, 5, 75, 60, 0, 0, 0, 80, 60, R.drawable.armor_bacoon_set));
+            armorList.add(createArmor(R.string.firestorm_armor_plus, Elements.FIRE, true, 28, 135, 16, 8, 3, 80, 80, 0, 50, 70, 0, 70, R.drawable.armor_firestorm_armor));
+            armorList.add(createArmor(R.string.steelblow_armor_plus, Elements.AIR, false, 28, 135, 16, 9, 5, 65, 70, 0, 80, 0, 0, 0, R.drawable.armor_steelblow_armor));
             armorList.add(createArmor(R.string.swamp_ranger_suit, Elements.NEUTRAL, true, 40, 136, 10, 5, 3, 70, 100, 0, 100, 130, 0, 130, R.drawable.armor_swamp_ranger_suit));
             armorList.add(createArmor(R.string.enchanted_nutcracker, Elements.NEUTRAL, false, 30, 138, 15, 2, 4, 100, 120, 120, 0, 0, 0, 0, R.drawable.armor_enchanted_nutcracker));
             armorList.add(createArmor(R.string.scarlet_shadowweaver_garb, Elements.DARKNESS, false, 30, 138, 15, 4, 6, 130, 0, 135, 135, 0, 0, 0, R.drawable.armor_scarlet_shadowweaver_garb));
@@ -248,7 +248,7 @@ public class ItemSelection extends AppCompatActivity {
             armorList.add(createArmor(R.string.vest_of_twisted_illusions, Elements.DARKNESS, true, 30, 138, 15, 3, 0, 70, 0, 0, 0, 0, 0, 240, R.drawable.armor_vest_of_twisted_illusions));
             armorList.add(createArmor(R.string.wind_witch_dress, Elements.AIR, false, 30, 138, 15, 6, 4, 150, 110, 0, 140, 0, 0, 140, R.drawable.armor_wind_witch_suit));
             armorList.add(createArmor(R.string.steelblow_armor, Elements.AIR, false, 45, 142, 9, 8, 4, 60, 65, 0, 75, 0, 0, 0, R.drawable.armor_steelblow_armor));
-            armorList.add(createArmor(R.string.bankers_coat, Elements.DARKNESS, false, 32, 147, 15, 5, 4, 60, 0, 0, 160, 0, 0, 0, R.drawable.armor_bankers_coat));
+            armorList.add(createArmor(R.string.bankers_coat_plus, Elements.DARKNESS, false, 32, 147, 15, 5, 4, 60, 0, 0, 160, 0, 0, 0, R.drawable.armor_bankers_coat));
             armorList.add(createArmor(R.string.cthulhu_armor, Elements.NEUTRAL, false, 32, 147, 15, 2, 3, 130, 100, 100, 100, 100, 100, 100, R.drawable.armor_cthulhu_armor));
             armorList.add(createArmor(R.string.heros_set_plus, Elements.AIR, false, 32, 147, 15, 15, 4, 70, 100, 0, 0, 0, 100, 100, R.drawable.armor_heros_set));
             armorList.add(createArmor(R.string.champion_set, Elements.NEUTRAL, false, 90, 154, 3, 4, 4, 70, 100, 0, 0, 0, 0, 120, R.drawable.armor_champion_set));
@@ -328,7 +328,7 @@ public class ItemSelection extends AppCompatActivity {
             ringList.add(createRing(R.string.creepy_crawler, Elements.NEUTRAL, 40, 0, 3, 3, 90, 40, 40, 40, 40, 40, 40, R.drawable.ring_creepy_crawler));
             ringList.add(createRing(R.string.cuteulhu, Elements.NEUTRAL, 40, 0, 4, 3, 100, 0, 90, 0, 90, 90, 0, R.drawable.ring_cuteulhu));
             ringList.add(createRing(R.string.ghostwalker, Elements.NEUTRAL, 40, 150, -2, 0, 40, 0, 0, 0, 0, 0, 0, R.drawable.ring_ghostwalker));
-            ringList.add(createRing(R.string.golden_guardian, Elements.NEUTRAL, 40, 0, 0, 0, 100, 0, 0, 0, 0, 150, 150, R.drawable.ring_golden_guardian));
+            ringList.add(createRing(R.string.golden_guardian, Elements.NEUTRAL, 30, 0, 0, 0, 100, 0, 0, 0, 0, 130, 100, R.drawable.ring_golden_guardian));
             ringList.add(createRing(R.string.magic_cog, Elements.NEUTRAL, 40, 0, 5, 3, 210, 0, 0, 0, 0, 0, 0, R.drawable.ring_magic_cog));
             ringList.add(createRing(R.string.phoenix, Elements.FIRE, 40, 0, 0, 0, 100, 0, 0, 90, 0, 130, 90, R.drawable.ring_phoenix));
             ringList.add(createRing(R.string.ring_of_light, Elements.LIGHT, 40, 0, 4, 4, 60, 50, 0, 50, 0, 50, 0, R.drawable.ring_ring_of_light));
@@ -413,7 +413,7 @@ public class ItemSelection extends AppCompatActivity {
             staffList.add(createWeapon(R.string.icebane, WeaponTypes.STAFF, Elements.WATER, 62, 285, 15, 30, 4, 2, R.drawable.staff_icebane));
             staffList.add(createWeapon(R.string.nightfall, WeaponTypes.STAFF, Elements.DARKNESS, 62, 285, 15, 30, 2, 4, R.drawable.staff_nightfall));
             staffList.add(createWeapon(R.string.tome_of_the_sands, WeaponTypes.STAFF, Elements.AIR, 66, 303, 15, -35, 10, 0, R.drawable.grimoire_tome_of_the_sands));
-            staffList.add(createWeapon(R.string.hippie_dragon_staff, WeaponTypes.STAFF, Elements.EARTH, 70, 322, 15, 40, 5, 3, R.drawable.staff_hippie_dragon_staff));
+            staffList.add(createWeapon(R.string.hippie_dragon_staff_plus, WeaponTypes.STAFF, Elements.EARTH, 70, 322, 15, 40, 5, 3, R.drawable.staff_hippie_dragon_staff));
             staffList.add(createWeapon(R.string.dragonskull_staff, WeaponTypes.STAFF, Elements.FIRE, 72, 331, 15, 0, 5, 1, R.drawable.staff_dragonskull_staff));
             staffList.add(createWeapon(R.string.legacy_of_the_oracle, WeaponTypes.STAFF, Elements.EARTH, 72, 331, 15, 45, 5, 2, R.drawable.staff_legacy_of_the_oracle));
             staffList.add(createWeapon(R.string.royal_war_staff, WeaponTypes.STAFF, Elements.NEUTRAL, 72, 331, 15, 20, 3, 2, R.drawable.staff_royal_war_staff));
@@ -424,8 +424,8 @@ public class ItemSelection extends AppCompatActivity {
             staffList.add(createWeapon(R.string.death_scythe, WeaponTypes.STAFF, Elements.DARKNESS, 80, 368, 15, 0, 4, 1, R.drawable.staff_death_scythe));
             staffList.add(createWeapon(R.string.water_staff, WeaponTypes.STAFF, Elements.WATER, 80, 368, 15, 0, 3, 3, R.drawable.staff_water_staff));
             staffList.add(createWeapon(R.string.death_scythe_plus, WeaponTypes.STAFF, Elements.DARKNESS, 85, 391, 15, 0, 4, 3, R.drawable.staff_death_scythe));
-            staffList.add(createWeapon(R.string.dragonskull_staff, WeaponTypes.STAFF, Elements.FIRE, 90, 414, 15, 0, 4, 2, R.drawable.staff_dragonskull_staff));
-            staffList.add(createWeapon(R.string.golden_dragon_staff, WeaponTypes.STAFF, Elements.LIGHT, 90, 414, 15, 25, 5, 3, R.drawable.staff_golden_dragon_staff));
+            staffList.add(createWeapon(R.string.dragonskull_staff_plus, WeaponTypes.STAFF, Elements.FIRE, 90, 414, 15, 0, 4, 2, R.drawable.staff_dragonskull_staff));
+            staffList.add(createWeapon(R.string.golden_dragon_staff_plus, WeaponTypes.STAFF, Elements.LIGHT, 90, 414, 15, 25, 5, 3, R.drawable.staff_golden_dragon_staff));
             staffList.add(createWeapon(R.string.spider_staff, WeaponTypes.STAFF, Elements.DARKNESS, 90, 414, 15, 0, 4, 4, R.drawable.staff_spider_staff));
             staffList.add(createWeapon(R.string.toxic_staff, WeaponTypes.STAFF, Elements.EARTH, 90, 414, 15, 0, 5, 2, R.drawable.staff_toxic_staff));
             staffList.add(createWeapon(R.string.windbane, WeaponTypes.STAFF, Elements.AIR, 90, 414, 15, 0, 8, 2, R.drawable.staff_windbane));
@@ -448,7 +448,7 @@ public class ItemSelection extends AppCompatActivity {
             daggerList.add(createWeapon(R.string.dagger_of_sand, WeaponTypes.DAGGER, Elements.AIR, 32, 131, 13, 0, 20, 2, R.drawable.dagger_dagger_of_sand));
             daggerList.add(createWeapon(R.string.dark_dagger, WeaponTypes.DAGGER, Elements.DARKNESS, 36, 148, 13, 0, 25, 2, R.drawable.dagger_dark_dagger));
             daggerList.add(createWeapon(R.string.precious_skewer, WeaponTypes.DAGGER, Elements.NEUTRAL, 35, 161, 15, 0, 30, 3, R.drawable.dagger_precious_skewer));
-            daggerList.add(createWeapon(R.string.dark_dagger, WeaponTypes.DAGGER, Elements.DARKNESS, 40, 164, 13, 0, 25, 3, R.drawable.dagger_dark_dagger));
+            daggerList.add(createWeapon(R.string.dark_dagger_plus, WeaponTypes.DAGGER, Elements.DARKNESS, 40, 164, 13, 0, 25, 3, R.drawable.dagger_dark_dagger));
             daggerList.add(createWeapon(R.string.last_survivors_dagger, WeaponTypes.DAGGER, Elements.NEUTRAL, 36, 165, 15, 0, 20, 3, R.drawable.dagger_last_survivors_dagger));
             daggerList.add(createWeapon(R.string.precious_dual_blade, WeaponTypes.DAGGER, Elements.NEUTRAL, 37, 170, 15, 0, 12, 5, R.drawable.dagger_precious_dual_blade));
             daggerList.add(createWeapon(R.string.bunnyhop_dagger, WeaponTypes.DAGGER, Elements.NEUTRAL, 39, 179, 15, 0, 20, 18, R.drawable.dagger_bunnyhop_dagger));
@@ -470,7 +470,7 @@ public class ItemSelection extends AppCompatActivity {
             daggerList.add(createWeapon(R.string.blood_swiftblade, WeaponTypes.DAGGER, Elements.FIRE, 61, 280, 15, 0, 25, 0, R.drawable.dagger_blood_swiftblade));
             daggerList.add(createWeapon(R.string.ifrits_shuriken, WeaponTypes.DAGGER, Elements.FIRE, 74, 340, 15, -20, 15, 3, R.drawable.shuriken_ifrits_shuriken));
             daggerList.add(createWeapon(R.string.undines_shuriken, WeaponTypes.DAGGER, Elements.WATER, 76, 349, 15, -20, 15, 3, R.drawable.shuriken_undines_shuriken));
-            daggerList.add(createWeapon(R.string.gayan_shuriken, WeaponTypes.DAGGER, Elements.EARTH, 80, 368, 15, -10, 15, 3, R.drawable.dagger_gayan));
+            daggerList.add(createWeapon(R.string.gayan_shuriken, WeaponTypes.DAGGER, Elements.EARTH, 80, 368, 15, -10, 15, 3, R.drawable.shuriken_gayan_shuriken));
             daggerList.add(createWeapon(R.string.shooting_star_shuriken, WeaponTypes.DAGGER, Elements.LIGHT, 84, 386, 15, -20, 18, 0, R.drawable.shuriken_shooting_star_shuriken));
 
             axeList.add(createWeapon(R.string.silver_axe, WeaponTypes.AXE, Elements.NEUTRAL, 13, 22, 3, 35, 0, 0, R.drawable.axe_silver_fire_lightning_axe));
@@ -590,49 +590,29 @@ public class ItemSelection extends AppCompatActivity {
         }
     }
 
+    // Replace the original createArmor with this:
     private Armor createArmor(int nameResId, Elements element, boolean frostImmune, int minArmor, int maxArmor, int upgrades, int speed, int jump, int magic, int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResourceId) {
         String name = getResources().getString(nameResId);
-        Bitmap armorBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
-        Bitmap resizedBitmap = Bitmap.createScaledBitmap(armorBitmap, 300, 300, true);
-        return new Armor(name, element, frostImmune, minArmor, maxArmor, upgrades, speed, jump, magic, sword, staff, dagger, axe, hammer, spear, resizedBitmap);
+        return new Armor(name, element, frostImmune, minArmor, maxArmor, upgrades, speed, jump, magic, sword, staff, dagger, axe, hammer, spear, imageResourceId);
     }
 
-
+    // Replace the original createRing with this:
     private Ring createRing(int nameResId, Elements element, int armor, int armorBonus, int speed, int jump, int magic, int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResourceId) {
         String name = getResources().getString(nameResId);
-        Bitmap ringBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
-        Bitmap resizedBitmap = Bitmap.createScaledBitmap(ringBitmap, 300, 300, true);
-        return new Ring(name, element, armor, armorBonus, speed, jump, magic, sword, staff, dagger, axe, hammer, spear, resizedBitmap);
+        return new Ring(name, element, armor, armorBonus, speed, jump, magic, sword, staff, dagger, axe, hammer, spear, imageResourceId);
     }
 
-
+    // Replace the original createWeapon with this:
     private Weapon createWeapon(int nameResId, WeaponTypes type, Elements element, int minDamage, int maxDamage, int upgrades, int armorBonus, int speed, int jump, int imageResourceId) {
         String name = getResources().getString(nameResId);
-        Bitmap weaponBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
-        if(type.equals(WeaponTypes.HAMMER) || type.equals(WeaponTypes.AXE)) {
-            if(weaponBitmap.getWidth() == weaponBitmap.getHeight()) {
-                Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, 300, 300, true);
-                return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
-            }
-            Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, weaponBitmap.getWidth(), weaponBitmap.getHeight(), true);
-            return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
-        }
-        else if (type.equals(WeaponTypes.STAFF) && weaponBitmap.getWidth() == weaponBitmap.getHeight()) {
-            Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, 300, 300, true);
-            return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
-        }
-        else if (type.equals(WeaponTypes.SPEAR) && weaponBitmap.getHeight() == 768) {
-            Bitmap resizedBitmap = Bitmap.createScaledBitmap(weaponBitmap, 100, 500, true);
-            return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, resizedBitmap);
-        }
-        else
-            return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, weaponBitmap);
+        return new Weapon(name, type, element, minDamage, maxDamage, upgrades, armorBonus, speed, jump, imageResourceId);
     }
 
+    // Replace the original createCharacterClass with this:
     private CharacterClass createCharacterClass(ClassNames name, int armorBonus, int magicBonus, int swordBonus, int daggerBonus, int hammerBonus, int axeBonus, int spearBonus, int staffBonus, int speedBonus, int jumpImpulseBonus, int imageResourceId) {
-        Bitmap classBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
-        return new CharacterClass(name, armorBonus, magicBonus, swordBonus, daggerBonus, hammerBonus, axeBonus, spearBonus, staffBonus,  speedBonus, jumpImpulseBonus, classBitmap);
+        return new CharacterClass(name, armorBonus, magicBonus, swordBonus, daggerBonus, hammerBonus, axeBonus, spearBonus, staffBonus, speedBonus, jumpImpulseBonus, imageResourceId);
     }
+
 
     private void playSound(MediaPlayer mediaPlayer) {
         // Check if MediaPlayer is null or not
