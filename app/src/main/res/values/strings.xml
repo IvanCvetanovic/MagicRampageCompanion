@@ -468,7 +468,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
 
     <string name="dungeon44text">
         All three 💎 are on the way, however, you mostly need a golden key to open the doors to get them. Do not skip any areas beforehand.\n\n
-        The third secret area is lso hidden behind destructible orange mass.\n\n
+        The third secret area is also hidden behind destructible orange mass.\n\n
         Be sure to visit the sixth secret area, since it has a nice armor that will help you with the boss.\n\n
     </string>
 
@@ -631,7 +631,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="dark_lord_set">Dark Lord Set</string>
     <string name="light_spellmaster_suit">Light Spellmaster Suit</string>
     <string name="liquid_assassin_suit">Liquid Assassin Suit</string>
-    <string name="light_champion_suit">Light Champion Set</string>
+    <string name="light_champion_set">Light Champion Set</string>
     <string name="jungle_master">Jungle Master</string>
     <string name="jungle_assassin_suit">Jungle Assassin Suit</string>
     <string name="firestorm_armor">Firestorm Armor</string>
@@ -656,7 +656,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="bunny_suit">Bunny Suit</string>
     <string name="warden_of_demons">Warden of Demons</string>
     <string name="tunic_of_the_relentless">Tunic of the Relentless</string>
-    <string name="wind_witch_dress">Wind Witch Dress</string>
+    <string name="wind_witch_suit">Wind Witch Suit</string>
     <string name="destroyer_of_the_corrupted">Destroyer of the Corrupted</string>
     <string name="interrogator">Interrogator</string>
     <string name="protector_of_the_oracle">Protector of the Oracle</string>
@@ -674,7 +674,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="vest_of_twisted_illusions">Vest of Twisted Illusions</string>
     <string name="time_patroller_suit">Time Patroller Suit</string>
     <string name="kings_spectre_tunic">King\'s Spectre Tunic</string>
-    <string name="cthulhu_armor">Cthulhu Armor</string>
+    <string name="cthulhu_set">Cthulhu Set</string>
     <string name="barrenlands_banditin">Barren-lands Banditin</string>
     <string name="tunic_of_ending_nights">Tunic of Ending Nights</string>
     <string name="santa_claus">Santa Claus</string>
@@ -940,7 +940,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="tunic_of_hellish_illusions">Tunic of Hellish Illusions</string>
     <string name="gatekeepers_bionic_arm">Gatekeepers Bionic Arm</string>
     <string name="robe_of_eternal_fire">Robe of Eternal Fire</string>
-    <string name="scarlet_shadowweaver_garb">Scarlet Shadowweaver Garb</string>
+    <string name="scarlet_shadowweaver">Scarlet Shadowweaver</string>
     <string name="unholy_storm">Unholy Storm</string>
     <string name="innkeepers_costume">Innkeepers Costume</string>
     <string name="greenfang_ensemble">Greenfang Ensemble</string>
@@ -966,6 +966,10 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="tome_of_the_sands">Tome of the Sands</string>
     <string name="choose_the_chapter">Choose the Chapter!</string>
     <string name="dark_lord_set_plus">Dark Lord Set+</string>
+    <string name="vest_of_ominous_jesters">Vest of Ominous Jesters</string>
+    <string name="vest_of_ominous_comrades">Vest of Ominous Comrades</string>
+    <string name="the_daemon_codices">The Daemon Codices</string>
+    <string name="path_of_exile_plus">Path of Exile+</string>
 
 
 </resources>

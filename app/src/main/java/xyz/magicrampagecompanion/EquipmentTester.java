@@ -571,12 +571,11 @@ public class EquipmentTester extends AppCompatActivity {
         {
             if (selectedClass != null && selectedArmor != null && selectedWeapon != null && selectedRing != null && skillsPicked != null) {
 
-                if (currentWeaponUpgrades == 0)
-                    currentWeaponUpgrades = 1;
-
                 Log.d("EquipmentTester", "Calculating the stats!");
-                currentDamage = selectedWeapon != null ? (selectedWeapon.getMinDamage() + ((selectedWeapon.getMaxDamage() - selectedWeapon.getMinDamage()) / ((double) selectedWeapon.getUpgrades())) * currentWeaponUpgrades) : 0;
-
+                if (currentWeaponUpgrades != 0)
+                    currentDamage = selectedWeapon != null ? (selectedWeapon.getMinDamage() + ((selectedWeapon.getMaxDamage() - selectedWeapon.getMinDamage()) / ((double) selectedWeapon.getUpgrades())) * currentWeaponUpgrades) : 0;
+                else
+                    currentDamage = selectedWeapon != null ? selectedWeapon.getMinDamage() : 0;
                 //Magic Boni Apply only on non-neutral items
                 // Armor magic bonus
                 if (selectedArmor != null && selectedWeapon != null && !selectedWeapon.getElement().equals(Elements.NEUTRAL)) {

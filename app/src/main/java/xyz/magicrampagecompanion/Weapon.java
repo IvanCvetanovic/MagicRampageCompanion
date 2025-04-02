@@ -13,10 +13,18 @@ public class Weapon implements Parcelable {
     private double armorBonus;
     private int speed;
     private int jump;
-    private int imageResId; // Now storing the image resource ID
+    private int imageResId;
+    private int attackCooldown;
+    private int pierceCount;
+    private boolean enablePierceAreaDamage;
+    private boolean persistAgainstProjectile;
+    private boolean isPoisonous;
+    private boolean isFrost;
 
     public Weapon(String name, WeaponTypes type, Elements element, int minDamage, int maxDamage, int upgrades,
-                  double armorBonus, int speed, int jump, int imageResId) {
+                  double armorBonus, int speed, int jump, int imageResId,
+                  int attackCooldown, int pierceCount, boolean enablePierceAreaDamage,
+                  boolean persistAgainstProjectile, boolean isPoisonous, boolean isFrost) {
         this.name = name;
         this.type = type;
         this.element = element;
@@ -27,6 +35,12 @@ public class Weapon implements Parcelable {
         this.speed = speed;
         this.jump = jump;
         this.imageResId = imageResId;
+        this.attackCooldown = attackCooldown;
+        this.pierceCount = pierceCount;
+        this.enablePierceAreaDamage = enablePierceAreaDamage;
+        this.persistAgainstProjectile = persistAgainstProjectile;
+        this.isPoisonous = isPoisonous;
+        this.isFrost = isFrost;
     }
 
     public String getName() {
@@ -73,6 +87,30 @@ public class Weapon implements Parcelable {
         return imageResId;
     }
 
+    public int getAttackCooldown() {
+        return attackCooldown;
+    }
+
+    public int getPierceCount() {
+        return pierceCount;
+    }
+
+    public boolean isEnablePierceAreaDamage() {
+        return enablePierceAreaDamage;
+    }
+
+    public boolean isPersistAgainstProjectile() {
+        return persistAgainstProjectile;
+    }
+
+    public boolean isPoisonous() {
+        return isPoisonous;
+    }
+
+    public boolean isFrost() {
+        return isFrost;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -89,7 +127,13 @@ public class Weapon implements Parcelable {
         dest.writeDouble(armorBonus);
         dest.writeInt(speed);
         dest.writeInt(jump);
-        dest.writeInt(imageResId); // Write the resource ID
+        dest.writeInt(imageResId);
+        dest.writeInt(attackCooldown);
+        dest.writeInt(pierceCount);
+        dest.writeByte((byte) (enablePierceAreaDamage ? 1 : 0));
+        dest.writeByte((byte) (persistAgainstProjectile ? 1 : 0));
+        dest.writeByte((byte) (isPoisonous ? 1 : 0));
+        dest.writeByte((byte) (isFrost ? 1 : 0));
     }
 
     protected Weapon(Parcel in) {
@@ -102,7 +146,13 @@ public class Weapon implements Parcelable {
         armorBonus = in.readDouble();
         speed = in.readInt();
         jump = in.readInt();
-        imageResId = in.readInt(); // Read the resource ID
+        imageResId = in.readInt();
+        attackCooldown = in.readInt();
+        pierceCount = in.readInt();
+        enablePierceAreaDamage = in.readByte() != 0;
+        persistAgainstProjectile = in.readByte() != 0;
+        isPoisonous = in.readByte() != 0;
+        isFrost = in.readByte() != 0;
     }
 
     public static final Creator<Weapon> CREATOR = new Creator<Weapon>() {
