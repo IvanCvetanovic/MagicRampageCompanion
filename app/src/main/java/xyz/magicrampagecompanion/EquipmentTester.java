@@ -4,12 +4,12 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.style.ImageSpan;
 import android.util.Log;
 import android.view.View;
@@ -37,13 +37,7 @@ public class EquipmentTester extends AppCompatActivity {
     private ImageView classButton;
     private ImageView skillButton;
 
-    private double currentDamage = 0;
-    private double currentArmor = 0;
-    private int currentSpeed = 0;
-    private double currentJumpImpulse = 0;
-
     private boolean[] skillsPicked;
-    private double currentRating = 0;
 
     private ImageView lockButton1;
     private ImageView lockButton2;
@@ -51,14 +45,6 @@ public class EquipmentTester extends AppCompatActivity {
     private LinearLayout upgradeWeaponButtonsLayout;
     private TextView armorUpgradesView;
     private TextView weaponUpgradesView;
-    private ImageButton arrowPlusMaxButton1;
-    private ImageButton arrowMinusMaxButton1;
-    private ImageButton arrowPlusButton1;
-    private ImageButton arrowMinusButton1;
-    private ImageButton arrowPlusMaxButton2;
-    private ImageButton arrowMinusMaxButton2;
-    private ImageButton arrowPlusButton2;
-    private ImageButton arrowMinusButton2;
     private ImageButton armorElementButton;
     private ImageButton weaponElementButton;
     private ImageButton ringElementButton;
@@ -81,45 +67,79 @@ public class EquipmentTester extends AppCompatActivity {
         String helpText = getString(R.string.fire_resistance) + "  ";
         SpannableString spannable = new SpannableString(helpText);
         Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
-        int desiredWidth = 100;
-        int desiredHeight = 100;
+        int desiredWidth = 80;
+        int desiredHeight = 80;
         customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
         ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
         spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         fireValueTextView.setText(spannable);
+
+        TextView spikeValueTextView = findViewById(R.id.spikeResistance);
+        String helpText1 = getString(R.string.spike_resistance) + "  ";
+        spannable = new SpannableString(helpText);
+        customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+        customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+        imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+        spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spikeValueTextView.setText(spannable);
+
+        TextView frostValueTextView = findViewById(R.id.frostResistance);
+        String helpText2 = getString(R.string.frost_resistance) + "  ";
+        spannable = new SpannableString(helpText2);
+        customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+        customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+        imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+        spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        frostValueTextView.setText(spannable);
+
+        TextView projectilePersistenceValueTextView = findViewById(R.id.projectilePersistence);
+        String helpText3 = getString(R.string.projectile_persistence) + "  ";
+        spannable = new SpannableString(helpText3);
+        customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+        customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+        imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+        spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        projectilePersistenceValueTextView.setText(spannable);
+
+        TextView poisonousAttackValueTextView = findViewById(R.id.poisonousAttack);
+        String helpText4 = getString(R.string.poisonous_attack) + "  ";
+        spannable = new SpannableString(helpText4);
+        customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+        customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+        imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+        spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        poisonousAttackValueTextView.setText(spannable);
+
+        TextView frostAttackValueTextView = findViewById(R.id.frostAttack);
+        String helpText5 = getString(R.string.frost_attack) + "  ";
+        spannable = new SpannableString(helpText5);
+        customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+        customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+        imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+        spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        frostAttackValueTextView.setText(spannable);
 
         lockButton1 = findViewById(R.id.lockButton1);
         upgradeArmorButtonsLayout = findViewById(R.id.upgradeArmorButtonsLayout);
         upgradeArmorButtonsLayout.setVisibility(View.GONE);
         armorUpgradesView = findViewById(R.id.armorUpgradesView);
         armorUpgradesView.setVisibility(View.GONE);
-        arrowPlusMaxButton1 = findViewById(R.id.ButtonPlusMax1);
-        arrowMinusMaxButton1 = findViewById(R.id.ButtonMinusMax1);
-        arrowPlusButton1 = findViewById(R.id.ButtonPlus1);
-        arrowMinusButton1 = findViewById(R.id.ButtonMinus1);
+        ImageButton arrowPlusMaxButton1 = findViewById(R.id.ButtonPlusMax1);
+        ImageButton arrowMinusMaxButton1 = findViewById(R.id.ButtonMinusMax1);
+        ImageButton arrowPlusButton1 = findViewById(R.id.ButtonPlus1);
+        ImageButton arrowMinusButton1 = findViewById(R.id.ButtonMinus1);
         armorElementButton = findViewById(R.id.ButtonElement1);
         armorElementButton.setVisibility(View.GONE);
-
-        TextView spikeValueTextView = findViewById(R.id.spikeResistance);
-        String helpText1 = getString(R.string.spike_resistance) + "  ";
-        spannable = new SpannableString(helpText);
-        customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
-        desiredWidth = 100;
-        desiredHeight = 100;
-        customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
-        imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
-        spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        spikeValueTextView.setText(spannable);
 
         lockButton2 = findViewById(R.id.lockButton2);
         upgradeWeaponButtonsLayout = findViewById(R.id.upgradeWeaponButtonsLayout);
         upgradeWeaponButtonsLayout.setVisibility(View.GONE);
         weaponUpgradesView = findViewById(R.id.weaponUpgradesView);
         weaponUpgradesView.setVisibility(View.GONE);
-        arrowPlusMaxButton2 = findViewById(R.id.ButtonPlusMax2);
-        arrowMinusMaxButton2 = findViewById(R.id.ButtonMinusMax2);
-        arrowPlusButton2 = findViewById(R.id.ButtonPlus2);
-        arrowMinusButton2 = findViewById(R.id.ButtonMinus2);
+        ImageButton arrowPlusMaxButton2 = findViewById(R.id.ButtonPlusMax2);
+        ImageButton arrowMinusMaxButton2 = findViewById(R.id.ButtonMinusMax2);
+        ImageButton arrowPlusButton2 = findViewById(R.id.ButtonPlus2);
+        ImageButton arrowMinusButton2 = findViewById(R.id.ButtonMinus2);
         weaponElementButton = findViewById(R.id.ButtonElement2);
         weaponElementButton.setVisibility(View.GONE);
 
@@ -571,7 +591,10 @@ public class EquipmentTester extends AppCompatActivity {
         {
             if (selectedClass != null && selectedArmor != null && selectedWeapon != null && selectedRing != null && skillsPicked != null) {
 
+                int currentAttackSpeed = selectedWeapon.getAttackCooldown();
+                int currentPierceCount = selectedWeapon.getPierceCount();
                 Log.d("EquipmentTester", "Calculating the stats!");
+                double currentDamage = 0;
                 if (currentWeaponUpgrades != 0)
                     currentDamage = selectedWeapon != null ? (selectedWeapon.getMinDamage() + ((selectedWeapon.getMaxDamage() - selectedWeapon.getMinDamage()) / ((double) selectedWeapon.getUpgrades())) * currentWeaponUpgrades) : 0;
                 else
@@ -713,7 +736,7 @@ public class EquipmentTester extends AppCompatActivity {
                 if (selectedArmor != null && selectedArmor.getUpgrades() == 0)
                     selectedArmor.setUpgrades(1);
 
-                currentArmor = (selectedArmor != null
+                double currentArmor = (selectedArmor != null
                         ? (selectedArmor.getMinArmor() + ((selectedArmor.getMaxArmor() - selectedArmor.getMinArmor())
                         / ((double) selectedArmor.getUpgrades())) * currentArmorUpgrades) : 0);
 
@@ -748,6 +771,40 @@ public class EquipmentTester extends AppCompatActivity {
                 TextView armorValueTextView = findViewById(R.id.currentArmor);
                 armorValueTextView.setText(getString(R.string.armor_in_calculation) + (int) currentArmor);
 
+                int starCount;
+                if (currentAttackSpeed <= 300) {
+                    starCount = 5;
+                } else if (currentAttackSpeed <= 450) {
+                    starCount = 4;
+                } else if (currentAttackSpeed <= 650) {
+                    starCount = 3;
+                } else if (currentAttackSpeed <= 750) {
+                    starCount = 2;
+                } else {
+                    starCount = 1;
+                }
+
+                TextView attackSpeedTextView = findViewById(R.id.attackSpeed);
+                String helpText = getString(R.string.attack_speed) + " ";
+                SpannableStringBuilder builder = new SpannableStringBuilder(helpText);
+
+                Drawable starDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.star, null);
+                int desiredWidth = 80;
+                int desiredHeight = 80;
+                starDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+
+                for (int i = 0; i < starCount; i++) {
+                    int start = builder.length();
+                    builder.append(" ");
+                    int end = builder.length();
+                    builder.setSpan(new ImageSpan(starDrawable, ImageSpan.ALIGN_BOTTOM), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
+                attackSpeedTextView.setText(builder);
+
+
+                TextView pierceCountTextView = findViewById(R.id.pierceCount);
+                pierceCountTextView.setText(getString(R.string.pierce_count) + " " + currentPierceCount);
+
                 double helpArmorSpeed = 0;
                 double helpArmorJump = 0;
                 if (selectedArmor != null) {
@@ -767,7 +824,7 @@ public class EquipmentTester extends AppCompatActivity {
                     helpRingJump = selectedRing.getJump() / 100.0 + 1;
                 }
 
-                currentSpeed = (int) ((helpArmorSpeed * helpWeaponSpeed * helpRingSpeed) * 100 - 100);
+                int currentSpeed = (int) ((helpArmorSpeed * helpWeaponSpeed * helpRingSpeed) * 100 - 100);
 
                 double helpClassJump = 0;
                 if (selectedClass != null) {
@@ -788,7 +845,7 @@ public class EquipmentTester extends AppCompatActivity {
                     Log.d("EquipmentTester", "Weapon Jump: " + selectedWeapon.getJump());
                 }
 
-                currentJumpImpulse = (selectedArmor != null ? helpArmorJump : 0) * (selectedRing != null ? helpRingJump : 0)
+                double currentJumpImpulse = (selectedArmor != null ? helpArmorJump : 0) * (selectedRing != null ? helpRingJump : 0)
                         * (selectedWeapon != null ? helpWeaponJump : 0) * (selectedClass != null ? helpClassJump : 0);
                 if (skillsPicked != null && skillsPicked[9]) {
                     currentJumpImpulse += 0.03;
@@ -801,22 +858,18 @@ public class EquipmentTester extends AppCompatActivity {
 
                 if ((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || currentArmor >= 330 || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[13])) {
                     TextView fireValueTextView = findViewById(R.id.fireResistance);
-                    String helpText = getString(R.string.fire_resistance) + "  ";
+                    helpText = getString(R.string.fire_resistance) + "  ";
                     SpannableString spannable = new SpannableString(helpText);
                     Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
-                    int desiredWidth = 100;
-                    int desiredHeight = 100;
                     customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
                     ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
                     spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                     fireValueTextView.setText(spannable);
                 } else {
                     TextView fireValueTextView = findViewById(R.id.fireResistance);
-                    String helpText = getString(R.string.fire_resistance) + "  ";
+                    helpText = getString(R.string.fire_resistance) + "  ";
                     SpannableString spannable = new SpannableString(helpText);
                     Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
-                    int desiredWidth = 100;
-                    int desiredHeight = 100;
                     customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
                     ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
                     spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -825,22 +878,18 @@ public class EquipmentTester extends AppCompatActivity {
 
                 if (selectedArmor != null && selectedArmor.isFrostImmune()) {
                     TextView frostValueTextView = findViewById(R.id.frostResistance);
-                    String helpText = getString(R.string.frost_resistance) + "  ";
+                    helpText = getString(R.string.frost_resistance) + "  ";
                     SpannableString spannable = new SpannableString(helpText);
                     Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
-                    int desiredWidth = 100;
-                    int desiredHeight = 100;
                     customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
                     ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
                     spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                     frostValueTextView.setText(spannable);
                 } else {
                     TextView frostValueTextView = findViewById(R.id.frostResistance);
-                    String helpText = getString(R.string.frost_resistance) + "  ";
+                    helpText = getString(R.string.frost_resistance) + "  ";
                     SpannableString spannable = new SpannableString(helpText);
                     Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
-                    int desiredWidth = 100;
-                    int desiredHeight = 100;
                     customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
                     ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
                     spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -850,39 +899,103 @@ public class EquipmentTester extends AppCompatActivity {
                 if ((selectedRing != null && (Elements.AIR.equals(selectedRing.getElement()) || Elements.WATER.equals(selectedRing.getElement()))) ||
                         (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[23])) {
                     TextView spikeValueTextView = findViewById(R.id.spikeResistance);
-                    String helpText = getString(R.string.spike_resistance) + "  ";
+                    helpText = getString(R.string.spike_resistance) + "  ";
                     SpannableString spannable = new SpannableString(helpText);
                     Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
-                    int desiredWidth = 100;
-                    int desiredHeight = 100;
                     customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
                     ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
                     spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                     spikeValueTextView.setText(spannable);
                 } else {
                     TextView spikeValueTextView = findViewById(R.id.spikeResistance);
-                    String helpText = getString(R.string.spike_resistance) + "  ";
+                    helpText = getString(R.string.spike_resistance) + "  ";
                     SpannableString spannable = new SpannableString(helpText);
                     Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
-                    int desiredWidth = 100;
-                    int desiredHeight = 100;
                     customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
                     ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
                     spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                     spikeValueTextView.setText(spannable);
                 }
 
-                currentRating = ((currentDamage >= 10000.0 ? currentDamage / 4000.0 : 0)
-                        + (currentArmor >= 200.0 ? currentArmor / 150.0 : 0)
-                        + (currentSpeed >= 20.0 ? currentSpeed / 15.0 : 0)
-                        + (currentJumpImpulse >= 20.0 ? currentJumpImpulse / 15.0 : 0)
+                if (selectedWeapon != null && selectedWeapon.isPersistAgainstProjectile()) {
+                    TextView projectilePersistenceValueTextView = findViewById(R.id.projectilePersistence);
+                    helpText = getString(R.string.projectile_persistence) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    projectilePersistenceValueTextView.setText(spannable);
+                } else {
+                    TextView projectilePersistenceValueTextView = findViewById(R.id.projectilePersistence);
+                    helpText = getString(R.string.projectile_persistence) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    projectilePersistenceValueTextView.setText(spannable);
+                }
+
+                if (selectedWeapon != null && selectedWeapon.isPoisonous()) {
+                    TextView poisonousAttackValueTextView = findViewById(R.id.poisonousAttack);
+                    helpText = getString(R.string.poisonous_attack) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    poisonousAttackValueTextView.setText(spannable);
+                } else {
+                    TextView poisonousAttackValueTextView = findViewById(R.id.poisonousAttack);
+                    helpText = getString(R.string.poisonous_attack) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    poisonousAttackValueTextView.setText(spannable);
+                }
+
+                if (selectedWeapon != null && selectedWeapon.isFrost()) {
+                    TextView frostAttackValueTextView = findViewById(R.id.frostAttack);
+                    helpText = getString(R.string.frost_attack) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_check, null);
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    frostAttackValueTextView.setText(spannable);
+                } else {
+                    TextView frostAttackValueTextView = findViewById(R.id.frostAttack);
+                    helpText = getString(R.string.frost_attack) + "  ";
+                    SpannableString spannable = new SpannableString(helpText);
+                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_uncheck, null);
+                    customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+                    ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
+                    spannable.setSpan(imageSpan, spannable.length() - 1, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    frostAttackValueTextView.setText(spannable);
+                }
+
+                double currentRating = ((currentDamage / 5000.0)
+                        + (currentArmor / 150.0)
+                        + (currentSpeed / 25.0)
+                        + (currentJumpImpulse / 25.0)
                         + (skillsPicked != null ? ((skillsPicked[3] ? 0.1 : 0) + (skillsPicked[4] ? 0.1 : 0) + (skillsPicked[5] ? 0.1 : 0) + (skillsPicked[6] ? 0.1 : 0)
                         + (skillsPicked[7] ? 0.1 : 0) + (skillsPicked[8] ? 0.1 : 0) + (skillsPicked[12] ? 0.1 : 0) + (skillsPicked[14] ? 0.1 : 0)
                         + (skillsPicked[15] ? 0.1 : 0) + (skillsPicked[16] ? 0.1 : 0) + (skillsPicked[17] ? 0.1 : 0) + (skillsPicked[21] ? 0.1 : 0)
                         + (skillsPicked[22] ? 0.1 : 0) + (skillsPicked[24] ? 0.1 : 0) + (skillsPicked[25] ? 0.1 : 0) + (skillsPicked[26] ? 0.1 : 0)
                         + (((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[13])) ? 0.2 : 0)
                         + (((selectedRing != null && (Elements.AIR.equals(selectedRing.getElement()) || Elements.WATER.equals(selectedRing.getElement()))) ||
-                        (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[23])) ? 0.2 : 0)) : 0));
+                        (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[23])) ? 0.2 : 0)) : 0)
+                        + ((double) currentPierceCount / 10)
+                        + ((double) (currentAttackSpeed - 1400) / 700)
+                        + (selectedWeapon.isFrost() ? 0.15 : 0)
+                        + (selectedWeapon.isPoisonous() ? 0.15 : 0)
+                );
+
+                if(currentRating > 10)
+                    currentRating = 10;
 
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 String formattedRating = decimalFormat.format(currentRating);
@@ -907,7 +1020,7 @@ public class EquipmentTester extends AppCompatActivity {
                     rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE0D");
                 else if (currentRating >= 8 && currentRating < 9)
                     rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDE0E");
-                else if (currentRating >= 9 && currentRating < 10)
+                else if (currentRating >= 9 && currentRating <= 10)
                     rating.setText("Rating: " + formattedRating + "/10 \uD83D\uDDFF");
 
                 Log.d("EquipmentTester", "Current Rating: " + currentRating);

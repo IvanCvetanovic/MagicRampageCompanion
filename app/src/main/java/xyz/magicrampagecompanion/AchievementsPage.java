@@ -12,15 +12,13 @@ import java.util.List;
 
 public class AchievementsPage extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private AchievementsAdapter adapter;
     private List<Achievement> achievements;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achievements_page);
-        recyclerView = findViewById(R.id.AchievementsRecycleView);
+        RecyclerView recyclerView = findViewById(R.id.AchievementsRecycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize achievements list
@@ -30,7 +28,7 @@ public class AchievementsPage extends AppCompatActivity {
         populateAchievements();
 
         // Initialize adapter
-        adapter = new AchievementsAdapter(achievements);
+        AchievementsAdapter adapter = new AchievementsAdapter(achievements);
         recyclerView.setAdapter(adapter);
     }
 

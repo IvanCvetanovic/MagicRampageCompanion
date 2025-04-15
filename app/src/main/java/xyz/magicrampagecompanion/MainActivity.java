@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,58 +23,33 @@ public class MainActivity extends AppCompatActivity {
         resetSkills();
 
         Button chapterSelectionButton = findViewById(R.id.ChapterSelectionButton);
-        chapterSelectionButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                openChapterSelection();
-                playSound();
-            }
+        chapterSelectionButton.setOnClickListener(v -> {
+            openChapterSelection();
+            playSound();
         });
 
         Button survivalModeSelectionButton = findViewById(R.id.SurvivalModeSelectionButton);
-        survivalModeSelectionButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                openSurvivalModeSelection();
-                playSound();
-            }
+        survivalModeSelectionButton.setOnClickListener(v -> {
+            openSurvivalModeSelection();
+            playSound();
         });
 
         Button equipmentTesterButton = findViewById(R.id.EquipmentTesterButton);
-        equipmentTesterButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                openEquipmentTester();
-                playSound();
-            }
+        equipmentTesterButton.setOnClickListener(v -> {
+            openEquipmentTester();
+            playSound();
         });
 
         Button aboutButton = findViewById(R.id.AboutButton);
-        aboutButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                openAboutSection();
-                playSound();
-            }
+        aboutButton.setOnClickListener(v -> {
+            openAboutSection();
+            playSound();
         });
 
         Button achievementsButton = findViewById(R.id.AchievementButton);
-        achievementsButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                openAchievementsSection();
-                playSound();
-            }
+        achievementsButton.setOnClickListener(v -> {
+            openAchievementsSection();
+            playSound();
         });
 
     }

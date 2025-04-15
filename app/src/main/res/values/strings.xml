@@ -970,6 +970,12 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="vest_of_ominous_comrades">Vest of Ominous Comrades</string>
     <string name="the_daemon_codices">The Daemon Codices</string>
     <string name="path_of_exile_plus">Path of Exile+</string>
+    <string name="eggscellent_axe">Eggscellent Axe</string>
+    <string name="attack_speed">Attack Speed: </string>
+    <string name="pierce_count">Pierce Count: </string>
+    <string name="projectile_persistence">Projectile Persistence</string>
+    <string name="poisonous_attack">Poisonous Attack</string>
+    <string name="frost_attack">Frost Attack</string>
 
 
 </resources>
