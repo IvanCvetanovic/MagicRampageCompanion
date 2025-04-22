@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
             playSound();
         });
 
+        Button ItemsButton = findViewById(R.id.ItemsButton);
+        ItemsButton.setOnClickListener(v -> {
+            openItemSelection();
+            playSound();
+        });
+
     }
 
     private void resetSkills() {
@@ -91,6 +97,12 @@ public class MainActivity extends AppCompatActivity {
     public void openAchievementsSection()
     {
         Intent intent = new Intent(this, AchievementsPage.class);
+        startActivity(intent);
+    }
+
+    public void openItemSelection()
+    {
+        Intent intent = new Intent(this, Items.class);
         startActivity(intent);
     }
 

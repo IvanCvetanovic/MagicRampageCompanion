@@ -138,7 +138,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
 
     <string name="dungeon12text">
         First 💎 is in second secret area. The second one is in the golden pot and the third one is in front of the fire launcher.\n\n
-        Jumpman armor is really ueful here, since it allows you to jump to the certain areas without dying or getting damaged.\n\n
+        Jumpman armor is really useful here, since it allows you to jump to the certain areas without dying or getting damaged.\n\n
         Fourth secret areas contains <font color="#FFA500"> Narya </font> fire ring, which is very good for Mage and High Mage.\n\n
     </string>
 
@@ -887,9 +887,9 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="toxic_mace">Toxic Mace</string>
     <string name="wealthy_crusher">Wealthy Crusher</string>
 
-    <string name="dungeons">Dungeons</string>
-    <string name="survival_mode">Survival Mode</string>
-    <string name="test_equipment">Test Equipment</string>
+    <string name="dungeons">🏰 Dungeons 🏰</string>
+    <string name="survival_mode">☠️ Survival Mode ☠️</string>
+    <string name="test_equipment">🛡️ Test Equipment 🛡️</string>
     <string name="ten_kills">10</string>
     <string name="twenty_kills">20</string>
     <string name="thirty_kills">30</string>
@@ -924,10 +924,10 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="survival_dungeon_6">Survival Dungeon 6</string>
     <string name="golden_key">Golden Key</string>
     <string name="survival6_text">The last survvial dungeon requires a bit more effort compared to others, as you need ot constantly change the location in order to avoid projectiles, hit the flying units amd avoid the thunder strikes.</string>
-    <string name="about">About</string>
+    <string name="about">ℹ️ About ℹ️</string>
     <string name="about_author">About Author</string>
     <string name="author_description">Hello! I\'m Ivan Cvetanović, also recognized as PrOfSeS within the Magic Rampage community. This application stands as my ultimate significant contribution to the game, as my enthusiasm for playing has waned over time. Should you encounter any bugs, feel free to reach out to me via Discord (click the button below) or email (check developer info on Google Play Games page. Your feedback is greatly appreciated!</string>
-    <string name="achievements">Achievements</string>
+    <string name="achievements">🏆 Achievements 🏆</string>
     <string name="ifrits_shuriken">Ifrits Shuriken</string>
     <string name="compendium_of_trees">Compendium of Trees</string>
     <string name="the_testament_of_ifrit">The Testament of Ifrit</string>
@@ -976,6 +976,9 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="projectile_persistence">Projectile Persistence</string>
     <string name="poisonous_attack">Poisonous Attack</string>
     <string name="frost_attack">Frost Attack</string>
+    <string name="items">📋 Items 📋</string>
+    <string name="Armors">Armors</string>
+    <string name="Rings">Rings</string>
 
 
 </resources>

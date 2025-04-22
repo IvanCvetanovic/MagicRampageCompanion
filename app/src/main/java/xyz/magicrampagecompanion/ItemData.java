@@ -1,7 +1,6 @@
 package xyz.magicrampagecompanion;
 
 import android.content.Context;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,7 +74,7 @@ public class ItemData {
         daggerList.add(new Weapon(str(context, R.string.dagger_of_sand), WeaponTypes.DAGGER, Elements.AIR, 32, 131, 13, 0, 20, 2, R.drawable.dagger_dagger_of_sand, 384, 0, false, false, false, false));
         daggerList.add(new Weapon(str(context, R.string.dark_dagger), WeaponTypes.DAGGER, Elements.DARKNESS, 36, 148, 13, 0, 25, 2, R.drawable.dagger_dark_dagger, 360, 0, false, false, false, false));
         daggerList.add(new Weapon(str(context, R.string.precious_skewer), WeaponTypes.DAGGER, Elements.NEUTRAL, 35, 161, 15, 0, 30, 3, R.drawable.dagger_precious_skewer, 360, 0, false, false, false, false));
-        daggerList.add(new Weapon(str(context, R.string.dark_dagger), WeaponTypes.DAGGER, Elements.DARKNESS, 40, 164, 13, 0, 25, 3, R.drawable.dagger_dark_dagger, 330, 0, false, false, false, false));
+        daggerList.add(new Weapon(str(context, R.string.dark_dagger_plus), WeaponTypes.DAGGER, Elements.DARKNESS, 40, 164, 13, 0, 25, 3, R.drawable.dagger_dark_dagger, 330, 0, false, false, false, false));
         daggerList.add(new Weapon(str(context, R.string.last_survivors_dagger), WeaponTypes.DAGGER, Elements.NEUTRAL, 36, 165, 15, 0, 20, 3, R.drawable.dagger_last_survivors_dagger, 300, 0, false, false, false, false));
         daggerList.add(new Weapon(str(context, R.string.precious_dual_blade), WeaponTypes.DAGGER, Elements.NEUTRAL, 37, 170, 15, 0, 12, 5, R.drawable.dagger_precious_dual_blade, 400, 1, false, true, false, false));
         daggerList.add(new Weapon(str(context, R.string.bunnyhop_dagger), WeaponTypes.DAGGER, Elements.NEUTRAL, 39, 179, 15, 0, 20, 18, R.drawable.dagger_bunnyhop_dagger, 550, 1, true, false, false, false));
@@ -148,7 +147,7 @@ public class ItemData {
         staffList.add(new Weapon(str(context, R.string.dragonskull_staff), WeaponTypes.STAFF, Elements.FIRE, 72, 331, 15, 0, 5, 1, R.drawable.staff_dragonskull_staff, 650, 0, false, true, false, false));
         staffList.add(new Weapon(str(context, R.string.legacy_of_the_oracle), WeaponTypes.STAFF, Elements.EARTH, 72, 331, 15, 15, 3, 2, R.drawable.staff_legacy_of_the_oracle, 600, 1, true, true, false, false));
         staffList.add(new Weapon(str(context, R.string.royal_war_staff), WeaponTypes.STAFF, Elements.NEUTRAL, 72, 331, 15, 20, 3, 2, R.drawable.staff_royal_war_staff, 600, 0, false, true, false, false));
-        staffList.add(new Weapon(str(context, R.string.hippie_dragon_staff), WeaponTypes.STAFF, Elements.EARTH, 75, 345, 15, 30, 2, 2, R.drawable.staff_hippie_dragon_staff, 650, 0, false, true, false, false));
+        staffList.add(new Weapon(str(context, R.string.hippie_dragon_staff_plus), WeaponTypes.STAFF, Elements.EARTH, 75, 345, 15, 30, 2, 2, R.drawable.staff_hippie_dragon_staff, 650, 0, false, true, false, false));
         staffList.add(new Weapon(str(context, R.string.seabane), WeaponTypes.STAFF, Elements.WATER, 75, 345, 15, 20, 4, 2, R.drawable.staff_seabane, 610, 1, true, true, false, false));
         staffList.add(new Weapon(str(context, R.string.golden_dragon_staff), WeaponTypes.STAFF, Elements.LIGHT, 76, 349, 15, 20, 3, 2, R.drawable.staff_golden_dragon_staff, 650, 0, false, true, false, false));
         staffList.add(new Weapon(str(context, R.string.cthulhu_staff), WeaponTypes.STAFF, Elements.DARKNESS, 77, 354, 15, 30, 0, 3, R.drawable.staff_cthulhu_staff, 590, 2, true, true, true, false));
@@ -156,8 +155,8 @@ public class ItemData {
         staffList.add(new Weapon(str(context, R.string.water_staff), WeaponTypes.STAFF, Elements.WATER, 80, 368, 15, 0, 3, 3, R.drawable.staff_water_staff, 650, 0, false, true, false, false));
         staffList.add(new Weapon(str(context, R.string.death_scythe), WeaponTypes.STAFF, Elements.DARKNESS, 85, 391, 15, 0, 4, 3, R.drawable.staff_death_scythe, 450, 1, true, true, false, false));
         staffList.add(new Weapon(str(context, R.string.toxic_staff), WeaponTypes.STAFF, Elements.EARTH, 90, 414, 15, 0, 5, 2, R.drawable.staff_toxic_staff, 450, 0, false, true, true, false));
-        staffList.add(new Weapon(str(context, R.string.dragonskull_staff), WeaponTypes.STAFF, Elements.FIRE, 90, 414, 15, 0, 4, 2, R.drawable.staff_dragonskull_staff, 550, 1, true, true, false, false));
-        staffList.add(new Weapon(str(context, R.string.golden_dragon_staff), WeaponTypes.STAFF, Elements.LIGHT, 90, 414, 15, 20, 5, 3, R.drawable.staff_golden_dragon_staff, 650, 1, true, true, false, false));
+        staffList.add(new Weapon(str(context, R.string.dragonskull_staff_plus), WeaponTypes.STAFF, Elements.FIRE, 90, 414, 15, 0, 4, 2, R.drawable.staff_dragonskull_staff, 550, 1, true, true, false, false));
+        staffList.add(new Weapon(str(context, R.string.golden_dragon_staff_plus), WeaponTypes.STAFF, Elements.LIGHT, 90, 414, 15, 20, 5, 3, R.drawable.staff_golden_dragon_staff, 650, 1, true, true, false, false));
         staffList.add(new Weapon(str(context, R.string.windbane), WeaponTypes.STAFF, Elements.AIR, 90, 414, 15, 0, 8, 2, R.drawable.staff_windbane, 600, 2, true, true, false, false));
         staffList.add(new Weapon(str(context, R.string.spider_staff), WeaponTypes.STAFF, Elements.DARKNESS, 90, 414, 15, 0, 4, 4, R.drawable.staff_spider_staff, 590, 1, true, true, true, false));
         staffList.add(new Weapon(str(context, R.string.dead_vulture_staff), WeaponTypes.STAFF, Elements.DARKNESS, 95, 437, 15, 0, 4, 1, R.drawable.staff_dead_vulture_staff, 650, 1, true, true, false, false));
@@ -260,13 +259,13 @@ public class ItemData {
         armorList.add(new Armor(str(context, R.string.firestorm_armor), Elements.FIRE, true, 50, 122, 6, 6, 2, 120, 0, 0, 30, 60, 0, 50, R.drawable.armor_firestorm_armor));
         armorList.add(new Armor(str(context, R.string.bankers_coat), Elements.DARKNESS, false, 10, 26, 7, 4, 4, 40, 0, 0, 30, 0, 0, 50, R.drawable.armor_bankers_coat));
         armorList.add(new Armor(str(context, R.string.spider_exoskeleton), Elements.DARKNESS, false, 27, 111, 3, 6, 3, 100, 0, 0, 35, 100, 0, 0, R.drawable.armor_spider_exoskeleton));
-        armorList.add(new Armor(str(context, R.string.penumbra_suit), Elements.DARKNESS, false, 26, 125, 2, 6, 4, 140, 0, 50, 0, 0, 0, 60, R.drawable.armor_penumbra_suit));
-        armorList.add(new Armor(str(context, R.string.bacoon_set), Elements.WATER, false, 28, 135, 2, 5, 5, 75, 60, 0, 0, 0, 80, 60, R.drawable.armor_bacoon_set));
-        armorList.add(new Armor(str(context, R.string.steelblow_armor), Elements.AIR, false, 28, 135, 2, 9, 5, 65, 70, 0, 80, 0, 0, 0, R.drawable.armor_steelblow_armor));
+        armorList.add(new Armor(str(context, R.string.penumbra_suit_plus), Elements.DARKNESS, false, 26, 125, 2, 6, 4, 140, 0, 50, 0, 0, 0, 60, R.drawable.armor_penumbra_suit));
+        armorList.add(new Armor(str(context, R.string.bacoon_set_plus), Elements.WATER, false, 28, 135, 2, 5, 5, 75, 60, 0, 0, 0, 80, 60, R.drawable.armor_bacoon_set));
+        armorList.add(new Armor(str(context, R.string.steelblow_armor_plus), Elements.AIR, false, 28, 135, 2, 9, 5, 65, 70, 0, 80, 0, 0, 0, R.drawable.armor_steelblow_armor));
         armorList.add(new Armor(str(context, R.string.light_spellmaster_suit), Elements.LIGHT, false, 100, 100, 1, 6, 3, 110, 80, 80, 0, 0, 0, 0, R.drawable.armor_light_spellmaster_suit));
         armorList.add(new Armor(str(context, R.string.time_patroller_suit), Elements.NEUTRAL, false, 60, 203, 10, 4, 4, 300, 0, 0, 0, 0, 0, 0, R.drawable.armor_time_patroller_suit));
         armorList.add(new Armor(str(context, R.string.jungle_master), Elements.EARTH, false, 50, 122, 6, 4, 5, 80, 0, 80, 0, 0, 80, 100, R.drawable.armor_jungle_master));
-        armorList.add(new Armor(str(context, R.string.firestorm_armor), Elements.FIRE, true, 28, 135, 2, 8, 3, 80, 80, 0, 50, 70, 0, 70, R.drawable.armor_firestorm_armor));
+        armorList.add(new Armor(str(context, R.string.firestorm_armor_plus), Elements.FIRE, true, 28, 135, 2, 8, 3, 80, 80, 0, 50, 70, 0, 70, R.drawable.armor_firestorm_armor));
         armorList.add(new Armor(str(context, R.string.fire_moonkeeper_set), Elements.FIRE, true, 35, 161, 15, 6, 3, 100, 0, 110, 110, 0, 0, 110, R.drawable.armor_fire_moonkeeper_set));
         armorList.add(new Armor(str(context, R.string.heros_set), Elements.AIR, false, 32, 147, 15, 15, 4, 70, 100, 0, 0, 0, 100, 100, R.drawable.armor_heros_set));
         armorList.add(new Armor(str(context, R.string.bankers_coat), Elements.DARKNESS, false, 32, 147, 15, 5, 4, 60, 0, 0, 200, 0, 0, 0, R.drawable.armor_bankers_coat));
