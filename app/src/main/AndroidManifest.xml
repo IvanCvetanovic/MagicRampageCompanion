@@ -14,6 +14,12 @@
         android:theme="@style/Theme.MagicRampageCompanion"
         tools:targetApi="33">
         <activity
+            android:name=".EnemyDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Enemies"
+            android:exported="false" />
+        <activity
             android:name=".Items"
             android:exported="false" />
 
@@ -294,7 +300,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity android:name=".ItemDetail" />
         <activity
             android:name=".Dungeon1"

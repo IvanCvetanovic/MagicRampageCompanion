@@ -1,6 +1,11 @@
 package xyz.magicrampagecompanion;
 
-public class Enemy {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Enemy implements Parcelable {
     private String name;
     private int health;
     private int damage;
@@ -24,6 +29,31 @@ public class Enemy {
         this.attackBehaviour = attackBehaviour;
         this.imageResId = imageResId;
     }
+
+    protected Enemy(Parcel in) {
+        name = in.readString();
+        health = in.readInt();
+        damage = in.readInt();
+        damageOnTouch = in.readInt();
+        armor = in.readInt();
+        speed = in.readDouble();
+        jump = in.readDouble();
+        patrolBehavour = in.readString();
+        attackBehaviour = in.readString();
+        imageResId = in.readInt();
+    }
+
+    public static final Creator<Enemy> CREATOR = new Creator<Enemy>() {
+        @Override
+        public Enemy createFromParcel(Parcel in) {
+            return new Enemy(in);
+        }
+
+        @Override
+        public Enemy[] newArray(int size) {
+            return new Enemy[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -65,7 +95,7 @@ public class Enemy {
         this.armor = armor;
     }
 
-    public int getSpeed() {
+    public double getSpeed() {
         return speed;
     }
 
@@ -73,7 +103,7 @@ public class Enemy {
         this.speed = speed;
     }
 
-    public int getJump() {
+    public double getJump() {
         return jump;
     }
 
@@ -103,5 +133,24 @@ public class Enemy {
 
     public void setImageResId(int imageResId) {
         this.imageResId = imageResId;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeInt(health);
+        dest.writeInt(damage);
+        dest.writeInt(damageOnTouch);
+        dest.writeInt(armor);
+        dest.writeDouble(speed);
+        dest.writeDouble(jump);
+        dest.writeString(patrolBehavour);
+        dest.writeString(attackBehaviour);
+        dest.writeInt(imageResId);
     }
 }

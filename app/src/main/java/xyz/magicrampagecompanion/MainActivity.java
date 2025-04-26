@@ -58,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
             playSound();
         });
 
+        Button EnemiesButton = findViewById(R.id.EnemiesButton);
+        EnemiesButton.setOnClickListener(v -> {
+            openEnemies();
+            playSound();
+        });
+
     }
 
     private void resetSkills() {
@@ -103,6 +109,12 @@ public class MainActivity extends AppCompatActivity {
     public void openItemSelection()
     {
         Intent intent = new Intent(this, Items.class);
+        startActivity(intent);
+    }
+
+    public void openEnemies()
+    {
+        Intent intent = new Intent(this, Enemies.class);
         startActivity(intent);
     }
 

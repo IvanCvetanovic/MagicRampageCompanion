@@ -22,7 +22,7 @@ import java.util.function.Function;
 public class SkillPicker extends AppCompatActivity {
     private int skillPointsLeft = 22;
     private TextView skillPointsTextView;
-    private boolean[] skillsPicked = new boolean[27];
+    private boolean[] skillsPicked = new boolean[36];
     private MediaPlayer mediaPlayer;
 
     @Override
@@ -41,27 +41,35 @@ public class SkillPicker extends AppCompatActivity {
         setupLongClickListener(R.id.frameVoraciousShot, 6);
         setupLongClickListener(R.id.frameMonstrousVigour, 7);
         setupLongClickListener(R.id.frameChargeBlast, 8);
+        setupLongClickListener(R.id.frameFinalWrath, 9);
+        setupLongClickListener(R.id.frameRushOfTheDoomed, 10);
+        setupLongClickListener(R.id.frameOvercharge, 11);
 
-        setupLongClickListener(R.id.frameFearlessJump, 9);
-        setupLongClickListener(R.id.frameVirtuousWizard, 10);
-        setupLongClickListener(R.id.frameThrowingLegend, 11);
-        setupLongClickListener(R.id.frameGoldMagnet, 12);
-        setupLongClickListener(R.id.frameFireproofSkin, 13);
-        setupLongClickListener(R.id.frameToxicHaze, 14);
-        setupLongClickListener(R.id.frameShadowCamouflage, 15);
-        setupLongClickListener(R.id.frameMagicJump, 16);
-        setupLongClickListener(R.id.frameDarkTwin, 17);
+        setupLongClickListener(R.id.frameFearlessJump, 12);
+        setupLongClickListener(R.id.frameVirtuousWizard, 13);
+        setupLongClickListener(R.id.frameThrowingLegend, 14);
+        setupLongClickListener(R.id.frameGoldMagnet, 15);
+        setupLongClickListener(R.id.frameFireproofSkin, 16);
+        setupLongClickListener(R.id.frameToxicHaze, 17);
+        setupLongClickListener(R.id.frameShadowCamouflage, 18);
+        setupLongClickListener(R.id.frameMagicJump, 19);
+        setupLongClickListener(R.id.frameDarkTwin, 20);
+        setupLongClickListener(R.id.frameArcaneDiscipline, 21);
+        setupLongClickListener(R.id.frameSwiftCast, 22);
+        setupLongClickListener(R.id.frameAirborneDancer, 23);
 
-        setupLongClickListener(R.id.frameUnstoppableStrength, 18);
-        setupLongClickListener(R.id.frameCrushingStrength, 19);
-        setupLongClickListener(R.id.frameSlicingMaster, 20);
-        setupLongClickListener(R.id.frameMonstrousMetabolism, 21);
-        setupLongClickListener(R.id.frameEnhancedVitality, 22);
-        setupLongClickListener(R.id.frameUntouchableSkin, 23);
-        setupLongClickListener(R.id.frameConfidentMove, 24);
-        setupLongClickListener(R.id.frameArcaneProtection, 25);
-        setupLongClickListener(R.id.frameThunderWave, 26);
-
+        setupLongClickListener(R.id.frameUnstoppableStrength, 24);
+        setupLongClickListener(R.id.frameCrushingStrength, 25);
+        setupLongClickListener(R.id.frameSlicingMaster, 26);
+        setupLongClickListener(R.id.frameMonstrousMetabolism, 27);
+        setupLongClickListener(R.id.frameEnhancedVitality, 28);
+        setupLongClickListener(R.id.frameUntouchableSkin, 29);
+        setupLongClickListener(R.id.frameConfidentMove, 30);
+        setupLongClickListener(R.id.frameArcaneProtection, 31);
+        setupLongClickListener(R.id.frameThunderWave, 32);
+        setupLongClickListener(R.id.frameSeismicReach, 33);
+        setupLongClickListener(R.id.frameTitansPush, 34);
+        setupLongClickListener(R.id.frameShockwaveForce, 35);
 
         skillPointsTextView = findViewById(R.id.textSkillPointsLeft);
         updateSkillPointsText();
@@ -85,26 +93,35 @@ public class SkillPicker extends AppCompatActivity {
         setupButtonClickListener(R.id.frameVoraciousShot, R.id.overlayView7, 6);
         setupButtonClickListener(R.id.frameMonstrousVigour, R.id.overlayView8, 7);
         setupButtonClickListener(R.id.frameChargeBlast, R.id.overlayView9, 8);
+        setupButtonClickListener(R.id.frameFinalWrath, R.id.overlayView10, 9);
+        setupButtonClickListener(R.id.frameRushOfTheDoomed, R.id.overlayView11, 10);
+        setupButtonClickListener(R.id.frameOvercharge, R.id.overlayView12, 11);
 
-        setupButtonClickListener(R.id.frameFearlessJump, R.id.overlayView10, 9);
-        setupButtonClickListener(R.id.frameVirtuousWizard, R.id.overlayView11, 10);
-        setupButtonClickListener(R.id.frameThrowingLegend, R.id.overlayView12, 11);
-        setupButtonClickListener(R.id.frameGoldMagnet, R.id.overlayView13, 12);
-        setupButtonClickListener(R.id.frameFireproofSkin, R.id.overlayView14, 13);
-        setupButtonClickListener(R.id.frameToxicHaze, R.id.overlayView15, 14);
-        setupButtonClickListener(R.id.frameShadowCamouflage, R.id.overlayView16, 15);
-        setupButtonClickListener(R.id.frameMagicJump, R.id.overlayView17, 16);
-        setupButtonClickListener(R.id.frameDarkTwin, R.id.overlayView18, 17);
+        setupButtonClickListener(R.id.frameFearlessJump, R.id.overlayView13, 12);
+        setupButtonClickListener(R.id.frameVirtuousWizard, R.id.overlayView14, 13);
+        setupButtonClickListener(R.id.frameThrowingLegend, R.id.overlayView15, 14);
+        setupButtonClickListener(R.id.frameGoldMagnet, R.id.overlayView16, 15);
+        setupButtonClickListener(R.id.frameFireproofSkin, R.id.overlayView17, 16);
+        setupButtonClickListener(R.id.frameToxicHaze, R.id.overlayView18, 17);
+        setupButtonClickListener(R.id.frameShadowCamouflage, R.id.overlayView19, 18);
+        setupButtonClickListener(R.id.frameMagicJump, R.id.overlayView20, 19);
+        setupButtonClickListener(R.id.frameDarkTwin, R.id.overlayView21, 20);
+        setupButtonClickListener(R.id.frameArcaneDiscipline, R.id.overlayView22, 21);
+        setupButtonClickListener(R.id.frameSwiftCast, R.id.overlayView23, 22);
+        setupButtonClickListener(R.id.frameAirborneDancer, R.id.overlayView24, 23);
 
-        setupButtonClickListener(R.id.frameUnstoppableStrength, R.id.overlayView19, 18);
-        setupButtonClickListener(R.id.frameCrushingStrength, R.id.overlayView20, 19);
-        setupButtonClickListener(R.id.frameSlicingMaster, R.id.overlayView21, 20);
-        setupButtonClickListener(R.id.frameMonstrousMetabolism, R.id.overlayView22, 21);
-        setupButtonClickListener(R.id.frameEnhancedVitality, R.id.overlayView23, 22);
-        setupButtonClickListener(R.id.frameUntouchableSkin, R.id.overlayView24, 23);
-        setupButtonClickListener(R.id.frameConfidentMove, R.id.overlayView25, 24);
-        setupButtonClickListener(R.id.frameArcaneProtection, R.id.overlayView26, 25);
-        setupButtonClickListener(R.id.frameThunderWave, R.id.overlayView27, 26);
+        setupButtonClickListener(R.id.frameUnstoppableStrength, R.id.overlayView25, 24);
+        setupButtonClickListener(R.id.frameCrushingStrength, R.id.overlayView26, 25);
+        setupButtonClickListener(R.id.frameSlicingMaster, R.id.overlayView27, 26);
+        setupButtonClickListener(R.id.frameMonstrousMetabolism, R.id.overlayView28, 27);
+        setupButtonClickListener(R.id.frameEnhancedVitality, R.id.overlayView29, 28);
+        setupButtonClickListener(R.id.frameUntouchableSkin, R.id.overlayView30, 29);
+        setupButtonClickListener(R.id.frameConfidentMove, R.id.overlayView31, 30);
+        setupButtonClickListener(R.id.frameArcaneProtection, R.id.overlayView32, 31);
+        setupButtonClickListener(R.id.frameThunderWave, R.id.overlayView33, 32);
+        setupButtonClickListener(R.id.frameSeismicReach, R.id.overlayView34, 33);
+        setupButtonClickListener(R.id.frameTitansPush, R.id.overlayView35, 34);
+        setupButtonClickListener(R.id.frameShockwaveForce, R.id.overlayView36, 35);
 
         Button btnDeselectAllSkills = findViewById(R.id.btnDeselectAllSkills);
         btnDeselectAllSkills.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +138,7 @@ public class SkillPicker extends AppCompatActivity {
             skillsPicked[i] = preferences.getBoolean("skill_" + i, false);
             Log.d("SkillPicker", "Skill " + i + " picked: " + skillsPicked[i]);
             if (skillsPicked[i]) {
-                ImageView overlayView = findViewById(getOverlayViewIdForIndex.apply(i));
+                ImageView overlayView = findViewById(getOverlayViewIdForIndex(i));
                 overlayView.setVisibility(View.VISIBLE);
             }
         }
@@ -215,13 +232,15 @@ public class SkillPicker extends AppCompatActivity {
                 return getString(R.string.skill_description_7);
             case 8:
                 return getString(R.string.skill_description_8);
-
             case 9:
                 return getString(R.string.skill_description_9);
             case 10:
                 return getString(R.string.skill_description_10);
             case 11:
                 return getString(R.string.skill_description_11);
+
+
+
             case 12:
                 return getString(R.string.skill_description_12);
             case 13:
@@ -234,7 +253,6 @@ public class SkillPicker extends AppCompatActivity {
                 return getString(R.string.skill_description_16);
             case 17:
                 return getString(R.string.skill_description_17);
-
             case 18:
                 return getString(R.string.skill_description_18);
             case 19:
@@ -247,12 +265,31 @@ public class SkillPicker extends AppCompatActivity {
                 return getString(R.string.skill_description_22);
             case 23:
                 return getString(R.string.skill_description_23);
+
             case 24:
                 return getString(R.string.skill_description_24);
             case 25:
                 return getString(R.string.skill_description_25);
             case 26:
                 return getString(R.string.skill_description_26);
+            case 27:
+                return getString(R.string.skill_description_27);
+            case 28:
+                return getString(R.string.skill_description_28);
+            case 29:
+                return getString(R.string.skill_description_29);
+            case 30:
+                return getString(R.string.skill_description_30);
+            case 31:
+                return getString(R.string.skill_description_31);
+            case 32:
+                return getString(R.string.skill_description_32);
+            case 33:
+                return getString(R.string.skill_description_33);
+            case 34:
+                return getString(R.string.skill_description_34);
+            case 35:
+                return getString(R.string.skill_description_35);
 
             default:
                 return getString(R.string.skill_description_default);
@@ -263,7 +300,7 @@ public class SkillPicker extends AppCompatActivity {
 
 
     private boolean canPickSkill(int skillIndex) {
-        if (skillIndex == 0 || skillIndex == 9 || skillIndex == 18) {
+        if (skillIndex == 0 || skillIndex == 12 || skillIndex == 24) {
             Log.d("SkillPicker", "Can pick skill: " + skillIndex);
             return true;
         }
@@ -288,20 +325,20 @@ public class SkillPicker extends AppCompatActivity {
 
         int maxDeselectIndex = -1;
 
-        if (skillIndex <= 8) {
-            // First lane, deselect to maximum index of 8
-            maxDeselectIndex = 8;
-        } else if (skillIndex <= 17) {
-            // Second lane, deselect to maximum index of 17
-            maxDeselectIndex = 17;
-        } else if (skillIndex <= 26) {
-            // Third lane, deselect to maximum index of 26
-            maxDeselectIndex = 26;
+        if (skillIndex <= 11) {
+            // First lane, deselect to maximum index of 11
+            maxDeselectIndex = 11;
+        } else if (skillIndex <= 23) {
+            // Second lane, deselect to maximum index of 23
+            maxDeselectIndex = 23;
+        } else if (skillIndex <= 35) {
+            // Third lane, deselect to maximum index of 35
+            maxDeselectIndex = 35;
         }
 
         for (int i = skillIndex + 1; i <= maxDeselectIndex; i++) {
             if (skillsPicked[i]) {
-                ImageView overlayView = findViewById(getOverlayViewIdForIndex.apply(i));
+                ImageView overlayView = findViewById(getOverlayViewIdForIndex(i));
                 toggleSelection(overlayView);
                 skillsPicked[i] = false;
             }
@@ -334,51 +371,61 @@ public class SkillPicker extends AppCompatActivity {
             case 6: return R.id.overlayView7;
             case 7: return R.id.overlayView8;
             case 8: return R.id.overlayView9;
+            case 9: return R.id.overlayView10;
+            case 10: return R.id.overlayView11;
+            case 11: return R.id.overlayView12;
             default: return -1;
         }
     };
 
     private Function<Integer, Integer> getOverlayViewIdLane2 = skillIndex -> {
         switch (skillIndex) {
-            case 0: return R.id.overlayView10;
-            case 1: return R.id.overlayView11;
-            case 2: return R.id.overlayView12;
-            case 3: return R.id.overlayView13;
-            case 4: return R.id.overlayView14;
-            case 5: return R.id.overlayView15;
-            case 6: return R.id.overlayView16;
-            case 7: return R.id.overlayView17;
-            case 8: return R.id.overlayView18;
+            case 0: return R.id.overlayView13;
+            case 1: return R.id.overlayView14;
+            case 2: return R.id.overlayView15;
+            case 3: return R.id.overlayView16;
+            case 4: return R.id.overlayView17;
+            case 5: return R.id.overlayView18;
+            case 6: return R.id.overlayView19;
+            case 7: return R.id.overlayView20;
+            case 8: return R.id.overlayView21;
+            case 9: return R.id.overlayView22;
+            case 10: return R.id.overlayView23;
+            case 11: return R.id.overlayView24;
             default: return -1;
         }
     };
 
     private Function<Integer, Integer> getOverlayViewIdLane3 = skillIndex -> {
         switch (skillIndex) {
-            case 0: return R.id.overlayView19;
-            case 1: return R.id.overlayView20;
-            case 2: return R.id.overlayView21;
-            case 3: return R.id.overlayView22;
-            case 4: return R.id.overlayView23;
-            case 5: return R.id.overlayView24;
-            case 6: return R.id.overlayView25;
-            case 7: return R.id.overlayView26;
-            case 8: return R.id.overlayView27;
+            case 0: return R.id.overlayView25;
+            case 1: return R.id.overlayView26;
+            case 2: return R.id.overlayView27;
+            case 3: return R.id.overlayView28;
+            case 4: return R.id.overlayView29;
+            case 5: return R.id.overlayView30;
+            case 6: return R.id.overlayView31;
+            case 7: return R.id.overlayView32;
+            case 8: return R.id.overlayView33;
+            case 9: return R.id.overlayView34;
+            case 10: return R.id.overlayView35;
+            case 11: return R.id.overlayView36;
             default: return -1;
         }
     };
 
 
-    private Function<Integer, Integer> getOverlayViewIdForIndex = skillIndex -> {
-        if (skillIndex >= 0 && skillIndex < 9) {
+    private int getOverlayViewIdForIndex(int skillIndex) {
+        if (skillIndex < 0 || skillIndex >= 36) return -1;
+        if (skillIndex < 12) {
             return getOverlayViewIdLane1.apply(skillIndex);
-        } else if (skillIndex >= 9 && skillIndex < 18) {
-            return getOverlayViewIdLane2.apply(skillIndex - 9);
-        } else if (skillIndex >= 18 && skillIndex < 27) {
-            return getOverlayViewIdLane3.apply(skillIndex - 18);
+        } else if (skillIndex < 24) {
+            return getOverlayViewIdLane2.apply(skillIndex - 12);
+        } else {
+            return getOverlayViewIdLane3.apply(skillIndex - 24);
         }
-        return -1;
-    };
+    }
+
 
 
     private void toggleSelection(ImageView overlayView) {
@@ -399,7 +446,7 @@ public class SkillPicker extends AppCompatActivity {
     private void deselectAllSkills() {
         for (int i = 0; i < skillsPicked.length; i++) {
             if (skillsPicked[i]) {
-                ImageView overlayView = findViewById(getOverlayViewIdForIndex.apply(i));
+                ImageView overlayView = findViewById(getOverlayViewIdForIndex(i));
                 toggleSelection(overlayView);
                 skillsPicked[i] = false;
             }

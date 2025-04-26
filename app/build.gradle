@@ -10,10 +10,10 @@ android {
 
     defaultConfig {
         applicationId "xyz.magicrampagecompanion"
-        minSdk 29
+        minSdk 28
         targetSdk 35
-        versionCode 20
-        versionName "0.8.11"
+        versionCode 22
+        versionName "0.9"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

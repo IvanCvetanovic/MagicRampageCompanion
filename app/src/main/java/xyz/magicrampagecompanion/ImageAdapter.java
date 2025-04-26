@@ -48,6 +48,15 @@ public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageV
             CharacterClass characterClass = (CharacterClass) item;
             holder.imageView.setImageResource(characterClass.getImageResId());
             holder.itemName.setText(characterClass.getName(holder.itemView.getContext()));
+        } else if (item instanceof Enemy) {
+            Enemy enemy = (Enemy) item;
+            holder.imageView.setImageResource(enemy.getImageResId());
+            holder.itemName.setText(enemy.getName());
+
+        } else {
+            // nothing matched, clear out
+            holder.imageView.setImageDrawable(null);
+            holder.itemName.setText("");
         }
 
         // Set the click listener for the ImageView

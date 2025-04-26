@@ -450,6 +450,123 @@
                         android:visibility="gone" />
                 </FrameLayout>
 
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="TODO"
+                    app:srcCompat="@drawable/root1"
+                    tools:ignore="ContentDescription,HardcodedText" />
+
+                <FrameLayout
+                    android:id="@+id/frameFinalWrath"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tag="overlayView">
+                    <ImageView
+                        android:id="@+id/buttonFinalWrath"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/skill_final_wrath" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="18dp"
+                        android:text="@string/final_wrath"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/overlayView10"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/emoji_checkmark"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/root2" />
+
+                <FrameLayout
+                    android:id="@+id/frameRushOfTheDoomed"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tag="overlayView">
+                    <ImageView
+                        android:id="@+id/buttonRushOfTheDoomed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/skill_rush_of_the_doomed" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="18dp"
+                        android:text="@string/rush_of_the_doomed"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/overlayView11"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:contentDescription="TODO"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/emoji_checkmark"
+                        android:visibility="gone"
+                        tools:ignore="ContentDescription,HardcodedText" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/root3" />
+
+                <FrameLayout
+                    android:id="@+id/frameOvercharge"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tag="overlayView">
+                    <ImageView
+                        android:id="@+id/buttonOvercharge"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/skill_overcharge" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="18dp"
+                        android:text="@string/overcharge"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/overlayView12"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:contentDescription="TODO"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/emoji_checkmark"
+                        android:visibility="gone"
+                        tools:ignore="ContentDescription,HardcodedText" />
+                </FrameLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -486,7 +603,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView10"
+                        android:id="@+id/overlayView13"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -533,7 +650,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView11"
+                        android:id="@+id/overlayView14"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -582,7 +699,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView12"
+                        android:id="@+id/overlayView15"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -631,7 +748,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView13"
+                        android:id="@+id/overlayView16"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -678,7 +795,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView14"
+                        android:id="@+id/overlayView17"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -725,7 +842,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView15"
+                        android:id="@+id/overlayView18"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -773,7 +890,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView16"
+                        android:id="@+id/overlayView19"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -821,7 +938,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView17"
+                        android:id="@+id/overlayView20"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -869,11 +986,138 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView18"
+                        android:id="@+id/overlayView21"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
                         android:importantForAccessibility="no"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/emoji_checkmark"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="TODO"
+                    tools:ignore="ContentDescription,HardcodedText"
+                    app:srcCompat="@drawable/root1" />
+
+                <FrameLayout
+                    android:id="@+id/frameArcaneDiscipline"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tag="overlayView">
+                    <ImageView
+                        android:id="@+id/buttonArcaneDiscipline"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="TODO"
+                        tools:ignore="ContentDescription,HardcodedText"
+                        app:srcCompat="@drawable/skill_arcane_discipline" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="18dp"
+                        android:text="@string/arcane_discipline"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/overlayView22"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:contentDescription="@string/arcane_discipline"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/emoji_checkmark"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="TODO"
+                    app:srcCompat="@drawable/root2"
+                    tools:ignore="ContentDescription,HardcodedText" />
+
+                <FrameLayout
+                    android:id="@+id/frameSwiftCast"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tag="overlayView">
+                    <ImageView
+                        android:id="@+id/buttonSwiftCast"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="TODO"
+                        tools:ignore="ContentDescription,HardcodedText"
+                        app:srcCompat="@drawable/skill_swift_cast" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="18dp"
+                        android:text="@string/swift_cast"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/overlayView23"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:contentDescription="@string/swift_cast"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/emoji_checkmark"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="TODO"
+                    app:srcCompat="@drawable/root3"
+                    tools:ignore="ContentDescription,HardcodedText" />
+
+                <FrameLayout
+                    android:id="@+id/frameAirborneDancer"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tag="overlayView">
+                    <ImageView
+                        android:id="@+id/buttonAirborneDancer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="TODO"
+                        tools:ignore="ContentDescription,HardcodedText"
+                        app:srcCompat="@drawable/skill_airborne_dancer" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="18dp"
+                        android:text="@string/airborne_dancer"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/overlayView24"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:contentDescription="TODO"
+                        tools:ignore="ContentDescription,HardcodedText"
                         android:scaleType="centerInside"
                         android:src="@drawable/emoji_checkmark"
                         android:visibility="gone" />
@@ -914,7 +1158,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView19"
+                        android:id="@+id/overlayView25"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -961,7 +1205,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView20"
+                        android:id="@+id/overlayView26"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -1010,7 +1254,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView21"
+                        android:id="@+id/overlayView27"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -1059,7 +1303,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView22"
+                        android:id="@+id/overlayView28"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -1106,7 +1350,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView23"
+                        android:id="@+id/overlayView29"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -1153,7 +1397,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView24"
+                        android:id="@+id/overlayView30"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -1201,7 +1445,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView25"
+                        android:id="@+id/overlayView31"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -1249,7 +1493,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView26"
+                        android:id="@+id/overlayView32"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -1297,7 +1541,7 @@
                         tools:ignore="RtlCompat" />
 
                     <ImageView
-                        android:id="@+id/overlayView27"
+                        android:id="@+id/overlayView33"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
@@ -1305,6 +1549,135 @@
                         android:scaleType="centerInside"
                         android:src="@drawable/emoji_checkmark"
                         android:visibility="gone" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="TODO"
+                    app:srcCompat="@drawable/root1"
+                    tools:ignore="ContentDescription,HardcodedText" />
+
+                <FrameLayout
+                    android:id="@+id/frameSeismicReach"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tag="overlayView">
+                    <ImageView
+                        android:id="@+id/buttonSeismicReach"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/skill_seismic_reach"
+                        tools:ignore="ContentDescription,HardcodedText"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="18dp"
+                        android:text="@string/seismic_reach"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/overlayView34"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:contentDescription="TODO"
+                        android:scaleType="centerInside"
+                        tools:ignore="ContentDescription,HardcodedText"
+                        android:src="@drawable/emoji_checkmark"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="TODO"
+                    tools:ignore="ContentDescription,HardcodedText"
+                    app:srcCompat="@drawable/root2" />
+
+                <FrameLayout
+                    android:id="@+id/frameTitansPush"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tag="overlayView">
+                    <ImageView
+                        android:id="@+id/buttonTitansPush"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="TODO"
+                        tools:ignore="ContentDescription,HardcodedText"
+                        app:srcCompat="@drawable/skill_titans_push" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="18dp"
+                        android:text="@string/titans_push"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/overlayView35"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:contentDescription="TODO"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/emoji_checkmark"
+                        tools:ignore="ContentDescription,HardcodedText"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="TODO"
+                    app:srcCompat="@drawable/root3"
+                    tools:ignore="ContentDescription,HardcodedText"/>
+
+                <FrameLayout
+                    android:id="@+id/frameShockwaveForce"
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:tag="overlayView">
+                    <ImageView
+                        android:id="@+id/buttonShockwaveForce"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="TODO"
+                        tools:ignore="ContentDescription,HardcodedText"
+                        app:srcCompat="@drawable/skill_shockwave_force" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="18dp"
+                        android:text="@string/shockwave_force"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        tools:ignore="RtlCompat" />
+
+                    <ImageView
+                        android:id="@+id/overlayView36"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:contentDescription="TODO" android:scaleType="centerInside"
+                        android:src="@drawable/emoji_checkmark"
+                        android:visibility="gone"
+                        tools:ignore="ContentDescription,HardcodedText"/>
                 </FrameLayout>
             </LinearLayout>
 

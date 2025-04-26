@@ -543,7 +543,7 @@ public class ItemData {
         enemyList.add(new Enemy(str(context, R.string.enemy_xmas_gift_vacuum), 12000, 40, 0, 0, 6.0, 0.0, "waypoints", "knifeThrower", R.drawable.enemy_mush_vacuum));
         enemyList.add(new Enemy(str(context, R.string.enemy_ice_skeleton_tanker_wdg), 15000, 190, 0, 80, 5.4, 33.0, "waypoints", "knifeThrower", R.drawable.enemy_ice_skeleton_tanker));
         enemyList.add(new Enemy(str(context, R.string.enemy_xmas_skeleton_blue_tanker), 15000, 190, 0, 150, 5.67, 33.0, "waypoints", "knifeThrower", R.drawable.enemy_xmas_skeleton_blue_helmet_ice));
-        enemyList.add(new Enemy(str(context, R.string.enemy_evil_warlock_2), 24000, 80, 0, 0, 3.0, 35.0, "waypoints", "stoneThrower", R.drawable.enemy_evil_warlock));
+        enemyList.add(new Enemy(str(context, R.string.enemy_evil_warlock_boss), 24000, 80, 0, 0, 3.0, 35.0, "waypoints", "stoneThrower", R.drawable.enemy_evil_warlock));
         enemyList.add(new Enemy(str(context, R.string.enemy_mush_vacuum_wdg), 36000, 40, 0, 0, 6.0, 0.0, "waypoints", "knifeThrower", R.drawable.enemy_mush_vacuum));
         enemyList.add(new Enemy(str(context, R.string.enemy_wizard), 500000, 0, 0, 0, 4.0, 33.0, "waypoints", "stoneThrower", R.drawable.enemy_wizard));
         enemyList.add(new Enemy(str(context, R.string.enemy_alien), 9999999, 0, 0, 36, 7.42, 35.0, "waypoints", "knifeThrower", R.drawable.enemy_alien));

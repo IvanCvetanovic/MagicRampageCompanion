@@ -688,26 +688,26 @@ public class EquipmentTester extends AppCompatActivity {
                 // Skill Tree Boni
                 if (skillsPicked != null) {
                     if (skillsPicked[1] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SWORD)) {
-                        currentDamage = (currentDamage * 1.2);
+                        currentDamage = (currentDamage * 1.15);
                         Log.d("EquipmentTester", "Skill Tree: Sword Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
                     if (skillsPicked[2] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.DAGGER)) {
                         currentDamage = (currentDamage * 1.2);
                         Log.d("EquipmentTester", "Skill Tree: Dagger Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
-                    if (skillsPicked[10] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
-                        currentDamage = (currentDamage * 1.25);
+                    if (skillsPicked[13] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.STAFF)) {
+                        currentDamage = (currentDamage * 1.20);
                         Log.d("EquipmentTester", "Skill Tree: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
-                    if (skillsPicked[11] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
-                        currentDamage = (currentDamage * 1.40);
+                    if (skillsPicked[14] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
+                        currentDamage = (currentDamage * 1.35);
                         Log.d("EquipmentTester", "Skill Tree: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
-                    if (skillsPicked[19] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
-                        currentDamage = (currentDamage * 1.5);
+                    if (skillsPicked[25] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
+                        currentDamage = (currentDamage * 1.55);
                         Log.d("EquipmentTester", "Skill Tree: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
-                    if (skillsPicked[20] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.AXE)) {
+                    if (skillsPicked[26] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.AXE)) {
                         currentDamage = (currentDamage * 1.45);
                         Log.d("EquipmentTester", "Skill Tree: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
@@ -847,7 +847,7 @@ public class EquipmentTester extends AppCompatActivity {
 
                 double currentJumpImpulse = (selectedArmor != null ? helpArmorJump : 0) * (selectedRing != null ? helpRingJump : 0)
                         * (selectedWeapon != null ? helpWeaponJump : 0) * (selectedClass != null ? helpClassJump : 0);
-                if (skillsPicked != null && skillsPicked[9]) {
+                if (skillsPicked != null && skillsPicked[12]) {
                     currentJumpImpulse += 0.03;
                 }
                 currentJumpImpulse = Math.floor(currentJumpImpulse * 100.0) / 100.0;
@@ -856,7 +856,7 @@ public class EquipmentTester extends AppCompatActivity {
                 TextView jumpImpulseValueTextView = findViewById(R.id.currentJumpImpulse);
                 jumpImpulseValueTextView.setText(getString(R.string.jump_impulse_in_calculation) + (int) currentJumpImpulse + "%");
 
-                if ((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || currentArmor >= 330 || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[13])) {
+                if ((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || currentArmor >= 330 || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[16])) {
                     TextView fireValueTextView = findViewById(R.id.fireResistance);
                     helpText = getString(R.string.fire_resistance) + "  ";
                     SpannableString spannable = new SpannableString(helpText);
@@ -897,7 +897,7 @@ public class EquipmentTester extends AppCompatActivity {
                 }
 
                 if ((selectedRing != null && (Elements.AIR.equals(selectedRing.getElement()) || Elements.WATER.equals(selectedRing.getElement()))) ||
-                        (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[23])) {
+                        (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[29])) {
                     TextView spikeValueTextView = findViewById(R.id.spikeResistance);
                     helpText = getString(R.string.spike_resistance) + "  ";
                     SpannableString spannable = new SpannableString(helpText);
@@ -982,12 +982,14 @@ public class EquipmentTester extends AppCompatActivity {
                         + (currentSpeed / 25.0)
                         + (currentJumpImpulse / 25.0)
                         + (skillsPicked != null ? ((skillsPicked[3] ? 0.1 : 0) + (skillsPicked[4] ? 0.1 : 0) + (skillsPicked[5] ? 0.1 : 0) + (skillsPicked[6] ? 0.1 : 0)
-                        + (skillsPicked[7] ? 0.1 : 0) + (skillsPicked[8] ? 0.1 : 0) + (skillsPicked[12] ? 0.1 : 0) + (skillsPicked[14] ? 0.1 : 0)
-                        + (skillsPicked[15] ? 0.1 : 0) + (skillsPicked[16] ? 0.1 : 0) + (skillsPicked[17] ? 0.1 : 0) + (skillsPicked[21] ? 0.1 : 0)
-                        + (skillsPicked[22] ? 0.1 : 0) + (skillsPicked[24] ? 0.1 : 0) + (skillsPicked[25] ? 0.1 : 0) + (skillsPicked[26] ? 0.1 : 0)
+                        + (skillsPicked[7] ? 0.1 : 0) + (skillsPicked[8] ? 0.1 : 0) + (skillsPicked[9] ? 0.1 : 0) + (skillsPicked[10] ? 0.1 : 0)
+                        + (skillsPicked[11] ? 0.1 : 0) + (skillsPicked[15] ? 0.1 : 0) + (skillsPicked[17] ? 0.1 : 0) + (skillsPicked[18] ? 0.1 : 0)
+                        + (skillsPicked[19] ? 0.1 : 0) + (skillsPicked[20] ? 0.1 : 0) + (skillsPicked[21] ? 0.1 : 0) + (skillsPicked[22] ? 0.1 : 0)
+                        + (skillsPicked[23] ? 0.1 : 0) + (skillsPicked[27] ? 0.1 : 0) + (skillsPicked[28] ? 0.1 : 0) + (skillsPicked[30] ? 0.1 : 0)
+                        + (skillsPicked[31] ? 0.1 : 0) + (skillsPicked[32] ? 0.1 : 0) + (skillsPicked[33] ? 0.1 : 0) + (skillsPicked[34] ? 0.1 : 0) + (skillsPicked[35] ? 0.1 : 0)
                         + (((selectedRing != null && Elements.FIRE.equals(selectedRing.getElement())) || (selectedArmor != null && Elements.FIRE.equals(selectedArmor.getElement())) || (skillsPicked != null && skillsPicked[13])) ? 0.2 : 0)
                         + (((selectedRing != null && (Elements.AIR.equals(selectedRing.getElement()) || Elements.WATER.equals(selectedRing.getElement()))) ||
-                        (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[23])) ? 0.2 : 0)) : 0)
+                        (selectedArmor != null && (Elements.AIR.equals(selectedArmor.getElement()) || Elements.WATER.equals(selectedArmor.getElement()))) || (skillsPicked != null && skillsPicked[29])) ? 0.2 : 0)) : 0)
                         + ((double) currentPierceCount / 10)
                         + ((double) (currentAttackSpeed - 1400) / 700)
                         + (selectedWeapon.isFrost() ? 0.15 : 0)
@@ -1029,7 +1031,7 @@ public class EquipmentTester extends AppCompatActivity {
 
         private boolean[] retrieveSkillsPickedFromSharedPreferences() {
             SharedPreferences preferences = getSharedPreferences("SkillState", MODE_PRIVATE);
-            boolean[] skillsPicked = new boolean[27];
+            boolean[] skillsPicked = new boolean[36];
 
             for (int i = 0; i < skillsPicked.length; i++) {
                 skillsPicked[i] = preferences.getBoolean("skillsPicked_" + i, false);
