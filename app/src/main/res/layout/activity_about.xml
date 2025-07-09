@@ -163,41 +163,5 @@
                 tools:ignore="ContentDescription"/>
         </LinearLayout>
 
-        <!-- Person #2 -->
-        <LinearLayout
-            android:id="@+id/memoryPerson2Layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:gravity="center_horizontal"
-            app:layout_constraintTop_toBottomOf="@id/memoryPerson1Layout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <!-- Name / Text above the image -->
-            <TextView
-                android:id="@+id/person2NameDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/about_zoe"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"/>
-
-            <!-- Bigger image below -->
-            <ImageView
-                android:id="@+id/person2Image"
-                android:layout_width="220dp"
-                android:layout_height="220dp"
-                android:layout_marginTop="8dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/about_zoe"
-                tools:ignore="ContentDescription"/>
-        </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

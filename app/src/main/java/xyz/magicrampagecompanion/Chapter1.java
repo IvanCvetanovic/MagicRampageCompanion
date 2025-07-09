@@ -223,7 +223,7 @@ public class Chapter1 extends AppCompatActivity
             mediaPlayer.seekTo(0);
 
             // Set volume to 50%
-            float volume = 0.5f; // 50%
+            float volume = 0.25f; // 50%
             mediaPlayer.setVolume(volume, volume);
 
             mediaPlayer.start();

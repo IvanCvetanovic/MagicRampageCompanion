@@ -704,11 +704,11 @@ public class EquipmentTester extends AppCompatActivity {
                         Log.d("EquipmentTester", "Skill Tree: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
                     if (skillsPicked[25] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
-                        currentDamage = (currentDamage * 1.55);
+                        currentDamage = (currentDamage * 1.60);
                         Log.d("EquipmentTester", "Skill Tree: Hammer Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
                     if (skillsPicked[26] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.AXE)) {
-                        currentDamage = (currentDamage * 1.45);
+                        currentDamage = (currentDamage * 1.50);
                         Log.d("EquipmentTester", "Skill Tree: Axe Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
                 }
@@ -1072,7 +1072,7 @@ public class EquipmentTester extends AppCompatActivity {
             mediaPlayer.seekTo(0);
 
             // Set volume to 50%
-            float volume = 0.5f; // 50%
+            float volume = 0.25f; // 50%
             mediaPlayer.setVolume(volume, volume);
 
             mediaPlayer.start();

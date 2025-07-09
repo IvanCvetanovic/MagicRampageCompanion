@@ -156,7 +156,7 @@ public class ItemSelection extends AppCompatActivity {
     private void playSound(MediaPlayer mediaPlayer) {
         if (mediaPlayer != null) {
             mediaPlayer.seekTo(0);
-            mediaPlayer.setVolume(0.5f, 0.5f); // 50% volume
+            mediaPlayer.setVolume(0.25f, 0.25f); // 50% volume
             mediaPlayer.start();
         }
     }

@@ -167,7 +167,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
 
     <string name="dungeon15text">
         All three 💎 are on the way to the dungeon end, you cannot miss them.\n\n
-        Using an <font color="#00FF00"> earth </font>-based armor or ring will make it easier to reach secret areas and complete the dungeon.\n\n
+        Using an <font color="#00FF00"> earth</font>-based armor or ring will make it easier to reach secret areas and complete the dungeon.\n\n
         If you are struggling to hit the spiders, use a hammer you obtained in previous dungeons.\n\n
     </string>
 
@@ -483,6 +483,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
         When the boss enters the second stage his sliding icicle move faster, his falling icicles now target your current position and he throws multiple boulders.\n\n
     </string>
 
+    <!-- Skill Tree -->
     <string name="enhanced_velocity">Enhanced Velocity</string>
     <string name="sword_master">Sword Master</string>
     <string name="dagger_specialist">Dagger Specialist</string>
@@ -511,9 +512,11 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="confident_move">Confident Move</string>
     <string name="arcane_protection">Arcane Protection</string>
     <string name="thunder_wave">Thunder Wave</string>
+
+    <!-- Equipment Tester -->
     <string name="reset_all">Reset All</string>
     <string name="damage">Please pick everything to see the stats!</string>
-    <string name="armor">Armor: 0</string>
+    <string name="armor">Stats are not always 100% identical with the game!</string>
     <string name="speed">Speed: 0%</string>
     <string name="jump_impulse">Jump Impulse: 0%</string>
     <string name="select_skills">Select Skills</string>
@@ -529,6 +532,8 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="item_already_maxed">Item already at maximum upgrade!</string>
     <string name="item_already_at_zero_upgrades">Item already at zero upgrades!</string>
     <string name="element_cannot_be_picked">Element cannot be picked for this item!</string>
+
+    <!-- Elements -->
     <string name="element_fire">Fire</string>
     <string name="element_water">Water</string>
     <string name="element_darkness">Darkness</string>
@@ -536,21 +541,22 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="element_earth">Earth</string>
     <string name="element_air">Air</string>
 
+    <!-- Skill Tree Description -->
     <string name="skill_description_0">Boosts speed by 4\%.</string>
-    <string name="skill_description_1">Boosts passive sword attack power by 20\%.</string>
-    <string name="skill_description_2">Boosts passive dagger attack power by 30\%.</string>
+    <string name="skill_description_1">Boosts passive sword attack power by 15\%.</string>
+    <string name="skill_description_2">Boosts passive dagger attack power by 20\%.</string>
     <string name="skill_description_3">All weapon projectiles will persist even when struck by other projectiles on the fly.</string>
     <string name="skill_description_4">Weapon projectiles will instantly blow up defeated enemies.</string>
     <string name="skill_description_5">Weapon projectiles instantly break enemies\' spherical shields.</string>
-    <string name="skill_description_6">All weapon projectiles have 55\% chance to cancel enemies\' projectiles on the fly.</string>
+    <string name="skill_description_6">All weapon projectiles have 45\% chance to cancel enemies\' projectiles on the fly.</string>
     <string name="skill_description_7">Increases stamina regeneration speed.</string>
-    <string name="skill_description_8">Charge attack that deals 4 times weapon damage.</string>
+    <string name="skill_description_8">Charge attack that deals 2.6 times weapon damage.</string>
     <string name="skill_description_9">Increases sword and dagger damage by 25\% when your health falls below 35\%.</string>
     <string name="skill_description_10">Increases movement speed by 20\% when your health falls below 35\%.</string>
     <string name="skill_description_11">Grants one additional Charge Blast before cooldown.</string>
 
     <string name="skill_description_12">Boosts jump power by 3\%.</string>
-    <string name="skill_description_13">Boosts passive staff attack power by 25\%.</string>
+    <string name="skill_description_13">Boosts passive staff attack power by 20\%.</string>
     <string name="skill_description_14">Boosts passive spear attack power by 35\%.</string>
     <string name="skill_description_15">Attracts gold coins and XP dropped by enemies.</string>
     <string name="skill_description_16">Grants passive protection against flames and lava.</string>
@@ -563,8 +569,8 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="skill_description_23">Grants an extra mid-air jump and enhances aerial attack capabilities.</string>
 
     <string name="skill_description_24">Boosts armor by 25\%.</string>
-    <string name="skill_description_25">Boosts passive hammer attack power by 45\%.</string>
-    <string name="skill_description_26">Boosts passive axe attack power by 30\%.</string>
+    <string name="skill_description_25">Boosts passive hammer attack power by 60\%.</string>
+    <string name="skill_description_26">Boosts passive axe attack power by 50\%.</string>
     <string name="skill_description_27">Potions heal 3 times more.</string>
     <string name="skill_description_28">Increases the maximum number of hearts.</string>
     <string name="skill_description_29">Passive protection against spikes.</string>
@@ -573,7 +579,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="skill_description_32">Summons a wave of lightning bolts that strike all enemies around.</string>
     <string name="skill_description_33">Increases the explosion radius of thrown projectiles by 20\%.</string>
     <string name="skill_description_34">Increases the knockback strength of all weapons by 40\%, sending enemies flying even farther.</string>
-    <string name="skill_description_35">Increases the total area damage dealth by all weapons by 70\%.</string>
+    <string name="skill_description_35">Increases the total area damage dealt by all weapons by 70\%.</string>
 
     <string name="skill_description_default">No description available.</string>
     <string name="rating_start">Rating: 0/10 💩</string>
@@ -759,6 +765,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="dragonskull_staff">Dragonskull Staff</string>
     <string name="dragonskull_staff_plus">Dragonskull Staff+</string>
     <string name="death_scythe">Death Scythe</string>
+    <string name="death_scythe_plus">Death Scythe+</string>
     <string name="hippie_dragon_staff">Hippie Dragon Staff</string>
     <string name="hippie_dragon_staff_plus">Hippie Dragon Staff+</string>
     <string name="dragon_orb_staff">Dragon Orb Staff</string>
@@ -1185,7 +1192,6 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="special_thanks">Special Thanks:</string>
     <string name="in_memory_of">In Memory Of:</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
-    <string name="about_zoe">Zoe Moreno Ayala 2000 – 2025</string>
     <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman </string>
     <string name="final_wrath">Final Wrath</string>
     <string name="rush_of_the_doomed">Rush of the Doomed</string>
@@ -1196,5 +1202,9 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="seismic_reach">Seismic Reach</string>
     <string name="titans_push">Titan\'s Push</string>
     <string name="shockwave_force">Shockwave Force</string>
+    <string name="dark_lord_set_plus">Dark Lord Set+</string>
+    <string name="heros_set_plus">Hero\'s Set+</string>
+    <string name="bankers_coat_plus">Bankers Coat+</string>
+    <string name="tidecaller_ring">Tidecaller Ring</string>
 
 </resources>
