@@ -550,14 +550,14 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="skill_description_5">Weapon projectiles instantly break enemies\' spherical shields.</string>
     <string name="skill_description_6">All weapon projectiles have 45\% chance to cancel enemies\' projectiles on the fly.</string>
     <string name="skill_description_7">Increases stamina regeneration speed.</string>
-    <string name="skill_description_8">Charge attack that deals 2.6 times weapon damage.</string>
+    <string name="skill_description_8">Charge attack that deals 2.4 times weapon damage.</string>
     <string name="skill_description_9">Increases sword and dagger damage by 25\% when your health falls below 35\%.</string>
     <string name="skill_description_10">Increases movement speed by 20\% when your health falls below 35\%.</string>
     <string name="skill_description_11">Grants one additional Charge Blast before cooldown.</string>
 
     <string name="skill_description_12">Boosts jump power by 3\%.</string>
     <string name="skill_description_13">Boosts passive staff attack power by 20\%.</string>
-    <string name="skill_description_14">Boosts passive spear attack power by 35\%.</string>
+    <string name="skill_description_14">Boosts passive spear attack power by 40\%.</string>
     <string name="skill_description_15">Attracts gold coins and XP dropped by enemies.</string>
     <string name="skill_description_16">Grants passive protection against flames and lava.</string>
     <string name="skill_description_17">All weapons deal extra poison damage.</string>
@@ -571,7 +571,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="skill_description_24">Boosts armor by 25\%.</string>
     <string name="skill_description_25">Boosts passive hammer attack power by 60\%.</string>
     <string name="skill_description_26">Boosts passive axe attack power by 50\%.</string>
-    <string name="skill_description_27">Potions heal 3 times more.</string>
+    <string name="skill_description_27">Potions heal 2 times more.</string>
     <string name="skill_description_28">Increases the maximum number of hearts.</string>
     <string name="skill_description_29">Passive protection against spikes.</string>
     <string name="skill_description_30">The Dirty Faced Soldier can always step on magic green platforms.</string>
@@ -1206,5 +1206,8 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="heros_set_plus">Hero\'s Set+</string>
     <string name="bankers_coat_plus">Bankers Coat+</string>
     <string name="tidecaller_ring">Tidecaller Ring</string>
+    <string name="ancient_codices">Ancient Codices</string>
+    <string name="minion_vest">Minion Vest</string>
+    <string name="gorgons_skin">Gorgon\'s Skin</string>
 
 </resources>

@@ -700,7 +700,7 @@ public class EquipmentTester extends AppCompatActivity {
                         Log.d("EquipmentTester", "Skill Tree: Staff Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
                     if (skillsPicked[14] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.SPEAR)) {
-                        currentDamage = (currentDamage * 1.35);
+                        currentDamage = (currentDamage * 1.40);
                         Log.d("EquipmentTester", "Skill Tree: Spear Bonus Added: " + currentDamage + ", Current Damage: " + currentDamage);
                     }
                     if (skillsPicked[25] && selectedWeapon != null && selectedWeapon.getType().equals(WeaponTypes.HAMMER)) {
