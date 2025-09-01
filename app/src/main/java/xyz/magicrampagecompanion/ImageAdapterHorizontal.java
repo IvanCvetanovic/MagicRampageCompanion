@@ -1,5 +1,7 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

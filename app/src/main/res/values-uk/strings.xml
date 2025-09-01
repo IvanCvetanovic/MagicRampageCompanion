@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enhanced_velocity">Швидкість гепарда</string>
+    <string name="sword_master">Майстер меча</string>
+    <string name="dagger_specialist">Спеціаліст із кинджалів</string>
+    <string name="obstinate_shot">Невідхильний кидок</string>
+    <string name="corrosive_shot">Корозійний снаряд</string>
+    <string name="spherical_shield_breaker">Руйнівник щитів</string>
+    <string name="voracious_shot">Ненажерливий снаряд</string>
+    <string name="monstrous_vigour">Сила монстра</string>
+    <string name="charge_blast">Заряджений випад</string>
+    <string name="fearless_jump">Безстрашний стрибок</string>
+    <string name="virtuous_wizard">Шляхетний чаклун</string>
+    <string name="throwing_legend">Легендарний списник</string>
+    <string name="gold_magnet">Золотий магнит</string>
+    <string name="fireproof_skin">Вогнестійка шкіра</string>
+    <string name="toxic_haze">Отруйний туман</string>
+    <string name="shadow_camouflage">Тіньове маскування</string>
+    <string name="magic_jump">Магічний стрибок</string>
+    <string name="dark_twin">Темний близнюк</string>
+    <string name="unstoppable_strength">Непохитний захист</string>
+    <string name="crushing_strength">Нищівна сила</string>
+    <string name="slicing_master">Майстер-рубака</string>
+    <string name="monstrous_metabolism">Метаболізм монстра</string>
+    <string name="enhanced_vitality">Живучість бика</string>
+    <string name="untouchable_skin">Шкура вепра</string>
+    <string name="confident_move">Упевнені кроки</string>
+    <string name="arcane_protection">Містичний захист</string>
+    <string name="thunder_wave">Грозова хвиля</string>
+    <string name="final_wrath">Пік люті</string>
+    <string name="rush_of_the_doomed">Поспіх приреченого</string>
+    <string name="overcharge">Надзаряд</string>
+    <string name="arcane_discipline">Чарівницька дисципліна</string>
+    <string name="swift_cast">Спритний кидок</string>
+    <string name="airborne_dancer">Повітряний акробат</string>
+    <string name="seismic_reach">Сейсмічна зона</string>
+    <string name="titans_push">Натиск титану</string>
+    <string name="shockwave_force">Сила ударної хвилі</string>
+    <string name="damage">Атака</string>
+    <string name="armor">Броня</string>
+    <string name="upgrades">Вдосконалення</string>
+    <string name="element_fire">Вогонь</string>
+    <string name="element_water">Вода</string>
+    <string name="element_darkness">Темрява</string>
+    <string name="element_light">Світло</string>
+    <string name="element_earth">Земля</string>
+    <string name="element_air">Повітря</string>
+    <string name="skill_description_0">Підвищує швидкість руху на 4\%</string>
+    <string name="skill_description_1">Підвищує пасивну атаку мечем на 15\%.</string>
+    <string name="skill_description_2">Підвищує пасивну атаку кинджалом на 20\%.</string>
+    <string name="skill_description_3">Уся метальна зброя не збивається з траєкторії при зіткненні з іншим летючим снарядом.</string>
+    <string name="skill_description_4">Метальна зброя миттєво підриває переможених ворогів.</string>
+    <string name="skill_description_5">Метальна зброя миттєво руйнує сферичні щити ворога.</string>
+    <string name="skill_description_6">Уся метальна зброя має шанс 45\% поглинути в польоті ворожі снаряди.</string>
+    <string name="skill_description_7">Підвищує швидкість відновлення витривалості.</string>
+    <string name="skill_description_8">Заряджена атака, яка завдає 2.4-кратне пошкодження від зброї.</string>
+    <string name="skill_description_9">Підвищує шкоду мечем і кинджалом на 25\%, якщо ваше здоров\'я нижче 35\%.</string>
+    <string name="skill_description_10">Підвищує швидкість руху на 20\%, якщо ваше здоров\'я нижче 35\%.</string>
+    <string name="skill_description_11">Дає один додатковий заряд заряд Точкового вибуху до перезарядки.</string>
+    <string name="skill_description_12">Підсилює стрибок на 3\%</string>
+    <string name="skill_description_13">Підвищує пасивну атаку посоха на 20\%.</string>
+    <string name="skill_description_14">Підвищує пасивну атаку списом на 40\%.</string>
+    <string name="skill_description_15">Притягує золоті монети та сфери досвіду, що випали з ворогів.</string>
+    <string name="skill_description_16">Дає пасивний захист від вогню та лави.</string>
+    <string name="skill_description_17">Вся зброя завдає додаткових пошкоджень отрутою.</string>
+    <string name="skill_description_18">Звичайним ворогам буде потрібно більше часу, щоб виявити вашого героя.</string>
+    <string name="skill_description_19">Дає можливість здійснити додатковий стрибок у повітрі.</string>
+    <string name="skill_description_20">Викликає темного близнюка, який допомагає герою в битві.</string>
+    <string name="skill_description_21">Знижує час перезаряджання супернавичок на 20\%.</string>
+    <string name="skill_description_22">Усі кинуті снаряди летять на 15\% швидше.</string>
+    <string name="skill_description_23">Дає додатковий стрибок у повітрі та підсилює повітряні атаки.</string>
+    <string name="skill_description_24">Підвищує броню на 25\%</string>
+    <string name="skill_description_25">Підвищує пасивну атаку молота на 60\%.</string>
+    <string name="skill_description_26">Підвищує пасивну атаку сокири на 50\%.</string>
+    <string name="skill_description_27">Зілля відновлюють здоров\'я в 2-кратному розмірі.</string>
+    <string name="skill_description_28">Підвищує максимальний запас сердець.</string>
+    <string name="skill_description_29">Дає пасивний захист від шипів.</string>
+    <string name="skill_description_30">Герой завжди може переміщатися по зелених магічних платформах.</string>
+    <string name="skill_description_31">Використання особливого вміння класу автоматично створює сферичний щит.</string>
+    <string name="skill_description_32">Викликає хвилю блискавок, що вражають усіх ворогів навколо.</string>
+    <string name="skill_description_33">Підвищує радіус вибуху пущених снарядів на 20\%.</string>
+    <string name="skill_description_34">Посилює відкидання всіма видами зброї на 40\% - тепер ваші вороги відлітатимуть ще далі.</string>
+    <string name="skill_description_35">Підвищує шкоду по площі, що наноситься всіма видами зброї, на 70\%.</string>
+    <string name="rating">"Рейтинг: "</string>
+    <string name="rogue">Розбійник</string>
+    <string name="thief">Злодій</string>
+    <string name="mage">Маг</string>
+    <string name="black_mage">Темний маг</string>
+    <string name="high_mage">Вищий маг</string>
+    <string name="priest">Священик</string>
+    <string name="warlock">Чорнокнижник</string>
+    <string name="warrior">Воїн</string>
+    <string name="elite_warrior">Елітний воїн</string>
+    <string name="paladin">Паладин</string>
+    <string name="ranger">Рейнджер</string>
+    <string name="witchdoctor">Чаклун</string>
+    <string name="druid">Друїд</string>
+    <string name="recruit_set">Комплект Новобранця</string>
+    <string name="soldier_set">Комплект Солдата</string>
+    <string name="elite_soldier_set">Елітний Комплект Солдата</string>
+    <string name="ranger_set">Комплект Рейнджера</string>
+    <string name="umbranian_vest">Одяг Затемнення</string>
+    <string name="brass_set">Мідний Комплект</string>
+    <string name="elite_brass_set">Бронзовий Комплект</string>
+    <string name="obsidian_set">Обсидіановий Комплект</string>
+    <string name="elite_obsidian_set">Адамантієвий Комплект</string>
+    <string name="umbranian_tanker">Броня Затемнення</string>
+    <string name="jumpman_suit">Костюм Джампмена</string>
+    <string name="improved_jumpman_suit">Покращ. костюм Джампмена</string>
+    <string name="tubeman_suit">Вбрання ютубера</string>
+    <string name="twitch_suit">Костюм твічела</string>
+    <string name="nature_mage_vest">Одяг Мага Природи</string>
+    <string name="fire_mage_vest">Одяг Мага Вогню</string>
+    <string name="faldangs_vest">Одяг Фальданга</string>
+    <string name="plague_fighter_suit">Костюм Переможця Чуми</string>
+    <string name="warlock_vest">Убрання Чорнокнижника</string>
+    <string name="high_elf_robe">Мантія Вищого Ельфа</string>
+    <string name="ifrits_disciple_robe">Мантія Іфрита-учня</string>
+    <string name="cleric_vest">Одяг Клірика</string>
+    <string name="high_cleric_tunic">Туніка Вищого Клірика</string>
+    <string name="greenmoon_vest">Убрання Зеленої Луни</string>
+    <string name="dragon_vest">Одяг Дракона</string>
+    <string name="special_dragon_vest">Особливе Вбрання Дракона</string>
+    <string name="blue_wizard_suit">Синій Костюм Чаклуна</string>
+    <string name="penumbra_suit">Вбрання Сутінку</string>
+    <string name="penumbra_suit_plus">Вбрання Сутінку+</string>
+    <string name="monks_tunic">Туніка Монаха</string>
+    <string name="bacoon_set">Комплект Бакуна</string>
+    <string name="bacoon_set_plus">Комплект Бакуна+</string>
+    <string name="druid_vest">Одяг Друїда</string>
+    <string name="moonkeeper_set">Броня Хранителя Місяця</string>
+    <string name="bankers_coat">Плащ Банкіра</string>
+    <string name="deathdoctor_set">Комплект Доктора Смерть</string>
+    <string name="crow_set">Комплект Ворона</string>
+    <string name="special_crow_set">Особливий Комплект Ворона</string>
+    <string name="antiheros_set">Костюм Вбивці Героїв</string>
+    <string name="steelblow_armor">Броня Сталевого Удару</string>
+    <string name="steelblow_armor_plus">Броня Сталевого Удару+</string>
+    <string name="dark_lord_set">Комплект Темного Лорда</string>
+    <string name="light_spellmaster_suit">Костюм майстра світла</string>
+    <string name="liquid_assassin_suit">Безбарвний Костюм Вбивці</string>
+    <string name="light_champion_set">Особливий Комплект Світла</string>
+    <string name="jungle_master">Головний єгер</string>
+    <string name="jungle_assassin_suit">Камуфляжний Костюм Вбивці</string>
+    <string name="firestorm_armor">Броня Вогняного Смерчу</string>
+    <string name="firestorm_armor_plus">Броня Вогняного Смерчу+</string>
+    <string name="gayan_set">Комплект Гаяна</string>
+    <string name="elite_assassin_suit">Елітний Костюм Вбивці</string>
+    <string name="champion_set">Комплект Чемпіона</string>
+    <string name="spider_exoskeleton">Екзоскелет Павука</string>
+    <string name="witch_dress">Плаття відьми</string>
+    <string name="heros_set">Комплект Героя</string>
+    <string name="swamp_ranger_suit">Костюм болотного рейнджера</string>
+    <string name="arcane_mage_suit">Убрання рунного мага</string>
+    <string name="desert_rogue_suit">Костюм розбійника з пустелі</string>
+    <string name="iron_widow">Залізна вдова</string>
+    <string name="forest_witch_suit">Плаття лісової відьми</string>
+    <string name="black_witch_suit">Чорне плаття відьми</string>
+    <string name="purple_witch_suit">Пурпурне плаття відьми</string>
+    <string name="fire_moonkeeper_set">Вогняний комплект Хранителя</string>
+    <string name="swamp_witch_suit">Плаття болотної відьми</string>
+    <string name="green_witch_suit">Зелене плаття відьми</string>
+    <string name="bunny_suit">Костюм кролика</string>
+    <string name="warden_of_demons">Вартовий демонів</string>
+    <string name="tunic_of_the_relentless">Мундир непохитності</string>
+    <string name="wind_witch_suit">Плаття відьми вітру</string>
+    <string name="destroyer_of_the_corrupted">Викорінювач пороків</string>
+    <string name="interrogator">Дізнавач</string>
+    <string name="protector_of_the_oracle">Захист віщуна</string>
+    <string name="death_stalker">Смертельний мисливець</string>
+    <string name="tunic_of_endless_justice">Мундир правосуддя</string>
+    <string name="cataclysmic_plate">Обладунок катаклізму</string>
+    <string name="tunic_of_frozen_voices">Туніка застиглих голосів</string>
+    <string name="tunic_of_distant_ancestors">Туніка далеких предків</string>
+    <string name="vest_of_phantoms_keeper">Вбрання зберігача фантазмів</string>
+    <string name="robe_of_imminent_fires">Мантія невідворотного вогню</string>
+    <string name="vanquisher">Завойовник</string>
+    <string name="winter_witch_armor">Броня полярної кікімори</string>
+    <string name="easterminator">Паскармінатор</string>
+    <string name="vest_of_twisted_illusions">Вбрання плутаних ілюзій</string>
+    <string name="time_patroller_suit">Костюм Патруля Часу</string>
+    <string name="kings_spectre_tunic">Туніка привиду короля</string>
+    <string name="cthulhu_set">Комплект Ктулху</string>
+    <string name="barrenlands_banditin">Бандитка пустки</string>
+    <string name="tunic_of_ending_nights">Туніка кінця ночі</string>
+    <string name="santa_claus">Санта Клаус</string>
+    <string name="tunic_of_twisted_illusions">Туніка плутаних ілюзій</string>
+    <string name="vest_of_blessed_glory">Вбрання священної слави</string>
+    <string name="barrenlands_bandit">Бандит пустки</string>
+    <string name="ring_of_agility">Кільце Спритності</string>
+    <string name="shaman_ring">Кільце Шамана</string>
+    <string name="supersonic_ring">Надзвукове Кільце</string>
+    <string name="narya">Нарь\'я</string>
+    <string name="spellmasters_ring">Кільце Заклинателя</string>
+    <string name="warlocks_ring">Кільце Чорнокнижника</string>
+    <string name="nazguh_ring">Кільце Назгула</string>
+    <string name="ring_of_protection">Кільце Захисту</string>
+    <string name="cleric_ring">Кільце Клірика</string>
+    <string name="swordsmans_ring">Кільце Мечника</string>
+    <string name="nenya">Нень\'я</string>
+    <string name="dragon_eye_ring">Кільце з Оком Дракона</string>
+    <string name="white_pearl_ring">Перлове Кільце</string>
+    <string name="steelblow_ring">Кільце Сталевого Удару</string>
+    <string name="witchdoctor_ring">Кільце Чаклуна</string>
+    <string name="sea_wave_ring">Океанічне Кільце</string>
+    <string name="dragon_orb_ring">Кільце Сфери Дракона</string>
+    <string name="ring_of_light">Кільце Світла</string>
+    <string name="volcano_ring">Магмове Кільце</string>
+    <string name="all_seeing_ring">Всевидяче Кільце</string>
+    <string name="verdant_ring">Смарагдове Кільце</string>
+    <string name="dragon_fang_ring">Кільце Ікла Дракона</string>
+    <string name="blue_ring">Блакитне Кільце</string>
+    <string name="spektator">Шипоок</string>
+    <string name="cuteulhu">Мімітулху</string>
+    <string name="cait">Кіт Баюн</string>
+    <string name="bunny_ring">Кільце кролика</string>
+    <string name="whisper_of_fire">Шепіт полум\'я</string>
+    <string name="creepy_crawler">Жахливий повзун</string>
+    <string name="whisper_of_death">Шепіт смерті</string>
+    <string name="vina">Віне</string>
+    <string name="falcon_ring">Соколине Кільце</string>
+    <string name="cursed_amethyst_ring">Аметистове Кільце</string>
+    <string name="ancient_warden">Стародавній наглядач</string>
+    <string name="vindicator_guardian">Каратель</string>
+    <string name="whisper_of_light">Шепіт світла</string>
+    <string name="eastercreep">Паскауда</string>
+    <string name="ghostwalker">Примарний ходок</string>
+    <string name="trickytreat">Підступне частування</string>
+    <string name="jellybunny">Железайчик</string>
+    <string name="recruit_sword">Меч Новобранця</string>
+    <string name="steel_blade">Сталевий Меч</string>
+    <string name="fire_sword">Вогняний Меч</string>
+    <string name="nobel_sword">Вишуканий Меч</string>
+    <string name="leaf_sword">Гладіус</string>
+    <string name="pirate_sword">Меч Пірата</string>
+    <string name="master_sword">Меч Майстра</string>
+    <string name="vorpal_sword">Стрижаючий Меч</string>
+    <string name="umbranian_short_sword">Короткий Меч Затемнення</string>
+    <string name="umbranian_long_sword">Довгий Меч Затемнення</string>
+    <string name="fireskull_sword">Меч Вогняного Черепа</string>
+    <string name="darkskull_sword">Меч Темного Черепа</string>
+    <string name="hammers_and_maces">Молоти та булави</string>
+    <string name="nature_staff">Посох Сили Природи</string>
+    <string name="iron_dagger">Залізний Кинджал</string>
+    <string name="silver_axe">Срібна Сокира</string>
+    <string name="obsidian_spear">Обсидіановий спис</string>
+    <string name="insect_crusher">Гроза Комах</string>
+    <string name="fire_staff">Посох Вогню</string>
+    <string name="light_staff">Посох Світла</string>
+    <string name="oxymos_staff">Посох Оксимо</string>
+    <string name="staff_of_darkness">Посох Темряви</string>
+    <string name="gadarasts_staff">Посох Гадара</string>
+    <string name="epic_fire_staff">Епічний Посох Вогню</string>
+    <string name="firebane">Вогняне прокляття</string>
+    <string name="dragonskull_staff">Посох Черепа Дракона</string>
+    <string name="dragonskull_staff_plus">Посох Черепа Дракона+</string>
+    <string name="death_scythe">Коса Смерті</string>
+    <string name="death_scythe_plus">Коса Смерті+</string>
+    <string name="hippie_dragon_staff">Посох Хіпі</string>
+    <string name="hippie_dragon_staff_plus">Посох Хіпі+</string>
+    <string name="dragon_orb_staff">Посох Сфери Дракона</string>
+    <string name="water_staff">Посох Води</string>
+    <string name="golden_dragon_staff">Посох Золотого Дракона</string>
+    <string name="golden_dragon_staff_plus">Посох Золотого Дракона+</string>
+    <string name="dead_vulture_staff">Посох мертвого яструба</string>
+    <string name="broom_staff">Помело відьми</string>
+    <string name="ancient_stone_staff">Стародавній скам\'янілий посох</string>
+    <string name="cthulhu_staff">Посох Ктулху</string>
+    <string name="toxic_staff">Токсичний посох</string>
+    <string name="windbane">Повітряне прокляття</string>
+    <string name="legacy_of_the_oracle">Спадщина віщуна</string>
+    <string name="seabane">Морське прокляття</string>
+    <string name="royal_war_staff">Королівська бойова палиця</string>
+    <string name="staff_of_the_wicked">Посох нечестивого</string>
+    <string name="icebane">Крижана смерть</string>
+    <string name="spider_staff">Павуча палиця</string>
+    <string name="necromorphicon">Некроморфікон</string>
+    <string name="the_oxymos_codex">Кодекс Оксімо</string>
+    <string name="the_abyssal_scrolls">Свитки безодні</string>
+    <string name="iron_dagger_plus">Залізний Кинджал+</string>
+    <string name="fire_dagger">Вогняний Кинджал</string>
+    <string name="kunai">Кунай</string>
+    <string name="steel_dagger">Сталевий кинджал</string>
+    <string name="poisoned_dagger">Отруєний Кинджал</string>
+    <string name="ifrits_dagger">Кинджал Іфрита</string>
+    <string name="dagger_of_sand">Кинджал Піску</string>
+    <string name="undines_dagger">Кинджал Русалки</string>
+    <string name="dark_dagger">Кинджал Темряви</string>
+    <string name="dark_dagger_plus">Кинджал Темряви+</string>
+    <string name="light_dagger">Кинджал Світла</string>
+    <string name="chef_knife">Обробний Ніж</string>
+    <string name="gorgon_dagger">Кинджал Горгони</string>
+    <string name="machete">Мачете</string>
+    <string name="gayan">Гаян</string>
+    <string name="venomous_dagger">Отруйний кинджал</string>
+    <string name="cthulhu_dagger">Кинджал Ктулху</string>
+    <string name="dragon_tooth_dagger">Кинджал із зуба дракона</string>
+    <string name="dual_dragon_fang">Подвійне ікло дракона</string>
+    <string name="blood_swiftblade">Кривавий швидкий клинок</string>
+    <string name="precious_dual_blade">Дорогоцінна пата</string>
+    <string name="precious_skewer">Дорогоцінний багнет</string>
+    <string name="ice_dagger">Крижаний кинджал</string>
+    <string name="last_survivors_dagger">Кинджал останнього живого</string>
+    <string name="survivors_double_dagger">Подвійний розпад</string>
+    <string name="abyssal_dual_blade">Здвоєний клинок безодні</string>
+    <string name="malicious_quickblade">Спритне лихе жало</string>
+    <string name="gayan_shuriken">Гаянський сюрікен</string>
+    <string name="undines_shuriken">Сюрікен русалки</string>
+    <string name="sword_of_light">Меч Світла</string>
+    <string name="sword_of_1000_lies">Меч Тисячі Неправд</string>
+    <string name="magicsaber">Світломагічний Меч</string>
+    <string name="air_striker">Повітряний Крушитель</string>
+    <string name="ice_claw">Льодяний Кіготь</string>
+    <string name="light_piercer">Світловий пронизувач</string>
+    <string name="throat_cutter">Горлоріз</string>
+    <string name="air_piercer">Повітряний пронизувач</string>
+    <string name="cthulhu_blade">Клинок Ктулху</string>
+    <string name="glass_blade">Скляне лезо</string>
+    <string name="haunted_slicer">Проклятий різак</string>
+    <string name="moonlit_razor">Місячна бритва</string>
+    <string name="bunny_sword">Меч кролика</string>
+    <string name="blade_of_the_wicked">Клинок нечестивого</string>
+    <string name="goldsteel">Златосталь</string>
+    <string name="abyssal_blade">Клинок безодні</string>
+    <string name="golden_needle">Золота голка</string>
+    <string name="blade_of_rusted_souls">Клинок розпаду душ</string>
+    <string name="bunny_claymore">Палаш братика-кролика</string>
+    <string name="blade_of_survival">Клинок розпаду</string>
+    <string name="gorgon_blade">Клинок Горгони</string>
+    <string name="volcano_sword">Вулканічний меч</string>
+    <string name="all_seeing_sword">Всебачащий меч</string>
+    <string name="frost_heart">Крижане серце</string>
+    <string name="enchanted_nutcracker">Зачарований Лускунчик</string>
+    <string name="axe_of_fire">Сокира Полум\'я</string>
+    <string name="bone_chopper">Дробитель Кісток</string>
+    <string name="lightning_axe">Сокира Блискавок</string>
+    <string name="umbranian_cutter">Тесак Затемнення</string>
+    <string name="flaming_cutter">Вогняний різак</string>
+    <string name="spider_axe">Сокира Павука</string>
+    <string name="all_seeing_axe">Всевидюча Сокира</string>
+    <string name="toxic_axe">Токсична сокира</string>
+    <string name="bone_axe">Костяна сокира</string>
+    <string name="steel_axe">Сталева сокира</string>
+    <string name="cthulhu_axe">Сокира Ктулху</string>
+    <string name="dawnlight">Світло зорі</string>
+    <string name="gorgon_axe">Сокира Горгони</string>
+    <string name="stormcaller">Повелитель бурі</string>
+    <string name="path_of_exile">Шлях вигнання</string>
+    <string name="fortunes_battleaxe">Сокира збагачення</string>
+    <string name="axe_of_rusted_gods">Сокира забутих богів</string>
+    <string name="ice_axe">Крижана сокира</string>
+    <string name="yansahn">Хорс</string>
+    <string name="osun">Семаргл</string>
+    <string name="gayan_spear">Спис Гаяна</string>
+    <string name="freyr">Велес</string>
+    <string name="fire_pierce">Вогняний Шип</string>
+    <string name="azatoth">Перун</string>
+    <string name="spider_spear">Спис Павука</string>
+    <string name="cthulhu_spear">Шип Ктулху</string>
+    <string name="poisoned_spear">Отруйний спис</string>
+    <string name="vindictive_piercer">Мстивий пронизувач</string>
+    <string name="golden_piercer">Золотий пронизник</string>
+    <string name="last_survivors_spear">Спис останнього живого</string>
+    <string name="gorgon_spear">Жало Горгони</string>
+    <string name="wooden_hammer">Дерев\'яний Молот</string>
+    <string name="warhammer">Бойовий Молот</string>
+    <string name="spider_crusher">Крушитель Павуків</string>
+    <string name="bionic_hammer">Біонний Молот</string>
+    <string name="thunder_hammer">Штормовий Молот</string>
+    <string name="volcano_hammer">Магмовий Молот</string>
+    <string name="verdant_hammer">Смарагдовий Молот</string>
+    <string name="mojaras_hammer">Молот Моджари</string>
+    <string name="liquid_hammer">Водяний Молот</string>
+    <string name="hammer_of_light">Молот Світла</string>
+    <string name="inquisidor">Інквізитор</string>
+    <string name="falcon_hammer">Соколиний Молот</string>
+    <string name="bone_hammer">Кістяний молот</string>
+    <string name="wit_of_ancient_power">Стародавній розум</string>
+    <string name="war_forged_smasher">Штурмовий дробитель</string>
+    <string name="toxic_hammer">Токсичний молот</string>
+    <string name="wealthy_smasher">Багатий нищівник</string>
+    <string name="smasher_of_decay">Молот розпаду</string>
+    <string name="silver_mace">Срібна Булава</string>
+    <string name="iron_mace">Залізна Булава</string>
+    <string name="dark_mace">Булава Темряви</string>
+    <string name="club">Дубина</string>
+    <string name="wooden_hawaiian">Дерев\'яна Калоша</string>
+    <string name="toxic_mace">Токсична булава</string>
+    <string name="wealthy_crusher">Багатий подрібнювач</string>
+    <string name="ifrits_shuriken">Сюрікен іфриту</string>
+    <string name="compendium_of_trees">Каталог дерев</string>
+    <string name="the_testament_of_ifrit">Завіт іфриту</string>
+    <string name="the_arachnid_codex">Кодекс арахнідів</string>
+    <string name="the_word_of_the_wind">Світ вітрів</string>
+    <string name="enlightened_hammer">Просвітлений молот</string>
+    <string name="phoenix">Фенікс</string>
+    <string name="dancers_raiment">Наряд танцора</string>
+    <string name="storm">Шторм</string>
+    <string name="tunic_of_hellish_illusions">Туніка пекельних ілюзій</string>
+    <string name="gatekeepers_bionic_arm">Gatekeeper\'s Bionic Arm</string>
+    <string name="robe_of_eternal_fire">Убрання вічного вогню</string>
+    <string name="scarlet_shadowweaver">Багряний присмеречник</string>
+    <string name="unholy_storm">Нечестивий шторм</string>
+    <string name="innkeepers_costume">Костюм корчмаря</string>
+    <string name="greenfang_ensemble">Набір зеленого пазура</string>
+    <string name="golden_guardian">Золотий вартовий</string>
+    <string name="magic_cog">Чарівна шестерня</string>
+    <string name="nightshade">Примарний олень</string>
+    <string name="pirouette_pointe">Пуанти Пірует</string>
+    <string name="windpearl_axe">Сокира вітряної перлини</string>
+    <string name="wicked_skewer">Лютий багнет</string>
+    <string name="ruby_queens_spear">Спис рубінової королеви</string>
+    <string name="onyx_queens_lance">Спис оніксової королеви</string>
+    <string name="arachnid_sword">Павучий меч</string>
+    <string name="unleashed_kraken">Звільнений Кракен</string>
+    <string name="nightfall">Сутінки</string>
+    <string name="voidcaller_staff">Посох закликача порожнечі</string>
+    <string name="bunnyhop_dagger">Кинджал-кролестриб</string>
+    <string name="poisoned_dart">Отруєний дротик</string>
+    <string name="sapphire_pawns_dagger">Клинок сапфірового пішака</string>
+    <string name="toxic_dual_dagger">Токсичний подвійний кинджал</string>
+    <string name="all_seeing_cleaver">Всевидяче мачете</string>
+    <string name="shooting_star_shuriken">Сюрікен падаючої зірки</string>
+    <string name="tome_of_the_sands">Том пісків</string>
+    <string name="vest_of_ominous_jesters">Жилет Зловісних Блазнів</string>
+    <string name="vest_of_ominous_comrades">Вбрання зловісних товаришів</string>
+    <string name="the_daemon_codices">Кодекс демонів</string>
+    <string name="path_of_exile_plus">Шлях вигнання+</string>
+    <string name="eggscellent_axe">Заяйчаста сокира</string>
+    <string name="dark_lord_set_plus">Комплект Темного Лорда+</string>
+    <string name="heros_set_plus">Комплект Героя+</string>
+    <string name="bankers_coat_plus">Плащ Банкіра+</string>
+    <string name="tidecaller_ring">Приборкувач припливів</string>
+    <string name="the_ancient_codices">Стародавні кодекси</string>
+    <string name="minion_vest">Одяг Міньйона</string>
+    <string name="gorgons_skin">Шкіра Горгони</string>
+    <string name="rune_of_wind">Руна Повітря</string>
+    <string name="burning_rune">Палаюча Руна</string>
+    <string name="shiny_rune">Сяйна Руна</string>
+    <string name="purple_rune">Фіолетова Руна</string>
+    <string name="green_rune">Зелена Руна</string>
+    <string name="liquid_rune">Текуча Руна</string>
+    <string name="golden_key">Золотий ключ</string>
+    <string name="attack_speed">Швидкість атаки:</string>
+    <string name="enemy_time_patroller">Хранитель часу</string>
+    <string name="enemy_armademon">Армадемон</string>
+    <string name="enemy_armadillo">Броненосець</string>
+    <string name="enemy_beholder">Споглядач</string>
+    <string name="enemy_cthulhu">Ктулху</string>
+    <string name="enemy_cyclops">Циклоп</string>
+    <string name="enemy_demon_stomper">Демон-топтач</string>
+    <string name="enemy_fire_lord">Лорд полум\'я</string>
+    <string name="enemy_golem">Голем</string>
+    <string name="enemy_gorgon">Отруйна Горгона</string>
+    <string name="enemy_ice_golem">Крижаний голем</string>
+    <string name="enemy_orc_fighter">Урук-хай</string>
+    <string name="enemy_spidemon">Демон-павук</string>
+    <string name="enemy_tombstone_mimic">Могильний камінь</string>
+    <string name="enemy_vindicator">Захисник</string>
+    <string name="enemy_vulkling">Вулканум</string>
+    <string name="enemy_walker">Ходок</string>
+    <string name="enemy_armadimp">Броненосець</string>
+    <string name="Armors">Броня</string>
+    <string name="Rings">Кільця</string>
+    <string name="about">ℹ️ Про додаток ℹ️</string>
+    <string name="change_language">Змінити мову</string>
+    <string name="about_author">Про автора</string>
+    <string name="armor_in_calculation">"Броня: "</string>
+    <string name="author_description">Привіт! Я Іван Цветанович — PrOfSeS для спільноти Magic Rampage, де я є активним учасником протягом багатьох років. Я створив цей додаток, щоб поєднати свою давню любов до гри з моїм зростаючим захопленням розробкою програмного забезпечення. Якщо ви зіткнетеся з будь-якими помилками або маєте пропозиції, будь ласка, зв\'яжіться зі мною через Discord (натисніть кнопку нижче) або електронною поштою (дивіться інформацію про розробника на моїй сторінці Google Play Games). Дякую за вашу підтримку!</string>
+    <string name="axes">Сокири</string>
+    <string name="choose_the_chapter">Обери главу!</string>
+    <string name="daggers_and_shurikens">Кинджали та сюрікени</string>
+    <string name="damage_in_calculation">"Шкода: "</string>
+    <string name="dungeon10bossfighttext">Схема атаки боса досить проста. Він атакує чотири рази поспіль у ту позицію, де ви перебуваєте на момент його атаки.\n\n
+        Вам слід залишатися на підлозі та уникати його снарядів, трохи просуваючись уперед.\n\n
+        Після того, як він випустить четвертий снаряд, ви можете просто підстрибнути до його рівня і завдати йому шкоди. Повторюйте до перемоги.\n\n</string>
+    <string name="dungeon10text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+        Вам не обов\'язково потрібен молот для цих павуків, оскільки вони більші за отруйних.\n\n
+        Ви можете використовувати спеціальні вміння, що уповільнюють час, якщо хочете пробігти під падаючими пастками.\n\n</string>
+    <string name="dungeon11bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 11.\n\n
+        Крок 1: Спровокуйте скелета на верхній платформі, щоб він почав вас переслідувати. Ви можете зробити це, просто дозволивши йому вас побачити.\n\n
+        Крок 2: Тікайте від нього, коли він почне вас переслідувати.\n\n</string>
+    <string name="dungeon11bonustext2">Крок 3: Біжіть до лівої стіни і чекайте, поки скелет наблизиться.\n\n
+        Крок 4: Коли скелет вас атакує, застрибніть на верхню платформу і чекайте, поки він зруйнує блок і натисне на кнопку.\n\n</string>
+    <string name="dungeon11bonustext3">Бонус: Застрибніть в область над ящиком, щоб зібрати трохи золота!\n\n
+        Крок 5: Обережно пересуньте ящик на кнопку. Будьте обережні, щоб не впустити його вниз, де знаходиться скелет!\n\n
+        Крок 6: Швидко увійдіть до кімнати, а потім поверніться на платформу, де ви ухилялися від снарядів скелета. Повторіть це кілька разів, поки всі павуки не вийдуть з кімнати.\n\n</string>
+    <string name="dungeon11bonustext4">Крок 7: Після того, як ви заманили всіх ворогів в ліву область, ви можете зібрати все золото в кімнаті і завершити підземелля!\n\n</string>
+    <string name="dungeon11text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+        Зберіть усі три 💎, щоб розблокувати бонусний рівень.\n\n
+        Якщо вам важко ухилятися від снарядів, ви можете використовувати клас Воїн або Жрець.\n\n
+        Перша секретна область містить кільце <font color="#A020F0"> Nazguh </font>, яке можна використовувати для багатьох комбінацій предметів.\n\n
+</string>
+    <string name="dungeon12text">Перший 💎 знаходиться у другій секретній області. Другий — у золотому горщику, а третій — перед вогнеметом.\n\n
+        Броня Джампмена тут дуже корисна, оскільки вона дозволяє стрибати в певні місця, не вмираючи і не отримуючи шкоди.\n\n
+        Четверта секретна область містить вогняне кільце <font color="#FFA500"> Narya </font>, яке дуже підходить для Мага і Вищого Мага.\n\n
+</string>
+    <string name="dungeon13bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 13.\n\n
+        Крок 1: Зруйнуйте вази ліворуч, а потім слідуйте шляхом, як показано на малюнку.\n\n
+        Остерігайтеся вогняних снарядів і використовуйте повітряну броню або кільце, щоб уникнути шкоди від шипів.\n\n</string>
+    <string name="dungeon13bonustext2">Крок 2: Тепер повертайтеся, але використовуйте дорогу під платформами. Знову ж таки, будьте обережні зі снарядами і використовуйте лавову броню або кільце.\n\n</string>
+    <string name="dungeon13text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Використання вогняної броні або кільця дає вам захист від лави, дозволяючи відкрити дві секретні області.\n\n
+        Щоб відкрити першу секретну область, вам потрібно активувати кнопку в найближчому лавовому озері.\n\n
+        Друга секретна область містить <font color="#00FF00"> Кільце Захисту </font>.\n\n
+</string>
+    <string name="dungeon14text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Щоб пробити жовтий бар\'єр і отримати перший 💎, вам потрібна зброя зі світлим елементом або зброя, що пробиває бар\'єри.\n\n
+        Друга секретна область містить <font color="#FFFF00"> Кільце Клірика </font>, яке дійсно добре для Відьмака, Паладина і Жерця.\n\n
+        Тримайте The Dude в живих, щоб отримати досягнення.\n\n
+</string>
+    <string name="dungeon15text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Використання броні або кільця на основі <font color="#00FF00"> землі</font> полегшить доступ до таємних областей і завершення підземелля.\n\n
+        Якщо вам важко вдарити павуків, використовуйте молот, який ви отримали в попередніх підземеллях.\n\n
+</string>
+    <string name="dungeon16text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Використання броні або кільця на основі <font color="#00FF00"> землі </font> полегшить доступ до таємних областей і завершення підземелля.\n\n
+        Ви можете вбити недосяжного привида, ставши під ним і почекавши, поки блискавка вдарить кілька разів.\n\n
+</string>
+    <string name="dungeon17bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 17.\n\n
+        Єдина особливість цього бонусного рівня — це наявність достатньої кількості ключів, щоб відкрити всі скрині, тут немає певної стратегії.\n\n</string>
+    <string name="dungeon17bonustext2">Якщо ви відкриєте всі скрині, гарантовано випаде <font color="#FFA500"> Меч Вогняного Черепа </font>, який хороший для Воїна, Рейнджера тощо.\n\n
+        Ви також отримаєте <font color="#FFFF00"> Жилет Фальданга </font>, який хороший для Паладина, Жерця і Відьмака.\n\n
+</string>
+    <string name="dungeon17text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Використання екіпіровки на основі <font color="#A020F0"> темряви </font> змусить привида атакувати, коли ви зіткнетеся з ним безпосередньо.\n\n
+        Використовуйте кільце Supersonic або класи, які уповільнюють час для четвертої таємної області.\n\n
+</string>
+    <string name="dungeon18text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Друга секретна область містить <font color="#ADD8E6"> Кільце Мечника </font>, яке надзвичайно добре для мечів.\n\n
+        Переконайтеся, що ви об\'єднали одну вогняну і одну повітряну частину екіпіровки, щоб уникнути шкоди, завданої пастками.\n\n
+</string>
+    <string name="dungeon19bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 19.\n\n
+        Це досить просто. Просто зруйнуйте вази ліворуч, а потім стрибайте в лаву, щоб зібрати всі бонусні 🪙.\n\n
+        Після цього стрибайте на зелену платформу. Там ви знайдете дві скрині, з яких зазвичай випадають руни.\n\n</string>
+    <string name="dungeon19bonustext2">Після цього ви також можете відкрити приховану скриню, яка знаходиться в другому лавовому озері.\n\n</string>
+    <string name="dungeon19text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Підземелля повне шипів і лави. Намагайтеся використовувати відповідне спорядження, щоб уникнути хоча б однієї з цих небезпек.\n\n
+        Монстри, викликані призивачем, помруть автоматично, коли ви його вб\'єте.\n\n
+        Якщо ви пройдете в задню частину підземелля з капітаном, ви розблокуєте досягнення \"Нерозказана історія 2\".\n\n
+</string>
+    <string name="dungeon1text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+        У верхніх невидимих областях є багато зілля. Наприклад, над секретною областю 1 і в кінцевій області.\n\n
+        Після зустрічі з капітаном ви натрапите на два ящики. Знищте верхній, щоб отримати доступ до області, де ви були раніше.\n\n
+        Якщо ви підете туди, де починається кат-сцена, ви знайдете хороший меч і броню в двох білих горщиках.\n\n
+        Друга секретна область недоступна без використання костюма Джампмена або спеціальних здібностей, ви не зможете її отримати з першої спроби.\n\n
+</string>
+    <string name="dungeon20bossfighttext1">Не дозволяйте розміру цього боса обдурити вас, його досить легко перемогти.\n\n
+        Спочатку він починає атакувати п\'ять разів поспіль, його снаряди мають велику площу ураження і є отруйними. З більшістю спорядження ви зможете ухилитися, просто переміщаючись з боку в бік.\n\n
+</string>
+    <string name="dungeon20bossfighttext2">Після того, як він випустить свій п\'ятий снаряд, він опускається, щоб відкласти два яйця. Одне буде відкладено ліворуч, а інше праворуч.\n\n
+        Поки він це робить, у вас є шанс завдати йому шкоди. Переконайтеся, що при падінні після подвійного стрибка ви також один раз вдаряєте яйця і знищуєте їх.\n\n
+        Це гарантує, що вам не доведеться одночасно турбуватися про снаряди та павуків.\n\n
+        Після того, як павук відкладе друге яйце, він повернеться у вихідне положення і знову почне в вас стріляти. Повторюйте, поки не вб\'єте його.\n\n
+</string>
+    <string name="dungeon20text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити. Останній 💎 можна отримати тільки після вбивства боса.\n\n
+        Призивача, якого ви зустрінете, не можна вбити, вам потрібно спочатку вбити боса, потім повернутися і забрати ключ, 💎 і дослідити секретну область.\n\n
+        Що стосується спорядження, найкращі набори — це ті, які забезпечують спритність і завдають багато шкоди.\n\n
+</string>
+    <string name="dungeon21text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Вбивство призивачів також знищить міньйонів, якими вони володіють.\n\n
+        Перша секретна область містить <font color="#FFFF00"> Блискавичне Сокиру </font>, яке дуже хороше для світлих класів в середині гри, таких як Священик, Відьмак або Паладин.\n\n
+        Цей рівень розблоковує більше предметів в магазині, перевірте їх і підготуйтеся до майбутнього боса.\n\n
+</string>
+    <string name="dungeon22text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Перша секретна область знаходиться у верхньому лівому куті відразу після початку підземелля. Друга знаходиться на вершині майже невидимих платформ.\n\n
+        Переконайтеся, що у вас є хоча б один золотий ключ. Він знадобиться вам, щоб відкрити неофіційну секретну область, яку можна знайти над виходом з підземелля.\n\n
+        Використання зброї з великим радіусом атаки допоможе вам у вбивстві вибухаючих павуків, в іншому випадку ви можете просто втекти від них і дочекатися вибуху.\n\n
+</string>
+    <string name="dungeon23bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 23.\n\n
+        Спочатку пройдіть з одного боку карти на інший. Намагайтеся зібрати якомога більше 🪙 та 💎.\n\n</string>
+    <string name="dungeon23bonustext2">Вам також слід повністю уникати павуків, не атакуйте їх взагалі, і якщо ви не можете зібрати всі 🪙 відразу, це теж нормально.\n\n</string>
+    <string name="dungeon23bonustext3">Як тільки ви дійдете до кінця карти, ви можете розвернутися і почати повертатися, спамлячи атаками вліво.\n\n
+        Таким чином, ви зможете вбити всіх павуків і зібрати решту 🪙.\n\n
+        Обов\'язково відкрийте двері, що ведуть до скринь. Там на вас чекає предмет.\n\n
+        Над цією кімнатою також є ще 🪙 і смаколики, які ви можете підібрати.\n\n</string>
+    <string name="dungeon23text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Обов\'язково отримайте і срібні, і золоті ключі, вони знадобляться вам для бонусного етапу, який можна розблокувати, зібравши всі три 💎.\n\n
+        Використання зброї з великим радіусом атаки допоможе вам у вбивстві вибухаючих павуків, в іншому випадку ви можете просто втекти від них і дочекатися вибуху.\n\n
+        Скелети з <font color="#A020F0"> Мечем Темного Черепа </font> стають невразливими, коли бачать вас, намагайтеся цього уникати.\n\n
+</string>
+    <string name="dungeon24text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Для перших двох секретних областей вам потрібно активувати кнопку. Кнопка для першої секретної області прихована за блоком, який потрібно зруйнувати, а кнопка для другої секретної області частково прихована травою.\n\n
+        Третя секретна область знаходиться після того, як ви відкриєте перші двері золотим ключем.\n\n
+        П\'ята секретна область знаходиться над виходом з підземелля.\n\n
+</string>
+    <string name="dungeon25text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Перша секретна область знаходиться прямо над початковою точкою, вам знадобиться <font color="#ADD8E6"> Костюм Джампмена </font>, щоб туди дістатися. Майте на увазі, що там є невидима стіна, яка не дозволяє вам стрибнути прямо на платформу. Вам потрібно трохи піти ліворуч і стрибнути звідти. Ви також можете використовувати найближчий гейзер, щоб підштовхнути себе вгору. Ви також можете використовувати класи, які уповільнюють час.\n\n
+        У цьому підземеллі ви також можете керувати батьком хлопця. Ви можете наказати йому слідувати за вами або залишатися на одному місці, підійшовши до нього і натиснувши кнопку над ним.\n\n
+        Для другої секретної області вам потрібно буде наказати батькові хлопця стати на кнопку, поки ви все збираєте.\n\n
+</string>
+    <string name="dungeon26text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Перша секретна область знаходиться прямо над стартовою позицією, однак вона занадто високо. Вам потрібно буде активувати чарівний гриб, щоб дістатися туди.\n\n
+        Друга секретна область знаходиться з правого боку великої ями.\n\n
+        Третя секретна область знаходиться над замком, праворуч.\n\n
+        Якщо ви будете грати в це підземелля о 4:20 або 16:20, ви зможете отримати секретне досягнення. Просто зберіть літаючі монети з діамантом нагорі.\n\n
+</string>
+    <string name="dungeon27bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 27.\n\n
+        Над скринею можна знайти додаткові ласощі.\n\n
+        Спочатку активуйте чарівний гриб і слідуйте зигзагоподібним маршрутом до кінця. Намагайтеся не проводити багато часу посередині.\n\n</string>
+    <string name="dungeon27bonustext2">Потім знову активуйте гриб і слідуйте іншим зигзагоподібним маршрутом. От і все!\n\n</string>
+    <string name="dungeon27text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Обов\'язково візьміть один золотий ключ для бонусного етапу!\n\n
+        Є багато способів вбити клонів. Перший варіант - спамити атаку в області, де з\'являється клон. Другий варіант - перейти на вищу область, атакувати один раз і стрибнути, щоб ворожий клон був вражений вашою атакою. Третій варіант - спамити атаку здалеку, де злий клон не імітує ваші дії, а потім слідувати за снарядами до місцезнаходження клона, щоб вони його вразили. Ви також можете спробувати надіти слабшу броню, а потім, коли клон почне з\'являтися, змінити її на кращу і вбити його грубою силою.\n\n
+        Для другої секретної області, будь ласка, залиште другого злого клона в живих, оскільки це значно полегшує доступ туди.\n\n
+        Обов\'язково використовуйте чарівні гриби в своїх інтересах, особливо якщо вам важко вбити злих клонів.\n\n
+</string>
+    <string name="dungeon28text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Обов\'язково майте хоча б один предмет спорядження, заснований на вогні! В іншому випадку вам знадобиться багато зілля, щоб зцілитися від шкоди.\n\n
+        Просто спамте атаку в області, де має з\'явитися злий клон, це найкращий спосіб вбити його в цьому підземеллі.\n\n
+        Використання Воїна, Елітного Воїна і Жреця тут дуже гарна ідея, оскільки тут так багато снарядів.\n\n
+</string>
+    <string name="dungeon29bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 29.\n\n
+        Це виглядає складно, але вимагає лише певної стратегії.\n\n
+        Вам потрібно координувати свої рухи і розташуватися прямо посередині між кулями, позиція відзначена чорним ящиком. Ви повинні переміщатися від одного ящика до іншого, коли кулі знаходяться в горизонтальному положенні (коли ви їх не бачите).\n\n
+</string>
+    <string name="dungeon29text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Перша секретна область містить <font color="#00FF00"> Посох Гадараста </font>, а третя — <font color="#FFA500"> Меч Вогняного Черепа </font>.\n\n
+        Гігантський міні-бос має простий шаблон атаки: він просто стрибає і вдаряє по землі, викликаючи вибух. Найкращий спосіб убити його — атакувати його, коли він стрибає. Просто стрибайте одночасно з ним.
+</string>
+    <string name="dungeon2text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+        Якщо ви врятуєте Дюда, він подарує вам хороший меч для початку гри, і ви також отримаєте досягнення.\n\n
+        На стелі над секретною областю 5 є отруйний кинджал, який дуже хороший для ранньої та середньої гри.\n\n
+</string>
+    <string name="dungeon30bossfighttext1">Ви можете використовувати капітана як щит, оскільки вона взагалі не може померти.\n\n
+        Якщо ви знаходитесь на одній висоті з босом (якщо ви стоїте на одній з платформ), ви можете просто стрибати і ухилятися від його снарядів, в іншому випадку, якщо ви на землі, вам доведеться постійно рухатися.\n\n
+</string>
+    <string name="dungeon30bossfighttext2">У боса три стадії, і у всіх них у вас є близько трьох-чотирьох секунд, щоб завдати йому шкоди.\n\n
+        На першій стадії він просто повільно атакує вас, і приблизно через 8 секунд він стає вразливим.\n\n
+        Коли у нього залишається 50\% здоров\'я, він починає атакувати трохи швидше, і з\'являється гроза.\n\n
+        Коли у нього залишається 10\% здоров\'я, він починає атакувати дуже швидко, і гроза з\'являється набагато частіше.\n\n
+        Залежно від вашого спорядження, ви, можливо, зможете уникнути третьої фази, якщо завдасте достатньо шкоди. Обов\'язково продовжуйте атакувати його в голову, а не в тіло, так ви завдасте набагато більше шкоди.</string>
+    <string name="dungeon30text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Не витрачайте своє здоров\'я даремно, воно вам знадобиться для битви з босом, якщо тільки у вас немає багато зілля.</string>
+    <string name="dungeon31bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 31.\n\n
+        Єдине, на що потрібно звертати увагу, це не померти, впавши в прірву.\n\n
+        Просто стрибайте вгору, рівень за рівнем, і збирайте всі алмази та ключі.</string>
+    <string name="dungeon31bonustext2">Є кілька кажанів, але вони не становлять великої загрози, ви можете швидко їх вбити. \n\n</string>
+    <string name="dungeon31text">Перший 💎 знаходиться праворуч від зони появи. Він знаходиться в правому верхньому куті карти. Інші два знаходяться по дорозі.\n\n
+        Четверта секретна область може бути відкрита кнопкою ліворуч від неї, за стіною.\n\n
+        Обов\'язково використовуйте зброю з великим радіусом атаки, щоб легше вбивати кажанів.\n\n
+        Коли кажани вилуплюються з яйця, у них є короткий проміжок часу, протягом якого вони невразливі.</string>
+    <string name="dungeon32text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        У цьому підземеллі ви можете спробувати еліксири, які мають унікальний ефект. Коли ви підберете перший еліксир, ви будете стріляти додатковим відскакуючим вогняним шаром з кожним пострілом. З другим еліксиром ви зможете стояти на зелених платформах, а з третім еліксиром ваші постріли будуть переслідувати ціль. \n\n
+        Перша скриня містить <font color="#ADD8E6"> Костюм Джампмена </font>, який дозволяє вам отримати доступ до перших трьох секретних областей.\n\n
+        Фінальний міні-бос легко перемагається, якщо ви підготуєтеся. Використовуйте вогняну броню в скринях перед міні-босом, щоб збільшити свій урон, і підберіть еліксир у кімнаті міні-боса. Таким чином, вам знадобиться 4-5 пострілів, щоб убити цього павука.\n\n
+</string>
+    <string name="dungeon33text">Усі три 💎 можна знайти по дорозі, однак до останнього можна дістатися, тільки якщо ви активуєте кнопку перед водоймою зі скринею.\n\n
+        Торнадо завдають шкоди при торканні, випадковим чином або при смерті викликають грози, а також притягують вас до себе. Обов\'язково тримайтеся на відстані до і після їх вбивства. \n\n
+        Друга секретна область знаходиться прямо над першою.\n\n
+        Третю секретну область не дуже добре видно на малюнку, але ви зможете побачити частинки, що виходять від зеленої платформи на вашому екрані.\n\n</string>
+    <string name="dungeon34text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Перша секретна область знаходиться ліворуч від стартової зони, а третя — прямо над місцем зустрічі з Місячним Вартовим. Другу можна відкрити, кидаючи мечі в стрибаючий шар, щоб він натиснув на кнопку над ним. \n\n
+        Наявність спорядження з великою швидкістю та силою стрибка дуже допомагає в цьому підземеллі.\n\n</string>
+    <string name="dungeon35text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Це перше підземелля, яке в спільноті вважається складним. \n\n
+        Дракон атакує кожні кілька секунд, і його вогняна куля летить у те місце, де ви перебували в момент пострілу. Ви можете використовувати цю перевагу і ховатися за блоками або стрибати дуже високо, щоб вогняна куля вас не зачепила.\n\n</string>
+    <string name="dungeon36text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Це одне з попередніх підземель, яке ви проходили за солдата з брудним обличчям, тому перша секретна область також та сама. \n\n
+        У вас є додатковий вогняний еліксир, який ви можете використовувати, якщо віддаєте перевагу вогняній кулі замість самонавідних ракет.\n\n</string>
+    <string name="dungeon37text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Перша секретна область знаходиться під стартовою позицією, друга — з правого боку від першої вежі, а третя — з лівого боку від другої вежі. \n\n
+        Класи, такі як Рейнджер, Розбійник і Злодій, дуже корисні, оскільки вони забезпечують необхідну спритність для цього підземелля.\n\n</string>
+    <string name="dungeon38text">Усі три 💎 знаходяться на шляху до кінця підземелля, ви не зможете їх пропустити.\n\n
+        Якщо у вас були проблеми з вбивством ворогів через низьку шкоду, це те місце, де вам, можливо, варто зупинитися, пофармити більше золота і отримати краще спорядження. Намагайтеся набрати хоча б дві тисячі шкоди від зброї. \n\n
+        Перша секретна область знаходиться над першим деревом, яке ви знайдете в підземеллі. Просто застрибніть на дерево, і ви побачите невелику платформу в лівому верхньому куті. Друга секретна область знаходиться над першим стрибаючим гігантом, якого ви зустрінете.\n\n</string>
+    <string name="dungeon39text">Усі три 💎 знаходяться за порталом в середині карти. Не входьте в портал відразу з королем. Перестрибніть через нього і продовжуйте йти наліво.\n\n
+        До першої секретної області можна потрапити за допомогою міньйона, який з\'являється ліворуч від неї. Коли міньйон починає з\'являтися, підійдіть до дверей секретної області і просто продовжуйте йти вправо, поки міньйон не наступить на кнопку.\n\n
+        Друга секретна область знаходиться з лівого боку від останньої вежі ліворуч. Вам потрібно буде піднятися туди також з лівого боку.\n\n</string>
+    <string name="dungeon3bonus1">Розблокуйте цей бонус, зібравши всі три 💎 в підземеллі 3.\n\n
+        Крок 1 необов\'язковий і принесе вам невелику кількість золота.\n\n
+        Крок 2: Знайдіть червону кнопку на стелі.\n\n</string>
+    <string name="dungeon3bonus2">Крок 3: Щоб активувати кнопку, можна використовувати різні стратегії. Найпростіший спосіб — використовувати костюм Джампмена, який буде доступний в майбутніх підземеллях. На малюнку видно, що це можливо і без нього: просто застрибніть на голову зомбі, а потім зробіть подвійний стрибок, щоб активувати кнопку. Переконайтеся, що у вас є броня, що дає хоча б 2\% до сили стрибка.\n\n</string>
+    <string name="dungeon3bonus3">Крок 4: Після активації кнопки з\'явиться зомбі, станьте перед ним, щоб він вас атакував, а потім ухиліться від атаки. Це зруйнує стіну, і ви зможете забрати здобич.\n\n</string>
+    <string name="dungeon3text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+Зберіть усі три 💎, щоб розблокувати бонусний рівень.\n\n
+Ви не зможете відкрити скриню в першій секретній області з першої спроби, оскільки для цього потрібен один ключ, а купити його можна тільки в магазині, який відкриється після цього рівня.\n\n
+Ви можете дістатися до секретної області 3, використовуючи один ящик плюс костюм Джампмена або два ящики. Якщо ви використовуєте стратегію з двома ящиками, спочатку підставте лівий під правий, а потім штовхніть правий наверх. Після цього обережно штовхайте обидва ящики, поки не досягнете мети. \n\n
+Над третім золотим горщиком знаходиться Кинджал Світла, який дуже хороший для початку гри.\n\n</string>
+    <string name="dungeon40boss1">У цьому підземеллі немає секретних областей, це одна велика битва з босом.\n\n
+        Битва з босом включає в себе бій з чаклуном в його звичайній і звіриній формах. Поки він у звичайній формі, він буде атакувати вас, стріляючи вогняними кулями, метаючи блискавки зверху і призиваючи своїх міньйонів.\n\n
+        Вам не потрібна якась особлива стратегія, щоб перемогти його, просто переконайтеся, що у вас достатньо шкоди, щоб швидко з ним розправитися.\n\n</string>
+    <string name="dungeon40boss2">Друга частина трохи складніша, в основному тому, що його звірина форма має три схеми атаки, які змінюються залежно від того, скільки шкоди ви йому завдали.\n\n
+        Пам\'ятайте, найскладніша частина цього боса — зрозуміти, коли він збирається змінити свою схему атаки!\n\n
+        На першій стадії він підійде до вас і атакує так само, як стрибаючий гігант. Цю атаку легко уникнути. \n\n
+        На другій стадії він буде ковзати до вас, а потім викличе вибух з AoE-ефектом.\n\n
+        На третій стадії він стрибне до вас, а потім, приземлившись, ще трохи проковзне. Це, по суті, комбінація перших двох стадій.\n\n</string>
+    <string name="dungeon41text">Два 💎 видно і знаходяться на шляху до кінця підземелля. Один з них захований за руйнівною скелею в кімнаті другого міні-боса, що котиться.\n\n
+        Самонавідні ракети літаючого шипастого боса спочатку націлені на руйнівні скелі. Переконайтеся, що не руйнуєте їх в кімнаті. Якщо ви все ж зруйнуєте скелі, ви можете просто стати під босом, щоб снаряди вас не переслідували.\n\n
+        П\'яту секретну область можна відкрити кнопкою праворуч від неї.\n\n</string>
+    <string name="dungeon42bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 42.\n\n
+        Щоб відкрити двері в кімнату з міні-босом, вам потрібно активувати клапани в правильному порядку.\n\n</string>
+    <string name="dungeon42bonustext2">Бос залишає пристойне кільце під назвою \"Моторошний повзун\", яке можна використовувати для всіх типів зброї. \n\n</string>
+    <string name="dungeon42text">💎 заховані за руйнівними скелями. Обов\'язково все зруйнуйте, щоб їх дістати.\n\n
+        Що стосується загадки: подивіться на найближчий камінь, він покаже вам, в якому порядку потрібно вирішувати загадку.\n\n
+        Остерігайтеся щурів, які кидають отруйні бомби. Після вибуху вони випускають отруйну хмару, яка тримається кілька секунд.\n\n</string>
+    <string name="dungeon43bonustext1">Відкрийте цей рівень, зібравши всі три 💎 в підземеллі 43.\n\n
+        Перш ніж намагатися вбити боса-блока, вбийте всіх інших у кімнаті.\n\n</string>
+    <string name="dungeon43bonustext2">Після того, як всі інші міньйони будуть мертві, дістатися до червоних бочок стане набагато простіше. \n\n</string>
+    <string name="dungeon43text">Перший 💎 знаходиться після першого боса-блока. Інші два необхідно зібрати, якщо ви хочете зробити големів вразливими.\n\n
+        Щоб завдати шкоди босу-блоку, він повинен приземлитися на червоні бочки. Просто станьте збоку від бочки, і коли бос почне опускатися, рухайтеся в протилежному напрямку.\n\n
+        Бос в кінці також досить легко перемагається, якщо у вас достатньо шкоди. Просто станьте на один з блоків збоку і атакуйте його та його кристал здалеку.\n\n</string>
+    <string name="dungeon44bossfighttext1">Обов\'язково зберіть <font color="#FFA500"> Мантію неминучого вогню </font>з шостої таємної зони, щоб максимізувати свій урон. \n\n У боса є три основні атаки: ковзний бурулька, падаючі бурульки та кидок валуна. \n\n Ви повинні ухилятися, завдаючи урон одночасно, слідуючи шляху, показаному на малюнку. \n\n Ваша атака повинна бути такою: активуйте свою спеціальну здатність, потім свою суперздатність, а потім спамте базові атаки. Повторіть.</string>
+    <string name="dungeon44bossfighttext2"><font color="#FF0000">Увага:</font> Якщо ти не завдаси достатньо шкоди, доки ковзаюча бурулька не зламається, бос почне кидати в тебе валуни, від яких досить важко ухилитися.\n\n        Коли бос переходить у другу стадію, його ковзаюча бурулька рухається швидше, його падаючі бурульки тепер націлені на твою поточну позицію, і він кидає кілька валунів.\n\n</string>
+    <string name="dungeon44text">Усі три 💎 знаходяться на шляху, однак вам в основному потрібен золотий ключ, щоб відкрити двері і дістатися до них. Не пропускайте ніякі області заздалегідь.\n\n
+        Третя секретна область також захована за руйнівною помаранчевою масою.\n\n
+        Обов\'язково відвідайте шосту секретну область, оскільки там є гарна броня, яка допоможе вам у битві з босом.\n\n</string>
+    <string name="dungeon4text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+        Капітан непереможний і не може померти. Якщо ви будете просуватися по підземеллю по верхніх платформах, вона сама вб\'є всіх ворогів внизу.\n\n</string>
+    <string name="dungeon5bonustext1">Розблокуйте цей бонус, зібравши всі три 💎 в підземеллі 5.\n\n
+        Спочатку виберіть лівий вхід.\n\n</string>
+    <string name="dungeon5bonustext2">Просто продовжуйте йти вгору по стежці.\n\n</string>
+    <string name="dungeon5bonustext3">Тепер виберіть середній шлях, який містить раніше згаданий предмет - Дробарку Комах.\n\n
+        Цей предмет допоможе вам, якщо у вас виникнуть труднощі з наступною главою!\n\n</string>
+    <string name="dungeon5text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+        Обов\'язково використовуйте броню елемента вітру, щоб уникнути шкоди від шипів.\n\n
+        Товстого зомбі легше перемогти, якщо ви боретеся з ним з узвишшя.\n\n</string>
+    <string name="dungeon6text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+        Тепер ви можете використовувати молот, який ви отримали в попередньому бонусному підземеллі, щоб легше справлятися з павуками.\n\n
+        Перша секретна область містить набір Героя, який хороший для мечів, кинджалів і молотів. Він також дає вам захист від шипів, що дозволяє вам грати в підземелля безпечніше.\n\n</string>
+    <string name="dungeon7bonustext1">Розблокуйте цей бонус, зібравши всі три 💎 в підземеллі 7.\n\n
+        Вам потрібно буде поспішати, оскільки платформи руйнуються через три секунди після того, як ви на них стрибнете.\n\n
+        Просто слідуйте по лінії з золотих 🪙.\n\n</string>
+    <string name="dungeon7bonustext2">Як тільки ви досягнете найвищої, застрибніть на вершину квадрата, а потім стрибніть в область зі скринею.\n\n
+        Після цього просто стрибніть на наступну платформу і завершіть підземелля.\n\n</string>
+    <string name="dungeon7text">Два 💎 знаходяться в золотих горщиках. Один знаходиться в області, яку можна розблокувати, натиснувши кнопку.\n\n
+        Переконайтеся, що у вас є хоча б один залізний ключ для бонусного рівня.\n\n
+        Ви можете використовувати ящик на початку, щоб активувати кнопку для нижньої області з 💎.\n\n
+        До третьої секретної області можна дістатися, перестрибнувши через полум\'я.\n\n</string>
+    <string name="dungeon8text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+        Ви можете привести Дюда до Вогняного Списа на початку підземелля, щоб розблокувати досягнення.\n\n
+        Обов\'язково завжди стійте перед Дюдом, щоб ввібрати всю шкоду, якщо це необхідно. Ви можете використовувати зілля, а він ні.\n\n
+        Якщо Дюд виживе, він дасть вам гарну сокиру.\n\n</string>
+    <string name="dungeon9text">Усі три 💎 знаходяться в золотих горщиках.\n\n
+        Дійсно хороше підземелля, яке тренує вашу влучність для наступної глави. Найпростіший спосіб змусити ящик активувати кнопку - це використовувати некруті кинджали, наприклад, отруйний кинджал, який ви знайшли в одному з попередніх підземель.\n\n
+        Переважно використовуйте повітряну броню, щоб уникнути шкоди від шипів.\n\n
+        Коли ви закінчите підземелля, обов\'язково подивіться нові предмети в магазині.\n\n</string>
+    <string name="dungeons">🏰 Підземелля 🏰</string>
+    <string name="eighty_kills">80</string>
+    <string name="element_cannot_be_picked">Для цього предмета не можна вибрати стихію!</string>
+    <string name="enemies">👻 Вороги 👻</string>
+    <string name="enemy_air_elemental">Елементаль Повітря</string>
+    <string name="enemy_alien">Прибулець</string>
+    <string name="enemy_ape_demon">Демон-мавпа</string>
+    <string name="enemy_ape_junina">Мавпа Джуніна</string>
+    <string name="enemy_ape_santa">Мавпа-Санта</string>
+    <string name="enemy_ape_skeleton">Скелет-мавпа</string>
+    <string name="enemy_armademon_easter">Великодній Армадемон</string>
+    <string name="enemy_armored_ape">Броньована мавпа</string>
+    <string name="enemy_armored_ape_faster">Швидша броньована мавпа</string>
+    <string name="enemy_armored_ape_faster_weaker">Швидша і слабша броньована мавпа</string>
+    <string name="enemy_armored_axe_skeleton">Броньований скелет з сокирою</string>
+    <string name="enemy_armored_enraged_skeleton">Розлючений броньований скелет</string>
+    <string name="enemy_armored_skeleton">Броньований скелет</string>
+    <string name="enemy_beetle_anubis">Жук-Анубіс</string>
+    <string name="enemy_beetle_anubis_red">Червоний жук-Анубіс</string>
+    <string name="enemy_beholder_witch">Відьма-Спостерігач</string>
+    <string name="enemy_cangaceiro">Кангасейру</string>
+    <string name="enemy_carcara">Каркара</string>
+    <string name="enemy_carnival_buffoon_green_skeleton">Карнавальний зелений скелет-блазень</string>
+    <string name="enemy_carnival_buffoon_purple_skeleton">Карнавальний фіолетовий скелет-блазень</string>
+    <string name="enemy_carnival_bunny_mask_skeleton">Карнавальний скелет у масці кролика</string>
+    <string name="enemy_carnival_captain_mask_necromancer">Карнавальний некромант у масці капітана</string>
+    <string name="enemy_carnival_captain_mask_skeleton">Карнавальний скелет у масці капітана</string>
+    <string name="enemy_carnival_pilot_mask_skeleton">Карнавальний скелет у масці пілота</string>
+    <string name="enemy_carnival_pumpkin_mask_skeleton">Карнавальний скелет у масці гарбуза</string>
+    <string name="enemy_carnival_rat_buffoon_green">Карнавальний зелений щур-блазень</string>
+    <string name="enemy_carnival_rat_buffoon_purple">Карнавальний фіолетовий щур-блазень</string>
+    <string name="enemy_carnival_salesman_mask_skeleton">Карнавальний скелет у масці продавця</string>
+    <string name="enemy_chest_demon">Демон-скриня</string>
+    <string name="enemy_chest_demon_gift">Демонічна подарункова скриня</string>
+    <string name="enemy_copy_cat">Наслідувач</string>
+    <string name="enemy_cthulhu_imp">Імп Ктулху</string>
+    <string name="enemy_dark_ghost">Темний привид</string>
+    <string name="enemy_dark_skeleton">Темний скелет</string>
+    <string name="enemy_dark_skeleton_elite">Елітний темний скелет</string>
+    <string name="enemy_dark_tanker">Темний танк</string>
+    <string name="enemy_demon_head">Голова демона</string>
+    <string name="enemy_demonic_spider">Демонічний павук</string>
+    <string name="enemy_demonic_spider_blowing_minion">Вибуховий міньйон демонічного павука</string>
+    <string name="enemy_demonic_spider_minion">Міньйон демонічного павука</string>
+    <string name="enemy_easter_demon">Великодній демон</string>
+    <string name="enemy_easter_skeleton">Великодній скелет</string>
+    <string name="enemy_evil_warlock">Злий чаклун</string>
+    <string name="enemy_evil_warlock_boss">Бос-злий чаклун</string>
+    <string name="enemy_final_warlock">Фінальний чаклун</string>
+    <string name="enemy_fire_ape">Вогняна мавпа</string>
+    <string name="enemy_fire_bat">Вогняний кажан</string>
+    <string name="enemy_fire_bat_adult">Дорослий вогняний кажан</string>
+    <string name="enemy_fire_elemental">Вогняний елементаль</string>
+    <string name="enemy_fire_skeleton">Вогняний скелет</string>
+    <string name="enemy_fire_skeleton_b">Вогняний скелет B</string>
+    <string name="enemy_fire_skeleton_elite">Елітний вогняний скелет</string>
+    <string name="enemy_fire_skeleton_master">Майстер-вогняний скелет</string>
+    <string name="enemy_ghost_rat">Щур-привид</string>
+    <string name="enemy_giant_demon_head">Гігантська голова демона</string>
+    <string name="enemy_giant_spider">Гігантський павук</string>
+    <string name="enemy_gigaspider">Гігапавук</string>
+    <string name="enemy_grinch">Грінч</string>
+    <string name="enemy_guard_tanker_a">Танк-охоронець A</string>
+    <string name="enemy_guard_tanker_b">Танк-охоронець B</string>
+    <string name="enemy_guard_tanker_elite">Елітний танк-охоронець</string>
+    <string name="enemy_harmless_tanker">Безпечний танк</string>
+    <string name="enemy_helmet_skeleton">Скелет у шоломі</string>
+    <string name="enemy_ice_necromancer">Льодяний некромант</string>
+    <string name="enemy_ice_necromancer_wdg">Льодяний некромант WDG</string>
+    <string name="enemy_ice_skeleton">Льодяний скелет</string>
+    <string name="enemy_ice_skeleton_elite">Елітний льодяний скелет</string>
+    <string name="enemy_ice_skeleton_elite_wdg">Елітний льодяний скелет WDG</string>
+    <string name="enemy_ice_skeleton_tanker">Льодяний скелет-танк</string>
+    <string name="enemy_ice_skeleton_tanker_wdg">Льодяний скелет-танк WDG</string>
+    <string name="enemy_ice_skeleton_wdg">Льодяний скелет WDG</string>
+    <string name="enemy_ifrits_disciple">Учень іфрита</string>
+    <string name="enemy_jumping_fire_skeleton">Стрибаючий вогняний скелет</string>
+    <string name="enemy_jumping_fire_skeleton_elite">Елітний стрибаючий вогняний скелет</string>
+    <string name="enemy_jumping_skeleton">Стрибаючий скелет</string>
+    <string name="enemy_jumping_skeleton_elite">Елітний стрибаючий скелет</string>
+    <string name="enemy_junina_skeleton_a">Скелет Джуніна A</string>
+    <string name="enemy_junina_skeleton_b">Скелет Джуніна B</string>
+    <string name="enemy_junina_skeleton_dark_shadow">Темний тіньовий скелет Джуніна</string>
+    <string name="enemy_junina_skeleton_fire">Вогняний скелет Джуніна</string>
+    <string name="enemy_junina_skeleton_knife_guard">Скелет-охоронець з ножем Джуніна</string>
+    <string name="enemy_junina_skeleton_poison_thrower">Скелет-метальник отрути Джуніна</string>
+    <string name="enemy_junina_skeleton_shadow">Тіньовий скелет Джуніна</string>
+    <string name="enemy_kingptain_dungeon43">Кінг-капітан (Підземелля 43)</string>
+    <string name="enemy_mini_slime">Міні-слиз</string>
+    <string name="enemy_miniboss_gigaspider_critter">Міньйон міні-боса Гігапавука</string>
+    <string name="enemy_mummy">Мумія</string>
+    <string name="enemy_mummy_blue_cosmos">Синя космічна мумія</string>
+    <string name="enemy_mummy_gold_cosmos">Золота космічна мумія</string>
+    <string name="enemy_mush_vacuum">Грибний пилосос</string>
+    <string name="enemy_mush_vacuum_wdg">Грибний пилосос WDG</string>
+    <string name="enemy_mushroom_spitter">Гриб-плювака</string>
+    <string name="enemy_nature_skeleton">Природний скелет</string>
+    <string name="enemy_nature_skeleton_elite">Елітний природний скелет</string>
+    <string name="enemy_priest_minion">Міньйон жерця</string>
+    <string name="enemy_pumpkin_rat_skeleton">Гарбузовий скелет-щур</string>
+    <string name="enemy_pumpkin_skeleton">Гарбузовий скелет</string>
+    <string name="enemy_pumpkin_skeleton_scythe">Гарбузовий скелет з косою</string>
+    <string name="enemy_pumpkin_water_skeleton">Гарбузовий водяний скелет</string>
+    <string name="enemy_pumpkin_water_skeleton_scythe">Гарбузовий водяний скелет з косою</string>
+    <string name="enemy_pumpkin_zombie_rat">Гарбузовий зомбі-щур</string>
+    <string name="enemy_rat_black_mage">Щур-чорний маг</string>
+    <string name="enemy_rat_fighter">Щур-боєць</string>
+    <string name="enemy_rat_fire_mage">Щур-вогняний маг</string>
+    <string name="enemy_rat_lancer">Щур-копійник</string>
+    <string name="enemy_rat_poison_thrower">Щур-метальник отрути</string>
+    <string name="enemy_rat_rogue">Щур-розбійник</string>
+    <string name="enemy_rat_rogue_prisoner">Полонений щур-розбійник</string>
+    <string name="enemy_rat_skeleton">Скелет-щур</string>
+    <string name="enemy_rat_warrior">Щур-воїн</string>
+    <string name="enemy_rat_water_mage">Щур-водяний маг</string>
+    <string name="enemy_rat_zombie_knife_guard">Щур-зомбі з ножем</string>
+    <string name="enemy_rat_zombie_knife_guard_b">Щур-зомбі з ножем B</string>
+    <string name="enemy_rat_zombie_knife_guard_elite">Елітний щур-зомбі з ножем</string>
+    <string name="enemy_shaman_fire">Вогняний шаман</string>
+    <string name="enemy_shaman_fire_elite">Елітний вогняний шаман</string>
+    <string name="enemy_shaman_nature">Природний шаман</string>
+    <string name="enemy_shaman_nature_elite">Елітний природний шаман</string>
+    <string name="enemy_skeleton">Скелет</string>
+    <string name="enemy_skeleton_b">Скелет B</string>
+    <string name="enemy_slime_demon">Слизень-демон</string>
+    <string name="enemy_snow_monster">Сніговий монстр</string>
+    <string name="enemy_spidemon_higher_jump">Павук-демон з високим стрибком</string>
+    <string name="enemy_spider">Павук A</string>
+    <string name="enemy_spider_b">Павук B</string>
+    <string name="enemy_spider_b_weak">Слабкий павук B</string>
+    <string name="enemy_spider_blow">Павук-дутель</string>
+    <string name="enemy_spider_boss">Бос-павук</string>
+    <string name="enemy_spider_c">Павук C</string>
+    <string name="enemy_spider_easter">Великодній павук</string>
+    <string name="enemy_spider_easter_green">Зелений великодній павук</string>
+    <string name="enemy_spider_easter_pink">Рожевий великодній павук</string>
+    <string name="enemy_spider_fire">Вогняний павук</string>
+    <string name="enemy_spider_gift">Павук-подарунок</string>
+    <string name="enemy_spider_swamp">Болотний павук</string>
+    <string name="enemy_swamp_monster">Болотний монстр</string>
+    <string name="enemy_tanker_elite_matryoshka">Елітний танк-матрьошка</string>
+    <string name="enemy_tanker_helmet_matryoshka">Танк-матрьошка в шоломі</string>
+    <string name="enemy_tanker_rage_matryoshka">Танк-матрьошка в люті</string>
+    <string name="enemy_time_patroller_dungeon40">Патрульний часу (Підземелля 40)</string>
+    <string name="enemy_time_patroller_dungeon41">Патрульний часу (Підземелля 41)</string>
+    <string name="enemy_vampire">Вампір</string>
+    <string name="enemy_vindicator_carnival">Карнавальний захисник</string>
+    <string name="enemy_warlock_final_boss">Фінальний бос-чаклун</string>
+    <string name="enemy_water_vampire">Водяний вампір</string>
+    <string name="enemy_white_ape">Біла мавпа</string>
+    <string name="enemy_wizard">Чарівник</string>
+    <string name="enemy_xmas_doll_blond">Різдвяна лялька-блондинка</string>
+    <string name="enemy_xmas_doll_brunette">Різдвяна лялька-брюнетка</string>
+    <string name="enemy_xmas_duck">Різдвяна качка</string>
+    <string name="enemy_xmas_fire_bear">Різдвяний вогняний ведмідь</string>
+    <string name="enemy_xmas_fire_bear_elite">Елітний різдвяний вогняний ведмідь</string>
+    <string name="enemy_xmas_gift_vacuum">Різдвяний подарунок-пилосос</string>
+    <string name="enemy_xmas_green_bear_small">Різдвяний зелений маленький ведмідь</string>
+    <string name="enemy_xmas_jumping_green_bear">Різдвяний зелений стрибаючий ведмідь</string>
+    <string name="enemy_xmas_mimic">Різдвяний мімік</string>
+    <string name="enemy_xmas_pink_bear">Різдвяний рожевий ведмідь</string>
+    <string name="enemy_xmas_pink_bear_small">Різдвяний рожевий маленький ведмідь</string>
+    <string name="enemy_xmas_purple_bear">Різдвяний фіолетовий ведмідь</string>
+    <string name="enemy_xmas_purple_bear_ez">Різдвяний фіолетовий ведмідь EZ</string>
+    <string name="enemy_xmas_purple_bear_small">Різдвяний фіолетовий маленький ведмідь</string>
+    <string name="enemy_xmas_skeleton_blue_helmet_ice">Різдвяний льодяний скелет у синьому шоломі</string>
+    <string name="enemy_xmas_skeleton_blue_ice">Різдвяний льодяний синій скелет</string>
+    <string name="enemy_xmas_skeleton_blue_mage">Різдвяний синій скелет-маг</string>
+    <string name="enemy_xmas_skeleton_blue_tanker">Різдвяний синій скелет-танк</string>
+    <string name="enemy_xmas_skeleton_red_mage">Різдвяний червоний скелет-маг</string>
+    <string name="enemy_xmas_skeleton_red_mage_elite">Елітний різдвяний червоний скелет-маг</string>
+    <string name="enemy_xmas_skeleton_red_warrior">Різдвяний червоний скелет-воїн</string>
+    <string name="enemy_xmas_skeleton_red_warrior_elite">Елітний різдвяний червоний скелет-воїн</string>
+    <string name="enemy_zombie_chief">Вождь-зомбі</string>
+    <string name="enemy_zombie_elite_guard">Елітний страж-зомбі</string>
+    <string name="enemy_zombie_guard">Страж-зомбі</string>
+    <string name="enemy_zombie_guard_boss">Бос-страж-зомбі</string>
+    <string name="enemy_zombie_guard_boss_b">Бос-страж-зомбі B</string>
+    <string name="enemy_zombie_guard_boss_c">Бос-страж-зомбі C</string>
+    <string name="enemy_zombie_knife_guard">Страж-зомбі з ножем</string>
+    <string name="enemy_zombie_noob_knife_guard">Новачок-страж-зомбі з ножем</string>
+    <string name="enemy_zombie_rat">Щур-зомбі</string>
+    <string name="enemy_zombie_red_guard">Червоний страж-зомбі</string>
+    <string name="fifty_kills">50</string>
+    <string name="fire_resistance">Опір вогню</string>
+    <string name="fourty_kills">40</string>
+    <string name="frost_attack">Атака морозом</string>
+    <string name="frost_resistance">Опір морозу</string>
+    <string name="hundred_fifty_kills">150</string>
+    <string name="hundred_kills">100</string>
+    <string name="in_memory_of">В пам\'ять про:</string>
+    <string name="item_already_at_zero_upgrades">Предмет вже на нульовому рівні покращення!</string>
+    <string name="item_already_maxed">Предмет вже покращено до максимуму!</string>
+    <string name="achievements">🏆 Досягнення 🏆</string>
+    <string name="items">📋 Предмети 📋</string>
+    <string name="jump_impulse">Сила стрибка: 0%</string>
+    <string name="jump_impulse_in_calculation">"Сила стрибка: "</string>
+    <string name="kills">Вбивства</string>
+    <string name="kitty_bucher">Кетлін Енн Бучер 1952 – 2022</string>
+    <string name="max">(МАКС)</string>
+    <string name="pierce_count">Кількість пробивань:</string>
+    <string name="poisonous_attack">Отруйна атака</string>
+    <string name="projectile_persistence">Стійкість снарядів</string>
+    <string name="rating_start">Рейтинг: 0/10 💩</string>
+    <string name="reset_all">Скинути все</string>
+    <string name="rewards">Нагороди</string>
+    <string name="robe_of_distant_visions">Мантія далеких видінь</string>
+    <string name="ruby_pawns_edge">Лезо рубінових пішаків</string>
+    <string name="select_skills">Вибрати навички</string>
+    <string name="seventy_kills">70</string>
+    <string name="sixty_kills">60</string>
+    <string name="skill_description_default">Опис відсутній.</string>
+    <string name="skill_points_left">Залишилося очок навичок:</string>
+    <string name="spears">Списи</string>
+    <string name="special_antiheros_set">Спеціальний набір антигероя</string>
+    <string name="special_thanks">Особлива подяка:</string>
+    <string name="special_thanks_text">Андре Санті \n Бруно Перейра \n Ферас Аламі \n Кетлін Енн Бучер \n Рой Делос Сантос Геварра \n Саймон Барон \n Дімітріс.к/ Тібо \n Дарк Джуніор \n Корнеліус Дю Плессі \n Зої Морено Айяла \n Кофеман</string>
+    <string name="speed">Швидкість: 0%</string>
+    <string name="speed_in_calculation">"Швидкість: "</string>
+    <string name="spike_resistance">Опір шипам</string>
+    <string name="staffs_and_grimoires">Посохи та гримуари</string>
+    <string name="survival1_text">Для цього вам знадобиться зброя, яка не влучає в середню платформу. Це дозволить вам вражати ворогів на іншій стороні і блокувати снаряди. Якщо перед вами з\'явиться павук, просто атакуйте камінь за собою, щоб легко його вбити.</string>
+    <string name="survival2_text">Друге підземелля на виживання не вимагає багато рухів. Залишайтеся в центрі і атакуйте по боках, час від часу рухаючись вгору і вниз, щоб вбивати додаткових ворогів і уникати блискавок.</string>
+    <string name="survival3_text">Третє підземелля на виживання вимагатиме від вас використання зброї, яка може легко вражати павуків. У нього також найскладніший рисунок атак з усіх підземель на виживання, що означає, що вам доведеться докласти більше зусиль.</string>
+    <string name="survival4_text">Для цього підземелля обов\'язково використовуйте зброю з низькою пробивною силою, щоб вбити болотного монстра одним пострілом. Дотримуватися рисунків атак підземелля досить просто. Крім того, ви можете використовувати клас Воїна для додаткового захисту від ворога, який з\'являється праворуч від вас.</string>
+    <string name="survival5_text">Найкраще і найпростіше підземелля для фарму золота. Обов\'язково використовуйте зброю з великою площею ураження і обмеженою дальністю, наприклад, молоти і сокири, щоб можна було залишатися на одному місці і вбивати ворогів здалеку.</string>
+    <string name="survival6_text">Останнє підземелля на виживання вимагає трохи більше зусиль у порівнянні з іншими, оскільки вам потрібно постійно змінювати місцезнаходження, щоб уникати снарядів, вражати літаючі юніти і ухилятися від ударів блискавки.</string>
+    <string name="survival_dungeon_1">Підземелля на виживання 1</string>
+    <string name="survival_dungeon_2">Підземелля на виживання 2</string>
+    <string name="survival_dungeon_3">Підземелля на виживання 3</string>
+    <string name="survival_dungeon_4">Підземелля на виживання 4</string>
+    <string name="survival_dungeon_5">Підземелля на виживання 5</string>
+    <string name="survival_dungeon_6">Підземелля на виживання 6</string>
+    <string name="survival_mode">☠️ Режим виживання ☠️</string>
+    <string name="survival_tutorial">Навчання</string>
+    <string name="swords">Мечі</string>
+    <string name="ten_kills">10</string>
+    <string name="test_equipment">🛡️ Тест спорядження 🛡️</string>
+    <string name="thirty_kills">30</string>
+    <string name="three_hundred_kills">300</string>
+    <string name="twenty_kills">20</string>
+    <string name="two_hundred_kills">200</string>
+    <string name="work_in_progress">В розробці!</string>
+
+    <string name="vase_breaker">Бий посуд!</string>
+    <string name="save_that_dude">Спасти рядового Раяна!</string>
+    <string name="keep_that_dude_alive">Не дай рядовому Раяну померти!</string>
+    <string name="armed_and_dangerous">Озброєний і небезпечний</string>
+    <string name="head_shot">Постріл у голову</string>
+    <string name="zombie_killer">Винищувач зомбі</string>
+    <string name="spider_killer">Дезінсектор</string>
+    <string name="bone_collector">Збирач кісток</string>
+    <string name="mr_macgyver">Агент Макгавєр</string>
+    <string name="there_and_back">Туди й назад</string>
+    <string name="know_your_enemy">Попереджений - значить озброєний</string>
+    <string name="complete_101">Пройдено більше 100\%!</string>
+    <string name="complete_100">Я пройшов її повністю!</string>
+    <string name="flawless_victory">Бездоганна перемога!</string>
+    <string name="ecstasy_of_gold">Золота лихоманка</string>
+    <string name="demon_slayer">Приборкувач демонів</string>
+    <string name="get_in_the_ring">Боже, куди я потрапив?</string>
+    <string name="lost_flipflop">Загублена туфелька Попелюшки</string>
+    <string name="the_untold_story">Нерозказана історія</string>
+    <string name="that_dude_must_live">Рядовий Раян має жити!</string>
+    <string name="could_beat_gng">Я пройшов Тетріс</string>
+    <string name="changing_in_the_air">Вітер змін</string>
+    <string name="runeforge">Коваль</string>
+    <string name="ride_the_wind">Осідлати вітер</string>
+    <string name="ghostbusters">Мисливці на привидів</string>
+    <string name="why_so_curious">Цікава Варвара</string>
+    <string name="loot_from_the_future">Зброя майбутнього</string>
+    <string name="the_untold_story_2">Нерозказана історія 3</string>
+    <string name="kill_the_spider">Павуче зло</string>
+    <string name="lost_hammer">Я зробив це навмисне…</string>
+    <string name="dude_still_lives">Рядовий Раян все ще живий</string>
+    <string name="dudes_story">Історія рядового Раяна</string>
+    <string name="breaker_of_chains">Руйнівник кайданів</string>
+    <string name="saw_a_giant">Підкорювач велетнів</string>
+    <string name="witch_hunt">Полювання на відьом</string>
+    <string name="post_credits">Та штука з титрами</string>
+    <string name="survival_50">Кількість вбивств:</string>
+    <string name="survival_100">Кількість вбивств:</string>
+    <string name="survival_200">Кількість вбивств:</string>
+    <string name="survival_300">Кількість вбивств:</string>
+    <string name="survival_1000">1000 вбивств? ГОДІ ВЖЕ!</string>
+    <string name="pimp_my_char">Тачку на прокачку</string>
+    <string name="bag_expanded">Більше місця</string>
+    <string name="may_the_magic">Хай буде з тобою магія</string>
+    <string name="vase_breaker_desc">Знищіть вазу на стартовому екрані.</string>
+    <string name="armed_and_dangerous_desc">Отримайте свою першу зброю.</string>
+    <string name="save_that_dude_desc">Уберегти рядового Раяна від шкоди на рівні 2 глави 1.</string>
+    <string name="keep_that_dude_alive_desc">Допоможіть рядовому Раяну на рівні 8 глави 1 і не дайте йому померти.</string>
+    <string name="head_shot_desc">Вбийте ворога пострілом у голову</string>
+    <string name="zombie_killer_desc">Вбийте зомбі.</string>
+    <string name="spider_killer_desc">Вбийте павука.</string>
+    <string name="bone_collector_desc">Переможіть скелета.</string>
+    <string name="mr_macgyver_desc">Потрапте в тайник на бонусному рівні 1 глави 2.</string>
+    <string name="there_and_back_desc">Воскресніть після смерті.</string>
+    <string name="know_your_enemy_desc">Прочитайте всі поради.</string>
+    <string name="complete_101_desc">Пройдіть 101\% гри: повторно пройдіть усі рівні в главах 1, 2 і 3 без пошкоджень.</string>
+    <string name="complete_100_desc">Пройти 100\% гри.</string>
+    <string name="flawless_victory_desc">Отримайте зірку за повторне проходження рівня без пошкоджень.</string>
+    <string name="ecstasy_of_gold_desc">Купіть золото вашому герою.</string>
+    <string name="demon_slayer_desc">Переможіть боса глави 1.</string>
+    <string name="get_in_the_ring_desc">Потрапте в тайник на бонусному рівні 1 глави 2.</string>
+    <string name="lost_flipflop_desc">Знайдіть загублену туфельку.</string>
+    <string name="the_untold_story_desc">Вислухайте нерозказану історію рядового Раяна на рівні 4 глави 2.</string>
+    <string name="that_dude_must_live_desc">Рядовий Раян повинен вижити до кінця рівня.</string>
+    <string name="could_beat_gng_desc">Пройдіть перші 15 рівнів із зіркою.</string>
+    <string name="changing_in_the_air_desc">Потрапте на найвищу точку рівня 6 глави 2.</string>
+    <string name="runeforge_desc">Вдоскональте предмет.</string>
+    <string name="ride_the_wind_desc">Доберіться до останньої скрині на рівні 7 глави 2.</string>
+    <string name="ghostbusters_desc">Переможіть привида на рівні 7 глави 2.</string>
+    <string name="why_so_curious_desc">Потрапте в замкнену зону на бонусному рівні 7 глави 2.</string>
+    <string name="loot_from_the_future_desc">Знайдіть хоча б одну з двох захованих скринь на рівні 3 глави 1.</string>
+    <string name="the_untold_story_2_desc">Вислухайте розповідь Капітана про портали й гігантських крилатих істот на рівні 9 глави 2.</string>
+    <string name="kill_the_spider_desc">Переможіть гігантського павука, що живе в болоті.</string>
+    <string name="lost_hammer_desc">Знайдіть Загублений Молот.</string>
+    <string name="dude_still_lives_desc">Зустріньте рядового Раяна на рівні 5 глави 3 (якщо він вижив на рівні 4 глави 2).</string>
+    <string name="dudes_story_desc">Вислухайте розповідь рядового Раяна на рівні 8 глави 1 (якщо він вижив на рівні 2 глави 1).</string>
+    <string name="breaker_of_chains_desc">Звільніть Чарівника-оракула на рівні 9 глави 3.</string>
+    <string name="saw_a_giant_desc">Убийте гіганта.</string>
+    <string name="witch_hunt_desc">Переможіть Злого Чаклуна.</string>
+    <string name="post_credits_desc">Подивіться сцену після фінальних титрів.</string>
+    <string name="survival_50_desc">Убийте 1000 ворогів у режимі виживання.</string>
+    <string name="survival_100_desc">Убийте 1000 ворогів у режимі виживання.</string>
+    <string name="survival_200_desc">Убийте 1000 ворогів у режимі виживання.</string>
+    <string name="survival_300_desc">Убийте 1000 ворогів у режимі виживання.</string>
+    <string name="survival_1000_desc">Убийте 1000 ворогів у режимі виживання.</string>
+    <string name="pimp_my_char_desc">Використовуйте редактор героя, щоб змінити зовнішній вигляд голови вашого персонажа.</string>
+    <string name="bag_expanded_desc">Придбайте розширення інвентарю в магазині.</string>
+    <string name="truth_out_there">Істина десь поруч</string>
+    <string name="truth_out_there_desc">Подорожуйте через портал і з\'ясуйте, що там ховається.</string>
+    <string name="may_the_magic_desc">Знайдіть загублений меч.</string>
+    <string name="complete_102">Глава 4 занадто складна!</string>
+    <string name="complete_102_desc">Пройти гру на 102\%. Пройти всі рівні, відшукати всі таємні області, а потім перепройти всі рівні аж до кінця 4 розділу, не отримавши шкоди.</string>
+    <string name="class_consciousness">Підвищуємо майстерність</string>
+    <string name="class_consciousness_desc">Вивчіть і використайте особливий прийом вашого класу на рівні 6 глави 1.</string>
+    <string name="unlock_all_survival">Спеціаліст з виживання</string>
+    <string name="unlock_all_survival_desc">Розблокуйте всі рівні режиму виживання, набираючи необхідні для відкриття бали на кожному з них.</string>
+    <string name="dragonslayer">Винищувач драконів</string>
+    <string name="dragonslayer_desc">Переможіть Великого червоного дракона.</string>
+    <string name="breaker_of_chains_2">Руйнівник кайданів 2</string>
+    <string name="breaker_of_chains_2_desc">Звільніть Хранителя Місяця на рівні 9 глави 4.</string>
+    <string name="bound_together">Щасливе возз\'єднання</string>
+    <string name="bound_together_desc">Зустріньтеся з Королем після перемоги над Злим Чаклуном.</string>
+    <string name="bank_for_your_buck">Громадяни, зберігайте гроші в ощадній касі!</string>
+    <string name="bank_for_your_buck_desc">Покладіть предмет на зберігання в банк.</string>
+    <string name="dirty_faced_rookie">Замурзаний новобранець</string>
+    <string name="dirty_faced_rookie_desc">Пройдіть одиночні рівні в змагальному режимі.</string>
+    <string name="bring_it_on">Вперед, у бій!</string>
+    <string name="bring_it_on_desc">Почніть матч проти іншого гравця в змагальному режимі.</string>
+    <string name="veni_vidi_vici">Прийшов, побачив, переміг</string>
+    <string name="veni_vidi_vici_desc">Виграйте матч проти іншого гравця в змагальному режимі.</string>
+    <string name="taking_part_counts">Головне не перемога, а участь…</string>
+    <string name="taking_part_counts_desc">Навіть не намагайтеся програти матч. Але якщо це все ж сталося, відкриється дане досягнення.</string>
+    <string name="add_friend">Не май сто рублів, а май сто друзів</string>
+    <string name="add_friend_desc">Додайте друга в змагальному режимі.</string>
+    <string name="challenge_friend">Сімейні розборки</string>
+    <string name="challenge_friend_desc">Киньте виклик другу в змагальному режимі.</string>
+    <string name="r_for_revenge">«П» значить помста</string>
+    <string name="r_for_revenge_desc">Переможіть у матчі-реванші в змагальному режимі.</string>
+    <string name="bronze_rank_achievement">Легковажний прапорщик</string>
+    <string name="bronze_rank_achievement_desc">Підвищіть свій ранг до «Прапорщика» в змагальному режимі.</string>
+    <string name="silver_rank_achievement">Жив відважний капітан</string>
+    <string name="silver_rank_achievement_desc">Підвищіть свій ранг до «Капітана» в змагальному режимі.</string>
+    <string name="gold_rank_achievement">Товариш майор</string>
+    <string name="gold_rank_achievement_desc">Підвищіть свій ранг до «Майора» в змагальному режимі.</string>
+    <string name="platinum_rank_achievement">Полковникові ніхто не пише</string>
+    <string name="platinum_rank_achievement_desc">Підвищіть свій ранг до «Полковника» в змагальному режимі.</string>
+    <string name="diamond_rank_achievement">Генерали піщаних кар\'єрів</string>
+    <string name="diamond_rank_achievement_desc">Підвищіть свій ранг до «Генерала» в змагальному режимі.</string>
+    <string name="champion_slayer">Убивця чемпіонів</string>
+    <string name="champion_slayer_desc">Переможіть будь-якого чемпіона в залі чемпіонів.</string>
+    <string name="ranked_top_1">Кращий за всіх!</string>
+    <string name="ranked_top_1_desc">Очольте рейтинг лідерів.</string>
+    <string name="ranked_top_15">Серед чемпіонів!</string>
+    <string name="ranked_top_15_desc">Увійдіть до 15 кращих гравців зали чемпіонів.</string>
+    <string name="its_time">Час прийшов!</string>
+    <string name="its_time_desc">У певний час дня зберіть ¾420, що висять у повітрі на рівні 3–6.</string>
+    <string name="bag_expanded_2">Ще більше місця!</string>
+    <string name="bag_expanded_2_desc">Придбайте друге розширення інвентарю в магазині.</string>
+    <string name="ranked_top_100">Справжній герой</string>
+    <string name="ranked_top_100_desc">Потрапити в список 500 кращих рейтингових гравців. Ваше поточне положення можна побачити в рейтинговій секції інвентарю.</string>
+    <string name="ranked_top_500">Шалений ветеран</string>
+    <string name="ranked_top_500_desc">Потрапити в список 500 кращих рейтингових гравців. Ваше поточне положення можна побачити в рейтинговій секції інвентарю.</string>
+    <string name="challenge_accepted">Виклик прийнятий</string>
+    <string name="challenge_accepted_desc">Пройдіть завдання в порталі щотижневих завдань.</string>
+    <string name="salesman_payback">Час розплати</string>
+    <string name="salesman_payback_desc">Убийте торговця в альтернативній реальності.</string>
+    <string name="time_patrollers_time">Патруль часу</string>
+    <string name="time_patrollers_time_desc">Убийте патрульного часу в альтернативній реальності.</string>
+    <string name="kingslayer_time">Царевбивця</string>
+    <string name="kingslayer_time_desc">Убийте короля в альтернативній реальності.</string>
+    <string name="pixelated_arsenal">8-бітний арсенал</string>
+    <string name="pixelated_arsenal_desc">Зберіть піксельну зброю в альтернативній реальності.</string>
+    <string name="the_end_of_the_world">Кінець світу</string>
+    <string name="the_end_of_the_world_desc">Виберися з підземних тунелів на рівні 5–1.</string>
+    <string name="bag_expanded_3">Неймовірно великий</string>
+    <string name="bag_expanded_3_desc">Придбайте третє розширення інвентарю.</string>
+    <string name="its_amazing">Видатний результат!</string>
+    <string name="its_amazing_desc">Виконайте «Видатну» ціль за очками в щоденних рівнях. Спочатку потрібно виконати «Посередню» та «Пристойну» цілі.</string>
+    <string name="weekly_dungeons_completed_15">Володар сапфірової медалі</string>
+    <string name="weekly_dungeons_completed_15_desc">Пройти 50 різних щотижневих рівнів.</string>
+    <string name="weekly_dungeons_completed_30">Володар смарагдової медалі</string>
+    <string name="weekly_dungeons_completed_30_desc">Пройти 50 різних щотижневих рівнів.</string>
+    <string name="weekly_dungeons_completed_50">Володар рубінової медалі</string>
+    <string name="weekly_dungeons_completed_50_desc">Пройти 50 різних щотижневих рівнів.</string>
+    <string name="weekly_dungeons_star_30">Зірка пошани</string>
+    <string name="weekly_dungeons_star_30_desc">Виконати 50 завдань на зірки в 50 різних щотижневих рівнях.</string>
+    <string name="weekly_dungeons_star_50">Богатирська зірка</string>
+    <string name="weekly_dungeons_star_50_desc">Виконати 50 завдань на зірки в 50 різних щотижневих рівнях.</string>
+    <string name="weekly_dungeons_time_30">Почесний бігун</string>
+    <string name="weekly_dungeons_time_30_desc">Пройти 50 завдань на час у 50 різних щотижневих рівнях.</string>
+    <string name="weekly_dungeons_time_50">Великий бігун</string>
+    <string name="weekly_dungeons_time_50_desc">Пройти 50 завдань на час у 50 різних щотижневих рівнях.</string>
+    <string name="story_to_be_told">Ця історія повинна прозвучати</string>
+    <string name="story_to_be_told_desc">Послухай розповідь персонажа у пролозі 5–3 про турбулентний перехід порталу.</string>
+    <string name="the_untold_story_3">Нерозказана історія 3</string>
+    <string name="the_untold_story_3_desc">Послухай розповідь короля в лабораторії у пролозі 5–3.</string>
+    <string name="skilled_dirty_faced">Замурзаний, але вмілий</string>
+    <string name="skilled_dirty_faced_desc">Вивчіть три навички в дереві навичок.</string>
+    <string name="super_skill">Супернавичка!</string>
+    <string name="super_skill_desc">Вивчіть одну з супернавичок у дереві навичок.</string>
+    <string name="complete_103">103 оплакування</string>
+    <string name="complete_103_desc">Пройти гру на 103\%. Пройти всі рівні, відшукати всі таємні області, а потім перепройти всі рівні аж до кінця 5 розділу, не отримавши шкоди.</string>
+    <string name="ninth_circle">Дев\'яте коло</string>
+    <string name="ninth_circle_desc">Доберіться до замерзлих підземних камер планети в главі 5–4.</string>
+    <string name="the_darkest_side">Найтемніша сторона Місяця</string>
+    <string name="the_darkest_side_desc">Подивіться бонусне відео після проходження рівня 5–4 із 3 діамантами.</string>
+    <string name="sharp_dressed_minion">Міньон-модник</string>
+    <string name="sharp_dressed_minion_desc">Змініть зовнішність свого міньона за допомогою спеціального образу. Нові образи можна купити в призовій кімнаті.</string>
+    <string name="dirty_faced_souls">Замурзаний дух</string>
+    <string name="dirty_faced_souls_desc">Пройдіть режим Ремпейдж на 100\%. Знайдіть усі таємні місця й алмази.</string>
+    <string name="time_patroller">Наче часовий патруль!</string>
+    <string name="time_patroller_desc">Пройдіть режим Ремпейдж на 101\%. Знайдіть усі таємні місця та перепройдіть глави 1, 2 і 3 без пошкоджень.</string>
+    <string name="the_king">На коліна перед королем!</string>
+    <string name="the_king_desc">Пройти гру на 102\% у режимі Ремпейдж. Пройти всі рівні, відшукати всі таємні області, а потім перепройти всі рівні аж до кінця 4 розділу, не отримавши шкоди.</string>
+    <string name="bound_together_plus">Щасливе возз’єднання+</string>
+    <string name="bound_together_plus_desc">Зустріньтеся з Королем після перемоги над Злим Чаклуном у режимі Ремпейдж.</string>
+    <string name="witch_hunt_plus">Полювання на чаклуна+</string>
+    <string name="witch_hunt_plus_desc">Переможіть Злого Чаклуна в режимі Ремпейдж.</string>
+    <string name="sinister_riddle">Sinister Riddle</string>
+    <string name="sinister_riddle_desc">Solve the Sinister Obelisk\'s riddle.</string>
+    <string name="have_a_toast">Тост на твою честь!</string>
+    <string name="have_a_toast_desc">Купити напій для іншого гравця в таверні.</string>
+    <string name="bullseye_wizard">В яблучко</string>
+    <string name="bullseye_wizard_desc">Набрати 990 000 очок або більше в дартс у таверні.</string>
+    <string name="settle_a_score">Відплата</string>
+    <string name="settle_a_score_desc">Набрати 35 000 очок або більше на манекені продавця в таверні.</string>
+    <string name="meet_me_outside">Зустрінемося зовні!</string>
+    <string name="meet_me_outside_desc">Викличте друга на дуель. Ви можете додати друзів і викликати їх на дуель у таверні.</string>
+    <string name="duels_of_destiny">Доленосна дуель</string>
+    <string name="duels_of_destiny_desc">Виграйте рейтингову дуель. Знайти суперників можна через портал доленосної дуелі в таверні.</string>
+    <string name="taste_of_victory">Смак перемоги</string>
+    <string name="taste_of_victory_desc">Здобудьте перемогу у своїй першій звичайній дуелі. Опонента можна знайти в таверні.</string>
+    <string name="bronze_duel_rank_achievement">Сходження вартового</string>
+    <string name="bronze_duel_rank_achievement_desc">Підняти рейтинг до Майстра вартових у дуелях.</string>
+    <string name="silver_duel_rank_achievement">Охоронець світу</string>
+    <string name="silver_duel_rank_achievement_desc">Підняти рейтинг до Гросмейстера вартових у дуелях.</string>
+    <string name="gold_duel_rank_achievement">Крізь розломи</string>
+    <string name="gold_duel_rank_achievement_desc">Підняти рейтинг до Мандрівника у часі в дуелях.</string>
+    <string name="platinum_duel_rank_achievement">Вартовий часу</string>
+    <string name="platinum_duel_rank_achievement_desc">Підняти рейтинг до Хранителя часу в дуелях.</string>
+    <string name="diamond_duel_rank_achievement">Наглядач космосу</string>
+    <string name="diamond_duel_rank_achievement_desc">Підняти рейтинг до Космічного патруля в дуелях!</string>
+    <string name="first_steps_into_destiny">Доленосні кроки</string>
+    <string name="first_steps_into_destiny_desc">Дослідити кожну бойову зону і пройти початкову підготовку до доленосних дуелей.</string>
+
+    <string name="enemy_stat_health">Здоров\'я: </string>
+    <string name="enemy_stat_damage">Шкода: </string>
+    <string name="enemy_stat_touch_damage">Шкода від дотику: </string>
+    <string name="enemy_stat_armor">Броня: </string>
+    <string name="enemy_stat_speed">Швидкість: </string>
+    <string name="enemy_stat_jump">Стрибок: </string>
+    <string name="enemy_stat_patrol_behaviour">Поведінка патрулювання: </string>
+    <string name="enemy_stat_attack_behaviour">Поведінка в атаці: </string>
+    <string name="dungeon_1">Рівень 1</string>
+    <string name="tips_and_tricks">Поради та хитрощі:</string>
+    <string name="secret_areas">Секретні зони:</string>
+    <string name="dungeon_2">Рівень 2</string>
+    <string name="dungeon_3_bonus">Рівень 3 Бонус</string>
+    <string name="tutorial">Навчання:</string>
+    <string name="dungeon_5">Рівень 5</string>
+    <string name="dungeon_6">Рівень 6</string>
+    <string name="dungeon_5_bonus">Рівень 5 Бонус</string>
+    <string name="dungeon_7">Рівень 7</string>
+    <string name="dungeon_7_bonus">Рівень 7 Бонус</string>
+    <string name="dungeon_8">Рівень 8</string>
+    <string name="dungeon_10">Рівень 10</string>
+    <string name="bossfight_tips_and_tricks">Поради та хитрощі для битви з босом</string>
+    <string name="dungeon_11">Рівень 11</string>
+    <string name="dungeon_11_bonus">Рівень 11 Бонус</string>
+    <string name="dungeon_12">Рівень 12</string>
+    <string name="dungeon_13">Рівень 13</string>
+    <string name="dungeon_13_bonus">Рівень 13 Бонус</string>
+    <string name="dungeon_14">Рівень 14</string>
+    <string name="dungeon_15">Рівень 15</string>
+    <string name="dungeon_16">Рівень 16</string>
+    <string name="dungeon_17">Рівень 17</string>
+    <string name="dungeon_17_bonus">Рівень 17 Бонус</string>
+    <string name="dungeon_18">Рівень 18</string>
+    <string name="dungeon_19">Рівень 19</string>
+    <string name="dungeon_19_bonus">Рівень 19 Бонус</string>
+    <string name="dungeon_20">Рівень 20</string>
+    <string name="dungeon_21">Рівень 21</string>
+    <string name="dungeon_22">Рівень 22</string>
+    <string name="dungeon_23">Рівень 23</string>
+    <string name="dungeon_23_bonus">Рівень 23 Бонус</string>
+    <string name="dungeon_24">Рівень 24</string>
+    <string name="dungeon_25">Рівень 25</string>
+    <string name="dungeon_26">Рівень 26</string>
+    <string name="dungeon_27">Рівень 27</string>
+    <string name="dungeon_27_bonus">Рівень 27 Бонус</string>
+    <string name="dungeon_28">Рівень 28</string>
+    <string name="dungeon_29">Рівень 29</string>
+    <string name="dungeon_29_bonus">Рівень 29 Бонус</string>
+    <string name="dungeon_30">Рівень 30</string>
+    <string name="dungeon_31">Рівень 31</string>
+    <string name="dungeon_31_bonus">Рівень 31 Бонус</string>
+    <string name="dungeon_32">Рівень 32</string>
+    <string name="dungeon_33">Рівень 33</string>
+    <string name="dungeon_34">Рівень 34</string>
+    <string name="dungeon_35">Рівень 35</string>
+    <string name="dungeon_36">Рівень 36</string>
+    <string name="dungeon_37">Рівень 37</string>
+    <string name="dungeon_38">Рівень 38</string>
+    <string name="dungeon_39">Рівень 39</string>
+    <string name="dungeon_40">Рівень 40</string>
+    <string name="dungeon_41">Рівень 41</string>
+    <string name="dungeon_42">Рівень 42</string>
+    <string name="dungeon_42_bonus">Рівень 42 Бонус</string>
+    <string name="dungeon_43">Рівень 43</string>
+    <string name="dungeon_43_bonus">Рівень 43 Бонус</string>
+    <string name="dungeon_44">Рівень 44</string>
+    <string name="dungeon_3">Підземелля 3</string>
+    <string name="dungeon_4">Підземелля 4</string>
+    <string name="dungeon_9">Підземелля 9</string>
+
+    <string name="select_element">Вибрати елемент</string>
+    <string name="news">📰 Новини 📰</string>
+
+    <string name="translating">Завантаження перекладу. Це займає час і використовує дані. Будь ласка, зачекайте.</string>
+    <string name="waypoints">Шляхові точки</string>
+    <string name="stone_thrower">Каменемет</string>
+    <string name="knife_thrower">Метальник ножів</string>
+
+    <string name="failed_to_download_model">Не вдалося завантажити модель перекладу.</string>
+    <string name="failed_to_load_news">Не вдалося завантажити новини.\nБудь ласка, перевірте з\'єднання.</string>
+</resources>

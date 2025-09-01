@@ -5,39 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grey_background"
-    android:outlineAmbientShadowColor="#FFFFFF"
-    android:outlineSpotShadowColor="#1E0D0D"
     tools:context=".SurvivalDungeon4">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/survival_dungeon_4"
-            android:textStyle="bold"
-            android:textSize="32sp"
+            android:layout_marginTop="16dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
+            android:text="@string/survival_dungeon_4"
             android:textColor="@android:color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-        </TextView>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TableLayout
             android:id="@+id/tableLayout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:padding="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.073">
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -63,7 +62,6 @@
                     android:textStyle="bold" />
             </TableRow>
 
-            <!-- Data rows -->
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -342,47 +340,43 @@
 
         </TableLayout>
 
-
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/tutorialTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
+            android:layout_marginTop="0dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
             android:text="@string/survival_tutorial"
             android:textColor="@android:color/white"
             android:textSize="32sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/imageView8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
-
-        </TextView>
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="210dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/roundcorner"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-            app:layout_constraintVertical_bias="0.02"
+            app:layout_constraintTop_toBottomOf="@+id/tutorialTitleTextView"
             app:srcCompat="@drawable/survival4_tutorial"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/TipsandTricksText"
-            android:layout_width="350dp"
-            android:layout_height="220dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
             android:text="@string/survival4_text"
@@ -390,10 +384,9 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView8"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

@@ -1,5 +1,7 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
 import java.util.List;
 
 public class Achievement {

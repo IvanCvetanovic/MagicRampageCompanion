@@ -5,12 +5,12 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ProcessLifecycleOwner;
+import androidx.multidex.MultiDexApplication; // Import the correct Application class
 
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
@@ -23,7 +23,8 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 
 import java.util.Date;
 
-public class MyApplication extends Application implements Application.ActivityLifecycleCallbacks, LifecycleObserver {
+// Change "Application" to "MultiDexApplication" to enable Multidex
+public class MyApplication extends MultiDexApplication implements Application.ActivityLifecycleCallbacks, LifecycleObserver {
 
     private AppOpenAdManager appOpenAdManager;
     private Activity currentActivity;
@@ -32,6 +33,7 @@ public class MyApplication extends Application implements Application.ActivityLi
     @Override
     public void onCreate() {
         super.onCreate();
+        this.registerActivityLifecycleCallbacks(this);
         MobileAds.initialize(
                 this,
                 new OnInitializationCompleteListener() {
@@ -39,7 +41,7 @@ public class MyApplication extends Application implements Application.ActivityLi
                     public void onInitializationComplete(InitializationStatus initializationStatus) {}
                 });
         ProcessLifecycleOwner.get().getLifecycle().addObserver(this);
-        appOpenAdManager = new AppOpenAdManager(this);
+        appOpenAdManager = new AppOpenAdManager();
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -47,6 +49,32 @@ public class MyApplication extends Application implements Application.ActivityLi
         // Show the ad (if available) when the app moves to foreground.
         appOpenAdManager.showAdIfAvailable(currentActivity);
     }
+
+    @Override
+    public void onActivityCreated(@NonNull Activity activity, Bundle savedInstanceState) {}
+
+    @Override
+    public void onActivityStarted(@NonNull Activity activity) {
+        if (!appOpenAdManager.isShowingAd) {
+            currentActivity = activity;
+        }
+    }
+
+    @Override
+    public void onActivityResumed(@NonNull Activity activity) {}
+
+    @Override
+    public void onActivityPaused(@NonNull Activity activity) {}
+
+    @Override
+    public void onActivityStopped(@NonNull Activity activity) {}
+
+    @Override
+    public void onActivitySaveInstanceState(@NonNull Activity activity, @NonNull Bundle outState) {}
+
+    @Override
+    public void onActivityDestroyed(@NonNull Activity activity) {}
+
 
     private class AppOpenAdManager {
         private static final String LOG_TAG = "AppOpenAdManager";
@@ -56,10 +84,8 @@ public class MyApplication extends Application implements Application.ActivityLi
         private boolean isLoadingAd = false;
         private boolean isShowingAd = false;
 
-        /** Constructor. */
-        public AppOpenAdManager(MyApplication myApplication) {}
+        public AppOpenAdManager() {}
 
-        /** Request an ad. */
         private void loadAd(Context context) {
             if (isLoadingAd || isAdAvailable()) {
                 return;
@@ -71,8 +97,7 @@ public class MyApplication extends Application implements Application.ActivityLi
                     context, AD_UNIT_ID, request,
                     new AppOpenAd.AppOpenAdLoadCallback() {
                         @Override
-                        public void onAdLoaded(AppOpenAd ad) {
-                            // Called when an app open ad has loaded.
+                        public void onAdLoaded(@NonNull AppOpenAd ad) {
                             Log.d(LOG_TAG, "Ad was loaded.");
                             appOpenAd = ad;
                             isLoadingAd = false;
@@ -80,23 +105,19 @@ public class MyApplication extends Application implements Application.ActivityLi
                         }
 
                         @Override
-                        public void onAdFailedToLoad(LoadAdError loadAdError) {
-                            // Called when an app open ad has failed to load.
+                        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                             Log.d(LOG_TAG, loadAdError.getMessage());
                             isLoadingAd = false;
                         }
                     });
         }
 
-        public void showAdIfAvailable(
-                @NonNull final Activity activity){
-            // If the app open ad is already showing, do not show the ad again.
+        public void showAdIfAvailable(@NonNull final Activity activity){
             if (isShowingAd) {
                 Log.d(LOG_TAG, "The app open ad is already showing.");
                 return;
             }
 
-            // If the app open ad is not available yet, invoke the callback then load the ad.
             if (!isAdAvailable()) {
                 Log.d(LOG_TAG, "The app open ad is not ready yet.");
                 loadAd(MyApplication.this);
@@ -106,38 +127,31 @@ public class MyApplication extends Application implements Application.ActivityLi
             appOpenAd.setFullScreenContentCallback(
                     new FullScreenContentCallback(){
 
-                @Override
-                public void onAdDismissedFullScreenContent() {
-                    // Called when fullscreen content is dismissed.
-                    // Set the reference to null so isAdAvailable() returns false.
-                    Log.d(LOG_TAG, "Ad dismissed fullscreen content.");
-                    appOpenAd = null;
-                    isShowingAd = false;
-                    loadAd(activity);
-                }
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            Log.d(LOG_TAG, "Ad dismissed fullscreen content.");
+                            appOpenAd = null;
+                            isShowingAd = false;
+                            loadAd(activity);
+                        }
 
-                @Override
-                public void onAdFailedToShowFullScreenContent(AdError adError) {
-                    // Called when fullscreen content failed to show.
-                    // Set the reference to null so isAdAvailable() returns false.
-                    Log.d(LOG_TAG, adError.getMessage());
-                    appOpenAd = null;
-                    isShowingAd = false;
-                    loadAd(activity);
-                }
+                        @Override
+                        public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
+                            Log.d(LOG_TAG, adError.getMessage());
+                            appOpenAd = null;
+                            isShowingAd = false;
+                            loadAd(activity);
+                        }
 
-                @Override
-                public void onAdShowedFullScreenContent() {
-                    // Called when fullscreen content is shown.
-                    Log.d(LOG_TAG, "Ad showed fullscreen content.");
-                }
-            });
+                        @Override
+                        public void onAdShowedFullScreenContent() {
+                            Log.d(LOG_TAG, "Ad showed fullscreen content.");
+                        }
+                    });
             isShowingAd = true;
             appOpenAd.show(activity);
         }
 
-
-        /** Check if ad exists and can be shown. */
         private boolean isAdAvailable() {
             return appOpenAd != null && wasLoadTimeLessThanNHoursAgo(4);
         }
@@ -148,33 +162,4 @@ public class MyApplication extends Application implements Application.ActivityLi
         long numMilliSecondsPerHour = 3600000;
         return (dateDifference < (numMilliSecondsPerHour * numHours));
     }
-
-
-    @Override
-    public void onActivityCreated(Activity activity, Bundle savedInstanceState) {}
-
-    @Override
-    public void onActivityStarted(Activity activity) {
-        if (!appOpenAdManager.isShowingAd) {
-            currentActivity = activity;
-        }
-    }
-
-    @Override
-    public void onActivityResumed(Activity activity) {}
-
-    @Override
-    public void onActivityStopped(Activity activity) {}
-
-    @Override
-    public void onActivityPaused(Activity activity) {}
-
-    @Override
-    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {}
-
-    @Override
-    public void onActivityDestroyed(Activity activity) {}
-
-
 }
-

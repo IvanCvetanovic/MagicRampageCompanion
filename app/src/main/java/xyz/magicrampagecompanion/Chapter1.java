@@ -1,7 +1,10 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -17,6 +20,7 @@ public class Chapter1 extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+EdgeToEdge.enable(this);
         setContentView(R.layout.activity_chapter1);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.button);
@@ -237,5 +241,9 @@ public class Chapter1 extends AppCompatActivity
             mediaPlayer.release();
             mediaPlayer = null;
         }
+    }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
     }

@@ -1,5 +1,8 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.widget.ImageView;
@@ -17,6 +20,7 @@ public class EnemyDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+EdgeToEdge.enable(this);
         setContentView(R.layout.activity_enemy_detail);
 
         enemyImage       = findViewById(R.id.enemyImage);
@@ -28,20 +32,27 @@ public class EnemyDetail extends AppCompatActivity {
             Enemy e = (Enemy) p;
             enemyImage.setImageResource(e.getImageResId());
             enemyName.setText(e.getName());
-            enemyDescription.setText(buildDesc(e));
+            enemyDescription.setText(buildDesc(e, this));
         }
     }
 
-    private String buildDesc(Enemy e) {
+    private String buildDesc(Enemy e, Context context) {
         StringBuilder sb = new StringBuilder();
-        sb.append("Health: ").append(e.getHealth()).append("\n")
-                .append("Damage: ").append(e.getDamage()).append("\n")
-                .append("Touch Damage: ").append(e.getDamageOnTouch()).append("\n")
-                .append("Armor: ").append(e.getArmor()).append("\n")
-                .append("Speed: ").append(e.getSpeed()).append("\n")
-                .append("Jump: ").append(e.getJump()).append("\n")
-                .append("Patrol Behaviour: ").append(e.getPatrolBehavour()).append("\n")
-                .append("Attack Behaviour: ").append(e.getAttackBehaviour()).append("\n");
+
+        sb.append(context.getString(R.string.enemy_stat_health)).append(e.getHealth()).append("\n")
+                .append(context.getString(R.string.enemy_stat_damage)).append(e.getDamage()).append("\n")
+                .append(context.getString(R.string.enemy_stat_touch_damage)).append(e.getDamageOnTouch()).append("\n")
+                .append(context.getString(R.string.enemy_stat_armor)).append(e.getArmor()).append("\n")
+                .append(context.getString(R.string.enemy_stat_speed)).append(e.getSpeed()).append("\n")
+                .append(context.getString(R.string.enemy_stat_jump)).append(e.getJump()).append("\n")
+                .append(context.getString(R.string.enemy_stat_patrol_behaviour)).append(e.getPatrolBehavour()).append("\n")
+                .append(context.getString(R.string.enemy_stat_attack_behaviour)).append(e.getAttackBehaviour()).append("\n");
+
         return sb.toString();
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 }

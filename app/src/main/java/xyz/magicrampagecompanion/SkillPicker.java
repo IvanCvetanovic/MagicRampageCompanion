@@ -1,6 +1,9 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -28,6 +31,7 @@ public class SkillPicker extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+EdgeToEdge.enable(this);
         setContentView(R.layout.activity_skill_picker);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.click);
@@ -509,5 +513,10 @@ public class SkillPicker extends AppCompatActivity {
             mediaPlayer.release();
             mediaPlayer = null;
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 }

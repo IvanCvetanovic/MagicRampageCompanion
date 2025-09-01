@@ -1,5 +1,8 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -20,7 +23,9 @@ public class Items extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+EdgeToEdge.enable(this);
         setContentView(R.layout.activity_items);
+        ItemData.init(this);
 
         recyclerView = findViewById(R.id.recyclerView1);
         recyclerView.setHasFixedSize(true);
@@ -57,5 +62,10 @@ public class Items extends AppCompatActivity {
             startActivity(intent);
         });
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 }

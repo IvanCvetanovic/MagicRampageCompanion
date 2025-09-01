@@ -1,58 +1,71 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="16dp"
-    android:background="@color/grey"
-    android:layout_margin="8dp">
-
-    <TextView
-        android:id="@+id/achievementNumberTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginEnd="16dp"
-        android:textColor="@android:color/white" />
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:backgroundTint="@color/grey">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <TextView
-            android:id="@+id/achievementNameTextView"
+            android:id="@+id/achievementNumberTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_gravity="center"
+            android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:layout_marginBottom="8dp"
-            android:textColor="@android:color/white"/>
+            android:layout_marginEnd="16dp"
+            android:textColor="@android:color/white"
+            android:text="1"
+            tools:ignore="HardcodedText" />
 
-        <TextView
-            android:id="@+id/achievementDescriptionTextView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginBottom="8dp"
-            android:textColor="@android:color/white"/>
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/rewardsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="@android:color/white"/>
+            <TextView
+                android:id="@+id/achievementNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/white"
+                android:text="Achievement Title"
+                tools:ignore="HardcodedText" />
 
+            <TextView
+                android:id="@+id/achievementDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_gravity="start"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/white"
+                android:text="Achievement Description goes here."
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/rewardsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_gravity="start"
+                android:textColor="@android:color/white"
+                android:text="Rewards: 100 XP"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

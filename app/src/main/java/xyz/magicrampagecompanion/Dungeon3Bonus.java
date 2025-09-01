@@ -1,7 +1,10 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 
 public class Dungeon3Bonus extends AppCompatActivity {
@@ -9,6 +12,12 @@ public class Dungeon3Bonus extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dungeon3_bonus);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 }

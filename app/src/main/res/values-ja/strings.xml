@@ -1,0 +1,1288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enhanced_velocity">瞬足</string>
+    <string name="sword_master">ソードマスター</string>
+    <string name="dagger_specialist">ダガーの名手</string>
+    <string name="obstinate_shot">ガンジョーショット</string>
+    <string name="corrosive_shot">ボンバーショット</string>
+    <string name="spherical_shield_breaker">スフィアシールドブレイク</string>
+    <string name="voracious_shot">バクバクショット</string>
+    <string name="monstrous_vigour">怪物級の体</string>
+    <string name="charge_blast">チャージブラスト</string>
+    <string name="fearless_jump">フィアレスジャンプ</string>
+    <string name="virtuous_wizard">魔法名人</string>
+    <string name="throwing_legend">伝説の槍使い</string>
+    <string name="gold_magnet">ゴールドマグネット</string>
+    <string name="fireproof_skin">火傷知らずの肌</string>
+    <string name="toxic_haze">ポイズンヘイズ</string>
+    <string name="shadow_camouflage">影まとい</string>
+    <string name="magic_jump">マジックジャンプ</string>
+    <string name="dark_twin">ダークツイン</string>
+    <string name="unstoppable_strength">アンストッパブル</string>
+    <string name="crushing_strength">パワークラッシュ</string>
+    <string name="slicing_master">マスタースライサー</string>
+    <string name="monstrous_metabolism">ヒーリングモンスター</string>
+    <string name="enhanced_vitality">バイタルエンハンス</string>
+    <string name="untouchable_skin">アンタッチャブル</string>
+    <string name="confident_move">マジックステップ</string>
+    <string name="arcane_protection">アーケインプロテクト</string>
+    <string name="thunder_wave">サンダーウェーブ</string>
+    <string name="final_wrath">最終の憤怒</string>
+    <string name="rush_of_the_doomed">滅びの猛進</string>
+    <string name="overcharge">過充電</string>
+    <string name="arcane_discipline">秘術の鍛錬</string>
+    <string name="swift_cast">高速キャスト</string>
+    <string name="airborne_dancer">空中の舞い手</string>
+    <string name="seismic_reach">地鳴り圏内</string>
+    <string name="titans_push">タイタンの一撃</string>
+    <string name="shockwave_force">衝撃波の力</string>
+    <string name="damage">ダメージ</string>
+    <string name="armor">防御力</string>
+    <string name="upgrades">強化</string>
+    <string name="element_fire">火</string>
+    <string name="element_water">水</string>
+    <string name="element_darkness">闇</string>
+    <string name="element_light">光</string>
+    <string name="element_earth">地</string>
+    <string name="element_air">風</string>
+    <string name="skill_description_0">スピードが4\%上昇する</string>
+    <string name="skill_description_1">剣の攻撃力が15\%上昇する</string>
+    <string name="skill_description_2">ダガーの攻撃力が20\%上昇する</string>
+    <string name="skill_description_3">武器による全発射物が他の発射物と接触しても消えなくなる</string>
+    <string name="skill_description_4">武器による発射物によって倒した敵が爆発するようになる</string>
+    <string name="skill_description_5">武器による発射物で敵の球状シールドを破壊できるようになる</string>
+    <string name="skill_description_6">武器によるすべての発射物が、空中にある敵の発射物を45\%の確率で打ち消す</string>
+    <string name="skill_description_7">スタミナ回復速度が上昇する</string>
+    <string name="skill_description_8">2.4回分の武器ダメージを与えるチャージ攻撃</string>
+    <string name="skill_description_9">体力が25\%未満になると、剣とダガーのダメージが35\%上昇する</string>
+    <string name="skill_description_10">体力が20\%未満になると、移動速度が35\%上昇する</string>
+    <string name="skill_description_11">クールダウン前にチャージブラストを1回多く放てる</string>
+    <string name="skill_description_12">ジャンプ力が3\%上昇する</string>
+    <string name="skill_description_13">杖の攻撃力が20\%上昇する</string>
+    <string name="skill_description_14">槍の攻撃力が40\%上昇する</string>
+    <string name="skill_description_15">敵が落としたゴールドと経験値を吸い寄せる効果を付与する</string>
+    <string name="skill_description_16">.炎と溶岩からダメージを受けなくなる</string>
+    <string name="skill_description_17">すべての武器に.毒ダメージ効果を付与する</string>
+    <string name="skill_description_18">通常の敵が汚れ顔の兵士を発見するまでの時間が伸びる</string>
+    <string name="skill_description_19">空中ジャンプ可能回数が1回増える</string>
+    <string name="skill_description_20">「ダークツイン」を召喚し、汚れ顔の兵士と共闘させる</string>
+    <string name="skill_description_21">スーパー技のクールダウン時間が20\%短縮される</string>
+    <string name="skill_description_22">すべての飛び道具の速度が15\%上昇する</string>
+    <string name="skill_description_23">空中ジャンプが1回追加され、空中攻撃能力が強化される</string>
+    <string name="skill_description_24">防御力が25\%上昇する</string>
+    <string name="skill_description_25">ハンマーの攻撃力が60\%上昇する</string>
+    <string name="skill_description_26">斧の攻撃力が50\%上昇する</string>
+    <string name="skill_description_27">回復薬の回復量が2倍になる</string>
+    <string name="skill_description_28">ハートの最大数が増える</string>
+    <string name="skill_description_29">トゲからダメージを受けなくなる</string>
+    <string name="skill_description_30">魔法がかけられた緑色の地面上を常に歩くことができる</string>
+    <string name="skill_description_31">クラスのスペシャルアビリティを発動すると球状シールドが発生する</string>
+    <string name="skill_description_32">周囲の敵すべてにヒットする雷波を発生させる</string>
+    <string name="skill_description_33">飛び道具の爆発範囲が20\%拡大する</string>
+    <string name="skill_description_34">すべての武器のノックバック効果が40\%上昇し、敵をより遠くに吹き飛ばせる</string>
+    <string name="skill_description_35">すべての武器による範囲ダメージが70\%増加する</string>
+    <string name="rating">"評価: "</string>
+    <string name="rogue">ローグ</string>
+    <string name="thief">シーフ</string>
+    <string name="mage">メイジ</string>
+    <string name="black_mage">ブラックメイジ</string>
+    <string name="high_mage">ハイメイジ</string>
+    <string name="priest">プリースト</string>
+    <string name="warlock">ウォーロック</string>
+    <string name="warrior">ウォーリアー</string>
+    <string name="elite_warrior">エリートウォーリアー</string>
+    <string name="paladin">パラディン</string>
+    <string name="ranger">レンジャー</string>
+    <string name="witchdoctor">ウィッチドクター</string>
+    <string name="druid">ドルイド</string>
+    <string name="recruit_set">新兵セット</string>
+    <string name="soldier_set">ソルジャーセット</string>
+    <string name="elite_soldier_set">エリートソルジャーセット</string>
+    <string name="ranger_set">レンジャーセット</string>
+    <string name="umbranian_vest">アンブラベスト</string>
+    <string name="brass_set">真鍮セット</string>
+    <string name="elite_brass_set">エリート真鍮セット</string>
+    <string name="obsidian_set">黒曜セット</string>
+    <string name="elite_obsidian_set">エリート黒曜セット</string>
+    <string name="umbranian_tanker">アンブラタンカー</string>
+    <string name="jumpman_suit">ジャンプマンスーツ</string>
+    <string name="improved_jumpman_suit">改良型ジャンプマンスーツ</string>
+    <string name="tubeman_suit">チューバースーツ</string>
+    <string name="twitch_suit">ツ・ウィッチスーツ</string>
+    <string name="nature_mage_vest">ネイチャーメイジベスト</string>
+    <string name="fire_mage_vest">火炎のメイジベスト</string>
+    <string name="faldangs_vest">ファルダンのベスト</string>
+    <string name="plague_fighter_suit">プレイグファイタースーツ</string>
+    <string name="warlock_vest">ウォーロックのベスト</string>
+    <string name="high_elf_robe">ハイエルフのローブ</string>
+    <string name="ifrits_disciple_robe">イフリート信奉者のローブ</string>
+    <string name="cleric_vest">聖職者のベスト</string>
+    <string name="high_cleric_tunic">聖職者の高級チュニック</string>
+    <string name="greenmoon_vest">グリーンムーンベスト</string>
+    <string name="dragon_vest">ドラゴンベスト</string>
+    <string name="special_dragon_vest">スペシャルドラゴンベスト</string>
+    <string name="blue_wizard_suit">青魔導士の衣</string>
+    <string name="penumbra_suit">半影の衣</string>
+    <string name="penumbra_suit_plus">半影の衣+</string>
+    <string name="monks_tunic">修道士のチュニック</string>
+    <string name="bacoon_set">バクーンセット</string>
+    <string name="bacoon_set_plus">バクーンセット+</string>
+    <string name="druid_vest">ドルイドのベスト</string>
+    <string name="moonkeeper_set">ムーンキーパーセット</string>
+    <string name="bankers_coat">銀行番のコート</string>
+    <string name="deathdoctor_set">デスドクターセット</string>
+    <string name="crow_set">クロウセット</string>
+    <string name="special_crow_set">スペシャルクロウセット</string>
+    <string name="antiheros_set">アンチヒーローセット</string>
+    <string name="steelblow_armor">鋼撃の鎧</string>
+    <string name="steelblow_armor_plus">鋼撃の鎧+</string>
+    <string name="dark_lord_set">ダークロードセット</string>
+    <string name="light_spellmaster_suit">光の呪術名人スーツ</string>
+    <string name="liquid_assassin_suit">リキッドアサシン</string>
+    <string name="light_champion_set">ピカピカチャンピオンセット</string>
+    <string name="jungle_master">ジャングルマスター</string>
+    <string name="jungle_assassin_suit">ジャングルアサシン</string>
+    <string name="firestorm_armor">炎風の鎧</string>
+    <string name="firestorm_armor_plus">炎風の鎧+</string>
+    <string name="gayan_set">ガヤンセット</string>
+    <string name="elite_assassin_suit">エリートアサシンスーツ</string>
+    <string name="champion_set">チャンピオンセット</string>
+    <string name="spider_exoskeleton">スパイダーシェル</string>
+    <string name="witch_dress">ウィッチドレス</string>
+    <string name="heros_set">ヒーローセット</string>
+    <string name="swamp_ranger_suit">スワンプレンジャースーツ</string>
+    <string name="arcane_mage_suit">神秘の魔法使いスーツ</string>
+    <string name="desert_rogue_suit">サンドローグスーツ</string>
+    <string name="iron_widow">アイアンウィドウ</string>
+    <string name="forest_witch_suit">森のウィッチスーツ</string>
+    <string name="black_witch_suit">黒のウィッチスーツ</string>
+    <string name="purple_witch_suit">紫のウィッチスーツ</string>
+    <string name="fire_moonkeeper_set">火のムーンキーパーセット</string>
+    <string name="swamp_witch_suit">沼沢のウィッチスーツ</string>
+    <string name="green_witch_suit">緑のウィッチスーツ</string>
+    <string name="bunny_suit">バニースーツ</string>
+    <string name="warden_of_demons">デーモンの番人</string>
+    <string name="tunic_of_the_relentless">無慈悲のチュニック</string>
+    <string name="wind_witch_suit">風のウィッチスーツ</string>
+    <string name="destroyer_of_the_corrupted">堕落の破壊者</string>
+    <string name="interrogator">インテロゲーター</string>
+    <string name="protector_of_the_oracle">導きの守護者</string>
+    <string name="death_stalker">デスストーカー</string>
+    <string name="tunic_of_endless_justice">終わらぬ正義のチュニック</string>
+    <string name="cataclysmic_plate">破滅の胴当て</string>
+    <string name="tunic_of_frozen_voices">凍てる声のチュニック</string>
+    <string name="tunic_of_distant_ancestors">遠祖のチュニック</string>
+    <string name="vest_of_phantoms_keeper">覚めぬ幻のベスト</string>
+    <string name="robe_of_imminent_fires">迫る炎のローブ</string>
+    <string name="vanquisher">ヴァンキッシュ</string>
+    <string name="winter_witch_armor">ウィンターウィッチの鎧</string>
+    <string name="easterminator">イースターミネーター</string>
+    <string name="vest_of_twisted_illusions">歪幻のベスト</string>
+    <string name="time_patroller_suit">タイムパトローラースーツ</string>
+    <string name="kings_spectre_tunic">王霊のチュニック</string>
+    <string name="cthulhu_set">クトゥルフセット</string>
+    <string name="barrenlands_banditin">荒地の女盗賊</string>
+    <string name="tunic_of_ending_nights">夜明けのチュニック</string>
+    <string name="santa_claus">サンタクロース</string>
+    <string name="tunic_of_twisted_illusions">歪幻のチュニック</string>
+    <string name="vest_of_blessed_glory">祝福されし栄光のベスト</string>
+    <string name="barrenlands_bandit">荒れ地の男盗賊</string>
+    <string name="ring_of_agility">アジリティリング</string>
+    <string name="shaman_ring">シャーマンリング</string>
+    <string name="supersonic_ring">超音速の指輪</string>
+    <string name="narya">ナルヤ</string>
+    <string name="spellmasters_ring">呪術名人の指輪</string>
+    <string name="warlocks_ring">ウォーロックの指輪</string>
+    <string name="nazguh_ring">ナズガーの指輪</string>
+    <string name="ring_of_protection">守りの指輪</string>
+    <string name="cleric_ring">聖職者の指輪</string>
+    <string name="swordsmans_ring">剣士の指輪</string>
+    <string name="nenya">ネンヤ</string>
+    <string name="dragon_eye_ring">竜眼の指輪</string>
+    <string name="white_pearl_ring">ホワイトパールリング</string>
+    <string name="steelblow_ring">鋼撃の指輪</string>
+    <string name="witchdoctor_ring">ウィッチドクターリング</string>
+    <string name="sea_wave_ring">波風の指輪</string>
+    <string name="dragon_orb_ring">竜玉の指輪</string>
+    <string name="ring_of_light">光の指輪</string>
+    <string name="volcano_ring">ボルケーノリング</string>
+    <string name="all_seeing_ring">見通す指輪</string>
+    <string name="verdant_ring">草木の指輪</string>
+    <string name="dragon_fang_ring">竜牙の指輪</string>
+    <string name="blue_ring">青の指輪</string>
+    <string name="spektator">スペクテイター</string>
+    <string name="cuteulhu">キュントゥルフ</string>
+    <string name="cait">ケット</string>
+    <string name="bunny_ring">バニーリング</string>
+    <string name="whisper_of_fire">ファイアウィスパー</string>
+    <string name="creepy_crawler">クリーピークロウラー</string>
+    <string name="whisper_of_death">デスウィスパー</string>
+    <string name="vina">ヴィナ</string>
+    <string name="falcon_ring">ファルコンリング</string>
+    <string name="cursed_amethyst_ring">カースアメシスト</string>
+    <string name="ancient_warden">エンシェントウォーデン</string>
+    <string name="vindicator_guardian">潔白のガーディアン</string>
+    <string name="whisper_of_light">ライトウィスパー</string>
+    <string name="eastercreep">イースターバニー</string>
+    <string name="ghostwalker">ゴーストウォーカー</string>
+    <string name="trickytreat">トリッキートリート</string>
+    <string name="jellybunny">ジェリーバニー</string>
+    <string name="recruit_sword">新兵の剣</string>
+    <string name="steel_blade">鋼の剣</string>
+    <string name="fire_sword">ファイアソード</string>
+    <string name="nobel_sword">立派な剣</string>
+    <string name="leaf_sword">リーフソード</string>
+    <string name="pirate_sword">海賊の剣</string>
+    <string name="master_sword">主の剣</string>
+    <string name="vorpal_sword">ヴォーパルソード</string>
+    <string name="umbranian_short_sword">アンブラの短剣</string>
+    <string name="umbranian_long_sword">アンブラの長剣</string>
+    <string name="fireskull_sword">ファイアスカルソード</string>
+    <string name="darkskull_sword">ダークスカルソード</string>
+    <string name="hammers_and_maces">ハンマーとメイス</string>
+    <string name="nature_staff">大自然の杖</string>
+    <string name="iron_dagger">鉄の短剣</string>
+    <string name="silver_axe">銀の斧</string>
+    <string name="obsidian_spear">黒曜槍</string>
+    <string name="insect_crusher">インセクトクラッシャー</string>
+    <string name="fire_staff">炎の杖</string>
+    <string name="light_staff">光の杖</string>
+    <string name="oxymos_staff">オクシモの杖</string>
+    <string name="staff_of_darkness">ダークスタッフ</string>
+    <string name="gadarasts_staff">ガダラストの杖</string>
+    <string name="epic_fire_staff">雄大な炎の杖</string>
+    <string name="firebane">火の種</string>
+    <string name="dragonskull_staff">ドラゴンスカルスタッフ</string>
+    <string name="dragonskull_staff_plus">ドラゴンスカルスタッフ+</string>
+    <string name="death_scythe">デスサイズ</string>
+    <string name="death_scythe_plus">デスサイズ+</string>
+    <string name="hippie_dragon_staff">ヒッピードラゴンスタッフ</string>
+    <string name="hippie_dragon_staff_plus">ヒッピードラゴンスタッフ+</string>
+    <string name="dragon_orb_staff">竜玉の杖</string>
+    <string name="water_staff">水の杖</string>
+    <string name="golden_dragon_staff">黄金竜の杖</string>
+    <string name="golden_dragon_staff_plus">黄金竜の杖+</string>
+    <string name="dead_vulture_staff">死鷲の杖</string>
+    <string name="broom_staff">箒の杖</string>
+    <string name="ancient_stone_staff">古代の石杖</string>
+    <string name="cthulhu_staff">クトゥルフの杖</string>
+    <string name="toxic_staff">トキシックスタッフ</string>
+    <string name="windbane">風の種</string>
+    <string name="legacy_of_the_oracle">導きの遺産</string>
+    <string name="seabane">水の種</string>
+    <string name="royal_war_staff">王戦の杖</string>
+    <string name="staff_of_the_wicked">邪悪の杖</string>
+    <string name="icebane">アイスベイン</string>
+    <string name="spider_staff">蜘蛛の杖</string>
+    <string name="necromorphicon">ネクロモーフィコン</string>
+    <string name="the_oxymos_codex">オキシモの聖典</string>
+    <string name="the_abyssal_scrolls">深海の巻き物</string>
+    <string name="iron_dagger_plus">鉄の短剣+</string>
+    <string name="fire_dagger">ファイアダガー</string>
+    <string name="kunai">クナイ</string>
+    <string name="steel_dagger">鋼の短剣</string>
+    <string name="poisoned_dagger">ポイズンダガー</string>
+    <string name="ifrits_dagger">イフリートの短剣</string>
+    <string name="dagger_of_sand">砂牙</string>
+    <string name="undines_dagger">アンダインの短剣</string>
+    <string name="dark_dagger">ダークダガー</string>
+    <string name="dark_dagger_plus">ダークダガー+</string>
+    <string name="light_dagger">光の短剣</string>
+    <string name="chef_knife">シェフナイフ</string>
+    <string name="gorgon_dagger">ゴルゴンの短剣</string>
+    <string name="machete">マチェーテ</string>
+    <string name="gayan">ガヤン</string>
+    <string name="venomous_dagger">ヴェノムダガー</string>
+    <string name="cthulhu_dagger">クトゥルフの短剣</string>
+    <string name="dragon_tooth_dagger">竜歯の短剣</string>
+    <string name="dual_dragon_fang">竜の双牙</string>
+    <string name="blood_swiftblade">血染めの速太刀</string>
+    <string name="precious_dual_blade">尊厳の双剣</string>
+    <string name="precious_skewer">プレシャスダガー</string>
+    <string name="ice_dagger">アイスダガー</string>
+    <string name="last_survivors_dagger">生き残った者の短剣</string>
+    <string name="survivors_double_dagger">生存者の短剣</string>
+    <string name="abyssal_dual_blade">深き海の双剣</string>
+    <string name="malicious_quickblade">穢心の流剣</string>
+    <string name="gayan_shuriken">ガヤンの手裏剣</string>
+    <string name="undines_shuriken">アンダインの手裏剣</string>
+    <string name="sword_of_light">光の剣</string>
+    <string name="sword_of_1000_lies">千の矛盾をつく剣</string>
+    <string name="magicsaber">マジックセイバー</string>
+    <string name="air_striker">エアストライカー</string>
+    <string name="ice_claw">アイスクロウ</string>
+    <string name="light_piercer">光の鋭剣</string>
+    <string name="throat_cutter">ノドキリ</string>
+    <string name="air_piercer">風の鋭剣</string>
+    <string name="cthulhu_blade">クトゥルフの刃</string>
+    <string name="glass_blade">ガラスブレード</string>
+    <string name="haunted_slicer">ホーンテッドスライサー</string>
+    <string name="moonlit_razor">月明かりの刃</string>
+    <string name="bunny_sword">バニーソード</string>
+    <string name="blade_of_the_wicked">邪悪の剣</string>
+    <string name="goldsteel">ゴールドスティール</string>
+    <string name="abyssal_blade">深き海の剣</string>
+    <string name="golden_needle">金の尖剣</string>
+    <string name="blade_of_rusted_souls">朽ちた心の剣</string>
+    <string name="bunny_claymore">バニークレイモア</string>
+    <string name="blade_of_survival">遺剣</string>
+    <string name="gorgon_blade">ゴルゴンブレード</string>
+    <string name="volcano_sword">火山剣</string>
+    <string name="all_seeing_sword">達眼の剣</string>
+    <string name="frost_heart">凍心の剣</string>
+    <string name="enchanted_nutcracker">魔法のくるみ割り</string>
+    <string name="axe_of_fire">炎の斧</string>
+    <string name="bone_chopper">ボーンチョッパー</string>
+    <string name="lightning_axe">稲妻の斧</string>
+    <string name="umbranian_cutter">アンブラカッター</string>
+    <string name="flaming_cutter">フレイムカッター</string>
+    <string name="spider_axe">スパイダーアックス</string>
+    <string name="all_seeing_axe">見通す斧</string>
+    <string name="toxic_axe">トキシックアックス</string>
+    <string name="bone_axe">ボーンアックス</string>
+    <string name="steel_axe">鋼の斧</string>
+    <string name="cthulhu_axe">クトゥルフの斧</string>
+    <string name="dawnlight">ドーンライト</string>
+    <string name="gorgon_axe">ゴルゴンの斧</string>
+    <string name="stormcaller">アラシヨビ</string>
+    <string name="path_of_exile">パスオブエグザイル</string>
+    <string name="fortunes_battleaxe">幸運の戦斧</string>
+    <string name="axe_of_rusted_gods">堕神の斧</string>
+    <string name="ice_axe">アイスアックス</string>
+    <string name="yansahn">ヤンサン</string>
+    <string name="osun">オスン</string>
+    <string name="gayan_spear">ガヤンの槍</string>
+    <string name="freyr">フレイヤ</string>
+    <string name="fire_pierce">ファイアスピア</string>
+    <string name="azatoth">アザトス</string>
+    <string name="spider_spear">スパイダースピア</string>
+    <string name="cthulhu_spear">クトゥルフの槍</string>
+    <string name="poisoned_spear">ポイズンスピア</string>
+    <string name="vindictive_piercer">報復の突槍</string>
+    <string name="golden_piercer">金の尖槍</string>
+    <string name="last_survivors_spear">生き残った者の槍</string>
+    <string name="gorgon_spear">ゴルゴンの槍</string>
+    <string name="wooden_hammer">木槌</string>
+    <string name="warhammer">戦槌</string>
+    <string name="spider_crusher">スパイダークラッシュ</string>
+    <string name="bionic_hammer">バイオハンマー</string>
+    <string name="thunder_hammer">雷鳴の槌</string>
+    <string name="volcano_hammer">ボルケーノハンマー</string>
+    <string name="verdant_hammer">草木の槌</string>
+    <string name="mojaras_hammer">モジャーラのハンマー</string>
+    <string name="liquid_hammer">水のハンマー</string>
+    <string name="hammer_of_light">光の槌</string>
+    <string name="inquisidor">インクウィジドール</string>
+    <string name="falcon_hammer">ファルコンハンマー</string>
+    <string name="bone_hammer">ボーンハンマー</string>
+    <string name="wit_of_ancient_power">古技の知恵</string>
+    <string name="war_forged_smasher">ウォースマッシャー</string>
+    <string name="toxic_hammer">トキシックハンマー</string>
+    <string name="wealthy_smasher">ウェルスハンマー</string>
+    <string name="smasher_of_decay">ディケイスマッシャー</string>
+    <string name="silver_mace">シルバーメイス</string>
+    <string name="iron_mace">アイアンメイス</string>
+    <string name="dark_mace">ダークメイス</string>
+    <string name="club">棒</string>
+    <string name="wooden_hawaiian">ウッドハワイアン</string>
+    <string name="toxic_mace">トキシックメイス</string>
+    <string name="wealthy_crusher">ウェルスメイス</string>
+    <string name="ifrits_shuriken">イフリートの手裏剣</string>
+    <string name="compendium_of_trees">樹木大要</string>
+    <string name="the_testament_of_ifrit">イフリート聖書</string>
+    <string name="the_arachnid_codex">蛛形の本</string>
+    <string name="the_word_of_the_wind">ワードオブウィンド</string>
+    <string name="enlightened_hammer">知恵与える槌</string>
+    <string name="phoenix">フェニックス</string>
+    <string name="dancers_raiment">オッドロッカー</string>
+    <string name="storm">ストーム</string>
+    <string name="tunic_of_hellish_illusions">忌まわしき幻想のチュニック</string>
+    <string name="gatekeepers_bionic_arm">ゲートキーパーのバイオニックアーム</string>
+    <string name="robe_of_eternal_fire">絶えぬ火のローブ</string>
+    <string name="scarlet_shadowweaver">スカーレット・シャドウウィーバー</string>
+    <string name="unholy_storm">ケガレアラシ</string>
+    <string name="innkeepers_costume">宿主の装束</string>
+    <string name="greenfang_ensemble">緑蜘蛛協奏曲</string>
+    <string name="golden_guardian">マモリコガネ</string>
+    <string name="magic_cog">魔車</string>
+    <string name="nightshade">ナイトシェード</string>
+    <string name="pirouette_pointe">ピルエット・オンポワント</string>
+    <string name="windpearl_axe">風真珠の斧</string>
+    <string name="wicked_skewer">悪の一突き</string>
+    <string name="ruby_queens_spear">ルビーのクイーンの槍</string>
+    <string name="onyx_queens_lance">オニックスのクイーンのランス</string>
+    <string name="arachnid_sword">蛛形刀</string>
+    <string name="unleashed_kraken">暴れるクラー剣</string>
+    <string name="nightfall">夕闇</string>
+    <string name="voidcaller_staff">ヴォイドコーラー</string>
+    <string name="bunnyhop_dagger">バニーホップダガー</string>
+    <string name="poisoned_dart">毒塗の矢</string>
+    <string name="sapphire_pawns_dagger">サファイアポーンのダガー</string>
+    <string name="toxic_dual_dagger">トキシックデュアル</string>
+    <string name="all_seeing_cleaver">全知のクリーバー</string>
+    <string name="shooting_star_shuriken">流星の手裏剣</string>
+    <string name="tome_of_the_sands">砂の書</string>
+    <string name="vest_of_ominous_jesters">不吉な道化師のベスト</string>
+    <string name="vest_of_ominous_comrades">不穏な戦友のベスト</string>
+    <string name="the_daemon_codices">悪鬼の本</string>
+    <string name="path_of_exile_plus">パスオブエグザイル+</string>
+    <string name="eggscellent_axe">エッグセレントアックス</string>
+    <string name="dark_lord_set_plus">ダークロードセット+</string>
+    <string name="heros_set_plus">ヒーローセット+</string>
+    <string name="bankers_coat_plus">銀行番のコート+</string>
+    <string name="tidecaller_ring">潮呼び</string>
+    <string name="the_ancient_codices">太古の本</string>
+    <string name="minion_vest">ミニオンベスト</string>
+    <string name="gorgons_skin">ゴルゴンスキン</string>
+    <string name="achievements">🏆 実績 🏆</string>
+    <string name="rune_of_wind">風のルーン</string>
+    <string name="burning_rune">燃え盛るルーン</string>
+    <string name="shiny_rune">輝くルーン</string>
+    <string name="purple_rune">紫のルーン</string>
+    <string name="green_rune">緑のルーン</string>
+    <string name="liquid_rune">水のルーン</string>
+    <string name="golden_key">金の鍵</string>
+    <string name="attack_speed">攻撃速度：</string>
+    <string name="enemy_time_patroller">タイムパトローラー</string>
+    <string name="enemy_armademon">アクマジロ</string>
+    <string name="enemy_armadillo">アルマジロ</string>
+    <string name="enemy_beholder">ビホルダーr</string>
+    <string name="enemy_cthulhu">クトゥルフ</string>
+    <string name="enemy_cyclops">サイクロプス</string>
+    <string name="enemy_demon_stomper">デーモンストンプ</string>
+    <string name="enemy_fire_lord">ファイアロード</string>
+    <string name="enemy_golem">ゴーレム</string>
+    <string name="enemy_gorgon">ヴェノムゴルゴン</string>
+    <string name="enemy_ice_golem">アイスゴーレム</string>
+    <string name="enemy_orc_fighter">オークファイター</string>
+    <string name="enemy_spidemon">デークモン</string>
+    <string name="enemy_tombstone_mimic">ハカイシミミック</string>
+    <string name="enemy_vindicator">ヴィンディケイター</string>
+    <string name="enemy_vulkling">ヴァルキング</string>
+    <string name="enemy_walker">ウォーカー</string>
+    <string name="enemy_armadimp">アルマジロ</string>
+    <string name="Armors">アーマー</string>
+    <string name="Rings">リング</string>
+    <string name="about">ℹ️ 概要 ℹ️</string>
+    <string name="change_language">言語を変更</string>
+    <string name="about_author">作者について</string>
+    <string name="armor_in_calculation">"アーマー: "</string>
+    <string name="author_description">こんにちは！私はイヴァン・ツヴェタノヴィッチです。Magic RampageコミュニティではPrOfSeSとして知られ、長年アクティブなメンバーとして活動しています。このゲームへの長年の愛情と、ソフトウェアエンジニアリングへの情熱を融合させるためにこのアプリを開発しました。バグを見つけたり、提案がある場合は、Discord（下のボタンをクリック）またはEメール（Google Playゲームページの開発者情報を参照）でご連絡ください。ご支援ありがとうございます！</string>
+    <string name="axes">斧</string>
+    <string name="choose_the_chapter">チャプターを選択してください！</string>
+    <string name="daggers_and_shurikens">ダガーと手裏剣</string>
+    <string name="damage_in_calculation">"ダメージ: "</string>
+    <string name="dungeon10bossfighttext">ボスの攻撃パターンは非常にシンプルです。攻撃時にあなたがいる位置に向かって4回連続で攻撃してきます。\n\n
+        床にとどまり、わずかに前進することで彼の飛び道具を避けるべきです。\n\n
+        4番目の飛び道具を発射した後、彼の高さまでジャンプしてダメージを与えることができます。これを繰り返してください。\n\n</string>
+    <string name="dungeon10text">3つの💎はすべて金の壺の中にあります。\n\n
+        毒グモよりも大きいため、これらのクモには必ずしもハンマーは必要ありません。\n\n
+        落下する罠の下を走り抜けたい場合は、時間を遅くする特殊スキルを使用できます。\n\n</string>
+    <string name="dungeon11bonustext1">ダンジョン11で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        ステップ1：上のプラットフォームにいるスケルトンにあなたを見つけさせ、追いかけさせます。\n\n
+        ステップ2：彼が追いかけ始めたら、逃げてください。\n\n</string>
+    <string name="dungeon11bonustext2">ステップ3：左側の壁に向かって走り、スケルトンが到着するのを待ちます。\n\n
+        ステップ4：スケルトンが攻撃してきたら、上のプラットフォームにジャンプし、彼がブロックを破壊してボタンを押すのを待ちます。\n\n</string>
+    <string name="dungeon11bonustext3">ボーナス：箱の上のエリアにジャンプして、ゴールドを集めましょう！\n\n
+        ステップ5：箱を慎重にボタンまで動かします。スケルトンがいる底に落とさないように注意してください！\n\n
+        ステップ6：素早く部屋に入り、スケルトンの飛び道具を避けたプラットフォームに戻ります。すべてのクモが部屋から出るまで、これを数回繰り返します。\n\n</string>
+    <string name="dungeon11bonustext4">ステップ7：すべての敵を左のエリアにおびき寄せたら、部屋のすべてのゴールドを集めてダンジョンをクリアできます！\n\n</string>
+    <string name="dungeon11text">3つの💎はすべて金の壺の中にあります。\n\n
+        3つの💎をすべて集めてボーナスレベルをアンロックしましょう。\n\n
+        飛び道具を避けるのが難しい場合は、ウォリアーやプリーストのようなクラスを使用すると良いでしょう。\n\n
+        最初の秘密エリアには<font color="#A020F0"> ナズグルの指輪 </font>が含まれています。これは、複数のアイテムの組み合わせに使用できます。\n\n
+</string>
+    <string name="dungeon12text">最初の💎は2番目の秘密エリアにあります。2番目は金の壺の中に、3番目は火炎放射器の前にあります。\n\n
+        ジャンプマンアーマーはここで非常に役立ちます。死んだりダメージを受けたりすることなく特定のエリアにジャンプできます。\n\n
+        4番目の秘密エリアには、魔術師やハイメイジに非常に適した火の指輪<font color="#FFA500"> ナルヤ </font>が含まれています。\n\n
+</string>
+    <string name="dungeon13bonustext1">ダンジョン13で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        ステップ1：左にある壺を破壊し、写真に示されているように道を進みます。\n\n
+        火の飛び道具に注意し、エアアーマーやリングを使ってトゲのダメージを避けてください。\n\n</string>
+    <string name="dungeon13bonustext2">ステップ2：今度は戻りますが、プラットフォームの下の道を使います。再び飛び道具に注意し、ラヴァアーマーやリングを使用してください。\n\n</string>
+    <string name="dungeon13text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        ファイアーアーマーやリングを使用すると溶岩から保護され、2つの秘密エリアを開くことができます。\n\n
+        最初の秘密エリアを開くには、近くの溶岩溜まりにあるボタンを作動させる必要があります。\n\n
+        2番目の秘密エリアには、<font color="#00FF00"> 保護の指輪 </font>が含まれています。\n\n
+</string>
+    <string name="dungeon14text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        黄色のバリアを突き破って最初の💎を手に入れるには、光属性の武器かバリアを貫通する武器が必要です。\n\n
+        2番目の秘密エリアには、ウィッチドクター、パラディン、司祭に非常に適した<font color="#FFFF00"> 聖職者の指輪 </font>が含まれています。\n\n
+        成果を得るために、The Dudeを生き残らせてください。\n\n
+</string>
+    <string name="dungeon15text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        <font color="#00FF00"> 地</font>ベースの鎧や指輪を使用すると、秘密エリアに到達し、ダンジョンを完了しやすくなります。\n\n
+        クモを倒すのに苦労している場合は、以前のダンジョンで手に入れたハンマーを使用してください。\n\n
+</string>
+    <string name="dungeon16text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        <font color="#00FF00"> 地 </font>ベースの鎧や指輪を使用すると、秘密エリアに到達し、ダンジョンを完了しやすくなります。\n\n
+        届かないゴーストは、彼の真下に立って、稲妻が数回落ちるのを待つことで倒すことができます。\n\n
+</string>
+    <string name="dungeon17bonustext1">ダンジョン17で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        このボーナスステージで重要なのは、すべての宝箱を開けるための鍵を十分に持っていることだけで、特定の戦略はありません。\n\n</string>
+    <string name="dungeon17bonustext2">すべての宝箱を開けると、確定でドロップするのは<font color="#FFA500"> ファイアスカルソード </font>です。これは戦士やレンジャーなどに適しています。\n\n
+        また、パラディン、司祭、ウィッチドクターに適した<font color="#FFFF00"> ファルダングのベスト </font>も入手できます。\n\n
+</string>
+    <string name="dungeon17text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        <font color="#A020F0"> 闇 </font>ベースの装備を使用すると、ゴーストに直接向き合ったときに攻撃するようになります。\n\n
+        4番目の秘密エリアには、超音速の指輪または時間を遅くするクラスを使用してください。\n\n
+</string>
+    <string name="dungeon18text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        2番目の秘密エリアには、剣に非常に適した<font color="#ADD8E6"> 剣士の指輪 </font>が含まれています。\n\n
+        罠によるダメージを避けるために、火と空気の装備を1つずつ組み合わせるようにしてください。\n\n
+</string>
+    <string name="dungeon19bonustext1">ダンジョン19で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        これはかなり簡単です。左にある壺を破壊し、溶岩に飛び込んでボーナスの🪙をすべて集めます。\n\n
+        その後、緑のプラットフォームにジャンプします。そこには通常ルーンが入っている宝箱が2つあります。\n\n</string>
+    <string name="dungeon19bonustext2">それを終えたら、2番目の溶岩溜まりにある隠された宝箱も開けることができます。\n\n</string>
+    <string name="dungeon19text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        ダンジョンはトゲと溶岩でいっぱいです。これらの危険の少なくとも1つを避けるために、適切な装備を使用してください。\n\n
+        サモナーが召喚したクリープは、サモナーを倒すと自動的に死にます。\n\n
+        キャプテンと一緒にダンジョンの奥へ行くと、「語られざる物語2」の実績をアンロックできます。\n\n
+</string>
+    <string name="dungeon1text">3つの💎はすべて金の壺の中にあります。\n\n
+        上の見えないエリアにはたくさんのポーションがあります。例えば、秘密エリア1の上や最終エリアなどです。\n\n
+        キャプテンに会った後、2つの箱に出くわします。上の箱を破壊すると、以前いたエリアにアクセスできます。\n\n
+        ムービーが始まる場所に行くと、2つの白い壺の中に良い剣と鎧があります。\n\n
+        2番目の秘密エリアはジャンプマンスーツや特殊能力を使わないと到達できません。最初の挑戦では取得できません。\n\n
+</string>
+    <string name="dungeon20bossfighttext1">このボスの大きさに惑わされないでください、倒すのはかなり簡単です。\n\n
+        彼はまず5回連続で攻撃してきます。彼の飛び道具はダメージ範囲が広く、毒性があります。ほとんどの装備で、左右に移動するだけで避けることができます。\n\n
+</string>
+    <string name="dungeon20bossfighttext2">5番目の飛び道具を発射した後、彼は2つの卵を産むために身を低くします。1つは左側に、もう1つは右側に産み落とされます。\n\n
+        彼がこれをしている間、ダメージを与えるチャンスがあります。ダブルジャンプ後に落下するとき、卵を一度攻撃して破壊するようにしてください。\n\n
+        これにより、飛び道具とクモの両方を同時に心配する必要がなくなります。\n\n
+        クモが2番目の卵を産んだ後、彼は開始位置に戻り、再び攻撃を開始します。彼を倒すまでこれを繰り返してください。\n\n
+</string>
+    <string name="dungeon20text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。最後の💎はボスを倒した後にのみ入手可能です。\n\n
+        遭遇するサモナーは倒せません。まずボスを倒し、それから戻って鍵と💎を集め、秘密エリアを探索する必要があります。\n\n
+        装備に関しては、機敏で大ダメージを与えるセットが最適です。\n\n
+</string>
+    <string name="dungeon21text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        サモナーを倒すと、彼らが操るミニオンも破壊されます。\n\n
+        最初の秘密エリアには<font color="#FFFF00"> ライトニングアックス </font>が含まれています。これは、司祭、ウィッチドクター、パラディンなどの中盤の光のクラスに非常に適しています。\n\n
+        このレベルではショップでより多くのアイテムがアンロックされます。それらをチェックして、今後のボスに備えてください。\n\n
+</string>
+    <string name="dungeon22text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        最初の秘密エリアはダンジョン開始直後の左上隅にあります。2番目はほとんど見えないプラットフォームの上にあります。\n\n
+        少なくとも1つの金の鍵を持っていることを確認してください。ダンジョンの出口の上にある非公式の秘密エリアを開けるのに必要です。\n\n
+        ヒットボックスの大きい武器を使うと、爆発するクモを倒しやすくなります。そうでなければ、彼らから逃げて爆発を待つこともできます。\n\n
+</string>
+    <string name="dungeon23bonustext1">ダンジョン23で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        まず、マップの端から端まで移動します。できるだけ多くの🪙と💎を集めてください。\n\n</string>
+    <string name="dungeon23bonustext2">クモは完全に避けるべきです。まったく攻撃せず、一度にすべての🪙を集められなくても問題ありません。\n\n</string>
+    <string name="dungeon23bonustext3">マップの端に着いたら、振り返って戻り始め、左に攻撃を連打します。\n\n
+        こうすることで、すべてのクモを倒し、残りの🪙を集めることができます。\n\n
+        宝箱に通じるドアを開けるのを忘れないでください。そこにはアイテムが待っています。\n\n
+        この部屋の上には、さらに多くの🪙やグッズがあります。\n\n
+</string>
+    <string name="dungeon23text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        銀と金の鍵を両方手に入れてください。3つの💎をすべて集めてアンロックできるボーナスステージに必要です。\n\n
+        ヒットボックスの大きい武器を使うと、爆発するクモを倒しやすくなります。そうでなければ、彼らから逃げて爆発を待つこともできます。\n\n
+        <font color="#A020F0"> ダークスカルソード </font>を持つスケルトンは、あなたを見ると無敵になるので、それを避けるようにしてください。\n\n
+</string>
+    <string name="dungeon24text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        最初の2つの秘密エリアには、ボタンを作動させる必要があります。最初の秘密エリアのボタンは破壊可能なブロックで隠されており、2番目の秘密エリアのボタンは草で部分的に視覚的に遮られています。\n\n
+        3番目の秘密エリアは、金の鍵で最初のドアを開けた後にあります。\n\n
+        5番目の秘密エリアはダンジョンの出口の上にあります。\n\n
+</string>
+    <string name="dungeon25text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        最初の秘密エリアはスタート地点の真上にありますが、<font color="#ADD8E6"> ジャンプマンスーツ </font>が必要です。プラットフォームに直接ジャンプできない見えない壁があることに注意してください。少し左に行ってからジャンプする必要があります。近くの噴気孔を利用して上に押し上げてもらうこともできます。また、時間を遅くするクラスを使用することもできます。\n\n
+        このダンジョンでは、The Dudeの父親を操作することもできます。彼に近づき、彼の上のボタンを押すことで、彼にあなたを追いかけるか、一か所に留まるように命令することができます。\n\n
+        2番目の秘密エリアでは、あなたがすべてを拾っている間、The Dudeの父親にボタンの上に立つように命令する必要があります。\n\n
+</string>
+    <string name="dungeon26text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        最初の秘密エリアはスタート地点の真上にありますが、高すぎます。そこへ行くには魔法のキノコを作動させる必要があります。\n\n
+        2番目の秘密エリアは大きな穴の右側にあります。\n\n
+        3番目の秘密エリアは城の上にあり、右側です。\n\n
+        このダンジョンを4時20分または16時20分にプレイすると、秘密の実績を獲得できます。上にダイヤモンドが付いた飛んでいるコインを集めるだけです。\n\n
+</string>
+    <string name="dungeon27bonustext1">ダンジョン27で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        宝箱の上には追加のグッズがあります。\n\n
+        まず、魔法のキノコを作動させ、ジグザグのルートを最後まで進みます。途中で時間をかけすぎないようにしてください。\n\n</string>
+    <string name="dungeon27bonustext2">その後、再びキノコを作動させ、もう一方のジグザグのルートを進みます。それだけです！\n\n</string>
+    <string name="dungeon27text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        ボーナスステージのために金の鍵を1つ手に入れてください！\n\n
+        クローンを倒す方法はたくさんあります。最初の選択肢は、クローンが出現している間にそのエリアを連打することです。2番目の選択肢は、高い場所に移動し、一度攻撃してジャンプすることで、敵のクローンがあなたの攻撃に当たるようにすることです。3番目の選択肢は、邪悪なクローンがあなたの行動を模倣しない遠距離から連打し、飛び道具をクローンの位置まで追跡させて当てることです。また、弱い鎧を装備し、クローンが出現し始めたら良いものに交換して力ずくで倒すこともできます。\n\n
+        2番目の秘密エリアのためには、2番目の邪悪なクローンを生かしておいてください。そうすると、そこへ行くのがずっと簡単になります。\n\n
+        魔法のキノコを有利に使いましょう。特に邪悪なクローンを倒すのに苦労している場合は。\n\n
+</string>
+    <string name="dungeon28text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        少なくとも1つの火属性の装備を持っていることを確認してください！そうしないと、ダメージから回復するためにたくさんのポーションが必要になります。\n\n
+        邪悪なクローンが出現するエリアを連打するだけで、このダンジョンで彼を倒す最善の方法です。\n\n
+        ウォリアー、エリートウォリアー、プリーストを使うのは、非常に多くの飛び道具があるので良い考えです。\n\n
+</string>
+    <string name="dungeon29bonustext1">ダンジョン29で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        これはトリッキーに見えますが、特定の戦略が必要です。\n\n
+        動きを調整し、ボールのちょうど中間に位置する必要があります。その位置は黒い箱でマークされています。ボールが水平位置にあるとき（見えないとき）に箱から箱へ移動する必要があります。\n\n
+</string>
+    <string name="dungeon29text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        最初の秘密エリアには<font color="#00FF00"> ガダラストの杖 </font>が、3番目には<font color="#FFA500"> ファイアスカルソード </font>が含まれています。\n\n
+        巨大なミニボスは単純な攻撃パターンを持っています。ただジャンプして地面を叩き、爆発を引き起こします。彼を倒す最良の方法は、彼がジャンプするときに攻撃することです。彼と同時にジャンプするだけです。
+</string>
+    <string name="dungeon2text">3つの💎はすべて金の壺の中にあります。\n\n
+        デュードを救うと、序盤に役立つ良い剣をプレゼントされ、実績も解除されます。\n\n
+        秘密エリア5の上の天井には、序盤から中盤にかけて非常に役立つ毒のダガーがあります。\n\n
+</string>
+    <string name="dungeon30bossfighttext1">キャプテンは全く死なないので、盾として使えます。\n\n
+        ボスと同じ高さにいる場合（プラットフォームの上に立っている場合）、ジャンプして彼の飛び道具を避けることができます。そうでなければ、地面にいる場合は動き続ける必要があります。\n\n
+</string>
+    <string name="dungeon30bossfighttext2">ボスには3つのステージがあり、どのステージでも彼にダメージを与えるための時間は約3〜4秒です。\n\n
+        最初のステージでは、彼はゆっくりと攻撃し、約8秒後に無防備になります。\n\n
+        体力が50\%になると、少し速く攻撃し始め、雷が現れます。\n\n
+        体力が10\%になると、急速に攻撃し始め、雷がより頻繁に現れます。\n\n
+        装備によっては、十分なダメージを与えれば第3フェーズを回避できるかもしれません。体ではなく頭を攻撃し続けるようにしてください。その方がはるかに多くのダメージを与えられます。</string>
+    <string name="dungeon30text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        無駄に体力を失わないでください。ポーションをたくさん持っていない限り、ボス戦で必要になります。</string>
+    <string name="dungeon31bonustext1">ダンジョン31で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        注意すべき唯一のことは、奈落に落ちて死なないことです。\n\n
+        レベルごとにジャンプアップし、すべてのダイヤモンドと鍵を集めてください。</string>
+    <string name="dungeon31bonustext2">コウモリが数匹いますが、大した脅威ではありません。すぐに倒せます。\n\n</string>
+    <string name="dungeon31text">最初の💎はスポーンエリアの右側にあります。マップの右上隅です。他の2つは道中にあります。\n\n
+        4番目の秘密エリアは、壁の裏にある左側のボタンで開けることができます。\n\n
+        コウモリを簡単に倒すために、ヒットボックスの大きい武器を使用してください。\n\n
+        コウモリが卵から出てくるとき、彼らは短時間無敵です。</string>
+    <string name="dungeon32text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        このダンジョンでは、ユニークな効果を持つエリクサーを試すことができます。最初のエリクサーを拾うと、各ショットで追加の跳ね返る火の玉を撃ちます。2番目のエリクサーで緑のプラットフォームの上に立つことができ、3番目のエリクサーであなたのショットはターゲットを追尾します。\n\n
+        最初の宝箱には<font color="#ADD8E6"> ジャンプマンスーツ </font>が含まれています。これは、最初の3つの秘密エリアにアクセスできます。\n\n
+        最後のミニボスは、準備ができていれば簡単です。ミニボスの前の宝箱にある火の鎧を使用してダメージを増やし、ミニボスの部屋にあるエリクサーを拾ってください。このようにすれば、そのクモを倒すには4〜5発のショットで済みます。\n\n
+</string>
+    <string name="dungeon33text">3つの💎はすべて道中にありますが、最後の1つは宝箱のある水のプールの前のボタンを作動させないとアクセスできません。\n\n
+        竜巻は接触するとダメージを与え、ランダムに、または死ぬときに雷を落とし、あなたを引き寄せます。それらを倒す前後は距離を保つようにしてください。\n\n
+        2番目の秘密エリアは最初のエリアの真上にあります。\n\n
+        3番目の秘密エリアは写真ではよく見えませんが、画面上の緑のプラットフォームから出る粒子が見えるはずです。\n\n</string>
+    <string name="dungeon34text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        最初の秘密エリアはスタートエリアのすぐ左にあり、3番目はムーンキーパーの待ち合わせ場所の真上にあります。2番目は、ジャンプするオーブに剣を投げて、その上のボタンを押させることで開けることができます。\n\n
+        スピードとジャンプ力の高い装備は、このダンジョンで非常に役立ちます。\n\n</string>
+    <string name="dungeon35text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        これはコミュニティで難しいとされている最初のダンジョンです。\n\n
+        ドラゴンは数秒ごとに攻撃し、その火の玉は彼が発射した時点のあなたの位置に向かいます。この利点を利用して、ブロックの後ろに隠れたり、非常に高くジャンプして火の玉に当たらないようにすることができます。\n\n</string>
+    <string name="dungeon36text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        これはあなたが汚れた顔の兵士としてプレイした以前のダンジョンの1つであるため、最初の秘密エリアも同じです。\n\n
+        ホーミングミサイルの代わりに火の玉を好む場合は、追加の火のエリクサーを使用できます。\n\n</string>
+    <string name="dungeon37text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        最初の秘密エリアは開始位置の下にあり、2番目は最初の塔の右側に、3番目は2番目の塔の左側にあります。\n\n
+        レンジャー、ローグ、シーフのようなクラスは、このダンジョンに必要な敏捷性を提供するため、非常に役立ちます。\n\n</string>
+    <string name="dungeon38text">3つの💎はすべてダンジョンの終わりまでの道中にあり、見逃すことはありません。\n\n
+        ダメージが低くて敵を倒すのに問題があった場合、ここが立ち止まってゴールドを稼ぎ、より良い装備を手に入れるべき場所かもしれません。少なくとも2000の武器ダメージを目指してください。\n\n
+        最初の秘密エリアは、ダンジョンで見つける最初の木の上にあります。木にジャンプすると、左上に小さなプラットフォームが見えます。2番目の秘密エリアは、最初に出会うジャンプする巨人の上にあります。\n\n</string>
+    <string name="dungeon39text">3つの💎はすべてマップの中央にあるポータルの後にあります。王様とすぐにポータルに入らないでください。それを飛び越えて左に進みます。\n\n
+        最初の秘密エリアは、その左側にスポーンするミニオンでアクセスできます。ミニオンがスポーンし始めたら、秘密エリアのドアに行き、ミニオンがボタンを踏むまで右に進み続けてください。\n\n
+        2番目の秘密エリアは、左端の最後の塔の左側にあります。そこへは左側から登る必要があります。\n\n</string>
+    <string name="dungeon3bonus1">ダンジョン3で3つの💎をすべて集めて、このボーナスをアンロックしましょう。\n\n
+        ステップ1は任意で、少量のゴールドが手に入ります。\n\n
+        ステップ2：天井にある赤いボタンを見つけます。\n\n</string>
+    <string name="dungeon3bonus2">ステップ3：ボタンを作動させるには、さまざまな戦略を使用できます。最も簡単なのは、将来のダンジョンで利用可能になるジャンプマンスーツを使用することです。写真では、それなしでも可能であることがわかります。ゾンビの頭にジャンプしてからダブルジャンプしてボタンを作動させるだけです。少なくとも2\%のジャンプ力を提供する鎧を装備していることを確認してください。\n\n</string>
+    <string name="dungeon3bonus3">ステップ4：ボタンを作動させた後、ゾンビが現れます。彼の前に立って攻撃させ、その攻撃を避けてください。これにより壁が破壊され、アイテムを入手できます。\n\n</string>
+    <string name="dungeon3text">3つの💎はすべて金の壺の中にあります。\n\n
+3つの💎をすべて集めてボーナスレベルをアンロックしましょう。\n\n
+最初の秘密エリアの宝箱は、鍵が1つ必要で、このレベルの後にアンロックされるショップでしか購入できないため、最初の挑戦では開けられません。\n\n
+秘密エリア3には、1つの箱とジャンプマンスーツ、または2つの箱で到達できます。2つの箱を使う戦略の場合、まず左の箱を右の箱の下に持ってきてから、右の箱を上に押します。その後、両方を慎重に目的地まで押してください。\n\n
+3番目の金の壺の上には、序盤に非常に役立つ光のダガーがあります。\n\n</string>
+    <string name="dungeon40boss1">このダンジョンに秘密エリアはありません。大きなボス戦が1つあるだけです。\n\n
+        ボス戦では、ウォーロックと彼の通常形態および獣形態で戦います。通常形態では、火の玉を撃ったり、上から雷を落としたり、ミニオンをスポーンさせたりして攻撃してきます。\n\n
+        彼を倒すのに特定の戦略は必要ありません。ただ、彼を素早く倒せるだけの十分なダメージがあることを確認してください。\n\n</string>
+    <string name="dungeon40boss2">第2部は少しトリッキーです。主に彼の獣形態が3つの攻撃パターンを持っており、与えたダメージ量によって変化するためです。\n\n
+        覚えておいてください、このボスで最も難しいのは、彼が攻撃パターンを変えようとしていることに気づくことです！\n\n
+        最初のステージでは、彼はあなたの近くに来て、ジャンプする巨人のように攻撃します。この攻撃は簡単に避けられます。\n\n
+        2番目のステージでは、彼はあなたに向かって滑り、その後、範囲効果のある爆発を引き起こします。\n\n
+        3番目のステージでは、彼はあなたに向かってジャンプし、地面に着くと少し滑ります。これは基本的に最初の2つのステージの組み合わせです。\n\n</string>
+    <string name="dungeon41text">2つの💎は見えており、ダンジョンの終わりまでの道中にあります。そのうちの1つは、2番目の転がるミニボスの部屋にある破壊可能な岩の後ろに隠されています。\n\n
+        飛んでいるトゲのあるボスのホーミングミサイルは、まず破壊可能な岩を狙います。部屋でそれらを破壊しないようにしてください。もし岩を破壊してしまった場合は、ボスの真下に立つと、飛び道具があなたを追尾しなくなります。\n\n
+        5番目の秘密エリアは、その右側にあるボタンで開けることができます。\n\n</string>
+    <string name="dungeon42bonustext1">ダンジョン42で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        ミニボスの部屋への扉を開けるには、バルブを正しい順序で操作する必要があります。\n\n</string>
+    <string name="dungeon42bonustext2">ボスは「クリーピークローラー」というなかなかのリングをドロップします。これはすべての武器タイプで使用できます。\n\n</string>
+    <string name="dungeon42text">💎は破壊可能な岩の後ろに隠されています。それらを手に入れるために、すべてを破壊してください。\n\n
+        謎解きについては、近くの石を見てください。それは謎を解く順序を示しています。\n\n
+        毒爆弾を投げるネズミに注意してください。爆発後、数秒間続く毒の雲を放出します。\n\n</string>
+    <string name="dungeon43bonustext1">ダンジョン43で3つの💎をすべて集めて、このステージをアンロックしましょう。\n\n
+        ブロックボスを倒そうとする前に、部屋にいる他の全員を倒してください。\n\n</string>
+    <string name="dungeon43bonustext2">他のすべてのミニオンが死んだ後、赤い樽への道はずっとアクセスしやすくなります。\n\n</string>
+    <string name="dungeon43text">最初の💎は最初のブロックボスの後にあります。他の2つは、ゴーレムを脆弱にしたい場合に収集する必要があります。\n\n
+        ブロックボスにダメージを与えるには、彼が赤い樽の上に着地する必要があります。樽の横に立ち、ボスが降り始めたら反対方向に移動してください。\n\n
+        最後のボスも、十分なダメージがあればかなり簡単に倒せます。横にあるブロックの1つに立ち、彼と彼のクリスタルを遠くから攻撃してください。\n\n</string>
+    <string name="dungeon44bossfighttext1">ダメージを最大限に高めるため、6番目の秘密のエリアから<font color="#FFA500"> 迫り来る炎のローブ </font>を必ず手に入れてください。 \n\n ボスには主に3つの攻撃があります：滑るつらら、落ちてくるつらら、そして岩投げです。 \n\n 画像に示された道筋をたどりながら、同時にダメージを与えつつ、攻撃をかわす必要があります。 \n\n あなたの攻撃は次の通りです：まず特殊能力を発動し、次にスーパー能力を発動し、その後は基本攻撃を連発してください。これを繰り返します。</string>
+    <string name="dungeon44bossfighttext2"><font color="#FF0000">警告：</font>滑る氷柱が壊れるまでに十分なダメージを与えないと、ボスは回避がかなり難しい岩を投げ始めます。\n\n        ボスが第二段階に入ると、彼の滑る氷柱はより速く動き、落下する氷柱は現在のあなたの位置を狙い、彼は複数の岩を投げます。\n\n</string>
+    <string name="dungeon44text">3つの💎はすべて道中にありますが、それらを手に入れるには主に金の鍵が必要です。事前にエリアをスキップしないでください。\n\n
+        3番目の秘密エリアも、破壊可能なオレンジ色の塊の後ろに隠されています。\n\n
+        6番目の秘密エリアには、ボス戦で役立つ素敵な鎧があるので、ぜひ訪れてください。\n\n</string>
+    <string name="dungeon4text">3つの💎はすべて金の壺の中にあります。\n\n
+        キャプテンは無敵で死ぬことはありません。上のプラットフォームでダンジョンを進むと、彼女は下の敵をすべて一人で倒してくれます。\n\n</string>
+    <string name="dungeon5bonustext1">ダンジョン5で3つの💎をすべて集めて、このボーナスをアンロックしましょう。\n\n
+        まず左の入り口を選びます。\n\n</string>
+    <string name="dungeon5bonustext2">そのまま道なりに進んでください。\n\n</string>
+    <string name="dungeon5bonustext3">次に、中央の道を選びます。そこには先ほど述べたアイテム、インセクトクラッシャーがあります。\n\n
+        次のチャプターで困ったときに、このアイテムが役立ちます！\n\n</string>
+    <string name="dungeon5text">3つの💎はすべて金の壺の中にあります。\n\n
+        風属性の鎧を使ってトゲのダメージを避けるようにしてください。\n\n
+        タンク系のゾンビは、高台から戦うと倒しやすいです。\n\n</string>
+    <string name="dungeon6text">3つの💎はすべて金の壺の中にあります。\n\n
+        前のボーナスダンジョンで手に入れたハンマーを使って、クモを簡単に処理できるようになりました。\n\n
+        最初の秘密エリアにはヒーローセットがあり、剣、ダガー、ハンマーに適しています。また、トゲからの保護も提供し、ダンジョンをより安全にプレイできます。\n\n</string>
+    <string name="dungeon7bonustext1">ダンジョン7で3つの💎をすべて集めて、このボーナスをアンロックしましょう。\n\n
+        プラットフォームはジャンプしてから3秒で破壊されるので、素早く行動する必要があります。\n\n
+        金の🪙でできた線に従ってください。\n\n</string>
+    <string name="dungeon7bonustext2">一番高いところに着いたら、四角の上部にジャンプし、宝箱のあるエリアに飛び込みます。\n\n
+        その後、次のプラットフォームに飛び降りてダンジョンをクリアします。\n\n</string>
+    <string name="dungeon7text">2つの💎は金の壺の中にあります。1つはボタンをクリックしてアンロックできるエリアにあります。\n\n
+        ボーナスステージのために、少なくとも鉄の鍵を1つ持っていることを確認してください。\n\n
+        最初にある箱を使って、💎のある下のエリアのボタンを作動させることができます。\n\n
+        3番目の秘密エリアは、炎の上をジャンプすることで到達できます。\n\n</string>
+    <string name="dungeon8text">3つの💎はすべて金の壺の中にあります。\n\n
+        ダンジョンの最初にデュードを火の槍に連れて行くと、実績をアンロックできます。\n\n
+        必要であれば、常にデュードの前に立ってすべてのダメージを受けるようにしてください。あなたはポーションを使えますが、彼は使えません。\n\n
+        デュードが生き残れば、彼はあなたに素敵な斧をくれます。\n\n</string>
+    <string name="dungeon9text">3つの💎はすべて金の壺の中にあります。\n\n
+        次のチャプターに向けて照準を練習するのに非常に良いダンジョンです。箱をボタンに作動させる最も簡単な方法は、前のダンジョンで見つけた毒のダガーのような回転しないダガーを使用することです。\n\n
+        できれば、トゲのダメージを避けるためにエアアーマーを使用してください。\n\n
+        ダンジョンをクリアしたら、ショップで新しいアイテムをチェックするのを忘れないでください。\n\n</string>
+    <string name="dungeons">🏰 ダンジョン 🏰</string>
+    <string name="eighty_kills">80</string>
+    <string name="element_cannot_be_picked">このアイテムに属性は選べません！</string>
+    <string name="enemies">👻 敵 👻</string>
+    <string name="enemy_air_elemental">エア・エレメンタル</string>
+    <string name="enemy_alien">エイリアン</string>
+    <string name="enemy_ape_demon">エイプ・デーモン</string>
+    <string name="enemy_ape_junina">ジュニナ・エイプ</string>
+    <string name="enemy_ape_santa">サンタ・エイプ</string>
+    <string name="enemy_ape_skeleton">スケルトン・エイプ</string>
+    <string name="enemy_armademon_easter">イースター・アーマデーモン</string>
+    <string name="enemy_armored_ape">アーマード・エイプ</string>
+    <string name="enemy_armored_ape_faster">ファスター・アーマード・エイプ</string>
+    <string name="enemy_armored_ape_faster_weaker">ファスター＆ウィーカー・アーマード・エイプ</string>
+    <string name="enemy_armored_axe_skeleton">アーマード・アックス・スケルトン</string>
+    <string name="enemy_armored_enraged_skeleton">アーマード・エンレイジド・スケルトン</string>
+    <string name="enemy_armored_skeleton">アーマード・スケルトン</string>
+    <string name="enemy_beetle_anubis">アヌビス・ビートル</string>
+    <string name="enemy_beetle_anubis_red">レッド・アヌビス・ビートル</string>
+    <string name="enemy_beholder_witch">ウィッチ・ビホルダー</string>
+    <string name="enemy_cangaceiro">カンガセイロ</string>
+    <string name="enemy_carcara">カルカラ</string>
+    <string name="enemy_carnival_buffoon_green_skeleton">カーニバル・バフーン・グリーン・スケルトン</string>
+    <string name="enemy_carnival_buffoon_purple_skeleton">カーニバル・バフーン・パープル・スケルトン</string>
+    <string name="enemy_carnival_bunny_mask_skeleton">カーニバル・バニーマスク・スケルトン</string>
+    <string name="enemy_carnival_captain_mask_necromancer">カーニバル・キャプテンマスク・ネクロマンサー</string>
+    <string name="enemy_carnival_captain_mask_skeleton">カーニバル・キャプテンマスク・スケルトン</string>
+    <string name="enemy_carnival_pilot_mask_skeleton">カーニバル・パイロットマスク・スケルトン</string>
+    <string name="enemy_carnival_pumpkin_mask_skeleton">カーニバル・パンプキンマスク・スケルトン</string>
+    <string name="enemy_carnival_rat_buffoon_green">カーニバル・グリーン・バフーン・ラット</string>
+    <string name="enemy_carnival_rat_buffoon_purple">カーニバル・パープル・バフーン・ラット</string>
+    <string name="enemy_carnival_salesman_mask_skeleton">カーニバル・セールスマンマスク・スケルトン</string>
+    <string name="enemy_chest_demon">チェスト・デーモン</string>
+    <string name="enemy_chest_demon_gift">デーモン・ギフト・チェスト</string>
+    <string name="enemy_copy_cat">コピーキャット</string>
+    <string name="enemy_cthulhu_imp">クトゥルフ・インプ</string>
+    <string name="enemy_dark_ghost">ダーク・ゴースト</string>
+    <string name="enemy_dark_skeleton">ダーク・スケルトン</string>
+    <string name="enemy_dark_skeleton_elite">エリート・ダーク・スケルトン</string>
+    <string name="enemy_dark_tanker">ダーク・タンカー</string>
+    <string name="enemy_demon_head">デーモン・ヘッド</string>
+    <string name="enemy_demonic_spider">デモニック・スパイダー</string>
+    <string name="enemy_demonic_spider_blowing_minion">デモニック・スパイダー・ブローイング・ミニオン</string>
+    <string name="enemy_demonic_spider_minion">デモニック・スパイダー・ミニオン</string>
+    <string name="enemy_easter_demon">イースター・デーモン</string>
+    <string name="enemy_easter_skeleton">イースター・スケルトン</string>
+    <string name="enemy_evil_warlock">エビル・ウォーロック</string>
+    <string name="enemy_evil_warlock_boss">エビル・ウォーロック・ボス</string>
+    <string name="enemy_final_warlock">ファイナル・ウォーロック</string>
+    <string name="enemy_fire_ape">ファイア・エイプ</string>
+    <string name="enemy_fire_bat">ファイア・バット</string>
+    <string name="enemy_fire_bat_adult">アダルト・ファイア・バット</string>
+    <string name="enemy_fire_elemental">ファイア・エレメンタル</string>
+    <string name="enemy_fire_skeleton">ファイア・スケルトン</string>
+    <string name="enemy_fire_skeleton_b">ファイア・スケルトン B</string>
+    <string name="enemy_fire_skeleton_elite">エリート・ファイア・スケルトン</string>
+    <string name="enemy_fire_skeleton_master">ファイア・スケルトン・マスター</string>
+    <string name="enemy_ghost_rat">ゴースト・ラット</string>
+    <string name="enemy_giant_demon_head">ジャイアント・デーモン・ヘッド</string>
+    <string name="enemy_giant_spider">ジャイアント・スパイダー</string>
+    <string name="enemy_gigaspider">ギガスパイダー</string>
+    <string name="enemy_grinch">グリンチ</string>
+    <string name="enemy_guard_tanker_a">ガード・タンカー A</string>
+    <string name="enemy_guard_tanker_b">ガード・タンカー B</string>
+    <string name="enemy_guard_tanker_elite">エリート・ガード・タンカー</string>
+    <string name="enemy_harmless_tanker">ハームレス・タンカー</string>
+    <string name="enemy_helmet_skeleton">ヘルメット・スケルトン</string>
+    <string name="enemy_ice_necromancer">アイス・ネクロマンサー</string>
+    <string name="enemy_ice_necromancer_wdg">アイス・ネクロマンサー WDG</string>
+    <string name="enemy_ice_skeleton">アイス・スケルトン</string>
+    <string name="enemy_ice_skeleton_elite">エリート・アイス・スケルトン</string>
+    <string name="enemy_ice_skeleton_elite_wdg">エリート・アイス・スケルトン WDG</string>
+    <string name="enemy_ice_skeleton_tanker">アイス・スケルトン・タンカー</string>
+    <string name="enemy_ice_skeleton_tanker_wdg">アイス・スケルトン・タンカー WDG</string>
+    <string name="enemy_ice_skeleton_wdg">アイス・スケルトン WDG</string>
+    <string name="enemy_ifrits_disciple">イフリートの弟子</string>
+    <string name="enemy_jumping_fire_skeleton">ジャンピング・ファイア・スケルトン</string>
+    <string name="enemy_jumping_fire_skeleton_elite">エリート・ジャンピング・ファイア・スケルトン</string>
+    <string name="enemy_jumping_skeleton">ジャンピング・スケルトン</string>
+    <string name="enemy_jumping_skeleton_elite">エリート・ジャンピング・スケルトン</string>
+    <string name="enemy_junina_skeleton_a">ジュニナ・スケルトン A</string>
+    <string name="enemy_junina_skeleton_b">ジュニナ・スケルトン B</string>
+    <string name="enemy_junina_skeleton_dark_shadow">ジュニナ・ダークシャドウ・スケルトン</string>
+    <string name="enemy_junina_skeleton_fire">ジュニナ・ファイア・スケルトン</string>
+    <string name="enemy_junina_skeleton_knife_guard">ジュニナ・スケルトン・ナイフガード</string>
+    <string name="enemy_junina_skeleton_poison_thrower">ジュニナ・スケルトン・ポイズンスロワー</string>
+    <string name="enemy_junina_skeleton_shadow">ジュニナ・シャドウ・スケルトン</string>
+    <string name="enemy_kingptain_dungeon43">キングプテン（ダンジョン43）</string>
+    <string name="enemy_mini_slime">ミニ・スライム</string>
+    <string name="enemy_miniboss_gigaspider_critter">ミニボス・ギガスパイダー・クリッター</string>
+    <string name="enemy_mummy">マミー</string>
+    <string name="enemy_mummy_blue_cosmos">ブルーコスモス・マミー</string>
+    <string name="enemy_mummy_gold_cosmos">ゴールドコスモス・マミー</string>
+    <string name="enemy_mush_vacuum">マッシュ・バキューム</string>
+    <string name="enemy_mush_vacuum_wdg">マッシュ・バキューム WDG</string>
+    <string name="enemy_mushroom_spitter">マッシュルーム・スピッター</string>
+    <string name="enemy_nature_skeleton">ネイチャー・スケルトン</string>
+    <string name="enemy_nature_skeleton_elite">エリート・ネイチャー・スケルトン</string>
+    <string name="enemy_priest_minion">プリースト・ミニオン</string>
+    <string name="enemy_pumpkin_rat_skeleton">パンプキン・ラット・スケルトン</string>
+    <string name="enemy_pumpkin_skeleton">パンプキン・スケルトン</string>
+    <string name="enemy_pumpkin_skeleton_scythe">パンプキン・サイス・スケルトン</string>
+    <string name="enemy_pumpkin_water_skeleton">パンプキン・ウォーター・スケルトン</string>
+    <string name="enemy_pumpkin_water_skeleton_scythe">パンプキン・サイス・ウォーター・スケルトン</string>
+    <string name="enemy_pumpkin_zombie_rat">パンプキン・ゾンビ・ラット</string>
+    <string name="enemy_rat_black_mage">ラット・ブラックメイジ</string>
+    <string name="enemy_rat_fighter">ラット・ファイター</string>
+    <string name="enemy_rat_fire_mage">ラット・ファイアメイジ</string>
+    <string name="enemy_rat_lancer">ラット・ランサー</string>
+    <string name="enemy_rat_poison_thrower">ラット・ポイズンスロワー</string>
+    <string name="enemy_rat_rogue">ラット・ローグ</string>
+    <string name="enemy_rat_rogue_prisoner">ラット・ローグ・プリズナー</string>
+    <string name="enemy_rat_skeleton">ラット・スケルトン</string>
+    <string name="enemy_rat_warrior">ラット・ウォリアー</string>
+    <string name="enemy_rat_water_mage">ラット・ウォーターメイジ</string>
+    <string name="enemy_rat_zombie_knife_guard">ラット・ゾンビ・ナイフガード</string>
+    <string name="enemy_rat_zombie_knife_guard_b">ラット・ゾンビ・ナイフガード B</string>
+    <string name="enemy_rat_zombie_knife_guard_elite">エリート・ラット・ゾンビ・ナイフ</string>
+    <string name="enemy_shaman_fire">ファイア・シャーマン</string>
+    <string name="enemy_shaman_fire_elite">エリート・ファイア・シャーマン</string>
+    <string name="enemy_shaman_nature">ネイチャー・シャーマン</string>
+    <string name="enemy_shaman_nature_elite">エリート・ネイチャー・シャーマン</string>
+    <string name="enemy_skeleton">スケルトン</string>
+    <string name="enemy_skeleton_b">スケルトン B</string>
+    <string name="enemy_slime_demon">スライム・デーモン</string>
+    <string name="enemy_snow_monster">スノーモンスター</string>
+    <string name="enemy_spidemon_higher_jump">ハイジャンプ・スパイデーモン</string>
+    <string name="enemy_spider">スパイダー A</string>
+    <string name="enemy_spider_b">スパイダー B</string>
+    <string name="enemy_spider_b_weak">ウィーク・スパイダー B</string>
+    <string name="enemy_spider_blow">ブロウ・スパイダー</string>
+    <string name="enemy_spider_boss">ボス・スパイダー</string>
+    <string name="enemy_spider_c">スパイダー C</string>
+    <string name="enemy_spider_easter">イースター・スパイダー</string>
+    <string name="enemy_spider_easter_green">グリーン・イースター・スパイダー</string>
+    <string name="enemy_spider_easter_pink">ピンク・イースター・スパイダー</string>
+    <string name="enemy_spider_fire">ファイア・スパイダー</string>
+    <string name="enemy_spider_gift">ギフト・スパイダー</string>
+    <string name="enemy_spider_swamp">スワンプ・スパイダー</string>
+    <string name="enemy_swamp_monster">スワンプ・モンスター</string>
+    <string name="enemy_tanker_elite_matryoshka">エリート・マトリョーシカ・タンカー</string>
+    <string name="enemy_tanker_helmet_matryoshka">タンカー・ヘルメット・マトリョーシカ</string>
+    <string name="enemy_tanker_rage_matryoshka">タンカー・レイジ・マトリョーシカ</string>
+    <string name="enemy_time_patroller_dungeon40">タイム・パトローラー（ダンジョン40）</string>
+    <string name="enemy_time_patroller_dungeon41">タイム・パトローラー（ダンジョン41）</string>
+    <string name="enemy_vampire">ヴァンパイア</string>
+    <string name="enemy_vindicator_carnival">カーニバル・ヴィンディケーター</string>
+    <string name="enemy_warlock_final_boss">ファイナルボス・ウォーロック</string>
+    <string name="enemy_water_vampire">ウォーター・ヴァンパイア</string>
+    <string name="enemy_white_ape">ホワイト・エイプ</string>
+    <string name="enemy_wizard">ウィザード</string>
+    <string name="enemy_xmas_doll_blond">クリスマス・ブロンドドール</string>
+    <string name="enemy_xmas_doll_brunette">クリスマス・ブルネットドール</string>
+    <string name="enemy_xmas_duck">クリスマス・ダック</string>
+    <string name="enemy_xmas_fire_bear">クリスマス・ファイアベア</string>
+    <string name="enemy_xmas_fire_bear_elite">クリスマス・エリート・ファイアベア</string>
+    <string name="enemy_xmas_gift_vacuum">クリスマス・バキュームギフト</string>
+    <string name="enemy_xmas_green_bear_small">クリスマス・グリーン・スモールベア</string>
+    <string name="enemy_xmas_jumping_green_bear">クリスマス・ジャンピング・グリーンベア</string>
+    <string name="enemy_xmas_mimic">クリスマス・ミミック</string>
+    <string name="enemy_xmas_pink_bear">クリスマス・ピンクベア</string>
+    <string name="enemy_xmas_pink_bear_small">クリスマス・ピンク・スモールベア</string>
+    <string name="enemy_xmas_purple_bear">クリスマス・パープルベア</string>
+    <string name="enemy_xmas_purple_bear_ez">クリスマス・パープルベア EZ</string>
+    <string name="enemy_xmas_purple_bear_small">クリスマス・パープル・スモールベア</string>
+    <string name="enemy_xmas_skeleton_blue_helmet_ice">クリスマス・アイス・ブルーヘルメット・スケルトン</string>
+    <string name="enemy_xmas_skeleton_blue_ice">クリスマス・アイス・ブルースケルトン</string>
+    <string name="enemy_xmas_skeleton_blue_mage">クリスマス・ブルー・スケルトンメイジ</string>
+    <string name="enemy_xmas_skeleton_blue_tanker">クリスマス・ブルー・スケルトンタンカー</string>
+    <string name="enemy_xmas_skeleton_red_mage">クリスマス・スケルトン・レッドメイジ</string>
+    <string name="enemy_xmas_skeleton_red_mage_elite">クリスマス・エリート・レッドメイジ・スケルトン</string>
+    <string name="enemy_xmas_skeleton_red_warrior">クリスマス・レッド・スケルトンウォリアー</string>
+    <string name="enemy_xmas_skeleton_red_warrior_elite">クリスマス・エリート・レッド・スケルトンウォリアー</string>
+    <string name="enemy_zombie_chief">ゾンビ・チーフ</string>
+    <string name="enemy_zombie_elite_guard">ゾンビ・エリートガード</string>
+    <string name="enemy_zombie_guard">ゾンビ・ガード</string>
+    <string name="enemy_zombie_guard_boss">ゾンビ・ガード・ボス</string>
+    <string name="enemy_zombie_guard_boss_b">ゾンビ・ガード・ボス B</string>
+    <string name="enemy_zombie_guard_boss_c">ゾンビ・ガード・ボス C</string>
+    <string name="enemy_zombie_knife_guard">ゾンビ・ナイフガード</string>
+    <string name="enemy_zombie_noob_knife_guard">ゾンビ・ヌーブ・ナイフガード</string>
+    <string name="enemy_zombie_rat">ゾンビ・ラット</string>
+    <string name="enemy_zombie_red_guard">ゾンビ・レッドガード</string>
+    <string name="fifty_kills">50</string>
+    <string name="fire_resistance">火耐性</string>
+    <string name="fourty_kills">40</string>
+    <string name="frost_attack">氷結攻撃</string>
+    <string name="frost_resistance">氷結耐性</string>
+    <string name="hundred_fifty_kills">150</string>
+    <string name="hundred_kills">100</string>
+    <string name="in_memory_of">追悼：</string>
+    <string name="item_already_at_zero_upgrades">アイテムは既にアップグレードがゼロです！</string>
+    <string name="item_already_maxed">アイテムは既に最大アップグレードです！</string>
+    <string name="items">📋 アイテム 📋</string>
+    <string name="jump_impulse">ジャンプ力: 0%</string>
+    <string name="jump_impulse_in_calculation">"ジャンプ力: "</string>
+    <string name="kills">キル数</string>
+    <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
+    <string name="max">(MAX)</string>
+    <string name="pierce_count">貫通回数：</string>
+    <string name="poisonous_attack">毒攻撃</string>
+    <string name="projectile_persistence">飛び道具の持続性</string>
+    <string name="rating_start">評価: 0/10 💩</string>
+    <string name="reset_all">すべてリセット</string>
+    <string name="rewards">報酬</string>
+    <string name="robe_of_distant_visions">遠見のローブ</string>
+    <string name="ruby_pawns_edge">ルビー・ポーンズ・エッジ</string>
+    <string name="select_skills">スキルを選択</string>
+    <string name="seventy_kills">70</string>
+    <string name="sixty_kills">60</string>
+    <string name="skill_description_default">説明はありません。</string>
+    <string name="skill_points_left">残りのスキルポイント：</string>
+    <string name="spears">槍</string>
+    <string name="special_antiheros_set">スペシャルアンチヒーローセット</string>
+    <string name="special_thanks">スペシャルサンクス：</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
+    <string name="speed">スピード: 0%</string>
+    <string name="speed_in_calculation">"スピード: "</string>
+    <string name="spike_resistance">トゲ耐性</string>
+    <string name="staffs_and_grimoires">杖と魔導書</string>
+    <string name="survival1_text">これには中央のプラットフォームに当たらない武器が必要です。これにより、反対側の敵を攻撃し、飛び道具をブロックできます。目の前にクモが出現した場合は、後ろの石を攻撃して簡単に倒せます。</string>
+    <string name="survival2_text">2番目のサバイバルダンジョンはあまり動き回る必要がありません。中央に留まり、両側を攻撃し、時々上下に移動して追加の敵を倒し、雷を避けてください。</string>
+    <string name="survival3_text">3番目のサバイバルダンジョンでは、クモを簡単に攻撃できる武器を使用する必要があります。また、すべてのサバイバルダンジョンの中で最も「複雑な」攻撃パターンを持っているため、より多くの努力が必要です。</string>
+    <string name="survival4_text">このダンジョンでは、貫通力の低い武器を使用して、沼のモンスターを一度の攻撃で倒せるようにしてください。ダンジョンの攻撃パターンに従うのはかなり簡単です。さらに、右側に出現する敵に対しては、ウォリアークラスを使用して追加の保護を得ることができます。</string>
+    <string name="survival5_text">ゴールドを稼ぐのに最適で最も簡単なダンジョンです。ハンマーや斧のように、ダメージ範囲が広く射程が限られている武器を使用して、一か所にとどまり遠くから敵を倒せるようにしてください。</string>
+    <string name="survival6_text">最後のサバイバルダンジョンは他と比べて少し努力が必要です。飛び道具を避け、飛行ユニットを攻撃し、雷撃を避けるために、常に場所を変える必要があります。</string>
+    <string name="survival_dungeon_1">サバイバルダンジョン1</string>
+    <string name="survival_dungeon_2">サバイバルダンジョン2</string>
+    <string name="survival_dungeon_3">サバイバルダンジョン3</string>
+    <string name="survival_dungeon_4">サバイバルダンジョン4</string>
+    <string name="survival_dungeon_5">サバイバルダンジョン5</string>
+    <string name="survival_dungeon_6">サバイバルダンジョン6</string>
+    <string name="survival_mode">☠️ サバイバルモード ☠️</string>
+    <string name="survival_tutorial">チュートリアル</string>
+    <string name="swords">剣</string>
+    <string name="ten_kills">10</string>
+    <string name="test_equipment">🛡️ 装備テスト 🛡️</string>
+    <string name="thirty_kills">30</string>
+    <string name="three_hundred_kills">300</string>
+    <string name="twenty_kills">20</string>
+    <string name="two_hundred_kills">200</string>
+    <string name="work_in_progress">作業中！</string>
+
+    <string name="vase_breaker">花瓶割り職人</string>
+    <string name="save_that_dude">サクっと救助</string>
+    <string name="keep_that_dude_alive">生きろ、キサク！</string>
+    <string name="armed_and_dangerous">凶器片手に</string>
+    <string name="head_shot">ヘッドショット！</string>
+    <string name="zombie_killer">ゾンビキラー</string>
+    <string name="spider_killer">スパイダーキラー</string>
+    <string name="bone_collector">ボーン・コレクター</string>
+    <string name="mr_macgyver">ミスター・頭脳系</string>
+    <string name="there_and_back">逝きて帰りし者</string>
+    <string name="know_your_enemy">ノウ・ユア・エネミー</string>
+    <string name="complete_101">限界を超えろ！</string>
+    <string name="complete_100">満点ハナマル</string>
+    <string name="flawless_victory">完璧な勝利！</string>
+    <string name="ecstasy_of_gold">エクスタシー・オブ・ゴールド</string>
+    <string name="demon_slayer">デーモンスレイヤー</string>
+    <string name="get_in_the_ring">ゲット・イン・ザ・シークレット</string>
+    <string name="lost_flipflop">落とし物のサンダル</string>
+    <string name="the_untold_story">語られざる物語</string>
+    <string name="that_dude_must_live">生きて帰れ！</string>
+    <string name="could_beat_gng">屍も幽霊もかかってこい！</string>
+    <string name="changing_in_the_air">登頂記念</string>
+    <string name="runeforge">鍛え続けろ</string>
+    <string name="ride_the_wind">風に乗って</string>
+    <string name="ghostbusters">ゴーストバスター</string>
+    <string name="why_so_curious">好奇心旺盛</string>
+    <string name="loot_from_the_future">秘密の戦利品</string>
+    <string name="the_untold_story_2">語られざる物語3</string>
+    <string name="kill_the_spider">クモの形をした悪魔</string>
+    <string name="lost_hammer">わざとやりました…</string>
+    <string name="dude_still_lives">ヤツはまだ生きていた</string>
+    <string name="dudes_story">キサクいわく</string>
+    <string name="breaker_of_chains">解放者</string>
+    <string name="saw_a_giant">巨人がいたぞ</string>
+    <string name="witch_hunt">ウィッチハント</string>
+    <string name="post_credits">ポスクレってやつか</string>
+    <string name="survival_50">キル</string>
+    <string name="survival_100">キル</string>
+    <string name="survival_200">キル</string>
+    <string name="survival_300">キル</string>
+    <string name="survival_1000">1000キルってマジ？</string>
+    <string name="pimp_my_char">身だしなみは大事</string>
+    <string name="bag_expanded">デカさこそ正義</string>
+    <string name="may_the_magic">魔法と共にあらんことを</string>
+    <string name="vase_breaker_desc">スタート画面の花瓶を壊す</string>
+    <string name="armed_and_dangerous_desc">最初の武器を手に入れる</string>
+    <string name="save_that_dude_desc">チャプター1、ダンジョン2でキサクが攻撃されないように守る</string>
+    <string name="keep_that_dude_alive_desc">チャプター1、ダンジョン8でキサクを助け、生き残らせる</string>
+    <string name="head_shot_desc">敵の頭に攻撃を命中させる</string>
+    <string name="zombie_killer_desc">ゾンビを撃破する</string>
+    <string name="spider_killer_desc">クモを撃破する</string>
+    <string name="bone_collector_desc">スケルトンを撃破する</string>
+    <string name="mr_macgyver_desc">チャプター2、ボーナスダンジョン1で隠しエリアに到達する</string>
+    <string name="there_and_back_desc">死から蘇る</string>
+    <string name="know_your_enemy_desc">Tipsをすべて読む</string>
+    <string name="complete_101_desc">達成度が101\%になる（全隠しエリア発見、チャプター1、2、3をリプレイし一度もダメージを受けない）</string>
+    <string name="complete_100_desc">達成度が100\%になる（隠しエリアとダイヤモンドをすべて発見）</string>
+    <string name="flawless_victory_desc">ダンジョンをダメージを受けずに再プレイし、スターを獲得する</string>
+    <string name="ecstasy_of_gold_desc">ゴールドを購入する</string>
+    <string name="demon_slayer_desc">チャプター1のボスを撃破する</string>
+    <string name="get_in_the_ring_desc">チャプター2、ボーナスダンジョン1で隠しエリアに到達する</string>
+    <string name="lost_flipflop_desc">落とし物のサンダルを発見する</string>
+    <string name="the_untold_story_desc">チャプター2、ダンジョン4でキサクから「語られざる物語」を聞く</string>
+    <string name="that_dude_must_live_desc">ダンジョンクリア時までキサクが生き残る</string>
+    <string name="could_beat_gng_desc">冒頭の15ダンジョンすべてでスターを獲得する</string>
+    <string name="changing_in_the_air_desc">チャプター2、ダンジョン6において最も高い場所に立つ</string>
+    <string name="runeforge_desc">アイテムを強化する</string>
+    <string name="ride_the_wind_desc">チャプター2、ダンジョン7の最後にあるチェストのもとにたどり着く</string>
+    <string name="ghostbusters_desc">チャプター2、ダンジョン7でゴーストを撃破する</string>
+    <string name="why_so_curious_desc">チャプター2、ボーナスダンジョン7の封鎖されていたエリアに到達する</string>
+    <string name="loot_from_the_future_desc">チャプター1、ダンジョン3にある2つの隠しチェストのうち1つを発見する</string>
+    <string name="the_untold_story_2_desc">チャプター2、ダンジョン9で、ポータルと翼を持った巨大生物についてミス・キャプテンから話を聞く</string>
+    <string name="kill_the_spider_desc">沼地に住む巨大なクモを撃破する</string>
+    <string name="lost_hammer_desc">失われたハンマーを発見する</string>
+    <string name="dude_still_lives_desc">チャプター3、ダンジョン5でキサクに会う（チャプター2、ダンジョン4でキサクが生き残っていなければ達成不可）</string>
+    <string name="dudes_story_desc">チャプター1、ダンジョン8でキサクの話を聞く（チャプター1、ダンジョン2でキサクが生き残っていなければ達成不可）</string>
+    <string name="breaker_of_chains_desc">チャプター3、ダンジョン9で導きの魔法使いを解放する</string>
+    <string name="saw_a_giant_desc">巨人を撃破する</string>
+    <string name="witch_hunt_desc">ボス「闇の魔術師」を撃破する</string>
+    <string name="post_credits_desc">ポストクレジットシーンを見る</string>
+    <string name="survival_50_desc">サバイバルモードで敵を1000体撃破する</string>
+    <string name="survival_100_desc">サバイバルモードで敵を1000体撃破する</string>
+    <string name="survival_200_desc">サバイバルモードで敵を1000体撃破する</string>
+    <string name="survival_300_desc">サバイバルモードで敵を1000体撃破する</string>
+    <string name="survival_1000_desc">サバイバルモードで敵を1000体撃破する</string>
+    <string name="pimp_my_char_desc">キャラクターエディターでアバターの頭部デザインを変更する</string>
+    <string name="bag_expanded_desc">ショップでインベントリ拡張アイテムを購入する</string>
+    <string name="truth_out_there">真実はそこにある</string>
+    <string name="truth_out_there_desc">ポータルを通って移動し、先に何があるのかを明らかにする</string>
+    <string name="may_the_magic_desc">忘れ去られたサーベルを発見する</string>
+    <string name="complete_102">チャプター4はムズすぎる！</string>
+    <string name="complete_102_desc">達成度が102\%になる（すべてのダンジョンをクリア、全隠しエリアを発見、チャプター4までの全ダンジョンをノーダメージで再プレイ）</string>
+    <string name="class_consciousness">クラスの自覚</string>
+    <string name="class_consciousness_desc">チャプター1、ダンジョン6でスペシャルアビリティを習得して使用する</string>
+    <string name="unlock_all_survival">生存こそすべて</string>
+    <string name="unlock_all_survival_desc">最低スコア条件をクリアし、すべてのサバイバルダンジョンを解放する</string>
+    <string name="dragonslayer">ドラゴンスレイヤー</string>
+    <string name="dragonslayer_desc">グレートレッドドラゴンを撃破する</string>
+    <string name="breaker_of_chains_2">解放者2</string>
+    <string name="breaker_of_chains_2_desc">チャプター4、ダンジョン9でムーンキーパーを解放する</string>
+    <string name="bound_together">契り</string>
+    <string name="bound_together_desc">闇の魔術師を撃破した後、ザ・キングの仲間になる</string>
+    <string name="bank_for_your_buck">貯蔵、超増量</string>
+    <string name="bank_for_your_buck_desc">銀行にアイテムを預ける</string>
+    <string name="dirty_faced_rookie">汚れ顔のルーキー</string>
+    <string name="dirty_faced_rookie_desc">コンペティティブモードでソロダンジョンをクリアする</string>
+    <string name="bring_it_on">喧嘩上等</string>
+    <string name="bring_it_on_desc">コンペティティブモードで他プレイヤーと対戦する</string>
+    <string name="veni_vidi_vici">チョー気持ちいい</string>
+    <string name="veni_vidi_vici_desc">コンペティティブモードで他プレイヤーに勝利する</string>
+    <string name="taking_part_counts">サボり厳禁</string>
+    <string name="taking_part_counts_desc">対戦しているのにわざと負けることは決してしてはならないが、もしそうした場合にはこの実績がアンロックされる</string>
+    <string name="add_friend">心の絆</string>
+    <string name="add_friend_desc">コンペティティブモードでフレンドを追加する</string>
+    <string name="challenge_friend">フレンドリーファイア</string>
+    <string name="challenge_friend_desc">コンペティティブモードでフレンドに勝負を挑む</string>
+    <string name="r_for_revenge">Rフォー・リベンジ</string>
+    <string name="r_for_revenge_desc">コンペティティブモードでリベンジマッチに勝利する</string>
+    <string name="bronze_rank_achievement">BB：ブロンズビースト</string>
+    <string name="bronze_rank_achievement_desc">コンペティティブモードにおけるランクがブロンズになる</string>
+    <string name="silver_rank_achievement">SS：シルバーソルジャー</string>
+    <string name="silver_rank_achievement_desc">コンペティティブモードにおけるランクがシルバーになる</string>
+    <string name="gold_rank_achievement">GG：ゴーゴー・ゴールド</string>
+    <string name="gold_rank_achievement_desc">コンペティティブモードにおけるランクがゴールドになる</string>
+    <string name="platinum_rank_achievement">PP：ピュアプラチナ！</string>
+    <string name="platinum_rank_achievement_desc">コンペティティブモードにおけるランクがプラチナになる</string>
+    <string name="diamond_rank_achievement">クレイジー・ダイヤモンド！</string>
+    <string name="diamond_rank_achievement_desc">コンペティティブモードにおけるランクがダイヤモンドになる（ピッカピカの一人前だ！）</string>
+    <string name="champion_slayer">チャンピオンスレイヤー</string>
+    <string name="champion_slayer_desc">チャンピオンの間でいずれかのチャンピオンを倒す</string>
+    <string name="ranked_top_1">君がナンバーワン</string>
+    <string name="ranked_top_1_desc">ランキングのトップに立つ</string>
+    <string name="ranked_top_15">ウィー・アー・ザ・チャンピオン！</string>
+    <string name="ranked_top_15_desc">チャンピオンの間で上位15人のうちに入る</string>
+    <string name="its_time">グッドタイミング</string>
+    <string name="its_time_desc">一日のうちある特定の時間帯に、ダンジョン3–6に浮いているゴールドを¾420集める</string>
+    <string name="bag_expanded_2">まだ足りない！</string>
+    <string name="bag_expanded_2_desc">ショップで2つめのインベントリ拡張アイテムを購入する</string>
+    <string name="ranked_top_100">真の英雄</string>
+    <string name="ranked_top_100_desc">ランキングのトップ500に入る（現在の順位はインベントリ内のランキングから閲覧可能）</string>
+    <string name="ranked_top_500">ベテラン・ランページャー</string>
+    <string name="ranked_top_500_desc">ランキングのトップ500に入る（現在の順位はインベントリ内のランキングから閲覧可能）</string>
+    <string name="challenge_accepted">ナイスチャレンジ</string>
+    <string name="challenge_accepted_desc">ウィークリーチャレンジポータルのチャレンジを達成する</string>
+    <string name="salesman_payback">報復の時</string>
+    <string name="salesman_payback_desc">別世界で商人を倒す</string>
+    <string name="time_patrollers_time">タイムパトローラータイム</string>
+    <string name="time_patrollers_time_desc">別世界でタイムパトローラーを倒す</string>
+    <string name="kingslayer_time">キングスレイヤー</string>
+    <string name="kingslayer_time_desc">別世界でザ・キングを倒す</string>
+    <string name="pixelated_arsenal">懐かしのピクセル</string>
+    <string name="pixelated_arsenal_desc">別世界でレトロな見た目のアイテムを拾う</string>
+    <string name="the_end_of_the_world">世界の終わり</string>
+    <string name="the_end_of_the_world_desc">ダンジョン5–1で初めて地上に出る</string>
+    <string name="bag_expanded_3">ありえへん、デカい</string>
+    <string name="bag_expanded_3_desc">3つめのインベントリ拡張アイテムを購入する</string>
+    <string name="its_amazing">アメイジング！</string>
+    <string name="its_amazing_desc">ウィークリーダンジョンのスコアがスコア目標「アメイジング」に到達する（ノーマルスコア、スーパースコア到達が条件）</string>
+    <string name="weekly_dungeons_completed_15">サファイア・メダルホルダー</string>
+    <string name="weekly_dungeons_completed_15_desc">ウィークリーダンジョンを50種類攻略する</string>
+    <string name="weekly_dungeons_completed_30">エメラルド・メダルホルダー</string>
+    <string name="weekly_dungeons_completed_30_desc">ウィークリーダンジョンを50種類攻略する</string>
+    <string name="weekly_dungeons_completed_50">ルビー・メダルホルダー</string>
+    <string name="weekly_dungeons_completed_50_desc">ウィークリーダンジョンを50種類攻略する</string>
+    <string name="weekly_dungeons_star_30">輝くスター</string>
+    <string name="weekly_dungeons_star_30_desc">50種類の異なるウィークリーダンジョンで、スターチャレンジを50個達成する</string>
+    <string name="weekly_dungeons_star_50">最強のスター</string>
+    <string name="weekly_dungeons_star_50_desc">50種類の異なるウィークリーダンジョンで、スターチャレンジを50個達成する</string>
+    <string name="weekly_dungeons_time_30">スーパーランナー</string>
+    <string name="weekly_dungeons_time_30_desc">50種類の異なるウィークリーダンジョンで、タイムチャレンジを50個達成する</string>
+    <string name="weekly_dungeons_time_50">トップアスリート</string>
+    <string name="weekly_dungeons_time_50_desc">50種類の異なるウィークリーダンジョンで、タイムチャレンジを50個達成する</string>
+    <string name="story_to_be_told">大事な話がある</string>
+    <string name="story_to_be_told_desc">ダンジョン5–3のプロローグでキサクから壮絶なポータル移動について話を聞く</string>
+    <string name="the_untold_story_3">語られざる物語3</string>
+    <string name="the_untold_story_3_desc">ダンジョン5–3のプロローグにて研究室でザ・キングから話を聞く</string>
+    <string name="skilled_dirty_faced">スキルある汚れ顔</string>
+    <string name="skilled_dirty_faced_desc">スキルツリーでスキルを3つ習得する</string>
+    <string name="super_skill">これがスーパースキル！</string>
+    <string name="super_skill_desc">スキルツリーでスーパースキルを1つ習得する</string>
+    <string name="complete_103">苦しんだ103</string>
+    <string name="complete_103_desc">達成度が103\%になる（全ダンジョンクリア、全隠しエリア発見、チャプター5までの全ダンジョンをノーダメージで再プレイ</string>
+    <string name="ninth_circle">トップシークレット</string>
+    <string name="ninth_circle_desc">ダンジョン5–4の惑星にある、凍り付いた地下部屋にたどり着く</string>
+    <string name="the_darkest_side">月に落ちる影</string>
+    <string name="the_darkest_side_desc">ダイヤモンドを3つ持った状態でダンジョン5–4を攻略し、ボーナスシーンを見る</string>
+    <string name="sharp_dressed_minion">オシャミニオン</string>
+    <string name="sharp_dressed_minion_desc">カスタムスキンでミニオンの見た目を変える（スキンは報酬の間で購入可能）</string>
+    <string name="dirty_faced_souls">DIRTY-FACED SOULS</string>
+    <string name="dirty_faced_souls_desc">モードの達成度が100\%になる（すべての隠しエリアとダイヤモンドを発見）</string>
+    <string name="time_patroller">タイムパトローラーのように</string>
+    <string name="time_patroller_desc">モードの達成度が101\%になる（全隠しエリアを発見、チャプター1、2、3、をリプレイしノーダメージでクリア）</string>
+    <string name="the_king">キングの御前だ頭が高い</string>
+    <string name="the_king_desc">モードの達成度が102\%になる（全ダンジョンをクリア、全隠しエリアを発見、チャプター4までの全ダンジョンをリプレイしノーダメージでクリア）</string>
+    <string name="bound_together_plus">契り+</string>
+    <string name="bound_together_plus_desc">ランペイジモードで闇の魔術師を撃破した後、ザ・キングの仲間になる</string>
+    <string name="witch_hunt_plus">ウィッチハント+</string>
+    <string name="witch_hunt_plus_desc">ランペイジモードでボス「闇の魔術師」を撃破する</string><string name="sinister_riddle">不吉な謎</string>
+    <string name="sinister_riddle_desc">不吉なオベリスクの謎を解く</string>
+    <string name="have_a_toast">今回は奢りだ、乾杯！</string>
+    <string name="have_a_toast_desc">酒場で他プレイヤーにドリンクを買ってあげる</string>
+    <string name="bullseye_wizard">ブルズアイ</string>
+    <string name="bullseye_wizard_desc">酒場にあるダーツで990,000点以上を取る</string>
+    <string name="settle_a_score">やりやがったな</string>
+    <string name="settle_a_score_desc">酒場にある「化けるセールスマンゲーム」で35,000点以上を取る</string>
+    <string name="meet_me_outside">外で会おう!</string>
+    <string name="meet_me_outside_desc">フレンドに決闘を挑め！ 酒場でフレンドを追加し決闘を申し込めるぞ</string>
+    <string name="duels_of_destiny">運命を司る者!</string>
+    <string name="duels_of_destiny_desc">ランク決闘で勝利せよ！酒場の「運命の決闘」で対戦相手を見つけられるぞ！</string>
+    <string name="taste_of_victory">勝利の味</string>
+    <string name="taste_of_victory_desc">初めての決闘に勝利せよ! 酒場で対戦相手を探せ</string>
+    <string name="bronze_duel_rank_achievement">衛兵の目覚め</string>
+    <string name="bronze_duel_rank_achievement_desc">決闘でランクを上げ衛兵長に到達せよ</string>
+    <string name="silver_duel_rank_achievement">世界の守護者</string>
+    <string name="silver_duel_rank_achievement_desc">決闘でランクを上げ大衛兵長に到達せよ</string>
+    <string name="gold_duel_rank_achievement">次元の狭間へ</string>
+    <string name="gold_duel_rank_achievement_desc">決闘でランクを上げ時空の旅人に到達せよ</string>
+    <string name="platinum_duel_rank_achievement">時を司る者</string>
+    <string name="platinum_duel_rank_achievement_desc">決闘でランクを上げ時の守護者に到達せよ</string>
+    <string name="diamond_duel_rank_achievement">宇宙の守護者</string>
+    <string name="diamond_duel_rank_achievement_desc">決闘でランクを上げ宇宙の守護者に到達せよ!</string>
+    <string name="first_steps_into_destiny">運命への第一歩</string>
+    <string name="first_steps_into_destiny_desc">すべての戦闘ゾーンを探索し、運命の決闘のための初期訓練を完了する</string>
+
+    <string name="enemy_stat_health">HP: </string>
+    <string name="enemy_stat_damage">ダメージ: </string>
+    <string name="enemy_stat_touch_damage">接触ダメージ: </string>
+    <string name="enemy_stat_armor">防御力: </string>
+    <string name="enemy_stat_speed">スピード: </string>
+    <string name="enemy_stat_jump">ジャンプ力: </string>
+    <string name="enemy_stat_patrol_behaviour">パトロール行動: </string>
+    <string name="enemy_stat_attack_behaviour">攻撃行動: </string>
+
+    <string name="dungeon_1">ダンジョン1</string>
+    <string name="tips_and_tricks">ヒントとコツ：</string>
+    <string name="secret_areas">秘密エリア：</string>
+    <string name="dungeon_2">ダンジョン2</string>
+    <string name="dungeon_3_bonus">ダンジョン3ボーナス</string>
+    <string name="tutorial">チュートリアル：</string>
+    <string name="dungeon_5">ダンジョン5</string>
+    <string name="dungeon_6">ダンジョン6</string>
+    <string name="dungeon_5_bonus">ダンジョン5ボーナス</string>
+    <string name="dungeon_7">ダンジョン7</string>
+    <string name="dungeon_7_bonus">ダンジョン7ボーナス</string>
+    <string name="dungeon_8">ダンジョン8</string>
+    <string name="dungeon_10">ダンジョン10</string>
+    <string name="bossfight_tips_and_tricks">ボス戦のヒントとコツ</string>
+    <string name="dungeon_11">ダンジョン11</string>
+    <string name="dungeon_11_bonus">ダンジョン11ボーナス</string>
+    <string name="dungeon_12">ダンジョン12</string>
+    <string name="dungeon_13">ダンジョン13</string>
+    <string name="dungeon_13_bonus">ダンジョン13ボーナス</string>
+    <string name="dungeon_14">ダンジョン14</string>
+    <string name="dungeon_15">ダンジョン15</string>
+    <string name="dungeon_16">ダンジョン16</string>
+    <string name="dungeon_17">ダンジョン17</string>
+    <string name="dungeon_17_bonus">ダンジョン17ボーナス</string>
+    <string name="dungeon_18">ダンジョン18</string>
+    <string name="dungeon_19">ダンジョン19</string>
+    <string name="dungeon_19_bonus">ダンジョン19ボーナス</string>
+    <string name="dungeon_20">ダンジョン20</string>
+    <string name="dungeon_21">ダンジョン21</string>
+    <string name="dungeon_22">ダンジョン22</string>
+    <string name="dungeon_23">ダンジョン23</string>
+    <string name="dungeon_23_bonus">ダンジョン23ボーナス</string>
+    <string name="dungeon_24">ダンジョン24</string>
+    <string name="dungeon_25">ダンジョン25</string>
+    <string name="dungeon_26">ダンジョン26</string>
+    <string name="dungeon_27">ダンジョン27</string>
+    <string name="dungeon_27_bonus">ダンジョン27ボーナス</string>
+    <string name="dungeon_28">ダンジョン28</string>
+    <string name="dungeon_29">ダンジョン29</string>
+    <string name="dungeon_29_bonus">ダンジョン29ボーナス</string>
+    <string name="dungeon_30">ダンジョン30</string>
+    <string name="dungeon_31">ダンジョン31</string>
+    <string name="dungeon_31_bonus">ダンジョン31ボーナス</string>
+    <string name="dungeon_32">ダンジョン32</string>
+    <string name="dungeon_33">ダンジョン33</string>
+    <string name="dungeon_34">ダンジョン34</string>
+    <string name="dungeon_35">ダンジョン35</string>
+    <string name="dungeon_36">ダンジョン36</string>
+    <string name="dungeon_37">ダンジョン37</string>
+    <string name="dungeon_38">ダンジョン38</string>
+    <string name="dungeon_39">ダンジョン39</string>
+    <string name="dungeon_40">ダンジョン40</string>
+    <string name="dungeon_41">ダンジョン41</string>
+    <string name="dungeon_42">ダンジョン42</string>
+    <string name="dungeon_42_bonus">ダンジョン42ボーナス</string>
+    <string name="dungeon_43">ダンジョン43</string>
+    <string name="dungeon_43_bonus">ダンジョン43ボーナス</string>
+    <string name="dungeon_44">ダンジョン44</string>
+    <string name="dungeon_3">ダンジョン3</string>
+    <string name="dungeon_4">ダンジョン4</string>
+    <string name="dungeon_9">ダンジョン9</string>
+
+    <string name="select_element">エレメントを選択</string>
+    <string name="news">📰 ニュース 📰</string>
+
+    <string name="translating">翻訳をダウンロード中です。これには時間がかかり、データを使用します。しばらくお待ちください。</string>
+    <string name="waypoints">ウェイポイント</string>
+    <string name="stone_thrower">石投げ</string>
+    <string name="knife_thrower">ナイフ投げ</string>
+
+    <string name="failed_to_download_model">翻訳モデルのダウンロードに失敗しました。</string>
+    <string name="failed_to_load_news">ニュースの読み込みに失敗しました。\n接続を確認してください。</string>
+</resources>

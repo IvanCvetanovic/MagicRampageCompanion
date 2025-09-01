@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enhanced_velocity">Velocidad mejorada</string>
+    <string name="sword_master">Maestro espadachín</string>
+    <string name="dagger_specialist">Especialista con daga</string>
+    <string name="obstinate_shot">Disparo obstinado</string>
+    <string name="corrosive_shot">Disparo corrosivo</string>
+    <string name="spherical_shield_breaker">Rompeescudos esféricos</string>
+    <string name="voracious_shot">Disparo voraz</string>
+    <string name="monstrous_vigour">Vigor monstruoso</string>
+    <string name="charge_blast">Estallido de carga</string>
+    <string name="fearless_jump">Salto intrépido</string>
+    <string name="virtuous_wizard">Mago virtuoso</string>
+    <string name="throwing_legend">Leyenda arrojadiza</string>
+    <string name="gold_magnet">Imán dorado</string>
+    <string name="fireproof_skin">Piel ignífuga</string>
+    <string name="toxic_haze">Bruma tóxica</string>
+    <string name="shadow_camouflage">Camuflaje de sombras</string>
+    <string name="magic_jump">Salto mágico</string>
+    <string name="dark_twin">Gemelo oscuro</string>
+    <string name="unstoppable_strength">Fuerza imparable</string>
+    <string name="crushing_strength">Fuerza aplastante</string>
+    <string name="slicing_master">Maestro de los tajos</string>
+    <string name="monstrous_metabolism">Metabolismo monstruoso</string>
+    <string name="enhanced_vitality">Vitalidad mejorada</string>
+    <string name="untouchable_skin">Piel intocable</string>
+    <string name="confident_move">Movimiento confiado</string>
+    <string name="arcane_protection">Protección arcana</string>
+    <string name="thunder_wave">Onda atronadora</string>
+    <string name="final_wrath">Ira final</string>
+    <string name="rush_of_the_doomed">Premura de los condenados</string>
+    <string name="overcharge">Sobrecarga</string>
+    <string name="arcane_discipline">Disciplina arcana</string>
+    <string name="swift_cast">Lanzamiento rápido</string>
+    <string name="airborne_dancer">Danza aérea</string>
+    <string name="seismic_reach">Alcance sísmico</string>
+    <string name="titans_push">Empuje del titán</string>
+    <string name="shockwave_force">Fuerza de onda de choque</string>
+    <string name="damage">Daño</string>
+    <string name="armor">Armadura</string>
+    <string name="upgrades">Mejoras</string>
+    <string name="element_fire">Fuego</string>
+    <string name="element_water">Agua</string>
+    <string name="element_darkness">Oscuridad</string>
+    <string name="element_light">Luz</string>
+    <string name="element_earth">Tierra</string>
+    <string name="element_air">Aire</string>
+    <string name="skill_description_0">Aumenta la velocidad en un 4 \%</string>
+    <string name="skill_description_1">Aumenta el poder de ataque pasivo con espada en un 15 \%.</string>
+    <string name="skill_description_2">Aumenta el poder de ataque pasivo con daga en un 20 \%.</string>
+    <string name="skill_description_3">Todos los proyectiles de armas persisten incluso cuando los golpean otros proyectiles al vuelo.</string>
+    <string name="skill_description_4">Los proyectiles de armas hacen explotar al instante a los enemigos derrotados.</string>
+    <string name="skill_description_5">Los proyectiles de armas rompen al instante los escudos esféricos de los enemigos.</string>
+    <string name="skill_description_6">Todas las armas de proyectiles tienen un 45 \% de probabilidad de cancelar los proyectiles enemigos al vuelo.</string>
+    <string name="skill_description_7">Aumenta la velocidad de regeneración de la resistencia.</string>
+    <string name="skill_description_8">Un ataque de carga que inflige 2.4 veces el daño del arma.</string>
+    <string name="skill_description_9">Aumenta el daño con espadas y dagas en un 25 \% cuando tu salud baja del 35 \%.</string>
+    <string name="skill_description_10">Aumenta la velocidad de movimiento en un 20 \% cuando tu salud baja del 35 \%.</string>
+    <string name="skill_description_11">Otorga un Estallido de carga adicional antes del tiempo de reuso.</string>
+    <string name="skill_description_12">Aumenta la potencia del salto en un 3 \%</string>
+    <string name="skill_description_13">Aumenta el poder de ataque pasivo con báculo en un 20 \%.</string>
+    <string name="skill_description_14">Aumenta el poder de ataque pasivo con lanza en un 40 \%.</string>
+    <string name="skill_description_15">Atrae las monedas de oro y la EXP que sueltan los enemigos.</string>
+    <string name="skill_description_16">Otorga protección pasiva contra las llamas y la lava.</string>
+    <string name="skill_description_17">Todas las armas infligen daño de veneno adicional.</string>
+    <string name="skill_description_18">Los enemigos comunes tardarán más tiempo en detectar al soldado Cara Sucia.</string>
+    <string name="skill_description_19">Otorga la habilidad de realizar un salto adicional cuando aún se está en el aire.</string>
+    <string name="skill_description_20">Invoca un gemelo oscuro que lucha junto al soldado Cara Sucia.</string>
+    <string name="skill_description_21">Reduce el tiempo de reuso de las superhabilidades en un 20 \%.</string>
+    <string name="skill_description_22">Todos los proyectiles lanzados se mueven un 15 \% más rápido.</string>
+    <string name="skill_description_23">Otorga un salto adicional en el aire y mejora las capacidades de los ataques aéreos.</string>
+    <string name="skill_description_24">Aumenta la armadura en un 25 \%</string>
+    <string name="skill_description_25">Aumenta el poder de ataque pasivo con martillo en un 60 \%.</string>
+    <string name="skill_description_26">Aumenta el poder de ataque pasivo con hacha en un 50 \%.</string>
+    <string name="skill_description_27">Las pociones curan 2 veces más.</string>
+    <string name="skill_description_28">Aumenta el número máximo de corazones.</string>
+    <string name="skill_description_29">Protección pasiva contra los pinchos.</string>
+    <string name="skill_description_30">El soldado Cara Sucia siempre puede pisar las plataformas mágicas verdes.</string>
+    <string name="skill_description_31">La activación de la habilidad especial de clase crea un escudo esférico.</string>
+    <string name="skill_description_32">Invoca una onda de rayos que golpean a los enemigos alrededor.</string>
+    <string name="skill_description_33">Aumenta el radio de explosión de los proyectiles lanzados en un 20 \%.</string>
+    <string name="skill_description_34">Aumenta la fuerza de empuje de todas las armas en un 40 \%, por lo que los enemigos salen disparados aún más lejos.</string>
+    <string name="skill_description_35">Aumenta el daño de área total que infligen todas las armas en un 70 \%.</string>
+    <string name="rating">"Calificación: "</string>
+    <string name="rogue">Pícaro</string>
+    <string name="thief">Ladrón</string>
+    <string name="mage">Mago</string>
+    <string name="black_mage">Mago oscuro</string>
+    <string name="high_mage">Alto mago</string>
+    <string name="priest">Sacerdote</string>
+    <string name="warlock">Brujo</string>
+    <string name="warrior">Guerrero</string>
+    <string name="elite_warrior">Guerrero de élite</string>
+    <string name="paladin">Paladín</string>
+    <string name="ranger">Guarda</string>
+    <string name="witchdoctor">Hechicero</string>
+    <string name="druid">Druida</string>
+    <string name="recruit_set">Arm. de recluta</string>
+    <string name="soldier_set">Arm. de soldado</string>
+    <string name="elite_soldier_set">Arm. de soldado de élite</string>
+    <string name="ranger_set">Armadura de ranger</string>
+    <string name="umbranian_vest">Túnica umbraniana</string>
+    <string name="brass_set">Armadura de latón</string>
+    <string name="elite_brass_set">Arm. de latón de élite</string>
+    <string name="obsidian_set">Armadura obsidiana</string>
+    <string name="elite_obsidian_set">Arm. obsidiana de élite</string>
+    <string name="umbranian_tanker">Tanque umbraniano</string>
+    <string name="jumpman_suit">Traje de Jumpman</string>
+    <string name="improved_jumpman_suit">Traje de Jumpman mejorado</string>
+    <string name="tubeman_suit">Traje de Tubeman</string>
+    <string name="twitch_suit">Traje de T\'Witch</string>
+    <string name="nature_mage_vest">Túnica de la naturaleza</string>
+    <string name="fire_mage_vest">Túnica de Fuego</string>
+    <string name="faldangs_vest">Túnica de Faldang</string>
+    <string name="plague_fighter_suit">Erradicador de plagas</string>
+    <string name="warlock_vest">Túnica de brujo</string>
+    <string name="high_elf_robe">Toga de Alto Elfo</string>
+    <string name="ifrits_disciple_robe">Tún. discípulo de Ifrit</string>
+    <string name="cleric_vest">Túnica de clérigo</string>
+    <string name="high_cleric_tunic">Túnica de Alto Clérigo</string>
+    <string name="greenmoon_vest">Túnica Luna Verde</string>
+    <string name="dragon_vest">Túnica de Dragón</string>
+    <string name="special_dragon_vest">Special Dragon Vest</string>
+    <string name="blue_wizard_suit">Traje de Mago Azul</string>
+    <string name="penumbra_suit">Túnica de Penumbra</string>
+    <string name="penumbra_suit_plus">Túnica de Penumbra+</string>
+    <string name="monks_tunic">Túnica de monje</string>
+    <string name="bacoon_set">Armadura de Bacoon</string>
+    <string name="bacoon_set_plus">Armadura de Bacoon+</string>
+    <string name="druid_vest">Túnica de druida</string>
+    <string name="moonkeeper_set">Set del Guardián Lunar</string>
+    <string name="bankers_coat">Chaqueta de banquero</string>
+    <string name="deathdoctor_set">Set del Doctor Muerte</string>
+    <string name="crow_set">Armadura de Cuervo</string>
+    <string name="special_crow_set">Set Especial de Cuervo</string>
+    <string name="antiheros_set">Arm. del antihéroe</string>
+    <string name="steelblow_armor">Armadura del Soplo de acero</string>
+    <string name="steelblow_armor_plus">Armadura del Soplo de acero+</string>
+    <string name="dark_lord_set">Arm. del Señor Oscuro</string>
+    <string name="light_spellmaster_suit">Traje del maestro de luz</string>
+    <string name="liquid_assassin_suit">Traje de Asesino Líquido</string>
+    <string name="light_champion_set">Conjunto del campeón de luz</string>
+    <string name="jungle_master">Maestro de la jungla</string>
+    <string name="jungle_assassin_suit">Traje de Asesino Selvático</string>
+    <string name="firestorm_armor">Arm. de Tormenta Ígnea</string>
+    <string name="firestorm_armor_plus">Arm. de Tormenta Ígnea+</string>
+    <string name="gayan_set">Armadura Gayana</string>
+    <string name="elite_assassin_suit">Traje de Asesino de Élite</string>
+    <string name="champion_set">Arm. del Campeón</string>
+    <string name="spider_exoskeleton">Exoesqueleto de Araña</string>
+    <string name="witch_dress">Vestido de bruja</string>
+    <string name="heros_set">Armadura heroica</string>
+    <string name="swamp_ranger_suit">Traje de Guarda del pantano</string>
+    <string name="arcane_mage_suit">Traje de Mago arcano</string>
+    <string name="desert_rogue_suit">Traje de Pícaro del desierto</string>
+    <string name="iron_widow">Viuda Férrea</string>
+    <string name="forest_witch_suit">Vestido de bruja del bosque</string>
+    <string name="black_witch_suit">Vestido de bruja negro</string>
+    <string name="purple_witch_suit">Vestido de bruja morado</string>
+    <string name="fire_moonkeeper_set">Conjunto de fuego del Guardián Lunar</string>
+    <string name="swamp_witch_suit">Vestido de bruja del pantano</string>
+    <string name="green_witch_suit">Vestido de bruja verde</string>
+    <string name="bunny_suit">Traje de Conejo</string>
+    <string name="warden_of_demons">Guardián de demonios</string>
+    <string name="tunic_of_the_relentless">Túnica de los inquietos</string>
+    <string name="wind_witch_suit">Vestido de bruja del viento</string>
+    <string name="destroyer_of_the_corrupted">Destructor de los corruptos</string>
+    <string name="interrogator">Interrogador</string>
+    <string name="protector_of_the_oracle">Protector del Oráculo</string>
+    <string name="death_stalker">Acechador de la muerte</string>
+    <string name="tunic_of_endless_justice">Túnica de justicia infinita</string>
+    <string name="cataclysmic_plate">Placa Cataclísmica</string>
+    <string name="tunic_of_frozen_voices">Túnica de Voces Congeladas</string>
+    <string name="tunic_of_distant_ancestors">Túnica de Ancestros Lejanos</string>
+    <string name="vest_of_phantoms_keeper">Chaleco de Custodio de Fantasmas</string>
+    <string name="robe_of_imminent_fires">Toga de Fuegos Inminentes</string>
+    <string name="vanquisher">Vencedor</string>
+    <string name="winter_witch_armor">Armadura de Bruja Invernal</string>
+    <string name="easterminator">Asolapascuas</string>
+    <string name="vest_of_twisted_illusions">Chaleco de Ilusiones Retorcidas</string>
+    <string name="time_patroller_suit">Traje de Patrullero del Tiempo</string>
+    <string name="kings_spectre_tunic">Túnica de Espectro del Rey</string>
+    <string name="cthulhu_set">Conjunto de Cthulhu</string>
+    <string name="barrenlands_banditin">Bandida de las tierras baldías</string>
+    <string name="tunic_of_ending_nights">Túnica de Noches Finales</string>
+    <string name="santa_claus">Papa Noel</string>
+    <string name="tunic_of_twisted_illusions">Túnica de Ilusiones Retorcidas</string>
+    <string name="vest_of_blessed_glory">Chaleco de Gloria Bendita</string>
+    <string name="barrenlands_bandit">Bandido de las tierras baldías</string>
+    <string name="ring_of_agility">Anillo de agilidad</string>
+    <string name="shaman_ring">Anillo de chamán</string>
+    <string name="supersonic_ring">Anillo supersónico</string>
+    <string name="narya">Narya</string>
+    <string name="spellmasters_ring">Anillo del maestro de magia</string>
+    <string name="warlocks_ring">Anillo de Brujo</string>
+    <string name="nazguh_ring">Anillo Nazguh</string>
+    <string name="ring_of_protection">Anillo de protección</string>
+    <string name="cleric_ring">Anillo de clérigo</string>
+    <string name="swordsmans_ring">Anillo de Espadachín</string>
+    <string name="nenya">Nenya</string>
+    <string name="dragon_eye_ring">Anillo Ojo de Dragón</string>
+    <string name="white_pearl_ring">Anillo de la Perla blanca</string>
+    <string name="steelblow_ring">Anillo del Soplo de acero</string>
+    <string name="witchdoctor_ring">Anillo del Hechicero</string>
+    <string name="sea_wave_ring">Anillo de Ola Marina</string>
+    <string name="dragon_orb_ring">Anillo del Orbe del dragón</string>
+    <string name="ring_of_light">Anillo de Luz</string>
+    <string name="volcano_ring">Anillo Volcán</string>
+    <string name="all_seeing_ring">Anillo Que Todo Lo Ve</string>
+    <string name="verdant_ring">Anillo Frondoso</string>
+    <string name="dragon_fang_ring">Anillo de Colmillo de Dragón</string>
+    <string name="blue_ring">Anillo Azul</string>
+    <string name="spektator">Observador</string>
+    <string name="cuteulhu">Adorulhu</string>
+    <string name="cait">Cait</string>
+    <string name="bunny_ring">Anillo de Conejo</string>
+    <string name="whisper_of_fire">Susurro de fuego</string>
+    <string name="creepy_crawler">Arrastradora espeluznante</string>
+    <string name="whisper_of_death">Susurro de muerte</string>
+    <string name="vina">Vina</string>
+    <string name="falcon_ring">Anillo de Halcón</string>
+    <string name="cursed_amethyst_ring">Anillo de Amatista Maldito</string>
+    <string name="ancient_warden">Guardián Antiguo</string>
+    <string name="vindicator_guardian">Guardián Defensor</string>
+    <string name="whisper_of_light">Susurro de luz</string>
+    <string name="eastercreep">Criatupascua</string>
+    <string name="ghostwalker">Caminante Fantasmal</string>
+    <string name="trickytreat">Achuchachuches</string>
+    <string name="jellybunny">Gelaticonejo</string>
+    <string name="recruit_sword">Espada de recluta</string>
+    <string name="steel_blade">Hoja de acero</string>
+    <string name="fire_sword">Espada de Fuego</string>
+    <string name="nobel_sword">Espada noble</string>
+    <string name="leaf_sword">Espada hoja</string>
+    <string name="pirate_sword">Espada pirata</string>
+    <string name="master_sword">Espada Maestra</string>
+    <string name="vorpal_sword">Espada vorpal</string>
+    <string name="umbranian_short_sword">Espada corta umbraniana</string>
+    <string name="umbranian_long_sword">Esp. larga umbraniana</string>
+    <string name="fireskull_sword">Espada de Fireskull</string>
+    <string name="darkskull_sword">Espada de Darkskull</string>
+    <string name="hammers_and_maces">Martillos y mazas</string>
+    <string name="nature_staff">Báculo de la naturaleza</string>
+    <string name="iron_dagger">Daga de hierro</string>
+    <string name="silver_axe">Hacha de plata</string>
+    <string name="obsidian_spear">Lanza de Obsidiana</string>
+    <string name="insect_crusher">Aplastainsectos</string>
+    <string name="fire_staff">Báculo de Fuego</string>
+    <string name="light_staff">Báculo de Luz</string>
+    <string name="oxymos_staff">Báculo de Oxymo</string>
+    <string name="staff_of_darkness">Báculo de Oscuridad</string>
+    <string name="gadarasts_staff">Báculo de Gadarast</string>
+    <string name="epic_fire_staff">Báculo de Fuego Épico</string>
+    <string name="firebane">Azote de fuego</string>
+    <string name="dragonskull_staff">Báculo Cráneo de Dragón</string>
+    <string name="dragonskull_staff_plus">Báculo Cráneo de Dragón+</string>
+    <string name="death_scythe">Guadaña de la Muerte</string>
+    <string name="death_scythe_plus">Guadaña de la Muerte+</string>
+    <string name="hippie_dragon_staff">Báculo de Dragón Hippie</string>
+    <string name="hippie_dragon_staff_plus">Báculo de Dragón Hippie+</string>
+    <string name="dragon_orb_staff">Báculo del Orbe de Dragón</string>
+    <string name="water_staff">Báculo de Agua</string>
+    <string name="golden_dragon_staff">Báculo del Dragón dorado</string>
+    <string name="golden_dragon_staff_plus">Báculo del Dragón dorado+</string>
+    <string name="dead_vulture_staff">Báculo de buitre muerto</string>
+    <string name="broom_staff">Báculo escoba</string>
+    <string name="ancient_stone_staff">Báculo de piedra antigua</string>
+    <string name="cthulhu_staff">Báculo de Cthulhu</string>
+    <string name="toxic_staff">Báculo tóxico</string>
+    <string name="windbane">Azote de viento</string>
+    <string name="legacy_of_the_oracle">Legado del Oráculo</string>
+    <string name="seabane">Azote de mar</string>
+    <string name="royal_war_staff">Báculo de Guerra Real</string>
+    <string name="staff_of_the_wicked">Báculo de los malvados</string>
+    <string name="icebane">Perdición Helada</string>
+    <string name="spider_staff">Báculo de Araña</string>
+    <string name="necromorphicon">Necromorficón</string>
+    <string name="the_oxymos_codex">El Códice de Oxymo</string>
+    <string name="the_abyssal_scrolls">Los Pergaminos Abisales</string>
+    <string name="iron_dagger_plus">Daga de hierro+</string>
+    <string name="fire_dagger">Daga de Fuego</string>
+    <string name="kunai">Kunai</string>
+    <string name="steel_dagger">Daga de acero</string>
+    <string name="poisoned_dagger">Daga envenenada</string>
+    <string name="ifrits_dagger">Daga de Ifrit</string>
+    <string name="dagger_of_sand">Daga de Arena</string>
+    <string name="undines_dagger">Daga de Undine</string>
+    <string name="dark_dagger">Daga de Oscuridad</string>
+    <string name="dark_dagger_plus">Daga de Oscuridad+</string>
+    <string name="light_dagger">Daga de Luz</string>
+    <string name="chef_knife">Cuchillo de cocina</string>
+    <string name="gorgon_dagger">Daga de Gorgona</string>
+    <string name="machete">Machete</string>
+    <string name="gayan">Gayan</string>
+    <string name="venomous_dagger">Daga venenosa</string>
+    <string name="cthulhu_dagger">Daga de Cthulhu</string>
+    <string name="dragon_tooth_dagger">Daga de diente de dragón</string>
+    <string name="dual_dragon_fang">Colmillos de dragón dobles</string>
+    <string name="blood_swiftblade">Hoja rápida de sangre</string>
+    <string name="precious_dual_blade">Dos Hojas Valiosas</string>
+    <string name="precious_skewer">Pincho Valioso</string>
+    <string name="ice_dagger">Daga de Hielo</string>
+    <string name="last_survivors_dagger">Daga del Último Superviviente</string>
+    <string name="survivors_double_dagger">Daga doble del superviviente</string>
+    <string name="abyssal_dual_blade">Dos Hojas Abisales</string>
+    <string name="malicious_quickblade">Hoja Veloz Maliciosa</string>
+    <string name="gayan_shuriken">Shuriken Gayano</string>
+    <string name="undines_shuriken">Shuriken de Undine</string>
+    <string name="sword_of_light">Espada de Luz</string>
+    <string name="sword_of_1000_lies">Espada de las 1000 Mentiras</string>
+    <string name="magicsaber">Sable mágico</string>
+    <string name="air_striker">Golpeadora Aérea</string>
+    <string name="ice_claw">Garra Helada</string>
+    <string name="light_piercer">Perforador de luz</string>
+    <string name="throat_cutter">Degollador</string>
+    <string name="air_piercer">Perforadora de aire</string>
+    <string name="cthulhu_blade">Hoja de Cthulhu</string>
+    <string name="glass_blade">Hoja de cristal</string>
+    <string name="haunted_slicer">Rebanador embrujado</string>
+    <string name="moonlit_razor">Cuchilla de luz lunar</string>
+    <string name="bunny_sword">Espada de Conejo</string>
+    <string name="blade_of_the_wicked">Hoja de los malvados</string>
+    <string name="goldsteel">Acero Dorado</string>
+    <string name="abyssal_blade">Hoja Abisal</string>
+    <string name="golden_needle">Aguja Dorada</string>
+    <string name="blade_of_rusted_souls">Hoja de Almas Oxidadas</string>
+    <string name="bunny_claymore">Claymore de Conejo</string>
+    <string name="blade_of_survival">Hoja de supervivencia</string>
+    <string name="gorgon_blade">Hoja de gorgona</string>
+    <string name="volcano_sword">Espada de Volcán</string>
+    <string name="all_seeing_sword">Espada Que Todo Lo Ve</string>
+    <string name="frost_heart">Corazón de Escarcha</string>
+    <string name="enchanted_nutcracker">Cascanueces Encantado</string>
+    <string name="axe_of_fire">Hacha de Fuego</string>
+    <string name="bone_chopper">Corta huesos</string>
+    <string name="lightning_axe">Hacha de relámpagos</string>
+    <string name="umbranian_cutter">Cortador umbraniano</string>
+    <string name="flaming_cutter">Cortador flamígero</string>
+    <string name="spider_axe">Hacha de Araña</string>
+    <string name="all_seeing_axe">Hacha Que Todo Lo Ve</string>
+    <string name="toxic_axe">Hacha tóxica</string>
+    <string name="bone_axe">Hacha ósea</string>
+    <string name="steel_axe">Hacha de acero</string>
+    <string name="cthulhu_axe">Hacha de Cthulhu</string>
+    <string name="dawnlight">Albor</string>
+    <string name="gorgon_axe">Hacha de Gorgona</string>
+    <string name="stormcaller">Convocatormentas</string>
+    <string name="path_of_exile">Senda del Exilio</string>
+    <string name="fortunes_battleaxe">Hacha de Batalla de la Fortuna</string>
+    <string name="axe_of_rusted_gods">Hacha de Dioses Oxidados</string>
+    <string name="ice_axe">Hacha de Hielo</string>
+    <string name="yansahn">Yansahn</string>
+    <string name="osun">Osun</string>
+    <string name="gayan_spear">Lanza de Gaia</string>
+    <string name="freyr">Freyr</string>
+    <string name="fire_pierce">Perforación Ígnea</string>
+    <string name="azatoth">Azatoth</string>
+    <string name="spider_spear">Lanza de Araña</string>
+    <string name="cthulhu_spear">Lanza de Cthulhu</string>
+    <string name="poisoned_spear">Lanza envenenada</string>
+    <string name="vindictive_piercer">Perforadora Vengativa</string>
+    <string name="golden_piercer">Perforador Dorado</string>
+    <string name="last_survivors_spear">Lanza del Último Superviviente</string>
+    <string name="gorgon_spear">Lanza de Gorgona</string>
+    <string name="wooden_hammer">Martillo de madera</string>
+    <string name="warhammer">Martillo de guerra</string>
+    <string name="spider_crusher">Aplasta arañas</string>
+    <string name="bionic_hammer">Chipote Chillón</string>
+    <string name="thunder_hammer">Martillo del trueno</string>
+    <string name="volcano_hammer">Martillo de Volcán</string>
+    <string name="verdant_hammer">Martillo Frondoso</string>
+    <string name="mojaras_hammer">Martillo de Mojara</string>
+    <string name="liquid_hammer">Martillo Líquido</string>
+    <string name="hammer_of_light">Martillo de Luz</string>
+    <string name="inquisidor">Inquisidor</string>
+    <string name="falcon_hammer">Martillo de Halcón</string>
+    <string name="bone_hammer">Martillo de huesos</string>
+    <string name="wit_of_ancient_power">Agudeza de Poder Antiguo</string>
+    <string name="war_forged_smasher">Aplastador de forja bélica</string>
+    <string name="toxic_hammer">Martillo tóxico</string>
+    <string name="wealthy_smasher">Aplastador Pudiente</string>
+    <string name="smasher_of_decay">Aplastador de Putrefacción</string>
+    <string name="silver_mace">Maza de plata</string>
+    <string name="iron_mace">Maza de hierro</string>
+    <string name="dark_mace">Maza de la Oscuridad</string>
+    <string name="club">Garrote</string>
+    <string name="wooden_hawaiian">Chancla hawaiana</string>
+    <string name="toxic_mace">Maza tóxica</string>
+    <string name="wealthy_crusher">Machacador Pudiente</string>
+    <string name="ifrits_shuriken">Shuriken de Ifrit</string>
+    <string name="compendium_of_trees">Compendio de Árboles</string>
+    <string name="the_testament_of_ifrit">El Testamento de Ifrit</string>
+    <string name="the_arachnid_codex">El Códice Arácnido</string>
+    <string name="the_word_of_the_wind">La Palabra del Viento</string>
+    <string name="enlightened_hammer">Martillo Iluminado</string>
+    <string name="phoenix">Fénix</string>
+    <string name="dancers_raiment">Atuendo de bailarín</string>
+    <string name="storm">Tormenta</string>
+    <string name="tunic_of_hellish_illusions">Túnica de Ilusiones Infernales</string>
+    <string name="gatekeepers_bionic_arm">Brazo biónico de guardián de la puerta</string>
+    <string name="robe_of_eternal_fire">Toga de fuego eterno</string>
+    <string name="scarlet_shadowweaver">Tejesombras escarlata</string>
+    <string name="unholy_storm">Tormenta impía</string>
+    <string name="innkeepers_costume">Disfraz de posadero</string>
+    <string name="greenfang_ensemble">Conjunto de colmilloverde</string>
+    <string name="golden_guardian">Guardián dorado</string>
+    <string name="magic_cog">Engranaje Mágico</string>
+    <string name="nightshade">Noctusombra</string>
+    <string name="pirouette_pointe">Punta de Pirueta</string>
+    <string name="windpearl_axe">Hacha de Viento Perlado</string>
+    <string name="wicked_skewer">Pincho Malvado</string>
+    <string name="ruby_queens_spear">Lanza de la reina de rubí</string>
+    <string name="onyx_queens_lance">Lanza larga de la reina de ónice</string>
+    <string name="arachnid_sword">Espada Arácnida</string>
+    <string name="unleashed_kraken">Kraken Desatado</string>
+    <string name="nightfall">Ocaso</string>
+    <string name="voidcaller_staff">Báculo de llamavacíos</string>
+    <string name="bunnyhop_dagger">Daga de salto conejil</string>
+    <string name="poisoned_dart">Dardo envenenado</string>
+    <string name="sapphire_pawns_dagger">Hoja del peón de zafiro</string>
+    <string name="toxic_dual_dagger">Dagas dobles tóxicas</string>
+    <string name="all_seeing_cleaver">Machete que todo lo ve</string>
+    <string name="shooting_star_shuriken">Shuriken de Estrella Fugaz</string>
+    <string name="tome_of_the_sands">Tomo de las arenas</string>
+    <string name="vest_of_ominous_jesters">Chaleco de Bufones Fatídicos</string>
+    <string name="vest_of_ominous_comrades">Chaleco de Camaradas Fatídicos</string>
+    <string name="the_daemon_codices">Los Códices Demoníacos</string>
+    <string name="path_of_exile_plus">Senda del Exilio+</string>
+    <string name="eggscellent_axe">Hacha huevocadora</string>
+    <string name="dark_lord_set_plus">Arm. del Señor Oscuro+</string>
+    <string name="heros_set_plus">Armadura heroica+</string>
+    <string name="bankers_coat_plus">Chaqueta de banquero+</string>
+    <string name="tidecaller_ring">Convocamareas</string>
+    <string name="the_ancient_codices">Los Códices Antiguos</string>
+    <string name="minion_vest">Túnica de súbdito</string>
+    <string name="gorgons_skin">Piel de Gorgona</string>
+    <string name="achievements">🏆 Logros 🏆</string>
+    <string name="rune_of_wind">Runa de Viento</string>
+    <string name="burning_rune">Runa Llameante</string>
+    <string name="shiny_rune">Runa brillante</string>
+    <string name="purple_rune">Runa púrpura</string>
+    <string name="green_rune">Runa verde</string>
+    <string name="liquid_rune">Runa líquida</string>
+    <string name="golden_key">Llave dorada</string>
+    <string name="attack_speed">Velocidad de ataque:</string>
+    <string name="enemy_time_patroller">Patrullero del tiempo</string>
+    <string name="enemy_armademon">Armademonio</string>
+    <string name="enemy_armadillo">Armadillo</string>
+    <string name="enemy_beholder">Contemplador</string>
+    <string name="enemy_cthulhu">Cthulhu</string>
+    <string name="enemy_cyclops">Cíclope</string>
+    <string name="enemy_demon_stomper">Demonio Aplastador</string>
+    <string name="enemy_fire_lord">Señor del Fuego</string>
+    <string name="enemy_golem">Gólem</string>
+    <string name="enemy_gorgon">Gorgona Venenosa</string>
+    <string name="enemy_ice_golem">Gólem de hielo</string>
+    <string name="enemy_orc_fighter">Luchador orco</string>
+    <string name="enemy_spidemon">Aramonio</string>
+    <string name="enemy_tombstone_mimic">Imitador de lápidas</string>
+    <string name="enemy_vindicator">Vindicador</string>
+    <string name="enemy_vulkling">Vulcanícola</string>
+    <string name="enemy_walker">Caminante</string>
+    <string name="enemy_armadimp">Armadillo</string>
+    <string name="Armors">Armaduras</string>
+    <string name="Rings">Anillos</string>
+    <string name="about">ℹ️ Acerca de ℹ️</string>
+    <string name="change_language">Cambiar idioma</string>
+    <string name="about_author">Acerca del autor</string>
+    <string name="armor_in_calculation">"Armadura: "</string>
+    <string name="author_description">¡Hola! Soy Ivan Cvetanović, conocido como PrOfSeS en la comunidad de Magic Rampage, donde he sido un miembro activo durante muchos años. Creé esta aplicación para combinar mi antiguo amor por el juego con mi creciente pasión por la ingeniería de software. Si encuentras algún error o tienes sugerencias, por favor, contáctame a través de Discord (haz clic en el botón de abajo) o por correo electrónico (consulta la información del desarrollador en mi página de Google Play Juegos). ¡Gracias por tu apoyo!</string>
+    <string name="axes">Hachas</string>
+    <string name="choose_the_chapter">¡Elige el capítulo!</string>
+    <string name="daggers_and_shurikens">Dagas y Shurikens</string>
+    <string name="damage_in_calculation">"Daño: "</string>
+    <string name="dungeon10bossfighttext">El patrón de ataque del jefe es bastante simple. Ataca cuatro veces seguidas a la posición en la que te encuentras en el momento de su ataque.\n\n
+        Lo que debes hacer es permanecer en el suelo y evitar sus proyectiles moviéndote ligeramente hacia adelante.\n\n
+        Después de que dispare su cuarto proyectil, puedes saltar a su altura y hacerle daño. Aclara y repite.\n\n</string>
+    <string name="dungeon10text">Las tres 💎 están en las vasijas doradas.\n\n
+        No necesitas necesariamente un martillo para estas arañas, ya que son más grandes que las venenosas.\n\n
+        Puedes usar habilidades especiales que ralentizan el tiempo si quieres pasar corriendo por debajo de las trampas que caen.\n\n</string>
+    <string name="dungeon11bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 11.\n\n
+        Paso 1: Haz que el esqueleto en la plataforma superior te vea para que comience a seguirte.\n\n
+        Paso 2: Huye de él cuando comience a perseguirte.\n\n</string>
+    <string name="dungeon11bonustext2">Paso 3: Corre hacia la pared del lado izquierdo y espera a que llegue el esqueleto.\n\n
+        Paso 4: Cuando el esqueleto te ataque, salta a la plataforma superior y espera a que destruya el bloque y presione el botón.\n\n</string>
+    <string name="dungeon11bonustext3">¡Bonus: Salta al área que está sobre la caja para recoger algo de oro!\n\n
+        Paso 5: Mueve la caja con cuidado hacia el botón. ¡Ten cuidado de no dejarla caer al fondo donde está el esqueleto!\n\n
+        Paso 6: Entra rápidamente en la habitación y luego vuelve a subir a la plataforma donde esquivaste los proyectiles del esqueleto. Repite esto varias veces hasta que todas las arañas estén fuera de la habitación.\n\n</string>
+    <string name="dungeon11bonustext4">Paso 7: Después de haber atraído a todos los enemigos al área izquierda, ¡puedes recoger todo el oro de la habitación y terminar la mazmorra!\n\n</string>
+    <string name="dungeon11text">Las tres 💎 están en las vasijas doradas.\n\n
+        Recoge las tres 💎 para desbloquear el nivel de bonus.\n\n
+        Si tienes dificultades para evitar los proyectiles, podrías usar una clase como Guerrero o Sacerdote.\n\n
+        La primera área secreta contiene el anillo <font color="#A020F0"> Nazguh </font>, que se puede usar para múltiples combinaciones de objetos.\n\n
+</string>
+    <string name="dungeon12text">La primera 💎 está en la segunda área secreta. La segunda está en la maceta dorada y la tercera está frente al lanzador de fuego.\n\n
+        La armadura Jumpman es realmente útil aquí, ya que te permite saltar a ciertas áreas sin morir ni recibir daño.\n\n
+        La cuarta área secreta contiene el anillo de fuego <font color="#FFA500"> Narya </font>, que es muy bueno para Magos y Altos Magos.\n\n
+</string>
+    <string name="dungeon13bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 13.\n\n
+        Paso 1: Destruye las vasijas de la izquierda y luego sigue el camino como se muestra en la imagen.\n\n
+        Ten cuidado con los proyectiles de fuego y usa una armadura o anillo de aire para evitar el daño de las púas.\n\n</string>
+    <string name="dungeon13bonustext2">Paso 2: Ahora regresa, pero usa el camino debajo de las plataformas. De nuevo, ten cuidado con los proyectiles y usa una armadura o anillo de lava.\n\n</string>
+    <string name="dungeon13text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Usar una armadura o anillo de fuego te protege contra la lava, permitiéndote abrir dos áreas secretas.\n\n
+        Para abrir la primera área secreta, tienes que activar el botón en el charco de lava cercano.\n\n
+        La segunda área secreta contiene el <font color="#00FF00"> Anillo de Protección </font>.\n\n
+</string>
+    <string name="dungeon14text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Para atravesar la barrera amarilla y obtener la primera 💎, necesitas un arma con elemento de luz o un arma que atraviese barreras.\n\n
+        La segunda área secreta contiene el <font color="#FFFF00"> Anillo de Clérigo </font>, que es muy bueno para Hechiceros, Paladines y Sacerdotes.\n\n
+        Mantén vivo a The Dude para conseguir el logro.\n\n
+</string>
+    <string name="dungeon15text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Usar una armadura o anillo de base <font color="#00FF00"> tierra</font> hará que sea más fácil llegar a áreas secretas y completar la mazmorra.\n\n
+        Si te cuesta golpear a las arañas, usa un martillo que obtuviste en mazmorras anteriores.\n\n
+</string>
+    <string name="dungeon16text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Usar una armadura o anillo de base <font color="#00FF00"> tierra </font> hará que sea más fácil llegar a áreas secretas y completar la mazmorra.\n\n
+        Puedes matar al fantasma inalcanzable parándote debajo de él y esperando a que un rayo caiga varias veces.\n\n
+</string>
+    <string name="dungeon17bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 17.\n\n
+        Lo único de este nivel de bonus es tener suficientes llaves para abrir todos los cofres, no hay una estrategia específica.\n\n</string>
+    <string name="dungeon17bonustext2">Si abres todos los cofres, hay una caída garantizada de la <font color="#FFA500"> Espada de Cráneo de Fuego </font>, que es buena para Guerrero, Guardabosques, etc.\n\n
+        También obtendrás el <font color="#FFFF00"> Chaleco de Faldang </font>, que es bueno para Paladín, Sacerdote y Hechicero.\n\n
+</string>
+    <string name="dungeon17text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Usar un equipo de base <font color="#A020F0"> oscuridad </font> hará que el fantasma ataque al enfrentarlo directamente.\n\n
+        Usa el Anillo Supersónico o clases que ralentizan el tiempo para la cuarta área secreta.\n\n
+</string>
+    <string name="dungeon18text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        La segunda área secreta contiene el <font color="#ADD8E6"> Anillo del Espadachín </font>, que es extremadamente bueno para espadas.\n\n
+        Asegúrate de combinar una pieza de equipo de fuego y una de aire para evitar el daño de las trampas.\n\n
+</string>
+    <string name="dungeon19bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 19.\n\n
+        Este es bastante simple. Simplemente destruye las vasijas a tu izquierda y luego salta a la lava para recoger todas las 🪙 de bonus.\n\n
+        Después de eso, salta a la plataforma verde. Allí encontrarás dos cofres, que suelen soltar runas.\n\n</string>
+    <string name="dungeon19bonustext2">Después de hacer eso, también puedes abrir un cofre oculto, que está en el segundo charco de lava.\n\n</string>
+    <string name="dungeon19text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        La mazmorra está llena de púas y lava. Intenta usar el equipo adecuado para evitar al menos uno de estos peligros.\n\n
+        Los enemigos generados por el invocador morirán automáticamente cuando lo mates.\n\n
+        Si vas a la parte trasera de la mazmorra con el capitán, desbloquearás el logro \"La historia no contada 2\".\n\n</string>
+    <string name="dungeon1text">Las tres 💎 están en las vasijas doradas.\n\n
+        Hay muchas pociones en las áreas invisibles superiores. Por ejemplo, sobre el área secreta 1 y el área final.\n\n
+        Después de encontrarte con el capitán, te toparás con dos cajas. Destruye la superior para acceder al área en la que has estado previamente.\n\n
+        Si vas al lugar donde comienza la cinemática, encontrarás una buena espada y armadura en las dos vasijas blancas.\n\n
+        La segunda área secreta no es accesible sin el uso del traje Jumpman o habilidades especiales, no puedes obtenerla en el primer intento.\n\n
+</string>
+    <string name="dungeon20bossfighttext1">No dejes que el tamaño de este jefe te engañe, es bastante fácil de vencer.\n\n
+        Primero comienza atacando cinco veces seguidas, sus proyectiles tienen una gran área de daño y son venenosos. Con la mayoría de los equipos, podrás esquivarlos simplemente moviéndote de un lado a otro.\n\n</string>
+    <string name="dungeon20bossfighttext2">El jefe tiene tres etapas y en todas ellas tienes alrededor de tres a cuatro segundos para dañarlo.\n\n
+        En la primera etapa solo te ataca lentamente y después de unos 8 segundos, se vuelve vulnerable.\n\n
+        Cuando está al 50\% de salud, comienza a atacar un poco más rápido y comienza a aparecer un trueno.\n\n
+        Cuando está al 10\% de salud, comienza a atacar muy rápidamente y el trueno aparece con mucha más frecuencia.\n\n
+        Dependiendo de tu equipo, quizás puedas evitar la tercera fase si causas suficiente daño. Asegúrate de seguir atacándolo en la cabeza en lugar del cuerpo, causa mucho más daño de esa manera.</string>
+    <string name="dungeon20text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto. La última 💎 solo se puede obtener después de matar al jefe.\n\n
+        El invocador que encuentras no puede ser asesinado, tienes que matar al jefe primero, luego volver y recoger la llave, la 💎 y explorar el área secreta.\n\n
+        En cuanto al equipo, los conjuntos que son los mejores son los que son ágiles y causan mucho daño.\n\n
+</string>
+    <string name="dungeon21text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Matar a los invocadores también destruirá a los secuaces que poseen.\n\n
+        La primera área secreta contiene el <font color="#FFFF00"> Hacha de Rayo </font>, que es muy buena para clases de luz de juego intermedio, como Sacerdote, Hechicero o Paladín.\n\n
+        Este nivel desbloquea más objetos en la tienda, échales un vistazo y prepárate para el próximo jefe.\n\n
+</string>
+    <string name="dungeon22text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        La primera área secreta está en la esquina superior izquierda inmediatamente cuando comienzas la mazmorra. La segunda está en la cima de las plataformas casi invisibles.\n\n
+        Asegúrate de tener al menos una llave dorada. La necesitarás para abrir un área secreta no oficial, que se puede encontrar sobre la salida de la mazmorra.\n\n
+        Usar armas con una gran área de impacto te ayudará a matar a las arañas explosivas, de lo contrario, puedes simplemente huir de ellas y esperar la explosión.\n\n
+</string>
+    <string name="dungeon23bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 23.\n\n
+        Primero, comienza yendo de un lado del mapa al otro. Intenta recoger tantas 🪙 y 💎 como puedas.\n\n</string>
+    <string name="dungeon23bonustext2">También deberías evitar por completo a las arañas, no las ataques en absoluto y si no puedes recoger todas las 🪙 de una vez, también está bien.\n\n</string>
+    <string name="dungeon23bonustext3">Una vez que llegues al final del mapa, puedes dar la vuelta y comenzar a retroceder mientras lanzas ataques repetidamente hacia la izquierda.\n\n
+        De esta manera puedes matar a todas las arañas y recoger las 🪙 restantes.\n\n
+        Asegúrate de abrir las puertas que conducen a los cofres. Un objeto te espera allí dentro.\n\n
+        Sobre esta habitación, también tienes más 🪙 y objetos que puedes recoger.\n\n
+</string>
+    <string name="dungeon23text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Asegúrate de conseguir tanto las llaves de plata como las de oro, las necesitarás para el nivel de bonus, que se puede desbloquear recogiendo las tres 💎.\n\n
+        Usar armas con una gran área de impacto te ayudará a matar a las arañas explosivas, de lo contrario, puedes simplemente huir de ellas y esperar la explosión.\n\n
+        Los esqueletos con la <font color="#A020F0"> Espada de Cráneo Oscuro </font> se vuelven invulnerables cuando te ven, trata de evitarlo.\n\n
+</string>
+    <string name="dungeon24text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Para las dos primeras áreas secretas, necesitas activar el botón. El botón para la primera área secreta está oculto por un bloque que debes destruir, y el botón para la segunda área secreta está parcialmente bloqueado visualmente por la hierba.\n\n
+        La tercera área secreta se encuentra después de abrir las primeras puertas con la llave dorada.\n\n
+        La quinta área secreta está sobre la salida de la mazmorra.\n\n
+</string>
+    <string name="dungeon25text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        La primera área secreta está justo encima del punto de partida, necesitarás el <font color="#ADD8E6"> Traje de Jumpman </font> para llegar allí. Ten en cuenta que hay una pared invisible, que no te permite saltar directamente a la plataforma. Tienes que ir un poco a la izquierda y saltar desde allí. También puedes usar el géiser cercano para impulsarte. También puedes usar clases que ralentizan el tiempo.\n\n
+        En esta mazmorra también puedes controlar al padre del tipo. Puedes ordenarle que te siga o que se quede en un lugar acercándote a él y presionando el botón que está encima de él.\n\n
+        Para la segunda área secreta, tendrás que ordenarle al padre del tipo que se pare en el botón, mientras tú recoges todo.\n\n
+</string>
+    <string name="dungeon26text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        La primera área secreta está justo encima de la posición de inicio, sin embargo, está demasiado alta. Necesitarás activar el hongo mágico para llegar allí.\n\n
+        La segunda área secreta está en el lado derecho del gran agujero.\n\n
+        La tercera área secreta está sobre el castillo, a la derecha.\n\n
+        Si juegas esta mazmorra a las 4:20 o 16:20, podrás obtener el logro secreto. Simplemente recoge las monedas voladoras con el diamante en la parte superior.\n\n
+</string>
+    <string name="dungeon27bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 27.\n\n
+        Sobre el cofre puedes encontrar objetos adicionales.\n\n
+        Primero, activa el hongo mágico y sigue la ruta en zigzag hasta el final. Asegúrate de no pasar mucho tiempo en el medio.\n\n
+</string>
+    <string name="dungeon27bonustext2">Después, activa el hongo de nuevo y sigue la otra ruta en zigzag. ¡Eso es todo!\n\n</string>
+    <string name="dungeon27text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        ¡Asegúrate de conseguir una llave dorada para el nivel de bonus!\n\n
+        Hay muchas formas de matar a los clones. La primera opción es atacar repetidamente el área mientras el clon está apareciendo. La segunda opción es ir a un área más alta, atacar una vez y saltar, para que el clon enemigo sea golpeado por tu ataque. La tercera opción es atacar repetidamente desde la distancia, donde el clon malvado no imita tu acción, y luego seguir los proyectiles hasta la ubicación del clon para que lo golpeen. También puedes intentar equipar una armadura más débil y luego, cuando el clon comience a aparecer, cambiarla por una mejor y matarlo a la fuerza.\n\n
+        Para la segunda área secreta, por favor, mantén vivo al segundo clon malvado, ya que hace que sea mucho más fácil llegar allí de esta manera.\n\n
+        Asegúrate de usar los hongos mágicos a tu favor, especialmente si tienes dificultades para matar a los clones malvados.\n\n
+</string>
+    <string name="dungeon28text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        ¡Asegúrate de tener al menos una pieza de equipo basada en fuego! De lo contrario, necesitarás muchas pociones para curarte del daño.\n\n
+        Simplemente ataca repetidamente el área donde va a aparecer el clon malvado, esta es la mejor manera de matarlo en esta mazmorra.\n\n
+        Usar Guerrero, Guerrero de Élite y Sacerdote es una muy buena idea aquí, ya que hay muchos proyectiles.\n\n
+</string>
+    <string name="dungeon29bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 29.\n\n
+        Este parece complicado, pero solo requiere una estrategia específica.\n\n
+        Tienes que coordinar tus movimientos y posicionarte justo en el medio entre las bolas, la posición está marcada con una caja negra. Debes moverte de una caja a otra cuando las bolas estén en posición horizontal (cuando no puedas verlas).\n\n
+</string>
+    <string name="dungeon29text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        La primera área secreta contiene el <font color="#00FF00"> Báculo de Gadarast </font> y la tercera la <font color="#FFA500"> Espada de Cráneo de Fuego </font>.\n\n
+        El mini-jefe gigante tiene un patrón de ataque simple, solo salta y golpea el suelo, causando una explosión. La mejor manera de matarlo es atacarlo cuando salta. Solo salta al mismo tiempo que él.
+</string>
+    <string name="dungeon2text">Las tres 💎 están en las vasijas doradas.\n\n
+        Si salvas al "Dude", te regalará una buena espada para el principio del juego y también recibirás un logro.\n\n
+        En el techo sobre el área secreta 5, hay una daga venenosa, que es muy buena para el principio y la mitad del juego.\n\n
+</string>
+    <string name="dungeon30bossfighttext1">Puedes usar al capitán como escudo, ya que no puede morir en absoluto.\n\n
+        Si estás a la misma altura que el jefe (si estás de pie en una de las plataformas) puedes simplemente saltar y evitar sus proyectiles, de lo contrario, si estás en el suelo, tienes que seguir moviéndote.\n\n
+</string>
+    <string name="dungeon30bossfighttext2">El jefe tiene tres etapas y en todas ellas tienes alrededor de tres a cuatro segundos para dañarlo.\n\n
+        En la primera etapa solo te ataca lentamente y después de unos 8 segundos, se vuelve vulnerable.\n\n
+        Cuando está al 50\% de salud, comienza a atacar un poco más rápido y comienza a aparecer un trueno.\n\n
+        Cuando está al 10\% de salud, comienza a atacar muy rápidamente y el trueno aparece con mucha más frecuencia.\n\n
+        Dependiendo de tu equipo, quizás puedas evitar la tercera fase si causas suficiente daño. Asegúrate de seguir atacándolo en la cabeza en lugar del cuerpo, causa mucho más daño de esa manera.</string>
+    <string name="dungeon30text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        No pierdas tu salud en vano, la necesitarás para la lucha contra el jefe, a menos que tengas muchas pociones.</string>
+    <string name="dungeon31bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 31.\n\n
+        Lo único a lo que debes prestar atención es a no morir cayendo al abismo.\n\n
+        Simplemente salta hacia arriba, nivel por nivel, y recoge todos los diamantes y llaves.</string>
+    <string name="dungeon31bonustext2">Hay algunos murciélagos, pero no representan una gran amenaza para ti, puedes matarlos rápidamente. \n\n
+</string>
+    <string name="dungeon31text">La primera 💎 se encuentra a la derecha del área de aparición. Está en la esquina superior derecha del mapa. Las otras dos se encuentran en el camino.\n\n
+        La cuarta área secreta se puede abrir con el botón a su izquierda, detrás de la pared.\n\n
+        Asegúrate de usar armas con una gran área de impacto para matar a los murciélagos más fácilmente.\n\n
+        Cuando los murciélagos salen del huevo, tienen una pequeña ventana de tiempo en la que son invulnerables.</string>
+    <string name="dungeon32text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        En esta mazmorra, puedes probar los elixires, que tienen un efecto único. Cuando recojas el primer elixir, dispararás una bola de fuego rebotadora adicional con cada disparo. Con el segundo elixir podrás pararte en plataformas verdes y con el tercer elixir, tus disparos seguirán al objetivo. \n\n
+        El primer cofre tiene el <font color="#ADD8E6"> Traje de Jumpman </font>, que te permite acceder a las primeras tres áreas secretas.\n\n
+        El mini-boss final es fácil si vienes preparado. Usa la armadura de fuego en los cofres antes del mini-boss para aumentar tu daño y recoge el elixir en la sala del mini-boss. De esta manera, necesitarás 4-5 disparos para matar a esa araña.\n\n
+</string>
+    <string name="dungeon33text">Las tres 💎 se pueden encontrar en el camino, sin embargo, a la última solo se puede acceder si activas el botón antes del charco de agua con el cofre.\n\n
+        Los tornados causan daño al contacto, lanzan truenos al azar o cuando mueren y también te atraen hacia ellos. Asegúrate de mantener la distancia antes y después de matarlos. \n\n
+        La segunda área secreta está justo encima de la primera.\n\n
+        La tercera área secreta no se ve tan bien en la imagen, pero podrás ver las partículas que salen de la plataforma verde en tu pantalla.\n\n</string>
+    <string name="dungeon34text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        La primera área secreta está justo a la izquierda del área de inicio y la tercera está justo encima del lugar de encuentro del Guardián de la Luna. La segunda se puede abrir lanzando espadas al orbe saltarín, para que presione el botón que está encima. \n\n
+        Tener equipo con mucha velocidad e impulso de salto es muy útil en la mazmorra.\n\n</string>
+    <string name="dungeon35text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Esta es la primera mazmorra que se considera difícil en la comunidad. \n\n
+        El dragón ataca cada pocos segundos y su bola de fuego va a la posición en la que estabas en el momento en que la disparó. Puedes usar esta ventaja y esconderte detrás de los bloques o saltar muy alto para que la bola de fuego no te golpee.\n\n</string>
+    <string name="dungeon36text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Esta es una de las mazmorras anteriores que jugaste como el soldado de cara sucia, por lo tanto, la primera área secreta también es la misma. \n\n
+        Tienes un elixir de fuego adicional, que puedes usar si prefieres la bola de fuego en lugar de los misiles teledirigidos.\n\n</string>
+    <string name="dungeon37text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        La primera área secreta está debajo de la posición de inicio, la segunda está en el lado derecho de la primera torre, y la tercera está en el lado izquierdo de la segunda torre. \n\n
+        Clases como Guardabosques, Pícaro y Ladrón son muy útiles, ya que proporcionan la agilidad necesaria para esta mazmorra.\n\n</string>
+    <string name="dungeon38text">Las tres 💎 están en el camino hacia el final de la mazmorra, no puedes pasarlas por alto.\n\n
+        Si tuviste problemas para matar a tus enemigos porque tienes poco daño, este es el lugar donde quizás deberías detenerte, farmear más oro y conseguir mejor equipo. Intenta conseguir al menos dos mil de daño de arma. \n\n
+        La primera área secreta está sobre el primer árbol que encuentras en la mazmorra. Simplemente salta sobre el árbol y verás una pequeña plataforma en la parte superior izquierda. La segunda área secreta está sobre el primer gigante saltarín que encuentras.\n\n</string>
+    <string name="dungeon39text">Las tres 💎 están después del portal en medio del mapa. No entres al portal inmediatamente con el rey. Salta sobre él y continúa hacia la izquierda.\n\n
+        Se puede acceder a la primera área secreta con el secuaz que aparece a su izquierda. Cuando el secuaz comience a aparecer, ve a las puertas del área secreta y sigue yendo hacia la derecha hasta que el secuaz pise el botón.\n\n
+        La segunda área secreta está en el lado izquierdo de la última torre a la izquierda. Tienes que escalar allí desde el lado izquierdo también.\n\n</string>
+    <string name="dungeon3bonus1">Desbloquea este bonus consiguiendo las tres 💎 en la mazmorra 3.\n\n
+        El paso 1 es opcional y te dará una pequeña cantidad de oro.\n\n
+        Paso 2: Encuentra el botón rojo en el techo.\n\n</string>
+    <string name="dungeon3bonus2">Paso 3: Para activar el botón, puedes usar diferentes estrategias. La más fácil es simplemente usar el traje Jumpman, que estará disponible en futuras mazmorras. En la imagen puedes ver que también es posible sin él, simplemente salta sobre la cabeza de los zombis y luego haz un doble salto para activar el botón. Asegúrate de tener una armadura que te proporcione al menos un 2\% de impulso de salto.\n\n</string>
+    <string name="dungeon3bonus3">Paso 4: Después de activar el botón, aparecerá un zombi, ponte frente a él para que te ataque y luego evita el ataque. Esto destruirá la pared y podrás obtener los bienes.\n\n</string>
+    <string name="dungeon3text">Las tres 💎 están en las vasijas doradas.\n\n
+Recoge las tres 💎 para desbloquear el nivel de bonus.\n\n
+No puedes abrir el cofre en la primera área secreta en el primer intento, ya que necesitas una llave y solo puedes comprarla en la tienda, que se desbloquea después de este nivel.\n\n
+Puedes llegar al área secreta 3 usando una caja más el traje Jumpman o dos cajas en su lugar. En caso de que uses la estrategia de las dos cajas, primero lleva la izquierda debajo de la derecha y luego empuja la derecha encima. Después empuja ambas con cuidado hasta llegar al destino. \n\n
+Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el principio del juego.\n\n</string>
+    <string name="dungeon40boss1">No hay áreas secretas en esta mazmorra, es una gran lucha contra un jefe.\n\n
+        La lucha contra el jefe incluye luchar contra el brujo en su forma normal y de bestia. Mientras está en su forma normal, te atacará disparando bolas de fuego, lanzando rayos desde arriba y generando a sus secuaces.\n\n
+        No necesitas ninguna estrategia específica para vencerlo, solo asegúrate de tener suficiente daño para acabar con él rápidamente.\n\n</string>
+    <string name="dungeon40boss2">La segunda parte es un poco más complicada, principalmente porque su forma de bestia tiene tres patrones de ataque, que cambian dependiendo de cuánto daño le hayas infligido.\n\n
+        ¡Recuerda, la parte más difícil de este jefe es darte cuenta de cuándo está a punto de cambiar su patrón de ataque!\n\n
+        En la primera etapa, se acercará a ti y te atacará como el gigante saltarín. Este ataque es fácilmente evitable. \n\n
+        En la segunda etapa, se deslizará hacia ti y luego causará una explosión de área de efecto.\n\n
+        En la tercera etapa, saltará hacia ti y luego, cuando llegue al suelo, también se deslizará un poco. Es básicamente una combinación de las dos primeras etapas.\n\n</string>
+    <string name="dungeon41text">Dos 💎 son visibles y están en el camino hacia el final de la mazmorra. Una de ellas está escondida detrás de la roca destructible en la habitación del segundo mini-jefe rodante.\n\n
+        Los misiles teledirigidos del jefe con púas volador apuntan primero a las rocas destructibles. Asegúrate de no destruirlas en la habitación. Si de hecho destruyes las rocas, puedes simplemente pararte debajo del jefe para que los proyectiles no te sigan.\n\n
+        La quinta área secreta se puede abrir con el botón a su derecha.\n\n</string>
+    <string name="dungeon42bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 42.\n\n
+        Para abrir las puertas de la sala del mini-jefe, tienes que activar las válvulas en el orden correcto.\n\n</string>
+    <string name="dungeon42bonustext2">El jefe suelta un anillo decente llamado "Creepy Crawler", que se puede usar para todos los tipos de armas. \n\n</string>
+    <string name="dungeon42text">Las 💎 están escondidas detrás de rocas destructibles. Asegúrate de destruir todo para conseguirlas.\n\n
+        Con respecto al acertijo: mira la piedra cercana, te muestra en qué orden tienes que resolver el acertijo.\n\n
+        Ten cuidado con las ratas que lanzan las bombas de veneno. Después de explotar, liberan una nube de veneno que dura unos segundos.\n\n</string>
+    <string name="dungeon43bonustext1">Desbloquea este nivel consiguiendo las tres 💎 en la mazmorra 43.\n\n
+        Antes de intentar matar al jefe de bloques, mata a todos los demás en la habitación.\n\n</string>
+    <string name="dungeon43bonustext2">Después de que todos los demás secuaces estén muertos, el camino hacia los barriles rojos será mucho más fácil de acceder. \n\n</string>
+    <string name="dungeon43text">La primera 💎 está después del primer jefe de bloques. Las otras dos son necesarias para hacer vulnerables a los gólems.\n\n
+        Para causar daño al jefe de bloques, necesita aterrizar en los barriles rojos. Simplemente párate a un lado de un barril y cuando el jefe comience a bajar, ve en la dirección opuesta.\n\n
+        El jefe al final también es bastante fácil de derrotar si tienes suficiente daño. Simplemente párate en uno de los bloques a un lado y atácalo a él y a su cristal desde lejos.\n\n</string>
+    <string name="dungeon44bossfighttext1">Asegúrate de recoger la <font color="#FFA500"> Túnica de Fuegos Inminentes </font>del sexto área secreta para maximizar tu daño. \n\n El jefe tiene tres ataques principales: carámbano deslizante, carámbanos que caen y lanzamiento de rocas. \n\n Se supone que debes esquivar mientras infliges daño al mismo tiempo, siguiendo el camino que se muestra en la imagen. \n\n Tu ataque debe ser el siguiente: activa tu habilidad especial, luego tu super habilidad, y luego spamea ataques básicos. Enjuaga y repite.</string>
+    <string name="dungeon44bossfighttext2"><font color="#FF0000">Advertencia:</font> Si no infliges suficiente daño hasta que el carámbano deslizante se rompa, el jefe comenzará a lanzarte rocas, que son bastante difíciles de esquivar.\n\n        Cuando el jefe entra en la segunda fase, su carámbano deslizante se mueve más rápido, sus carámbanos que caen ahora apuntan a tu posición actual y lanza múltiples rocas.\n\n</string>
+    <string name="dungeon44text">Las tres 💎 están en el camino, sin embargo, principalmente necesitas una llave dorada para abrir las puertas y conseguirlas. No te saltes ninguna área de antemano.\n\n
+        La tercera área secreta también está escondida detrás de una masa naranja destructible.\n\n
+        Asegúrate de visitar la sexta área secreta, ya que tiene una buena armadura que te ayudará con el jefe.\n\n</string>
+    <string name="dungeon4text">Las tres 💎 están en las vasijas doradas.\n\n
+        El capitán es invencible y no puede morir. Si avanzas en la mazmorra por las plataformas superiores, ella matará a todos los enemigos de abajo por sí misma.\n\n</string>
+    <string name="dungeon5bonustext1">Desbloquea este bonus consiguiendo las tres 💎 en la mazmorra 5.\n\n
+        Primero elige la entrada de la izquierda.\n\n</string>
+    <string name="dungeon5bonustext2">Simplemente continúa por el camino hacia arriba.\n\n</string>
+    <string name="dungeon5bonustext3">Ahora elige el camino del medio, que contiene el objeto mencionado anteriormente: el Aplastador de Insectos.\n\n
+        ¡Este objeto te ayudará si tienes dificultades con el próximo capítulo!\n\n</string>
+    <string name="dungeon5text">Las tres 💎 están en las vasijas doradas.\n\n
+        Asegúrate de usar las armaduras de elemento viento para evitar el daño de las púas.\n\n
+        El zombi tanque es más fácil de vencer si lo combates desde un terreno elevado.\n\n</string>
+    <string name="dungeon6text">Las tres 💎 están en las vasijas doradas.\n\n
+        Ahora puedes usar el martillo que obtuviste en la mazmorra de bonus anterior para lidiar con las arañas más fácilmente.\n\n
+        La primera área secreta contiene el conjunto del Héroe, que es bueno para espadas, dagas y martillos. También te da protección contra púas, lo que te permite jugar la mazmorra de forma más segura.\n\n</string>
+    <string name="dungeon7bonustext1">Desbloquea este bonus consiguiendo las tres 💎 en la mazmorra 7.\n\n
+        Tendrás que ser rápido, ya que las plataformas se destruyen tres segundos después de que saltas sobre ellas.\n\n
+        Simplemente sigue la línea hecha de oro 🪙.\n\n</string>
+    <string name="dungeon7bonustext2">Una vez que llegues a la más alta, salta a la cima del cuadrado y luego salta al área con el cofre.\n\n
+        Después de esto, simplemente salta de nuevo a la siguiente plataforma y termina la mazmorra.\n\n</string>
+    <string name="dungeon7text">Dos 💎 están en las vasijas doradas. Una está en el área que se puede desbloquear haciendo clic en el botón.\n\n
+        Asegúrate de tener al menos una llave de hierro para el nivel de bonus.\n\n
+        Puedes usar la caja al principio para activar el botón del área inferior con la 💎.\n\n
+        Se puede llegar a la tercera área secreta saltando por encima de las llamas.\n\n</string>
+    <string name="dungeon8text">Las tres 💎 están en las vasijas doradas.\n\n
+        Puedes llevar al "Dude" a la Lanza de Fuego al principio de la mazmorra para desbloquear un logro.\n\n
+        Asegúrate de estar siempre delante del "Dude" para absorber todo el daño si es necesario. Tú puedes usar pociones, pero él no.\n\n
+        Si el "Dude" sobrevive, te dará una buena hacha.\n\n</string>
+    <string name="dungeon9text">Las tres 💎 están en las vasijas doradas.\n\n
+        Una mazmorra realmente buena, que entrena tu puntería para el próximo capítulo. La forma más fácil de llevar la caja para activar el botón es usando dagas que no giren, como la daga venenosa que encontraste en una de las mazmorras anteriores.\n\n
+        Preferiblemente, usa armadura de aire para evitar el daño de las púas.\n\n
+        Cuando termines la mazmorra, asegúrate de ver los nuevos artículos en la tienda.\n\n</string>
+    <string name="dungeons">🏰 Mazmorras 🏰</string>
+    <string name="eighty_kills">80</string>
+    <string name="element_cannot_be_picked">¡No se puede elegir el elemento para este objeto!</string>
+    <string name="enemies">👻 Enemigos 👻</string>
+    <string name="enemy_air_elemental">Elemental de Aire</string>
+    <string name="enemy_alien">Alien</string>
+    <string name="enemy_ape_demon">Demonio Simio</string>
+    <string name="enemy_ape_junina">Simio Junina</string>
+    <string name="enemy_ape_santa">Simio de Santa</string>
+    <string name="enemy_ape_skeleton">Esqueleto de Simio</string>
+    <string name="enemy_armademon_easter">Armademonio de Pascua</string>
+    <string name="enemy_armored_ape">Simio Acorazado</string>
+    <string name="enemy_armored_ape_faster">Simio Acorazado Más Rápido</string>
+    <string name="enemy_armored_ape_faster_weaker">Simio Acorazado Más Rápido y Débil</string>
+    <string name="enemy_armored_axe_skeleton">Esqueleto con Hacha Acorazado</string>
+    <string name="enemy_armored_enraged_skeleton">Esqueleto Enfurecido Acorazado</string>
+    <string name="enemy_armored_skeleton">Esqueleto Acorazado</string>
+    <string name="enemy_beetle_anubis">Escarabajo de Anubis</string>
+    <string name="enemy_beetle_anubis_red">Escarabajo de Anubis Rojo</string>
+    <string name="enemy_beholder_witch">Bruja Contempladora</string>
+    <string name="enemy_cangaceiro">Cangaceiro</string>
+    <string name="enemy_carcara">Carcara</string>
+    <string name="enemy_carnival_buffoon_green_skeleton">Esqueleto Bufón Verde de Carnaval</string>
+    <string name="enemy_carnival_buffoon_purple_skeleton">Esqueleto Bufón Morado de Carnaval</string>
+    <string name="enemy_carnival_bunny_mask_skeleton">Esqueleto con Máscara de Conejo de Carnaval</string>
+    <string name="enemy_carnival_captain_mask_necromancer">Nigromante con Máscara de Capitán de Carnaval</string>
+    <string name="enemy_carnival_captain_mask_skeleton">Esqueleto con Máscara de Capitán de Carnaval</string>
+    <string name="enemy_carnival_pilot_mask_skeleton">Esqueleto con Máscara de Piloto de Carnaval</string>
+    <string name="enemy_carnival_pumpkin_mask_skeleton">Esqueleto con Máscara de Calabaza de Carnaval</string>
+    <string name="enemy_carnival_rat_buffoon_green">Rata Bufón Verde de Carnaval</string>
+    <string name="enemy_carnival_rat_buffoon_purple">Rata Bufón Morada de Carnaval</string>
+    <string name="enemy_carnival_salesman_mask_skeleton">Esqueleto con Máscara de Vendedor de Carnaval</string>
+    <string name="enemy_chest_demon">Demonio de Cofre</string>
+    <string name="enemy_chest_demon_gift">Cofre de Regalo Demonio</string>
+    <string name="enemy_copy_cat">Imitador</string>
+    <string name="enemy_cthulhu_imp">Diablillo de Cthulhu</string>
+    <string name="enemy_dark_ghost">Fantasma Oscuro</string>
+    <string name="enemy_dark_skeleton">Esqueleto Oscuro</string>
+    <string name="enemy_dark_skeleton_elite">Esqueleto Oscuro de Élite</string>
+    <string name="enemy_dark_tanker">Tanque Oscuro</string>
+    <string name="enemy_demon_head">Cabeza de Demonio</string>
+    <string name="enemy_demonic_spider">Araña Demoníaca</string>
+    <string name="enemy_demonic_spider_blowing_minion">Secuaz Explosivo de Araña Demoníaca</string>
+    <string name="enemy_demonic_spider_minion">Secuaz de Araña Demoníaca</string>
+    <string name="enemy_easter_demon">Demonio de Pascua</string>
+    <string name="enemy_easter_skeleton">Esqueleto de Pascua</string>
+    <string name="enemy_evil_warlock">Brujo Malvado</string>
+    <string name="enemy_evil_warlock_boss">Jefe Brujo Malvado</string>
+    <string name="enemy_final_warlock">Brujo Final</string>
+    <string name="enemy_fire_ape">Simio de Fuego</string>
+    <string name="enemy_fire_bat">Murciélago de Fuego</string>
+    <string name="enemy_fire_bat_adult">Murciélago de Fuego Adulto</string>
+    <string name="enemy_fire_elemental">Elemental de Fuego</string>
+    <string name="enemy_fire_skeleton">Esqueleto de Fuego</string>
+    <string name="enemy_fire_skeleton_b">Esqueleto de Fuego B</string>
+    <string name="enemy_fire_skeleton_elite">Esqueleto de Fuego de Élite</string>
+    <string name="enemy_fire_skeleton_master">Maestro Esqueleto de Fuego</string>
+    <string name="enemy_ghost_rat">Rata Fantasma</string>
+    <string name="enemy_giant_demon_head">Cabeza de Demonio Gigante</string>
+    <string name="enemy_giant_spider">Araña Gigante</string>
+    <string name="enemy_gigaspider">Gigaaraña</string>
+    <string name="enemy_grinch">Grinch</string>
+    <string name="enemy_guard_tanker_a">Tanque Guardia A</string>
+    <string name="enemy_guard_tanker_b">Tanque Guardia B</string>
+    <string name="enemy_guard_tanker_elite">Tanque Guardia de Élite</string>
+    <string name="enemy_harmless_tanker">Tanque Inofensivo</string>
+    <string name="enemy_helmet_skeleton">Esqueleto con Casco</string>
+    <string name="enemy_ice_necromancer">Nigromante de Hielo</string>
+    <string name="enemy_ice_necromancer_wdg">Nigromante de Hielo WDG</string>
+    <string name="enemy_ice_skeleton">Esqueleto de Hielo</string>
+    <string name="enemy_ice_skeleton_elite">Esqueleto de Hielo de Élite</string>
+    <string name="enemy_ice_skeleton_elite_wdg">Esqueleto de Hielo de Élite WDG</string>
+    <string name="enemy_ice_skeleton_tanker">Tanque Esqueleto de Hielo</string>
+    <string name="enemy_ice_skeleton_tanker_wdg">Tanque Esqueleto de Hielo WDG</string>
+    <string name="enemy_ice_skeleton_wdg">Esqueleto de Hielo WDG</string>
+    <string name="enemy_ifrits_disciple">Discípulo de Ifrit</string>
+    <string name="enemy_jumping_fire_skeleton">Esqueleto de Fuego Saltador</string>
+    <string name="enemy_jumping_fire_skeleton_elite">Esqueleto de Fuego Saltador de Élite</string>
+    <string name="enemy_jumping_skeleton">Esqueleto Saltador</string>
+    <string name="enemy_jumping_skeleton_elite">Esqueleto Saltador de Élite</string>
+    <string name="enemy_junina_skeleton_a">Esqueleto Junina A</string>
+    <string name="enemy_junina_skeleton_b">Esqueleto Junina B</string>
+    <string name="enemy_junina_skeleton_dark_shadow">Esqueleto Sombra Oscura Junina</string>
+    <string name="enemy_junina_skeleton_fire">Esqueleto de Fuego Junina</string>
+    <string name="enemy_junina_skeleton_knife_guard">Esqueleto Guardia de Cuchillo Junina</string>
+    <string name="enemy_junina_skeleton_poison_thrower">Esqueleto Lanzador de Veneno Junina</string>
+    <string name="enemy_junina_skeleton_shadow">Esqueleto Sombra Junina</string>
+    <string name="enemy_kingptain_dungeon43">Reypitán (Mazmorra 43)</string>
+    <string name="enemy_mini_slime">Mini Limo</string>
+    <string name="enemy_miniboss_gigaspider_critter">Secuaz de Gigaaraña Minijefe</string>
+    <string name="enemy_mummy">Momia</string>
+    <string name="enemy_mummy_blue_cosmos">Momia Cosmos Azul</string>
+    <string name="enemy_mummy_gold_cosmos">Momia Cosmos Dorado</string>
+    <string name="enemy_mush_vacuum">Aspira-hongo</string>
+    <string name="enemy_mush_vacuum_wdg">Aspira-hongo WDG</string>
+    <string name="enemy_mushroom_spitter">Escupidor de Hongos</string>
+    <string name="enemy_nature_skeleton">Esqueleto de la Naturaleza</string>
+    <string name="enemy_nature_skeleton_elite">Esqueleto de la Naturaleza de Élite</string>
+    <string name="enemy_priest_minion">Secuaz Sacerdote</string>
+    <string name="enemy_pumpkin_rat_skeleton">Esqueleto de Rata Calabaza</string>
+    <string name="enemy_pumpkin_skeleton">Esqueleto de Calabaza</string>
+    <string name="enemy_pumpkin_skeleton_scythe">Esqueleto con Guadaña de Calabaza</string>
+    <string name="enemy_pumpkin_water_skeleton">Esqueleto de Agua y Calabaza</string>
+    <string name="enemy_pumpkin_water_skeleton_scythe">Esqueleto de Agua con Guadaña y Calabaza</string>
+    <string name="enemy_pumpkin_zombie_rat">Rata Zombi de Calabaza</string>
+    <string name="enemy_rat_black_mage">Rata Mago Negro</string>
+    <string name="enemy_rat_fighter">Rata Luchadora</string>
+    <string name="enemy_rat_fire_mage">Rata Mago de Fuego</string>
+    <string name="enemy_rat_lancer">Rata Lancera</string>
+    <string name="enemy_rat_poison_thrower">Rata Lanzadora de Veneno</string>
+    <string name="enemy_rat_rogue">Rata Pícara</string>
+    <string name="enemy_rat_rogue_prisoner">Rata Pícara Prisionera</string>
+    <string name="enemy_rat_skeleton">Esqueleto de Rata</string>
+    <string name="enemy_rat_warrior">Rata Guerrera</string>
+    <string name="enemy_rat_water_mage">Rata Mago de Agua</string>
+    <string name="enemy_rat_zombie_knife_guard">Rata Zombi Guardia de Cuchillo</string>
+    <string name="enemy_rat_zombie_knife_guard_b">Rata Zombi Guardia de Cuchillo B</string>
+    <string name="enemy_rat_zombie_knife_guard_elite">Élite de Rata Zombi con Cuchillo</string>
+    <string name="enemy_shaman_fire">Chamán de Fuego</string>
+    <string name="enemy_shaman_fire_elite">Chamán de Fuego de Élite</string>
+    <string name="enemy_shaman_nature">Chamán de la Naturaleza</string>
+    <string name="enemy_shaman_nature_elite">Chamán de la Naturaleza de Élite</string>
+    <string name="enemy_skeleton">Esqueleto</string>
+    <string name="enemy_skeleton_b">Esqueleto B</string>
+    <string name="enemy_slime_demon">Demonio de Limo</string>
+    <string name="enemy_snow_monster">Monstruo de las Nieves</string>
+    <string name="enemy_spidemon_higher_jump">Demonio Araña con Salto Mejorado</string>
+    <string name="enemy_spider">Araña A</string>
+    <string name="enemy_spider_b">Araña B</string>
+    <string name="enemy_spider_b_weak">Araña B Débil</string>
+    <string name="enemy_spider_blow">Araña Explosiva</string>
+    <string name="enemy_spider_boss">Jefe Araña</string>
+    <string name="enemy_spider_c">Araña C</string>
+    <string name="enemy_spider_easter">Araña de Pascua</string>
+    <string name="enemy_spider_easter_green">Araña Verde de Pascua</string>
+    <string name="enemy_spider_easter_pink">Araña Rosa de Pascua</string>
+    <string name="enemy_spider_fire">Araña de Fuego</string>
+    <string name="enemy_spider_gift">Araña de Regalo</string>
+    <string name="enemy_spider_swamp">Araña del Pantano</string>
+    <string name="enemy_swamp_monster">Monstruo del Pantano</string>
+    <string name="enemy_tanker_elite_matryoshka">Tanque Matrioska de Élite</string>
+    <string name="enemy_tanker_helmet_matryoshka">Tanque Matrioska con Casco</string>
+    <string name="enemy_tanker_rage_matryoshka">Tanque Matrioska de Furia</string>
+    <string name="enemy_time_patroller_dungeon40">Patrullero del Tiempo (Mazmorra 40)</string>
+    <string name="enemy_time_patroller_dungeon41">Patrullero del Tiempo (Mazmorra 41)</string>
+    <string name="enemy_vampire">Vampiro</string>
+    <string name="enemy_vindicator_carnival">Vindicador de Carnaval</string>
+    <string name="enemy_warlock_final_boss">Brujo Jefe Final</string>
+    <string name="enemy_water_vampire">Vampiro de Agua</string>
+    <string name="enemy_white_ape">Simio Blanco</string>
+    <string name="enemy_wizard">Mago</string>
+    <string name="enemy_xmas_doll_blond">Muñeca Rubia de Navidad</string>
+    <string name="enemy_xmas_doll_brunette">Muñeca Morena de Navidad</string>
+    <string name="enemy_xmas_duck">Pato de Navidad</string>
+    <string name="enemy_xmas_fire_bear">Oso de Fuego de Navidad</string>
+    <string name="enemy_xmas_fire_bear_elite">Oso de Fuego de Élite de Navidad</string>
+    <string name="enemy_xmas_gift_vacuum">Regalo Aspiradora de Navidad</string>
+    <string name="enemy_xmas_green_bear_small">Oso Verde Pequeño de Navidad</string>
+    <string name="enemy_xmas_jumping_green_bear">Oso Verde Saltador de Navidad</string>
+    <string name="enemy_xmas_mimic">Mímico de Navidad</string>
+    <string name="enemy_xmas_pink_bear">Oso Rosa de Navidad</string>
+    <string name="enemy_xmas_pink_bear_small">Oso Rosa Pequeño de Navidad</string>
+    <string name="enemy_xmas_purple_bear">Oso Morado de Navidad</string>
+    <string name="enemy_xmas_purple_bear_ez">Oso Morado de Navidad EZ</string>
+    <string name="enemy_xmas_purple_bear_small">Oso Morado Pequeño de Navidad</string>
+    <string name="enemy_xmas_skeleton_blue_helmet_ice">Esqueleto de Hielo con Casco Azul de Navidad</string>
+    <string name="enemy_xmas_skeleton_blue_ice">Esqueleto de Hielo Azul de Navidad</string>
+    <string name="enemy_xmas_skeleton_blue_mage">Mago Esqueleto Azul de Navidad</string>
+    <string name="enemy_xmas_skeleton_blue_tanker">Tanque Esqueleto Azul de Navidad</string>
+    <string name="enemy_xmas_skeleton_red_mage">Mago Esqueleto Rojo de Navidad</string>
+    <string name="enemy_xmas_skeleton_red_mage_elite">Mago Esqueleto Rojo de Élite de Navidad</string>
+    <string name="enemy_xmas_skeleton_red_warrior">Guerrero Esqueleto Rojo de Navidad</string>
+    <string name="enemy_xmas_skeleton_red_warrior_elite">Guerrero Esqueleto Rojo de Élite de Navidad</string>
+    <string name="enemy_zombie_chief">Jefe Zombi</string>
+    <string name="enemy_zombie_elite_guard">Guardia Zombi de Élite</string>
+    <string name="enemy_zombie_guard">Guardia Zombi</string>
+    <string name="enemy_zombie_guard_boss">Jefe Guardia Zombi</string>
+    <string name="enemy_zombie_guard_boss_b">Jefe Guardia Zombi B</string>
+    <string name="enemy_zombie_guard_boss_c">Jefe Guardia Zombi C</string>
+    <string name="enemy_zombie_knife_guard">Guardia Zombi con Cuchillo</string>
+    <string name="enemy_zombie_noob_knife_guard">Guardia Zombi Novato con Cuchillo</string>
+    <string name="enemy_zombie_rat">Rata Zombi</string>
+    <string name="enemy_zombie_red_guard">Guardia Zombi Rojo</string>
+    <string name="fifty_kills">50</string>
+    <string name="fire_resistance">Resistencia al Fuego</string>
+    <string name="fourty_kills">40</string>
+    <string name="frost_attack">Ataque de Escarcha</string>
+    <string name="frost_resistance">Resistencia a la Escarcha</string>
+    <string name="hundred_fifty_kills">150</string>
+    <string name="hundred_kills">100</string>
+    <string name="in_memory_of">En memoria de:</string>
+    <string name="item_already_at_zero_upgrades">¡El objeto ya está en cero mejoras!</string>
+    <string name="item_already_maxed">¡El objeto ya está mejorado al máximo!</string>
+    <string name="items">📋 Objetos 📋</string>
+    <string name="jump_impulse">Impulso de Salto: 0%</string>
+    <string name="jump_impulse_in_calculation">"Impulso de Salto: "</string>
+    <string name="kills">Bajas</string>
+    <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
+    <string name="max">(MAX)</string>
+    <string name="pierce_count">Cantidad de Perforación:</string>
+    <string name="poisonous_attack">Ataque Venenoso</string>
+    <string name="projectile_persistence">Persistencia de Proyectil</string>
+    <string name="rating_start">Calificación: 0/10 💩</string>
+    <string name="reset_all">Reiniciar Todo</string>
+    <string name="rewards">Recompensas</string>
+    <string name="robe_of_distant_visions">Túnica de Visiones Lejanas</string>
+    <string name="ruby_pawns_edge">Filo de Peones de Rubí</string>
+    <string name="select_skills">Seleccionar Habilidades</string>
+    <string name="seventy_kills">70</string>
+    <string name="sixty_kills">60</string>
+    <string name="skill_description_default">No hay descripción disponible.</string>
+    <string name="skill_points_left">Puntos de habilidad restantes:</string>
+    <string name="spears">Lanzas</string>
+    <string name="special_antiheros_set">Conjunto Especial de Antihéroe</string>
+    <string name="special_thanks">Agradecimientos Especiales:</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
+    <string name="speed">Velocidad: 0%</string>
+    <string name="speed_in_calculation">"Velocidad: "</string>
+    <string name="spike_resistance">Resistencia a las Púas</string>
+    <string name="staffs_and_grimoires">Bastones y Grimorios</string>
+    <string name="survival1_text">Para este necesitarás un arma que no golpee la plataforma del medio. Esto te permitirá golpear a los enemigos del otro lado y bloquear los proyectiles. Si una araña aparece frente a ti, simplemente ataca la piedra detrás de ti para matarla fácilmente.</string>
+    <string name="survival2_text">La segunda mazmorra de supervivencia no necesita mucho movimiento. Quédate en el medio y ataca a los lados, moviéndote eventualmente hacia arriba y hacia abajo para matar enemigos adicionales y evitar los rayos.</string>
+    <string name="survival3_text">La tercera mazmorra de supervivencia requerirá que uses un arma que pueda golpear a las arañas fácilmente. También tiene el patrón de ataque más "complicado" de todas las mazmorras de supervivencia, lo que significa que necesitarás invertir más esfuerzo en ella.</string>
+    <string name="survival4_text">Para esta mazmorra, asegúrate de usar un arma con bajo poder de perforación, para que puedas matar al monstruo del pantano de un solo disparo. Es bastante simple seguir los patrones de ataque de la mazmorra. Adicionalmente, puedes usar la clase Guerrero para obtener protección extra contra el enemigo que aparece a tu derecha.</string>
+    <string name="survival5_text">La mejor y más fácil mazmorra para farmear oro. Asegúrate de usar un arma con una gran área de daño y alcance limitado, como martillos y hachas, para poder quedarte en un solo lugar y matar a los enemigos desde lejos.</string>
+    <string name="survival6_text">La última mazmorra de supervivencia requiere un poco más de esfuerzo en comparación con las otras, ya que necesitas cambiar constantemente de ubicación para evitar proyectiles, golpear a las unidades voladoras y evitar los rayos.</string>
+    <string name="survival_dungeon_1">Mazmorra de Supervivencia 1</string>
+    <string name="survival_dungeon_2">Mazmorra de Supervivencia 2</string>
+    <string name="survival_dungeon_3">Mazmorra de Supervivencia 3</string>
+    <string name="survival_dungeon_4">Mazmorra de Supervivencia 4</string>
+    <string name="survival_dungeon_5">Mazmorra de Supervivencia 5</string>
+    <string name="survival_dungeon_6">Mazmorra de Supervivencia 6</string>
+    <string name="survival_mode">☠️ Modo Supervivencia ☠️</string>
+    <string name="survival_tutorial">Tutorial</string>
+    <string name="swords">Espadas</string>
+    <string name="ten_kills">10</string>
+    <string name="test_equipment">🛡️ Probar Equipo 🛡️</string>
+    <string name="thirty_kills">30</string>
+    <string name="three_hundred_kills">300</string>
+    <string name="twenty_kills">20</string>
+    <string name="two_hundred_kills">200</string>
+    <string name="work_in_progress">¡En Desarrollo!</string>
+
+    <string name="vase_breaker">Rompevasijas</string>
+    <string name="save_that_dude">¡Salva a ese tío!</string>
+    <string name="keep_that_dude_alive">¡Que no maten a ese tío!</string>
+    <string name="armed_and_dangerous">Armado y peligroso</string>
+    <string name="head_shot">¡En la cabeza!</string>
+    <string name="zombie_killer">Matazombis</string>
+    <string name="spider_killer">Aracnicida</string>
+    <string name="bone_collector">Coleccionista de huesos</string>
+    <string name="mr_macgyver">MacGyver</string>
+    <string name="there_and_back">Partida y regreso</string>
+    <string name="know_your_enemy">Conoce a tu enemigo</string>
+    <string name="complete_101">¡Más del 100\%!</string>
+    <string name="complete_100">Lo he hecho todo</string>
+    <string name="flawless_victory">¡Victoria impecable!</string>
+    <string name="ecstasy_of_gold">Éxtasis del oro</string>
+    <string name="demon_slayer">Matademonios</string>
+    <string name="get_in_the_ring">En el anillo</string>
+    <string name="lost_flipflop">La chancla perdida</string>
+    <string name="the_untold_story">La historia sin contar</string>
+    <string name="that_dude_must_live">¡Ese tío debe sobrevivir!</string>
+    <string name="could_beat_gng">Puedo pasarme Ghouls \'n Ghosts</string>
+    <string name="changing_in_the_air">Cambio en el aire</string>
+    <string name="runeforge">Forja Runas</string>
+    <string name="ride_the_wind">Jinete del viento</string>
+    <string name="ghostbusters">Cazafantasmas</string>
+    <string name="why_so_curious">¿Por qué tan curioso?</string>
+    <string name="loot_from_the_future">Botín del futuro</string>
+    <string name="the_untold_story_2">La historia sin contar 3</string>
+    <string name="kill_the_spider">Maldad con forma de araña</string>
+    <string name="lost_hammer">¡No contaban con mi astucia!</string>
+    <string name="dude_still_lives">El tío sigue vivo</string>
+    <string name="dudes_story">La historia del tío</string>
+    <string name="breaker_of_chains">Rompedora de Cadenas</string>
+    <string name="saw_a_giant">He visto un gigante</string>
+    <string name="witch_hunt">Caza de brujas</string>
+    <string name="post_credits">Lo de después de los créditos</string>
+    <string name="survival_50">muertes</string>
+    <string name="survival_100">muertes</string>
+    <string name="survival_200">muertes</string>
+    <string name="survival_300">muertes</string>
+    <string name="survival_1000">1000 kills? WTF!</string>
+    <string name="pimp_my_char">Tunea mi personaje</string>
+    <string name="bag_expanded">¡Cuánto espacio!</string>
+    <string name="may_the_magic">Que la Magia te acompañe</string>
+    <string name="vase_breaker_desc">Destruye una vasija en la pantalla de inicio.</string>
+    <string name="armed_and_dangerous_desc">Consigue tu primer arma.</string>
+    <string name="save_that_dude_desc">Salva al tío al que atacan en el Capítulo 1 Nivel 2.</string>
+    <string name="keep_that_dude_alive_desc">Ayuda al Tío en el Nivel 1\-8 y no dejes que lo maten.</string>
+    <string name="head_shot_desc">Dispara a un enemigo en la cabeza.</string>
+    <string name="zombie_killer_desc">Mata a un zombi.</string>
+    <string name="spider_killer_desc">Mata a una araña.</string>
+    <string name="bone_collector_desc">Derrota a un esqueleto.</string>
+    <string name="mr_macgyver_desc">Entra en el área secreta del Nivel Extra del Nivel 2\-1.</string>
+    <string name="there_and_back_desc">Revive tras tu muerte.</string>
+    <string name="know_your_enemy_desc">Lee todos los consejos.</string>
+    <string name="complete_101_desc">Completa el 101 \%. Encuentra todas las zonas secretas del juego y vuelve a jugar los Capítulos 1, 2 y 3 sin recibir daño.</string>
+    <string name="complete_100_desc">Completa el 100 \% del juego. Encuentra todas las zonas secretas y los diamantes.</string>
+    <string name="flawless_victory_desc">Consigue una estrella al volver a jugar un nivel sin recibir daño.</string>
+    <string name="ecstasy_of_gold_desc">Compra más oro para tu personaje.</string>
+    <string name="demon_slayer_desc">Vence al jefe del Capítulo Uno.</string>
+    <string name="get_in_the_ring_desc">Entra en el área secreta del Nivel Extra del Nivel 2\-1.</string>
+    <string name="lost_flipflop_desc">Encuentra la Chancla Perdida.</string>
+    <string name="the_untold_story_desc">Deja que Ese Tío te cuente la historia sin contar (2\-4).</string>
+    <string name="that_dude_must_live_desc">No dejes que maten a ese tío hasta el final del nivel.</string>
+    <string name="could_beat_gng_desc">Consigue una estrella en los 15 primeros niveles.</string>
+    <string name="changing_in_the_air_desc">Llega a la cima del punto más alto en 2\-6.</string>
+    <string name="runeforge_desc">Mejora un objeto.</string>
+    <string name="ride_the_wind_desc">Llega hasta el último cofre en 2\-7.</string>
+    <string name="ghostbusters_desc">Acaba con un fantasma en 2\-7.</string>
+    <string name="why_so_curious_desc">Llega hasta el área bloqueada del Nivel Extra 2\-7.</string>
+    <string name="loot_from_the_future_desc">Encuentra al menos uno de los dos cofres escondidos en 1\-3.</string>
+    <string name="the_untold_story_2_desc">Escucha lo que la Capitana tiene que decir sobre los Portales y las criaturas aladas gigantes (2\-9).</string>
+    <string name="kill_the_spider_desc">Derrota a la araña gigante que vive en el pantano.</string>
+    <string name="lost_hammer_desc">Encuentra el martillo perdido.</string>
+    <string name="dude_still_lives_desc">Reúnete con ese Tío en el Nivel 3\-5 (si lo mantuviste con vida en 2\-4).</string>
+    <string name="dudes_story_desc">Escucha lo que ese tío tiene que contar en el Nivel 1\-8 (si sobrevivió al Nivel 1\-2).</string>
+    <string name="breaker_of_chains_desc">Libera al Mago del Oráculo en 3\-9.</string>
+    <string name="saw_a_giant_desc">Mata un gigante.</string>
+    <string name="witch_hunt_desc">Vence al Jefe Brujo.</string>
+    <string name="post_credits_desc">Ve la escena de después de los créditos.</string>
+    <string name="survival_50_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
+    <string name="survival_100_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
+    <string name="survival_200_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
+    <string name="survival_300_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
+    <string name="survival_1000_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
+    <string name="pimp_my_char_desc">Usa el Editor de personajes para cambiar la cabeza de tu avatar.</string>
+    <string name="bag_expanded_desc">Compra el cofre de ampliación de inventario en la tienda.</string>
+    <string name="truth_out_there">La verdad está ahí fuera</string>
+    <string name="truth_out_there_desc">Viaja a través del Portal y descubre qué hay más allá.</string>
+    <string name="may_the_magic_desc">Encuentra el sable perdido.</string>
+    <string name="complete_102">¡El Capítulo 4 es demasiado difícil!</string>
+    <string name="complete_102_desc">Completa el 102 \% del juego. Completa todas las mazmorras, encuentra todas las zonas secretas y vuelve a jugar todas las mazmorras hasta el final del capítulo 4 sin sufrir ningún daño.</string>
+    <string name="class_consciousness">Conciencia de clase</string>
+    <string name="class_consciousness_desc">Aprende y ejecuta la habilidad especial de tu clase en el Capítulo 1, Mazmorra nivel 6.</string>
+    <string name="unlock_all_survival">Desbloquear toda la supervivencia</string>
+    <string name="unlock_all_survival_desc">Desbloquea cada uno de los niveles de supervivencia al alcanzar las puntuaciones mínimas.</string>
+    <string name="dragonslayer">Matadragones</string>
+    <string name="dragonslayer_desc">Derrota al Gran Dragón Rojo.</string>
+    <string name="breaker_of_chains_2">Rompedora de Cadenas 2</string>
+    <string name="breaker_of_chains_2_desc">Libera al Guardián de la Luna en el Capítulo 4, Nivel 9.</string>
+    <string name="bound_together">Unidos</string>
+    <string name="bound_together_desc">Únete al Rey tras derrotar al Brujo.</string>
+    <string name="bank_for_your_buck">Gana la banca</string>
+    <string name="bank_for_your_buck_desc">Deposita un objeto en el banco.</string>
+    <string name="dirty_faced_rookie">Novato Cara Sucia</string>
+    <string name="dirty_faced_rookie_desc">Completa una mazmorra de un jugador en el modo competitivo.</string>
+    <string name="bring_it_on">¡Vamos allá!</string>
+    <string name="bring_it_on_desc">Empieza una partida contra otro jugador en el modo competitivo.</string>
+    <string name="veni_vidi_vici">Veni, vidi, vici</string>
+    <string name="veni_vidi_vici_desc">Gana una partida contra otro jugador en el modo competitivo.</string>
+    <string name="taking_part_counts">Lo importante es participar…</string>
+    <string name="taking_part_counts_desc">No intentes perder una partida contra otro jugador, pero si pierdes, se desbloqueará este logro.</string>
+    <string name="add_friend">Amigos para siempre</string>
+    <string name="add_friend_desc">Añade a un amigo en el Modo Competitivo.</string>
+    <string name="challenge_friend">Fuego amigo</string>
+    <string name="challenge_friend_desc">Desafía a un amigo en el Modo Competitivo.</string>
+    <string name="r_for_revenge">R de revancha</string>
+    <string name="r_for_revenge_desc">Gana una partida de revancha en el Modo Competitivo.</string>
+    <string name="bronze_rank_achievement">Bestia de bronce</string>
+    <string name="bronze_rank_achievement_desc">Sube tu rango a bronce en el modo Competitivo.</string>
+    <string name="silver_rank_achievement">Soldado de plata</string>
+    <string name="silver_rank_achievement_desc">Sube tu rango a plata en el modo Competitivo.</string>
+    <string name="gold_rank_achievement">¡Me voy a hacer de oro!</string>
+    <string name="gold_rank_achievement_desc">Sube tu rango a oro en el modo Competitivo.</string>
+    <string name="platinum_rank_achievement">¡Platino puro!</string>
+    <string name="platinum_rank_achievement_desc">Sube tu rango a platino en el modo Competitivo.</string>
+    <string name="diamond_rank_achievement">Diamante en bruto</string>
+    <string name="diamond_rank_achievement_desc">Sube tu rango a diamante en el modo Competitivo.</string>
+    <string name="champion_slayer">El matacampeones</string>
+    <string name="champion_slayer_desc">Vence a cualquier campeón en el Salón de los Campeones.</string>
+    <string name="ranked_top_1">¡El número uno!</string>
+    <string name="ranked_top_1_desc">Alcanza el primer puesto en la clasificación.</string>
+    <string name="ranked_top_15">¡Somos los campeones!</string>
+    <string name="ranked_top_15_desc">Consigue estar entre los 15 mejores jugadores destacados en el Salón de los Campeones.</string>
+    <string name="its_time">¡Ha llegado la hora!</string>
+    <string name="its_time_desc">Consigue el ¾420 que flota en el aire en 3\-6. Hazlo durante una hora específica del día.</string>
+    <string name="bag_expanded_2">¡Aún más almacenamiento!</string>
+    <string name="bag_expanded_2_desc">Compra el segundo cofre de ampliación en la tienda.</string>
+    <string name="ranked_top_100">Héroe verdadero</string>
+    <string name="ranked_top_100_desc">Posiciónate entre los 500 jugadores con mejor rango. Puedes ver tu posición actual en la sección de la clasificación de tu inventario.</string>
+    <string name="ranked_top_500">Rampager veterano</string>
+    <string name="ranked_top_500_desc">Posiciónate entre los 500 jugadores con mejor rango. Puedes ver tu posición actual en la sección de la clasificación de tu inventario.</string>
+    <string name="challenge_accepted">Desafío aceptado</string>
+    <string name="challenge_accepted_desc">Termina un desafío del portal de desafíos semanales.</string>
+    <string name="salesman_payback">Hora de la venganza</string>
+    <string name="salesman_payback_desc">Mata al vendedor en la realidad alternativa.</string>
+    <string name="time_patrollers_time">Tiempo de la Patrulla del Tiempo</string>
+    <string name="time_patrollers_time_desc">Mata al Patrullero del Tiempo en la realidad alternativa.</string>
+    <string name="kingslayer_time">Matarreyes</string>
+    <string name="kingslayer_time_desc">Mata al rey en la realidad alternativa.</string>
+    <string name="pixelated_arsenal">Arsenal pixelado</string>
+    <string name="pixelated_arsenal_desc">Consigue un objeto de estilo retro en la realidad alternativa.</string>
+    <string name="the_end_of_the_world">El fin del mundo</string>
+    <string name="the_end_of_the_world_desc">Llega a la superficie por primera vez en la mazmorra 5\-1.</string>
+    <string name="bag_expanded_3">Absurdamente enorme</string>
+    <string name="bag_expanded_3_desc">Compra el tercer cofre de ampliación.</string>
+    <string name="its_amazing">¡Es increíble!</string>
+    <string name="its_amazing_desc">Consigue el objetivo de puntuación increíble en las mazmorras semanales. Primero tienes que superar los objetivos normal y genial.</string>
+    <string name="weekly_dungeons_completed_15">Portador de medallón de zafiro</string>
+    <string name="weekly_dungeons_completed_15_desc">Termina 50 mazmorras semanales diferentes.</string>
+    <string name="weekly_dungeons_completed_30">Portador de medallón de esmeralda</string>
+    <string name="weekly_dungeons_completed_30_desc">Termina 50 mazmorras semanales diferentes.</string>
+    <string name="weekly_dungeons_completed_50">Portador de medallón de rubí</string>
+    <string name="weekly_dungeons_completed_50_desc">Termina 50 mazmorras semanales diferentes.</string>
+    <string name="weekly_dungeons_star_30">La estrella honorable</string>
+    <string name="weekly_dungeons_star_30_desc">Completa 30 desafíos de estrellas en 50 mazmorras semanales diferentes.</string>
+    <string name="weekly_dungeons_star_50">La estrella poderosa</string>
+    <string name="weekly_dungeons_star_50_desc">Completa 30 desafíos de estrellas en 50 mazmorras semanales diferentes.</string>
+    <string name="weekly_dungeons_time_30">Corredor honorable</string>
+    <string name="weekly_dungeons_time_30_desc">Completa 50 desafíos de tiempo en 50 mazmorras semanales diferentes.</string>
+    <string name="weekly_dungeons_time_50">Corredor poderoso</string>
+    <string name="weekly_dungeons_time_50_desc">Completa 50 desafíos de tiempo en 50 mazmorras semanales diferentes.</string>
+    <string name="story_to_be_told">Una historia que contar</string>
+    <string name="story_to_be_told_desc">Escucha lo que tiene que decir el Tío en el prólogo de 5\-3 acerca del turbulento cruce del portal.</string>
+    <string name="the_untold_story_3">La historia sin contar 3</string>
+    <string name="the_untold_story_3_desc">Escucha lo que tiene que decir el Rey en su laboratorio en el prólogo de 5\-3.</string>
+    <string name="skilled_dirty_faced">Habilidoso, pero con la cara sucia</string>
+    <string name="skilled_dirty_faced_desc">Aprende tres habilidades del árbol de habilidades.</string>
+    <string name="super_skill">¡La superhabilidad!</string>
+    <string name="super_skill_desc">Aprende una de las superhabilidades del árbol de habilidades.</string>
+    <string name="complete_103">Los 103 lamentos</string>
+    <string name="complete_103_desc">Completa el 103 \%. Completa todas las mazmorras, encuentra todas las zonas secretas del juego y vuelve a jugar todas las mazmorras hasta el final del capítulo 5 sin sufrir ningún daño.</string>
+    <string name="ninth_circle">El noveno círculo</string>
+    <string name="ninth_circle_desc">Llega a las cámaras subterráneas congeladas del planeta en la mazmorra 5\-4.</string>
+    <string name="the_darkest_side">El lado más oscuro de la Luna</string>
+    <string name="the_darkest_side_desc">Ve la escena de bonificación tras completar la mazmorra 5\-4 con los tres diamantes.</string>
+    <string name="sharp_dressed_minion">Esbirro elegante</string>
+    <string name="sharp_dressed_minion_desc">Cambia la apariencia de tu esbirro con un aspecto personalizado. Puedes comprar nuevos aspectos en la Sala de Premios.</string>
+    <string name="dirty_faced_souls">Souls de cara sucia</string>
+    <string name="dirty_faced_souls_desc">Completa el 100 \% del modo Rampage Encuentra todas las zonas secretas y los diamantes.</string>
+    <string name="time_patroller">¡Cual Patrullero del Tiempo!</string>
+    <string name="time_patroller_desc">Completa el 101 \% del modo Rampage Encuentra todas las zonas secretas y vuelve a jugar los capítulos 1, 2 y 3 sin sufrir daño.</string>
+    <string name="the_king">¡Póstrate ante el Rey!</string>
+    <string name="the_king_desc">Completa el 102 \% del juego en modo Rampage Completa todas las mazmorras, encuentra todas las zonas secretas y vuelve a jugar todas las mazmorras hasta el final del capítulo 4 sin sufrir ningún daño.</string>
+    <string name="bound_together_plus">Destinos entrelazados+</string>
+    <string name="bound_together_plus_desc">Únete al Rey tras derrotar al Brujo en el modo Rampage.</string>
+    <string name="witch_hunt_plus">Caza de brujas+</string>
+    <string name="witch_hunt_plus_desc">Derrota al jefe Brujo en el modo Rampage.</string>
+    <string name="sinister_riddle">Sinister Riddle</string>
+    <string name="sinister_riddle_desc">Solve the Sinister Obelisk\'s riddle.</string>
+    <string name="have_a_toast">¡Haz un brindis en tu honor!</string>
+    <string name="have_a_toast_desc">Compra una bebida para otro jugador en la taberna.</string>
+    <string name="bullseye_wizard">As de la diana</string>
+    <string name="bullseye_wizard_desc">Puntúa 990 000 o más en el juego de dardos de la taberna</string>
+    <string name="settle_a_score">Ajuste de cuentas</string>
+    <string name="settle_a_score_desc">Puntúa 35 000 o más en el juego de Apaliza al vendedor de la taberna.</string>
+    <string name="meet_me_outside">¡Vamos fuera!</string>
+    <string name="meet_me_outside_desc">Desafía a un amigo a una partida de duelo. Puedes añadir amigos y desafiarlos a un duelo en la Taberna.</string>
+    <string name="duels_of_destiny">¡Amo del destino!</string>
+    <string name="duels_of_destiny_desc">Gana una partida de duelo clasificatoria. Puedes buscar oponentes mediante el portal de los duelos del destino, situado en la Taberna.</string>
+    <string name="taste_of_victory">El sabor de la victoria</string>
+    <string name="taste_of_victory_desc">Gana tu primer duelo casual. Puedes encontrar oponentes en la Taberna.</string>
+    <string name="bronze_duel_rank_achievement">Auge del centinela</string>
+    <string name="bronze_duel_rank_achievement_desc">Aumenta tu rango a maestro centinela en los duelos.</string>
+    <string name="silver_duel_rank_achievement">Guardián del reino</string>
+    <string name="silver_duel_rank_achievement_desc">Aumenta tu rango a gran maestro centinela en los duelos.</string>
+    <string name="gold_duel_rank_achievement">A través de las grietas</string>
+    <string name="gold_duel_rank_achievement_desc">Aumenta tu rango a viajero del tiempo en los duelos.</string>
+    <string name="platinum_duel_rank_achievement">Custodio del tiempo</string>
+    <string name="platinum_duel_rank_achievement_desc">Aumenta tu rango a patrullero del tiempo en los duelos.</string>
+    <string name="diamond_duel_rank_achievement">Guardián del cosmos</string>
+    <string name="diamond_duel_rank_achievement_desc">¡Aumenta tu rango a patrullero cósmico en los duelos!</string>
+    <string name="first_steps_into_destiny">Primeros pasos hacia el destino</string>
+    <string name="first_steps_into_destiny_desc">Explora todas las zonas de combate y completa tu entrenamiento inicial para los Duelos del Destino.</string>
+
+    <string name="enemy_stat_health">Salud: </string>
+    <string name="enemy_stat_damage">Daño: </string>
+    <string name="enemy_stat_touch_damage">Daño por Contacto: </string>
+    <string name="enemy_stat_armor">Armadura: </string>
+    <string name="enemy_stat_speed">Velocidad: </string>
+    <string name="enemy_stat_jump">Salto: </string>
+    <string name="enemy_stat_patrol_behaviour">Comportamiento de Patrulla: </string>
+    <string name="enemy_stat_attack_behaviour">Comportamiento de Ataque: </string>
+
+    <string name="dungeon_1">Mazmorra 1</string>
+    <string name="tips_and_tricks">Consejos y Trucos:</string>
+    <string name="secret_areas">Áreas Secretas:</string>
+    <string name="dungeon_2">Mazmorra 2</string>
+    <string name="dungeon_3_bonus">Mazmorra 3 Bonus</string>
+    <string name="tutorial">Tutorial:</string>
+    <string name="dungeon_5">Mazmorra 5</string>
+    <string name="dungeon_6">Mazmorra 6</string>
+    <string name="dungeon_5_bonus">Mazmorra 5 Bonus</string>
+    <string name="dungeon_7">Mazmorra 7</string>
+    <string name="dungeon_7_bonus">Mazmorra 7 Bonus</string>
+    <string name="dungeon_8">Mazmorra 8</string>
+    <string name="dungeon_10">Mazmorra 10</string>
+    <string name="bossfight_tips_and_tricks">Consejos y Trucos para el Jefe</string>
+    <string name="dungeon_11">Mazmorra 11</string>
+    <string name="dungeon_11_bonus">Mazmorra 11 Bonus</string>
+    <string name="dungeon_12">Mazmorra 12</string>
+    <string name="dungeon_13">Mazmorra 13</string>
+    <string name="dungeon_13_bonus">Mazmorra 13 Bonus</string>
+    <string name="dungeon_14">Mazmorra 14</string>
+    <string name="dungeon_15">Mazmorra 15</string>
+    <string name="dungeon_16">Mazmorra 16</string>
+    <string name="dungeon_17">Mazmorra 17</string>
+    <string name="dungeon_17_bonus">Mazmorra 17 Bonus</string>
+    <string name="dungeon_18">Mazmorra 18</string>
+    <string name="dungeon_19">Mazmorra 19</string>
+    <string name="dungeon_19_bonus">Mazmorra 19 Bonus</string>
+    <string name="dungeon_20">Mazmorra 20</string>
+    <string name="dungeon_21">Mazmorra 21</string>
+    <string name="dungeon_22">Mazmorra 22</string>
+    <string name="dungeon_23">Mazmorra 23</string>
+    <string name="dungeon_23_bonus">Mazmorra 23 Bonus</string>
+    <string name="dungeon_24">Mazmorra 24</string>
+    <string name="dungeon_25">Mazmorra 25</string>
+    <string name="dungeon_26">Mazmorra 26</string>
+    <string name="dungeon_27">Mazmorra 27</string>
+    <string name="dungeon_27_bonus">Mazmorra 27 Bonus</string>
+    <string name="dungeon_28">Mazmorra 28</string>
+    <string name="dungeon_29">Mazmorra 29</string>
+    <string name="dungeon_29_bonus">Mazmorra 29 Bonus</string>
+    <string name="dungeon_30">Mazmorra 30</string>
+    <string name="dungeon_31">Mazmorra 31</string>
+    <string name="dungeon_31_bonus">Mazmorra 31 Bonus</string>
+    <string name="dungeon_32">Mazmorra 32</string>
+    <string name="dungeon_33">Mazmorra 33</string>
+    <string name="dungeon_34">Mazmorra 34</string>
+    <string name="dungeon_35">Mazmorra 35</string>
+    <string name="dungeon_36">Mazmorra 36</string>
+    <string name="dungeon_37">Mazmorra 37</string>
+    <string name="dungeon_38">Mazmorra 38</string>
+    <string name="dungeon_39">Mazmorra 39</string>
+    <string name="dungeon_40">Mazmorra 40</string>
+    <string name="dungeon_41">Mazmorra 41</string>
+    <string name="dungeon_42">Mazmorra 42</string>
+    <string name="dungeon_42_bonus">Mazmorra 42 Bonus</string>
+    <string name="dungeon_43">Mazmorra 43</string>
+    <string name="dungeon_43_bonus">Mazmorra 43 Bonus</string>
+    <string name="dungeon_44">Mazmorra 44</string>
+    <string name="dungeon_3">Mazmorra 3</string>
+    <string name="dungeon_4">Mazmorra 4</string>
+    <string name="dungeon_9">Mazmorra 9</string>
+
+    <string name="select_element">Seleccionar elemento</string>
+    <string name="news">📰 Noticias 📰</string>
+
+    <string name="translating">Descargando la traducción. Esto toma tiempo y consume datos. Por favor, espere.</string>
+    <string name="waypoints">Puntos de ruta</string>
+    <string name="stone_thrower">Lanzador de piedras</string>
+    <string name="knife_thrower">Lanzador de cuchillos</string>
+
+    <string name="failed_to_download_model">Error al descargar el modelo de traducción.</string>
+    <string name="failed_to_load_news">Error al cargar las noticias.\nPor favor, compruebe su conexión.</string>
+</resources>

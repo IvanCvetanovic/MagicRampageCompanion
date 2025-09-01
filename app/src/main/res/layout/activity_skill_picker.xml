@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="@string/skill_points_left"
         android:textColor="@android:color/white"
-        android:textSize="32sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -1695,6 +1695,7 @@
         android:layout_marginTop="30dp"
         android:shadowColor="@color/black"
         android:text="@string/reset_all"
+        android:textSize="12sp"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
 
@@ -1709,6 +1710,7 @@
         android:layout_marginEnd="30dp"
         android:shadowColor="@color/black"
         android:text="@string/select_skills"
+        android:textSize="12sp"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
 

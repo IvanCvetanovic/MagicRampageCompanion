@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enhanced_velocity">Arttırılmış Hız</string>
+    <string name="sword_master">Kılıç Ustası</string>
+    <string name="dagger_specialist">Bıçak Ustası</string>
+    <string name="obstinate_shot">İnatçı Atış</string>
+    <string name="corrosive_shot">Aşındırıcı Atış</string>
+    <string name="spherical_shield_breaker">Küresel Kalkan Kırıcı</string>
+    <string name="voracious_shot">Doyumsuz Atış.</string>
+    <string name="monstrous_vigour">Korkunç Canlılık</string>
+    <string name="charge_blast">Şarjlı Patlama</string>
+    <string name="fearless_jump">Korkusuz Atlayış</string>
+    <string name="virtuous_wizard">Erdemli Büyücü</string>
+    <string name="throwing_legend">Atış Efsanesi</string>
+    <string name="gold_magnet">Altın Mıknatısı</string>
+    <string name="fireproof_skin">Yanmaz Deri</string>
+    <string name="toxic_haze">Zehirli Sis</string>
+    <string name="shadow_camouflage">Gölge Kamuflajı</string>
+    <string name="magic_jump">Sihirli Atlama</string>
+    <string name="dark_twin">Kara İkiz</string>
+    <string name="unstoppable_strength">Durdurulamaz Kuvvet</string>
+    <string name="crushing_strength">Ezici Güç</string>
+    <string name="slicing_master">Parçalama Ustası</string>
+    <string name="monstrous_metabolism">Devasa Metabolizma</string>
+    <string name="enhanced_vitality">Geliştirilmiş canlılık</string>
+    <string name="untouchable_skin">Dokunulamaz Deri</string>
+    <string name="confident_move">Özgüvenli Adım</string>
+    <string name="arcane_protection">Gizemli Koruma</string>
+    <string name="thunder_wave">Gök gürültüsü dalgası</string>
+    <string name="final_wrath">Son Gazap</string>
+    <string name="rush_of_the_doomed">Mahvolmuşun Hücumu</string>
+    <string name="overcharge">Aşırı Yükleme</string>
+    <string name="arcane_discipline">Gizemli Disiplin</string>
+    <string name="swift_cast">Seri Atış</string>
+    <string name="airborne_dancer">Gökyüzü Dansçısı</string>
+    <string name="seismic_reach">Sismik Erişim</string>
+    <string name="titans_push">Titan\'ın İtişi</string>
+    <string name="shockwave_force">Şok Dalgası Gücü</string>
+    <string name="damage">Hasar</string>
+    <string name="armor">Zırh</string>
+    <string name="upgrades">Geliştirmeler</string>
+    <string name="element_fire">Ateş</string>
+    <string name="element_water">Su</string>
+    <string name="element_darkness">Karanlık</string>
+    <string name="element_light">Işık</string>
+    <string name="element_earth">Toprak</string>
+    <string name="element_air">Hava</string>
+    <string name="skill_description_0">Hareket hızını \%4 arttırır</string>
+    <string name="skill_description_1">Pasif kılıç saldırı gücünü \% 15 artırır</string>
+    <string name="skill_description_2">Pasif bıçak saldırı gücünü \% 20 arttırır.</string>
+    <string name="skill_description_3">Tüm silah atışları,diğer atışlar tarafından vurulduğunda bile devam edecek…</string>
+    <string name="skill_description_4">Silah Atışları katledilen rakipleri havaya uçuracak.</string>
+    <string name="skill_description_5">Silah atışları, düşmanların küresel kalkanlarını anında kırar.</string>
+    <string name="skill_description_6">Tüm silah mermileri \%45 ihtimal ile rakiplerin havadaki mermilerini engelleyebilir…</string>
+    <string name="skill_description_7">Dayanıklılık yenilenme hızını artırır.</string>
+    <string name="skill_description_8">Şarj olan atışlar silah hasarını 2.4 kat arttırır.</string>
+    <string name="skill_description_9">Canın 25\% altına düştüğünde kılıç ve hançer hasarı 35\% artar.</string>
+    <string name="skill_description_10">Canın 20\% altına düştüğünde hareket hızı 35\% artar.</string>
+    <string name="skill_description_11">Bekleme süresi başlamadan önce fazladan bir Yük Patlaması kazandırır.</string>
+    <string name="skill_description_12">Zıplama gücünü \%3 arttırır</string>
+    <string name="skill_description_13">Asa saldırı gücünü \% 20 arttırır.</string>
+    <string name="skill_description_14">Pasif mızrak saldırı gücünü \% 40 artırır.</string>
+    <string name="skill_description_15">Rakiplerden düşen TP ve Altınları kendisine çeker.</string>
+    <string name="skill_description_16">.Alevlerine ve lavlara karşı pasif koruma sağlar.</string>
+    <string name="skill_description_17">Tüm silahlar ekstra zehir hasarı vurur.</string>
+    <string name="skill_description_18">Yaygın Düşmanların Kirli Yüzlü Asker\'i algılama süresini arttırır</string>
+    <string name="skill_description_19">Hala havada iken ekstra bir zıplama gerçekleştirme yeteneği verir.</string>
+    <string name="skill_description_20">Kirli Yüzlü Askerin yanında savaşmak için Karanlık bir İkiz çağırır.</string>
+    <string name="skill_description_21">Süper Yeteneklerin bekleme süresini 20\% azaltır.</string>
+    <string name="skill_description_22">Fırlatılan tüm mermiler 15\% daha hızlı hareket eder</string>
+    <string name="skill_description_23">Havada fazladan bir zıplama sağlar ve hava saldırı yeteneklerini geliştirir.</string>
+    <string name="skill_description_24">Zırh gücünü \%25 arttırır</string>
+    <string name="skill_description_25">Pasif çekiç saldırı gücünü \% 60 artırır.</string>
+    <string name="skill_description_26">Pasif balta saldırı gücünü \% 50 artırır</string>
+    <string name="skill_description_27">İksirler 2 kat daha fazla iyileştirir…</string>
+    <string name="skill_description_28">Maksimum kalp sayısını artırır.</string>
+    <string name="skill_description_29">Kazıklara karşı pasif koruma sağlar.</string>
+    <string name="skill_description_30">Kirli Yüzlü Asker her zaman sihirli yeşil platformlara basabilir…</string>
+    <string name="skill_description_31">Sınıfın özel yeteneğini tetiklemek küresel bir kalkan oluşturur.</string>
+    <string name="skill_description_32">Etrafındaki tüm düşmanları vuran bir yıldırım dalgası çağırır.</string>
+    <string name="skill_description_33">Fırlatılan mermilerin patlama yarıçapını 20\% artırır.</string>
+    <string name="skill_description_34">Tüm silahların geri itme gücünü 40\% artırır, düşmanları daha da uzağa savurur.</string>
+    <string name="skill_description_35">Tüm silahların verdiği alan hasarını 70\% artırır.</string>
+    <string name="rating">"Derecelendirme: "</string>
+    <string name="rogue">Düzenbaz</string>
+    <string name="thief">Hırsız</string>
+    <string name="mage">Büyücü</string>
+    <string name="black_mage">Kara Büyücü</string>
+    <string name="high_mage">Yüce Büyücü</string>
+    <string name="priest">Rahip</string>
+    <string name="warlock">Cehennem Büyücüsü</string>
+    <string name="warrior">Savaşçı</string>
+    <string name="elite_warrior">Seçkin Savaşçı</string>
+    <string name="paladin">Şövalye</string>
+    <string name="ranger">Korucu</string>
+    <string name="witchdoctor">Cadı Doktor</string>
+    <string name="druid">Şaman</string>
+    <string name="recruit_set">Er Seti</string>
+    <string name="soldier_set">Asker Seti</string>
+    <string name="elite_soldier_set">Seçkin Asker Seti</string>
+    <string name="ranger_set">Korucu Seti</string>
+    <string name="umbranian_vest">Umbranian Yeleği</string>
+    <string name="brass_set">Pirinç Seti</string>
+    <string name="elite_brass_set">Seçkin Pirinç Seti</string>
+    <string name="obsidian_set">Obsidyen Seti</string>
+    <string name="elite_obsidian_set">Seçkin Obsidyen Seti</string>
+    <string name="umbranian_tanker">Umbranian Tankeri</string>
+    <string name="jumpman_suit">Atlayıcı Elbisesi</string>
+    <string name="improved_jumpman_suit">Gelişmiş Atlayıcı Elbisesi</string>
+    <string name="tubeman_suit">Tubeman Kıyafeti</string>
+    <string name="twitch_suit">T\'Witch Kıyafeti</string>
+    <string name="nature_mage_vest">Doğa Büyücüsü Yeleği</string>
+    <string name="fire_mage_vest">Ateş Büyücüsü Yeleği</string>
+    <string name="faldangs_vest">Faldang\'in Yeleği</string>
+    <string name="plague_fighter_suit">Salgınla Mücadele Elbisesi</string>
+    <string name="warlock_vest">Cehennem Büyücüsü Yeleği</string>
+    <string name="high_elf_robe">Yüce Elf Cübbesi</string>
+    <string name="ifrits_disciple_robe">İfrit Müridi Cübbesi</string>
+    <string name="cleric_vest">Rahip Yeleği</string>
+    <string name="high_cleric_tunic">Yüce Rahip Gömleği</string>
+    <string name="greenmoon_vest">Yeşilay Yeleği</string>
+    <string name="dragon_vest">Ejderha Yeleği</string>
+    <string name="special_dragon_vest">Özel Ejderha Yeleği</string>
+    <string name="blue_wizard_suit">Mavi Büyücü Elbisesi</string>
+    <string name="penumbra_suit">Penumbra Elbisesi</string>
+    <string name="penumbra_suit_plus">Penumbra Elbisesi+</string>
+    <string name="monks_tunic">Keşiş Gömleği</string>
+    <string name="bacoon_set">Bacoon Seti</string>
+    <string name="bacoon_set_plus">Bacoon Seti+</string>
+    <string name="druid_vest">Şaman Yeleği</string>
+    <string name="moonkeeper_set">Ay Bekçisi Seti</string>
+    <string name="bankers_coat">Bankacı Montu</string>
+    <string name="deathdoctor_set">Ölüm Doktoru Seti</string>
+    <string name="crow_set">Karga Seti</string>
+    <string name="special_crow_set">Özel Karga Seti</string>
+    <string name="antiheros_set">Anti Kahraman Seti</string>
+    <string name="steelblow_armor">Çelikdarbe Zırhı</string>
+    <string name="steelblow_armor_plus">Çelikdarbe Zırhı+</string>
+    <string name="dark_lord_set">Karanlık Efendisi Seti</string>
+    <string name="light_spellmaster_suit">Işık Büyü Ustası Elbisesi</string>
+    <string name="liquid_assassin_suit">Saydam Suikastçi Elbisesi</string>
+    <string name="light_champion_set">Işık Şampiyonu Seti</string>
+    <string name="jungle_master">Orman Ustası</string>
+    <string name="jungle_assassin_suit">Orman Suikastçisi Elbisesi</string>
+    <string name="firestorm_armor">Ateş Fırtınası Zırhı</string>
+    <string name="firestorm_armor_plus">Ateş Fırtınası Zırhı+</string>
+    <string name="gayan_set">Gayan Seti</string>
+    <string name="elite_assassin_suit">Seçkin Suikastçi Elbisesi</string>
+    <string name="champion_set">Şampiyon Seti</string>
+    <string name="spider_exoskeleton">Örümcek Dış İskeleti</string>
+    <string name="witch_dress">Cadı Elbisesi</string>
+    <string name="heros_set">Kahraman Seti</string>
+    <string name="swamp_ranger_suit">Bataklık Korucusu Kıyafeti</string>
+    <string name="arcane_mage_suit">Esrarlı Büyücü Kıyafeti</string>
+    <string name="desert_rogue_suit">Çöl Düzenbazı Kıyafeti</string>
+    <string name="iron_widow">Demir Dul</string>
+    <string name="forest_witch_suit">Orman Cadı Elbisesi</string>
+    <string name="black_witch_suit">Kara Cadı Elbisesi</string>
+    <string name="purple_witch_suit">Mor Cadı Elbisesi</string>
+    <string name="fire_moonkeeper_set">Ateş Ay Bekçisi Seti</string>
+    <string name="swamp_witch_suit">Bataklık Cadı Elbisesi</string>
+    <string name="green_witch_suit">Yeşil Cadı Elbisesi</string>
+    <string name="bunny_suit">Tavşan Kıyafeti</string>
+    <string name="warden_of_demons">Şeytanın Kılıcı</string>
+    <string name="tunic_of_the_relentless">Acımasızın Örtüsü</string>
+    <string name="wind_witch_suit">Rüzgar Cadı Elbisesi</string>
+    <string name="destroyer_of_the_corrupted">Destroyer of the Corrupted</string>
+    <string name="interrogator">Sorgucu</string>
+    <string name="protector_of_the_oracle">Kahinin Koruyucusu</string>
+    <string name="death_stalker">Ölüm Getiren</string>
+    <string name="tunic_of_endless_justice">Sonsuz Adalet Gömleği</string>
+    <string name="cataclysmic_plate">Afet Plakası</string>
+    <string name="tunic_of_frozen_voices">Donmuş Sesler Gömleği</string>
+    <string name="tunic_of_distant_ancestors">Uzak Atalar Gömleği</string>
+    <string name="vest_of_phantoms_keeper">Hayalet Bekçisinin Yeleği</string>
+    <string name="robe_of_imminent_fires">Yakın Yangınların Cübbesi</string>
+    <string name="vanquisher">Alt eden</string>
+    <string name="winter_witch_armor">Kış Cadısı Zırhı</string>
+    <string name="easterminator">Paskalya Bitiricisi</string>
+    <string name="vest_of_twisted_illusions">Bükülmüş İllüzyon Yeleği</string>
+    <string name="time_patroller_suit">Zaman Devriyecisi Elbisesi</string>
+    <string name="kings_spectre_tunic">Kral\'ın Hayalet Gömleği</string>
+    <string name="cthulhu_set">Cthulhu Set</string>
+    <string name="barrenlands_banditin">Çorak Topraklar Hanımı</string>
+    <string name="tunic_of_ending_nights">Sonlanan Geceler Gömleği</string>
+    <string name="santa_claus">Noel Baba</string>
+    <string name="tunic_of_twisted_illusions">Bükülmüş İllüzyon Gömleği</string>
+    <string name="vest_of_blessed_glory">Kutsal Zafer Yeleği</string>
+    <string name="barrenlands_bandit">Çorak Topraklar Haydutu</string>
+    <string name="ring_of_agility">Çeviklik Yüzüğü</string>
+    <string name="shaman_ring">Şaman Yüzüğü</string>
+    <string name="supersonic_ring">SüperSonik Yüzük</string>
+    <string name="narya">Narya</string>
+    <string name="spellmasters_ring">Büyü Ustasının Yüzüğü</string>
+    <string name="warlocks_ring">Cehennem Büyücüsü\'nün Yüzüğü</string>
+    <string name="nazguh_ring">Nazguh Yüzüğü</string>
+    <string name="ring_of_protection">Koruma Yüzüğü</string>
+    <string name="cleric_ring">Rahip Yüzüğü</string>
+    <string name="swordsmans_ring">Silahşor Yüzüğü</string>
+    <string name="nenya">Nenya</string>
+    <string name="dragon_eye_ring">Ejderha Gözü Yüzüğü</string>
+    <string name="white_pearl_ring">Beyaz İnci Yüzüğü</string>
+    <string name="steelblow_ring">Çelikdarbe Yüzüğü</string>
+    <string name="witchdoctor_ring">Cadı Doktor Yüzüğü</string>
+    <string name="sea_wave_ring">Deniz Dalgası Yüzüğü</string>
+    <string name="dragon_orb_ring">Ejderha Küresi Yüzüğü</string>
+    <string name="ring_of_light">Işığın Yüzüğü</string>
+    <string name="volcano_ring">Volkan Yüzüğü</string>
+    <string name="all_seeing_ring">Kahin Yüzüğü</string>
+    <string name="verdant_ring">Yeşil Yüzük</string>
+    <string name="dragon_fang_ring">Ejderha Dişi Yüzüğü</string>
+    <string name="blue_ring">Mavi Yüzük</string>
+    <string name="spektator">Tepegöz</string>
+    <string name="cuteulhu">Tatlıulhu</string>
+    <string name="cait">Kedicik</string>
+    <string name="bunny_ring">Tavşan Yüzüğü</string>
+    <string name="whisper_of_fire">Ateşin Fısıltısı</string>
+    <string name="creepy_crawler">Ürkütücü Sürüngen</string>
+    <string name="whisper_of_death">Ölümün Fısıltısı</string>
+    <string name="vina">Vina</string>
+    <string name="falcon_ring">Şahin Yüzüğü</string>
+    <string name="cursed_amethyst_ring">Lanetli Ametist Yüzük</string>
+    <string name="ancient_warden">Antik Bekçi</string>
+    <string name="vindicator_guardian">Hakkoruyan Gardiyan</string>
+    <string name="whisper_of_light">Işığın Fısıltısı</string>
+    <string name="eastercreep">Paskalya Ürkütavşanı</string>
+    <string name="ghostwalker">Ruhyürüten</string>
+    <string name="trickytreat">Zor-cuk</string>
+    <string name="jellybunny">Tavşanbon</string>
+    <string name="recruit_sword">Er Kılıcı</string>
+    <string name="steel_blade">Çelik Bıçak</string>
+    <string name="fire_sword">Ateş Kılıcı</string>
+    <string name="nobel_sword">Soylu Kılıcı</string>
+    <string name="leaf_sword">Yaprak Kılıç</string>
+    <string name="pirate_sword">Korsan Kılıcı</string>
+    <string name="master_sword">Ustanın Kılıcı</string>
+    <string name="vorpal_sword">Vorpal Kılıç</string>
+    <string name="umbranian_short_sword">Umbranian Kısa Kılıcı</string>
+    <string name="umbranian_long_sword">Umbranian Uzun Kılıcı</string>
+    <string name="fireskull_sword">Ateş Kafatası Kılıcı</string>
+    <string name="darkskull_sword">Kara Kafatası Kılıcı</string>
+    <string name="hammers_and_maces">Çekiçler ve Topuzlar</string>
+    <string name="nature_staff">Doğa Asası</string>
+    <string name="iron_dagger">Demir Hançer</string>
+    <string name="silver_axe">Gümüş Balta</string>
+    <string name="obsidian_spear">Obsidyen Mızrak</string>
+    <string name="insect_crusher">Böcek Ezici</string>
+    <string name="fire_staff">Ateş Asası</string>
+    <string name="light_staff">Işık Asası</string>
+    <string name="oxymos_staff">Oxymo\'nun Asası</string>
+    <string name="staff_of_darkness">Karanlığın Asası</string>
+    <string name="gadarasts_staff">Gadarast\'ın Asası</string>
+    <string name="epic_fire_staff">Destansı Ateş Asası</string>
+    <string name="firebane">Ateşafet</string>
+    <string name="dragonskull_staff">Ejderha Kafatası Asası</string>
+    <string name="dragonskull_staff_plus">Ejderha Kafatası Asası+</string>
+    <string name="death_scythe">Ölüm Tırpanı</string>
+    <string name="death_scythe_plus">Ölüm Tırpanı+</string>
+    <string name="hippie_dragon_staff">Hippi Ejderha Asası</string>
+    <string name="hippie_dragon_staff_plus">Hippi Ejderha Asası+</string>
+    <string name="dragon_orb_staff">Ejderha Küresi Asası</string>
+    <string name="water_staff">Su Asası</string>
+    <string name="golden_dragon_staff">Altın Ejderha Asası</string>
+    <string name="golden_dragon_staff_plus">Altın Ejderha Asası+</string>
+    <string name="dead_vulture_staff">Ölü Akbaba Asası</string>
+    <string name="broom_staff">Süpürge Asası</string>
+    <string name="ancient_stone_staff">Kadim Taş Asa</string>
+    <string name="cthulhu_staff">Cthulhu Asası</string>
+    <string name="toxic_staff">Zehirli Asa</string>
+    <string name="windbane">Rüzgarafet</string>
+    <string name="legacy_of_the_oracle">Oracle\'in Mirası</string>
+    <string name="seabane">Denizafet</string>
+    <string name="royal_war_staff">Asil Savaş Değneği</string>
+    <string name="staff_of_the_wicked">Ahlaksızın Asası</string>
+    <string name="icebane">Buzkıran</string>
+    <string name="spider_staff">Örümcek Asası</string>
+    <string name="necromorphicon">Cesetedönüştüren</string>
+    <string name="the_oxymos_codex">Oxymo\'nun Kodeksi</string>
+    <string name="the_abyssal_scrolls">Uçurum Parşomeni</string>
+    <string name="iron_dagger_plus">Demir Hançer+</string>
+    <string name="fire_dagger">Ateş Hançeri</string>
+    <string name="kunai">Kunai</string>
+    <string name="steel_dagger">Çelik Hançer</string>
+    <string name="poisoned_dagger">Zehirli Hançer</string>
+    <string name="ifrits_dagger">İfrit\'in Hançeri</string>
+    <string name="dagger_of_sand">Kum Hançeri</string>
+    <string name="undines_dagger">Undine\'nin Hançeri</string>
+    <string name="dark_dagger">Kara Hançer</string>
+    <string name="dark_dagger_plus">Kara Hançer+</string>
+    <string name="light_dagger">Işık Hançeri</string>
+    <string name="chef_knife">Şef Bıçağı</string>
+    <string name="gorgon_dagger">Gorgon Hançeri</string>
+    <string name="machete">Pala</string>
+    <string name="gayan">Gayan</string>
+    <string name="venomous_dagger">Zehirli Hançer</string>
+    <string name="cthulhu_dagger">Cthulhu Hançeri</string>
+    <string name="dragon_tooth_dagger">Ejderha Dişi Hançeri</string>
+    <string name="dual_dragon_fang">Çift Ejderha Dişi</string>
+    <string name="blood_swiftblade">Kanlı Hızlıbıçak</string>
+    <string name="precious_dual_blade">Değerli Çift-bıçak</string>
+    <string name="precious_skewer">Değerli Şiş</string>
+    <string name="ice_dagger">Buz Bıçağı</string>
+    <string name="last_survivors_dagger">Son Kalan\'ın Bıçağı</string>
+    <string name="survivors_double_dagger">Çürümüşün Çiftesi</string>
+    <string name="abyssal_dual_blade">Dipsiz Çift-Bıçak</string>
+    <string name="malicious_quickblade">Şeytani Hızlı Bıçak</string>
+    <string name="gayan_shuriken">Çığıran Shuriken</string>
+    <string name="undines_shuriken">Undine\'nin Shurikeni</string>
+    <string name="sword_of_light">Işığın Kılıcı</string>
+    <string name="sword_of_1000_lies">1000 Yalan Kılıcı</string>
+    <string name="magicsaber">Sihirli Kılıç</string>
+    <string name="air_striker">Hava Saldırganı</string>
+    <string name="ice_claw">Buz Pençesi</string>
+    <string name="light_piercer">Işık Delici</string>
+    <string name="throat_cutter">Boğazkesen</string>
+    <string name="air_piercer">Hava İğnesi</string>
+    <string name="cthulhu_blade">Cthulhu Kılıcı</string>
+    <string name="glass_blade">Cam Kılıç</string>
+    <string name="haunted_slicer">Lanetli Doğrayıcı</string>
+    <string name="moonlit_razor">Mehtabın Usturası</string>
+    <string name="bunny_sword">Tavşan Kılıcı</string>
+    <string name="blade_of_the_wicked">Ahlaksızın Kılıcı</string>
+    <string name="goldsteel">Altınçelik</string>
+    <string name="abyssal_blade">Dipsiz Kılıç</string>
+    <string name="golden_needle">Altınipne</string>
+    <string name="blade_of_rusted_souls">Paslı Ruhların Kılıcı</string>
+    <string name="bunny_claymore">Tavşan Kılıcı</string>
+    <string name="blade_of_survival">Düşenin Kılıcı</string>
+    <string name="gorgon_blade">Gorgon Kılıcı</string>
+    <string name="volcano_sword">Volkan Kılıcı</string>
+    <string name="all_seeing_sword">Her şeyi gören Kılıç</string>
+    <string name="frost_heart">Buz-yürek Kılıcı</string>
+    <string name="enchanted_nutcracker">Enchanted Nutcracker</string>
+    <string name="axe_of_fire">Ateş Baltası</string>
+    <string name="bone_chopper">Kemik Doğrayıcı</string>
+    <string name="lightning_axe">Şimşek Baltası</string>
+    <string name="umbranian_cutter">Umbranian Kesicisi</string>
+    <string name="flaming_cutter">Alevli Kesici</string>
+    <string name="spider_axe">Örümcek Baltası</string>
+    <string name="all_seeing_axe">Kahin Baltası</string>
+    <string name="toxic_axe">Zehirli Balta</string>
+    <string name="bone_axe">Kemik Balta</string>
+    <string name="steel_axe">Çelik Balta</string>
+    <string name="cthulhu_axe">Cthulhu Baltası</string>
+    <string name="dawnlight">Şafakışığı</string>
+    <string name="gorgon_axe">Gorgon Baltası</string>
+    <string name="stormcaller">Fırtınagetiren</string>
+    <string name="path_of_exile">Sürgün Yolu</string>
+    <string name="fortunes_battleaxe">Zengin\'in Savaşbaltası</string>
+    <string name="axe_of_rusted_gods">Paslanmış Tanrıların Baltası</string>
+    <string name="ice_axe">Buz Baltası</string>
+    <string name="yansahn">Yansahn</string>
+    <string name="osun">Osun</string>
+    <string name="gayan_spear">Gayan Mızrağı</string>
+    <string name="freyr">Freyr</string>
+    <string name="fire_pierce">Ateş Delici</string>
+    <string name="azatoth">Azatoth</string>
+    <string name="spider_spear">Örümcek Mızrağı</string>
+    <string name="cthulhu_spear">Cthulhu Mızrağı</string>
+    <string name="poisoned_spear">Zehirli Mızrak</string>
+    <string name="vindictive_piercer">Kindar Delici</string>
+    <string name="golden_piercer">Altın Delici</string>
+    <string name="last_survivors_spear">Son Kalan\'ın Mızrağı</string>
+    <string name="gorgon_spear">Gorgon Mızrağı</string>
+    <string name="wooden_hammer">Tahta Çekiç</string>
+    <string name="warhammer">Savaş Çekici</string>
+    <string name="spider_crusher">Örümcek Ezici</string>
+    <string name="bionic_hammer">Biyonik Çekiç</string>
+    <string name="thunder_hammer">Yıldırım Çekici</string>
+    <string name="volcano_hammer">Volkan Çekici</string>
+    <string name="verdant_hammer">Yeşil Çekiç</string>
+    <string name="mojaras_hammer">Mojara\'nın Çekici</string>
+    <string name="liquid_hammer">Saydam Çekiç</string>
+    <string name="hammer_of_light">Işığın Çekici</string>
+    <string name="inquisidor">Engizitör</string>
+    <string name="falcon_hammer">Şahin Çekici</string>
+    <string name="bone_hammer">Kemik Çekici</string>
+    <string name="wit_of_ancient_power">Kadim Gücün Zekası</string>
+    <string name="war_forged_smasher">Savaşta dövülmüş Çekiç</string>
+    <string name="toxic_hammer">Zehirli Çekiç</string>
+    <string name="wealthy_smasher">Varlıklı Parçalayıcı</string>
+    <string name="smasher_of_decay">Düşenin Ezicisi</string>
+    <string name="silver_mace">Gümüş Gürz</string>
+    <string name="iron_mace">Demir Gürz</string>
+    <string name="dark_mace">Kara Gürz</string>
+    <string name="club">Sopa</string>
+    <string name="wooden_hawaiian">Tahta Hawaili</string>
+    <string name="toxic_mace">Zehirli Topuz</string>
+    <string name="wealthy_crusher">Varlıklı Ezici</string>
+    <string name="ifrits_shuriken">Ifrit\'in Shurikeni</string>
+    <string name="compendium_of_trees">Ağaçların Özü</string>
+    <string name="the_testament_of_ifrit">Ifrit\'in Vasiyeti</string>
+    <string name="the_arachnid_codex">Örümceği Kodeksler</string>
+    <string name="the_word_of_the_wind">Rüzgarın Sözü</string>
+    <string name="enlightened_hammer">Aydınlanmış Çekiç</string>
+    <string name="phoenix">Anka</string>
+    <string name="dancers_raiment">Dansçı\'nın Elbisesi</string>
+    <string name="storm">Kasırga</string>
+    <string name="tunic_of_hellish_illusions">Cehennem Yanılsamaları Gömleği</string>
+    <string name="gatekeepers_bionic_arm">Bekçinin Biyonik Kolu</string>
+    <string name="robe_of_eternal_fire">Sonuz Ateş Cübbesi</string>
+    <string name="scarlet_shadowweaver">Kızılgölge Örtüsü</string>
+    <string name="unholy_storm">Dinsiz Fırtına</string>
+    <string name="innkeepers_costume">Hancı\'nın Kostümü</string>
+    <string name="greenfang_ensemble">Yeşildiş Örgütü</string>
+    <string name="golden_guardian">Altın Muhafız</string>
+    <string name="magic_cog">Sihirli Dişli</string>
+    <string name="nightshade">Gecegölgesi</string>
+    <string name="pirouette_pointe">Pirouette pointe</string>
+    <string name="windpearl_axe">Rüzgar İncisi Balta</string>
+    <string name="wicked_skewer">Günahkar Şişi</string>
+    <string name="ruby_queens_spear">Yakut Vezir\'in Mızrağı</string>
+    <string name="onyx_queens_lance">Oniks Vezir\'in Mızrağı</string>
+    <string name="arachnid_sword">Eklembacaklı Kılıcı</string>
+    <string name="unleashed_kraken">Zincirkıran Kraken</string>
+    <string name="nightfall">Gecegetiren</string>
+    <string name="voidcaller_staff">Ruhçağıran Asası</string>
+    <string name="bunnyhop_dagger">Zıplartavşan Hançeri</string>
+    <string name="poisoned_dart">Zehirli Dart</string>
+    <string name="sapphire_pawns_dagger">Safir Piyon\'un Kılıcı</string>
+    <string name="toxic_dual_dagger">Zehirli Çift Hançer</string>
+    <string name="all_seeing_cleaver">Her Şeyi Pala</string>
+    <string name="shooting_star_shuriken">Kayan Yıldız Shurikeni</string>
+    <string name="tome_of_the_sands">Kumların Yüce Kitabı</string>
+    <string name="vest_of_ominous_jesters">Uğursuz Soytarıların Yeleği</string>
+    <string name="vest_of_ominous_comrades">Uğursuz Yoldaş Yeleği</string>
+    <string name="the_daemon_codices">Zebani Kodları</string>
+    <string name="path_of_exile_plus">Sürgün Yolu+</string>
+    <string name="eggscellent_axe">Yumurtacık Balta</string>
+    <string name="dark_lord_set_plus">Karanlık Efendisi Seti+</string>
+    <string name="heros_set_plus">Kahraman Seti+</string>
+    <string name="bankers_coat_plus">Bankacı Montu+</string>
+    <string name="tidecaller_ring">Gelgit Çağıran</string>
+    <string name="the_ancient_codices">Antik Kodeksler</string>
+    <string name="minion_vest">Piyon Yeleği</string>
+    <string name="gorgons_skin">Gorgon\'un Kostümü</string>
+    <string name="achievements">🏆 Başarılar 🏆</string>
+    <string name="rune_of_wind">Rüzgar Rünü</string>
+    <string name="burning_rune">Alevli Rün</string>
+    <string name="shiny_rune">Parlak Rün</string>
+    <string name="purple_rune">Mor Rün</string>
+    <string name="green_rune">Yeşil Rün</string>
+    <string name="liquid_rune">Sıvı Rünü</string>
+    <string name="golden_key">Altın Anahtar</string>
+    <string name="attack_speed">Saldırı HIzı:</string>
+    <string name="enemy_time_patroller">Zaman Gezgini</string>
+    <string name="enemy_armademon">Armademon</string>
+    <string name="enemy_armadillo">Armadillo</string>
+    <string name="enemy_beholder">Seyirci</string>
+    <string name="enemy_cthulhu">Cthulhu</string>
+    <string name="enemy_cyclops">Tepegöz</string>
+    <string name="enemy_demon_stomper">Ezici Şeytan</string>
+    <string name="enemy_fire_lord">Ateş Efendisi</string>
+    <string name="enemy_golem">Golem</string>
+    <string name="enemy_gorgon">Zehirli Gorgon</string>
+    <string name="enemy_ice_golem">Buz Golemi</string>
+    <string name="enemy_orc_fighter">Ork Savaşçı</string>
+    <string name="enemy_spidemon">Spidemon</string>
+    <string name="enemy_tombstone_mimic">Mezar taşı Taklidi</string>
+    <string name="enemy_vindicator">İntikamcı</string>
+    <string name="enemy_vulkling">Vulkling</string>
+    <string name="enemy_walker">Ezgeç</string>
+    <string name="enemy_armadimp">Armadillo</string>
+    <string name="Armors">Zırhlar</string>
+    <string name="Rings">Yüzükler</string>
+    <string name="about">ℹ️ Hakkında ℹ️</string>
+    <string name="change_language">Dili değiştir</string>
+    <string name="about_author">Yazar Hakkında</string>
+    <string name="armor_in_calculation">"Zırh: "</string>
+    <string name="author_description">Merhaba! Ben Ivan Cvetanović — Magic Rampage topluluğunda PrOfSeS olarak tanınırım ve yıllardır aktif bir üyesiyim. Oyuna olan uzun süreli sevgimi ve yazılım mühendisliğine olan artan tutkumu birleştirmek için bu uygulamayı geliştirdim. Herhangi bir hatayla karşılaşırsanız veya önerileriniz varsa, lütfen Discord (aşağıdaki düğmeye tıklayın) veya e-posta (Google Play Oyunlar sayfamdaki geliştirici bilgilerine bakın) yoluyla bana ulaşın. Desteğiniz için teşekkür ederim!</string>
+    <string name="axes">Baltalar</string>
+    <string name="choose_the_chapter">Bölümü Seç!</string>
+    <string name="daggers_and_shurikens">Hançerler ve Şurikenler</string>
+    <string name="damage_in_calculation">"Hasar: "</string>
+    <string name="dungeon10bossfighttext">Patronun saldırı düzeni oldukça basit. Saldırı anında bulunduğun konuma art arda dört kez saldırır.\n\n
+        Yapman gereken, yerde kalmak ve mermilerinden hafifçe ileri giderek kaçınmak.\n\n
+        Dördüncü mermisini ateşledikten sonra, onun hizasına zıplayıp hasar verebilirsin. Bu işlemi tekrarla.\n\n</string>
+    <string name="dungeon10text">Üç 💎 de altın saksıların içinde.\n\n
+        Bu örümcekler zehirli olanlardan daha büyük olduğu için, onlara karşı mutlaka bir çekiç kullanman gerekmez.\n\n
+        Düşen tuzakların altından koşarak geçmek istersen zamanı yavaşlatan özel yetenekleri kullanabilirsin.\n\n</string>
+    <string name="dungeon11bonustext1">Bu bölümü, zindan 11\'deki üç 💎\'i de alarak aç.\n\n
+        Adım 1: Üst platformdaki iskeletin seni takip etmeye başlamasını sağla. Bunu sadece seni görmesine izin vererek yapabilirsin.\n\n
+        Adım 2: Seni kovalamaya başladığında ondan kaç.\n\n</string>
+    <string name="dungeon11bonustext2">Adım 3: Sol taraftaki duvara doğru koş ve iskeletin gelmesini bekle.\n\n
+        Adım 4: İskelet sana saldırdığında, üst platforma zıpla ve onun bloğu kırıp düğmeye basmasını bekle.\n\n</string>
+    <string name="dungeon11bonustext3">Bonus: Sandığın üzerindeki alanın üstüne zıplayarak biraz altın topla!\n\n
+        Adım 5: Sandığı dikkatlice düğmeye doğru hareket ettir. İskeletin olduğu dibe düşürmemeye dikkat et!\n\n
+        Adım 6: Hızla odaya gir ve sonra iskelet mermilerinden kaçtığın platforma geri dön. Tüm örümcekler odadan çıkana kadar bunu birkaç kez tekrarla.\n\n</string>
+    <string name="dungeon11bonustext4">Adım 7: Tüm düşmanları sol alana çektikten sonra, odadaki tüm altını toplayabilir ve zindanı bitirebilirsin!\n\n</string>
+    <string name="dungeon11text">Üç 💎 de altın saksıların içinde.\n\n
+        Bonus seviyesini açmak için üç 💎\'i de topla.\n\n
+        Mermilerden kaçmakta zorlanıyorsan, Savaşçı veya Rahip gibi bir sınıf kullanabilirsin.\n\n
+        İlk gizli alan, birden fazla eşya kombinasyonu için kullanılabilecek <font color="#A020F0"> Nazguh </font> yüzüğü içerir.\n\n
+</string>
+    <string name="dungeon12text">İlk 💎 ikinci gizli alanda. İkincisi altın saksıda ve üçüncüsü alev makinesinin önünde.\n\n
+        Jumpman zırhı burada gerçekten işe yarar, çünkü ölmeden veya hasar almadan belirli alanlara zıplamanı sağlar.\n\n
+        Dördüncü gizli alan, Büyücü ve Yüce Büyücü için çok iyi olan <font color="#FFA500"> Narya </font> ateş yüzüğü içerir.\n\n
+</string>
+    <string name="dungeon13bonustext1">Bu bölümü, zindan 13\'teki üç 💎\'i de alarak aç.\n\n
+        Adım 1: Soldaki vazoları kır ve resimde gösterildiği gibi yolu takip et.\n\n
+        Ateş mermilerine dikkat et ve diken hasarından kaçınmak için bir hava zırhı veya yüzüğü kullan.\n\n</string>
+    <string name="dungeon13bonustext2">Adım 2: Şimdi geri dön ama platformların altındaki yolu kullan. Yine, mermilere dikkat et ve lav zırhı veya yüzüğü kullan.\n\n</string>
+    <string name="dungeon13text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Bir ateş zırhı veya yüzüğü kullanmak sana lavlara karşı koruma sağlar ve iki gizli alanı açmana olanak tanır.\n\n
+        İlk gizli alanı açmak için yakındaki lav havuzundaki düğmeyi etkinleştirmen gerekiyor.\n\n
+        İkinci gizli alan <font color="#00FF00"> Koruma Yüzüğü </font> içerir.\n\n
+</string>
+    <string name="dungeon14text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Sarı bariyeri delmek ve ilk 💎\'i almak için, ışık elementli bir silaha veya bariyerleri delebilen bir silaha ihtiyacın var.\n\n
+        İkinci gizli alan, Büyücü, Paladin ve Rahip için gerçekten iyi olan <font color="#FFFF00"> Din Adamı Yüzüğü </font> içerir.\n\n
+        Başarıyı elde etmek için The Dude\'u canlı tuttuğundan emin ol.\n\n
+</string>
+    <string name="dungeon15text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        <font color="#00FF00"> Toprak </font> bazlı bir zırh veya yüzük kullanmak, gizli alanlara ulaşmanızı ve zindanı tamamlamanızı kolaylaştıracaktır.\n\n
+        Örümceklere vurmakta zorlanıyorsan, önceki zindanlarda edindiğin bir çekici kullan.\n\n
+</string>
+    <string name="dungeon16text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        <font color="#00FF00"> Toprak </font> bazlı bir zırh veya yüzük kullanmak, gizli alanlara ulaşmanızı ve zindanı tamamlamanızı kolaylaştıracaktır.\n\n
+        Ulaşılamaz hayaleti, onun altında durarak ve yıldırımın birkaç kez düşmesini bekleyerek öldürebilirsin.\n\n
+</string>
+    <string name="dungeon17bonustext1">Bu bölümü, zindan 17\'deki üç 💎\'i de alarak aç.\n\n
+        Bu bonus bölümle ilgili tek şey, tüm sandıkları açmak için yeterli anahtara sahip olmaktır, belirli bir strateji yoktur.\n\n</string>
+    <string name="dungeon17bonustext2">Tüm sandıkları açarsan, Savaşçı, Korucu vb. için iyi olan <font color="#FFA500"> Ateş Kafatası Kılıcı </font> için garantili bir düşüş vardır.\n\n
+        Ayrıca, Paladin, Rahip ve Büyücü için iyi olan <font color="#FFFF00"> Faldang\'ın Yeleği </font>\'ni de alacaksın.\n\n
+</string>
+    <string name="dungeon17text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        <font color="#A020F0"> Karanlık </font> bazlı bir ekipman kullanmak, hayaletin doğrudan onlarla yüzleştiğinde saldırmasını sağlar.\n\n
+        Dördüncü gizli alan için Süpersonik yüzük veya zamanı yavaşlatan sınıflar kullanın.\n\n
+</string>
+    <string name="dungeon18text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        İkinci gizli alan, kılıçlar için son derece iyi olan <font color="#ADD8E6"> Kılıç Ustası Yüzüğü </font> içerir.\n\n
+        Tuzakların neden olduğu hasardan kaçınmak için bir ateş ve bir hava ekipmanını birleştirdiğinden emin ol.\n\n
+</string>
+    <string name="dungeon19bonustext1">Bu bölümü, zindan 19\'daki üç 💎\'i de alarak aç.\n\n
+        Bu oldukça basit. Sadece solundaki vazoları kır ve sonra tüm bonus 🪙\'leri toplamak için lava atla.\n\n
+        Bundan sonra yeşil platforma zıpla. Orada genellikle rün düşüren iki sandık bulacaksın.\n\n</string>
+    <string name="dungeon19bonustext2">Bunu yaptıktan sonra, ikinci lav havuzunda bulunan gizli bir sandığı da açabilirsin.\n\n</string>
+    <string name="dungeon19text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Zindan dikenler ve lavlarla dolu. Bu tehlikelerden en az birini önlemek için doğru ekipmanı kullanmaya çalış.\n\n
+        Çağırıcının yarattığı yaratıklar, sen onu öldürdüğünde otomatik olarak ölecektir.\n\n
+        Kaptanla zindanın arkasına gidersen, \"Anlatılmamış Hikaye 2\" başarısını açacaksın.\n\n
+</string>
+    <string name="dungeon1text">Üç 💎 de altın saksıların içinde.\n\n
+        Üstteki görünmez alanlarda birçok iksir var. Örneğin, gizli alan 1\'in ve bitiş alanının üstünde.\n\n
+        Kaptanla tanıştıktan sonra iki kutuyla karşılaşacaksın. Daha önce bulunduğun alana erişim kazanmak için üsttekini yok et.\n\n
+        Sinematiğin başladığı yere gidersen, iki beyaz saksıda iyi bir kılıç ve zırh bulacaksın.\n\n
+        İkinci gizli alana Jumpman kostümü veya özel yetenekler olmadan ulaşılamaz, ilk denemede elde edemezsin.\n\n
+</string>
+    <string name="dungeon20bossfighttext1">Bu patronun boyutunun seni aldatmasına izin verme, onu yenmek oldukça kolay.\n\n
+        İlk olarak art arda beş kez saldırmaya başlar, mermileri geniş bir hasar alanına sahiptir ve zehirlidir. Çoğu ekipmanla, sadece bir yandan diğerine giderek kaçabilirsin.\n\n
+</string>
+    <string name="dungeon20bossfighttext2">Beşinci mermisini ateşledikten sonra, iki yumurta bırakmak için alçalır. Biri sol tarafta, diğeri sağ tarafta bırakılacak.\n\n
+        Bunu yaparken, ona hasar verme şansın var. Çift zıplamadan sonra aşağı düşerken, yumurtalara da bir kez vurup onları yok ettiğinden emin ol.\n\n
+        Bu, aynı anda mermiler ve örümcekler hakkında endişelenmene gerek kalmamasını sağlar.\n\n
+        Örümcek ikinci yumurtasını bıraktıktan sonra, başlangıç pozisyonuna dönecek ve sana tekrar ateş etmeye başlayacak. Onu öldürene kadar bu işlemi tekrarla.\n\n
+</string>
+    <string name="dungeon20text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın. Son 💎 sadece patronu öldürdükten sonra alınabilir.\n\n
+        Karşılaştığın çağırıcı öldürülemez, önce patronu öldürmeli, sonra geri gelip anahtarı, 💎\'i toplamalı ve gizli alanı keşfetmelisin.\n\n
+        Ekipman söz konusu olduğunda, en iyi setler çevik olan ve çok fazla hasar verenlerdir.\n\n
+</string>
+    <string name="dungeon21text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Çağırıcıları öldürmek, sahip oldukları köleleri de yok edecektir.\n\n
+        İlk gizli alan, Rahip, Büyücü veya Paladin gibi orta seviye ışık sınıfları için çok iyi olan <font color="#FFFF00"> Yıldırım Baltası </font> içerir.\n\n
+        Bu seviye, mağazada daha fazla eşyanın kilidini açar, onları kontrol et ve gelecek patron için hazırlan.\n\n
+</string>
+    <string name="dungeon22text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        İlk gizli alan, zindana başlar başlamaz sol üst köşededir. İkincisi, neredeyse görünmez platformların tepesindedir.\n\n
+        En az bir altın anahtarın olduğundan emin ol. Zindanın çıkışının üzerinde bulunabilen resmi olmayan bir gizli alanı açmak için ona ihtiyacın olacak.\n\n
+        Büyük vuruş kutusuna sahip silahlar kullanmak, patlayan örümcekleri öldürmene yardımcı olur, aksi takdirde onlardan kaçıp patlamalarını bekleyebilirsin.\n\n
+</string>
+    <string name="dungeon23bonustext1">Bu bölümü, zindan 23\'teki üç 💎\'i de alarak aç.\n\n
+        Önce haritanın bir ucundan diğerine giderek başla. Toplayabildiğin kadar 🪙 ve 💎 topla.\n\n</string>
+    <string name="dungeon23bonustext2">Ayrıca örümceklerden tamamen kaçınmalısın, onlara hiç saldırma ve eğer tüm 🪙\'leri bir kerede toplayamazsan, bu da sorun değil.\n\n</string>
+    <string name="dungeon23bonustext3">Haritanın sonuna ulaştığında, geri dönüp sola doğru saldırılarını spamlerken geri gitmeye başlayabilirsin.\n\n
+        Bu şekilde tüm örümcekleri öldürebilir ve kalan 🪙\'leri toplayabilirsin.\n\n
+        Sandıklara giden kapıları açtığından emin ol. Orada seni bir eşya bekliyor.\n\n
+        Bu odanın üstünde, toplayabileceğin daha fazla 🪙 ve güzellikler de var.\n\n</string>
+    <string name="dungeon23text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Hem gümüş hem de altın anahtarları aldığından emin ol, üç 💎\'i de toplayarak açılabilecek bonus bölümü için onlara ihtiyacın olacak.\n\n
+        Geniş vuruş alanına sahip silahlar kullanmak, patlayan örümcekleri öldürmene yardımcı olur, aksi takdirde onlardan kaçıp patlamalarını bekleyebilirsin.\n\n
+        <font color="#A020F0"> Karanlık Kafatası Kılıcı </font>\'na sahip iskeletler seni gördüklerinde yenilmez hale gelir, bundan kaçınmaya çalış.\n\n
+</string>
+    <string name="dungeon24text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        İlk iki gizli alan için düğmeyi etkinleştirmen gerekiyor. İlk gizli alanın düğmesi, yok etmen gereken bir bloğun arkasında gizlidir ve ikinci gizli alanın düğmesi çimenler tarafından kısmen görsel olarak engellenmiştir.\n\n
+        Üçüncü gizli alan, altın anahtarla ilk kapıları açtıktan sonra bulunur.\n\n
+        Beşinci gizli alan, zindan çıkışının üzerindedir.\n\n
+</string>
+    <string name="dungeon25text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        İlk gizli alan başlangıç noktasının hemen üzerindedir, oraya ulaşmak için <font color="#ADD8E6"> Jumpman\'in kıyafetine </font> ihtiyacın olacak. Doğrudan platforma atlamanıza izin vermeyen görünmez bir duvar olduğunu unutmayın. Biraz sola gitmen ve oradan atlaman gerekiyor. Seni yukarı itmek için yakındaki gayzeri de kullanabilirsin. Zamanı yavaşlatan sınıfları da kullanabilirsin.\n\n
+        Bu zindanda ayrıca The Dude\'un babasını da kontrol edebilirsin. Ona yaklaşarak ve üzerindeki düğmeye basarak seni takip etmesini veya tek bir yerde kalmasını emredebilirsin.\n\n
+        İkinci gizli alan için, sen her şeyi toplarken The Dude\'un babasının düğmede durmasını emretmen gerekecek.\n\n
+</string>
+    <string name="dungeon26text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        İlk gizli alan başlangıç pozisyonunun hemen üzerindedir, ancak çok yüksektedir. Oraya ulaşmak için sihirli mantarı etkinleştirmen gerekecek.\n\n
+        İkinci gizli alan büyük deliğin sağ tarafındadır.\n\n
+        Üçüncü gizli alan kalenin üzerindedir, sağa doğru.\n\n
+        Bu zindanı 4:20 veya 16:20\'de oynarsan, gizli başarıyı elde edebilirsin. Sadece üzerinde elmas olan uçan paraları topla.\n\n
+</string>
+    <string name="dungeon27bonustext1">Bu bölümü, zindan 27\'deki üç 💎\'i de alarak aç.\n\n
+        Sandığın üzerinde ekstradan güzellikler bulabilirsin.\n\n
+        Önce sihirli mantarı etkinleştir ve zikzak rotayı sonuna kadar takip et. Ortada çok fazla zaman harcamadığından emin ol.\n\n</string>
+    <string name="dungeon27bonustext2">Daha sonra mantarı tekrar etkinleştir ve diğer zikzak rotayı takip et. İşte bu kadar!\n\n</string>
+    <string name="dungeon27text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Bonus bölümü için bir altın anahtar aldığından emin ol!\n\n
+        Klonları öldürmenin birçok yolu var. İlk seçenek, klon doğarken alanı spamlemektir. İkinci seçenek, daha yüksek bir alana çıkıp, bir kez saldırıp zıplamaktır, böylece düşman klonu saldırından isabet alır. Üçüncü seçenek, kötü klonun eylemini taklit etmediği mesafeden spamlemektir ve ardından mermileri klonun bulunduğu yere takip ederek ona isabet ettirmektir. Ayrıca daha zayıf bir zırh kuşanıp, klon doğmaya başladığında daha iyi bir zırha geçip kaba kuvvetle öldürebilirsin.\n\n
+        İkinci gizli alan için, lütfen ikinci kötü klonu hayatta bırak, çünkü bu şekilde oraya ulaşmak çok daha kolay olur.\n\n
+        Sihirli mantarları avantajına kullandığından emin ol, özellikle kötü klonları öldürmekte zorlanıyorsan.\n\n
+</string>
+    <string name="dungeon28text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        En az bir adet ateşe dayalı ekipmanın olduğundan emin ol! Aksi takdirde hasardan iyileşmek için çok sayıda iksire ihtiyacın olacak.\n\n
+        Kötü klonun doğacağı alanı sürekli olarak saldırı altında tut, bu zindanda onu öldürmenin en iyi yolu budur.\n\n
+        Savaşçı, Elit Savaşçı ve Rahip kullanmak burada gerçekten iyi bir fikir, çünkü çok fazla mermi var.\n\n
+</string>
+    <string name="dungeon29bonustext1">Bu bölümü, zindan 29\'daki üç 💎\'i de alarak aç.\n\n
+        Bu zor görünüyor, ama sadece belirli bir strateji gerektiriyor.\n\n
+        Hareketlerini koordine etmeli ve kendini topların tam ortasına konumlandırmalısın, bu konum siyah bir kutuyla işaretlenmiştir. Toplar yatay konumdayken (onları göremediğinde) bir kutudan diğerine hareket etmelisin.\n\n
+</string>
+    <string name="dungeon29text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        İlk gizli alan <font color="#00FF00"> Gadarast\'ın Asası </font> ve üçüncüde <font color="#FFA500"> Ateş Kafatası Kılıcı </font> içerir.\n\n
+        Dev mini-boss\'un basit bir saldırı düzeni vardır, sadece zıplar ve yere vurarak bir patlamaya neden olur. Onu öldürmenin en iyi yolu, zıpladığında ona saldırmaktır. Sadece onunla aynı anda zıpla.
+</string>
+    <string name="dungeon2text">Üç 💎 de altın saksıların içinde.\n\n
+        Eğer "Dude"u kurtarırsan, sana oyunun başları için iyi bir kılıç hediye edecek ve ayrıca bir başarı kazanacaksın.\n\n
+        Gizli alan 5\'in üzerindeki tavanda, oyunun başları ve ortaları için gerçekten iyi olan bir zehirli hançer var.\n\n
+</string>
+    <string name="dungeon30bossfighttext1">Kaptanı kalkan olarak kullanabilirsin, çünkü o hiç ölemez.\n\n
+        Eğer patronla aynı yükseklikteysen (platformlardan birinde duruyorsan), sadece zıplayıp mermilerinden kaçabilirsin, aksi takdirde, eğer yerdesen, hareket etmeye devam etmelisin.\n\n</string>
+    <string name="dungeon30bossfighttext2">Patronun üç aşaması var ve hepsinde ona hasar vermek için yaklaşık üç ila dört saniyen var.\n\n
+        İlk aşamada sadece yavaşça saldırır ve yaklaşık 8 saniye sonra savunmasız hale gelir.\n\n
+        Canı %50\'ye düştüğünde, biraz daha hızlı saldırmaya başlar ve bir fırtına belirir.\n\n
+        Canı %10\'a düştüğünde, hızla saldırmaya başlar ve fırtına daha sık ortaya çıkar.\n\n
+        Ekipmanına bağlı olarak, yeterince hasar verirsen üçüncü aşamadan kaçınabilirsin. Vücudu yerine kafasına saldırmaya devam ettiğinden emin ol, bu şekilde çok daha fazla hasar verir.</string>
+    <string name="dungeon30text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Sağlığını boşa harcama, patron dövüşü için ona ihtiyacın olacak, tabii çok sayıda iksirin yoksa.</string>
+    <string name="dungeon31bonustext1">Bu bölümü, zindan 31\'deki üç 💎\'i de alarak aç.\n\n
+        Dikkat etmen gereken tek şey uçuruma düşerek ölmemek.\n\n
+        Sadece seviye seviye yukarı zıpla ve tüm elmasları ve anahtarları topla.</string>
+    <string name="dungeon31bonustext2">Birkaç yarasa var, ama sana büyük bir tehdit oluşturmazlar, onları çabucak öldürebilirsin. \n\n</string>
+    <string name="dungeon31text">İlk 💎 başlangıç alanının sağında bulunabilir. Haritanın sağ üst köşesindedir. Diğer ikisi yolda bulunur.\n\n
+        Dördüncü gizli alan, duvarın arkasındaki solundaki düğme ile açılabilir.\n\n
+        Yarasaları daha kolay öldürmek için büyük vuruş alanına sahip silahlar kullandığından emin ol.\n\n
+        Yarasalar yumurtadan çıktığında, kısa bir süre dokunulmaz olurlar.</string>
+    <string name="dungeon32text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Bu zindanda, eşsiz etkilere sahip olan iksirleri deneme fırsatı bulursun. İlk iksiri aldığında, her atışında ek bir seken ateş topu fırlatırsın. İkinci iksirle yeşil platformlarda durabilirsin ve üçüncü iksirle atışların hedefi takip eder. \n\n
+        İlk sandıkta <font color="#ADD8E6"> Jumpman\'in kıyafeti </font> bulunur, bu sayede ilk üç gizli alana erişebilirsin.\n\n
+        Son mini-boss, hazırlıklı gelirsen kolaydır. Hasarını artırmak için mini-boss\'un önündeki sandıklardaki ateş zırhını kullan ve mini-boss\'un odasındaki iksiri al. Bu şekilde, o örümceği öldürmek için 4-5 atışa ihtiyacın olacak.\n\n
+</string>
+    <string name="dungeon33text">Üç 💎 de yolda bulunabilir, ancak sonuncusuna, içinde sandık bulunan su havuzundan önceki düğmeyi etkinleştirirsen erişebilirsin.\n\n
+        Tornadolar dokunulduğunda hasar verir, rastgele veya öldüklerinde fırtına yaratır ve seni kendilerine doğru çekerler. Onları öldürmeden önce ve sonra mesafeni koruduğundan emin ol. \n\n
+        İkinci gizli alan birincisinin hemen üzerindedir.\n\n
+        Üçüncü gizli alan resimde o kadar iyi görünmüyor, ama ekrandaki yeşil platformdan gelen parçacıkları görebileceksin.\n\n</string>
+    <string name="dungeon34text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        İlk gizli alan başlangıç alanının hemen solunda ve üçüncüsü Ay Bekçisi\'nin buluşma yerinin hemen üzerindedir. İkincisi, zıplayan küreye kılıç atarak, üzerindeki düğmeye basmasını sağlayarak açılabilir. \n\n
+        Çok hızlı ve zıplama gücü olan ekipmanlara sahip olmak zindanda gerçekten yardımcı olur.\n\n</string>
+    <string name="dungeon35text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Bu, toplulukta zor olarak kabul edilen ilk zindandır. \n\n
+        Ejderha birkaç saniyede bir saldırır ve ateş topu, ateş ettiği andaki konumuna gider. Bu avantajı kullanabilir ve blokların arkasına saklanabilir veya ateş topunun sana çarpmaması için çok yükseğe zıplayabilirsin.\n\n</string>
+    <string name="dungeon36text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Bu, kirli yüzlü asker olarak oynadığın önceki zindanlardan biridir, bu nedenle ilk gizli alan da aynıdır. \n\n
+        Eğer güdümlü füzeler yerine ateş topunu tercih edersen, kullanabileceğin ek bir ateş iksiri var.\n\n</string>
+    <string name="dungeon37text">Üç 💎 de zindanın sonuna gden yolda, kaçıramazsın.\n\n
+        İlk gizli alan başlangıç pozisyonunun altında, ikincisi ilk kulenin sağ tarafında ve üçüncüsü ikinci kulenin sol tarafındadır. \n\n
+        Okçu, Haydut ve Hırsız gibi sınıflar, bu zindan için gerekli çevikliği sağladıkları için gerçekten kullanışlıdır.\n\n</string>
+    <string name="dungeon38text">Üç 💎 de zindanın sonuna giden yolda, kaçıramazsın.\n\n
+        Düşük hasarın yüzünden düşmanlarını öldürmekte sorun yaşadıysan, burası belki de durup daha fazla altın biriktirmen ve daha iyi ekipman alman gereken yerdir. En az iki bin silah hasarına ulaşmaya çalış. \n\n
+        İlk gizli alan, zindanda bulduğun ilk ağacın üzerindedir. Sadece ağaca zıpla ve sol üstte küçük bir platform göreceksin. İkinci gizli alan, karşılaştığın ilk zıplayan devin üzerindedir.\n\n</string>
+    <string name="dungeon39text">Üç 💎 de haritanın ortasındaki portaldan sonra. Kral ile hemen portala girme. Üzerinden atla ve sola devam et.\n\n
+        İlk gizli alana, solunda beliren minyonla erişilebilir. Minyon belirmeye başladığında, gizli alanın kapılarına git ve minyon düğmeye basana kadar sağa doğru gitmeye devam et.\n\n
+        İkinci gizli alan, en soldaki son kulenin sol tarafındadır. Oraya da sol taraftan tırmanman gerekiyor.\n\n</string>
+    <string name="dungeon3bonus1">Bu bonusu, zindan 3\'teki üç 💎\'i de alarak aç.\n\n
+        Adım 1 isteğe bağlıdır ve sana az miktarda altın kazandırır.\n\n
+        Adım 2: Tavandaki kırmızı düğmeyi bul.\n\n</string>
+    <string name="dungeon3bonus2">Adım 3: Düğmeyi etkinleştirmek için farklı stratejiler kullanabilirsin. En kolayı, gelecekteki zindanlarda mevcut olacak olan Jumpman kostümünü kullanmaktır. Resimde onsuz da mümkün olduğunu görebilirsin, sadece zombilerin kafasına zıpla ve ardından düğmeyi etkinleştirmek için çift zıpla. Sana en az %2 zıplama gücü sağlayan bir zırhın olduğundan emin ol.\n\n</string>
+    <string name="dungeon3bonus3">Adım 4: Düğmeyi etkinleştirdikten sonra bir zombi belirecek, sana saldırması için önüne geç ve ardından saldırıdan kaç. Bu, duvarı yıkacak ve malları alabileceksin.\n\n</string>
+    <string name="dungeon3text">Üç 💎 de altın saksıların içinde.\n\n
+Tüm üç 💎\'i toplayarak bonus seviyesini aç.\n\n
+İlk gizli alandaki sandığı ilk denemede açamazsın, çünkü bunun için bir anahtar gerekir ve onu sadece bu seviyeden sonra açılan dükkanda satın alabilirsin.\n\n
+Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kullanarak ulaşabilirsin. İki kutu stratejisini kullanıyorsan, önce sol olanı sağ olanın altına getir ve sonra sağ olanı üste it. Daha sonra her ikisini de dikkatlice hedefe ulaşana kadar it. \n\n
+Üçüncü altın saksının üzerinde, oyunun başları için çok iyi olan bir ışık hançeri var.\n\n</string>
+    <string name="dungeon40boss1">Bu zindanda gizli alan yok, bu tek büyük bir patron dövüşü.\n\n
+        Patron dövüşü, büyücünün normal ve canavar formunda savaşmasını içerir. Normal formundayken, ateş topları atarak, yukarıdan yıldırım fırlatarak ve minyonlarını çağırarak sana saldıracak.\n\n
+        Onu yenmek için belirli bir stratejiye ihtiyacın yok, sadece onu çabucak halletmek için yeterli hasara sahip olduğundan emin ol.\n\n</string>
+    <string name="dungeon40boss2">İkinci bölüm biraz daha zor, çünkü canavar formunun, ona ne kadar hasar verdiğine bağlı olarak değişen üç saldırı deseni var.\n\n
+        Unutma, bu patronun en zor kısmı, saldırı desenini ne zaman değiştireceğini fark etmektir!\n\n
+        İlk aşamada, sana yaklaşacak ve zıplayan dev gibi saldıracak. Bu saldırıdan kolayca kaçınılabilir. \n\n
+        İkinci aşamada, sana doğru kayacak ve ardından bir alan etkili patlamaya neden olacak.\n\n
+        Üçüncü aşamada, sana doğru zıplayacak ve yere indiğinde biraz kayacak. Temelde ilk iki aşamanın birleşimidir.\n\n</string>
+    <string name="dungeon41text">İki 💎 görünür ve zindanın sonuna giden yolda. Biri, ikinci dönen mini patronun odasındaki yok edilebilir kayanın arkasında saklı.\n\n
+        Uçan dikenli patronun güdümlü füzeleri önce yok edilebilir kayaları hedef alır. Odadaki kayaları yok etmediğinden emin ol. Eğer kayaları yok edersen, mermilerin seni takip etmemesi için patronun altına geçebilirsin.\n\n
+        Beşinci gizli alan, sağındaki düğme ile açılabilir.\n\n</string>
+    <string name="dungeon42bonustext1">Bu bölümü, zindan 42\'deki üç 💎\'i de alarak aç.\n\n
+        Mini patron odasının kapılarını açmak için vanaları doğru sırayla etkinleştirmen gerekiyor.\n\n</string>
+    <string name="dungeon42bonustext2">Patron, tüm silah türleri için kullanılabilen "Creepy Crawler" adında iyi bir yüzük düşürür. \n\n</string>
+    <string name="dungeon42text">💎\'ler yok edilebilir kayaların arkasında saklıdır. Onları almak için her şeyi yok ettiğinden emin ol.\n\n
+        Bilmeceye gelince: yakındaki taşa bak, bilmeceyi hangi sırayla yapman gerektiğini gösteriyor.\n\n
+        Zehirli bombaları atan farelere dikkat et. Patladıktan sonra, birkaç saniye süren bir zehir bulutu bırakırlar.\n\n</string>
+    <string name="dungeon43bonustext1">Bu bölümü, zindan 43\'teki üç 💎\'i de alarak aç.\n\n
+        Blok patronunu öldürmeye çalışmadan önce, odadaki herkesi öldür.\n\n</string>
+    <string name="dungeon43bonustext2">Diğer tüm minyonlar öldükten sonra, kırmızı varillere giden yol çok daha kolay erişilebilir olacaktır. \n\n</string>
+    <string name="dungeon43text">İlk 💎 ilk blok patronundan sonra. Diğer ikisi, golem\'leri savunmasız hale getirmek istiyorsan toplanmalıdır.\n\n
+        Blok patronuna hasar vermek için, onun kırmızı varillerin üzerine inmesi gerekir. Sadece bir varilin yanında dur ve patron inmeye başladığında, ters yöne git.\n\n
+        Sondaki patronu da yenmek oldukça kolay, eğer yeterli hasarın varsa. Sadece yanlardaki bloklardan birinin üzerinde dur ve ona ve kristaline uzaktan saldır.\n\n</string>
+    <string name="dungeon44bossfighttext1">Hasarınızı en üst düzeye çıkarmak için altıncı gizli alandan <font color="#FFA500"> Yaklaşan Ateş Cüppesi</font>\'ni toplamayı unutmayın. \n\n Boss\'un üç ana saldırısı vardır: kayan buz sarkıtı, düşen buz sarkıtları ve kaya fırlatma. \n\n Resimde gösterilen yolu takip ederken aynı anda hem kaçmanız hem de hasar vermeniz gerekir. \n\n Saldırınız şöyle olmalıdır: özel yeteneğinizi etkinleştirin, ardından süper yeteneğinizi etkinleştirin ve ardından temel saldırıları spamlayın. Tekrarlayın.</string>
+    <string name="dungeon44bossfighttext2"><font color="#FF0000">Uyarı:</font> Kayan buz sarkıtı kırılana kadar yeterli hasar vermezsen, patron sana kaçması oldukça zor olan kayalar fırlatmaya başlayacak.\n\n        Patron ikinci aşamaya girdiğinde, kayan buz sarkıtı daha hızlı hareket eder, düşen buz sarkıtları artık mevcut konumunu hedefler ve birden fazla kaya fırlatır.\n\n</string>
+    <string name="dungeon44text">Üç 💎 de yolda, ancak, onları almak için genellikle altın bir anahtara ihtiyacın olacak. Önceden hiçbir alanı atlama.\n\n
+        Üçüncü gizli alan da yok edilebilir turuncu bir kütlenin arkasında gizlidir.\n\n
+        Altıncı gizli alanı ziyaret ettiğinden emin ol, çünkü orada patronla savaşmana yardımcı olacak güzel bir zırh var.\n\n</string>
+    <string name="dungeon4text">Üç 💎 de altın saksıların içinde.\n\n
+        Kaptan yenilmezdir ve ölemez. Zindanda üst platformlarda ilerlersen, o alttaki tüm düşmanları tek başına öldürecektir.\n\n</string>
+    <string name="dungeon5bonustext1">Bu bonusu, zindan 5\'teki üç 💎\'i de alarak aç.\n\n
+        Önce sol girişi seç.\n\n</string>
+    <string name="dungeon5bonustext2">Sadece yolu takip et.\n\n</string>
+    <string name="dungeon5bonustext3">Şimdi, daha önce bahsedilen eşyayı içeren orta yolu seç - Böcek Kırıcı.\n\n
+        Bu eşya, bir sonraki bölümle ilgili zorluklar yaşıyorsan sana yardımcı olacaktır!\n\n</string>
+    <string name="dungeon5text">Üç 💎 de altın saksıların içinde.\n\n
+        Diken hasarını önlemek için rüzgar elementi zırhlarını kullandığından emin ol.\n\n
+        Tank zombiyi, yüksek bir yerden savaşırsan yenmek daha kolaydır.\n\n</string>
+    <string name="dungeon6text">Üç 💎 de altın saksıların içinde.\n\n
+        Önceki bonus zindanda elde ettiğin çekici şimdi örümceklerle daha kolay başa çıkmak için kullanabilirsin.\n\n
+        İlk gizli alan, kılıçlar, hançerler ve çekiçler için iyi olan Kahraman setini içerir. Ayrıca, zindanı daha güvenli oynamanı sağlayan diken koruması da verir.\n\n</string>
+    <string name="dungeon7bonustext1">Bu bonusu, zindan 7\'deki üç 💎\'i de alarak aç.\n\n
+        Hızlı olman gerekecek, çünkü platformlar üzerine atladıktan üç saniye sonra yok oluyor.\n\n
+        Sadece altından yapılmış 🪙 çizgisini takip et.\n\n</string>
+    <string name="dungeon7bonustext2">En yükseğe ulaştığında, karenin tepesine zıpla ve sonra sandığın olduğu alana zıpla.\n\n
+        Bundan sonra, sadece bir sonraki platforma geri atla ve zindanı bitir.\n\n</string>
+    <string name="dungeon7text">İki 💎 altın saksılarda. Biri, düğmeye tıklayarak açılabilecek alanda.\n\n
+        Bonus bölümü için en az bir demir anahtarın olduğundan emin ol.\n\n
+        💎 olan alt alanı için düğmeyi etkinleştirmek için baştaki kutuyu kullanabilirsin.\n\n
+        Üçüncü gizli alana alevlerin üzerinden atlayarak ulaşılabilir.\n\n</string>
+    <string name="dungeon8text">Üç 💎 de altın saksıların içinde.\n\n
+        Zindanın başlangıcında "Dude"u Ateş Mızrağı\'na getirerek bir başarı açabilirsin.\n\n
+        Gerekirse tüm hasarı emmek için her zaman "Dude"un önünde durduğundan emin ol. Sen iksir kullanabilirsin ama o kullanamaz.\n\n
+        Eğer "Dude" hayatta kalırsa, sana güzel bir balta verecektir.\n\n</string>
+    <string name="dungeon9text">Üç 💎 de altın saksıların içinde.\n\n
+        Bir sonraki bölüm için nişan almanı geliştiren gerçekten iyi bir zindan. Kutuyu düğmeyi etkinleştirmek için kullanmanın en kolay yolu, önceki zindanlardan birinde bulduğun zehirli hançer gibi dönmeyen hançerleri kullanmaktır.\n\n
+        Tercihen diken hasarını önlemek için hava zırhı kullan.\n\n
+        Zindanı bitirdiğinde, dükkandaki yeni eşyaları kontrol ettiğinden emin ol.\n\n</string>
+    <string name="dungeons">🏰 Zindanlar 🏰</string>
+    <string name="eighty_kills">80</string>
+    <string name="element_cannot_be_picked">Bu eşya için element seçilemez!</string>
+    <string name="enemies">👻 Düşmanlar 👻</string>
+    <string name="enemy_air_elemental">Hava Elementali</string>
+    <string name="enemy_alien">Uzaylı</string>
+    <string name="enemy_ape_demon">Maymun İblis</string>
+    <string name="enemy_ape_junina">Junina Maymunu</string>
+    <string name="enemy_ape_santa">Noel Baba Maymun</string>
+    <string name="enemy_ape_skeleton">İskelet Maymun</string>
+    <string name="enemy_armademon_easter">Paskalya Armademonu</string>
+    <string name="enemy_armored_ape">Zırhlı Maymun</string>
+    <string name="enemy_armored_ape_faster">Daha Hızlı Zırhlı Maymun</string>
+    <string name="enemy_armored_ape_faster_weaker">Daha Hızlı ve Zayıf Zırhlı Maymun</string>
+    <string name="enemy_armored_axe_skeleton">Zırhlı Balta İskeleti</string>
+    <string name="enemy_armored_enraged_skeleton">Öfkeli Zırhlı İskelet</string>
+    <string name="enemy_armored_skeleton">Zırhlı İskelet</string>
+    <string name="enemy_beetle_anubis">Anubis Böceği</string>
+    <string name="enemy_beetle_anubis_red">Kırmızı Anubis Böceği</string>
+    <string name="enemy_beholder_witch">Gözcü Cadı</string>
+    <string name="enemy_cangaceiro">Cangaceiro</string>
+    <string name="enemy_carcara">Carcará</string>
+    <string name="enemy_carnival_buffoon_green_skeleton">Karnaval Yeşil Soytarı İskeleti</string>
+    <string name="enemy_carnival_buffoon_purple_skeleton">Karnaval Mor Soytarı İskeleti</string>
+    <string name="enemy_carnival_bunny_mask_skeleton">Karnaval Tavşan Maskeli İskelet</string>
+    <string name="enemy_carnival_captain_mask_necromancer">Karnaval Kaptan Maskeli Büyücü</string>
+    <string name="enemy_carnival_captain_mask_skeleton">Karnaval Kaptan Maskeli İskelet</string>
+    <string name="enemy_carnival_pilot_mask_skeleton">Karnaval Pilot Maskeli İskelet</string>
+    <string name="enemy_carnival_pumpkin_mask_skeleton">Karnaval Kabak Maskeli İskelet</string>
+    <string name="enemy_carnival_rat_buffoon_green">Karnaval Yeşil Soytarı Faresi</string>
+    <string name="enemy_carnival_rat_buffoon_purple">Karnaval Mor Soytarı Faresi</string>
+    <string name="enemy_carnival_salesman_mask_skeleton">Karnaval Satıcı Maskeli İskelet</string>
+    <string name="enemy_chest_demon">Sandık İblisi</string>
+    <string name="enemy_chest_demon_gift">İblis Hediye Sandığı</string>
+    <string name="enemy_copy_cat">Taklitçi</string>
+    <string name="enemy_cthulhu_imp">Cthulhu Cini</string>
+    <string name="enemy_dark_ghost">Karanlık Hayalet</string>
+    <string name="enemy_dark_skeleton">Karanlık İskelet</string>
+    <string name="enemy_dark_skeleton_elite">Elit Karanlık İskelet</string>
+    <string name="enemy_dark_tanker">Karanlık Tank</string>
+    <string name="enemy_demon_head">İblis Başı</string>
+    <string name="enemy_demonic_spider">Şeytani Örümcek</string>
+    <string name="enemy_demonic_spider_blowing_minion">Şeytani Örümcek Üfleyen Minyon</string>
+    <string name="enemy_demonic_spider_minion">Şeytani Örümcek Minyonu</string>
+    <string name="enemy_easter_demon">Paskalya İblisi</string>
+    <string name="enemy_easter_skeleton">Paskalya İskeleti</string>
+    <string name="enemy_evil_warlock">Kötü Büyücü</string>
+    <string name="enemy_evil_warlock_boss">Kötü Büyücü Patronu</string>
+    <string name="enemy_final_warlock">Son Büyücü</string>
+    <string name="enemy_fire_ape">Ateş Maymunu</string>
+    <string name="enemy_fire_bat">Ateş Yarasası</string>
+    <string name="enemy_fire_bat_adult">Yetişkin Ateş Yarasası</string>
+    <string name="enemy_fire_elemental">Ateş Elementali</string>
+    <string name="enemy_fire_skeleton">Ateş İskeleti</string>
+    <string name="enemy_fire_skeleton_b">Ateş İskeleti B</string>
+    <string name="enemy_fire_skeleton_elite">Elit Ateş İskeleti</string>
+    <string name="enemy_fire_skeleton_master">Ateş İskeleti Ustası</string>
+    <string name="enemy_ghost_rat">Hayalet Fare</string>
+    <string name="enemy_giant_demon_head">Dev İblis Başı</string>
+    <string name="enemy_giant_spider">Dev Örümcek</string>
+    <string name="enemy_gigaspider">Gigaörümcek</string>
+    <string name="enemy_grinch">Grinç</string>
+    <string name="enemy_guard_tanker_a">Muhafız Tank A</string>
+    <string name="enemy_guard_tanker_b">Muhafız Tank B</string>
+    <string name="enemy_guard_tanker_elite">Elit Muhafız Tank</string>
+    <string name="enemy_harmless_tanker">Zararsız Tank</string>
+    <string name="enemy_helmet_skeleton">Miğferli İskelet</string>
+    <string name="enemy_ice_necromancer">Buz Büyücüsü</string>
+    <string name="enemy_ice_necromancer_wdg">Buz Büyücüsü WDG</string>
+    <string name="enemy_ice_skeleton">Buz İskeleti</string>
+    <string name="enemy_ice_skeleton_elite">Elit Buz İskeleti</string>
+    <string name="enemy_ice_skeleton_elite_wdg">Elit Buz İskeleti WDG</string>
+    <string name="enemy_ice_skeleton_tanker">Buz İskeleti Tankı</string>
+    <string name="enemy_ice_skeleton_tanker_wdg">Buz İskeleti Tankı WDG</string>
+    <string name="enemy_ice_skeleton_wdg">Buz İskeleti WDG</string>
+    <string name="enemy_ifrits_disciple">İfrit\'in Müridi</string>
+    <string name="enemy_jumping_fire_skeleton">Zıplayan Ateş İskeleti</string>
+    <string name="enemy_jumping_fire_skeleton_elite">Elit Zıplayan Ateş İskeleti</string>
+    <string name="enemy_jumping_skeleton">Zıplayan İskelet</string>
+    <string name="enemy_jumping_skeleton_elite">Elit Zıplayan İskelet</string>
+    <string name="enemy_junina_skeleton_a">Junina İskeleti A</string>
+    <string name="enemy_junina_skeleton_b">Junina İskeleti B</string>
+    <string name="enemy_junina_skeleton_dark_shadow">Junina Kara Gölge İskeleti</string>
+    <string name="enemy_junina_skeleton_fire">Junina Ateş İskeleti</string>
+    <string name="enemy_junina_skeleton_knife_guard">Junina Bıçaklı Muhafız İskeleti</string>
+    <string name="enemy_junina_skeleton_poison_thrower">Junina Zehir Atan İskelet</string>
+    <string name="enemy_junina_skeleton_shadow">Junina Gölge İskeleti</string>
+    <string name="enemy_kingptain_dungeon43">Kralptan (Zindan 43)</string>
+    <string name="enemy_mini_slime">Mini Balçık</string>
+    <string name="enemy_miniboss_gigaspider_critter">Minipatron Gigaörümcek Yaratığı</string>
+    <string name="enemy_mummy">Mumya</string>
+    <string name="enemy_mummy_blue_cosmos">Mavi Kozmos Mumyası</string>
+    <string name="enemy_mummy_gold_cosmos">Altın Kozmos Mumyası</string>
+    <string name="enemy_mush_vacuum">Mantar Vakumu</string>
+    <string name="enemy_mush_vacuum_wdg">Mantar Vakumu WDG</string>
+    <string name="enemy_mushroom_spitter">Mantar Tükürücü</string>
+    <string name="enemy_nature_skeleton">Doğa İskeleti</string>
+    <string name="enemy_nature_skeleton_elite">Elit Doğa İskeleti</string>
+    <string name="enemy_priest_minion">Rahip Minyonu</string>
+    <string name="enemy_pumpkin_rat_skeleton">Kabak Fare İskeleti</string>
+    <string name="enemy_pumpkin_skeleton">Kabak İskeleti</string>
+    <string name="enemy_pumpkin_skeleton_scythe">Kabak Tırpanlı İskelet</string>
+    <string name="enemy_pumpkin_water_skeleton">Kabak Su İskeleti</string>
+    <string name="enemy_pumpkin_water_skeleton_scythe">Kabak Tırpanlı Su İskeleti</string>
+    <string name="enemy_pumpkin_zombie_rat">Kabak Zombi Faresi</string>
+    <string name="enemy_rat_black_mage">Fare Kara Büyücü</string>
+    <string name="enemy_rat_fighter">Fare Savaşçı</string>
+    <string name="enemy_rat_fire_mage">Fare Ateş Büyücüsü</string>
+    <string name="enemy_rat_lancer">Fare Mızrakçı</string>
+    <string name="enemy_rat_poison_thrower">Fare Zehir Atan</string>
+    <string name="enemy_rat_rogue">Fare Haydut</string>
+    <string name="enemy_rat_rogue_prisoner">Fare Haydut Mahkum</string>
+    <string name="enemy_rat_skeleton">Fare İskeleti</string>
+    <string name="enemy_rat_warrior">Fare Savaşçı</string>
+    <string name="enemy_rat_water_mage">Fare Su Büyücüsü</string>
+    <string name="enemy_rat_zombie_knife_guard">Fare Zombi Bıçaklı Muhafız</string>
+    <string name="enemy_rat_zombie_knife_guard_b">Fare Zombi Bıçaklı Muhafız B</string>
+    <string name="enemy_rat_zombie_knife_guard_elite">Elit Fare Zombi Bıçaklı</string>
+    <string name="enemy_shaman_fire">Ateş Şamanı</string>
+    <string name="enemy_shaman_fire_elite">Elit Ateş Şamanı</string>
+    <string name="enemy_shaman_nature">Doğa Şamanı</string>
+    <string name="enemy_shaman_nature_elite">Elit Doğa Şamanı</string>
+    <string name="enemy_skeleton">İskelet</string>
+    <string name="enemy_skeleton_b">İskelet B</string>
+    <string name="enemy_slime_demon">Balçık İblisi</string>
+    <string name="enemy_snow_monster">Kar Canavarı</string>
+    <string name="enemy_spidemon_higher_jump">Yüksek Zıplayan Örümcek İblis</string>
+    <string name="enemy_spider">Örümcek A</string>
+    <string name="enemy_spider_b">Örümcek B</string>
+    <string name="enemy_spider_b_weak">Zayıf Örümcek B</string>
+    <string name="enemy_spider_blow">Üfleyen Örümcek</string>
+    <string name="enemy_spider_boss">Patron Örümcek</string>
+    <string name="enemy_spider_c">Örümcek C</string>
+    <string name="enemy_spider_easter">Paskalya Örümceği</string>
+    <string name="enemy_spider_easter_green">Yeşil Paskalya Örümceği</string>
+    <string name="enemy_spider_easter_pink">Pembe Paskalya Örümceği</string>
+    <string name="enemy_spider_fire">Ateş Örümceği</string>
+    <string name="enemy_spider_gift">Hediye Örümceği</string>
+    <string name="enemy_spider_swamp">Bataklık Örümceği</string>
+    <string name="enemy_swamp_monster">Bataklık Canavarı</string>
+    <string name="enemy_tanker_elite_matryoshka">Elit Matruşka Tankı</string>
+    <string name="enemy_tanker_helmet_matryoshka">Miğferli Matruşka Tankı</string>
+    <string name="enemy_tanker_rage_matryoshka">Öfkeli Matruşka Tankı</string>
+    <string name="enemy_time_patroller_dungeon40">Zaman Devriyesi (Zindan 40)</string>
+    <string name="enemy_time_patroller_dungeon41">Zaman Devriyesi (Zindan 41)</string>
+    <string name="enemy_vampire">Vampir</string>
+    <string name="enemy_vindicator_carnival">Karnaval Savunucusu</string>
+    <string name="enemy_warlock_final_boss">Son Patron Büyücü</string>
+    <string name="enemy_water_vampire">Su Vampiri</string>
+    <string name="enemy_white_ape">Beyaz Maymun</string>
+    <string name="enemy_wizard">Büyücü</string>
+    <string name="enemy_xmas_doll_blond">Noel Sarışın Bebek</string>
+    <string name="enemy_xmas_doll_brunette">Noel Esmer Bebek</string>
+    <string name="enemy_xmas_duck">Noel Ördeği</string>
+    <string name="enemy_xmas_fire_bear">Noel Ateş Ayısı</string>
+    <string name="enemy_xmas_fire_bear_elite">Noel Elit Ateş Ayısı</string>
+    <string name="enemy_xmas_gift_vacuum">Noel Vakum Hediyesi</string>
+    <string name="enemy_xmas_green_bear_small">Noel Yeşil Küçük Ayı</string>
+    <string name="enemy_xmas_jumping_green_bear">Noel Zıplayan Yeşil Ayı</string>
+    <string name="enemy_xmas_mimic">Noel Taklitçisi</string>
+    <string name="enemy_xmas_pink_bear">Noel Pembe Ayı</string>
+    <string name="enemy_xmas_pink_bear_small">Noel Pembe Küçük Ayı</string>
+    <string name="enemy_xmas_purple_bear">Noel Mor Ayı</string>
+    <string name="enemy_xmas_purple_bear_ez">Noel Mor Ayı EZ</string>
+    <string name="enemy_xmas_purple_bear_small">Noel Mor Küçük Ayı</string>
+    <string name="enemy_xmas_skeleton_blue_helmet_ice">Noel Buz Mavi Miğferli İskelet</string>
+    <string name="enemy_xmas_skeleton_blue_ice">Noel Buz Mavisi İskelet</string>
+    <string name="enemy_xmas_skeleton_blue_mage">Noel Mavi İskelet Büyücüsü</string>
+    <string name="enemy_xmas_skeleton_blue_tanker">Noel Mavi İskelet Tankı</string>
+    <string name="enemy_xmas_skeleton_red_mage">Noel Kırmızı Büyücü İskeleti</string>
+    <string name="enemy_xmas_skeleton_red_mage_elite">Noel Elit Kırmızı Büyücü İskeleti</string>
+    <string name="enemy_xmas_skeleton_red_warrior">Noel Kırmızı Savaşçı İskeleti</string>
+    <string name="enemy_xmas_skeleton_red_warrior_elite">Noel Elit Kırmızı Savaşçı İskeleti</string>
+    <string name="enemy_zombie_chief">Zombi Şefi</string>
+    <string name="enemy_zombie_elite_guard">Elit Zombi Muhafız</string>
+    <string name="enemy_zombie_guard">Zombi Muhafız</string>
+    <string name="enemy_zombie_guard_boss">Zombi Muhafız Patronu</string>
+    <string name="enemy_zombie_guard_boss_b">Zombi Muhafız Patronu B</string>
+    <string name="enemy_zombie_guard_boss_c">Zombi Muhafız Patronu C</string>
+    <string name="enemy_zombie_knife_guard">Bıçaklı Zombi Muhafız</string>
+    <string name="enemy_zombie_noob_knife_guard">Acemi Bıçaklı Zombi Muhafız</string>
+    <string name="enemy_zombie_rat">Zombi Fare</string>
+    <string name="enemy_zombie_red_guard">Kırmızı Zombi Muhafız</string>
+    <string name="fifty_kills">50</string>
+    <string name="fire_resistance">Ateş Direnci</string>
+    <string name="fourty_kills">40</string>
+    <string name="frost_attack">Buz Saldırısı</string>
+    <string name="frost_resistance">Buz Direnci</string>
+    <string name="hundred_fifty_kills">150</string>
+    <string name="hundred_kills">100</string>
+    <string name="in_memory_of">Anısına:</string>
+    <string name="item_already_at_zero_upgrades">Eşya zaten sıfır geliştirmede!</string>
+    <string name="item_already_maxed">Eşya zaten maksimum geliştirmede!</string>
+    <string name="items">📋 Eşyalar 📋</string>
+    <string name="jump_impulse">Zıplama Gücü: 0%</string>
+    <string name="jump_impulse_in_calculation">"Zıplama Gücü: "</string>
+    <string name="kills">Öldürme</string>
+    <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
+    <string name="max">(MAKS)</string>
+    <string name="pierce_count">Delme Sayısı:</string>
+    <string name="poisonous_attack">Zehirli Saldırı</string>
+    <string name="projectile_persistence">Mermi Kalıcılığı</string>
+    <string name="rating_start">Değerlendirme: 0/10 💩</string>
+    <string name="reset_all">Tümünü Sıfırla</string>
+    <string name="rewards">Ödüller</string>
+    <string name="robe_of_distant_visions">Uzak Görüş Cübbesi</string>
+    <string name="ruby_pawns_edge">Yakut Piyonların Kenarı</string>
+    <string name="select_skills">Yetenekleri Seç</string>
+    <string name="seventy_kills">70</string>
+    <string name="sixty_kills">60</string>
+    <string name="skill_description_default">Açıklama mevcut değil.</string>
+    <string name="skill_points_left">Kalan yetenek puanları:</string>
+    <string name="spears">Mızraklar</string>
+    <string name="special_antiheros_set">Özel Anti-kahraman Seti</string>
+    <string name="special_thanks">Özel Teşekkürler:</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
+    <string name="speed">Hız: 0%</string>
+    <string name="speed_in_calculation">"Hız: "</string>
+    <string name="spike_resistance">Diken Direnci</string>
+    <string name="staffs_and_grimoires">Asalar ve Büyü Kitapları</string>
+    <string name="survival1_text">Bunun için orta platforma vurmayan bir silaha ihtiyacın olacak. Bu, diğer taraftaki düşmanlara vurmanı ve mermileri engellemeni sağlayacak. Önünde bir örümcek belirirse, onu kolayca öldürmek için arkandaki taşa saldır.</string>
+    <string name="survival2_text">İkinci hayatta kalma zindanı çok fazla hareket gerektirmez. Ortada kal ve yanlara saldır, ek düşmanları öldürmek ve yıldırımdan kaçmak için zaman yukarı ve aşağı hareket et.</string>
+    <string name="survival3_text">Üçüncü hayatta kalma zindanı, örümcekleri kolayca vurabilen bir silah kullanmanı gerektirecektir. Ayrıca, tüm hayatta kalma zindanları arasında en "karmaşık" saldırı düzenine sahiptir, yani daha fazla çaba göstermen gerekecek.</string>
+    <string name="survival4_text">Bu zindan için, bataklık canavarını tek atışta öldürebilmek için düşük delme gücüne sahip bir silah kullandığından emin ol. Zindanın saldırı düzenlerini takip etmek oldukça basittir. Ayrıca, sağında beliren düşmana karşı ekstra koruma için Savaşçı sınıfını kullanabilirsin.</string>
+    <string name="survival5_text">Altın kasmak için en iyi ve en kolay zindan. Tek bir yerde durup düşmanları uzaktan öldürebilmek için çekiç ve balta gibi geniş hasar alanına ve sınırlı menzile sahip bir silah kullandığından emin ol.</string>
+    <string name="survival6_text">Son hayatta kalma zindanı, diğerlerine kıyasla biraz daha fazla çaba gerektirir, çünkü mermilerden kaçmak, uçan birimleri vurmak ve yıldırım çarpmalarından kaçınmak için sürekli yer değiştirmen gerekir.</string>
+    <string name="survival_dungeon_1">Hayatta Kalma Zindanı 1</string>
+    <string name="survival_dungeon_2">Hayatta Kalma Zindanı 2</string>
+    <string name="survival_dungeon_3">Hayatta Kalma Zindanı 3</string>
+    <string name="survival_dungeon_4">Hayatta Kalma Zindanı 4</string>
+    <string name="survival_dungeon_5">Hayatta Kalma Zindanı 5</string>
+    <string name="survival_dungeon_6">Hayatta Kalma Zindanı 6</string>
+    <string name="survival_mode">☠️ Hayatta Kalma Modu ☠️</string>
+    <string name="survival_tutorial">Eğitim</string>
+    <string name="swords">Kılıçlar</string>
+    <string name="ten_kills">10</string>
+    <string name="test_equipment">🛡️ Ekipman Testi 🛡️</string>
+    <string name="thirty_kills">30</string>
+    <string name="three_hundred_kills">300</string>
+    <string name="twenty_kills">20</string>
+    <string name="two_hundred_kills">200</string>
+    <string name="work_in_progress">Çalışma Devam Ediyor!</string>
+
+    <string name="vase_breaker">Vazo kırıcı</string>
+    <string name="save_that_dude">O Adamı Kurtar!</string>
+    <string name="keep_that_dude_alive">O Adamı hayatta tut!</string>
+    <string name="armed_and_dangerous">Silahlı ve tehlikeli</string>
+    <string name="head_shot">Kafadan!</string>
+    <string name="zombie_killer">Zombi katili</string>
+    <string name="spider_killer">Örümcek katili</string>
+    <string name="bone_collector">Kemik Koleksiyoncusu</string>
+    <string name="mr_macgyver">Mr. MacGyver</string>
+    <string name="there_and_back">Oradaydık ve Şimdi Buradayız</string>
+    <string name="know_your_enemy">Düşmanını Tanı</string>
+    <string name="complete_101">\%100\'den fazlası tamamlandı!</string>
+    <string name="complete_100">Tek kişilik ordu!</string>
+    <string name="flawless_victory">Kusursuz Galibiyet!</string>
+    <string name="ecstasy_of_gold">Altın Coşkusu</string>
+    <string name="demon_slayer">İblis katili</string>
+    <string name="get_in_the_ring">Ringe Çık</string>
+    <string name="lost_flipflop">Kayıp Terlik</string>
+    <string name="the_untold_story">Anlatılmamış Hikaye</string>
+    <string name="that_dude_must_live">O Adamın yaşaması lazım!</string>
+    <string name="could_beat_gng">Hortlakların ve Hayaletlerin Efendisi</string>
+    <string name="changing_in_the_air">Değişim rüzgarları esiyor</string>
+    <string name="runeforge">Rün Ocağı</string>
+    <string name="ride_the_wind">Rüzgar Sörfü</string>
+    <string name="ghostbusters">Hayalet Avcıları</string>
+    <string name="why_so_curious">Bu ne merak?</string>
+    <string name="loot_from_the_future">Gelecekten gelen ganimet</string>
+    <string name="the_untold_story_2">Anlatılmamış Hikaye 3</string>
+    <string name="kill_the_spider">Örümcek kılığındaki şeytani şey</string>
+    <string name="lost_hammer">Kasten yaptım, çünkü…</string>
+    <string name="dude_still_lives">O Adam hala hayatta</string>
+    <string name="dudes_story">O Adam\'ın hikayesi</string>
+    <string name="breaker_of_chains">Zincirkıran</string>
+    <string name="saw_a_giant">Bir dev gördüm</string>
+    <string name="witch_hunt">Cadı Avı</string>
+    <string name="post_credits">Jenerik sonu sahnesi</string>
+    <string name="survival_50">öldürme</string>
+    <string name="survival_100">öldürme</string>
+    <string name="survival_200">öldürme</string>
+    <string name="survival_300">öldürme</string>
+    <string name="survival_1000">1000 öldürme mi? WTF!</string>
+    <string name="pimp_my_char">Karakterimi baştan yarat</string>
+    <string name="bag_expanded">Daha fazla alan</string>
+    <string name="may_the_magic">Sihir seninle olsun</string>
+    <string name="vase_breaker_desc">Başlat ekranında bir vazo kır.</string>
+    <string name="armed_and_dangerous_desc">İlk silahını al.</string>
+    <string name="save_that_dude_desc">Bölüm 1, Zindan seviyesi 2\'de O Adam\'ın saldırıya uğramasını önle.</string>
+    <string name="keep_that_dude_alive_desc">Bölüm 1, Zindan seviyesi 8\'de O Adam\'a yardım et ve onun ölmesine engel ol.</string>
+    <string name="head_shot_desc">Bir düşmanı tam kafadan vur.</string>
+    <string name="zombie_killer_desc">Bir zombi öldür.</string>
+    <string name="spider_killer_desc">Bir örümcek öldür.</string>
+    <string name="bone_collector_desc">Bir iskeleti mağlup et.</string>
+    <string name="mr_macgyver_desc">Bölüm 2, Zindan Bonus seviyesi 1\'de gizli alana gir.</string>
+    <string name="there_and_back_desc">Öldükten sonra diril.</string>
+    <string name="know_your_enemy_desc">Tüm ipuçlarını oku.</string>
+    <string name="complete_101_desc">\%101 tamamla. Oyundaki tüm gizli alanları bul ve Bölüm 1, 2 ve 3\'ü hiç hasar almadan tekrar oyna.</string>
+    <string name="complete_100_desc">Oyunu \%100 tamamla. Tüm gizli alanları ve elmasları bul.</string>
+    <string name="flawless_victory_desc">Bir seviyeyi hiç hasar almadan tekrar oynayarak bir yıldız kazan.</string>
+    <string name="ecstasy_of_gold_desc">Karakterin için daha fazla altın satın al.</string>
+    <string name="demon_slayer_desc">Bölüm 1\'deki Boss\'u yen.</string>
+    <string name="get_in_the_ring_desc">Bölüm 2, Zindan Bonus seviyesi 1\'de gizli alana gir.</string>
+    <string name="lost_flipflop_desc">Kayıp terliği bul.</string>
+    <string name="the_untold_story_desc">Bölüm 2, Zindan seviyesi 4\'te O Adam\'dan Anlatılmamış Hikaye\'yi dinle.</string>
+    <string name="that_dude_must_live_desc">O Adam\'ı seviyenin sonuna kadar hayatta tut.</string>
+    <string name="could_beat_gng_desc">İlk 15 seviyenin hepsinde bir yıldız kazan.</string>
+    <string name="changing_in_the_air_desc">Bölüm 2, Zindan Seviyesi 6\'daki en yüksek noktanın tepesine çık.</string>
+    <string name="runeforge_desc">Bir eşyayı geliştir.</string>
+    <string name="ride_the_wind_desc">Bölüm 2, Zindan seviyesi 7\'deki son sandığa ulaş.</string>
+    <string name="ghostbusters_desc">Bölüm 2, Zindan seviyesi 7\'de bir hayaleti mağlup et.</string>
+    <string name="why_so_curious_desc">Bölüm 2, Zindan seviyesi 7\'deki kilitli alana gir.</string>
+    <string name="loot_from_the_future_desc">Bölüm 1, Zindan seviyesi 3\'teki iki gizli sandıktan en az birini bul.</string>
+    <string name="the_untold_story_2_desc">Bölüm 2, Zindan seviyesi 9\'da Kaptan\'ın Portallar ve dev kanatlı yaratıklar hakkında anlatacaklarını dinle.</string>
+    <string name="kill_the_spider_desc">Bataklıkta yaşayan dev örümceği mağlup et.</string>
+    <string name="lost_hammer_desc">Kayıp Çekici bul.</string>
+    <string name="dude_still_lives_desc">Bölüm 3, Zindan seviyesi 5\'te O Adam ile buluş (eğer Bölüm 2, Zindan seviyesi 4\'ten sağ çıktıysa).</string>
+    <string name="dudes_story_desc">Bölüm 1, Zindan seviyesi 8\'de O Adam\'ın anlatacaklarını dinle (eğer Bölüm 1, Zindan seviyesi 2\'den sağ çıktıysa).</string>
+    <string name="breaker_of_chains_desc">Bölüm 3, Zindan Seviyesi 9\'da Kahin Büyücü\'yü serbest bırak.</string>
+    <string name="saw_a_giant_desc">Bir devi öldür.</string>
+    <string name="witch_hunt_desc">Cehennem Büyücüsü Boss\'u mağlup et.</string>
+    <string name="post_credits_desc">Jenerik sonu sahnesini izle.</string>
+    <string name="survival_50_desc">Hayatta Kalma Modunda 1000 düşmanı öldür.</string>
+    <string name="survival_100_desc">Hayatta Kalma Modunda 1000 düşmanı öldür.</string>
+    <string name="survival_200_desc">Hayatta Kalma Modunda 1000 düşmanı öldür.</string>
+    <string name="survival_300_desc">Hayatta Kalma Modunda 1000 düşmanı öldür.</string>
+    <string name="survival_1000_desc">Hayatta Kalma Modunda 1000 düşmanı öldür.</string>
+    <string name="pimp_my_char_desc">Avatarının kafasını değiştirmek için Karakter Editörü\'nü kullan.</string>
+    <string name="bag_expanded_desc">Mağazadan envanter büyütme sandığını satın al.</string>
+    <string name="truth_out_there">Gerçek Orada Bekliyor</string>
+    <string name="truth_out_there_desc">Portal ile yolculuk yap ve ardında ne olduğunu öğren.</string>
+    <string name="may_the_magic_desc">Kayıp Kılıcı bul.</string>
+    <string name="complete_102">Bölüm 4 çok zor!</string>
+    <string name="complete_102_desc">Oyunun \%102\'sini tamamlayın. 4. Bölüm\'ün sonuna kadar herhangi bir hasar almadan tüm gizli alanları bulun ve tüm Zindanları tamamlayın.</string>
+    <string name="class_consciousness">Sınıf bilinci</string>
+    <string name="class_consciousness_desc">Bölüm 1, Zindan seviyesi 6\'da sınıfının özel yeteneğini öğren ve ilk kez kullan.</string>
+    <string name="unlock_all_survival">Tüm hayatta kalma seviyelerini aç</string>
+    <string name="unlock_all_survival_desc">Tüm minimum puanları yaparak her hayatta kalma seviyesini aç.</string>
+    <string name="dragonslayer">Ejderha Katili</string>
+    <string name="dragonslayer_desc">Büyük Kırmızı Ejderha\'yı mağlup et.</string>
+    <string name="breaker_of_chains_2">Zincirkıran 2</string>
+    <string name="breaker_of_chains_2_desc">Bölüm 4, Zindan seviyesi 9\'da Ay Bekçisi\'ni serbest bırak.</string>
+    <string name="bound_together">Ayrılmaz ikili</string>
+    <string name="bound_together_desc">Cehennem Büyücüsü\'nü yendikten sonra Kral\'a katıl.</string>
+    <string name="bank_for_your_buck">Bankadaki servet</string>
+    <string name="bank_for_your_buck_desc">Bir eşyayı bankaya yatır.</string>
+    <string name="dirty_faced_rookie">Pis Suratlı Çaylak</string>
+    <string name="dirty_faced_rookie_desc">Rekabet Modunda bir Tek Kişilik Zindan\'ı bitir.</string>
+    <string name="bring_it_on">Hodri meydan!</string>
+    <string name="bring_it_on_desc">Rekabet Modunda başka bir oyuncuya karşı bir maç başlat.</string>
+    <string name="veni_vidi_vici">Geldim, gördüm, yendim.</string>
+    <string name="veni_vidi_vici_desc">Rekabet Modunda başka bir oyuncuya karşı bir maç kazan.</string>
+    <string name="taking_part_counts">Önemli olan katılmaktı…</string>
+    <string name="taking_part_counts_desc">Sakın bir oyuncuya karşı maç kaybetme, ama kaybedersen bu başarı açılacak.</string>
+    <string name="add_friend">Dostlar baki kalır</string>
+    <string name="add_friend_desc">Rekabet Modunda bir arkadaş ekle.</string>
+    <string name="challenge_friend">Dost ateşi</string>
+    <string name="challenge_friend_desc">Rekabet Modunda bir arkadaşına meydan oku.</string>
+    <string name="r_for_revenge">İntikamın İ\'si</string>
+    <string name="r_for_revenge_desc">Rekabet Modunda bir intikam maçı kazan.</string>
+    <string name="bronze_rank_achievement">Bronz Canavar</string>
+    <string name="bronze_rank_achievement_desc">Rekabet Modunda Bronz Derecesine kadar yüksel.</string>
+    <string name="silver_rank_achievement">Gümüş Asker</string>
+    <string name="silver_rank_achievement_desc">Rekabet Modunda Gümüş Derecesine kadar yüksel.</string>
+    <string name="gold_rank_achievement">Altına oluyorum!</string>
+    <string name="gold_rank_achievement_desc">Rekabet Modunda Altın Derecesine kadar yüksel.</string>
+    <string name="platinum_rank_achievement">Saf Platin!</string>
+    <string name="platinum_rank_achievement_desc">Rekabet Modunda Platin Derecesine kadar yüksel.</string>
+    <string name="diamond_rank_achievement">Kör eden elmas ışıltısı!</string>
+    <string name="diamond_rank_achievement_desc">Rekabet Modunda Elmas Derecesine kadar yüksel. Parlamaya devam et!</string>
+    <string name="champion_slayer">Şampiyon Katili</string>
+    <string name="champion_slayer_desc">Şampiyonlar Salonu\'ndaki tüm şampiyonları yen.</string>
+    <string name="ranked_top_1">Bir numara!</string>
+    <string name="ranked_top_1_desc">Liderlik sıralamasında zirveye çık.</string>
+    <string name="ranked_top_15">En büyük biziz!</string>
+    <string name="ranked_top_15_desc">Şampiyonlar Salonu\'nda ilk 15 oyuncu arasına gir.</string>
+    <string name="its_time">Vakit geldi!</string>
+    <string name="its_time_desc">3–6\'da havada süzülen ¾420\'yi topla. Onu günün belirli bir saatinde yap.</string>
+    <string name="bag_expanded_2">Daha da fazla depolama alanı!</string>
+    <string name="bag_expanded_2_desc">Mağazadan ikinci envanter büyütme sandığını satın al.</string>
+    <string name="ranked_top_100">Gerçek kahraman</string>
+    <string name="ranked_top_100_desc">En iyi oyunculardan oluşan ilk 500 listesine gir. Mevcut yerini envanterinin sıralama bölümünde görebilirsin.</string>
+    <string name="ranked_top_500">Emektar Katliamcı</string>
+    <string name="ranked_top_500_desc">En iyi oyunculardan oluşan ilk 500 listesine gir. Mevcut yerini envanterinin sıralama bölümünde görebilirsin.</string>
+    <string name="challenge_accepted">Meydan Okuma Kabul Edildi</string>
+    <string name="challenge_accepted_desc">Haftalık Meydan Okuma Portalı\'ndan bir Meydan Okumayı bitir.</string>
+    <string name="salesman_payback">Geri Ödeme Zamanı</string>
+    <string name="salesman_payback_desc">Satıcıyı alternatif gerçeklikte öldür.</string>
+    <string name="time_patrollers_time">Zaman Devriyesinin Zamanı</string>
+    <string name="time_patrollers_time_desc">Zaman Devriyesini alternatif gerçeklikte öldür.</string>
+    <string name="kingslayer_time">Kral Katili</string>
+    <string name="kingslayer_time_desc">Kralı alternatif gerçeklikte öldür.</string>
+    <string name="pixelated_arsenal">Pikselli Cephane</string>
+    <string name="pixelated_arsenal_desc">Alternatif gerçeklikte bir Retro tarzında eşya al.</string>
+    <string name="the_end_of_the_world">Dünyanın Sonu</string>
+    <string name="the_end_of_the_world_desc">Zindan 5–1\'de ilk kez yüzeye çıkın.</string>
+    <string name="bag_expanded_3">İnanılmaz büyük</string>
+    <string name="bag_expanded_3_desc">Üçüncü genişleme sandığını al.</string>
+    <string name="its_amazing">Harika!</string>
+    <string name="its_amazing_desc">Haftalık Zindanda bulunan Skor Hedefini yen. İlk olarak sıradan ve inanılmaz zorluğu yenmen gerekir.</string>
+    <string name="weekly_dungeons_completed_15">Safir Madalyon Tutucu</string>
+    <string name="weekly_dungeons_completed_15_desc">F50 defa farklı Haftalık Zindan tamamla.</string>
+    <string name="weekly_dungeons_completed_30">Zümrüt Madalyon Tutucu</string>
+    <string name="weekly_dungeons_completed_30_desc">F50 defa farklı Haftalık Zindan tamamla.</string>
+    <string name="weekly_dungeons_completed_50">Yakut Madalyon Tutucu</string>
+    <string name="weekly_dungeons_completed_50_desc">F50 defa farklı Haftalık Zindan tamamla.</string>
+    <string name="weekly_dungeons_star_30">Onurlu Yıldız</string>
+    <string name="weekly_dungeons_star_30_desc">50 farklı Haftalık Zindanda 50 Yıldız Mücadelesi tamamla.</string>
+    <string name="weekly_dungeons_star_50">Yüce Yıldız</string>
+    <string name="weekly_dungeons_star_50_desc">50 farklı Haftalık Zindanda 50 Yıldız Mücadelesi tamamla.</string>
+    <string name="weekly_dungeons_time_30">Onurlu Koşucu</string>
+    <string name="weekly_dungeons_time_30_desc">50 farklı Haftalık Zindanda 50 Zaman Mücadelesi tamamla.</string>
+    <string name="weekly_dungeons_time_50">Mighty Runner</string>
+    <string name="weekly_dungeons_time_50_desc">50 farklı Haftalık Zindanda 50 Zaman Mücadelesi tamamla.</string>
+    <string name="story_to_be_told">Anlatılması gereken hikaye</string>
+    <string name="story_to_be_told_desc">Kanka\'nın 5–3 Önsözünde çalkantılı portal geçişi hakkında söylediklerini dinle.</string>
+    <string name="the_untold_story_3">Anlatılmamış Hikaye 3</string>
+    <string name="the_untold_story_3_desc">5–3ün önsözünde Kral\'ın ne söylediğini dinle.</string>
+    <string name="skilled_dirty_faced">Yetenekli fakat Kirli Yüzlü</string>
+    <string name="skilled_dirty_faced_desc">Beceri ağacından üç beceri öğrenin.</string>
+    <string name="super_skill">Süper Beceri!</string>
+    <string name="super_skill_desc">Beceri ağacından Süper Becerilerden birini öğrenin.</string>
+    <string name="complete_103">103 Ağıt</string>
+    <string name="complete_103_desc">Oyunun \%103\'ünü tamamlayın. 5. Bölüm\'ün sonuna kadar herhangi bir hasar almadan tüm gizli alanları bulun ve tüm Zindanları tamamlayın.</string>
+    <string name="ninth_circle">Dokuzuncu Oda</string>
+    <string name="ninth_circle_desc">Zindan 5–4\'te gezegenin donmuş yeraltı odalarına ulaşın.</string>
+    <string name="the_darkest_side">Ayın en karanlık kısmı</string>
+    <string name="the_darkest_side_desc">Zindan 5–4\'ü üç elmasla bitirdikten sonra bonus sahnesini izleyin.</string>
+    <string name="sharp_dressed_minion">Kıyak Giyinmiş Minyon</string>
+    <string name="sharp_dressed_minion_desc">Özel bir görünüm kullanarak minyonlarınızın görünümünü değiştirin. Ödül Odasında yeni görünümler satın alabilirsiniz.</string>
+    <string name="dirty_faced_souls">Pis Suratlı Ruhlar</string>
+    <string name="dirty_faced_souls_desc">modunu \%100 tamamlayın. Tüm gizli alanları ve elmasları bulun.</string>
+    <string name="time_patroller">Sanki Zaman Devriyesindeyim!</string>
+    <string name="time_patroller_desc">modunda \%101\'i tamamlayın. Tüm gizli alanları bulun ve Bölüm 1, 2 ve 3\'ü herhangi bir hasar almadan tekrar oynayın.</string>
+    <string name="the_king">Krala diz çökün!</string>
+    <string name="the_king_desc">Oyunun \%102\'sini  modunda tamamlayın. 4. Bölüm\'ün sonuna kadar herhangi bir hasar almadan tüm gizli alanları bulun ve tüm Zindanları tamamlayın.</string>
+    <string name="bound_together_plus">Birbirimize bağlıyız+</string>
+    <string name="bound_together_plus_desc">Rampage modunda Büyücü\'yü yendikten sonra Kral\'a katılın.</string>
+    <string name="witch_hunt_plus">Cadı Avı+</string>
+    <string name="witch_hunt_plus_desc">Rampage modunda Büyücü Patron\'u yenin.</string>
+    <string name="sinister_riddle">Sinister Riddle</string>
+    <string name="sinister_riddle_desc">Solve the Sinister Obelisk\'s riddle.</string>
+    <string name="have_a_toast">Şerefine kadeh kaldıralım!</string>
+    <string name="have_a_toast_desc">Tavernada başka bir oyuncu için bir içecek al.</string>
+    <string name="bullseye_wizard">Hedef Sihirbazı</string>
+    <string name="bullseye_wizard_desc">Tavernadaki Dart oyununda 990.000 veya daha yüksek puan alın.</string>
+    <string name="settle_a_score">Bir skor belirleyin</string>
+    <string name="settle_a_score_desc">Tavernadaki Satıcının Hacıyatmazı oyununda 35.000 veya daha yüksek puan alın.</string>
+    <string name="meet_me_outside">Çıkışa gel!</string>
+    <string name="meet_me_outside_desc">Bir arkadaşınıza Düello maçına davet edin. Arkadaşlarınızı ekleyebilir ve Tavernada bir Düelloya davet edebilirsiniz.</string>
+    <string name="duels_of_destiny">Kaderin Efendisi!</string>
+    <string name="duels_of_destiny_desc">Bir Dereceli Düello maçı kazanın. Turnuvada bulunan Kader Düelloları portalından rakipleri bulabilirsiniz.</string>
+    <string name="taste_of_victory">Zaferin Tadı</string>
+    <string name="taste_of_victory_desc">İlk sıradan Düellonuzu kazanın. Tavernada rakipler bulabilirsiniz.</string>
+    <string name="bronze_duel_rank_achievement">Koruyucu\'nun Yükselişi</string>
+    <string name="bronze_duel_rank_achievement_desc">Düellolarda derecenizi Usta Koruyucu\'ya yükseltin.</string>
+    <string name="silver_duel_rank_achievement">Diyarın Bekçisi</string>
+    <string name="silver_duel_rank_achievement_desc">Düellolarda derecenizi Büyükusta Koruyucu\'ya yükseltin.</string>
+    <string name="gold_duel_rank_achievement">Zamanın İçinden</string>
+    <string name="gold_duel_rank_achievement_desc">Düellolarda derecenizi Zaman Yolcusu\'na yükseltin.</string>
+    <string name="platinum_duel_rank_achievement">Zaman Gardiyanı</string>
+    <string name="platinum_duel_rank_achievement_desc">Düellolarda derecenizi Zaman Gezgini\'ne yükseltin.</string>
+    <string name="diamond_duel_rank_achievement">Kozmosun Koruyucusu</string>
+    <string name="diamond_duel_rank_achievement_desc">Düellolarda derecenizi Kozmik Gezgin\'e yükseltin!</string>
+    <string name="first_steps_into_destiny">Kaderin için ilk adım</string>
+    <string name="first_steps_into_destiny_desc">Her Savaş Bölgesini keşfedin ve Kader Düelloları için ilk eğitiminizi tamamlayın.</string>
+
+    <string name="enemy_stat_health">Can: </string>
+    <string name="enemy_stat_damage">Hasar: </string>
+    <string name="enemy_stat_touch_damage">Temas Hasarı: </string>
+    <string name="enemy_stat_armor">Zırh: </string>
+    <string name="enemy_stat_speed">Hız: </string>
+    <string name="enemy_stat_jump">Zıplama: </string>
+    <string name="enemy_stat_patrol_behaviour">Devriye Davranışı: </string>
+    <string name="enemy_stat_attack_behaviour">Saldırı Davranışı: </string>
+
+    <string name="dungeon_1">Zindan 1</string>
+    <string name="tips_and_tricks">İpuçları ve Püf Noktaları:</string>
+    <string name="secret_areas">Gizli Alanlar:</string>
+    <string name="dungeon_2">Zindan 2</string>
+    <string name="dungeon_3_bonus">Zindan 3 Bonusu</string>
+    <string name="tutorial">Öğretici:</string>
+    <string name="dungeon_5">Zindan 5</string>
+    <string name="dungeon_6">Zindan 6</string>
+    <string name="dungeon_5_bonus">Zindan 5 Bonusu</string>
+    <string name="dungeon_7">Zindan 7</string>
+    <string name="dungeon_7_bonus">Zindan 7 Bonusu</string>
+    <string name="dungeon_8">Zindan 8</string>
+    <string name="dungeon_10">Zindan 10</string>
+    <string name="bossfight_tips_and_tricks">Patron Dövüşü İpuçları ve Püf Noktaları</string>
+    <string name="dungeon_11">Zindan 11</string>
+    <string name="dungeon_11_bonus">Zindan 11 Bonusu</string>
+    <string name="dungeon_12">Zindan 12</string>
+    <string name="dungeon_13">Zindan 13</string>
+    <string name="dungeon_13_bonus">Zindan 13 Bonusu</string>
+    <string name="dungeon_14">Zindan 14</string>
+    <string name="dungeon_15">Zindan 15</string>
+    <string name="dungeon_16">Zindan 16</string>
+    <string name="dungeon_17">Zindan 17</string>
+    <string name="dungeon_17_bonus">Zindan 17 Bonusu</string>
+    <string name="dungeon_18">Zindan 18</string>
+    <string name="dungeon_19">Zindan 19</string>
+    <string name="dungeon_19_bonus">Zindan 19 Bonusu</string>
+    <string name="dungeon_20">Zindan 20</string>
+    <string name="dungeon_21">Zindan 21</string>
+    <string name="dungeon_22">Zindan 22</string>
+    <string name="dungeon_23">Zindan 23</string>
+    <string name="dungeon_23_bonus">Zindan 23 Bonusu</string>
+    <string name="dungeon_24">Zindan 24</string>
+    <string name="dungeon_25">Zindan 25</string>
+    <string name="dungeon_26">Zindan 26</string>
+    <string name="dungeon_27">Zindan 27</string>
+    <string name="dungeon_27_bonus">Zindan 27 Bonusu</string>
+    <string name="dungeon_28">Zindan 28</string>
+    <string name="dungeon_29">Zindan 29</string>
+    <string name="dungeon_29_bonus">Zindan 29 Bonusu</string>
+    <string name="dungeon_30">Zindan 30</string>
+    <string name="dungeon_31">Zindan 31</string>
+    <string name="dungeon_31_bonus">Zindan 31 Bonusu</string>
+    <string name="dungeon_32">Zindan 32</string>
+    <string name="dungeon_33">Zindan 33</string>
+    <string name="dungeon_34">Zindan 34</string>
+    <string name="dungeon_35">Zindan 35</string>
+    <string name="dungeon_36">Zindan 36</string>
+    <string name="dungeon_37">Zindan 37</string>
+    <string name="dungeon_38">Zindan 38</string>
+    <string name="dungeon_39">Zindan 39</string>
+    <string name="dungeon_40">Zindan 40</string>
+    <string name="dungeon_41">Zindan 41</string>
+    <string name="dungeon_42">Zindan 42</string>
+    <string name="dungeon_42_bonus">Zindan 42 Bonusu</string>
+    <string name="dungeon_43">Zindan 43</string>
+    <string name="dungeon_43_bonus">Zindan 43 Bonusu</string>
+    <string name="dungeon_44">Zindan 44</string>
+    <string name="dungeon_3">Zindan 3</string>
+    <string name="dungeon_4">Zindan 4</string>
+    <string name="dungeon_9">Zindan 9</string>
+
+    <string name="select_element">Element Seç</string>
+    <string name="news">📰 Haberler 📰</string>
+
+    <string name="translating">Çeviri indiriliyor. Bu işlem zaman alır ve veri kullanır. Lütfen bekleyin.</string>
+    <string name="waypoints">Yol noktaları</string>
+    <string name="stone_thrower">Taş Atıcı</string>
+    <string name="knife_thrower">Bıçak Atıcı</string>
+
+    <string name="failed_to_download_model">Çeviri modeli indirilemedi.</string>
+    <string name="failed_to_load_news">Haberler yüklenemedi.\nLütfen bağlantınızı kontrol edin.</string>
+</resources>

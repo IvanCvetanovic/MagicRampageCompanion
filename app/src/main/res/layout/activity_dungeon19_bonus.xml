@@ -1,107 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp"
-    android:fillViewport="true"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/grey_background">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_background"
+    android:fillViewport="true"
+    tools:context=".Dungeon19Bonus">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Dungeon17Bonus">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/Dungeon17BonusName"
+        <!-- Guidelines provide consistent horizontal margins -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dungeon 19 Bonus"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="24dp" />
+
+        <TextView
+            android:id="@+id/Dungeon19BonusName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:text="@string/dungeon_19_bonus"
             android:textColor="@color/white"
             android:textSize="32sp"
             android:textStyle="bold"
-            android:shadowRadius="10"
-            android:shadowColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/Dungeon9Secrets"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.313" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/Dungeon9Secrets"
+            android:id="@+id/Dungeon19BonusTutorialTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
-            android:text="Tutorial:"
+            android:text="@string/tutorial"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@id/Dungeon19BonusName" />
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="350dp"
-            android:layout_height="260dp"
-            android:layout_marginBottom="20dp"
+            android:id="@+id/TutorialImage1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/roundcorner"
-            app:layout_constraintBottom_toTopOf="@+id/TipsandTricksText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.903"
+            android:contentDescription="@string/tutorial"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="35:26"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/Dungeon19BonusTutorialTitle"
             app:srcCompat="@drawable/dungeon19bonus1" />
 
         <TextView
-            android:id="@+id/TipsandTricksText"
-            android:layout_width="350dp"
-            android:layout_height="280dp"
-            android:layout_marginBottom="20dp"
+            android:id="@+id/TutorialText1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
             android:text="@string/dungeon19bonustext1"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/TutorialImage1" />
 
         <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="350dp"
-            android:layout_height="150dp"
-            android:layout_marginBottom="20dp"
+            android:id="@+id/TutorialImage2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/roundcorner"
-            app:layout_constraintBottom_toTopOf="@+id/textView4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/tutorial"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="7:3"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/TutorialText1"
             app:srcCompat="@drawable/dungeon19bonus2" />
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:id="@+id/TutorialText2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
             android:text="@string/dungeon19bonustext2"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/TutorialImage2"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

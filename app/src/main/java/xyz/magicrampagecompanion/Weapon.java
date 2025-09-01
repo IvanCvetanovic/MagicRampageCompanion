@@ -1,5 +1,8 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -166,4 +169,5 @@ public class Weapon implements Parcelable {
             return new Weapon[size];
         }
     };
+
 }

@@ -1,5 +1,7 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
 public enum ClassNames {
     THIEF,
     WARRIOR,

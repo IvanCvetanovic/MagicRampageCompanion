@@ -1,10 +1,6 @@
 <resources>
-    <string name="dungeon1text">All three 💎 are in the golden pots.\n\n
-There are many potions in the upper invisible areas. For example, above secret area 1 and ending area.\n\n
-After meeting captain, you wil come across two boxes. Destroy the upper one to gain access to the area you have previously been to.\n\n
-If you go to the place where the cinematic starts, you will find good sword and armor in the two white pots.\n\n
-Second secret area is not reachable without the use of jumpman suit or special abilities, you cannot obtain it in the first try.\n\n
-    </string>
+    <!-- Dungeon Texts -->
+    <string name="dungeon1text">"All three 💎 are in the golden pots.   There are many potions in the upper invisible areas. For example, above secret area 1 and ending area.   After meeting captain, you wil come across two boxes. Destroy the upper one to gain access to the area you have previously been to.   If you go to the place where the cinematic starts, you will find good sword and armor in the two white pots.   Second secret area is not reachable without the use of jumpman suit or special abilities, you cannot obtain it in the first try.       "</string>
 
     <string name="dungeon2text">All three 💎 are in the golden pots.\n\n
 If you save the Dude he will gift you with a good early game sword and you will also receive an achievement.\n\n
@@ -471,17 +467,9 @@ Above the third golden pot, there is a dagger of light, which is very good for e
         Be sure to visit the sixth secret area, since it has a nice armor that will help you with the boss.\n\n
     </string>
 
-    <string name="dungeon44bossfighttext1">
-        Be sure to collect <font color="#FFA500"> Robe of Imminent Fires </font>from the sixth secret area in order to maximize your damage.\n\n
-        The boss has three main attacks: sliding icicle, falling icicles and boulder throw.\n\n
-        You are supposed to dodge while dealing damage at the same time while following the path shown in the picture.\n\n
-        Your attack should be the following: activate your special ability, then activate your super ability, then spam basic attacks. Rinse and repeat.\n\n
-    </string>
+    <string name="dungeon44bossfighttext1">Be sure to collect <font color="#FFA500"> Robe of Imminent Fires </font>from the sixth secret area in order to maximize your damage. \n\n The boss has three main attacks: sliding icicle, falling icicles and boulder throw. \n\n You are supposed to dodge while dealing damage at the same time while following the path shown in the picture. \n\n Your attack should be the following: activate your special ability, then activate your super ability, then spam basic attacks. Rinse and repeat.</string>
 
-    <string name="dungeon44bossfighttext2">
-        <font color="#FF0000">Warning:</font> If you do not deal enough damage until the sliding icicle breaks, the boss will start throwing boulders at you, which is pretty hard to dodge.\n\n
-        When the boss enters the second stage his sliding icicle move faster, his falling icicles now target your current position and he throws multiple boulders.\n\n
-    </string>
+    <string name="dungeon44bossfighttext2"><font color="#FF0000">Warning:</font> If you do not deal enough damage until the sliding icicle breaks, the boss will start throwing boulders at you, which is pretty hard to dodge. When the boss enters the second stage his sliding icicle move faster, his falling icicles now target your current position and he throws multiple boulders.</string>
 
     <!-- Skill Tree -->
     <string name="enhanced_velocity">Enhanced Velocity</string>
@@ -512,6 +500,15 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="confident_move">Confident Move</string>
     <string name="arcane_protection">Arcane Protection</string>
     <string name="thunder_wave">Thunder Wave</string>
+    <string name="final_wrath">Final Wrath</string>
+    <string name="rush_of_the_doomed">Rush of the Doomed</string>
+    <string name="overcharge">Overcharge</string>
+    <string name="arcane_discipline">Arcane Discipline</string>
+    <string name="swift_cast">Swift Cast</string>
+    <string name="airborne_dancer">Airborne Dancer</string>
+    <string name="seismic_reach">Seismic Reach</string>
+    <string name="titans_push">Titan\'s Push</string>
+    <string name="shockwave_force">Shockwave Force</string>
 
     <!-- Equipment Tester -->
     <string name="reset_all">Reset All</string>
@@ -581,9 +578,12 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="skill_description_34">Increases the knockback strength of all weapons by 40\%, sending enemies flying even farther.</string>
     <string name="skill_description_35">Increases the total area damage dealt by all weapons by 70\%.</string>
 
+    <!-- Equipment Tester -->
     <string name="skill_description_default">No description available.</string>
     <string name="rating_start">Rating: 0/10 💩</string>
+    <string name="rating">Rating: </string>
 
+    <!-- Classes -->
     <string name="rogue">Rogue</string>
     <string name="thief">Thief</string>
     <string name="mage">Mage</string>
@@ -598,6 +598,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="witchdoctor">Witchdoctor</string>
     <string name="druid">Druid</string>
 
+    <!-- Items -->
     <string name="recruit_set">Recruit Set</string>
     <string name="soldier_set">Soldier Set</string>
     <string name="elite_soldier_set">Elite Soldier Set</string>
@@ -636,8 +637,8 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="deathdoctor_set">Deathdoctor Set</string>
     <string name="crow_set">Crow Set</string>
     <string name="special_crow_set">Special Crow Set</string>
-    <string name="antiheros_set">Antihero\'s Set</string>
-    <string name="special_antiheros_set">Special Antihero\'s Set</string>
+    <string name="antiheros_set">Anti-hero\'s Set</string>
+    <string name="special_antiheros_set">Special Antihero Set</string>
     <string name="steelblow_armor">Steelblow Armor</string>
     <string name="steelblow_armor_plus">Steelblow Armor+</string>
     <string name="dark_lord_set">Dark Lord Set</string>
@@ -897,49 +898,6 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="wooden_hawaiian">Wooden Hawaiian</string>
     <string name="toxic_mace">Toxic Mace</string>
     <string name="wealthy_crusher">Wealthy Crusher</string>
-
-    <string name="dungeons">🏰 Dungeons 🏰</string>
-    <string name="survival_mode">☠️ Survival Mode ☠️</string>
-    <string name="test_equipment">🛡️ Test Equipment 🛡️</string>
-    <string name="ten_kills">10</string>
-    <string name="twenty_kills">20</string>
-    <string name="thirty_kills">30</string>
-    <string name="kills">Kills</string>
-    <string name="rewards">Rewards</string>
-    <string name="fourty_kills">40</string>
-    <string name="fifty_kills">50</string>
-    <string name="sixty_kills">60</string>
-    <string name="seventy_kills">70</string>
-    <string name="eighty_kills">80</string>
-    <string name="hundred_kills">100</string>
-    <string name="hundred_fifty_kills">150</string>
-    <string name="two_hundred_kills">200</string>
-    <string name="three_hundred_kills">300</string>
-    <string name="survival_dungeon_1">Survival Dungeon 1</string>
-    <string name="survival_tutorial">Tutorial</string>
-    <string name="survival1_text">For this one you will need a weapon that does not hit the middle platform. This will allow you to hit the enemies on the other side and block the projectiles. If a spider spawns in front of you, just attack the stone behind you to kill it easily.</string>
-    <string name="survival_dungeon_2">Survival Dungeon 2</string>
-    <string name="rune_of_wind">Rune of Wind</string>
-    <string name="burning_rune">Burning Rune</string>
-    <string name="shiny_rune">Shiny Rune</string>
-    <string name="purple_rune">Purple Rune</string>
-    <string name="green_rune">Green Rune</string>
-    <string name="liquid_rune">Liquid Rune</string>
-    <string name="survival2_text">The second survival dungeon does not need a lot of movement. Stay in the middle and attack on the sides, eventually moving up and down to kill additional enemies and avoiding the lightning.</string>
-    <string name="survival_dungeon_3">Survival Dungeon 3</string>
-    <string name="survival3_text">The third survival dungeon will require you to use a weapon that can hit spiders easily. It also has the most \"complicated\" attack pattern out of all survival dungeons, meaning that you will need to invest more effort in it.</string>
-    <string name="survival_dungeon_4">Survival Dungeon 4</string>
-    <string name="survival4_text">For this dungeon, be sure to use a weapon with low piercing power, os that you can kill the swamp monster with one shot. It is pretty simple to follow the attack patterns of the dungeon. Additionally you can use Warrior class for some extra protection against the enemy that wis spawning to your right.</string>
-    <string name="survival_dungeon_5">Survival Dungeon 5</string>
-    <string name="survival5_text">The best and easiest dungeon for farming gold. Be sure to use a weapon with high area of damage and limited range, like hammers and axes in order to be able to stay at one place and kill the enemies from afar.</string>
-    <string name="survival_dungeon_6">Survival Dungeon 6</string>
-    <string name="golden_key">Golden Key</string>
-    <string name="survival6_text">The last survvial dungeon requires a bit more effort compared to others, as you need ot constantly change the location in order to avoid projectiles, hit the flying units amd avoid the thunder strikes.</string>
-    <string name="about">ℹ️ About ℹ️</string>
-    <string name="about_author">About Author</string>
-    <string name="author_description">
-    Hello! I\'m Ivan Cvetanović — PrOfSeS to the Magic Rampage community, where I’ve been an active member for many years. I built this app to blend my long-standing love for the game with my growing passion for software engineering. If you run into any bugs or have suggestions, please reach out via Discord (click the button below) or email (see developer info on my Google Play Games page). Thank you for your support!</string>
-    <string name="achievements">🏆 Achievements 🏆</string>
     <string name="ifrits_shuriken">Ifrits Shuriken</string>
     <string name="compendium_of_trees">Compendium of Trees</string>
     <string name="the_testament_of_ifrit">The Testament of Ifrit</string>
@@ -947,7 +905,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="the_word_of_the_wind">The Word of the Wind</string>
     <string name="enlightened_hammer">Enlightened Hammer</string>
     <string name="phoenix">Phoenix</string>
-    <string name="dancers_raiment">Dancers Raiment</string>
+    <string name="dancers_raiment">Dancer\'s Raiment</string>
     <string name="storm">Storm</string>
     <string name="tunic_of_hellish_illusions">Tunic of Hellish Illusions</string>
     <string name="gatekeepers_bionic_arm">Gatekeepers Bionic Arm</string>
@@ -982,14 +940,87 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="the_daemon_codices">The Daemon Codices</string>
     <string name="path_of_exile_plus">Path of Exile+</string>
     <string name="eggscellent_axe">Eggscellent Axe</string>
+    <string name="dark_lord_set_plus">Dark Lord Set+</string>
+    <string name="heros_set_plus">Hero\'s Set+</string>
+    <string name="bankers_coat_plus">Banker\'s Coat+</string>
+    <string name="tidecaller_ring">Tidecaller Ring</string>
+    <string name="the_ancient_codices">The Ancient Codices</string>
+    <string name="minion_vest">Minion Vest</string>
+    <string name="gorgons_skin">Gorgon\'s Skin</string>
+
+    <!-- Main Menu -->
+    <string name="dungeons">🏰 Dungeons 🏰</string>
+    <string name="survival_mode">☠️ Survival Mode ☠️</string>
+    <string name="test_equipment">🛡️ Test Equipment 🛡️</string>
+    <string name="about">ℹ️ About ℹ️</string>
+    <string name="achievements">🏆 Achievements 🏆</string>
+    <string name="items">📋 Items 📋</string>
+    <string name="enemies">👻 Enemies 👻</string>
+    <string name="work_in_progress">Work In Progress!</string>
+
+    <!-- Achievements -->
+    <string name="ten_kills">10</string>
+    <string name="twenty_kills">20</string>
+    <string name="thirty_kills">30</string>
+    <string name="kills">Kills</string>
+    <string name="rewards">Rewards</string>
+    <string name="fourty_kills">40</string>
+    <string name="fifty_kills">50</string>
+    <string name="sixty_kills">60</string>
+    <string name="seventy_kills">70</string>
+    <string name="eighty_kills">80</string>
+    <string name="hundred_kills">100</string>
+    <string name="hundred_fifty_kills">150</string>
+    <string name="two_hundred_kills">200</string>
+    <string name="three_hundred_kills">300</string>
+    <string name="survival_dungeon_1">Survival Dungeon 1</string>
+    <string name="survival_tutorial">Tutorial</string>
+    <string name="survival1_text">For this one you will need a weapon that does not hit the middle platform. This will allow you to hit the enemies on the other side and block the projectiles. If a spider spawns in front of you, just attack the stone behind you to kill it easily.</string>
+    <string name="survival_dungeon_2">Survival Dungeon 2</string>
+
+    <!-- Runes -->
+    <string name="rune_of_wind">Rune of Wind</string>
+    <string name="burning_rune">Burning Rune</string>
+    <string name="shiny_rune">Shiny Rune</string>
+    <string name="purple_rune">Purple Rune</string>
+    <string name="green_rune">Green Rune</string>
+    <string name="liquid_rune">Liquid Rune</string>
+
+    <!-- Survival Mode -->
+    <string name="survival2_text">The second survival dungeon does not need a lot of movement. Stay in the middle and attack on the sides, eventually moving up and down to kill additional enemies and avoiding the lightning.</string>
+    <string name="survival_dungeon_3">Survival Dungeon 3</string>
+    <string name="survival3_text">The third survival dungeon will require you to use a weapon that can hit spiders easily. It also has the most \"complicated\" attack pattern out of all survival dungeons, meaning that you will need to invest more effort in it.</string>
+    <string name="survival_dungeon_4">Survival Dungeon 4</string>
+    <string name="survival4_text">For this dungeon, be sure to use a weapon with low piercing power, os that you can kill the swamp monster with one shot. It is pretty simple to follow the attack patterns of the dungeon. Additionally you can use Warrior class for some extra protection against the enemy that wis spawning to your right.</string>
+    <string name="survival_dungeon_5">Survival Dungeon 5</string>
+    <string name="survival5_text">The best and easiest dungeon for farming gold. Be sure to use a weapon with high area of damage and limited range, like hammers and axes in order to be able to stay at one place and kill the enemies from afar.</string>
+    <string name="survival_dungeon_6">Survival Dungeon 6</string>
+    <string name="survival6_text">The last survvial dungeon requires a bit more effort compared to others, as you need ot constantly change the location in order to avoid projectiles, hit the flying units amd avoid the thunder strikes.</string>
+
+    <!-- Other -->
+    <string name="golden_key">Golden Key</string>
+    <string name="change_language">Change Language</string>
+
+
+    <!-- About Section -->
+    <string name="about_author">About Author</string>
+    <string name="author_description">
+    Hello! I am Ivan Cvetanović — PrOfSeS to the Magic Rampage community, where I’ve been an active member for many years. I built this app to blend my long-standing love for the game with my growing passion for software engineering. If you run into any bugs or have suggestions, please reach out via Discord (click the button below) or email (see developer info on my Google Play Games page). Thank you for your support!</string>
+    <string name="special_thanks">Special Thanks:</string>
+    <string name="in_memory_of">In Memory Of:</string>
+    <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman </string>
+
+    <!-- Equipment Tester -->
     <string name="attack_speed">Attack Speed: </string>
     <string name="pierce_count">Pierce Count: </string>
     <string name="projectile_persistence">Projectile Persistence</string>
     <string name="poisonous_attack">Poisonous Attack</string>
     <string name="frost_attack">Frost Attack</string>
-    <string name="items">📋 Items 📋</string>
     <string name="Armors">Armors</string>
     <string name="Rings">Rings</string>
+
+    <!-- Enemies -->
     <string name="enemy_spider">Spider A</string>
     <string name="enemy_zombie_knife_guard">Zombie Knife Guard</string>
     <string name="enemy_zombie_guard">Zombie Guard</string>
@@ -1187,27 +1218,310 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="enemy_vindicator_carnival">Carnival Vindicator</string>
     <string name="enemy_warlock_final_boss">Final Boss Warlock</string>
     <string name="enemy_xmas_mimic">Xmas Mimic</string>
-    <string name="enemies">👻 Enemies 👻</string>
-    <string name="work_in_progress">Work In Progress!</string>
-    <string name="special_thanks">Special Thanks:</string>
-    <string name="in_memory_of">In Memory Of:</string>
-    <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman </string>
-    <string name="final_wrath">Final Wrath</string>
-    <string name="rush_of_the_doomed">Rush of the Doomed</string>
-    <string name="overcharge">Overcharge</string>
-    <string name="arcane_discipline">Arcane Discipline</string>
-    <string name="swift_cast">Swift Cast</string>
-    <string name="airborne_dancer">Airborne Dancer</string>
-    <string name="seismic_reach">Seismic Reach</string>
-    <string name="titans_push">Titan\'s Push</string>
-    <string name="shockwave_force">Shockwave Force</string>
-    <string name="dark_lord_set_plus">Dark Lord Set+</string>
-    <string name="heros_set_plus">Hero\'s Set+</string>
-    <string name="bankers_coat_plus">Bankers Coat+</string>
-    <string name="tidecaller_ring">Tidecaller Ring</string>
-    <string name="ancient_codices">Ancient Codices</string>
-    <string name="minion_vest">Minion Vest</string>
-    <string name="gorgons_skin">Gorgon\'s Skin</string>
 
+    <!-- Achievements-->
+    <string name="vase_breaker">Vase breaker</string>
+    <string name="save_that_dude">Save That Dude!</string>
+    <string name="keep_that_dude_alive">Keep That Dude alive!</string>
+    <string name="armed_and_dangerous">Armed and dangerous</string>
+    <string name="head_shot">Head shot!</string>
+    <string name="zombie_killer">Zombie killer</string>
+    <string name="spider_killer">Spider killer</string>
+    <string name="bone_collector">The Bone Collector</string>
+    <string name="mr_macgyver">Mr. MacGyver</string>
+    <string name="there_and_back">There and Back Again</string>
+    <string name="know_your_enemy">Know your Enemy</string>
+    <string name="complete_101">Over 100% complete!</string>
+    <string name="complete_100">Did the whole thing!</string>
+    <string name="flawless_victory">Flawless victory!</string>
+    <string name="ecstasy_of_gold">Ecstasy of Gold</string>
+    <string name="demon_slayer">Demon slayer</string>
+    <string name="get_in_the_ring">Get in the Ring</string>
+    <string name="lost_flipflop">The lost Flip-Flop</string>
+    <string name="the_untold_story">The Untold Story</string>
+    <string name="that_dude_must_live">That Dude must live!</string>
+    <string name="could_beat_gng">I could beat Ghouls \'N Ghosts</string>
+    <string name="changing_in_the_air">Changing in the air</string>
+    <string name="runeforge">Runeforge</string>
+    <string name="ride_the_wind">Ride the Wind</string>
+    <string name="ghostbusters">Ghostbusters</string>
+    <string name="why_so_curious">Why so curious?</string>
+    <string name="loot_from_the_future">Loot from the future</string>
+    <string name="the_untold_story_2">The Untold Story 2</string>
+    <string name="kill_the_spider">Evil thing in spider form</string>
+    <string name="lost_hammer">I did it intentionally, to…</string>
+    <string name="dude_still_lives">That Dude still lives</string>
+    <string name="dudes_story">That Dude\'s story</string>
+    <string name="breaker_of_chains">Breaker of Chains</string>
+    <string name="saw_a_giant">I saw a giant</string>
+    <string name="witch_hunt">Witch-hunt</string>
+    <string name="post_credits">That post-credits thing</string>
+    <string name="survival_50">50 kills</string>
+    <string name="survival_100">100 kills</string>
+    <string name="survival_200">200 kills</string>
+    <string name="survival_300">300 kills</string>
+    <string name="survival_1000">1000 kills? WTF!</string>
+    <string name="pimp_my_char">Pimp my character</string>
+    <string name="bag_expanded">More storage</string>
+    <string name="may_the_magic">May the Magic be with you</string>
+    <string name="vase_breaker_desc">Destroy a vase on the Start screen.</string>
+    <string name="armed_and_dangerous_desc">Get your first weapon.</string>
+    <string name="save_that_dude_desc">Keep That Dude from being attacked in Chapter 1 Dungeon level 2.</string>
+    <string name="keep_that_dude_alive_desc">Help That Dude in Chapter 1 Dungeon level 8 and keep him alive.</string>
+    <string name="head_shot_desc">Hit an enemy with a head shot.</string>
+    <string name="zombie_killer_desc">Kill a zombie.</string>
+    <string name="spider_killer_desc">Kill a spider.</string>
+    <string name="bone_collector_desc">Defeat a skeleton.</string>
+    <string name="mr_macgyver_desc">Access the secret area in Chapter 1 Dungeon Bonus level 3.</string>
+    <string name="there_and_back_desc">Revive after death.</string>
+    <string name="know_your_enemy_desc">Read all the tips.</string>
+    <string name="complete_101_desc">Complete 101%. Find all secret areas of the game, and replay Chapters 1, 2 and 3 without taking any damage.</string>
+    <string name="complete_100_desc">Complete 100% of the game. Find all secret areas and diamonds.</string>
+    <string name="flawless_victory_desc">Get a star by replaying a level without taking any damage.</string>
+    <string name="ecstasy_of_gold_desc">Buy more gold for your character.</string>
+    <string name="demon_slayer_desc">Beat the Boss in Chapter 1.</string>
+    <string name="get_in_the_ring_desc">Access the secret area in Chapter 2 Dungeon Bonus level 1.</string>
+    <string name="lost_flipflop_desc">Find the lost Flip-Flop.</string>
+    <string name="the_untold_story_desc">Let That Dude tell you The Untold Story in Chapter 2 Dungeon level 4.</string>
+    <string name="that_dude_must_live_desc">Keep That Dude alive until the end of the level.</string>
+    <string name="could_beat_gng_desc">Get a star on all first 15 levels.</string>
+    <string name="changing_in_the_air_desc">Get to the top of the highest point in Chapter 2 Dungeon level 6.</string>
+    <string name="runeforge_desc">Upgrade an item.</string>
+    <string name="ride_the_wind_desc">Reach the last chest in Chapter 2 Dungeon level 7.</string>
+    <string name="ghostbusters_desc">Defeat a ghost in Chapter 2 Dungeon level 7.</string>
+    <string name="why_so_curious_desc">Access the locked area in Chapter 2 Dungeon Bonus level 7.</string>
+    <string name="loot_from_the_future_desc">Find at least one of the two hidden chests in Chapter 1 Dungeon level 3.</string>
+    <string name="the_untold_story_2_desc">Hear what The Captain has to say about Portals and giant winged creatures in Chapter 2 Dungeon level 9.</string>
+    <string name="kill_the_spider_desc">Defeat the giant spider that lives in the swamp.</string>
+    <string name="lost_hammer_desc">Find The Lost Hammer.</string>
+    <string name="dude_still_lives_desc">Meet That Dude in Chapter 3 Dungeon level 5 (if he survived Chapter 2 Dungeon level 4).</string>
+    <string name="dudes_story_desc">Listen to what That Dude has to say in Chapter 1 Dungeon level 8 (if he survived Chapter 1 Dungeon level 2).</string>
+    <string name="breaker_of_chains_desc">Release The Wizard of the Oracle in Chapter 3 Dungeon level 9.</string>
+    <string name="saw_a_giant_desc">Kill a giant.</string>
+    <string name="witch_hunt_desc">Defeat The Warlock Boss.</string>
+    <string name="post_credits_desc">Watch the post-credits scene.</string>
+    <string name="survival_50_desc">Kill 50 enemies in Survival Mode.</string>
+    <string name="survival_100_desc">Kill 100 enemies in Survival Mode.</string>
+    <string name="survival_200_desc">Kill 200 enemies in Survival Mode.</string>
+    <string name="survival_300_desc">Kill 300 enemies in Survival Mode.</string>
+    <string name="survival_1000_desc">Kill 1000 enemies in Survival Mode.</string>
+    <string name="pimp_my_char_desc">Use the Character Editor to change your avatar\'s head.</string>
+    <string name="bag_expanded_desc">Buy the inventory expansion chest in the Shop.</string>
+    <string name="truth_out_there">The Truth Is Out There</string>
+    <string name="truth_out_there_desc">Travel through the Portal and find out what is beyond.</string>
+    <string name="may_the_magic_desc">Find the lost saber.</string>
+    <string name="complete_102">Chapter 4 is too difficult!</string>
+    <string name="complete_102_desc">Complete 102% of the game. Complete all Dungeons, find all secret areas and replay all dungeons up to the end of Chapter 4 without taking any damage.</string>
+    <string name="class_consciousness">Class consciousness</string>
+    <string name="class_consciousness_desc">Learn and perform the special skill of your class in Chapter 1 Dungeon level 6.</string>
+    <string name="unlock_all_survival">Unlock all survival levels</string>
+    <string name="unlock_all_survival_desc">Unlock every survival level by reaching all minimum scores.</string>
+    <string name="dragonslayer">Dragonslayer</string>
+    <string name="dragonslayer_desc">Defeat the Great Red Dragon.</string>
+    <string name="breaker_of_chains_2">Breaker of Chains 2</string>
+    <string name="breaker_of_chains_2_desc">Release the Moon-Keeper in Chapter 4, Dungeon level 9.</string>
+    <string name="bound_together">Bound together</string>
+    <string name="bound_together_desc">Join the King after defeating the Warlock.</string>
+    <string name="bank_for_your_buck">Bank for your buck</string>
+    <string name="bank_for_your_buck_desc">Deposit an item in the bank.</string>
+    <string name="dirty_faced_rookie">Dirty-faced Rookie</string>
+    <string name="dirty_faced_rookie_desc">Finish a Solo Dungeon in the Competitive Mode.</string>
+    <string name="bring_it_on">Bring it on!</string>
+    <string name="bring_it_on_desc">Start a match against another player in the Competitive Mode.</string>
+    <string name="veni_vidi_vici">I came, I saw, I conquered</string>
+    <string name="veni_vidi_vici_desc">Win a match against another player in the Competitive Mode.</string>
+    <string name="taking_part_counts">It\'s the taking part that counts…</string>
+    <string name="taking_part_counts_desc">Don\'t ever try to lose a match against another player, but if you do, this achievement will be unlocked.</string>
+    <string name="add_friend">Friends will be friends</string>
+    <string name="add_friend_desc">Add a friend in the Competitive Mode.</string>
+    <string name="challenge_friend">Friendly fire</string>
+    <string name="challenge_friend_desc">Challenge a friend in the Competitive Mode.</string>
+    <string name="r_for_revenge">R for Revenge</string>
+    <string name="r_for_revenge_desc">Win a revenge match in the Competitive Mode.</string>
+    <string name="bronze_rank_achievement">Bronze Beast</string>
+    <string name="bronze_rank_achievement_desc">Raise your Rank up to Bronze in the Competitive Mode.</string>
+    <string name="silver_rank_achievement">Silver Soldier</string>
+    <string name="silver_rank_achievement_desc">Raise your Rank up to Silver in the Competitive Mode.</string>
+    <string name="gold_rank_achievement">Going Gold!</string>
+    <string name="gold_rank_achievement_desc">Raise your Rank up to Gold in the Competitive Mode.</string>
+    <string name="platinum_rank_achievement">Pure Platinum!</string>
+    <string name="platinum_rank_achievement_desc">Raise your Rank up to Platinum in the Competitive Mode.</string>
+    <string name="diamond_rank_achievement">You crazy Diamond!</string>
+    <string name="diamond_rank_achievement_desc">Raise your Rank up to Diamond in the Competitive Mode. Shine on!</string>
+    <string name="champion_slayer">The Champion Slayer</string>
+    <string name="champion_slayer_desc">Beat any champion in the Hall of Champions.</string>
+    <string name="ranked_top_1">The number one!</string>
+    <string name="ranked_top_1_desc">Get to the top of the Ranking leaderboard.</string>
+    <string name="ranked_top_15">We are the champions!</string>
+    <string name="ranked_top_15_desc">Join the top 15 players featured in the Hall of Champions.</string>
+    <string name="its_time">It\'s time!</string>
+    <string name="its_time_desc">Collect the ¾420 that floats in the air at 3\-6. Do it during a specific time of day.</string>
+    <string name="bag_expanded_2">Even more storage!</string>
+    <string name="bag_expanded_2_desc">Buy the second expansion chest in the shop.</string>
+    <string name="ranked_top_100">True hero</string>
+    <string name="ranked_top_100_desc">Be in the top 100 list of best ranked players. You can see your current position in the ranking section of your inventory.</string>
+    <string name="ranked_top_500">Veteran Rampager</string>
+    <string name="ranked_top_500_desc">Be in the top 500 list of best ranked players. You can see your current position in the ranking section of your inventory.</string>
+    <string name="challenge_accepted">Challenge Accepted</string>
+    <string name="challenge_accepted_desc">Finish a Challenge from the Weekly Challenge Portal.</string>
+    <string name="salesman_payback">Payback Time</string>
+    <string name="salesman_payback_desc">Kill the Salesman in the alternative reality.</string>
+    <string name="time_patrollers_time">Time Patroller\'s Time</string>
+    <string name="time_patrollers_time_desc">Kill the Time Patroller in the alternative reality.</string>
+    <string name="kingslayer_time">Kingslayer</string>
+    <string name="kingslayer_time_desc">Kill the King in the alternative reality.</string>
+    <string name="pixelated_arsenal">Pixelated Arsenal</string>
+    <string name="pixelated_arsenal_desc">Collect a Retro stylized item in the alternative reality.</string>
+    <string name="the_end_of_the_world">The End of the World</string>
+    <string name="the_end_of_the_world_desc">Get to the surface for the first time in Dungeon 5\-1.</string>
+    <string name="bag_expanded_3">Impossibly huge</string>
+    <string name="bag_expanded_3_desc">Buy the third expansion chest.</string>
+    <string name="its_amazing">It\'s Amazing!</string>
+    <string name="its_amazing_desc">Beat the Amazing Score Goal in the Weekly Dungeons. You need to beat Ordinary and Super goals first.</string>
+    <string name="weekly_dungeons_completed_15">Sapphire Medallion Holder</string>
+    <string name="weekly_dungeons_completed_15_desc">Finish 15 distinct Weekly Dungeons.</string>
+    <string name="weekly_dungeons_completed_30">Emerald Medallion Holder</string>
+    <string name="weekly_dungeons_completed_30_desc">Finish 30 distinct Weekly Dungeons.</string>
+    <string name="weekly_dungeons_completed_50">Ruby Medallion Holder</string>
+    <string name="weekly_dungeons_completed_50_desc">Finish 50 distinct Weekly Dungeons.</string>
+    <string name="weekly_dungeons_star_30">The Honorable Star</string>
+    <string name="weekly_dungeons_star_30_desc">Complete 30 Star Challenges in 30 distinct Weekly Dungeons.</string>
+    <string name="weekly_dungeons_star_50">The Mighty Star</string>
+    <string name="weekly_dungeons_star_50_desc">Complete 50 Star Challenges in 50 distinct Weekly Dungeons.</string>
+    <string name="weekly_dungeons_time_30">Honorable Runner</string>
+    <string name="weekly_dungeons_time_30_desc">Complete 30 Time Challenges in 30 distinct Weekly Dungeons.</string>
+    <string name="weekly_dungeons_time_50">Mighty Runner</string>
+    <string name="weekly_dungeons_time_50_desc">Complete 50 Time Challenges in 50 distinct Weekly Dungeons.</string>
+    <string name="story_to_be_told">A story to be told</string>
+    <string name="story_to_be_told_desc">Listen to what the Dude has to say at 5\-3 prologue about the turbulent portal crossing.</string>
+    <string name="the_untold_story_3">The Untold Story 3</string>
+    <string name="the_untold_story_3_desc">Listen to what the King has to say in his lab at 5 ß-3 prologue.</string>
+    <string name="skilled_dirty_faced">Skilled but dirty-faced</string>
+    <string name="skilled_dirty_faced_desc">Learn three skills from the Skill Tree.</string>
+    <string name="super_skill">The super skill!</string>
+    <string name="super_skill_desc">Learn one of the Super Skills from the Skill Tree.</string>
+    <string name="complete_103">The 103 Lamentations</string>
+    <string name="complete_103_desc">Complete 103%. Complete all Dungeons, find all secret areas in the game and replay all dungeons up to the end of Chapter 5 without taking any damage.</string>
+    <string name="ninth_circle">The ninth circle</string>
+    <string name="ninth_circle_desc">Get to the frozen underground chambers of the planet in Dungeon 5 ß-4.</string>
+    <string name="the_darkest_side">The darkest side of the Moon</string>
+    <string name="the_darkest_side_desc">Watch the bonus scene after finishing Dungeon 5\-4 with all three diamonds.</string>
+    <string name="sharp_dressed_minion">Sharp Dressed Minion</string>
+    <string name="sharp_dressed_minion_desc">Change your minion\'s look using a custom skin. You can purchase new skins in the Prize Room.</string>
+    <string name="dirty_faced_souls">Dirty-faced Souls</string>
+    <string name="dirty_faced_souls_desc">Complete 100% on &lt;new-game-plus&gt; mode. Find all secret areas and diamonds.</string>
+    <string name="time_patroller">Like a Time Patroller!</string>
+    <string name="time_patroller_desc">Complete 101% on &lt;new-game-plus&gt; mode. Find all secret areas, and replay Chapters 1, 2 and 3 without taking any damage.</string>
+    <string name="the_king">Bow down to the King!</string>
+    <string name="the_king_desc">Complete 102% of the game on &lt;new-game-plus&gt; mode. Complete all dungeons, find all secret areas and replay all dungeons up to the end of Chapter 4 without taking any damage.</string>
+    <string name="bound_together_plus">Bound together+</string>
+    <string name="bound_together_plus_desc">Join the King after defeating the Warlock on &lt;new-game-plus&gt; mode.</string>
+    <string name="witch_hunt_plus">Witch-hunt+</string>
+    <string name="witch_hunt_plus_desc">Defeat The Warlock Boss on &lt;new-game-plus&gt; mode.</string>
+    <string name="sinister_riddle">Sinister Riddle</string>
+    <string name="sinister_riddle_desc">Solve the Sinister Obelisk\'s riddle.</string>
+    <string name="have_a_toast">In your honor, have a toast!</string>
+    <string name="have_a_toast_desc">Buy a drink for another player in the Tavern.</string>
+    <string name="bullseye_wizard">Bullseye Wizard</string>
+    <string name="bullseye_wizard_desc">Score 990,000 or higher in the Darts game inside the Tavern.</string>
+    <string name="settle_a_score">Settle a score</string>
+    <string name="settle_a_score_desc">Score 35,000 or higher in the Salesman\'s Smackdown game inside the Tavern.</string>
+    <string name="meet_me_outside">Meet me outside!</string>
+    <string name="meet_me_outside_desc">Challenge a friend to a Duel match. You can add friends and challenge them to a Duel in the Tavern.</string>
+    <string name="duels_of_destiny">Master of Destiny!</string>
+    <string name="duels_of_destiny_desc">Win a Ranked Duel match. You can find opponents through the Duels of Destiny portal located in the Tavern.</string>
+    <string name="taste_of_victory">The taste of victory</string>
+    <string name="taste_of_victory_desc">Win your first casual Duel. You can find opponents in the Tavern.</string>
+    <string name="bronze_duel_rank_achievement">Rise of the Sentinel</string>
+    <string name="bronze_duel_rank_achievement_desc">Raise your Rank up to Master Sentinel in the Duels.</string>
+    <string name="silver_duel_rank_achievement">Keeper of the Realm</string>
+    <string name="silver_duel_rank_achievement_desc">Raise your Rank up to Grandmaster Sentinel in the Duels.</string>
+    <string name="gold_duel_rank_achievement">Through the Rifts</string>
+    <string name="gold_duel_rank_achievement_desc">Raise your Rank up to Time Traveller in the Duels.</string>
+    <string name="platinum_duel_rank_achievement">Warden of Time</string>
+    <string name="platinum_duel_rank_achievement_desc">Raise your Rank up to Time Patroller in the Duels.</string>
+    <string name="diamond_duel_rank_achievement">Keeper of the Cosmos</string>
+    <string name="diamond_duel_rank_achievement_desc">Raise your Rank up to Cosmic Patroller in the Duels!</string>
+    <string name="first_steps_into_destiny">First steps into destiny</string>
+    <string name="first_steps_into_destiny_desc">Explore every Combat Zone and complete your initial training for the Duels of Destiny.</string>
+
+    <string name="enemy_stat_health">Health: </string>
+    <string name="enemy_stat_damage">Damage: </string>
+    <string name="enemy_stat_touch_damage">Touch Damage: </string>
+    <string name="enemy_stat_armor">Armor: </string>
+    <string name="enemy_stat_speed">Speed: </string>
+    <string name="enemy_stat_jump">Jump: </string>
+    <string name="enemy_stat_patrol_behaviour">Patrol Behaviour: </string>
+    <string name="enemy_stat_attack_behaviour">Attack Behaviour: </string>
+
+    <string name="dungeon_1">Dungeon 1</string>
+    <string name="tips_and_tricks">Tips and Tricks:</string>
+    <string name="secret_areas">Secret Areas:</string>
+    <string name="dungeon_2">Dungeon 2</string>
+    <string name="dungeon_3">Dungeon 3</string>
+    <string name="dungeon_3_bonus">Dungeon 3 Bonus</string>
+    <string name="dungeon_4">Dungeon 4</string>
+    <string name="tutorial">Tutorial:</string>
+    <string name="dungeon_5">Dungeon 5</string>
+    <string name="dungeon_6">Dungeon 6</string>
+    <string name="dungeon_5_bonus">Dungeon 5 Bonus</string>
+    <string name="dungeon_7">Dungeon 7</string>
+    <string name="dungeon_7_bonus">Dungeon 7 Bonus</string>
+    <string name="dungeon_8">Dungeon 8</string>
+    <string name="dungeon_9">Dungeon 9</string>
+    <string name="dungeon_10">Dungeon 10</string>
+    <string name="bossfight_tips_and_tricks">Bossfight Tips and Tricks</string>
+    <string name="dungeon_11">Dungeon 11</string>
+    <string name="dungeon_11_bonus">Dungeon 11 Bonus</string>
+    <string name="dungeon_12">Dungeon 12</string>
+    <string name="dungeon_13">Dungeon 13</string>
+    <string name="dungeon_13_bonus">Dungeon 13 Bonus</string>
+    <string name="dungeon_14">Dungeon 14</string>
+    <string name="dungeon_15">Dungeon 15</string>
+    <string name="dungeon_16">Dungeon 16</string>
+    <string name="dungeon_17">Dungeon 17</string>
+    <string name="dungeon_17_bonus">Dungeon 17 Bonus</string>
+    <string name="dungeon_18">Dungeon 18</string>
+    <string name="dungeon_19">Dungeon 19</string>
+    <string name="dungeon_19_bonus">Dungeon 19 Bonus</string>
+    <string name="dungeon_20">Dungeon 20</string>
+    <string name="dungeon_21">Dungeon 21</string>
+    <string name="dungeon_22">Dungeon 22</string>
+    <string name="dungeon_23">Dungeon 23</string>
+    <string name="dungeon_23_bonus">Dungeon 23 Bonus</string>
+    <string name="dungeon_24">Dungeon 24</string>
+    <string name="dungeon_25">Dungeon 25</string>
+    <string name="dungeon_26">Dungeon 26</string>
+    <string name="dungeon_27">Dungeon 27</string>
+    <string name="dungeon_27_bonus">Dungeon 27 Bonus</string>
+    <string name="dungeon_28">Dungeon 28</string>
+    <string name="dungeon_29">Dungeon 29</string>
+    <string name="dungeon_29_bonus">Dungeon 29 Bonus</string>
+    <string name="dungeon_30">Dungeon 30</string>
+    <string name="dungeon_31">Dungeon 31</string>
+    <string name="dungeon_31_bonus">Dungeon 31 Bonus</string>
+    <string name="dungeon_32">Dungeon 32</string>
+    <string name="dungeon_33">Dungeon 33</string>
+    <string name="dungeon_34">Dungeon 34</string>
+    <string name="dungeon_35">Dungeon 35</string>
+    <string name="dungeon_36">Dungeon 36</string>
+    <string name="dungeon_37">Dungeon 37</string>
+    <string name="dungeon_38">Dungeon 38</string>
+    <string name="dungeon_39">Dungeon 39</string>
+    <string name="dungeon_40">Dungeon 40</string>
+    <string name="dungeon_41">Dungeon 41</string>
+    <string name="dungeon_42">Dungeon 42</string>
+    <string name="dungeon_42_bonus">Dungeon 42 Bonus</string>
+    <string name="dungeon_43">Dungeon 43</string>
+    <string name="dungeon_43_bonus">Dungeon 43 Bonus</string>
+    <string name="dungeon_44">Dungeon 44</string>
+    <string name="select_element">Select Element</string>
+    <string name="news">📰 News 📰</string>
+
+    <string name="translating">Downloading the translation. This takes time and uses data. Please wait.</string>
+    <string name="waypoints">Waypoints</string>
+    <string name="stone_thrower">Stone Thrower</string>
+    <string name="knife_thrower">Knife Thrower</string>
+    <string name="failed_to_download_model">Failed to download translation model.</string>
+    <string name="failed_to_load_news">Failed to load news.\n Please check your connection.</string>
 </resources>

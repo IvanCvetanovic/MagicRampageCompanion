@@ -1,5 +1,7 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;

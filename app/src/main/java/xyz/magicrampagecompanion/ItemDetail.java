@@ -1,5 +1,7 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -24,6 +26,7 @@ public class ItemDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+EdgeToEdge.enable(this);
         setContentView(R.layout.activity_item_detail);
 
         itemImage       = findViewById(R.id.itemImage);
@@ -235,5 +238,10 @@ public class ItemDetail extends AppCompatActivity {
                 .append("Spear Bonus: ").append(String.valueOf((int) r.getSpear())).append("%\n");
 
         return ssb;
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 }

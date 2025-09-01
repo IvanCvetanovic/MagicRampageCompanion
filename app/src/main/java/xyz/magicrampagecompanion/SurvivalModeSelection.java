@@ -1,7 +1,10 @@
 package xyz.magicrampagecompanion;
 
+import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +15,7 @@ public class SurvivalModeSelection extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+EdgeToEdge.enable(this);
         setContentView(R.layout.activity_survival_mode_selection);
 
         ImageButton survivalButton1 = findViewById(R.id.SurvivalButton1);
@@ -109,5 +113,10 @@ public class SurvivalModeSelection extends AppCompatActivity {
     {
         Intent intent = new Intent(this, SurvivalDungeon6.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 }

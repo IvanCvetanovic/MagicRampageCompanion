@@ -1,96 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp"
-    android:fillViewport="true"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/grey_background">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_background"
+    android:fillViewport="true"
+    tools:context=".Dungeon7">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Dungeon6">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/Dungeon5Name"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dungeon 7"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="24dp" />
+
+        <TextView
+            android:id="@+id/Dungeon7Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:text="@string/dungeon_7"
             android:textColor="@color/white"
             android:textSize="32sp"
             android:textStyle="bold"
-            android:shadowRadius="10"
-            android:shadowColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/Dungeon4Secrets"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.313" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/Dungeon4Secrets"
+            android:id="@+id/Dungeon7Secrets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Secret Areas:"
+            android:layout_marginTop="24dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:text="@string/secret_areas"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:shadowRadius="10"
-            android:shadowColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@id/Dungeon7Name" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="350dp"
-            android:layout_height="410dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/roundcorner"
-            app:layout_constraintBottom_toTopOf="@+id/Dungeon1Info"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.225"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
+            android:contentDescription="@string/secret_areas"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="35:41"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/Dungeon7Secrets"
             app:srcCompat="@drawable/dungeon7secrets" />
 
         <TextView
-            android:id="@+id/Dungeon1Info"
+            android:id="@+id/Dungeon7Info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:text="Tips and Tricks:"
+            android:layout_marginTop="24dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10"
+            android:text="@string/tips_and_tricks"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:shadowRadius="10"
-            android:shadowColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/TipsandTricksText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
 
         <TextView
             android:id="@+id/TipsandTricksText"
-            android:layout_width="350dp"
-            android:layout_height="328dp"
-            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
             android:text="@string/dungeon7text"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/Dungeon7Info"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

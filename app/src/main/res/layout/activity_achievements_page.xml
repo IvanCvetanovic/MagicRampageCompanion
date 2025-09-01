@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.recyclerview.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/AchievementsRecycleView"
+    android:id="@+id/achievementsRecyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grey_background"
-    android:outlineAmbientShadowColor="#FFFFFF"
-    android:outlineSpotShadowColor="#1E0D0D"
-    android:fitsSystemWindows="true"
-    tools:context=".AchievementsPage">
-
-
-
-</androidx.recyclerview.widget.RecyclerView>
+    android:clipToPadding="false"
+    android:paddingVertical="8dp"
+    tools:context=".AchievementsPage"
+    tools:listitem="@layout/achievement_item" />

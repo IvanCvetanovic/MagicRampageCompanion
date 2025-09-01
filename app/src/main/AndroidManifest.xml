@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- ADD THE INTERNET PERMISSION HERE -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -13,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MagicRampageCompanion"
         tools:targetApi="33">
+        <activity
+            android:name=".News"
+            android:exported="false" />
         <activity
             android:name=".EnemyDetail"
             android:exported="false" />

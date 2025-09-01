@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enhanced_velocity">Erhöhte Geschwindigkeit</string>
+    <string name="sword_master">Schwertmeister</string>
+    <string name="dagger_specialist">Dolchspezialist</string>
+    <string name="obstinate_shot">Hartnäckiger Schuss</string>
+    <string name="corrosive_shot">Korrosiver Schuss</string>
+    <string name="spherical_shield_breaker">Sphärenschildbrecher</string>
+    <string name="voracious_shot">Gefräßiger Schuss</string>
+    <string name="monstrous_vigour">Monströse Energie</string>
+    <string name="charge_blast">Ladungsexplosion</string>
+    <string name="fearless_jump">Furchtloser Sprung</string>
+    <string name="virtuous_wizard">Tugendhafter Zauberer</string>
+    <string name="throwing_legend">Wurflegende</string>
+    <string name="gold_magnet">Goldmagnet</string>
+    <string name="fireproof_skin">Feuerfeste Haut</string>
+    <string name="toxic_haze">Giftiger Dunst</string>
+    <string name="shadow_camouflage">Schattencamouflage</string>
+    <string name="magic_jump">Zaubersprung</string>
+    <string name="dark_twin">Dunkler Zwilling</string>
+    <string name="unstoppable_strength">Unaufhaltsame Stärke</string>
+    <string name="crushing_strength">Zerquetschende Kraft</string>
+    <string name="slicing_master">Schneidemeister</string>
+    <string name="monstrous_metabolism">Monströser Metabolismus</string>
+    <string name="enhanced_vitality">Verstärkte Vitalität</string>
+    <string name="untouchable_skin">Unberührbare Haut</string>
+    <string name="confident_move">Selbstbewusster Schritt</string>
+    <string name="arcane_protection">Arkaner Schutz</string>
+    <string name="thunder_wave">Donnerwelle</string>
+    <string name="final_wrath">Letzter Zorn</string>
+    <string name="rush_of_the_doomed">Ansturm der Verdammten</string>
+    <string name="overcharge">Überladung</string>
+    <string name="arcane_discipline">Arkane Disziplin</string>
+    <string name="swift_cast">Schneller Wurf</string>
+    <string name="airborne_dancer">Lufttänzer</string>
+    <string name="seismic_reach">Seismische Reichweite</string>
+    <string name="titans_push">Titanenstoß</string>
+    <string name="shockwave_force">Schockwellenkraft</string>
+    <string name="damage">Schaden</string>
+    <string name="armor">Rüstung</string>
+    <string name="upgrades">Verbesserungen</string>
+    <string name="element_fire">Feuer</string>
+    <string name="element_water">Wasser</string>
+    <string name="element_darkness">Dunkelheit</string>
+    <string name="element_light">Licht</string>
+    <string name="element_earth">Erde</string>
+    <string name="element_air">Luft</string>
+    <string name="skill_description_0">Erhöht Geschwindigkeit um 4\%</string>
+    <string name="skill_description_1">Erhöht die Angriffskraft des Schwerts um 15\%.</string>
+    <string name="skill_description_2">Erhöht die Angriffskraft des Dolchs um 20\%.</string>
+    <string name="skill_description_3">Alle Waffenprojektile können nicht mehr blockiert werden, auch wenn sie von anderen Projektilen im Flug getroffen werden.</string>
+    <string name="skill_description_4">Waffenprojektile werden besiegte Feinde sofort in die Luft sprengen.</string>
+    <string name="skill_description_5">Waffenprojektile durchbrechen sofort die sphärischen Schilde der Feinde.</string>
+    <string name="skill_description_6">Alle Projektile haben eine Chance von 45\%, die Projektile von Feinden im Flug zu zerstören.</string>
+    <string name="skill_description_7">Erhöht die Geschwindigkeit der Ausdauerregeneration.</string>
+    <string name="skill_description_8">Sturmangriff, der den 2.4-fachen Waffenschaden verursacht.</string>
+    <string name="skill_description_9">Erhöht Schwert- und Dolchschaden um 25\%, wenn deine Gesundheit unter 35\% fällt.</string>
+    <string name="skill_description_10">Erhöht deine Bewegungsgeschwindigkeit um 20\%, wenn deine Gesundheit unter 35\% fällt.</string>
+    <string name="skill_description_11">Gewährt eine zusätzliche Ladungsexplosion vor Abklingzeit.</string>
+    <string name="skill_description_12">Erhöht die Sprungkraft um 3\%</string>
+    <string name="skill_description_13">Erhöht die Angriffskraft des Stabs um 20\%.</string>
+    <string name="skill_description_14">Erhöht die Angriffskraft des Speers um 40\%.</string>
+    <string name="skill_description_15">Zieht Goldmünzen und XP an, die von Feinden fallen gelassen werden.</string>
+    <string name="skill_description_16">Gewährt passiven Schutz vor Flammen und Lava.</string>
+    <string name="skill_description_17">Alle Waffen verursachen zusätzliche Giftschaden.</string>
+    <string name="skill_description_18">Gewöhnliche Feinde brauchen länger, um den Soldaten mit schmutzigem Gesicht zu entdecken.</string>
+    <string name="skill_description_19">Gibt die Fähigkeit, einen zusätzlichen Sprung in der Luft auszuführen.</string>
+    <string name="skill_description_20">Beschwört einen Dunklen Zwilling, der an der Seite des Soldaten mit schmutzigem Gesicht kämpft.</string>
+    <string name="skill_description_21">Reduziert die Abklingzeit von Super-Fertigkeiten um 20\%.</string>
+    <string name="skill_description_22">Alle geworfenen Projektile fliegen 15\% schneller.</string>
+    <string name="skill_description_23">Gewährt einen zusätzlichen Luftsprung und verbessert deine Luftkampffähigkeiten.</string>
+    <string name="skill_description_24">Erhöht Rüstung um 25\%</string>
+    <string name="skill_description_25">Erhöht die Angriffskraft des Hammers um 60\%.</string>
+    <string name="skill_description_26">Erhöht die Angriffskraft der Axt um 50\%.</string>
+    <string name="skill_description_27">Tränke heilen 2 mal mehr.</string>
+    <string name="skill_description_28">Erhöht die maximale Anzahl von Herzen.</string>
+    <string name="skill_description_29">Passiver Schutz gegen Stacheln.</string>
+    <string name="skill_description_30">Der Soldat mit schmutzigem Gesicht kann immer auf magische grüne Plattformen treten.</string>
+    <string name="skill_description_31">Das Auslösen der Spezialfähigkeit der Klasse erzeugt einen sphärischen Schild.</string>
+    <string name="skill_description_32">Beschwört eine Welle von Blitzen, die alle Feinde in der Umgebung treffen.</string>
+    <string name="skill_description_33">Erhöht den Explosionsradius geworfener Projektile um 20\%.</string>
+    <string name="skill_description_34">Erhöht die Rückstoßkraft aller Waffen um 40\%, sodass Feinde noch weiter weggeschleudert werden.</string>
+    <string name="skill_description_35">Erhöht den Flächenschaden aller Waffen um 70\%.</string>
+    <string name="rating">"Bewertung: "</string>
+    <string name="rogue">Schurke</string>
+    <string name="thief">Dieb</string>
+    <string name="mage">Magier</string>
+    <string name="black_mage">Schwarzmagier</string>
+    <string name="high_mage">Hochmagier</string>
+    <string name="priest">Priester</string>
+    <string name="warlock">Hexenmeister</string>
+    <string name="warrior">Krieger</string>
+    <string name="elite_warrior">Elitekrieger</string>
+    <string name="paladin">Paladin</string>
+    <string name="ranger">Ranger</string>
+    <string name="witchdoctor">Hexendoktor</string>
+    <string name="druid">Druide</string>
+    <string name="recruit_set">Rekrutenset</string>
+    <string name="soldier_set">Soldatenset</string>
+    <string name="elite_soldier_set">Elite-Soldatenset</string>
+    <string name="ranger_set">Jägerset</string>
+    <string name="umbranian_vest">Umbrisches Gewand</string>
+    <string name="brass_set">Kupferset</string>
+    <string name="elite_brass_set">Elite-Kupferset</string>
+    <string name="obsidian_set">Obsidianset</string>
+    <string name="elite_obsidian_set">Elite-Obsidianset</string>
+    <string name="umbranian_tanker">Umbrisches Bollwerk</string>
+    <string name="jumpman_suit">Jumpman-Anzug</string>
+    <string name="improved_jumpman_suit">Verbesserter Springeranzug</string>
+    <string name="tubeman_suit">Tubeman-Anzug</string>
+    <string name="twitch_suit">T\'Witch-Anzug</string>
+    <string name="nature_mage_vest">Naturmagier-Weste</string>
+    <string name="fire_mage_vest">Feuermagier-Weste</string>
+    <string name="faldangs_vest">Faldangs Gewand</string>
+    <string name="plague_fighter_suit">Seuchendoktor-Anzug</string>
+    <string name="warlock_vest">Hexergewand</string>
+    <string name="high_elf_robe">Hochelfenrobe</string>
+    <string name="ifrits_disciple_robe">Ifritjünger-Robe</string>
+    <string name="cleric_vest">Klerikergewand</string>
+    <string name="high_cleric_tunic">Hochkleriker-Tunika</string>
+    <string name="greenmoon_vest">Grünmond-Gewand</string>
+    <string name="dragon_vest">Drachengewand</string>
+    <string name="special_dragon_vest">Special Dragon Vest</string>
+    <string name="blue_wizard_suit">Blauer Zaubereranzug</string>
+    <string name="penumbra_suit">Penumbra-Anzug</string>
+    <string name="penumbra_suit_plus">Penumbra-Anzug+</string>
+    <string name="monks_tunic">Mönchstunika</string>
+    <string name="bacoon_set">Bacoon-Set</string>
+    <string name="bacoon_set_plus">Bacoon-Set+</string>
+    <string name="druid_vest">Druidengewand</string>
+    <string name="moonkeeper_set">Mondwächter-Set</string>
+    <string name="bankers_coat">Bankiersmantel</string>
+    <string name="deathdoctor_set">Todesdoktor-Set</string>
+    <string name="crow_set">Krähenset</string>
+    <string name="special_crow_set">Spezielles Krähenset</string>
+    <string name="antiheros_set">Antiheldenset</string>
+    <string name="steelblow_armor">Stahlstoß-Rüstung</string>
+    <string name="steelblow_armor_plus">Stahlstoß-Rüstung+</string>
+    <string name="dark_lord_set">Dunkler Lord Set</string>
+    <string name="light_spellmaster_suit">Licht-Zaubermeisteranzug</string>
+    <string name="liquid_assassin_suit">Flüssiger Assassinenanzug</string>
+    <string name="light_champion_set">Champion des Lichts Set</string>
+    <string name="jungle_master">Dschungelmeister</string>
+    <string name="jungle_assassin_suit">Dschungel-Assassinenanzug</string>
+    <string name="firestorm_armor">Feuersturm-Rüstung</string>
+    <string name="firestorm_armor_plus">Feuersturm-Rüstung+</string>
+    <string name="gayan_set">Gayan-Set</string>
+    <string name="elite_assassin_suit">Elite-Assassinenanzug</string>
+    <string name="champion_set">Champion-Set</string>
+    <string name="spider_exoskeleton">Spinnen-Exoskelett</string>
+    <string name="witch_dress">Hexenkleid</string>
+    <string name="heros_set">Heldenset</string>
+    <string name="swamp_ranger_suit">Sumpfhüterkostüm</string>
+    <string name="arcane_mage_suit">Obskures Magierkostüm</string>
+    <string name="desert_rogue_suit">Wüstenschurkenkostüm</string>
+    <string name="iron_widow">Eiserne Witwe</string>
+    <string name="forest_witch_suit">Waldhexenkleid</string>
+    <string name="black_witch_suit">Schwarzes Hexenkleid</string>
+    <string name="purple_witch_suit">Violettes Hexenkleid</string>
+    <string name="fire_moonkeeper_set">Feuermondwächterset</string>
+    <string name="swamp_witch_suit">Sumpfhexenkleid</string>
+    <string name="green_witch_suit">Grünes Hexenkleid</string>
+    <string name="bunny_suit">Hasenanzug</string>
+    <string name="warden_of_demons">Aufseher der Dämonen</string>
+    <string name="tunic_of_the_relentless">Tunika der Unerbittlichen</string>
+    <string name="wind_witch_suit">Windhexenkleid</string>
+    <string name="destroyer_of_the_corrupted">Zerstörer der Verderbten</string>
+    <string name="interrogator">Vernehmer</string>
+    <string name="protector_of_the_oracle">Beschützer des Orakels</string>
+    <string name="death_stalker">Todesstalker</string>
+    <string name="tunic_of_endless_justice">Tunika der endlosen Gerechtigkeit</string>
+    <string name="cataclysmic_plate">Kataklysmische Platte</string>
+    <string name="tunic_of_frozen_voices">Tunika der gefrorenen Stimmen</string>
+    <string name="tunic_of_distant_ancestors">Tunika entfernter Vorfahren</string>
+    <string name="vest_of_phantoms_keeper">Weste der Phantomenbewahrer</string>
+    <string name="robe_of_imminent_fires">Robe der bevorstehenden Feuer</string>
+    <string name="vanquisher">Bezwinger</string>
+    <string name="winter_witch_armor">Winterhexenrüstung</string>
+    <string name="easterminator">Osterminator</string>
+    <string name="vest_of_twisted_illusions">Weste der verdrehten Illusionen</string>
+    <string name="time_patroller_suit">Zeitwächteranzug</string>
+    <string name="kings_spectre_tunic">Königs Gespenstentunika</string>
+    <string name="cthulhu_set">Cthulhu Set</string>
+    <string name="barrenlands_banditin">Ödland-Banditin</string>
+    <string name="tunic_of_ending_nights">Tunika der endenden Nächte</string>
+    <string name="santa_claus">Weihnachtsmann</string>
+    <string name="tunic_of_twisted_illusions">Tunika der verdrehten Illusionen</string>
+    <string name="vest_of_blessed_glory">Weste des gesegneten Ruhms</string>
+    <string name="barrenlands_bandit">Ödland-Bandit</string>
+    <string name="ring_of_agility">Ring der Agilität</string>
+    <string name="shaman_ring">Schamanenring</string>
+    <string name="supersonic_ring">Ultraschallring</string>
+    <string name="narya">Narya</string>
+    <string name="spellmasters_ring">Meistermagier-Ring</string>
+    <string name="warlocks_ring">Ring des Hexers</string>
+    <string name="nazguh_ring">Nazguh-Ring</string>
+    <string name="ring_of_protection">Ring des Schutzes</string>
+    <string name="cleric_ring">Klerikerring</string>
+    <string name="swordsmans_ring">Schwertkämpfer-Ring</string>
+    <string name="nenya">Nenya</string>
+    <string name="dragon_eye_ring">Drachenaugen-Ring</string>
+    <string name="white_pearl_ring">Weißer Perlenring</string>
+    <string name="steelblow_ring">Stahlstoß-Ring</string>
+    <string name="witchdoctor_ring">Hexendoktor-Ring</string>
+    <string name="sea_wave_ring">Meereswellenring</string>
+    <string name="dragon_orb_ring">Drachenorb-Ring</string>
+    <string name="ring_of_light">Ring des Lichts</string>
+    <string name="volcano_ring">Vulkanring</string>
+    <string name="all_seeing_ring">Allsehender Ring</string>
+    <string name="verdant_ring">Pflanzenring</string>
+    <string name="dragon_fang_ring">Drachenzahnring</string>
+    <string name="blue_ring">Blauer Ring</string>
+    <string name="spektator">Spektator</string>
+    <string name="cuteulhu">Süßulhu</string>
+    <string name="cait">Cait</string>
+    <string name="bunny_ring">Hasenring</string>
+    <string name="whisper_of_fire">Flüstern des Feuers</string>
+    <string name="creepy_crawler">Gruseliges Kriechtier</string>
+    <string name="whisper_of_death">Flüstern des Todes</string>
+    <string name="vina">Vina</string>
+    <string name="falcon_ring">Falkenring</string>
+    <string name="cursed_amethyst_ring">Verfluchter Amethystenring</string>
+    <string name="ancient_warden">Antiker Wächter</string>
+    <string name="vindicator_guardian">Verteidiger Wächter</string>
+    <string name="whisper_of_light">Flüstern des Lichts</string>
+    <string name="eastercreep">Osternkriecher</string>
+    <string name="ghostwalker">Geistenwanderer</string>
+    <string name="trickytreat">Tricky-treat</string>
+    <string name="jellybunny">Gummihase</string>
+    <string name="recruit_sword">Rekrutenschwert</string>
+    <string name="steel_blade">Stahlklinge</string>
+    <string name="fire_sword">Feuerschwert</string>
+    <string name="nobel_sword">Adligenschwert</string>
+    <string name="leaf_sword">Blattschwert</string>
+    <string name="pirate_sword">Piratenschwert</string>
+    <string name="master_sword">Masterschwert</string>
+    <string name="vorpal_sword">Vorpalklinge</string>
+    <string name="umbranian_short_sword">Umbrisches Kurzschwert</string>
+    <string name="umbranian_long_sword">Umbrisches Langschwert</string>
+    <string name="fireskull_sword">Feuerschädel-Schwert</string>
+    <string name="darkskull_sword">Nachtschädel-Schwert</string>
+    <string name="hammers_and_maces">Hämmer und Keulen</string>
+    <string name="nature_staff">Naturstab</string>
+    <string name="iron_dagger">Eisendolch</string>
+    <string name="silver_axe">Silberaxt</string>
+    <string name="obsidian_spear">Obsidianspeer</string>
+    <string name="insect_crusher">Insektenvernichter</string>
+    <string name="fire_staff">Feuerstab</string>
+    <string name="light_staff">Lichtstab</string>
+    <string name="oxymos_staff">Oxymos Stab</string>
+    <string name="staff_of_darkness">Stab der Dunkelheit</string>
+    <string name="gadarasts_staff">Gadarasts Stab</string>
+    <string name="epic_fire_staff">Epischer Feuerstab</string>
+    <string name="firebane">Feuerfluch</string>
+    <string name="dragonskull_staff">Drachenschädel-Stab</string>
+    <string name="dragonskull_staff_plus">Drachenschädel-Stab+</string>
+    <string name="death_scythe">Todessense</string>
+    <string name="death_scythe_plus">Todessense+</string>
+    <string name="hippie_dragon_staff">Hippiedrachen-Stab</string>
+    <string name="hippie_dragon_staff_plus">Hippiedrachen-Stab+</string>
+    <string name="dragon_orb_staff">Drachensphären-Stab</string>
+    <string name="water_staff">Wasserstab</string>
+    <string name="golden_dragon_staff">Goldener Drachenstab</string>
+    <string name="golden_dragon_staff_plus">Goldener Drachenstab+</string>
+    <string name="dead_vulture_staff">Totgeierstab</string>
+    <string name="broom_staff">Besenstab</string>
+    <string name="ancient_stone_staff">Alter Steinstab</string>
+    <string name="cthulhu_staff">Cthulhu-Stab</string>
+    <string name="toxic_staff">Giftstab</string>
+    <string name="windbane">Windfluch</string>
+    <string name="legacy_of_the_oracle">Erbe des Orakels</string>
+    <string name="seabane">Seefluch</string>
+    <string name="royal_war_staff">Königlicher Kriegsstab</string>
+    <string name="staff_of_the_wicked">Stab der Bösen</string>
+    <string name="icebane">Eisbann</string>
+    <string name="spider_staff">Spinnenstab</string>
+    <string name="necromorphicon">Nekromorphikon</string>
+    <string name="the_oxymos_codex">Der Kodex von Oxymo</string>
+    <string name="the_abyssal_scrolls">Die Schriftrollen des Abgrunds</string>
+    <string name="iron_dagger_plus">Eisendolch+</string>
+    <string name="fire_dagger">Feuerdolch</string>
+    <string name="kunai">Kunai</string>
+    <string name="steel_dagger">Stahldolch</string>
+    <string name="poisoned_dagger">Vergifteter Dolch</string>
+    <string name="ifrits_dagger">Ifrits Dolch</string>
+    <string name="dagger_of_sand">Dolch der Sande</string>
+    <string name="undines_dagger">Undines Dolch</string>
+    <string name="dark_dagger">Schwartzdolch</string>
+    <string name="dark_dagger_plus">Schwartzdolch+</string>
+    <string name="light_dagger">Lichtdolch</string>
+    <string name="chef_knife">Küchenmesser</string>
+    <string name="gorgon_dagger">Gorgonendolch</string>
+    <string name="machete">Machete</string>
+    <string name="gayan">Gayan</string>
+    <string name="venomous_dagger">Giftdolch</string>
+    <string name="cthulhu_dagger">Cthulhu-Dolch</string>
+    <string name="dragon_tooth_dagger">Drachenzahndolch</string>
+    <string name="dual_dragon_fang">Doppeldrachenzahn</string>
+    <string name="blood_swiftblade">Schnellklinge des Blutes</string>
+    <string name="precious_dual_blade">Wertvolle Doppelklinge</string>
+    <string name="precious_skewer">Wertvoller Spieß</string>
+    <string name="ice_dagger">Eisdolch</string>
+    <string name="last_survivors_dagger">Dolch des letzten Überlebenden</string>
+    <string name="survivors_double_dagger">Doppelverfall</string>
+    <string name="abyssal_dual_blade">Abgründige Doppelklinge</string>
+    <string name="malicious_quickblade">Bösartige Schnellklinge</string>
+    <string name="gayan_shuriken">Gayan Shuriken</string>
+    <string name="undines_shuriken">Undines Shuriken</string>
+    <string name="sword_of_light">Schwert des Lichts</string>
+    <string name="sword_of_1000_lies">Schwert der 1000 Lügen</string>
+    <string name="magicsaber">Magieschwert</string>
+    <string name="air_striker">Luftschläger</string>
+    <string name="ice_claw">Eisklaue</string>
+    <string name="light_piercer">Lichtstecher</string>
+    <string name="throat_cutter">Kehlenschlitzer</string>
+    <string name="air_piercer">Luftstecher</string>
+    <string name="cthulhu_blade">Cthulhu-Klinge</string>
+    <string name="glass_blade">Glasklinge</string>
+    <string name="haunted_slicer">Spukschnitter</string>
+    <string name="moonlit_razor">Mondbeschienenes Rasiermesser</string>
+    <string name="bunny_sword">Hasenschwert</string>
+    <string name="blade_of_the_wicked">Klinge der Bösen</string>
+    <string name="goldsteel">Goldstahl</string>
+    <string name="abyssal_blade">Abgründiges Schwert</string>
+    <string name="golden_needle">Goldene Nadel</string>
+    <string name="blade_of_rusted_souls">Klinge der verrosteten Seelen</string>
+    <string name="bunny_claymore">Häschen-Breitschwert</string>
+    <string name="blade_of_survival">Klinge des Überlebens</string>
+    <string name="gorgon_blade">Gorgonenklinge</string>
+    <string name="volcano_sword">Vulkanschwert</string>
+    <string name="all_seeing_sword">Allsehendes Schwert</string>
+    <string name="frost_heart">Frostherz</string>
+    <string name="enchanted_nutcracker">Enchanted Nutcracker</string>
+    <string name="axe_of_fire">Axt der Flamme</string>
+    <string name="bone_chopper">Knochenteiler</string>
+    <string name="lightning_axe">Blitzaxt</string>
+    <string name="umbranian_cutter">Umbrischer Schnitter</string>
+    <string name="flaming_cutter">Flammenschneide</string>
+    <string name="spider_axe">Spinnenaxt</string>
+    <string name="all_seeing_axe">Allsehende Axt</string>
+    <string name="toxic_axe">Giftaxt</string>
+    <string name="bone_axe">Knochenaxt</string>
+    <string name="steel_axe">Stahlaxt</string>
+    <string name="cthulhu_axe">Cthulhu-Axt</string>
+    <string name="dawnlight">Licht der Dämmerung</string>
+    <string name="gorgon_axe">Gorgonenaxt</string>
+    <string name="stormcaller">Sturmbeschwörer</string>
+    <string name="path_of_exile">Weg des Exils</string>
+    <string name="fortunes_battleaxe">Glücks Streitaxt</string>
+    <string name="axe_of_rusted_gods">Axt der verrosteten Götter</string>
+    <string name="ice_axe">Eisaxt</string>
+    <string name="yansahn">Yansahn</string>
+    <string name="osun">Osun</string>
+    <string name="gayan_spear">Gayan-Speer</string>
+    <string name="freyr">Freyr</string>
+    <string name="fire_pierce">Feuerstecher</string>
+    <string name="azatoth">Azatoth</string>
+    <string name="spider_spear">Spinnenspeer</string>
+    <string name="cthulhu_spear">Cthulhu-Speer</string>
+    <string name="poisoned_spear">Vergifteter Speer</string>
+    <string name="vindictive_piercer">Rachsüchtiger Durchbohrer</string>
+    <string name="golden_piercer">Goldener Durchbohrer</string>
+    <string name="last_survivors_spear">Speer des letzten Überlebenden</string>
+    <string name="gorgon_spear">Gorgonenspeer</string>
+    <string name="wooden_hammer">Holzhammer</string>
+    <string name="warhammer">Kriegshammer</string>
+    <string name="spider_crusher">Spinnenstampfer</string>
+    <string name="bionic_hammer">Bionischer Hammer</string>
+    <string name="thunder_hammer">Donnerhammer</string>
+    <string name="volcano_hammer">Vulkanhammer</string>
+    <string name="verdant_hammer">Pflanzenhammer</string>
+    <string name="mojaras_hammer">Mojaras Hammer</string>
+    <string name="liquid_hammer">Flüssiger Hammer</string>
+    <string name="hammer_of_light">Hammer des Lichts</string>
+    <string name="inquisidor">Inquisidor</string>
+    <string name="falcon_hammer">Falkenhammer</string>
+    <string name="bone_hammer">Knochenhammer</string>
+    <string name="wit_of_ancient_power">Vestand der alten Macht</string>
+    <string name="war_forged_smasher">Kriegsgeschmiedeter Smasher</string>
+    <string name="toxic_hammer">Gifthammer</string>
+    <string name="wealthy_smasher">Wohlhabender Zertrümmerer</string>
+    <string name="smasher_of_decay">Zertrümmerer des Verfalls</string>
+    <string name="silver_mace">Silberkeule</string>
+    <string name="iron_mace">Eisenkeule</string>
+    <string name="dark_mace">Dunkelkeule</string>
+    <string name="club">Knüppel</string>
+    <string name="wooden_hawaiian">Hölzerne Schlappen</string>
+    <string name="toxic_mace">Giftkeule</string>
+    <string name="wealthy_crusher">Wohlhabender Brecher</string>
+    <string name="ifrits_shuriken">Ifrits Shuriken</string>
+    <string name="compendium_of_trees">Kompendium der Bäume</string>
+    <string name="the_testament_of_ifrit">Das Testament von Ifrit</string>
+    <string name="the_arachnid_codex">Arachniden-Kodex</string>
+    <string name="the_word_of_the_wind">Das Wort des Windes</string>
+    <string name="enlightened_hammer">Erleuchteter Hammer</string>
+    <string name="phoenix">Phönix</string>
+    <string name="dancers_raiment">Tänzergewand</string>
+    <string name="storm">Sturm</string>
+    <string name="tunic_of_hellish_illusions">Tunika der höllischen Illusionen</string>
+    <string name="gatekeepers_bionic_arm">Bionischer Arm des Torwächters</string>
+    <string name="robe_of_eternal_fire">Robe des ewigen Feuers</string>
+    <string name="scarlet_shadowweaver">Scharlachroter Schattenweber</string>
+    <string name="unholy_storm">Unheiliger Sturm</string>
+    <string name="innkeepers_costume">Gastwirtskostüm</string>
+    <string name="greenfang_ensemble">Grünzahn-Ensemble</string>
+    <string name="golden_guardian">Goldener Wächter</string>
+    <string name="magic_cog">Magisches Zahnrad</string>
+    <string name="nightshade">Nachtschatten</string>
+    <string name="pirouette_pointe">Pirouette pointe</string>
+    <string name="windpearl_axe">Windperlenaxt</string>
+    <string name="wicked_skewer">Böser Spieß</string>
+    <string name="ruby_queens_spear">Speer der Rubindame</string>
+    <string name="onyx_queens_lance">Lanze der Onyxdame</string>
+    <string name="arachnid_sword">Arachniden-Schwert</string>
+    <string name="unleashed_kraken">Entfesselter Kraken</string>
+    <string name="nightfall">Dämmerung</string>
+    <string name="voidcaller_staff">Leerenrufer-Stab</string>
+    <string name="bunnyhop_dagger">Hasenhop-Dolch</string>
+    <string name="poisoned_dart">Vergifteter Pfeil</string>
+    <string name="sapphire_pawns_dagger">Klinge des Saphirbauers</string>
+    <string name="toxic_dual_dagger">Giftiger Doppeldolch</string>
+    <string name="all_seeing_cleaver">Allsehende Machete</string>
+    <string name="shooting_star_shuriken">Sternschnuppe Shuriken</string>
+    <string name="tome_of_the_sands">Foliant des Sandes</string>
+    <string name="vest_of_ominous_jesters">Weste der ominösen Gaukler</string>
+    <string name="vest_of_ominous_comrades">Weste der ominösen Kameraden</string>
+    <string name="the_daemon_codices">Die Dämonen-Kodexe</string>
+    <string name="path_of_exile_plus">Weg des Exils+</string>
+    <string name="eggscellent_axe">Eggscellent-Axt</string>
+    <string name="dark_lord_set_plus">Dunkler Lord Set+</string>
+    <string name="heros_set_plus">Heldenset+</string>
+    <string name="bankers_coat_plus">Bankiersmantel+</string>
+    <string name="tidecaller_ring">Gezeitenrufer</string>
+    <string name="the_ancient_codices">Die Antiken Kodexe</string>
+    <string name="minion_vest">Vasallenweste</string>
+    <string name="gorgons_skin">Gorgonenhaut</string>
+    <string name="achievements">🏆 Erfolge 🏆</string>
+    <string name="rune_of_wind">Windrune</string>
+    <string name="burning_rune">Feuerrune</string>
+    <string name="shiny_rune">Lichtrune</string>
+    <string name="purple_rune">Dunkelrune</string>
+    <string name="green_rune">Erdrune</string>
+    <string name="liquid_rune">Wasserrune</string>
+    <string name="golden_key">Goldschlüssel</string>
+    <string name="attack_speed">Angriffsgeschwindigkeit:</string>
+    <string name="enemy_time_patroller">Zeitwächter</string>
+    <string name="enemy_armademon">Armadämon</string>
+    <string name="enemy_armadillo">Gürteltier</string>
+    <string name="enemy_beholder">Betrachter</string>
+    <string name="enemy_cthulhu">Cthulhu</string>
+    <string name="enemy_cyclops">Zyklop</string>
+    <string name="enemy_demon_stomper">Dämonenstampfer</string>
+    <string name="enemy_fire_lord">Feuerlord</string>
+    <string name="enemy_golem">Golem</string>
+    <string name="enemy_gorgon">Giftige Gorgone</string>
+    <string name="enemy_ice_golem">Eisgolem</string>
+    <string name="enemy_orc_fighter">Ork-Kämpfer</string>
+    <string name="enemy_spidemon">Spinndämon</string>
+    <string name="enemy_tombstone_mimic">Grabstein-Mimiker</string>
+    <string name="enemy_vindicator">Verteidiger</string>
+    <string name="enemy_vulkling">Vulkling</string>
+    <string name="enemy_walker">Wanderer</string>
+    <string name="enemy_armadimp">Gürteltier</string>
+    <string name="Armors">Rüstungen</string>
+    <string name="Rings">Ringe</string>
+    <string name="about">ℹ️ Über ℹ️</string>
+    <string name="change_language">Sprache ändern</string>
+    <string name="about_author">Über den Autor</string>
+    <string name="armor_in_calculation">"Rüstung: "</string>
+    <string name="author_description">Hallo! Ich bin Ivan Cvetanović – in der Magic Rampage-Community als PrOfSeS bekannt, wo ich seit vielen Jahren ein aktives Mitglied bin. Ich habe diese App entwickelt, um meine langjährige Liebe zum Spiel mit meiner wachsenden Leidenschaft für Softwareentwicklung zu verbinden. Wenn du Fehler findest oder Vorschläge hast, kontaktiere mich bitte über Discord (klicke auf den Button unten) oder per E-Mail (siehe Entwicklerinfo auf meiner Google Play Games-Seite). Danke für deine Unterstützung!</string>
+    <string name="axes">Äxte</string>
+    <string name="choose_the_chapter">Wähle das Kapitel!</string>
+    <string name="daggers_and_shurikens">Dolche und Shuriken</string>
+    <string name="damage_in_calculation">"Schaden: "</string>
+    <string name="dungeon10bossfighttext">Das Angriffsmuster des Bosses ist ziemlich einfach. Er greift viermal hintereinander die Position an, an der du dich zum Zeitpunkt seines Angriffs befindest.\n\n
+        Du solltest am Boden bleiben und seinen Projektilen ausweichen, indem du dich leicht vorwärts bewegst.\n\n
+        Nachdem er sein viertes Projektil abgefeuert hat, kannst du einfach auf seine Höhe springen und ihm Schaden zufügen. Wiederhole diesen Vorgang.\n\n</string>
+    <string name="dungeon10text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
+        Du brauchst nicht unbedingt einen Hammer für diese Spinnen, da sie größer sind als die giftigen.\n\n
+        Du kannst zeitverlangsamende Spezialfähigkeiten einsetzen, wenn du unter den fallenden Fallen durchlaufen willst.\n\n</string>
+    <string name="dungeon11bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 11 sammelst.\n\n
+        Schritt 1: Locke das Skelett auf der oberen Plattform an, damit es dir folgt. Du kannst das tun, indem du dich einfach von ihm sehen lässt.\n\n
+        Schritt 2: Lauf vor ihm weg, wenn es anfängt, dich zu jagen.\n\n</string>
+    <string name="dungeon11bonustext2">Schritt 3: Lauf zur linken Wand und warte, bis das Skelett ankommt.\n\n
+        Schritt 4: Wenn das Skelett dich angreift, springe auf die obere Plattform und warte, bis es den Block zerstört und den Knopf drückt.\n\n</string>
+    <string name="dungeon11bonustext3">Bonus: Springe in den Bereich über der Kiste, um etwas Gold zu sammeln!\n\n
+        Schritt 5: Bewege die Kiste vorsichtig zum Knopf. Pass auf, dass du sie nicht nach unten fallen lässt, wo das Skelett ist!\n\n
+        Schritt 6: Betritt schnell den Raum und gehe dann wieder auf die Plattform, wo du den Projektilen des Skeletts ausgewichen bist. Wiederhole dies einige Male, bis alle Spinnen aus dem Raum sind.\n\n</string>
+    <string name="dungeon11bonustext4">Schritt 7: Nachdem du alle Gegner in den linken Bereich gelockt hast, kannst du das ganze Gold im Raum einsammeln und den Dungeon beenden!\n\n</string>
+    <string name="dungeon11text">
+        Alle drei 💎 sind in den goldenen Töpfen.\n\n
+        Sammle alle drei 💎, um das Bonuslevel freizuschalten.\n\n
+        Wenn Sie Schwierigkeiten haben, Projektilen auszuweichen, können Sie eine Klasse wie Krieger oder Priester verwenden.\n\n
+        Der erste Geheimbereich enthält den <font color="#A020F0"> Nazguh </font> Ring, der für mehrere Gegenstandskombinationen verwendet werden kann.\n\n
+    </string>
+    <string name="dungeon12text">
+        Der erste 💎 ist im zweiten Geheimbereich. Der zweite befindet sich im goldenen Topf und der dritte vor dem Feuerwerfer.\n\n
+        Die Jumpman-Rüstung ist hier sehr nützlich, da sie es Ihnen ermöglicht, zu bestimmten Bereichen zu springen, ohne zu sterben oder Schaden zu nehmen.\n\n
+        Der vierte Geheimbereich enthält den <font color="#FFA500"> Narya </font> Feuerring, der sehr gut für Magier und Hohe Magier ist.\n\n
+    </string>
+    <string name="dungeon13bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 13 sammelst.\n\n
+        Schritt 1: Zerstöre die Vasen auf der linken Seite und folge dann dem Pfad wie im Bild gezeigt.\n\n
+        Achte auf die Feuerprojektile und benutze eine Luft-Rüstung oder einen Luft-Ring, um Stachelschaden zu vermeiden.\n\n</string>
+    <string name="dungeon13bonustext2">Schritt 2: Gehe jetzt zurück, aber benutze den Weg unter den Plattformen. Sei wieder vorsichtig mit den Projektilen und benutze eine Lava-Rüstung oder einen Lava-Ring.\n\n</string>
+    <string name="dungeon13text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Die Verwendung einer Feuerrüstung oder eines Feuerrings schützt Sie vor Lava, sodass Sie zwei Geheimbereiche öffnen können.\n\n
+        Um den ersten Geheimbereich zu öffnen, müssen Sie den Knopf im nahegelegenen Lava-Pool aktivieren.\n\n
+        Der zweite Geheimbereich enthält den <font color="#00FF00"> Ring des Schutzes </font>.\n\n
+    </string>
+    <string name="dungeon14text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Um die gelbe Barriere zu durchbrechen und den ersten 💎 zu erhalten, benötigen Sie eine Waffe mit Lichtelement oder eine Waffe, die Barrieren durchdringt.\n\n
+        Der zweite Geheimbereich enthält den <font color="#FFFF00"> Kleriker-Ring </font>, der wirklich gut für Hexendoktor, Paladin und Priester ist.\n\n
+        Halten Sie The Dude am Leben, um die Errungenschaft zu erhalten.\n\n
+    </string>
+    <string name="dungeon15text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Die Verwendung einer <font color="#00FF00"> erd </font>-basierten Rüstung oder eines Rings erleichtert das Erreichen von Geheimbereichen und das Abschließen des Dungeons.\n\n
+        Wenn Sie Schwierigkeiten haben, die Spinnen zu treffen, verwenden Sie einen Hammer, den Sie in früheren Dungeons erhalten haben.\n\n
+    </string>
+    <string name="dungeon16text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Die Verwendung einer <font color="#00FF00"> erd </font>-basierten Rüstung oder eines Rings erleichtert das Erreichen von Geheimbereichen und das Abschließen des Dungeons.\n\n
+        Sie können den unerreichbaren Geist töten, indem Sie unter ihm stehen und warten, bis der Blitz mehrmals einschlägt.\n\n
+</string>
+    <string name="dungeon17bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 17 sammelst.\n\n
+        Das Einzige bei dieser Bonusstufe ist, genügend Schlüssel zu haben, um alle Truhen zu öffnen, es gibt keine spezielle Strategie.\n\n</string>
+    <string name="dungeon17bonustext2">
+        Wenn Sie alle Truhen öffnen, gibt es einen garantierten Drop für das <font color="#FFA500"> Feuerschädel-Schwert </font>, das gut für Krieger, Waldläufer usw. ist.\n\n
+        Sie erhalten auch <font color="#FFFF00"> Faldangs Weste </font>, die gut für Paladin, Priester und Hexendoktor ist.\n\n
+    </string>
+    <string name="dungeon17text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Die Verwendung von <font color="#A020F0"> Dunkelheits </font>-basierter Ausrüstung bewirkt, dass der Geist angreift, wenn Sie ihm direkt gegenüberstehen.\n\n
+        Verwenden Sie für den vierten Geheimbereich den Überschall-Ring oder Klassen, die die Zeit verlangsamen.\n\n
+    </string>
+    <string name="dungeon18text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Der zweite Geheimbereich enthält den <font color="#ADD8E6"> Schwertkämpfer-Ring </font>, der für Schwerter extrem gut ist.\n\n
+        Stellen Sie sicher, dass Sie ein Feuer- und ein Luft-Ausrüstungsteil kombinieren, um den durch die Fallen verursachten Schaden zu vermeiden.\n\n
+    </string>
+    <string name="dungeon19bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 19 sammelst.\n\n
+        Dieser ist ziemlich einfach. Zerstöre einfach die Vasen auf deiner Linken und springe dann in die Lava, um alle Bonus-🪙 zu sammeln.\n\n
+        Danach springe auf die grüne Plattform. Dort findest du zwei Truhen, die normalerweise Runen enthalten.\n\n</string>
+    <string name="dungeon19bonustext2">Nachdem du das getan hast, kannst du auch eine versteckte Truhe öffnen, die sich im zweiten Lavasee befindet.\n\n</string>
+    <string name="dungeon19text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Der Dungeon ist voller Stacheln und Lava. Versuche, die richtige Ausrüstung zu verwenden, um zumindest eine dieser Gefahren zu vermeiden.\n\n
+        Die vom Beschwörer erzeugten Kreaturen sterben automatisch, wenn du ihn tötest.\n\n
+        Wenn du mit dem Kapitän zum hinteren Teil des Dungeons gehst, schaltest du die Errungenschaft \"Die unerzählte Geschichte 2\" frei.\n\n</string>
+    <string name="dungeon1text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
+Es gibt viele Tränke in den oberen unsichtbaren Bereichen. Zum Beispiel über dem geheimen Bereich 1 und dem Endbereich.\n\n
+Nachdem du den Kapitän getroffen hast, stößt du auf zwei Kisten. Zerstöre die obere, um Zugang zu dem Bereich zu erhalten, in dem du zuvor warst.\n\n
+Wenn du zu dem Ort gehst, an dem die Filmsequenz beginnt, findest du in den beiden weißen Töpfen ein gutes Schwert und eine gute Rüstung.\n\n
+Der zweite geheime Bereich ist ohne die Verwendung des Jumpman-Anzugs oder spezieller Fähigkeiten nicht erreichbar, du kannst ihn nicht beim ersten Versuch erreichen.\n\n</string>
+    <string name="dungeon20bossfighttext1">Lass dich nicht von der Größe dieses Bosses täuschen, er ist ziemlich einfach zu besiegen.\n\n
+        Er beginnt damit, fünfmal hintereinander anzugreifen. Seine Projektile haben einen großen Schadensbereich und sind giftig. Mit der meisten Ausrüstung kannst du ausweichen, indem du einfach von einer Seite zur anderen gehst.\n\n</string>
+    <string name="dungeon20bossfighttext2">Nachdem er sein fünftes Projektil abgefeuert hat, senkt er sich ab, um zwei Eier freizusetzen. Eines wird auf der linken und eines auf der rechten Seite freigesetzt.\n\n
+        Während er dies tut, hast du die Chance, ihm Schaden zuzufügen. Achte darauf, dass du beim Herunterfallen nach einem Doppelsprung auch die Eier einmal triffst und sie zerstörst.\n\n
+        Dies stellt sicher, dass du dich nicht gleichzeitig um Projektile und Spinnen kümmern musst.\n\n
+        Nachdem die Spinne ihr zweites Ei freigesetzt hat, kehrt sie zu ihrer Ausgangsposition zurück und beginnt erneut, auf dich zu schießen. Wiederhole diesen Vorgang, bis du sie getötet hast.\n\n</string>
+    <string name="dungeon20text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen. Das letzte 💎 ist erst nach dem Sieg über den Boss erhältlich.\n\n
+        Der Beschwörer, dem du begegnest, kann nicht getötet werden. Du musst zuerst den Boss töten, dann zurückkommen und den Schlüssel und das 💎 einsammeln und den geheimen Bereich erkunden.\n\n
+        Was die Ausrüstung betrifft, sind die besten Sets diejenigen, die agil sind und viel Schaden verursachen.\n\n</string>
+    <string name="dungeon21text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Das Töten der Beschwörer wird auch die von ihnen besessenen Schergen zerstören.\n\n
+        Der erste Geheimbereich enthält die <font color="#FFFF00"> Blitz-Axt </font>, die sehr gut für Klassen des Lichtelements im mittleren Spielverlauf ist, wie Priester, Hexendoktor oder Paladin.\n\n
+        Dieses Level schaltet weitere Gegenstände im Laden frei, schauen Sie sie sich an und bereiten Sie sich auf den bevorstehenden Boss vor.\n\n
+    </string>
+    <string name="dungeon22text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Der erste geheime Bereich befindet sich in der oberen linken Ecke, sofort wenn du den Dungeon beginnst. Der zweite ist oben auf den fast unsichtbaren Plattformen.\n\n
+        Stelle sicher, dass du mindestens einen goldenen Schlüssel hast. Du wirst ihn brauchen, um einen inoffiziellen geheimen Bereich zu öffnen, der sich über dem Ausgang des Dungeons befindet.\n\n
+        Die Verwendung von Waffen mit großer Trefferfläche hilft dir beim Töten der explodierenden Spinnen, ansonsten kannst du einfach vor ihnen weglaufen und auf die Explosion warten.\n\n</string>
+    <string name="dungeon23bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 23 sammelst.\n\n
+        Beginne damit, von einer Seite der Karte zur anderen zu gehen. Versuche, so viele 🪙 und 💎 wie möglich zu sammeln.\n\n</string>
+    <string name="dungeon23bonustext2">Du solltest auch die Spinnen komplett meiden, greife sie überhaupt nicht an, und wenn du nicht alle 🪙 auf einmal einsammeln kannst, ist das auch in Ordnung.\n\n</string>
+    <string name="dungeon23bonustext3">Sobald du das Ende der Karte erreichst, kannst du umdrehen und zurückgehen, während du deine Angriffe nach links spammst.\n\n
+        Auf diese Weise kannst du alle Spinnen töten und die restlichen 🪙 einsammeln.\n\n
+        Achte darauf, die Türen zu den Truhen zu öffnen. Dort wartet ein Gegenstand auf dich.\n\n
+        Über diesem Raum gibt es auch mehr 🪙 und Leckereien, die du aufheben kannst.\n\n</string>
+    <string name="dungeon23text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Achten Sie darauf, sowohl den silbernen als auch den goldenen Schlüssel zu holen, Sie werden sie für die Bonus-Etappe benötigen, die durch das Sammeln aller drei 💎 freigeschaltet werden kann.\n\n
+        Die Verwendung von Waffen mit einem großen Trefferbereich wird Ihnen helfen, die explodierenden Spinnen zu töten, andernfalls können Sie einfach vor ihnen weglaufen und auf die Explosion warten.\n\n
+        Die Skelette mit dem <font color="#A020F0"> Dunkelschädel-Schwert </font> werden unverwundbar, wenn sie Sie sehen, versuchen Sie das zu vermeiden.\n\n
+    </string>
+    <string name="dungeon24text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Für die ersten beiden geheimen Bereiche musst du den Knopf aktivieren. Der Knopf für den ersten geheimen Bereich ist durch einen Block versteckt, den du zerstören musst, und der Knopf für den zweiten geheimen Bereich ist visuell teilweise durch Gras verdeckt.\n\n
+        Der dritte geheime Bereich befindet sich, nachdem du die ersten Türen mit dem goldenen Schlüssel geöffnet hast.\n\n
+        Der fünfte geheime Bereich befindet sich über dem Ausgang des Dungeons.\n\n</string>
+    <string name="dungeon25text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Der erste Geheimbereich befindet sich direkt über dem Startpunkt, Sie benötigen den <font color="#ADD8E6"> Jumpman-Anzug </font>, um dorthin zu gelangen. Beachten Sie, dass es eine unsichtbare Wand gibt, die es Ihnen nicht erlaubt, direkt zur Plattform zu springen. Sie müssen etwas nach links gehen und von dort springen. Sie könnten auch den nahegelegenen Geysir benutzen, um sich nach oben zu befördern. Sie könnten auch Klassen verwenden, die die Zeit verlangsamen.\n\n
+        In diesem Dungeon können Sie auch den Vater von The Dude steuern. Sie können ihm befehlen, Ihnen zu folgen oder an einem Ort zu bleiben, indem Sie sich ihm nähern und den Knopf über ihm drücken.\n\n
+        Für den zweiten Geheimbereich müssen Sie dem Vater von The Dude befehlen, auf dem Knopf zu stehen, während Sie alles einsammeln.\n\n
+    </string>
+    <string name="dungeon26text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Der erste geheime Bereich ist direkt über der Startposition, aber er ist zu hoch. Du musst den magischen Pilz aktivieren, um dorthin zu gelangen.\n\n
+        Der zweite geheime Bereich befindet sich auf der rechten Seite des großen Lochs.\n\n
+        Der dritte geheime Bereich ist über der Burg, auf der rechten Seite.\n\n
+        Wenn du diesen Dungeon um 4:20 oder 16:20 spielst, kannst du die geheime Errungenschaft erhalten. Sammle einfach die fliegenden Münzen mit dem Diamanten oben drauf.\n\n</string>
+    <string name="dungeon27bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 27 sammelst.\n\n
+        Über der Truhe findest du zusätzliche Leckereien.\n\n
+        Aktiviere zuerst den magischen Pilz und folge der Zickzack-Route bis zum Ende. Achte darauf, nicht zu viel Zeit in der Mitte zu verbringen.\n\n</string>
+    <string name="dungeon27bonustext2">Aktiviere danach den Pilz erneut und folge der anderen Zickzack-Route. Das war\'s!\n\n</string>
+    <string name="dungeon27text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Stelle sicher, dass du einen goldenen Schlüssel für die Bonusstufe hast!\n\n
+        Es gibt viele Wege, die Klone zu töten. Die erste Option ist, den Bereich zu spammen, während der Klon spawnt. Die zweite Option ist, auf einen höheren Bereich zu gehen, einmal anzugreifen und zu springen, sodass der gegnerische Klon von deinem Angriff getroffen wird. Die dritte Option ist, aus der Ferne zu spammen, wo der böse Klon deine Aktion nicht nachahmt, und dann den Projektilen zum Standort des Klons zu folgen, damit sie ihn treffen. Du kannst auch versuchen, eine schwächere Rüstung auszurüsten und sie dann, wenn der Klon zu spawnen beginnt, gegen eine bessere auszutauschen und ihn mit roher Gewalt zu töten.\n\n
+        Für den zweiten geheimen Bereich lass bitte den zweiten bösen Klon am Leben, da es so viel einfacher ist, dorthin zu gelangen.\n\n
+        Nutze die magischen Pilze zu deinem Vorteil, besonders wenn du Schwierigkeiten hast, die bösen Klone zu töten.\n\n</string>
+    <string name="dungeon28text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Stelle sicher, dass du mindestens ein feuerbasiertes Ausrüstungsteil hast! Sonst wirst du viele Tränke brauchen, um dich vom Schaden zu heilen.\n\n
+        Spamme einfach den Bereich an, in dem der böse Klon spawnen wird, das ist der beste Weg, ihn in diesem Dungeon zu töten.\n\n
+        Die Verwendung von Krieger, Elite-Krieger und Priester ist hier eine wirklich gute Idee, da es so viele Projektile gibt.\n\n</string>
+    <string name="dungeon29bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 29 sammelst.\n\n
+        Dieser sieht knifflig aus, erfordert aber nur eine spezielle Strategie.\n\n
+        Du musst deine Bewegungen koordinieren und dich genau in der Mitte zwischen den Kugeln positionieren, die Position ist mit einem schwarzen Kasten markiert. Du solltest dich von einem Kasten zum anderen bewegen, wenn die Kugeln in horizontaler Position sind (wenn du sie nicht sehen kannst).\n\n</string>
+    <string name="dungeon29text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        Der erste Geheimbereich enthält den <font color="#00FF00"> Gadarast-Stab </font>und der dritte das <font color="#FFA500"> Feuerschädel-Schwert </font>.\n\n
+        Der riesige Mini-Boss hat ein einfaches Angriffsmuster, er springt nur und schlägt auf den Boden, was eine Explosion verursacht. Der beste Weg, ihn zu töten, ist, ihn anzugreifen, wenn er springt. Springen Sie einfach zur gleichen Zeit wie er.
+    </string>
+    <string name="dungeon2text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
+Wenn du den Dude rettest, wird er dir ein gutes Schwert für den Spielanfang schenken und du erhältst auch eine Errungenschaft.\n\n
+An der Decke über dem geheimen Bereich 5 befindet sich ein Giftdolch, der für den frühen und mittleren Spielverlauf sehr gut ist.\n\n</string>
+    <string name="dungeon30bossfighttext1">Du kannst den Kapitän als Schild benutzen, da sie überhaupt nicht sterben kann.\n\n
+        Wenn du auf der gleichen Höhe wie der Boss bist (wenn du auf einer der Plattformen stehst), kannst du einfach springen und seinen Projektilen ausweichen. Wenn du auf dem Boden bist, musst du dich in Bewegung halten.\n\n</string>
+    <string name="dungeon30bossfighttext2">Der Boss hat drei Phasen und in allen hast du etwa drei bis vier Sekunden Zeit, um ihm Schaden zuzufügen.\n\n
+        In der ersten Phase greift er dich nur langsam an und nach etwa 8 Sekunden wird er verwundbar.\n\n
+        Wenn er 50\% seiner Gesundheit hat, beginnt er etwas schneller anzugreifen und ein Gewitter erscheint.\n\n
+        Wenn er 10\% seiner Gesundheit hat, beginnt er rasant schnell anzugreifen und das Gewitter erscheint viel häufiger.\n\n
+        Abhängig von deiner Ausrüstung kannst du die dritte Phase vielleicht vermeiden, wenn du genug Schaden austeilst. Achte darauf, ihn immer am Kopf statt am Körper anzugreifen, das verursacht viel mehr Schaden.</string>
+    <string name="dungeon30text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Verliere deine Gesundheit nicht für nichts, du wirst sie für den Bosskampf brauchen, es sei denn, du hast viele Tränke.</string>
+    <string name="dungeon31bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 31 sammelst.\n\n
+        Das Einzige, worauf du achten musst, ist nicht durch einen Sturz in den Abgrund zu sterben.\n\n
+        Springe einfach Ebene für Ebene nach oben und sammle alle Diamanten und Schlüssel ein.</string>
+    <string name="dungeon31bonustext2">Es gibt ein paar Fledermäuse, aber sie stellen keine große Bedrohung für dich dar, du kannst sie schnell töten. \n\n</string>
+    <string name="dungeon31text">Das erste 💎 befindet sich rechts vom Spawnbereich. Es ist in der oberen rechten Ecke der Karte. Die anderen beiden findest du unterwegs.\n\n
+        Der vierte geheime Bereich kann durch den Knopf links davon, hinter der Wand, geöffnet werden.\n\n
+        Achte darauf, Waffen mit großer Trefferfläche zu verwenden, um die Fledermäuse leichter zu töten.\n\n
+        Wenn Fledermäuse aus dem Ei schlüpfen, haben sie ein kleines Zeitfenster, in dem sie unverwundbar sind.</string>
+    <string name="dungeon32text">
+        Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
+        In diesem Dungeon können Sie die Elixiere ausprobieren, die eine einzigartige Wirkung haben. Wenn Sie das erste Elixier aufnehmen, schießen Sie mit jedem Schuss einen zusätzlichen abprallenden Feuerball. Mit dem zweiten Elixier können Sie auf grünen Plattformen stehen und mit dem dritten Elixier folgen Ihre Schüsse dem Ziel. \n\n
+        Die erste Truhe hat den <font color="#ADD8E6"> Jumpman-Anzug </font>, der Ihnen Zugang zu den ersten drei Geheimbereichen verschafft.\n\n
+        Der endgültige Mini-Boss ist einfach, wenn Sie vorbereitet sind. Verwenden Sie die Feuerrüstung in den Truhen vor dem Mini-Boss, um Ihren Schaden zu erhöhen, und nehmen Sie das Elixier im Raum des Mini-Bosses auf. Auf diese Weise benötigen Sie 4-5 Schüsse, um diese Spinne zu töten.\n\n
+    </string>
+    <string name="dungeon33text">Alle drei 💎 sind auf dem Weg zu finden, das letzte ist jedoch nur zugänglich, wenn du den Knopf vor dem Wasserbecken mit der Truhe darin aktivierst.\n\n
+        Die Tornados verursachen bei Berührung Schaden, beschwören zufällig oder bei ihrem Tod Blitze und ziehen dich auch zu sich hin. Halte unbedingt vor und nach dem Töten Abstand. \n\n
+        Der zweite geheime Bereich befindet sich direkt über dem ersten.\n\n
+        Der dritte geheime Bereich ist auf dem Bild nicht so gut zu sehen, aber du wirst die Partikel von der grünen Plattform auf deinem Bildschirm sehen können.\n\n</string>
+    <string name="dungeon34text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Der erste geheime Bereich ist direkt links vom Startbereich und der dritte direkt über dem Treffpunkt des Mondwächters. Der zweite kann geöffnet werden, indem man Schwerter auf die springende Kugel wirft, sodass sie den Knopf darüber drückt. \n\n
+        Ausrüstung mit viel Geschwindigkeit und Sprungkraft ist in diesem Dungeon sehr hilfreich.\n\n</string>
+    <string name="dungeon35text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Dies ist der erste Dungeon, der in der Community als schwer gilt. \n\n
+        Der Drache greift alle paar Sekunden an und sein Feuerball fliegt zu der Position, an der du warst, als er ihn abgefeuert hat. Du kannst diesen Vorteil nutzen und dich hinter Blöcken verstecken oder sehr hoch springen, damit der Feuerball dich nicht trifft.\n\n</string>
+    <string name="dungeon36text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Dies ist einer der früheren Dungeons, den du als der schmutzige Soldat gespielt hast, daher ist der erste geheime Bereich auch derselbe. \n\n
+        Du hast ein zusätzliches Feuerelixier, das du verwenden kannst, wenn du den Feuerball den zielsuchenden Raketen vorziehst.\n\n</string>
+    <string name="dungeon37text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Der erste geheime Bereich ist unter der Startposition, der zweite auf der rechten Seite des ersten Turms und der dritte auf der linken Seite des zweiten Turms. \n\n
+        Klassen wie Waldläufer, Schurke und Dieb sind sehr nützlich, da sie die notwendige Agilität für diesen Dungeon bieten.\n\n</string>
+    <string name="dungeon38text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
+        Wenn du Probleme hattest, deine Gegner zu töten, weil du wenig Schaden machst, ist dies der Ort, an dem du vielleicht anhalten und mehr Gold farmen und bessere Ausrüstung besorgen solltest. Versuche, mindestens zweitausend Waffenschaden zu erreichen. \n\n
+        Der erste geheime Bereich ist über dem ersten Baum, den du im Dungeon findest. Springe einfach auf den Baum und du wirst eine kleine Plattform oben links sehen. Der zweite geheime Bereich ist über dem ersten springenden Riesen, den du triffst.\n\n</string>
+    <string name="dungeon39text">Alle drei 💎 sind nach dem Portal in der Mitte der Karte. Betritt das Portal nicht sofort mit dem König. Springe darüber und gehe weiter nach links.\n\n
+        Der erste geheime Bereich kann mit dem Diener erreicht werden, der links davon spawnt. Wenn der Diener zu spawnen beginnt, gehe zu den Türen des geheimen Bereichs und laufe einfach weiter nach rechts, bis der Diener auf den Knopf tritt.\n\n
+        Der zweite geheime Bereich befindet sich auf der linken Seite des letzten Turms ganz links. Du musst auch von der linken Seite dorthin klettern.\n\n</string>
+    <string name="dungeon3bonus1">Schalte diesen Bonus frei, indem du alle drei 💎 in Dungeon 3 sammelst.\n\n
+        Schritt 1 ist optional und bringt dir eine kleine Menge Gold.\n\n
+        Schritt 2: Finde den roten Knopf an der Decke.\n\n</string>
+    <string name="dungeon3bonus2">Schritt 3: Um den Knopf zu aktivieren, kannst du verschiedene Strategien anwenden. Die einfachste ist, einfach den Jumpman-Anzug zu benutzen, der in zukünftigen Dungeons verfügbar sein wird. Auf dem Bild siehst du, dass es auch ohne geht, springe einfach auf den Kopf des Zombies und mache dann einen Doppelsprung, um den Knopf zu aktivieren. Stelle sicher, dass du eine Rüstung hast, die dir mindestens 2\% Sprungkraft verleiht.\n\n</string>
+    <string name="dungeon3bonus3">Schritt 4: Nach dem Aktivieren des Knopfes erscheint ein Zombie. Stelle dich vor ihn, damit er dich angreift, und weiche dem Angriff dann aus. Dadurch wird die Wand zerstört und du kannst die Güter erhalten.\n\n</string>
+    <string name="dungeon3text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
+Sammle alle drei 💎, um das Bonuslevel freizuschalten.\n\n
+Du kannst die Truhe im ersten geheimen Bereich nicht beim ersten Versuch öffnen, da du einen Schlüssel dafür benötigst und diesen nur im Laden kaufen kannst, der nach diesem Level freigeschaltet wird.\n\n
+Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman-Anzug oder stattdessen zwei Kisten verwendest. Falls du die Zwei-Kisten-Strategie anwendest, bringe zuerst die linke unter die rechte und schiebe dann die rechte nach oben. Schiebe danach beide vorsichtig, bis du das Ziel erreichst. \n\n
+Über dem dritten goldenen Topf befindet sich ein Dolch des Lichts, der für den Spielanfang sehr gut ist.\n\n</string>
+    <string name="dungeon40boss1">Es gibt keine geheimen Bereiche in diesem Dungeon, es ist ein einziger großer Bosskampf.\n\n
+        Der Bosskampf beinhaltet den Kampf gegen den Hexenmeister in seiner normalen und seiner Bestienform. Während er in seiner normalen Form ist, wird er dich angreifen, indem er Feuerbälle schießt, Blitze von oben herabwirft und seine Diener spawnt.\n\n
+        Du brauchst keine spezielle Strategie, um ihn zu besiegen, stelle nur sicher, dass du genug Schaden hast, um schnell mit ihm fertig zu werden.\n\n</string>
+    <string name="dungeon40boss2">Der zweite Teil ist etwas kniffliger, hauptsächlich weil seine Bestienform drei Angriffsmuster hat, die sich ändern, je nachdem, wie viel Schaden du ihm zugefügt hast.\n\n
+        Denke daran, der schwierigste Teil bei diesem Boss ist zu erkennen, wann er sein Angriffsmuster ändern wird!\n\n
+        In der ersten Phase wird er sich dir nähern und dich genau wie der springende Riese angreifen. Dieser Angriff ist leicht zu vermeiden. \n\n
+        In der zweiten Phase wird er auf dich zurutschen und dann eine Flächenexplosion verursachen.\n\n
+        In der dritten Phase wird er auf dich zuspringen und dann, wenn er auf dem Boden ankommt, auch ein Stück rutschen. Es ist im Grunde eine Kombination der ersten beiden Phasen.\n\n</string>
+    <string name="dungeon41text">Zwei 💎 sind sichtbar und auf dem Weg zum Ende des Dungeons. Eines davon ist hinter dem zerstörbaren Felsen im Raum des zweiten rollenden Mini-Bosses versteckt.\n\n
+        Die zielsuchenden Raketen des fliegenden Stachel-Bosses zielen zuerst auf die zerstörbaren Felsen. Achte darauf, sie im Raum nicht zu zerstören. Wenn du die Felsen doch zerstörst, kannst du einfach unter den Boss treten, damit die Projektile dir nicht folgen.\n\n
+        Der fünfte geheime Bereich kann durch den Knopf rechts davon geöffnet werden.\n\n</string>
+    <string name="dungeon42bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 42 sammelst.\n\n
+        Um die Türen zum Mini-Boss-Raum zu öffnen, musst du die Ventile in der richtigen Reihenfolge aktivieren.\n\n</string>
+    <string name="dungeon42bonustext2">Der Boss hinterlässt einen anständigen Ring namens "Creepy Crawler", der für alle Waffentypen verwendet werden kann. \n\n</string>
+    <string name="dungeon42text">Die 💎 sind hinter zerstörbaren Felsen versteckt. Zerstöre unbedingt alles, um sie zu bekommen.\n\n
+        Bezüglich des Rätsels: Schau dir den nahegelegenen Stein an, er zeigt dir, in welcher Reihenfolge du das Rätsel lösen musst.\n\n
+        Sei vorsichtig mit den Ratten, die die Giftbomben werfen. Nach der Explosion setzen sie eine Giftwolke frei, die einige Sekunden anhält.\n\n</string>
+    <string name="dungeon43bonustext1">Schalte diese Stufe frei, indem du alle drei 💎 in Dungeon 43 sammelst.\n\n
+        Bevor du versuchst, den Block-Boss zu töten, töte alle anderen im Raum.\n\n</string>
+    <string name="dungeon43bonustext2">Nachdem alle anderen Diener tot sind, ist der Weg zu den roten Fässern viel einfacher zugänglich. \n\n</string>
+    <string name="dungeon43text">Das erste 💎 ist nach dem ersten Block-Boss. Die anderen beiden müssen gesammelt werden, wenn du die Golems verwundbar machen willst.\n\n
+        Um dem Block-Boss Schaden zuzufügen, muss er auf den roten Fässern landen. Stelle dich einfach an die Seite eines Fasses und wenn der Boss nach unten geht, gehe in die entgegengesetzte Richtung.\n\n
+        Der Boss am Ende ist auch ziemlich einfach zu besiegen, wenn du genug Schaden hast. Stelle dich einfach auf einen der Blöcke an der Seite und greife ihn und seinen Kristall aus der Ferne an.\n\n</string>
+    <string name="dungeon44bossfighttext1">Sammle unbedingt die <font color="#FFA500"> Robe der drohenden Feuer </font>aus dem sechsten geheimen Bereich, um deinen Schaden zu maximieren. \n\n Der Boss hat drei Hauptangriffe: gleitender Eiszapfen, fallende Eiszapfen und Felswurf. \n\n Du sollst ausweichen und gleichzeitig Schaden anrichten, während du dem im Bild gezeigten Pfad folgst. \n\n Dein Angriff sollte wie folgt sein: Aktiviere deine Spezialfähigkeit, dann deine Superfähigkeit und spamme dann Basisangriffe. Wiederhole den Vorgang.</string>
+    <string name="dungeon44bossfighttext2"><font color="#FF0000">Achtung:</font> Wenn du nicht genug Schaden verursachst, bis der gleitende Eiszapfen zerbricht, wird der Boss anfangen, Felsbrocken auf dich zu werfen, denen man nur schwer ausweichen kann. \n\n Wenn der Boss in die zweite Phase eintritt, bewegen sich seine gleitenden Eiszapfen schneller, seine fallenden Eiszapfen zielen nun auf deine aktuelle Position und er wirft mehrere Felsbrocken.\n\n</string>
+    <string name="dungeon44text">Alle drei 💎 sind unterwegs, jedoch benötigst du meistens einen goldenen Schlüssel, um die Türen zu öffnen, um sie zu bekommen. Überspringe keine Bereiche vorher.\n\n
+        Der dritte geheime Bereich ist ebenfalls hinter zerstörbarer oranger Masse versteckt.\n\n
+        Besuche unbedingt den sechsten geheimen Bereich, da er eine schöne Rüstung hat, die dir beim Boss helfen wird.\n\n</string>
+    <string name="dungeon4text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
+        Der Kapitän ist unbesiegbar und kann nicht sterben. Wenn du im Dungeon auf den oberen Plattformen vorankommst, wird sie alle unteren Gegner von selbst töten.\n\n</string>
+    <string name="dungeon5bonustext1">Schalte diesen Bonus frei, indem du alle drei 💎 in Dungeon 5 sammelst.\n\n
+        Wähle zuerst den linken Eingang.\n\n</string>
+    <string name="dungeon5bonustext2">Folge einfach dem Weg nach oben.\n\n</string>
+    <string name="dungeon5bonustext3">Wähle nun den mittleren Weg, der den zuvor erwähnten Gegenstand enthält - den Insekten-Zermalmer.\n\n
+        Dieser Gegenstand wird dir helfen, wenn du Schwierigkeiten mit dem nächsten Kapitel hast!\n\n</string>
+    <string name="dungeon5text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
+        Achte darauf, die Windelement-Rüstungen zu verwenden, um Stachelschaden zu vermeiden.\n\n
+        Der bullige Zombie ist leichter zu besiegen, wenn du ihn von einer erhöhten Position aus bekämpfst.\n\n</string>
+    <string name="dungeon6text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
+        Du kannst jetzt den Hammer benutzen, den du im vorherigen Bonus-Dungeon erhalten hast, um leichter mit Spinnen fertig zu werden.\n\n
+        Der erste geheime Bereich enthält das Helden-Set, das gut für Schwerter, Dolche und Hämmer ist. Es gibt dir auch Stachelschutz, was dir ermöglicht, den Dungeon sicherer zu spielen.\n\n</string>
+    <string name="dungeon7bonustext1">Schalte diesen Bonus frei, indem du alle drei 💎 in Dungeon 7 sammelst.\n\n
+        Du musst schnell sein, da die Plattformen drei Sekunden, nachdem du auf sie springst, zerstört werden.\n\n
+        Folge einfach der Linie aus Gold 🪙.\n\n</string>
+    <string name="dungeon7bonustext2">Sobald du den höchsten Punkt erreichst, springe auf die Spitze des Quadrats und dann in den Bereich mit der Truhe.\n\n
+        Danach springe einfach zurück zur nächsten Plattform und beende den Dungeon.\n\n</string>
+    <string name="dungeon7text">Zwei 💎 sind in den goldenen Töpfen. Eines ist in dem Bereich, der durch Drücken des Knopfes freigeschaltet werden kann.\n\n
+        Stelle sicher, dass du mindestens einen eisernen Schlüssel für die Bonusstufe hast.\n\n
+        Du kannst die Kiste am Anfang benutzen, um den Knopf für den unteren Bereich mit dem 💎 zu aktivieren.\n\n
+        Der dritte geheime Bereich kann erreicht werden, indem man über die Flammen springt.\n\n</string>
+    <string name="dungeon8text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
+        Du kannst den Dude am Anfang des Dungeons zum Feuerspeer bringen, um eine Errungenschaft freizuschalten.\n\n
+        Stelle sicher, dass du immer vor dem Dude stehst, um bei Bedarf den gesamten Schaden abzufangen. Du kannst Tränke benutzen, er aber nicht.\n\n
+        Wenn der Dude überlebt, wird er dir eine schöne Axt geben.\n\n</string>
+    <string name="dungeon9text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
+        Ein wirklich guter Dungeon, der dein Zielen für das nächste Kapitel trainiert. Der einfachste Weg, die Kiste zum Aktivieren des Knopfes zu bringen, ist die Verwendung von nicht-drehenden Dolchen, wie dem Giftdolch, den du in einem der vorherigen Dungeons gefunden hast.\n\n
+        Verwende vorzugsweise eine Luft-Rüstung, um Stachelschaden zu vermeiden.\n\n
+        Wenn du den Dungeon beendest, schau dir unbedingt die neuen Gegenstände im Laden an.\n\n</string>
+    <string name="dungeons">🏰 Dungeons 🏰</string>
+    <string name="eighty_kills">80</string>
+    <string name="element_cannot_be_picked">Element kann für diesen Gegenstand nicht ausgewählt werden!</string>
+    <string name="enemies">👻 Gegner 👻</string>
+    <string name="enemy_air_elemental">Luftelementar</string>
+    <string name="enemy_alien">Alien</string>
+    <string name="enemy_ape_demon">Affen-Dämon</string>
+    <string name="enemy_ape_junina">Junina-Affe</string>
+    <string name="enemy_ape_santa">Weihnachts-Affe</string>
+    <string name="enemy_ape_skeleton">Skelett-Affe</string>
+    <string name="enemy_armademon_easter">Oster-Armadämon</string>
+    <string name="enemy_armored_ape">Gepanzerter Affe</string>
+    <string name="enemy_armored_ape_faster">Schnellerer gepanzerter Affe</string>
+    <string name="enemy_armored_ape_faster_weaker">Schnellerer und schwächerer gepanzerter Affe</string>
+    <string name="enemy_armored_axe_skeleton">Gepanzertes Axtskelett</string>
+    <string name="enemy_armored_enraged_skeleton">Gepanzertes wütendes Skelett</string>
+    <string name="enemy_armored_skeleton">Gepanzertes Skelett</string>
+    <string name="enemy_beetle_anubis">Anubis-Käfer</string>
+    <string name="enemy_beetle_anubis_red">Roter Anubis-Käfer</string>
+    <string name="enemy_beholder_witch">Hexen-Beholder</string>
+    <string name="enemy_cangaceiro">Cangaceiro</string>
+    <string name="enemy_carcara">Carcara</string>
+    <string name="enemy_carnival_buffoon_green_skeleton">Karneval-Narr grünes Skelett</string>
+    <string name="enemy_carnival_buffoon_purple_skeleton">Karneval-Narr lila Skelett</string>
+    <string name="enemy_carnival_bunny_mask_skeleton">Karneval-Hasenmasken-Skelett</string>
+    <string name="enemy_carnival_captain_mask_necromancer">Karneval-Kapitänsmasken-Nekromant</string>
+    <string name="enemy_carnival_captain_mask_skeleton">Karneval-Kapitänsmasken-Skelett</string>
+    <string name="enemy_carnival_pilot_mask_skeleton">Karneval-Pilotenmasken-Skelett</string>
+    <string name="enemy_carnival_pumpkin_mask_skeleton">Karneval-Kürbismasken-Skelett</string>
+    <string name="enemy_carnival_rat_buffoon_green">Karneval-grüne Narr-Ratte</string>
+    <string name="enemy_carnival_rat_buffoon_purple">Karneval-lila Narr-Ratte</string>
+    <string name="enemy_carnival_salesman_mask_skeleton">Karneval-Verkäufermasken-Skelett</string>
+    <string name="enemy_chest_demon">Truhen-Dämon</string>
+    <string name="enemy_chest_demon_gift">Dämonen-Geschenktruhe</string>
+    <string name="enemy_copy_cat">Nachahmer</string>
+    <string name="enemy_cthulhu_imp">Cthulhu-Wichtel</string>
+    <string name="enemy_dark_ghost">Dunkler Geist</string>
+    <string name="enemy_dark_skeleton">Dunkles Skelett</string>
+    <string name="enemy_dark_skeleton_elite">Elite-Dunkelskelett</string>
+    <string name="enemy_dark_tanker">Dunkler Tank</string>
+    <string name="enemy_demon_head">Dämonenkopf</string>
+    <string name="enemy_demonic_spider">Dämonische Spinne</string>
+    <string name="enemy_demonic_spider_blowing_minion">Dämonischer Spinnen-Blas-Diener</string>
+    <string name="enemy_demonic_spider_minion">Dämonischer Spinnen-Diener</string>
+    <string name="enemy_easter_demon">Oster-Dämon</string>
+    <string name="enemy_easter_skeleton">Oster-Skelett</string>
+    <string name="enemy_evil_warlock">Böser Hexenmeister</string>
+    <string name="enemy_evil_warlock_boss">Böser Hexenmeister-Boss</string>
+    <string name="enemy_final_warlock">Finaler Hexenmeister</string>
+    <string name="enemy_fire_ape">Feuer-Affe</string>
+    <string name="enemy_fire_bat">Feuerfledermaus</string>
+    <string name="enemy_fire_bat_adult">Erwachsene Feuerfledermaus</string>
+    <string name="enemy_fire_elemental">Feuerelementar</string>
+    <string name="enemy_fire_skeleton">Feuerskelett</string>
+    <string name="enemy_fire_skeleton_b">Feuerskelett B</string>
+    <string name="enemy_fire_skeleton_elite">Elite-Feuerskelett</string>
+    <string name="enemy_fire_skeleton_master">Feuerskelett-Meister</string>
+    <string name="enemy_ghost_rat">Geister-Ratte</string>
+    <string name="enemy_giant_demon_head">Riesiger Dämonenkopf</string>
+    <string name="enemy_giant_spider">Riesenspinne</string>
+    <string name="enemy_gigaspider">Gigantspinne</string>
+    <string name="enemy_grinch">Grinch</string>
+    <string name="enemy_guard_tanker_a">Wachtank A</string>
+    <string name="enemy_guard_tanker_b">Wachtank B</string>
+    <string name="enemy_guard_tanker_elite">Elite-Wachtank</string>
+    <string name="enemy_harmless_tanker">Harmloser Tank</string>
+    <string name="enemy_helmet_skeleton">Helm-Skelett</string>
+    <string name="enemy_ice_necromancer">Eis-Nekromant</string>
+    <string name="enemy_ice_necromancer_wdg">Eis-Nekromant WDG</string>
+    <string name="enemy_ice_skeleton">Eisskelett</string>
+    <string name="enemy_ice_skeleton_elite">Elite-Eisskelett</string>
+    <string name="enemy_ice_skeleton_elite_wdg">Elite-Eisskelett WDG</string>
+    <string name="enemy_ice_skeleton_tanker">Eisskelett-Tank</string>
+    <string name="enemy_ice_skeleton_tanker_wdg">Eisskelett-Tank WDG</string>
+    <string name="enemy_ice_skeleton_wdg">Eisskelett WDG</string>
+    <string name="enemy_ifrits_disciple">Ifrits Schüler</string>
+    <string name="enemy_jumping_fire_skeleton">Springendes Feuerskelett</string>
+    <string name="enemy_jumping_fire_skeleton_elite">Elite-springendes-Feuerskelett</string>
+    <string name="enemy_jumping_skeleton">Springendes Skelett</string>
+    <string name="enemy_jumping_skeleton_elite">Elite-springendes-Skelett</string>
+    <string name="enemy_junina_skeleton_a">Junina-Skelett A</string>
+    <string name="enemy_junina_skeleton_b">Junina-Skelett B</string>
+    <string name="enemy_junina_skeleton_dark_shadow">Junina-Dunkelschatten-Skelett</string>
+    <string name="enemy_junina_skeleton_fire">Junina-Feuerskelett</string>
+    <string name="enemy_junina_skeleton_knife_guard">Junina-Skelett-Messerwache</string>
+    <string name="enemy_junina_skeleton_poison_thrower">Junina-Skelett-Giftwerfer</string>
+    <string name="enemy_junina_skeleton_shadow">Junina-Schatten-Skelett</string>
+    <string name="enemy_kingptain_dungeon43">Königptain (Dungeon 43)</string>
+    <string name="enemy_mini_slime">Mini-Schleim</string>
+    <string name="enemy_miniboss_gigaspider_critter">Miniboss Gigantspinnen-Diener</string>
+    <string name="enemy_mummy">Mumie</string>
+    <string name="enemy_mummy_blue_cosmos">Blaue Kosmos-Mumie</string>
+    <string name="enemy_mummy_gold_cosmos">Goldene Kosmos-Mumie</string>
+    <string name="enemy_mush_vacuum">Pilz-Sauger</string>
+    <string name="enemy_mush_vacuum_wdg">Pilz-Sauger WDG</string>
+    <string name="enemy_mushroom_spitter">Pilz-Spucker</string>
+    <string name="enemy_nature_skeleton">Natur-Skelett</string>
+    <string name="enemy_nature_skeleton_elite">Elite-Natur-Skelett</string>
+    <string name="enemy_priest_minion">Priester-Diener</string>
+    <string name="enemy_pumpkin_rat_skeleton">Kürbis-Ratten-Skelett</string>
+    <string name="enemy_pumpkin_skeleton">Kürbis-Skelett</string>
+    <string name="enemy_pumpkin_skeleton_scythe">Kürbis-Sensen-Skelett</string>
+    <string name="enemy_pumpkin_water_skeleton">Kürbis-Wasser-Skelett</string>
+    <string name="enemy_pumpkin_water_skeleton_scythe">Kürbis-Sensen-Wasser-Skelett</string>
+    <string name="enemy_pumpkin_zombie_rat">Kürbis-Zombie-Ratte</string>
+    <string name="enemy_rat_black_mage">Ratten-Schwarzmagier</string>
+    <string name="enemy_rat_fighter">Ratten-Kämpfer</string>
+    <string name="enemy_rat_fire_mage">Ratten-Feuermagier</string>
+    <string name="enemy_rat_lancer">Ratten-Lanzenträger</string>
+    <string name="enemy_rat_poison_thrower">Ratten-Giftwerfer</string>
+    <string name="enemy_rat_rogue">Ratten-Schurke</string>
+    <string name="enemy_rat_rogue_prisoner">Gefangener Ratten-Schurke</string>
+    <string name="enemy_rat_skeleton">Ratten-Skelett</string>
+    <string name="enemy_rat_warrior">Ratten-Krieger</string>
+    <string name="enemy_rat_water_mage">Ratten-Wassermagier</string>
+    <string name="enemy_rat_zombie_knife_guard">Ratten-Zombie-Messerwache</string>
+    <string name="enemy_rat_zombie_knife_guard_b">Ratten-Zombie-Messerwache B</string>
+    <string name="enemy_rat_zombie_knife_guard_elite">Elite-Ratten-Zombie-Messer</string>
+    <string name="enemy_shaman_fire">Feuer-Schamane</string>
+    <string name="enemy_shaman_fire_elite">Elite-Feuer-Schamane</string>
+    <string name="enemy_shaman_nature">Natur-Schamane</string>
+    <string name="enemy_shaman_nature_elite">Elite-Natur-Schamane</string>
+    <string name="enemy_skeleton">Skelett</string>
+    <string name="enemy_skeleton_b">Skelett B</string>
+    <string name="enemy_slime_demon">Schleim-Dämon</string>
+    <string name="enemy_snow_monster">Schneemonster</string>
+    <string name="enemy_spidemon_higher_jump">Spinnendämon mit höherem Sprung</string>
+    <string name="enemy_spider">Spinne A</string>
+    <string name="enemy_spider_b">Spinne B</string>
+    <string name="enemy_spider_b_weak">Schwache Spinne B</string>
+    <string name="enemy_spider_blow">Blasspinne</string>
+    <string name="enemy_spider_boss">Boss-Spinne</string>
+    <string name="enemy_spider_c">Spinne C</string>
+    <string name="enemy_spider_easter">Oster-Spinne</string>
+    <string name="enemy_spider_easter_green">Grüne Oster-Spinne</string>
+    <string name="enemy_spider_easter_pink">Rosa Oster-Spinne</string>
+    <string name="enemy_spider_fire">Feuerspinne</string>
+    <string name="enemy_spider_gift">Geschenk-Spinne</string>
+    <string name="enemy_spider_swamp">Sumpf-Spinne</string>
+    <string name="enemy_swamp_monster">Sumpfmonster</string>
+    <string name="enemy_tanker_elite_matryoshka">Elite-Matroschka-Tank</string>
+    <string name="enemy_tanker_helmet_matryoshka">Helm-Matroschka-Tank</string>
+    <string name="enemy_tanker_rage_matryoshka">Wut-Matroschka-Tank</string>
+    <string name="enemy_time_patroller_dungeon40">Zeitpatrouille (Dungeon 40)</string>
+    <string name="enemy_time_patroller_dungeon41">Zeitpatrouille (Dungeon 41)</string>
+    <string name="enemy_vampire">Vampir</string>
+    <string name="enemy_vindicator_carnival">Karneval-Verteidiger</string>
+    <string name="enemy_warlock_final_boss">Endboss-Hexenmeister</string>
+    <string name="enemy_water_vampire">Wasservampir</string>
+    <string name="enemy_white_ape">Weißer Affe</string>
+    <string name="enemy_wizard">Zauberer</string>
+    <string name="enemy_xmas_doll_blond">Weihnachts-Puppe blond</string>
+    <string name="enemy_xmas_doll_brunette">Weihnachts-Puppe brünett</string>
+    <string name="enemy_xmas_duck">Weihnachts-Ente</string>
+    <string name="enemy_xmas_fire_bear">Weihnachts-Feuerbär</string>
+    <string name="enemy_xmas_fire_bear_elite">Weihnachts-Elite-Feuerbär</string>
+    <string name="enemy_xmas_gift_vacuum">Weihnachts-Saug-Geschenk</string>
+    <string name="enemy_xmas_green_bear_small">Weihnachts-grüner-kleiner-Bär</string>
+    <string name="enemy_xmas_jumping_green_bear">Weihnachts-grüner-springender-Bär</string>
+    <string name="enemy_xmas_mimic">Weihnachts-Mimic</string>
+    <string name="enemy_xmas_pink_bear">Weihnachts-rosa-Bär</string>
+    <string name="enemy_xmas_pink_bear_small">Weihnachts-rosa-kleiner-Bär</string>
+    <string name="enemy_xmas_purple_bear">Weihnachts-lila-Bär</string>
+    <string name="enemy_xmas_purple_bear_ez">Weihnachts-lila-Bär EZ</string>
+    <string name="enemy_xmas_purple_bear_small">Weihnachts-lila-kleiner-Bär</string>
+    <string name="enemy_xmas_skeleton_blue_helmet_ice">Weihnachts-Eis-Blauhelm-Skelett</string>
+    <string name="enemy_xmas_skeleton_blue_ice">Weihnachts-Eis-blaues-Skelett</string>
+    <string name="enemy_xmas_skeleton_blue_mage">Weihnachts-blauer-Skelettmagier</string>
+    <string name="enemy_xmas_skeleton_blue_tanker">Weihnachts-blauer-Skelett-Tank</string>
+    <string name="enemy_xmas_skeleton_red_mage">Weihnachts-Skelett-Rotmagier</string>
+    <string name="enemy_xmas_skeleton_red_mage_elite">Weihnachts-Elite-Rotmagier-Skelett</string>
+    <string name="enemy_xmas_skeleton_red_warrior">Weihnachts-roter-Skelettkrieger</string>
+    <string name="enemy_xmas_skeleton_red_warrior_elite">Weihnachts-Elite-roter-Skelettkrieger</string>
+    <string name="enemy_zombie_chief">Zombie-Häuptling</string>
+    <string name="enemy_zombie_elite_guard">Zombie-Elite-Wache</string>
+    <string name="enemy_zombie_guard">Zombie-Wache</string>
+    <string name="enemy_zombie_guard_boss">Zombie-Wachen-Boss</string>
+    <string name="enemy_zombie_guard_boss_b">Zombie-Wachen-Boss B</string>
+    <string name="enemy_zombie_guard_boss_c">Zombie-Wachen-Boss C</string>
+    <string name="enemy_zombie_knife_guard">Zombie-Messerwache</string>
+    <string name="enemy_zombie_noob_knife_guard">Zombie-Anfänger-Messerwache</string>
+    <string name="enemy_zombie_rat">Zombie-Ratte</string>
+    <string name="enemy_zombie_red_guard">Zombie-Rote-Wache</string>
+    <string name="fifty_kills">50</string>
+    <string name="fire_resistance">Feuerresistenz</string>
+    <string name="fourty_kills">40</string>
+    <string name="frost_attack">Frostangriff</string>
+    <string name="frost_resistance">Frostresistenz</string>
+    <string name="hundred_fifty_kills">150</string>
+    <string name="hundred_kills">100</string>
+    <string name="in_memory_of">In Gedenken an:</string>
+    <string name="item_already_at_zero_upgrades">Gegenstand bereits auf null Aufwertungen!</string>
+    <string name="item_already_maxed">Gegenstand bereits maximal aufgewertet!</string>
+    <string name="items">📋 Gegenstände 📋</string>
+    <string name="jump_impulse">Sprungkraft: 0%</string>
+    <string name="jump_impulse_in_calculation">"Sprungkraft: "</string>
+    <string name="kills">Kills</string>
+    <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
+    <string name="max">(MAX)</string>
+    <string name="pierce_count">Durchdringungsanzahl:</string>
+    <string name="poisonous_attack">Giftangriff</string>
+    <string name="projectile_persistence">Projektil-Beständigkeit</string>
+    <string name="rating_start">Bewertung: 0/10 💩</string>
+    <string name="reset_all">Alle zurücksetzen</string>
+    <string name="rewards">Belohnungen</string>
+    <string name="robe_of_distant_visions">Robe der fernen Visionen</string>
+    <string name="ruby_pawns_edge">Rubinpfandschneide</string>
+    <string name="select_skills">Fähigkeiten auswählen</string>
+    <string name="seventy_kills">70</string>
+    <string name="sixty_kills">60</string>
+    <string name="skill_description_default">Keine Beschreibung verfügbar.</string>
+    <string name="skill_points_left">Verbleibende Fähigkeitspunkte:</string>
+    <string name="spears">Speere</string>
+    <string name="special_antiheros_set">Spezielles Antihelden-Set</string>
+    <string name="special_thanks">Besonderer Dank:</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
+    <string name="speed">Geschwindigkeit: 0%</string>
+    <string name="speed_in_calculation">"Geschwindigkeit: "</string>
+    <string name="spike_resistance">Stachelresistenz</string>
+    <string name="staffs_and_grimoires">Stäbe und Grimoires</string>
+    <string name="survival1_text">Hierfür benötigst du eine Waffe, die die mittlere Plattform nicht trifft. Dies ermöglicht es dir, die Gegner auf der anderen Seite zu treffen und die Projektile zu blockieren. Wenn eine Spinne vor dir spawnt, greife einfach den Stein hinter dir an, um sie leicht zu töten.</string>
+    <string name="survival2_text">Der zweite Überlebens-Dungeon erfordert nicht viel Bewegung. Bleibe in der Mitte und greife zu den Seiten an, bewege dich gelegentlich auf und ab, um zusätzliche Gegner zu töten und dem Blitz auszuweichen.</string>
+    <string name="survival3_text">Der dritte Überlebens-Dungeon erfordert eine Waffe, mit der du Spinnen leicht treffen kannst. Er hat auch das "komplizierteste" Angriffsmuster aller Überlebens-Dungeons, was bedeutet, dass du mehr Anstrengung investieren musst.</string>
+    <string name="survival4_text">Für diesen Dungeon solltest du eine Waffe mit geringer Durchdringungskraft verwenden, damit du das Sumpfmonster mit einem Schuss töten kannst. Es ist ziemlich einfach, den Angriffsmustern des Dungeons zu folgen. Zusätzlich kannst du die Krieger-Klasse für zusätzlichen Schutz gegen den Gegner verwenden, der zu deiner Rechten spawnt.</string>
+    <string name="survival5_text">Der beste und einfachste Dungeon zum Farmen von Gold. Achte darauf, eine Waffe mit großem Schadensbereich und begrenzter Reichweite zu verwenden, wie Hämmer und Äxte, um an einem Ort bleiben und die Gegner aus der Ferne töten zu können.</string>
+    <string name="survival6_text">Der letzte Überlebens-Dungeon erfordert etwas mehr Aufwand im Vergleich zu anderen, da du ständig den Standort wechseln musst, um Projektilen auszuweichen, die fliegenden Einheiten zu treffen und den Blitzeinschlägen zu entgehen.</string>
+    <string name="survival_dungeon_1">Überlebens-Dungeon 1</string>
+    <string name="survival_dungeon_2">Überlebens-Dungeon 2</string>
+    <string name="survival_dungeon_3">Überlebens-Dungeon 3</string>
+    <string name="survival_dungeon_4">Überlebens-Dungeon 4</string>
+    <string name="survival_dungeon_5">Überlebens-Dungeon 5</string>
+    <string name="survival_dungeon_6">Überlebens-Dungeon 6</string>
+    <string name="survival_mode">☠️ Überlebensmodus ☠️</string>
+    <string name="survival_tutorial">Tutorial</string>
+    <string name="swords">Schwerter</string>
+    <string name="ten_kills">10</string>
+    <string name="test_equipment">🛡️ Ausrüstung testen 🛡️</string>
+    <string name="thirty_kills">30</string>
+    <string name="three_hundred_kills">300</string>
+    <string name="twenty_kills">20</string>
+    <string name="two_hundred_kills">200</string>
+    <string name="work_in_progress">In Arbeit!</string>
+
+    <string name="vase_breaker">Vasenbrecher!</string>
+    <string name="save_that_dude">Rette den Kerl!</string>
+    <string name="keep_that_dude_alive">Halte den Kerl am Leben!</string>
+    <string name="armed_and_dangerous">Bewaffnet bis an die Zähne</string>
+    <string name="head_shot">Kopfschuss!</string>
+    <string name="zombie_killer">Zombietöter</string>
+    <string name="spider_killer">Spinnentöter</string>
+    <string name="bone_collector">Knochensammler</string>
+    <string name="mr_macgyver">MacGyver</string>
+    <string name="there_and_back">Das Blatt wendet sich</string>
+    <string name="know_your_enemy">Kenne deinen Feind</string>
+    <string name="complete_101">Über 100\%?!</string>
+    <string name="complete_100">Hab\' ich alles gemacht</string>
+    <string name="flawless_victory">Makelloser Sieg!</string>
+    <string name="ecstasy_of_gold">Herz aus Gold</string>
+    <string name="demon_slayer">Dämonentöter</string>
+    <string name="get_in_the_ring">In den Ring</string>
+    <string name="lost_flipflop">Der verlorene Flip-Flop</string>
+    <string name="the_untold_story">Eine andere Geschichte</string>
+    <string name="that_dude_must_live">Der Kerl muss leben!</string>
+    <string name="could_beat_gng">Ich schaffe Ghouls \'n Ghosts locker</string>
+    <string name="changing_in_the_air">Etwas liegt in der Luft</string>
+    <string name="runeforge">Runenschmied</string>
+    <string name="ride_the_wind">Treibe im Wind</string>
+    <string name="ghostbusters">Ghostbusters</string>
+    <string name="why_so_curious">Warum so neugierig?</string>
+    <string name="loot_from_the_future">Beute aus der Zukunft</string>
+    <string name="the_untold_story_2">Eine andere Geschichte 3</string>
+    <string name="kill_the_spider">Fieses Spinnenmoster</string>
+    <string name="lost_hammer">Es war Absicht!</string>
+    <string name="dude_still_lives">Der Kerl ist noch am Leben!</string>
+    <string name="dudes_story">Geschichte eines Sidekicks</string>
+    <string name="breaker_of_chains">Kettenbrecher</string>
+    <string name="saw_a_giant">Angriff auf den Titanen</string>
+    <string name="witch_hunt">Hexerjagd</string>
+    <string name="post_credits">Diese Sache nach den Credits</string>
+    <string name="survival_50">Tötungen</string>
+    <string name="survival_100">Tötungen</string>
+    <string name="survival_200">Tötungen</string>
+    <string name="survival_300">Tötungen</string>
+    <string name="survival_1000">1000 Tötungen? WTF!</string>
+    <string name="pimp_my_char">Pimp meinen Char</string>
+    <string name="bag_expanded">Mehr Platz für alle!</string>
+    <string name="may_the_magic">Möge die Magie mit dir sein</string>
+    <string name="vase_breaker_desc">Zerstöre eine Vase auf dem Startbildschirm.</string>
+    <string name="armed_and_dangerous_desc">Erhalte deine erste Waffe.</string>
+    <string name="save_that_dude_desc">Rette den Kerl in Kapitel 1 Dungeon 2.</string>
+    <string name="keep_that_dude_alive_desc">Rette den Kerl in Dungeon 1\-8 und halte ihn am Leben.</string>
+    <string name="head_shot_desc">Versetze einem Gegner einen punktgenauen Kopftreffer.</string>
+    <string name="zombie_killer_desc">Töte einen Zombie.</string>
+    <string name="spider_killer_desc">Töte eine Spinne.</string>
+    <string name="bone_collector_desc">Besiege ein Skelett.</string>
+    <string name="mr_macgyver_desc">Betritt das geheime Areal im Dungeon 2\-1 Bonuslevel.</string>
+    <string name="there_and_back_desc">Belebe dich nach dem Tod wieder.</string>
+    <string name="know_your_enemy_desc">Lies alle Tipps.</string>
+    <string name="complete_101_desc">Beende 101\%. Finde alle geheime Gebiete und spiele Kapitel 1\-3 erneut, ohne Schaden zu nehmen.</string>
+    <string name="complete_100_desc">Beende 100\% des Spiels. Finde alle geheime Gebiete und Diamanten.</string>
+    <string name="flawless_victory_desc">Erhalte einen Stern, indem du ein Level bewältigst, ohne Schaden zu nehmen.</string>
+    <string name="ecstasy_of_gold_desc">Kaufe Gold für deinen Charakter.</string>
+    <string name="demon_slayer_desc">Besiege den Boss in Kapitel 1.</string>
+    <string name="get_in_the_ring_desc">Betritt das geheime Areal im Dungeon 2\-1 Bonuslevel.</string>
+    <string name="lost_flipflop_desc">Finde den verlorenen Flip-Flop.</string>
+    <string name="the_untold_story_desc">Hör dir die Geschichte dieses Kerls an (2\-4).</string>
+    <string name="that_dude_must_live_desc">Halte den Kerl bis zum Ende des Levels am Leben.</string>
+    <string name="could_beat_gng_desc">Erhalte einen Stern für die 15 ersten Level.</string>
+    <string name="changing_in_the_air_desc">Erklimme den höchsten Punkt in Level 2\-6.</string>
+    <string name="runeforge_desc">Verbessere ein Item.</string>
+    <string name="ride_the_wind_desc">Erreiche die letzte Kiste in Level 2\-7.</string>
+    <string name="ghostbusters_desc">Erledige einen Geist in Level 2\-7.</string>
+    <string name="why_so_curious_desc">Betritt das verschlossene Areal im Bonuslevel von Level 2\-7.</string>
+    <string name="loot_from_the_future_desc">Finde mindestens 1 der 2 versteckten Kisten in Level 1\-3.</string>
+    <string name="the_untold_story_2_desc">Hör dir an, was der Captain zu Portalen und geflügelten Riesen zu sagen hat (Level 2\-9).</string>
+    <string name="kill_the_spider_desc">Besiege die Riesenspinne in den Sümpfen.</string>
+    <string name="lost_hammer_desc">Finde den verlorenen Hammer.</string>
+    <string name="dude_still_lives_desc">Triff den Kerl in Dungeon 3\-5 (wenn er nach Level 2\-4 noch am Leben ist).</string>
+    <string name="dudes_story_desc">Hör dem Kerl in Dungeon 1\-8 zu (wenn er nach Level 1\-2 noch am Leben ist).</string>
+    <string name="breaker_of_chains_desc">Befreie den Zauberer des Orakels in Level 3\-9.</string>
+    <string name="saw_a_giant_desc">Töte einen Riesen.</string>
+    <string name="witch_hunt_desc">Bezwinge den Hexenmeister.</string>
+    <string name="post_credits_desc">Sieh dir die Szene nach den Credits an.</string>
+    <string name="survival_50_desc">Töte 1000 Gegner im Überlebenskampf.</string>
+    <string name="survival_100_desc">Töte 1000 Gegner im Überlebenskampf.</string>
+    <string name="survival_200_desc">Töte 1000 Gegner im Überlebenskampf.</string>
+    <string name="survival_300_desc">Töte 1000 Gegner im Überlebenskampf.</string>
+    <string name="survival_1000_desc">Töte 1000 Gegner im Überlebenskampf.</string>
+    <string name="pimp_my_char_desc">Verändere den Kopf deines Charakters im Charakter-Editor.</string>
+    <string name="bag_expanded_desc">Kaufe die Erweiterungstruhe aus dem Laden.</string>
+    <string name="truth_out_there">Die Wahrheit ist irgendwo da draußen</string>
+    <string name="truth_out_there_desc">Reise durch das Portal und erkunde die andere Seite.</string>
+    <string name="may_the_magic_desc">Finde das verlorene Magieschwert.</string>
+    <string name="complete_102">Kapitel 4 ist zu schwer!</string>
+    <string name="complete_102_desc">Beende 102\% des Spiels. Beende alle Dungeons, finde alle geheimen Bereiche und spiele alle Dungeons bis zum Ende von Kapitel 4 erneut, ohne Schaden zu nehmen.</string>
+    <string name="class_consciousness">Klassenbewusstsein</string>
+    <string name="class_consciousness_desc">Lerne und führe deine Klassenfähigkeit in Kapitel 1 Dungeon-Level 6 aus.</string>
+    <string name="unlock_all_survival">Ein Kampf ums Überleben</string>
+    <string name="unlock_all_survival_desc">Schalte alle Überlebenskampf-Level frei, indem du deren Mindestpunktzahlen erreichst.</string>
+    <string name="dragonslayer">Drachenschlächter</string>
+    <string name="dragonslayer_desc">Bezwinge den Großen Roten Drachen.</string>
+    <string name="breaker_of_chains_2">Kettenbrecher 2</string>
+    <string name="breaker_of_chains_2_desc">Befreie den Mondwächter in Kapitel 4, Dungeon-Level 9.</string>
+    <string name="bound_together">Aneinander gebunden</string>
+    <string name="bound_together_desc">Treffe dich mit dem König, nachdem du den Zauberer besiegt hast.</string>
+    <string name="bank_for_your_buck">Eine sichere Bank</string>
+    <string name="bank_for_your_buck_desc">Lagere einen Gegenstand in der Bank.</string>
+    <string name="dirty_faced_rookie">Schmutziger Anfänger</string>
+    <string name="dirty_faced_rookie_desc">Beende ein Solo-Dungeon im Wettkampfmodus.</string>
+    <string name="bring_it_on">Zeig mir, was du kannst!</string>
+    <string name="bring_it_on_desc">Starte eine Partie gegen einen anderen Spieler im Wettkampfmodus.</string>
+    <string name="veni_vidi_vici">Ich kam, ich sah, ich siegte</string>
+    <string name="veni_vidi_vici_desc">Gewinne eine Partie gegen einen anderen Spieler im Wettkampfmodus.</string>
+    <string name="taking_part_counts">Dabei sein ist alles…</string>
+    <string name="taking_part_counts_desc">Versuch nicht extra, eine Partie gegen einen anderen Spieler zu verlieren. Aber wenn du es tust, dann bekommst du dieses Achievement.</string>
+    <string name="add_friend">Freunde für immer</string>
+    <string name="add_friend_desc">Füge einen Freund im Wettkampfmodus hinzu.</string>
+    <string name="challenge_friend">Freundfeuer</string>
+    <string name="challenge_friend_desc">Fordere einen Freund im Wettkampfmodus heraus.</string>
+    <string name="r_for_revenge">R steht für Rache</string>
+    <string name="r_for_revenge_desc">Gewinne eine Revanche im Wettkampfmodus.</string>
+    <string name="bronze_rank_achievement">Bronze-Bestie</string>
+    <string name="bronze_rank_achievement_desc">Erreiche den bronzenen Rang im Wettkampfmodus.</string>
+    <string name="silver_rank_achievement">Silber-Soldat</string>
+    <string name="silver_rank_achievement_desc">Erreiche den silbernen Rang im Wettkampfmodus.</string>
+    <string name="gold_rank_achievement">Goldmedaille!</string>
+    <string name="gold_rank_achievement_desc">Erreiche den goldenen Rang im Wettkampfmodus.</string>
+    <string name="platinum_rank_achievement">Pures Platin!</string>
+    <string name="platinum_rank_achievement_desc">Erreiche den Platinrang im Wettkampfmodus.</string>
+    <string name="diamond_rank_achievement">Wahnsinn, ein Diamant!</string>
+    <string name="diamond_rank_achievement_desc">Erreiche den diamantenen Rang im Wettkampfmodus.</string>
+    <string name="champion_slayer">Der Champion-Killer</string>
+    <string name="champion_slayer_desc">Besiege einen Champion in der Halle der Champions.</string>
+    <string name="ranked_top_1">Die Nummer Eins!</string>
+    <string name="ranked_top_1_desc">Kämpfe dich an die Spitze der Rangliste.</string>
+    <string name="ranked_top_15">Wir sind die Champions!</string>
+    <string name="ranked_top_15_desc">Sei unter den besten 15 Spielern in der Halle der Champions.</string>
+    <string name="its_time">Es ist soweit!</string>
+    <string name="its_time_desc">Sammle die ¾420 die bei 3\-6 in der Luft schwebt. Mache das zu einer bestimmten Tageszeit.</string>
+    <string name="bag_expanded_2">Noch mehr Lagerraum!</string>
+    <string name="bag_expanded_2_desc">Kaufe die zweite Erweiterungskiste im Laden.</string>
+    <string name="ranked_top_100">Wahrer Held</string>
+    <string name="ranked_top_100_desc">Erreiche die Top 500 der besten Ranglistenspieler. Du siehst deine aktuelle Position im Ranglistenteil deines Inventars.</string>
+    <string name="ranked_top_500">Rampage-Veteran</string>
+    <string name="ranked_top_500_desc">Erreiche die Top 500 der besten Ranglistenspieler. Du siehst deine aktuelle Position im Ranglistenteil deines Inventars.</string>
+    <string name="challenge_accepted">Herausforderung angenommen</string>
+    <string name="challenge_accepted_desc">Meistere eine Herausforderung aus dem Wochenherausforderung-Portal.</string>
+    <string name="salesman_payback">Zeit der Vergeltung</string>
+    <string name="salesman_payback_desc">Töte den Händler in der alternativen Realität.</string>
+    <string name="time_patrollers_time">Zeitpatrouillenzeit</string>
+    <string name="time_patrollers_time_desc">Töte die Zeitstreife in der alternativen Realität.</string>
+    <string name="kingslayer_time">Königsmörder</string>
+    <string name="kingslayer_time_desc">Töte den König in der alternativen Realität.</string>
+    <string name="pixelated_arsenal">Verpixeltes Arsenal</string>
+    <string name="pixelated_arsenal_desc">Sammle ein Retro-Item in der alternativen Realität.</string>
+    <string name="the_end_of_the_world">Das Ende der Welt</string>
+    <string name="the_end_of_the_world_desc">Kommen Sie zum ersten Mal in Dungeon 5\-1 an die Oberfläche.</string>
+    <string name="bag_expanded_3">Unglaublich groß</string>
+    <string name="bag_expanded_3_desc">Kauf die dritte Erweiterungstruhe.</string>
+    <string name="its_amazing">Es ist erstaunlich!</string>
+    <string name="its_amazing_desc">Schließe das erstaunliche Score-Ziel in den wöchentlichen Dungeons ab. Du musst zuerst die gewöhnlichen und die Superziele schlagen.</string>
+    <string name="weekly_dungeons_completed_15">Saphirmedaillonhalter</string>
+    <string name="weekly_dungeons_completed_15_desc">Beende 50 verschiedene wöchentliche Dungeons.</string>
+    <string name="weekly_dungeons_completed_30">Smaragdmedaillonhalter</string>
+    <string name="weekly_dungeons_completed_30_desc">Beende 50 verschiedene wöchentliche Dungeons.</string>
+    <string name="weekly_dungeons_completed_50">Rubinmedaillonhalter</string>
+    <string name="weekly_dungeons_completed_50_desc">Beende 50 verschiedene wöchentliche Dungeons.</string>
+    <string name="weekly_dungeons_star_30">Der ehrenwerte Stern</string>
+    <string name="weekly_dungeons_star_30_desc">Beende 50 Sternherausforderungen in 30 verschiedenen wöchentlichen Dungeons.</string>
+    <string name="weekly_dungeons_star_50">Der mächtige Stern</string>
+    <string name="weekly_dungeons_star_50_desc">Beende 50 Sternherausforderungen in 30 verschiedenen wöchentlichen Dungeons.</string>
+    <string name="weekly_dungeons_time_30">Ehrenwerter Läufer</string>
+    <string name="weekly_dungeons_time_30_desc">Beende 50 Zeitherausforderungen in 30 verschiedenen wöchentlichen Dungeons.</string>
+    <string name="weekly_dungeons_time_50">Mächtiger Läufer</string>
+    <string name="weekly_dungeons_time_50_desc">Beende 50 Zeitherausforderungen in 30 verschiedenen wöchentlichen Dungeons.</string>
+    <string name="story_to_be_told">Eine Geschichte, die erzählt werden muss</string>
+    <string name="story_to_be_told_desc">Hör dir an, was der Typ beim Prolog 5\-3 über die turbulente Portalüberquerung zu sagen hat.</string>
+    <string name="the_untold_story_3">Eine andere Geschichte 3</string>
+    <string name="the_untold_story_3_desc">Hör dir an, was der König in seinem Labor beim Prolog 5\-3 zu sagen hat.</string>
+    <string name="skilled_dirty_faced">Kompetent, aber schmutzig im Gesicht</string>
+    <string name="skilled_dirty_faced_desc">Erlerne drei Talente aus dem Talentbaum.</string>
+    <string name="super_skill">Die Superfähigkeit!</string>
+    <string name="super_skill_desc">Erlerne eine der Superfähigkeiten aus dem Talentbaum.</string>
+    <string name="complete_103">Die 103 Klagelieder</string>
+    <string name="complete_103_desc">Beende 103\% des Spiels. Beende alle Dungeons, finde alle geheimen Bereiche und spiele alle Dungeons bis zum Ende von Kapitel 5 erneut, ohne Schaden zu nehmen</string>
+    <string name="ninth_circle">Der neunte Kreis</string>
+    <string name="ninth_circle_desc">Erreiche die gefrorenen unterirdischen Kammern des Planeten in Dungeon 5\-4.</string>
+    <string name="the_darkest_side">Die dunkelste Seite des Mondes</string>
+    <string name="the_darkest_side_desc">Siehe die Bonusszene an, nachdem du Dungeon 5\-4 mit allen drei Diamanten abgeschlossen hast.</string>
+    <string name="sharp_dressed_minion">Gut gekleideter Diener</string>
+    <string name="sharp_dressed_minion_desc">Ändere das Aussehen deines Dieners mit einem benutzerdefinierten Skin. Du kannst neue Skins im Preisraum kaufen.</string>
+    <string name="dirty_faced_souls">Seelen mit schmutzigen Gesichtern</string>
+    <string name="dirty_faced_souls_desc">Beende 100\% des Spiels im Rampage-Modus. Finde alle geheime Gebiete und Diamanten.</string>
+    <string name="time_patroller">Wie ein Zeitüberwacher!</string>
+    <string name="time_patroller_desc">Beende 101\% des Spiels im Rampage-Modus. Finde alle geheime Gebiete und spiele Kapitel 1\-3 erneut, ohne Schaden zu nehmen.</string>
+    <string name="the_king">Verneige dich vor dem König!</string>
+    <string name="the_king_desc">Beende 102\% des Spiels im Rampage-Modus. Beende alle Dungeons, finde alle geheimen Bereiche und spiele alle Dungeons bis zum Ende von Kapitel 4 erneut, ohne Schaden zu nehmen.</string>
+    <string name="bound_together_plus">Aneinander gebunden+</string>
+    <string name="bound_together_plus_desc">Schließe dich dem König an, nachdem du ihn im Rampage-Modus besiegt hast.</string>
+    <string name="witch_hunt_plus">Hexerjagd+</string>
+    <string name="witch_hunt_plus_desc">Besiege den Warlock-Boss im Rampage-Modus.</string>
+    <string name="sinister_riddle">Sinister Riddle</string>
+    <string name="sinister_riddle_desc">Solve the Sinister Obelisk\'s riddle.</string>
+    <string name="have_a_toast">Zu deinen Ehren, stoße an!</string>
+    <string name="have_a_toast_desc">Kaufe ein Getränk für einen anderen Spieler in der Taverne.</string>
+    <string name="bullseye_wizard">Bullseye Zauberer</string>
+    <string name="bullseye_wizard_desc">Erziele 990.000 Punkte oder mehr in Darts in der Taverne.</string>
+    <string name="settle_a_score">Eine Rechnung begleichen</string>
+    <string name="settle_a_score_desc">Erziele 35.000 Punkte oder mehr im Smackdown des Verkäufers in der Taverne.</string>
+    <string name="meet_me_outside">Wir treffen uns draußen!</string>
+    <string name="meet_me_outside_desc">Fordere einen Freund zu einem Duell heraus! Du kannst Freunde hinzufügen und sie in der Taverne zu einem Duell herausfordern.</string>
+    <string name="duels_of_destiny">Meister des Schicksals!</string>
+    <string name="duels_of_destiny_desc">Gewinne ein Ranglisten-Duell. Du findest Gegner über das Portal der Schicksalsduelle in der Taverne.</string>
+    <string name="taste_of_victory">Der Geschmack des Sieges</string>
+    <string name="taste_of_victory_desc">Gewinne dein erstes Standardduell. Du kannst Gegner in der Taverne finden.</string>
+    <string name="bronze_duel_rank_achievement">Aufstieg des Wächters</string>
+    <string name="bronze_duel_rank_achievement_desc">Erhöhe deinen Rang bis zum Meisterwächter in den Duellen!</string>
+    <string name="silver_duel_rank_achievement">Bewahrer des Reiches</string>
+    <string name="silver_duel_rank_achievement_desc">Erhöhe deinen Rang bis zum Großmeisterwächter in den Duellen!</string>
+    <string name="gold_duel_rank_achievement">Durch die Spalten</string>
+    <string name="gold_duel_rank_achievement_desc">Erhöhe deinen Rang bis zum Zeitreisenden in den Duellen!</string>
+    <string name="platinum_duel_rank_achievement">Wächter der Zeit</string>
+    <string name="platinum_duel_rank_achievement_desc">Erhöhe deinen Rang bis zum Zeitwächter in den Duellen!</string>
+    <string name="diamond_duel_rank_achievement">Bewahrer des Kosmos</string>
+    <string name="diamond_duel_rank_achievement_desc">Erhöhe deinen Rang bis zum Kosmischen Wächter in den Duellen!</string>
+    <string name="first_steps_into_destiny">Erste Schritte ins Schicksal</string>
+    <string name="first_steps_into_destiny_desc">Erkunde jede Kampfzone und absolviere dein erstes Training für die Duelle des Schicksals.</string>
+
+    <string name="enemy_stat_health">Gesundheit: </string>
+    <string name="enemy_stat_damage">Schaden: </string>
+    <string name="enemy_stat_touch_damage">Berührungsschaden: </string>
+    <string name="enemy_stat_armor">Rüstung: </string>
+    <string name="enemy_stat_speed">Geschwindigkeit: </string>
+    <string name="enemy_stat_jump">Sprung: </string>
+    <string name="enemy_stat_patrol_behaviour">Patrouillenverhalten: </string>
+    <string name="enemy_stat_attack_behaviour">Angriffsverhalten: </string>
+
+    <string name="dungeon_1">Dungeon 1</string>
+    <string name="tips_and_tricks">Tipps und Tricks:</string>
+    <string name="secret_areas">Geheime Bereiche:</string>
+    <string name="dungeon_2">Dungeon 2</string>
+    <string name="dungeon_3_bonus">Dungeon 3 Bonus</string>
+    <string name="tutorial">Tutorial:</string>
+    <string name="dungeon_5">Dungeon 5</string>
+    <string name="dungeon_6">Dungeon 6</string>
+    <string name="dungeon_5_bonus">Dungeon 5 Bonus</string>
+    <string name="dungeon_7">Dungeon 7</string>
+    <string name="dungeon_7_bonus">Dungeon 7 Bonus</string>
+    <string name="dungeon_8">Dungeon 8</string>
+    <string name="dungeon_10">Dungeon 10</string>
+    <string name="bossfight_tips_and_tricks">Bosskampf-Tipps und Tricks</string>
+    <string name="dungeon_11">Dungeon 11</string>
+    <string name="dungeon_11_bonus">Dungeon 11 Bonus</string>
+    <string name="dungeon_12">Dungeon 12</string>
+    <string name="dungeon_13">Dungeon 13</string>
+    <string name="dungeon_13_bonus">Dungeon 13 Bonus</string>
+    <string name="dungeon_14">Dungeon 14</string>
+    <string name="dungeon_15">Dungeon 15</string>
+    <string name="dungeon_16">Dungeon 16</string>
+    <string name="dungeon_17">Dungeon 17</string>
+    <string name="dungeon_17_bonus">Dungeon 17 Bonus</string>
+    <string name="dungeon_18">Dungeon 18</string>
+    <string name="dungeon_19">Dungeon 19</string>
+    <string name="dungeon_19_bonus">Dungeon 19 Bonus</string>
+    <string name="dungeon_20">Dungeon 20</string>
+    <string name="dungeon_21">Dungeon 21</string>
+    <string name="dungeon_22">Dungeon 22</string>
+    <string name="dungeon_23">Dungeon 23</string>
+    <string name="dungeon_23_bonus">Dungeon 23 Bonus</string>
+    <string name="dungeon_24">Dungeon 24</string>
+    <string name="dungeon_25">Dungeon 25</string>
+    <string name="dungeon_26">Dungeon 26</string>
+    <string name="dungeon_27">Dungeon 27</string>
+    <string name="dungeon_27_bonus">Dungeon 27 Bonus</string>
+    <string name="dungeon_28">Dungeon 28</string>
+    <string name="dungeon_29">Dungeon 29</string>
+    <string name="dungeon_29_bonus">Dungeon 29 Bonus</string>
+    <string name="dungeon_30">Dungeon 30</string>
+    <string name="dungeon_31">Dungeon 31</string>
+    <string name="dungeon_31_bonus">Dungeon 31 Bonus</string>
+    <string name="dungeon_32">Dungeon 32</string>
+    <string name="dungeon_33">Dungeon 33</string>
+    <string name="dungeon_34">Dungeon 34</string>
+    <string name="dungeon_35">Dungeon 35</string>
+    <string name="dungeon_36">Dungeon 36</string>
+    <string name="dungeon_37">Dungeon 37</string>
+    <string name="dungeon_38">Dungeon 38</string>
+    <string name="dungeon_39">Dungeon 39</string>
+    <string name="dungeon_40">Dungeon 40</string>
+    <string name="dungeon_41">Dungeon 41</string>
+    <string name="dungeon_42">Dungeon 42</string>
+    <string name="dungeon_42_bonus">Dungeon 42 Bonus</string>
+    <string name="dungeon_43">Dungeon 43</string>
+    <string name="dungeon_43_bonus">Dungeon 43 Bonus</string>
+    <string name="dungeon_44">Dungeon 44</string>
+    <string name="dungeon_3">Verlies 3</string>
+    <string name="dungeon_4">Verlies 4</string>
+    <string name="dungeon_9">Verlies 9</string>
+
+    <string name="select_element">Element auswählen</string>
+    <string name="news">📰 Neuigkeiten 📰</string>
+
+    <string name="translating">Übersetzung wird heruntergeladen. Dies dauert Zeit und verbraucht Datenvolumen. Bitte warten.</string>
+    <string name="waypoints">Wegpunkte</string>
+    <string name="stone_thrower">Steinwerfer</string>
+    <string name="knife_thrower">Messerwerfer</string>
+
+    <string name="failed_to_download_model">Fehler beim Herunterladen des Übersetzungsmodells.</string>
+    <string name="failed_to_load_news">Fehler beim Laden der Nachrichten.\nBitte überprüfen Sie Ihre Verbindung.</string>
+</resources>

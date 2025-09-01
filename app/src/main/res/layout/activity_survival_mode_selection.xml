@@ -1,107 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp"
-    android:fillViewport="true"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/grey_background">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_background"
+    android:fillViewport="true"
+    tools:context=".YourActivityName">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="24dp" />
 
         <ImageButton
             android:id="@+id/SurvivalButton1"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
-            android:layout_marginBottom="28dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/roundcorner"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/SurvivalButton2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/survival_image1"
-            app:layout_constraintHorizontal_bias="0.5"
             tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/SurvivalButton2"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
-            android:layout_marginBottom="28dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/roundcorner"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/SurvivalButton3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/SurvivalButton1"
             app:srcCompat="@drawable/survival_image2"
             tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/SurvivalButton3"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
-            android:layout_marginBottom="28dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/roundcorner"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/SurvivalButton4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/SurvivalButton2"
             app:srcCompat="@drawable/survival_image3"
             tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/SurvivalButton4"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/roundcorner"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/SurvivalButton5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            android:layout_marginBottom="28dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/SurvivalButton3"
             app:srcCompat="@drawable/survival_image4"
             tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/SurvivalButton5"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
-            android:layout_marginBottom="28dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/roundcorner"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/SurvivalButton6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/SurvivalButton4"
             app:srcCompat="@drawable/survival_image5"
             tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/SurvivalButton6"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
-            android:layout_marginBottom="28dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/roundcorner"
             android:scaleType="fitCenter"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/SurvivalButton5"
             app:srcCompat="@drawable/survival_image6"
             tools:ignore="ContentDescription" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
