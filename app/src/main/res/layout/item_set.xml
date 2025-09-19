@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardRoot"
+    android:layout_width="128dp"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp">
+
+        <!-- TOP: Armor -->
+        <FrameLayout
+            android:layout_width="128dp"
+            android:layout_height="128dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/frame_upper_red" />
+
+            <TextView
+                android:id="@+id/armorValueText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/armor"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:shadowColor="#80000000"
+                android:shadowRadius="6" />
+
+            <ImageButton
+                android:id="@+id/ArmorButton"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="10dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dummy_armor" />
+
+            <ImageButton
+                android:id="@+id/ElementArmorButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="6dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_lock" />
+
+            <ImageView
+                android:id="@+id/ArmorSideIcon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="6dp" />
+        </FrameLayout>
+
+        <!-- MIDDLE: Ring -->
+        <FrameLayout
+            android:layout_width="128dp"
+            android:layout_height="128dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/frame_middle_red" />
+
+            <ImageButton
+                android:id="@+id/RingButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dummy_ring" />
+
+            <ImageButton
+                android:id="@+id/ElementRingButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="6dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_lock" />
+        </FrameLayout>
+
+        <!-- BOTTOM: Weapon -->
+        <FrameLayout
+            android:layout_width="128dp"
+            android:layout_height="128dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/frame_lower_red" />
+
+            <TextView
+                android:id="@+id/weaponValueText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="12dp"
+                android:text="@string/damage"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:shadowColor="#80000000"
+                android:shadowRadius="6" />
+
+            <ImageButton
+                android:id="@+id/WeaponButton"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dummy_sword" />
+
+            <ImageButton
+                android:id="@+id/ElementWeaponButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_lock" />
+        </FrameLayout>
+
+        <!-- Class button -->
+        <FrameLayout
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/item_frame">
+
+            <ImageButton
+                android:id="@+id/ClassButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/select_class_button_grey" />
+        </FrameLayout>
+
+        <!-- Skill tree button -->
+        <FrameLayout
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/item_frame">
+
+            <ImageButton
+                android:id="@+id/SkillTreeButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/select_skill_tree_button_grey" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- REMOVE BUTTON placed LAST so it draws on top -->
+    <ImageButton
+        android:id="@+id/RemoveSetButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="4dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/remove_symbol"
+        android:elevation="8dp"
+        android:scaleType="centerInside"
+        android:contentDescription="Remove Button"
+        tools:ignore="HardcodedText" />
+</FrameLayout>

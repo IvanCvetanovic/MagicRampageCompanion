@@ -1,133 +1,98 @@
 package xyz.magicrampagecompanion;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class ChapterSelection extends AppCompatActivity {
 
-    private MediaPlayer mediaPlayer;
+    private SoundPool soundPool;
+    private int clickSfxId = 0;
+    private boolean clickSfxLoaded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-EdgeToEdge.enable(this);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_chapter_selection);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.click);
-
         ImageButton chapter1 = findViewById(R.id.Chapter1Button);
-        chapter1.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                openChapter1();
-                playSound();
-            }
-        });
+        chapter1.setOnClickListener(v -> { openChapter1(); playSound(); });
 
         ImageButton chapter2 = findViewById(R.id.Chapter2Button);
-        chapter2.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                openChapter2();
-                playSound();
-            }
-        });
+        chapter2.setOnClickListener(v -> { openChapter2(); playSound(); });
 
         ImageButton chapter3 = findViewById(R.id.Chapter3Button);
-        chapter3.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view) {
-                openChapter3();
-                playSound();
-            }
-        });
+        chapter3.setOnClickListener(v -> { openChapter3(); playSound(); });
 
         ImageButton chapter4 = findViewById(R.id.Chapter4Button);
-        chapter4.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view) {
-                openChapter4();
-                playSound();
-            }
-        });
+        chapter4.setOnClickListener(v -> { openChapter4(); playSound(); });
 
         ImageButton chapter5 = findViewById(R.id.Chapter5Button);
-        chapter5.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view) {
-                openChapter5();
-                playSound();
+        chapter5.setOnClickListener(v -> { openChapter5(); playSound(); });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Defer init so the first frame can draw before audio setup
+        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseSoundPool();
+    }
+
+    private void initSoundPoolIfNeeded() {
+        if (soundPool != null) return;
+
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(6)
+                .setAudioAttributes(new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_GAME)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build())
+                .build();
+
+        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
+            if (status == 0 && sampleId == clickSfxId) {
+                clickSfxLoaded = true;
             }
         });
 
-    }
-        public void openChapter1()
-        {
-            Intent intent = new Intent(this, Chapter1.class);
-            startActivity(intent);
-        }
-
-        public void openChapter2()
-        {
-            Intent intent = new Intent(this, Chapter2.class);
-            startActivity(intent);
-        }
-
-        public void openChapter3()
-        {
-            Intent intent = new Intent(this, Chapter3.class);
-            startActivity(intent);
-        }
-
-    public void openChapter4()
-    {
-        Intent intent = new Intent(this, Chapter4.class);
-        startActivity(intent);
+        // Load your click sound
+        clickSfxId = soundPool.load(this, R.raw.click, 1);
     }
 
-    public void openChapter5()
-    {
-        Intent intent = new Intent(this, Chapter5.class);
-        startActivity(intent);
+    private void releaseSoundPool() {
+        if (soundPool != null) {
+            soundPool.release();
+            soundPool = null;
+            clickSfxLoaded = false;
+            clickSfxId = 0;
+        }
     }
 
     private void playSound() {
-        // Check if MediaPlayer is null or not
-        if (mediaPlayer != null) {
-            // Reset MediaPlayer if it's already playing
-            mediaPlayer.seekTo(0);
-
-            // Set volume to 50%
-            float volume = 0.25f; // 50%
-            mediaPlayer.setVolume(volume, volume);
-
-            mediaPlayer.start();
+        if (soundPool != null && clickSfxLoaded) {
+            // Volume 25% on both channels; no loop; normal rate
+            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
         }
     }
 
-    protected void onDestroy() {
-        super.onDestroy();
-        // Release MediaPlayer resources when the activity is destroyed
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
-    }
+    public void openChapter1() { startActivity(new Intent(this, Chapter1.class)); }
+    public void openChapter2() { startActivity(new Intent(this, Chapter2.class)); }
+    public void openChapter3() { startActivity(new Intent(this, Chapter3.class)); }
+    public void openChapter4() { startActivity(new Intent(this, Chapter4.class)); }
+    public void openChapter5() { startActivity(new Intent(this, Chapter5.class)); }
 
     @Override
     protected void attachBaseContext(Context newBase) {

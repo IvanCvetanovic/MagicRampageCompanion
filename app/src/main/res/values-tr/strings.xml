@@ -704,7 +704,9 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="dungeon44bossfighttext2"><font color="#FF0000">Uyarı:</font> Kayan buz sarkıtı kırılana kadar yeterli hasar vermezsen, patron sana kaçması oldukça zor olan kayalar fırlatmaya başlayacak.\n\n        Patron ikinci aşamaya girdiğinde, kayan buz sarkıtı daha hızlı hareket eder, düşen buz sarkıtları artık mevcut konumunu hedefler ve birden fazla kaya fırlatır.\n\n</string>
     <string name="dungeon44text">Üç 💎 de yolda, ancak, onları almak için genellikle altın bir anahtara ihtiyacın olacak. Önceden hiçbir alanı atlama.\n\n
         Üçüncü gizli alan da yok edilebilir turuncu bir kütlenin arkasında gizlidir.\n\n
-        Altıncı gizli alanı ziyaret ettiğinden emin ol, çünkü orada patronla savaşmana yardımcı olacak güzel bir zırh var.\n\n</string>
+        Altıncı gizli alanı ziyaret ettiğinden emin ol, çünkü orada patronla savaşmana yardımcı olacak güzel bir zırh var.\n\n
+        Beşinci gizli alan, onun sol altından açılabilir. Tavandadır. Onu etkinleştirmek için saldırılarını yönlendiren kutuyu kullanman gerekir.\n\n
+</string>
     <string name="dungeon4text">Üç 💎 de altın saksıların içinde.\n\n
         Kaptan yenilmezdir ve ölemez. Zindanda üst platformlarda ilerlersen, o alttaki tüm düşmanları tek başına öldürecektir.\n\n</string>
     <string name="dungeon5bonustext1">Bu bonusu, zindan 5\'teki üç 💎\'i de alarak aç.\n\n
@@ -950,8 +952,8 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="spears">Mızraklar</string>
     <string name="special_antiheros_set">Özel Anti-kahraman Seti</string>
     <string name="special_thanks">Özel Teşekkürler:</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
-    <string name="speed">Hız: 0%</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
+    <string name="speed">"Hız: "</string>
     <string name="speed_in_calculation">"Hız: "</string>
     <string name="spike_resistance">Diken Direnci</string>
     <string name="staffs_and_grimoires">Asalar ve Büyü Kitapları</string>
@@ -1284,4 +1286,19 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
 
     <string name="failed_to_download_model">Çeviri modeli indirilemedi.</string>
     <string name="failed_to_load_news">Haberler yüklenemedi.\nLütfen bağlantınızı kontrol edin.</string>
+
+    <string name="open_with">Şununla aç</string>
+    <string name="no_app_to_open_link_copied">Bağlantıyı açacak bir uygulama bulunamadı. Davet bağlantısı panoya kopyalandı.</string>
+
+    <string name="element">Öğe: </string>
+    <string name="type">Tür: </string>
+    <string name="armor_bonus">Zırh Bonusu: </string>
+    <string name="pierce_area_damage">Delici Alan Hasarı</string>
+    <string name="magic_bonus">Büyü Bonusu: </string>
+    <string name="sword_bonus">Kılıç Bonusu: </string>
+    <string name="staff_bonus">Asa Bonusu: </string>
+    <string name="dagger_bonus">Hançer Bonusu: </string>
+    <string name="axe_bonus">Balta Bonusu: </string>
+    <string name="hammer_bonus">Çekiç Bonusu: </string>
+    <string name="spear_bonus">Mızrak Bonusu: </string>
 </resources>

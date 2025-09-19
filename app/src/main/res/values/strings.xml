@@ -465,6 +465,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
         All three 💎 are on the way, however, you mostly need a golden key to open the doors to get them. Do not skip any areas beforehand.\n\n
         The third secret area is also hidden behind destructible orange mass.\n\n
         Be sure to visit the sixth secret area, since it has a nice armor that will help you with the boss.\n\n
+        The fifth secret area can be opened by the bottom to the left of it. It is on the ceiling. You need to use the box that redirects your attacks in order to activate it.\n\n
     </string>
 
     <string name="dungeon44bossfighttext1">Be sure to collect <font color="#FFA500"> Robe of Imminent Fires </font>from the sixth secret area in order to maximize your damage. \n\n The boss has three main attacks: sliding icicle, falling icicles and boulder throw. \n\n You are supposed to dodge while dealing damage at the same time while following the path shown in the picture. \n\n Your attack should be the following: activate your special ability, then activate your super ability, then spam basic attacks. Rinse and repeat.</string>
@@ -512,10 +513,10 @@ Above the third golden pot, there is a dagger of light, which is very good for e
 
     <!-- Equipment Tester -->
     <string name="reset_all">Reset All</string>
-    <string name="damage">Please pick everything to see the stats!</string>
-    <string name="armor">Stats are not always 100% identical with the game!</string>
-    <string name="speed">Speed: 0%</string>
-    <string name="jump_impulse">Jump Impulse: 0%</string>
+    <string name="damage">Damage</string>
+    <string name="armor">Armor</string>
+    <string name="speed">Speed: </string>
+    <string name="jump_impulse">Jump Impulse: </string>
     <string name="select_skills">Select Skills</string>
     <string name="upgrades">Upgrades:</string>
     <string name="max">(MAX)</string>
@@ -1009,7 +1010,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="special_thanks">Special Thanks:</string>
     <string name="in_memory_of">In Memory Of:</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman </string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
 
     <!-- Equipment Tester -->
     <string name="attack_speed">Attack Speed: </string>
@@ -1395,7 +1396,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="story_to_be_told">A story to be told</string>
     <string name="story_to_be_told_desc">Listen to what the Dude has to say at 5\-3 prologue about the turbulent portal crossing.</string>
     <string name="the_untold_story_3">The Untold Story 3</string>
-    <string name="the_untold_story_3_desc">Listen to what the King has to say in his lab at 5 ß-3 prologue.</string>
+    <string name="the_untold_story_3_desc">Listen to what the King has to say in his lab at 5–3 prologue.</string>
     <string name="skilled_dirty_faced">Skilled but dirty-faced</string>
     <string name="skilled_dirty_faced_desc">Learn three skills from the Skill Tree.</string>
     <string name="super_skill">The super skill!</string>
@@ -1403,9 +1404,9 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="complete_103">The 103 Lamentations</string>
     <string name="complete_103_desc">Complete 103%. Complete all Dungeons, find all secret areas in the game and replay all dungeons up to the end of Chapter 5 without taking any damage.</string>
     <string name="ninth_circle">The ninth circle</string>
-    <string name="ninth_circle_desc">Get to the frozen underground chambers of the planet in Dungeon 5 ß-4.</string>
+    <string name="ninth_circle_desc">Get to the frozen underground chambers of the planet in Dungeon 5–4.</string>
     <string name="the_darkest_side">The darkest side of the Moon</string>
-    <string name="the_darkest_side_desc">Watch the bonus scene after finishing Dungeon 5\-4 with all three diamonds.</string>
+    <string name="the_darkest_side_desc">Watch the bonus scene after finishing Dungeon 5–4 with all three diamonds.</string>
     <string name="sharp_dressed_minion">Sharp Dressed Minion</string>
     <string name="sharp_dressed_minion_desc">Change your minion\'s look using a custom skin. You can purchase new skins in the Prize Room.</string>
     <string name="dirty_faced_souls">Dirty-faced Souls</string>
@@ -1524,4 +1525,21 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="knife_thrower">Knife Thrower</string>
     <string name="failed_to_download_model">Failed to download translation model.</string>
     <string name="failed_to_load_news">Failed to load news.\n Please check your connection.</string>
+
+    <string name="open_with">Open with</string>
+    <string name="no_app_to_open_link_copied">No app found to open the link. The invite URL was copied to your clipboard.</string>
+    <string name="element">"Element: "</string>
+    <string name="type">"Type: "</string>
+    <string name="armor_bonus">"Armor Bonus: "</string>
+    <string name="pierce_area_damage">Pierce Area Damage: </string>
+    <string name="magic_bonus">"Magic Bonus: "</string>
+    <string name="sword_bonus">"Sword Bonus: "</string>
+    <string name="staff_bonus">"Staff Bonus: "</string>
+    <string name="dagger_bonus">"Dagger Bonus: "</string>
+    <string name="axe_bonus">"Axe Bonus: "</string>
+    <string name="hammer_bonus">"Hammer Bonus: "</string>
+    <string name="spear_bonus">"Spear Bonus: "</string>
+    <string name="max_sets_reached">Maximum amount of sets reached!</string>
+    <string name="pick_item_first">Please pick an item first!</string>
+
 </resources>

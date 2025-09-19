@@ -9,19 +9,27 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.mlkit.common.model.DownloadConditions;
 import com.google.mlkit.nl.translate.TranslateLanguage;
 import com.google.mlkit.nl.translate.Translation;
 import com.google.mlkit.nl.translate.TranslatorOptions;
+
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import androidx.activity.EdgeToEdge;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class News extends AppCompatActivity {
 
@@ -39,6 +47,15 @@ public class News extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
+        // Edge-to-edge: add safe insets as padding so content starts below status bar
+        EdgeToEdge.enable(this);
+        View root = findViewById(R.id.main);
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(bars.left, bars.top, bars.right, 0);
+            return insets;
+        });
+
         emptyStateTextView = findViewById(R.id.emptyStateTextView);
         newsRecyclerView = findViewById(R.id.newsRecyclerView);
 
@@ -51,15 +68,21 @@ public class News extends AppCompatActivity {
 
     @SuppressLint("NotifyDataSetChanged")
     private void prepareTranslationModel() {
-        String targetLanguage = Locale.getDefault().getLanguage();
-        if (targetLanguage.equals(TranslateLanguage.ENGLISH)) {
-            newsAdapter.setTranslationReady(true, targetLanguage);
+        String deviceLang = Locale.getDefault().getLanguage(); // e.g., "en", "de"
+        String tmp = TranslateLanguage.fromLanguageTag(deviceLang);
+        if (tmp == null) {
+            tmp = TranslateLanguage.ENGLISH;
+        }
+        final String targetLang = tmp;
+
+        if (TranslateLanguage.ENGLISH.equals(targetLang)) {
+            newsAdapter.setTranslationReady(true, targetLang);
             return;
         }
 
         TranslatorOptions options = new TranslatorOptions.Builder()
                 .setSourceLanguage(TranslateLanguage.ENGLISH)
-                .setTargetLanguage(targetLanguage)
+                .setTargetLanguage(targetLang)
                 .build();
 
         com.google.mlkit.nl.translate.Translator modelManager = Translation.getClient(options);
@@ -67,8 +90,8 @@ public class News extends AppCompatActivity {
         DownloadConditions conditions = new DownloadConditions.Builder().build();
         modelManager.downloadModelIfNeeded(conditions)
                 .addOnSuccessListener(v -> {
-                    Log.d("NewsActivity", "Model for " + targetLanguage + " is ready.");
-                    newsAdapter.setTranslationReady(true, targetLanguage);
+                    Log.d("NewsActivity", "Model for " + targetLang + " is ready.");
+                    newsAdapter.setTranslationReady(true, targetLang);
                     newsAdapter.notifyDataSetChanged();
                 })
                 .addOnFailureListener(e -> {
@@ -76,7 +99,6 @@ public class News extends AppCompatActivity {
                 });
 
         getLifecycle().addObserver(new LifecycleObserver() {
-            // Use @OnLifecycleEvent to specify which event to listen for
             @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
             void onDestroy() {
                 modelManager.close();

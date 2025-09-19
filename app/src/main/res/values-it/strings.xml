@@ -707,7 +707,9 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="dungeon44bossfighttext2"><font color="#FF0000">Attenzione:</font> Se non infliggi abbastanza danni prima che la stalattite di ghiaccio scivolante si rompa, il boss inizierà a lanciarti dei massi, che sono piuttosto difficili da schivare.\n\n        Quando il boss entra nella seconda fase, la sua stalattite di ghiaccio scivolante si muove più velocemente, le sue stalattiti cadenti ora mirano alla tua posizione attuale e lancia più massi.\n\n</string>
     <string name="dungeon44text">Tutti e tre i 💎 sono sulla strada, tuttavia, hai principalmente bisogno di una chiave d\'oro per aprire le porte per ottenerli. Non saltare nessuna area prima.\n\n
         La terza area segreta è nascosta anche dietro una massa arancione distruttibile.\n\n
-        Assicurati di visitare la sesta area segreta, poiché ha una bella armatura che ti aiuterà con il boss.\n\n</string>
+        Assicurati di visitare la sesta area segreta, poiché ha una bella armatura che ti aiuterà con il boss.\n\n
+        La quinta area segreta può essere aperta dal basso, alla sua sinistra. Si trova sul soffitto. Devi usare la scatola che devia i tuoi attacchi per attivarla.\n\n
+</string>
     <string name="dungeon4text">Tutti e tre i 💎 sono nei vasi d\'oro.\n\n
         Il capitano è invincibile e non può morire. Se prosegui nel dungeon sulle piattaforme superiori, ucciderà tutti i nemici inferiori da sola.\n\n</string>
     <string name="dungeon5bonustext1">Sblocca questo bonus ottenendo tutti e tre i 💎 nel dungeon 5.\n\n
@@ -953,8 +955,8 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="spears">Lance</string>
     <string name="special_antiheros_set">Set Speciale Anti-eroe</string>
     <string name="special_thanks">Ringraziamenti Speciali:</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
-    <string name="speed">Velocità: 0%</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
+    <string name="speed">"Velocità: "</string>
     <string name="speed_in_calculation">"Velocità: "</string>
     <string name="spike_resistance">Resistenza alle Spine</string>
     <string name="staffs_and_grimoires">Bastoni e Grimori</string>
@@ -1287,4 +1289,19 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
 
     <string name="failed_to_download_model">Download del modello di traduzione non riuscito.</string>
     <string name="failed_to_load_news">Caricamento delle notizie non riuscito.\nControlla la tua connessione.</string>
+
+    <string name="open_with">Apri con</string>
+    <string name="no_app_to_open_link_copied">Nessuna app trovata per aprire il link. L\'URL di invito è stato copiato negli appunti.</string>
+
+    <string name="element">Elemento: </string>
+    <string name="type">Tipo: </string>
+    <string name="armor_bonus">Bonus armatura: </string>
+    <string name="pierce_area_damage">Danno ad area perforante</string>
+    <string name="magic_bonus">Bonus magia: </string>
+    <string name="sword_bonus">Bonus spada: </string>
+    <string name="staff_bonus">Bonus bastone: </string>
+    <string name="dagger_bonus">Bonus pugnale: </string>
+    <string name="axe_bonus">Bonus ascia: </string>
+    <string name="hammer_bonus">Bonus martello: </string>
+    <string name="spear_bonus">Bonus lancia: </string>
 </resources>

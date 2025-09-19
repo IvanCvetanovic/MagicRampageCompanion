@@ -706,7 +706,9 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="dungeon44bossfighttext2"><font color="#FF0000">Aviso:</font> Se você não causar dano suficiente até que o sincelo deslizante se quebre, o chefe começará a atirar pedregulhos em você, que são bem difíceis de desviar.\n\n        Quando o chefe entra na segunda fase, seu sincelo deslizante se move mais rápido, seus sincelos cadentes agora miram na sua posição atual e ele atira múltiplos pedregulhos.\n\n</string>
     <string name="dungeon44text">Todos os três 💎 estão a caminho, no entanto, você geralmente precisa de uma chave dourada para abrir as portas para pegá-los. Não pule nenhuma área antes.\n\n
         A terceira área secreta também está escondida atrás de uma massa laranja destrutível.\n\n
-        Certifique-se de visitar a sexta área secreta, pois ela tem uma bela armadura que o ajudará com o chefe.\n\n</string>
+        Certifique-se de visitar a sexta área secreta, pois ela tem uma bela armadura que o ajudará com o chefe.\n\n
+        A quinta área secreta pode ser aberta pela parte inferior, à sua esquerda. Ela está no teto. Você precisa usar a caixa que redireciona os seus ataques para ativá-la.\n\n
+</string>
     <string name="dungeon4text">Todos os três 💎 estão nos potes dourados.\n\n
         O capitão é invencível e não pode morrer. Se você prosseguir pela masmorra nas plataformas superiores, ele matará todos os inimigos de baixo sozinho.\n\n</string>
     <string name="dungeon5bonustext1">Desbloqueie este bônus pegando todos os três 💎 na masmorra 5.\n\n
@@ -952,8 +954,8 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="spears">Lanças</string>
     <string name="special_antiheros_set">Conjunto Especial de Anti-herói</string>
     <string name="special_thanks">Agradecimentos Especiais:</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Júnior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
-    <string name="speed">Velocidade: 0%</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Júnior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
+    <string name="speed">"Velocidade: "</string>
     <string name="speed_in_calculation">"Velocidade: "</string>
     <string name="spike_resistance">Resistência a Espinhos</string>
     <string name="staffs_and_grimoires">Cajados e Grimórios</string>
@@ -1286,4 +1288,19 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
 
     <string name="failed_to_download_model">Falha ao baixar o modelo de tradução.</string>
     <string name="failed_to_load_news">Falha ao carregar as notícias.\nPor favor, verifique sua conexão.</string>
+
+    <string name="open_with">Abrir com</string>
+    <string name="no_app_to_open_link_copied">Nenhum app encontrado para abrir o link. A URL do convite foi copiada para a área de transferência.</string>
+
+    <string name="element">Elemento: </string>
+    <string name="type">Tipo: </string>
+    <string name="armor_bonus">Bônus de armadura: </string>
+    <string name="pierce_area_damage">Dano em área perfurante</string>
+    <string name="magic_bonus">Bônus de magia: </string>
+    <string name="sword_bonus">Bônus de espada: </string>
+    <string name="staff_bonus">Bônus de cajado: </string>
+    <string name="dagger_bonus">Bônus de adaga: </string>
+    <string name="axe_bonus">Bônus de machado: </string>
+    <string name="hammer_bonus">Bônus de martelo: </string>
+    <string name="spear_bonus">Bônus de lança: </string>
 </resources>

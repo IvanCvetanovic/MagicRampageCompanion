@@ -1,18 +1,21 @@
 package xyz.magicrampagecompanion;
 
-import androidx.activity.EdgeToEdge;
-
 import java.util.List;
 
 public class Achievement {
+
+    public enum AchievementCategory { RAMPAGE, NORMAL, NOT_RELEASED }
+
     private final String name;
     private final String description;
     private final List<String> rewards;
+    private final AchievementCategory category;
 
-    public Achievement(String name, String description, List<String> rewards) {
+    public Achievement(String name, String description, List<String> rewards, AchievementCategory category) {
         this.name = name;
         this.description = description;
         this.rewards = rewards;
+        this.category = category;
     }
 
     public String getName() {
@@ -26,5 +29,8 @@ public class Achievement {
     public List<String> getRewards() {
         return this.rewards;
     }
-}
 
+    public AchievementCategory getCategory() {
+        return category;
+    }
+}

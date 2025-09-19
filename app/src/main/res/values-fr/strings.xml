@@ -705,7 +705,9 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="dungeon44bossfighttext2"><font color="#FF0000">Attention :</font> Si tu n\'infliges pas assez de dégâts avant que le stalactite de glace glissant ne se brise, le boss commencera à te lancer des rochers, qui sont assez difficiles à esquiver.\n\n        Lorsque le boss entre dans la deuxième phase, son stalactite de glace glissant se déplace plus vite, ses stalactites tombantes ciblent maintenant ta position actuelle et il lance plusieurs rochers.\n\n</string>
     <string name="dungeon44text">Les trois 💎 sont sur le chemin, cependant, tu as surtout besoin d\'une clé dorée pour ouvrir les portes pour les obtenir. Ne saute aucune zone auparavant.\n\n
         La troisième zone secrète est également cachée derrière une masse orange destructible.\n\n
-        Assure-toi de visiter la sixième zone secrète, car elle contient une belle armure qui t\'aidera avec le boss.\n\n</string>
+        Assure-toi de visiter la sixième zone secrète, car elle contient une belle armure qui t\'aidera avec le boss.\n\n
+        La cinquième zone secrète peut être ouverte par le bas, sur sa gauche. Elle se trouve au plafond. Tu dois utiliser la boîte qui redirige tes attaques pour l’activer.\n\n
+</string>
     <string name="dungeon4text">Les trois 💎 sont dans les pots dorés.\n\n
         Le capitaine est invincible et ne peut pas mourir. Si tu progresses dans le donjon sur les plateformes supérieures, elle tuera tous les ennemis du bas toute seule.\n\n</string>
     <string name="dungeon5bonustext1">Débloque ce bonus en obtenant les trois 💎 dans le donjon 5.\n\n
@@ -951,8 +953,8 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="spears">Lances</string>
     <string name="special_antiheros_set">Ensemble Spécial d\'Anti-héros</string>
     <string name="special_thanks">Remerciements spéciaux :</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
-    <string name="speed">Vitesse : 0%</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
+    <string name="speed">"Vitesse : "</string>
     <string name="speed_in_calculation">"Vitesse : "</string>
     <string name="spike_resistance">Résistance aux Piques</string>
     <string name="staffs_and_grimoires">Bâtons et Grimoires</string>
@@ -1285,4 +1287,19 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
 
     <string name="failed_to_download_model">Échec du téléchargement du modèle de traduction.</string>
     <string name="failed_to_load_news">Échec du chargement des actualités.\nVeuillez vérifier votre connexion.</string>
+
+    <string name="open_with">Ouvrir avec</string>
+    <string name="no_app_to_open_link_copied">Aucune application trouvée pour ouvrir le lien. L\'URL d\'invitation a été copiée dans le presse-papiers.</string>
+
+    <string name="element">Élément : </string>
+    <string name="type">Type : </string>
+    <string name="armor_bonus">Bonus d’armure : </string>
+    <string name="pierce_area_damage">Dégâts de zone perforants</string>
+    <string name="magic_bonus">Bonus de magie : </string>
+    <string name="sword_bonus">Bonus d’épée : </string>
+    <string name="staff_bonus">Bonus de bâton : </string>
+    <string name="dagger_bonus">Bonus de dague : </string>
+    <string name="axe_bonus">Bonus de hache : </string>
+    <string name="hammer_bonus">Bonus de marteau : </string>
+    <string name="spear_bonus">Bonus de lance : </string>
 </resources>

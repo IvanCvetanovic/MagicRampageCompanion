@@ -706,7 +706,9 @@
     <string name="dungeon44bossfighttext2"><font color="#FF0000">警告：</font>滑る氷柱が壊れるまでに十分なダメージを与えないと、ボスは回避がかなり難しい岩を投げ始めます。\n\n        ボスが第二段階に入ると、彼の滑る氷柱はより速く動き、落下する氷柱は現在のあなたの位置を狙い、彼は複数の岩を投げます。\n\n</string>
     <string name="dungeon44text">3つの💎はすべて道中にありますが、それらを手に入れるには主に金の鍵が必要です。事前にエリアをスキップしないでください。\n\n
         3番目の秘密エリアも、破壊可能なオレンジ色の塊の後ろに隠されています。\n\n
-        6番目の秘密エリアには、ボス戦で役立つ素敵な鎧があるので、ぜひ訪れてください。\n\n</string>
+        6番目の秘密エリアには、ボス戦で役立つ素敵な鎧があるので、ぜひ訪れてください。\n\n
+        5つ目の秘密エリアは、その左下から開けることができます。天井にあります。攻撃を反射する箱を使って起動する必要があります。\n\n
+</string>
     <string name="dungeon4text">3つの💎はすべて金の壺の中にあります。\n\n
         キャプテンは無敵で死ぬことはありません。上のプラットフォームでダンジョンを進むと、彼女は下の敵をすべて一人で倒してくれます。\n\n</string>
     <string name="dungeon5bonustext1">ダンジョン5で3つの💎をすべて集めて、このボーナスをアンロックしましょう。\n\n
@@ -952,8 +954,8 @@
     <string name="spears">槍</string>
     <string name="special_antiheros_set">スペシャルアンチヒーローセット</string>
     <string name="special_thanks">スペシャルサンクス：</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
-    <string name="speed">スピード: 0%</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
+    <string name="speed">"スピード: "</string>
     <string name="speed_in_calculation">"スピード: "</string>
     <string name="spike_resistance">トゲ耐性</string>
     <string name="staffs_and_grimoires">杖と魔導書</string>
@@ -1285,4 +1287,19 @@
 
     <string name="failed_to_download_model">翻訳モデルのダウンロードに失敗しました。</string>
     <string name="failed_to_load_news">ニュースの読み込みに失敗しました。\n接続を確認してください。</string>
+
+    <string name="open_with">アプリで開く</string>
+    <string name="no_app_to_open_link_copied">リンクを開くアプリが見つかりません。招待URLをクリップボードにコピーしました。</string>
+
+    <string name="element">属性: </string>
+    <string name="type">タイプ: </string>
+    <string name="armor_bonus">防御力ボーナス: </string>
+    <string name="pierce_area_damage">貫通範囲ダメージ</string>
+    <string name="magic_bonus">魔力ボーナス: </string>
+    <string name="sword_bonus">剣ボーナス: </string>
+    <string name="staff_bonus">杖ボーナス: </string>
+    <string name="dagger_bonus">短剣ボーナス: </string>
+    <string name="axe_bonus">斧ボーナス: </string>
+    <string name="hammer_bonus">ハンマーボーナス: </string>
+    <string name="spear_bonus">槍ボーナス: </string>
 </resources>

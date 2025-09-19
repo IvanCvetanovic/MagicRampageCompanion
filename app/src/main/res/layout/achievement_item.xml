@@ -1,71 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/achievementCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp"
-    android:backgroundTint="@color/grey">
+    android:layout_margin="0dp"
+    app:cardCornerRadius="18dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/achievementNumberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_vertical"
-            android:gravity="center"
-            android:layout_marginEnd="16dp"
-            android:textColor="@android:color/white"
-            android:text="1"
-            tools:ignore="HardcodedText" />
+        <!-- Background layer for beveled/shadowed drawable -->
+        <View
+            android:id="@+id/cardBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ach_card_grey" />
 
+        <!-- Content -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <TextView
-                android:id="@+id/achievementNameTextView"
+                android:id="@+id/achievementNumberTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_gravity="start"
-                android:layout_marginBottom="8dp"
-                android:textColor="@android:color/white"
-                android:text="Achievement Title"
-                tools:ignore="HardcodedText" />
+                tools:text="1" />
 
-            <TextView
-                android:id="@+id/achievementDescriptionTextView"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:layout_gravity="start"
-                android:layout_marginBottom="8dp"
-                android:textColor="@android:color/white"
-                android:text="Achievement Description goes here."
-                tools:ignore="HardcodedText" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/rewardsTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:layout_gravity="start"
-                android:textColor="@android:color/white"
-                android:text="Rewards: 100 XP"
-                tools:ignore="HardcodedText" />
+                <TextView
+                    android:id="@+id/achievementNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="Achievement Title" />
+
+                <TextView
+                    android:id="@+id/achievementDescriptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    tools:text="Achievement Description goes here." />
+
+                <TextView
+                    android:id="@+id/rewardsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    tools:text="Rewards: 100 XP" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </FrameLayout>
 </androidx.cardview.widget.CardView>

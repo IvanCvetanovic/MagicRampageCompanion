@@ -119,6 +119,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="8dp"
+        android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="3"
         app:layout_constraintTop_toBottomOf="@id/buttonsScrollView"

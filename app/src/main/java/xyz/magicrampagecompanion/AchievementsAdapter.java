@@ -11,13 +11,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapter.AchievementViewHolder> {
-    private List<Achievement> achievements;
+
+    private final List<Achievement> achievements;
 
     public AchievementsAdapter(List<Achievement> achievements) {
         this.achievements = achievements;
@@ -26,7 +29,8 @@ public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapte
     @NonNull
     @Override
     public AchievementViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.achievement_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.achievement_item, parent, false);
         return new AchievementViewHolder(view);
     }
 
@@ -37,67 +41,68 @@ public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapte
         holder.achievementNameTextView.setText(achievement.getName());
         holder.achievementDescriptionTextView.setText(achievement.getDescription());
 
+        // --- Background per category (uses the shadowed/beveled drawable) ---
+        switch (achievement.getCategory()) {
+            case RAMPAGE:
+                holder.cardBg.setBackgroundResource(R.drawable.ach_card_red);
+                break;
+            case NOT_RELEASED:
+                holder.cardBg.setBackgroundResource(R.drawable.ach_card_olive); // ensure this exists
+                break;
+            case NORMAL:
+            default:
+                holder.cardBg.setBackgroundResource(R.drawable.ach_card_grey);
+                break;
+        }
+
+        // --- Text color per category (yellow on Rampage, default on others) ---
+        int textColorRes = (achievement.getCategory() == Achievement.AchievementCategory.RAMPAGE)
+                ? R.color.yellow
+                : R.color.card_text; // your default white
+        int textColor = ContextCompat.getColor(holder.itemView.getContext(), textColorRes);
+        holder.achievementNumberTextView.setTextColor(textColor);
+        holder.achievementNameTextView.setTextColor(textColor);
+        holder.achievementDescriptionTextView.setTextColor(textColor);
+        holder.rewardsTextView.setTextColor(textColor);
+
+        // --- Rewards with emoji, aligned & slightly larger (130%) ---
         List<String> rewards = achievement.getRewards();
         if (!rewards.isEmpty()) {
-            // Create a SpannableStringBuilder to append rewards with emoji
-            SpannableStringBuilder spannableBuilder = new SpannableStringBuilder();
+            SpannableStringBuilder sb = new SpannableStringBuilder();
+            int size = (int) (holder.rewardsTextView.getLineHeight() * 1.3f);
 
             for (int i = 0; i < rewards.size(); i++) {
                 String reward = rewards.get(i);
-                // Skip processing if reward is empty
-                if (!reward.isEmpty()) {
-                    // Get the emoji resource ID for the reward
-                    int emojiResourceId = getEmojiResourceIdForReward(reward, i);
+                if (reward == null || reward.isEmpty()) continue;
 
-                    // Create a SpannableString with the reward text and emoji
-                    SpannableString spannable = new SpannableString(" ");
-                    Drawable customEmojiDrawable = ResourcesCompat.getDrawable(holder.itemView.getResources(), emojiResourceId, null);
-                    if (customEmojiDrawable != null) {
-                        int desiredWidth = 100;
-                        int desiredHeight = 100;
-                        customEmojiDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
-                        ImageSpan imageSpan = new ImageSpan(customEmojiDrawable, ImageSpan.ALIGN_BOTTOM);
-                        // Set the emoji before the reward string
-                        spannable.setSpan(imageSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    }
-
-                    // Append the SpannableString to the SpannableStringBuilder
-                    spannableBuilder.append(spannable);
-                    // Add the reward text
-                    spannableBuilder.append(reward + " ");
+                int emojiRes = getEmojiResourceIdForReward(reward, i);
+                Drawable d = ResourcesCompat.getDrawable(holder.itemView.getResources(), emojiRes, null);
+                if (d != null) {
+                    d.setBounds(0, 0, size, size);
+                    ImageSpan span = new ImageSpan(d, ImageSpan.ALIGN_BASELINE);
+                    SpannableString token = new SpannableString("  "); // 1 span char + a space
+                    token.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    sb.append(token);
+                    sb.append(reward).append("  ");
                 }
             }
-
-            // Set the SpannableStringBuilder to the rewardsTextView
-            holder.rewardsTextView.setText(spannableBuilder);
+            holder.rewardsTextView.setIncludeFontPadding(false);
+            holder.rewardsTextView.setText(sb);
         } else {
-            holder.rewardsTextView.setText(""); // Clear the rewardsTextView if there are no rewards
+            holder.rewardsTextView.setText("");
         }
     }
 
-
-    // Implement this method to map rewards to emoji resources
+    // Map rewards to emoji resources (by position)
     private int getEmojiResourceIdForReward(String reward, int position) {
-        // Check the position of the reward within the list
         switch (position) {
-            case 0:
-                // Return the coin emoji for the first reward
-                return R.drawable.coin;
-            case 1:
-                // Return the second emoji for the second reward
-                return R.drawable.token;
-            case 2:
-                // Return the third emoji for the third reward
-                return R.drawable.red_chest;
-            case 3:
-                // Return the fourth emoji for the fourth reward
-                return R.drawable.skill_point;
-            default:
-                // For any other position, return a default emoji
-                return R.drawable.coin;
+            case 0: return R.drawable.coin;
+            case 1: return R.drawable.token;
+            case 2: return R.drawable.red_chest;
+            case 3: return R.drawable.skill_point;
+            default: return R.drawable.coin;
         }
     }
-
 
     @Override
     public int getItemCount() {
@@ -105,6 +110,8 @@ public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapte
     }
 
     public static class AchievementViewHolder extends RecyclerView.ViewHolder {
+        CardView cardView;
+        View cardBg; // background layer we tint/swap
         TextView achievementNumberTextView;
         TextView achievementNameTextView;
         TextView achievementDescriptionTextView;
@@ -112,6 +119,8 @@ public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapte
 
         public AchievementViewHolder(@NonNull View itemView) {
             super(itemView);
+            cardView = itemView.findViewById(R.id.achievementCard);
+            cardBg = itemView.findViewById(R.id.cardBg);
             achievementNumberTextView = itemView.findViewById(R.id.achievementNumberTextView);
             achievementNameTextView = itemView.findViewById(R.id.achievementNameTextView);
             achievementDescriptionTextView = itemView.findViewById(R.id.achievementDescriptionTextView);

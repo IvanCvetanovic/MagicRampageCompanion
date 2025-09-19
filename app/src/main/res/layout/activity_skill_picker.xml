@@ -7,7 +7,8 @@
         android:background="@drawable/grey_background"
         android:outlineAmbientShadowColor="#FFFFFF"
         android:outlineSpotShadowColor="#1E0D0D"
-        tools:context=".SkillPicker">
+        tools:context=".SkillPicker"
+        android:id="@+id/skillRoot">
 
     <TextView
         android:id="@+id/textSkillPointsLeft"

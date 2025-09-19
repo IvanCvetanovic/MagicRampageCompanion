@@ -54,8 +54,8 @@
     <string name="skill_description_6">Todas las armas de proyectiles tienen un 45 \% de probabilidad de cancelar los proyectiles enemigos al vuelo.</string>
     <string name="skill_description_7">Aumenta la velocidad de regeneración de la resistencia.</string>
     <string name="skill_description_8">Un ataque de carga que inflige 2.4 veces el daño del arma.</string>
-    <string name="skill_description_9">Aumenta el daño con espadas y dagas en un 25 \% cuando tu salud baja del 35 \%.</string>
-    <string name="skill_description_10">Aumenta la velocidad de movimiento en un 20 \% cuando tu salud baja del 35 \%.</string>
+    <string name="skill_description_9">Aumenta el daño con espadas y dagas en un 25% cuando tu salud baja del 35%.</string>
+    <string name="skill_description_10">Aumenta la velocidad de movimiento en un 20% cuando tu salud baja del 35%.</string>
     <string name="skill_description_11">Otorga un Estallido de carga adicional antes del tiempo de reuso.</string>
     <string name="skill_description_12">Aumenta la potencia del salto en un 3 \%</string>
     <string name="skill_description_13">Aumenta el poder de ataque pasivo con báculo en un 20 \%.</string>
@@ -66,8 +66,8 @@
     <string name="skill_description_18">Los enemigos comunes tardarán más tiempo en detectar al soldado Cara Sucia.</string>
     <string name="skill_description_19">Otorga la habilidad de realizar un salto adicional cuando aún se está en el aire.</string>
     <string name="skill_description_20">Invoca un gemelo oscuro que lucha junto al soldado Cara Sucia.</string>
-    <string name="skill_description_21">Reduce el tiempo de reuso de las superhabilidades en un 20 \%.</string>
-    <string name="skill_description_22">Todos los proyectiles lanzados se mueven un 15 \% más rápido.</string>
+    <string name="skill_description_21">Reduce el tiempo de reuso de las superhabilidades en un 20%.</string>
+    <string name="skill_description_22">Todos los proyectiles lanzados se mueven un 15% más rápido.</string>
     <string name="skill_description_23">Otorga un salto adicional en el aire y mejora las capacidades de los ataques aéreos.</string>
     <string name="skill_description_24">Aumenta la armadura en un 25 \%</string>
     <string name="skill_description_25">Aumenta el poder de ataque pasivo con martillo en un 60 \%.</string>
@@ -78,10 +78,10 @@
     <string name="skill_description_30">El soldado Cara Sucia siempre puede pisar las plataformas mágicas verdes.</string>
     <string name="skill_description_31">La activación de la habilidad especial de clase crea un escudo esférico.</string>
     <string name="skill_description_32">Invoca una onda de rayos que golpean a los enemigos alrededor.</string>
-    <string name="skill_description_33">Aumenta el radio de explosión de los proyectiles lanzados en un 20 \%.</string>
-    <string name="skill_description_34">Aumenta la fuerza de empuje de todas las armas en un 40 \%, por lo que los enemigos salen disparados aún más lejos.</string>
-    <string name="skill_description_35">Aumenta el daño de área total que infligen todas las armas en un 70 \%.</string>
-    <string name="rating">"Calificación: "</string>
+    <string name="skill_description_33">Aumenta el radio de explosión de los proyectiles lanzados en un 20%.</string>
+    <string name="skill_description_34">Aumenta la fuerza de empuje de todas las armas en un 40%, por lo que los enemigos salen disparados aún más lejos.</string>
+    <string name="skill_description_35">Aumenta el daño de área total que infligen todas las armas en un 70%.</string>
+    <string name="rating">Calificación: </string>
     <string name="rogue">Pícaro</string>
     <string name="thief">Ladrón</string>
     <string name="mage">Mago</string>
@@ -120,7 +120,7 @@
     <string name="high_cleric_tunic">Túnica de Alto Clérigo</string>
     <string name="greenmoon_vest">Túnica Luna Verde</string>
     <string name="dragon_vest">Túnica de Dragón</string>
-    <string name="special_dragon_vest">Special Dragon Vest</string>
+    <string name="special_dragon_vest">Chaleco Especial de Dragón</string>
     <string name="blue_wizard_suit">Traje de Mago Azul</string>
     <string name="penumbra_suit">Túnica de Penumbra</string>
     <string name="penumbra_suit_plus">Túnica de Penumbra+</string>
@@ -396,7 +396,7 @@
     <string name="phoenix">Fénix</string>
     <string name="dancers_raiment">Atuendo de bailarín</string>
     <string name="storm">Tormenta</string>
-    <string name="tunic_of_hellish_illusions">Túnica de Ilusiones Infernales</string>
+    <string name="tunic_of_hellish_illusions">Túnica de Ilusiones Retorcidas</string>
     <string name="gatekeepers_bionic_arm">Brazo biónico de guardián de la puerta</string>
     <string name="robe_of_eternal_fire">Toga de fuego eterno</string>
     <string name="scarlet_shadowweaver">Tejesombras escarlata</string>
@@ -432,7 +432,7 @@
     <string name="bankers_coat_plus">Chaqueta de banquero+</string>
     <string name="tidecaller_ring">Convocamareas</string>
     <string name="the_ancient_codices">Los Códices Antiguos</string>
-    <string name="minion_vest">Túnica de súbdito</string>
+    <string name="minion_vest">Túnica de esbirro</string>
     <string name="gorgons_skin">Piel de Gorgona</string>
     <string name="achievements">🏆 Logros 🏆</string>
     <string name="rune_of_wind">Runa de Viento</string>
@@ -460,18 +460,18 @@
     <string name="enemy_vindicator">Vindicador</string>
     <string name="enemy_vulkling">Vulcanícola</string>
     <string name="enemy_walker">Caminante</string>
-    <string name="enemy_armadimp">Armadillo</string>
+    <string name="enemy_armadimp">Armadimp</string>
     <string name="Armors">Armaduras</string>
     <string name="Rings">Anillos</string>
     <string name="about">ℹ️ Acerca de ℹ️</string>
     <string name="change_language">Cambiar idioma</string>
     <string name="about_author">Acerca del autor</string>
-    <string name="armor_in_calculation">"Armadura: "</string>
+    <string name="armor_in_calculation">Armadura: </string>
     <string name="author_description">¡Hola! Soy Ivan Cvetanović, conocido como PrOfSeS en la comunidad de Magic Rampage, donde he sido un miembro activo durante muchos años. Creé esta aplicación para combinar mi antiguo amor por el juego con mi creciente pasión por la ingeniería de software. Si encuentras algún error o tienes sugerencias, por favor, contáctame a través de Discord (haz clic en el botón de abajo) o por correo electrónico (consulta la información del desarrollador en mi página de Google Play Juegos). ¡Gracias por tu apoyo!</string>
     <string name="axes">Hachas</string>
     <string name="choose_the_chapter">¡Elige el capítulo!</string>
     <string name="daggers_and_shurikens">Dagas y Shurikens</string>
-    <string name="damage_in_calculation">"Daño: "</string>
+    <string name="damage_in_calculation">Daño: </string>
     <string name="dungeon10bossfighttext">El patrón de ataque del jefe es bastante simple. Ataca cuatro veces seguidas a la posición en la que te encuentras en el momento de su ataque.\n\n
         Lo que debes hacer es permanecer en el suelo y evitar sus proyectiles moviéndote ligeramente hacia adelante.\n\n
         Después de que dispare su cuarto proyectil, puedes saltar a su altura y hacerle daño. Aclara y repite.\n\n</string>
@@ -706,7 +706,9 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="dungeon44bossfighttext2"><font color="#FF0000">Advertencia:</font> Si no infliges suficiente daño hasta que el carámbano deslizante se rompa, el jefe comenzará a lanzarte rocas, que son bastante difíciles de esquivar.\n\n        Cuando el jefe entra en la segunda fase, su carámbano deslizante se mueve más rápido, sus carámbanos que caen ahora apuntan a tu posición actual y lanza múltiples rocas.\n\n</string>
     <string name="dungeon44text">Las tres 💎 están en el camino, sin embargo, principalmente necesitas una llave dorada para abrir las puertas y conseguirlas. No te saltes ninguna área de antemano.\n\n
         La tercera área secreta también está escondida detrás de una masa naranja destructible.\n\n
-        Asegúrate de visitar la sexta área secreta, ya que tiene una buena armadura que te ayudará con el jefe.\n\n</string>
+        Asegúrate de visitar la sexta área secreta, ya que tiene una buena armadura que te ayudará con el jefe.\n\n
+        La quinta zona secreta se puede abrir desde la parte inferior, a su izquierda. Está en el techo. Necesitas usar la caja que redirige tus ataques para activarla.\n\n
+</string>
     <string name="dungeon4text">Las tres 💎 están en las vasijas doradas.\n\n
         El capitán es invencible y no puede morir. Si avanzas en la mazmorra por las plataformas superiores, ella matará a todos los enemigos de abajo por sí misma.\n\n</string>
     <string name="dungeon5bonustext1">Desbloquea este bonus consiguiendo las tres 💎 en la mazmorra 5.\n\n
@@ -928,16 +930,16 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">En memoria de:</string>
-    <string name="item_already_at_zero_upgrades">¡El objeto ya está en cero mejoras!</string>
+    <string name="item_already_at_zero_upgrades">¡El objeto ya está en el mínimo de mejoras!</string>
     <string name="item_already_maxed">¡El objeto ya está mejorado al máximo!</string>
     <string name="items">📋 Objetos 📋</string>
     <string name="jump_impulse">Impulso de Salto: 0%</string>
-    <string name="jump_impulse_in_calculation">"Impulso de Salto: "</string>
+    <string name="jump_impulse_in_calculation">Impulso de Salto: </string>
     <string name="kills">Bajas</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
     <string name="max">(MAX)</string>
     <string name="pierce_count">Cantidad de Perforación:</string>
-    <string name="poisonous_attack">Ataque Venenoso</string>
+    <string name="poisonous_attack">Ataque de Veneno</string>
     <string name="projectile_persistence">Persistencia de Proyectil</string>
     <string name="rating_start">Calificación: 0/10 💩</string>
     <string name="reset_all">Reiniciar Todo</string>
@@ -952,12 +954,12 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="spears">Lanzas</string>
     <string name="special_antiheros_set">Conjunto Especial de Antihéroe</string>
     <string name="special_thanks">Agradecimientos Especiales:</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
-    <string name="speed">Velocidad: 0%</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
+    <string name="speed">"Velocidad: "</string>
     <string name="speed_in_calculation">"Velocidad: "</string>
     <string name="spike_resistance">Resistencia a las Púas</string>
     <string name="staffs_and_grimoires">Bastones y Grimorios</string>
-    <string name="survival1_text">Para este necesitarás un arma que no golpee la plataforma del medio. Esto te permitirá golpear a los enemigos del otro lado y bloquear los proyectiles. Si una araña aparece frente a ti, simplemente ataca la piedra detrás de ti para matarla fácilmente.</string>
+    <string name="survival1_text">Para este necesitarás un arma que no golpee la plataforma del medio. Esto te permitirá golpear a los enemigos del otro lado y bloquear los proyectiles. Si una araña aparece frente a ti, simplemente ataca la piedra detrás de ti para matarla con el daño de área.</string>
     <string name="survival2_text">La segunda mazmorra de supervivencia no necesita mucho movimiento. Quédate en el medio y ataca a los lados, moviéndote eventualmente hacia arriba y hacia abajo para matar enemigos adicionales y evitar los rayos.</string>
     <string name="survival3_text">La tercera mazmorra de supervivencia requerirá que uses un arma que pueda golpear a las arañas fácilmente. También tiene el patrón de ataque más "complicado" de todas las mazmorras de supervivencia, lo que significa que necesitarás invertir más esfuerzo en ella.</string>
     <string name="survival4_text">Para esta mazmorra, asegúrate de usar un arma con bajo poder de perforación, para que puedas matar al monstruo del pantano de un solo disparo. Es bastante simple seguir los patrones de ataque de la mazmorra. Adicionalmente, puedes usar la clase Guerrero para obtener protección extra contra el enemigo que aparece a tu derecha.</string>
@@ -1007,7 +1009,7 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="ghostbusters">Cazafantasmas</string>
     <string name="why_so_curious">¿Por qué tan curioso?</string>
     <string name="loot_from_the_future">Botín del futuro</string>
-    <string name="the_untold_story_2">La historia sin contar 3</string>
+    <string name="the_untold_story_2">La historia sin contar 2</string>
     <string name="kill_the_spider">Maldad con forma de araña</string>
     <string name="lost_hammer">¡No contaban con mi astucia!</string>
     <string name="dude_still_lives">El tío sigue vivo</string>
@@ -1060,10 +1062,10 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="saw_a_giant_desc">Mata un gigante.</string>
     <string name="witch_hunt_desc">Vence al Jefe Brujo.</string>
     <string name="post_credits_desc">Ve la escena de después de los créditos.</string>
-    <string name="survival_50_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
-    <string name="survival_100_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
-    <string name="survival_200_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
-    <string name="survival_300_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
+    <string name="survival_50_desc">Mata a 50 enemigos en el Modo Supervivencia.</string>
+    <string name="survival_100_desc">Mata a 100 enemigos en el Modo Supervivencia.</string>
+    <string name="survival_200_desc">Mata a 200 enemigos en el Modo Supervivencia.</string>
+    <string name="survival_300_desc">Mata a 300 enemigos en el Modo Supervivencia.</string>
     <string name="survival_1000_desc">Mata a 1000 enemigos en el Modo Supervivencia.</string>
     <string name="pimp_my_char_desc">Usa el Editor de personajes para cambiar la cabeza de tu avatar.</string>
     <string name="bag_expanded_desc">Compra el cofre de ampliación de inventario en la tienda.</string>
@@ -1205,14 +1207,14 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="first_steps_into_destiny">Primeros pasos hacia el destino</string>
     <string name="first_steps_into_destiny_desc">Explora todas las zonas de combate y completa tu entrenamiento inicial para los Duelos del Destino.</string>
 
-    <string name="enemy_stat_health">Salud: </string>
+    <string name="enemy_stat_health">Puntos de Vida: </string>
     <string name="enemy_stat_damage">Daño: </string>
-    <string name="enemy_stat_touch_damage">Daño por Contacto: </string>
-    <string name="enemy_stat_armor">Armadura: </string>
+    <string name="enemy_stat_touch_damage">Este daño te hace cuando lo tocas: </string>
+    <string name="enemy_stat_armor">Esta es la armadura de este enemigo/jefe: </string>
     <string name="enemy_stat_speed">Velocidad: </string>
-    <string name="enemy_stat_jump">Salto: </string>
-    <string name="enemy_stat_patrol_behaviour">Comportamiento de Patrulla: </string>
-    <string name="enemy_stat_attack_behaviour">Comportamiento de Ataque: </string>
+    <string name="enemy_stat_jump">Altura de Salto: </string>
+    <string name="enemy_stat_patrol_behaviour">Tipo de movimiento: </string>
+    <string name="enemy_stat_attack_behaviour">Tipo de ataque: </string>
 
     <string name="dungeon_1">Mazmorra 1</string>
     <string name="tips_and_tricks">Consejos y Trucos:</string>
@@ -1279,11 +1281,26 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="select_element">Seleccionar elemento</string>
     <string name="news">📰 Noticias 📰</string>
 
-    <string name="translating">Descargando la traducción. Esto toma tiempo y consume datos. Por favor, espere.</string>
+    <string name="translating">Espera a que se descargue la traducción.</string>
     <string name="waypoints">Puntos de ruta</string>
     <string name="stone_thrower">Lanzador de piedras</string>
     <string name="knife_thrower">Lanzador de cuchillos</string>
 
-    <string name="failed_to_download_model">Error al descargar el modelo de traducción.</string>
+    <string name="failed_to_download_model">No se pudo descargar la traducción.</string>
     <string name="failed_to_load_news">Error al cargar las noticias.\nPor favor, compruebe su conexión.</string>
+
+    <string name="open_with">Abrir con</string>
+    <string name="no_app_to_open_link_copied">No se encontró ninguna aplicación para abrir el enlace. La URL de invitación se copió en el portapapeles.</string>
+
+    <string name="element">Elemento: </string>
+    <string name="type">Tipo: </string>
+    <string name="armor_bonus">Bono de armadura: </string>
+    <string name="pierce_area_damage">Daño de área perforante</string>
+    <string name="magic_bonus">Bono de magia: </string>
+    <string name="sword_bonus">Bono de espada: </string>
+    <string name="staff_bonus">Bono de bastón: </string>
+    <string name="dagger_bonus">Bono de daga: </string>
+    <string name="axe_bonus">Bono de hacha: </string>
+    <string name="hammer_bonus">Bono de martillo: </string>
+    <string name="spear_bonus">Bono de lanza: </string>
 </resources>

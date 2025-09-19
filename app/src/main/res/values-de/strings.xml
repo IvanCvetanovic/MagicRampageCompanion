@@ -36,9 +36,9 @@
     <string name="seismic_reach">Seismische Reichweite</string>
     <string name="titans_push">Titanenstoß</string>
     <string name="shockwave_force">Schockwellenkraft</string>
-    <string name="damage">Schaden</string>
-    <string name="armor">Rüstung</string>
-    <string name="upgrades">Verbesserungen</string>
+    <string name="damage">Schaden: </string>
+    <string name="armor">Rüstung: </string>
+    <string name="upgrades">Verbesserungen: </string>
     <string name="element_fire">Feuer</string>
     <string name="element_water">Wasser</string>
     <string name="element_darkness">Dunkelheit</string>
@@ -706,7 +706,9 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="dungeon44bossfighttext2"><font color="#FF0000">Achtung:</font> Wenn du nicht genug Schaden verursachst, bis der gleitende Eiszapfen zerbricht, wird der Boss anfangen, Felsbrocken auf dich zu werfen, denen man nur schwer ausweichen kann. \n\n Wenn der Boss in die zweite Phase eintritt, bewegen sich seine gleitenden Eiszapfen schneller, seine fallenden Eiszapfen zielen nun auf deine aktuelle Position und er wirft mehrere Felsbrocken.\n\n</string>
     <string name="dungeon44text">Alle drei 💎 sind unterwegs, jedoch benötigst du meistens einen goldenen Schlüssel, um die Türen zu öffnen, um sie zu bekommen. Überspringe keine Bereiche vorher.\n\n
         Der dritte geheime Bereich ist ebenfalls hinter zerstörbarer oranger Masse versteckt.\n\n
-        Besuche unbedingt den sechsten geheimen Bereich, da er eine schöne Rüstung hat, die dir beim Boss helfen wird.\n\n</string>
+        Besuche unbedingt den sechsten geheimen Bereich, da er eine schöne Rüstung hat, die dir beim Boss helfen wird.\n\n
+        Die fünfte Geheimzone kann durch den unteren Bereich links davon geöffnet werden. Sie befindet sich an der Decke. Du musst die Kiste verwenden, die deine Angriffe umlenkt, um sie zu aktivieren.\n\n
+</string>
     <string name="dungeon4text">Alle drei 💎 sind in den goldenen Töpfen.\n\n
         Der Kapitän ist unbesiegbar und kann nicht sterben. Wenn du im Dungeon auf den oberen Plattformen vorankommst, wird sie alle unteren Gegner von selbst töten.\n\n</string>
     <string name="dungeon5bonustext1">Schalte diesen Bonus frei, indem du alle drei 💎 in Dungeon 5 sammelst.\n\n
@@ -931,7 +933,7 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="item_already_at_zero_upgrades">Gegenstand bereits auf null Aufwertungen!</string>
     <string name="item_already_maxed">Gegenstand bereits maximal aufgewertet!</string>
     <string name="items">📋 Gegenstände 📋</string>
-    <string name="jump_impulse">Sprungkraft: 0%</string>
+    <string name="jump_impulse">Sprungkraft: </string>
     <string name="jump_impulse_in_calculation">"Sprungkraft: "</string>
     <string name="kills">Kills</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
@@ -952,8 +954,8 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="spears">Speere</string>
     <string name="special_antiheros_set">Spezielles Antihelden-Set</string>
     <string name="special_thanks">Besonderer Dank:</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman</string>
-    <string name="speed">Geschwindigkeit: 0%</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
+    <string name="speed">Geschwindigkeit: </string>
     <string name="speed_in_calculation">"Geschwindigkeit: "</string>
     <string name="spike_resistance">Stachelresistenz</string>
     <string name="staffs_and_grimoires">Stäbe und Grimoires</string>
@@ -1286,4 +1288,19 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
 
     <string name="failed_to_download_model">Fehler beim Herunterladen des Übersetzungsmodells.</string>
     <string name="failed_to_load_news">Fehler beim Laden der Nachrichten.\nBitte überprüfen Sie Ihre Verbindung.</string>
+
+    <string name="open_with">Öffnen mit</string>
+    <string name="no_app_to_open_link_copied">Keine App zum Öffnen des Links gefunden. Die Einladungs-URL wurde in die Zwischenablage kopiert.</string>
+
+    <string name="element">Element: </string>
+    <string name="type">Typ: </string>
+    <string name="armor_bonus">Rüstungsbonus: </string>
+    <string name="pierce_area_damage">Durchschlagsflächenschaden: </string>
+    <string name="magic_bonus">Magiebonus: </string>
+    <string name="sword_bonus">Schwertbonus: </string>
+    <string name="staff_bonus">Stabbonus: </string>
+    <string name="dagger_bonus">Dolchbonus: </string>
+    <string name="axe_bonus">Axtbonus: </string>
+    <string name="hammer_bonus">Hammerbonus: </string>
+    <string name="spear_bonus">Speerbonus: </string>
 </resources>
