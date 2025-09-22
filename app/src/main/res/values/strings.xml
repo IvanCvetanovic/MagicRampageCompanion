@@ -513,8 +513,8 @@ Above the third golden pot, there is a dagger of light, which is very good for e
 
     <!-- Equipment Tester -->
     <string name="reset_all">Reset All</string>
-    <string name="damage">Damage</string>
-    <string name="armor">Armor</string>
+    <string name="damage"></string>
+    <string name="armor"></string>
     <string name="speed">Speed: </string>
     <string name="jump_impulse">Jump Impulse: </string>
     <string name="select_skills">Select Skills</string>
@@ -639,7 +639,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="crow_set">Crow Set</string>
     <string name="special_crow_set">Special Crow Set</string>
     <string name="antiheros_set">Anti-hero\'s Set</string>
-    <string name="special_antiheros_set">Special Antihero Set</string>
+    <string name="special_antiheros_set">Special Anti-hero Set</string>
     <string name="steelblow_armor">Steelblow Armor</string>
     <string name="steelblow_armor_plus">Steelblow Armor+</string>
     <string name="dark_lord_set">Dark Lord Set</string>
@@ -677,7 +677,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="tunic_of_endless_justice">Tunic of Endless Justice</string>
     <string name="cataclysmic_plate">Cataclysmic Plate</string>
     <string name="tunic_of_frozen_voices">Tunic of Frozen Voices</string>
-    <string name="robe_of_distant_visions">Robe of Distant Vision</string>
+    <string name="robe_of_distant_visions">Robe of Distant Visions</string>
     <string name="tunic_of_distant_ancestors">Tunic of Distant Ancestors</string>
     <string name="vest_of_phantoms_keeper">Vest of Phantoms Keeper</string>
     <string name="robe_of_imminent_fires">Robe of Imminent Fires</string>
@@ -737,10 +737,10 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="recruit_sword">Recruit Sword</string>
     <string name="steel_blade">Steel Blade</string>
     <string name="fire_sword">Fire Sword</string>
-    <string name="nobel_sword">Nobel Sword</string>
+    <string name="nobel_sword">Noble Sword</string>
     <string name="leaf_sword">Leaf Sword</string>
     <string name="pirate_sword">Pirate Sword</string>
-    <string name="master_sword">Master Sword</string>
+    <string name="master_sword">Master\'s Sword</string>
     <string name="vorpal_sword">Vorpal Sword</string>
     <string name="umbranian_short_sword">Umbranian Short Sword</string>
     <string name="umbranian_long_sword">Umbranian Long Sword</string>
@@ -932,7 +932,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="sapphire_pawns_dagger">Sapphire Pawns Dagger</string>
     <string name="toxic_dual_dagger">Toxic Dual Dagger</string>
     <string name="all_seeing_cleaver">All Seeing Cleaver</string>
-    <string name="ruby_pawns_edge">Ruby Pawns Edge</string>
+    <string name="ruby_pawns_edge">Ruby Pawn\'s Edge</string>
     <string name="shooting_star_shuriken">Shooting Star Shuriken</string>
     <string name="tome_of_the_sands">Tome of the Sands</string>
     <string name="choose_the_chapter">Choose the Chapter!</string>
@@ -1541,5 +1541,53 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="spear_bonus">"Spear Bonus: "</string>
     <string name="max_sets_reached">Maximum amount of sets reached!</string>
     <string name="pick_item_first">Please pick an item first!</string>
+
+    <string name="arcane_precision_tonic">Arcane Precision Tonic</string>
+    <string name="elixir_of_duplication">Elixir of Duplication</string>
+    <string name="forbidden_flowers_extract">Forbidden Flowers Extract</string>
+    <string name="instant_charge_blast">Instant Charge Blast</string>
+    <string name="instant_dark_twin">Instant Dark Twin</string>
+    <string name="instant_gust">Instant Gust</string>
+    <string name="instant_radiant_shield">Instant Radiant Shield</string>
+    <string name="instant_thunder_wave">Instant Thunder Wave</string>
+    <string name="levitation_liqueur">Levitation Liqueur</string>
+    <string name="monsters_juice">Monsters Juice</string>
+    <string name="moonjump_mixture">Moonjump Mixture</string>
+    <string name="pepper_brew">Pepper Brew</string>
+    <string name="starlight_supertonic">Starlight Supertonic</string>
+    <string name="tonic_of_invulnerability">Tonic of Invulnerability</string>
+    <string name="umbranian_water">Umbranian Water</string>
+    <string name="arcane_precision_tonic_desc">Launched projectiles will home in on targets, at the cost of a slight armor reduction.</string>
+    <string name="elixir_of_duplication_desc">Multiplies the number of projectiles fired while slightly lowering armor.</string>
+    <string name="forbidden_flowers_extract_desc">Gives the ability to shoot bouncy fireballs.</string>
+    <string name="instant_charge_blast_desc">Charges up an attack that unleashes massive damage upon release. To activate, fire an attack.</string>
+    <string name="instant_dark_twin_desc">Summons a Dark Twin to fight alongside the Dirty Faced Soldier. To activate, fire an attack.</string>
+    <string name="instant_gust_desc">Pushes enemies back with a powerful gust on each attack.</string>
+    <string name="instant_radiant_shield_desc">Provides excellent damage protection, safeguarding against external threats for a short duration.</string>
+    <string name="instant_thunder_wave_desc">Summons a wave of lightning bolts that strike all surrounding enemies. To activate, fire an attack.</string>
+    <string name="levitation_liqueur_desc">Prevents falling into bottomless pits and grants extra jumps in the air. Additionally, projectiles launched while airborne deal increased damage.</string>
+    <string name="monsters_juice_desc">Amplifies attack prowess at the cost of diminished armor.</string>
+    <string name="moonjump_mixture_desc">Reduces gravity effects.</string>
+    <string name="pepper_brew_desc">Grants protection from frost effects and increases armor.</string>
+    <string name="starlight_supertonic_desc">Grants temporary invulnerability and boosts weapon damage output for a short duration.</string>
+    <string name="tonic_of_invulnerability_desc">Provides immunity to poison effects and increases armor.</string>
+    <string name="umbranian_water_desc">Clears the active power-up effect.</string>
+    <string name="new_set">New Set</string>
+    <string name="recommend">Get Set</string>
+    <string name="load">Load Set</string>
+    <string name="saved">Set Saved!</string>
+    <string name="nothing_to_load">Nothing to load!</string>
+    <string name="loaded">Set Loaded!</string>
+    <string name="load_set_title">Choose a set!</string>
+    <string name="load_failed">Loading Failed!</string>
+    <string name="enter_set_name_hint">Enter set name</string>
+    <string name="save_set_title">Enter a name for your set:</string>
+    <string name="set_name_empty">Set name is empty!</string>
+    <string name="overwrite_question">Would you like to overwrite the set with the same name?</string>
+    <string name="overwrite">Overwrite?</string>
+    <string name="loaded_named">Set loaded!</string>
+    <string name="delete_question">Do you want to delete this set?</string>
+    <string name="delete">Delete</string>
+    <string name="set_stats_title">Current Stats:</string>
 
 </resources>

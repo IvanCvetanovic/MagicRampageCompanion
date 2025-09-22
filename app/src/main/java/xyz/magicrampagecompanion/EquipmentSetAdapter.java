@@ -24,17 +24,25 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         void onPickClass(int position);
         void onPickSkills(int position);
         void onRemoveSet(int position);
+        void onSaveSet(int position);
+        void onShowStats(int position);
 
         // Element pickers per slot
         void onPickArmorElement(int position);
         void onPickWeaponElement(int position);
         void onPickRingElement(int position);
 
-        default void onAddSetTapped(boolean atLimit) {}
+        // Elixir picker
+        void onPickDrink(int position);
+
+        // Footer actions
+        default void onFooterLoadTapped() {}
+        default void onFooterAddTapped(boolean atLimit) {}
+        default void onFooterRecommendTapped() {}
     }
 
     private static final int TYPE_SET = 0;
-    private static final int TYPE_ADD = 1;
+    private static final int TYPE_FOOTER = 1;
     public static final int MAX_SETS = 10;
 
     private final List<EquipmentSet> data = new ArrayList<>();
@@ -45,12 +53,11 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         setHasStableIds(false);
     }
 
-    private boolean isFooterVisible() { return data.size() < MAX_SETS; }
-    private boolean isFooterPosition(int position) { return isFooterVisible() && position == data.size(); }
+    private boolean isFooterPosition(int position) { return position == data.size(); }
 
     @Override public long getItemId(int position) { return position; }
-    @Override public int getItemViewType(int position) { return isFooterPosition(position) ? TYPE_ADD : TYPE_SET; }
-    @Override public int getItemCount() { return data.size() + (isFooterVisible() ? 1 : 0); }
+    @Override public int getItemViewType(int position) { return isFooterPosition(position) ? TYPE_FOOTER : TYPE_SET; }
+    @Override public int getItemCount() { return data.size() + 1; } // footer always visible
 
     @SuppressLint("NotifyDataSetChanged")
     public void setItems(List<EquipmentSet> items) {
@@ -59,24 +66,24 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         notifyDataSetChanged();
     }
 
+    public List<EquipmentSet> getItems() { return data; }
+
     public void addEmpty() {
         if (data.size() >= MAX_SETS) {
-            if (listener != null) listener.onAddSetTapped(true);
+            if (listener != null) listener.onFooterAddTapped(true);
             return;
         }
         int insertPos = data.size();
         data.add(new EquipmentSet());
         notifyItemInserted(insertPos);
-        if (data.size() == MAX_SETS) notifyItemRemoved(MAX_SETS); // footer disappears
-        if (listener != null) listener.onAddSetTapped(false);
+        if (listener != null) listener.onFooterAddTapped(false);
     }
 
     public void removeAt(int position) {
         if (position < 0 || position >= data.size()) return;
         data.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeChanged(position, data.size() - position);
-        if (data.size() == MAX_SETS - 1) notifyItemInserted(data.size()); // footer reappears
+        notifyItemRangeChanged(position, data.size() - position + 1); // + footer
     }
 
     public EquipmentSet getItem(int position) { return data.get(position); }
@@ -85,9 +92,9 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inf = LayoutInflater.from(parent.getContext());
-        if (viewType == TYPE_ADD) {
+        if (viewType == TYPE_FOOTER) {
             View v = inf.inflate(R.layout.item_set_add, parent, false);
-            return new AddVH(v);
+            return new FooterVH(v);
         } else {
             View v = inf.inflate(R.layout.item_set, parent, false);
             return new SetVH(v);
@@ -96,8 +103,11 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int pos) {
-        if (getItemViewType(pos) == TYPE_ADD) {
-            ((AddVH) holder).addButton.setOnClickListener(v -> addEmpty());
+        if (getItemViewType(pos) == TYPE_FOOTER) {
+            FooterVH f = (FooterVH) holder;
+            f.btnLoad.setOnClickListener(v -> { if (listener != null) listener.onFooterLoadTapped(); });
+            f.btnAdd.setOnClickListener(v -> addEmpty());
+            f.btnRecommend.setOnClickListener(v -> { if (listener != null) listener.onFooterRecommendTapped(); });
             return;
         }
 
@@ -113,7 +123,28 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         h.classBtn.setImageResource(set.characterClass != null ? set.characterClass.getImageResId() : R.drawable.select_class_button_grey);
         h.skillBtn.setImageResource(anySkillPicked(set.skills) ? R.drawable.select_skill_tree_button : R.drawable.select_skill_tree_button_grey);
 
-        // Compute real stats once
+        ImageButton statsBtn = holder.itemView.findViewById(R.id.StatsButton);
+        statsBtn.setOnClickListener(v -> listener.onShowStats(holder.getAdapterPosition()));
+
+        if (h.saveBtn != null) {
+            h.saveBtn.setOnClickListener(v -> {
+                int p = h.getAdapterPosition();
+                if (p != RecyclerView.NO_POSITION && listener != null) {
+                    listener.onSaveSet(p);
+                }
+            });
+        }
+
+        // Elixir image (drink button)
+        if (h.drinkBtn != null) {
+            if (set.elixir != null) {
+                h.drinkBtn.setImageResource(set.elixir.getImageResId());
+            } else {
+                h.drinkBtn.setImageResource(R.drawable.drink);
+            }
+        }
+
+        // Compute stats once
         SetStats stats = StatsCalculator.compute(set);
 
         // Armor value (base + bonus)
@@ -139,17 +170,17 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         // Fire resistance side icon
         if (stats.fireRes) {
             h.armorSideIcon.setVisibility(View.VISIBLE);
-            h.armorSideIcon.setImageResource(R.drawable.fire_protection); // your chosen icon
+            h.armorSideIcon.setImageResource(R.drawable.fire_protection);
         } else {
             h.armorSideIcon.setVisibility(View.GONE);
         }
 
-        // Element button icons: lock if item intrinsic element is non-neutral; edit if neutral; chosen element icon if user picked one
+        // Element badges
         bindElementIcon(h.elementArmorBtn,  set.armor,  set.armorElement);
         bindElementIcon(h.elementWeaponBtn, set.weapon, set.weaponElement);
         bindElementIcon(h.elementRingBtn,   set.ring,   set.ringElement);
 
-        // Click listeners (main)
+        // Clicks
         h.armor.setOnClickListener(v -> { int p = h.getAdapterPosition(); if (p != RecyclerView.NO_POSITION) listener.onPickArmor(p); });
         h.ring.setOnClickListener(v -> { int p = h.getAdapterPosition(); if (p != RecyclerView.NO_POSITION) listener.onPickRing(p); });
         h.weapon.setOnClickListener(v -> { int p = h.getAdapterPosition(); if (p != RecyclerView.NO_POSITION) listener.onPickWeapon(p); });
@@ -157,7 +188,15 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         h.skillBtn.setOnClickListener(v -> { int p = h.getAdapterPosition(); if (p != RecyclerView.NO_POSITION) listener.onPickSkills(p); });
         h.removeBtn.setOnClickListener(v -> { int p = h.getAdapterPosition(); if (p != RecyclerView.NO_POSITION) listener.onRemoveSet(p); });
 
-        // Click listeners (elements)
+        // Elixir click
+        if (h.drinkBtn != null) {
+            h.drinkBtn.setOnClickListener(v -> {
+                int p = h.getAdapterPosition();
+                if (p != RecyclerView.NO_POSITION) listener.onPickDrink(p);
+            });
+        }
+
+        // Element picker clicks
         h.elementArmorBtn.setOnClickListener(v -> { int p = h.getAdapterPosition(); if (p != RecyclerView.NO_POSITION) listener.onPickArmorElement(p); });
         h.elementWeaponBtn.setOnClickListener(v -> { int p = h.getAdapterPosition(); if (p != RecyclerView.NO_POSITION) listener.onPickWeaponElement(p); });
         h.elementRingBtn.setOnClickListener(v -> { int p = h.getAdapterPosition(); if (p != RecyclerView.NO_POSITION) listener.onPickRingElement(p); });
@@ -169,11 +208,9 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         return false;
     }
 
-    /** Decides which icon to show on the element buttons. */
-    /** Decides which icon to show on the element buttons. */
-    /** Decides which icon to show on the element buttons. */
-    /** Decides which icon to show on the element buttons. */
     private void bindElementIcon(ImageButton target, Object itemObj, Elements chosenElement) {
+        if (target == null) return;
+
         if (itemObj == null) {
             target.setImageResource(R.drawable.icon_lock);
             return;
@@ -185,12 +222,10 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         else intrinsic = ((Ring) itemObj).getElement();
 
         if (intrinsic != null && intrinsic != Elements.NEUTRAL) {
-            // Show actual element icon if item has built-in element
             target.setImageResource(elementDrawableFor(intrinsic));
             return;
         }
 
-        // Intrinsic neutral → use chosen element or edit icon
         if (chosenElement != null && chosenElement != Elements.NEUTRAL) {
             target.setImageResource(elementDrawableFor(chosenElement));
         } else {
@@ -206,14 +241,15 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             case LIGHT:    return R.drawable.element_light;
             case EARTH:    return R.drawable.element_earth;
             case AIR:      return R.drawable.element_air;
-            default:       return R.drawable.edit_icon; // fallback
+            default:       return R.drawable.edit_icon;
         }
     }
 
     // ---------- view holders ----------
     static class SetVH extends RecyclerView.ViewHolder {
-        ImageButton armor, ring, weapon, classBtn, skillBtn, removeBtn;
+        ImageButton armor, ring, weapon, classBtn, skillBtn, removeBtn, saveBtn, statsBtn;
         ImageButton elementArmorBtn, elementWeaponBtn, elementRingBtn;
+        ImageButton drinkBtn;
         ImageView armorSideIcon;
         TextView armorValue, weaponValue;
 
@@ -228,18 +264,23 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             armorValue      = v.findViewById(R.id.armorValueText);
             weaponValue     = v.findViewById(R.id.weaponValueText);
             armorSideIcon   = v.findViewById(R.id.ArmorSideIcon);
+            saveBtn = v.findViewById(R.id.SaveSetButton);
 
             elementArmorBtn = v.findViewById(R.id.ElementArmorButton);
             elementWeaponBtn= v.findViewById(R.id.ElementWeaponButton);
             elementRingBtn  = v.findViewById(R.id.ElementRingButton);
+
+            drinkBtn        = v.findViewById(R.id.DrinkButton); // in item_set.xml
         }
     }
 
-    static class AddVH extends RecyclerView.ViewHolder {
-        ImageButton addButton;
-        AddVH(@NonNull View v) {
+    static class FooterVH extends RecyclerView.ViewHolder {
+        ImageButton btnLoad, btnAdd, btnRecommend;
+        FooterVH(@NonNull View v) {
             super(v);
-            addButton = v.findViewById(R.id.AddSetFooterButton);
+            btnLoad      = v.findViewById(R.id.TopPlaceholderButton);       // Load
+            btnAdd       = v.findViewById(R.id.AddSetFooterButton);         // New
+            btnRecommend = v.findViewById(R.id.BottomPlaceholderButton);    // Recommend
         }
     }
 }

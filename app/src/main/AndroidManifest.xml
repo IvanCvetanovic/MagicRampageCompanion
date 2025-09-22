@@ -4,6 +4,8 @@
 
     <!-- Internet permission (kept) -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <!-- Package visibility / handlers for VIEW https and Discord -->
     <queries>

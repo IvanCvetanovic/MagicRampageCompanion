@@ -1,173 +1,224 @@
 package xyz.magicrampagecompanion;
 
-import xyz.magicrampagecompanion.Elements;
-import xyz.magicrampagecompanion.WeaponTypes;
-
 public final class StatsCalculator {
     private StatsCalculator() {}
 
+    // --- Elixir knobs (same as yours) ---
+    private static final class ElixirEffects {
+        double damageMult = 1.0;
+        double armorMult  = 1.0;
+        double speedMult  = 1.0;
+        double    speedAddPct = 1.0;
+        double jumpMult   = 1.0;
+        int    jumpAddPct = 0;
+        int    pierceAdd  = 0;
+        double cooldownMult = 1.0;
+    }
+
+    private static ElixirEffects resolveElixirEffects(Elixir e) {
+        ElixirEffects fx = new ElixirEffects();
+        if (e == null) return fx;
+
+        int dmg = e.getDamageBonus();
+        int arm = e.getArmorBonus();
+        int spd = e.getSpeedBoost();
+
+        fx.damageMult *= (1.0 + (dmg / 100.0));
+        fx.armorMult  *= (1.0 + (arm / 100.0));
+        fx.speedAddPct *= spd;
+
+        return fx;
+    }
+
     public static SetStats compute(EquipmentSet s) {
         SetStats out = new SetStats();
+        if (s == null) return out;
 
-        if (s == null || s.armor == null || s.weapon == null || s.ring == null || s.characterClass == null || s.skills == null) {
-            return out;
+        // Locals with null-safe defaults
+        Armor armor = s.armor;
+        Ring ring = s.ring;
+        Weapon weapon = s.weapon;
+        CharacterClass clazz = s.characterClass;
+        boolean[] skills = (s.skills != null) ? s.skills : new boolean[36];
+
+        Elements armorEl  = (s.armorElement  != null) ? s.armorElement  : Elements.NEUTRAL;
+        Elements ringEl   = (s.ringElement   != null) ? s.ringElement   : Elements.NEUTRAL;
+        Elements weaponEl = (s.weaponElement != null) ? s.weaponElement : Elements.NEUTRAL;
+
+        ElixirEffects fx = resolveElixirEffects(s.elixir);
+
+        // ---------- Attack cooldown & pierce ----------
+        int currentAttackCooldown = (weapon != null) ? weapon.getAttackCooldown() : 1400; // assume slow if none
+        currentAttackCooldown = (int) Math.round(currentAttackCooldown * fx.cooldownMult);
+
+        int pierce = (weapon != null) ? weapon.getPierceCount() : 0;
+        pierce += fx.pierceAdd;
+        if (pierce < 0) pierce = 0;
+        out.pierce = pierce;
+
+        // ---------- Damage (guard weapon) ----------
+        int damageOut = 0;
+        if (weapon != null) {
+            double dmg;
+            int wUpgradesTotal = Math.max(weapon.getUpgrades(), 1);
+            int wUpgradesChosen = Math.min(Math.max(s.weaponUpgrades, 0), wUpgradesTotal);
+
+            if (wUpgradesChosen != 0) {
+                dmg = weapon.getMinDamage()
+                        + ((weapon.getMaxDamage() - weapon.getMinDamage()) / (double) wUpgradesTotal) * wUpgradesChosen;
+            } else {
+                dmg = weapon.getMinDamage();
+            }
+
+            // Armor magic if weapon element non-neutral
+            if (weaponEl != Elements.NEUTRAL && armor != null) {
+                dmg *= (1 + armor.getMagic() / 100.0);
+            }
+
+            // Armor weapon-type bonus
+            if (armor != null) {
+                switch (weapon.getType()) {
+                    case SWORD:  dmg *= (1 + armor.getSword()  / 100.0); break;
+                    case DAGGER: dmg *= (1 + armor.getDagger() / 100.0); break;
+                    case STAFF:  dmg *= (1 + armor.getStaff()  / 100.0); break;
+                    case AXE:    dmg *= (1 + armor.getAxe()    / 100.0); break;
+                    case HAMMER: dmg *= (1 + armor.getHammer() / 100.0); break;
+                    case SPEAR:  dmg *= (1 + armor.getSpear()  / 100.0); break;
+                }
+            }
+
+            // Ring magic & type bonuses
+            if (ring != null) {
+                if (weaponEl != Elements.NEUTRAL) {
+                    dmg *= (1 + ring.getMagic() / 100.0);
+                }
+                switch (weapon.getType()) {
+                    case SWORD:  dmg *= (1 + ring.getSword()  / 100.0); break;
+                    case DAGGER: dmg *= (1 + ring.getDagger() / 100.0); break;
+                    case STAFF:  dmg *= (1 + ring.getStaff()  / 100.0); break;
+                    case AXE:    dmg *= (1 + ring.getAxe()    / 100.0); break;
+                    case HAMMER: dmg *= (1 + ring.getHammer() / 100.0); break;
+                    case SPEAR:  dmg *= (1 + ring.getSpear()  / 100.0); break;
+                }
+            }
+
+            // Class bonuses
+            if (clazz != null) {
+                dmg *= (1 + clazz.getMagicBonus() / 100.0);
+                switch (weapon.getType()) {
+                    case SWORD:  dmg *= (1 + clazz.getSwordBonus()  / 100.0); break;
+                    case DAGGER: dmg *= (1 + clazz.getDaggerBonus() / 100.0); break;
+                    case STAFF:  dmg *= (1 + clazz.getStaffBonus()  / 100.0); break;
+                    case AXE:    dmg *= (1 + clazz.getAxeBonus()    / 100.0); break;
+                    case HAMMER: dmg *= (1 + clazz.getHammerBonus() / 100.0); break;
+                    case SPEAR:  dmg *= (1 + clazz.getSpearBonus()  / 100.0); break;
+                }
+            }
+
+            // Skill tree bonuses by weapon type
+            if (weapon.getType().equals(WeaponTypes.SWORD)  && skillsSafe(skills, 1))  dmg *= 1.15;
+            if (weapon.getType().equals(WeaponTypes.DAGGER) && skillsSafe(skills, 2))  dmg *= 1.20;
+            if (weapon.getType().equals(WeaponTypes.STAFF)  && skillsSafe(skills, 13)) dmg *= 1.20;
+            if (weapon.getType().equals(WeaponTypes.SPEAR)  && skillsSafe(skills, 14)) dmg *= 1.40;
+            if (weapon.getType().equals(WeaponTypes.HAMMER) && skillsSafe(skills, 25)) dmg *= 1.60;
+            if (weapon.getType().equals(WeaponTypes.AXE)    && skillsSafe(skills, 26)) dmg *= 1.50;
+
+            // Element synergies
+            if (weaponEl == armorEl && weaponEl != Elements.NEUTRAL) dmg *= 1.25;
+            if (weaponEl == ringEl  && weaponEl != Elements.NEUTRAL) dmg *= 1.20;
+
+            // Elixir multiplier
+            dmg *= fx.damageMult;
+
+            damageOut = (int) Math.ceil(dmg);
         }
+        out.damage = damageOut;
 
-        // --- Attack cooldown & pierce ---
-        int currentAttackCooldown = s.weapon.getAttackCooldown();
-        out.pierce = s.weapon.getPierceCount();
+        // ---------- Armor ----------
+        int armorOut = 0;
+        if (armor != null) {
+            int aUpgradesTotal = Math.max(armor.getUpgrades(), 1);
+            int aUpgradesChosen = Math.min(Math.max(s.armorUpgrades, 0), aUpgradesTotal);
 
-        // --- Damage base (with weapon upgrades) ---
-        double dmg;
-        if (s.weaponUpgrades != 0) {
-            dmg = (s.weapon.getMinDamage()
-                    + ((s.weapon.getMaxDamage() - s.weapon.getMinDamage())
-                    / ((double) s.weapon.getUpgrades())) * s.weaponUpgrades);
+            double armorVal = armor.getMinArmor()
+                    + ((armor.getMaxArmor() - armor.getMinArmor()) / (double) aUpgradesTotal) * aUpgradesChosen;
+
+            // Add ring’s flat armor (even if armor is null we handled that above)
+            if (ring != null) armorVal += ring.getArmor();
+
+            // Multipliers
+            if (ring != null)   armorVal *= (1 + ring.getArmorBonus() / 100.0);
+            if (weapon != null) armorVal *= (1 + weapon.getArmorBonus() / 100.0);
+            if (clazz != null)  armorVal *= (1 + clazz.getArmorBonus() / 100.0);
+            if (skillsSafe(skills, 18)) armorVal *= 1.25;
+
+            // Elixir multiplier
+            armorVal *= fx.armorMult;
+
+            armorOut = (int) Math.round(armorVal);
         } else {
-            dmg = s.weapon.getMinDamage();
+            // No armor piece: you may still want to count ring's flat armor
+            double armorVal = 0.0;
+            if (ring != null) armorVal += ring.getArmor();
+            if (ring != null)   armorVal *= (1 + ring.getArmorBonus() / 100.0);
+            if (weapon != null) armorVal *= (1 + weapon.getArmorBonus() / 100.0);
+            if (clazz != null)  armorVal *= (1 + clazz.getArmorBonus() / 100.0);
+            if (skillsSafe(skills, 18)) armorVal *= 1.25;
+            armorVal *= fx.armorMult;
+            armorOut = (int) Math.round(armorVal);
         }
+        out.armor = armorOut;
 
-        // Armor magic bonus if weapon is non-neutral
-        if (!s.weaponElement.equals(Elements.NEUTRAL)) {
-            dmg = dmg * (1 + s.armor.getMagic() / 100.0);
-        }
-
-        // Armor weapon-type bonus
-        switch (s.weapon.getType()) {
-            case SWORD:  dmg *= (1 + s.armor.getSword()  / 100.0); break;
-            case DAGGER: dmg *= (1 + s.armor.getDagger() / 100.0); break;
-            case STAFF:  dmg *= (1 + s.armor.getStaff()  / 100.0); break;
-            case AXE:    dmg *= (1 + s.armor.getAxe()    / 100.0); break;
-            case HAMMER: dmg *= (1 + s.armor.getHammer() / 100.0); break;
-            case SPEAR:  dmg *= (1 + s.armor.getSpear()  / 100.0); break;
-        }
-
-        // Ring magic & type bonuses
-        if (!s.weaponElement.equals(Elements.NEUTRAL)) {
-            dmg *= (1 + s.ring.getMagic() / 100.0);
-        }
-        switch (s.weapon.getType()) {
-            case SWORD:  dmg *= (1 + s.ring.getSword()  / 100.0); break;
-            case DAGGER: dmg *= (1 + s.ring.getDagger() / 100.0); break;
-            case STAFF:  dmg *= (1 + s.ring.getStaff()  / 100.0); break;
-            case AXE:    dmg *= (1 + s.ring.getAxe()    / 100.0); break;
-            case HAMMER: dmg *= (1 + s.ring.getHammer() / 100.0); break;
-            case SPEAR:  dmg *= (1 + s.ring.getSpear()  / 100.0); break;
-        }
-
-        // Class bonuses
-        dmg *= (1 + s.characterClass.getMagicBonus() / 100.0);
-        switch (s.weapon.getType()) {
-            case SWORD:  dmg *= (1 + s.characterClass.getSwordBonus()  / 100.0); break;
-            case DAGGER: dmg *= (1 + s.characterClass.getDaggerBonus() / 100.0); break;
-            case STAFF:  dmg *= (1 + s.characterClass.getStaffBonus()  / 100.0); break;
-            case AXE:    dmg *= (1 + s.characterClass.getAxeBonus()    / 100.0); break;
-            case HAMMER: dmg *= (1 + s.characterClass.getHammerBonus() / 100.0); break;
-            case SPEAR:  dmg *= (1 + s.characterClass.getSpearBonus()  / 100.0); break;
-        }
-
-        // Skill tree bonuses by weapon type
-        if (s.skills[1]  && s.weapon.getType().equals(WeaponTypes.SWORD))  dmg *= 1.15;
-        if (s.skills[2]  && s.weapon.getType().equals(WeaponTypes.DAGGER)) dmg *= 1.20;
-        if (s.skills[13] && s.weapon.getType().equals(WeaponTypes.STAFF))  dmg *= 1.20;
-        if (s.skills[14] && s.weapon.getType().equals(WeaponTypes.SPEAR))  dmg *= 1.40;
-        if (s.skills[25] && s.weapon.getType().equals(WeaponTypes.HAMMER)) dmg *= 1.60;
-        if (s.skills[26] && s.weapon.getType().equals(WeaponTypes.AXE))    dmg *= 1.50;
-
-        // Element synergies
-        if (s.weaponElement.equals(s.armorElement)) dmg *= 1.25;
-        if (s.weaponElement.equals(s.ringElement))  dmg *= 1.20;
-
-        dmg = Math.ceil(dmg);
-        out.damage = (int) dmg;
-
-        // --- Armor (respect upgrades) ---
-        if (s.armor.getUpgrades() == 0) s.armor.setUpgrades(1);
-        double armorVal = (s.armor.getMinArmor()
-                + ((s.armor.getMaxArmor() - s.armor.getMinArmor())
-                / ((double) s.armor.getUpgrades())) * s.armorUpgrades);
-
-        armorVal += s.ring.getArmor();
-        armorVal *= (1 + s.ring.getArmorBonus() / 100.0);
-        armorVal *= (1 + s.weapon.getArmorBonus() / 100.0);
-        armorVal *= (1 + s.characterClass.getArmorBonus() / 100.0);
-        if (s.skills[18]) armorVal *= 1.25;
-
-        armorVal = Math.round(armorVal);
-        if (s.armor.getUpgrades() == 0) armorVal = s.armor.getMinArmor();
-        out.armor = (int) armorVal;
-
-        // --- Attack speed → star rating ---
+        // ---------- Attack speed stars ----------
         int stars;
-        if (currentAttackCooldown <= 300)      stars = 5;
+        if      (currentAttackCooldown <= 300) stars = 5;
         else if (currentAttackCooldown <= 450) stars = 4;
         else if (currentAttackCooldown <= 650) stars = 3;
         else if (currentAttackCooldown <= 750) stars = 2;
         else                                   stars = 1;
         out.attackSpeedStars = stars;
 
-        // --- Speed & Jump ---
-        double aSpd = s.armor.getSpeed()  / 100.0 + 1;
-        double wSpd = s.weapon.getSpeed() / 100.0 + 1;
-        double rSpd = s.ring.getSpeed()   / 100.0 + 1;
+        // ---------- Speed & Jump ----------
+        double aSpd = (armor  != null ? armor.getSpeed()  : 0) / 100.0 + 1;
+        double wSpd = (weapon != null ? weapon.getSpeed() : 0) / 100.0 + 1;
+        double rSpd = (ring   != null ? ring.getSpeed()   : 0) / 100.0 + 1;
 
         int speedPct = (int) ((aSpd * wSpd * rSpd) * 100 - 100);
-        speedPct += s.characterClass.getSpeedBonus();
-        if (s.skills[0]) speedPct += 4;
+        if (clazz != null) speedPct += clazz.getSpeedBonus();
+        if (skillsSafe(skills, 0)) speedPct += 4;
+        speedPct = (int) ((int) Math.round(speedPct * fx.speedMult) * fx.speedAddPct);
         out.speedPct = speedPct;
 
-        double aJump = s.armor.getJump()  / 100.0 + 1;
-        double wJump = s.weapon.getJump() / 100.0 + 1;
-        double rJump = s.ring.getJump()   / 100.0 + 1;
-        double cJump = s.characterClass.getJumpImpulseBonus() / 100.0 + 1;
+        double aJump = (armor  != null ? armor.getJump()  : 0) / 100.0 + 1;
+        double wJump = (weapon != null ? weapon.getJump() : 0) / 100.0 + 1;
+        double rJump = (ring   != null ? ring.getJump()   : 0) / 100.0 + 1;
+        double cJump = (clazz  != null ? clazz.getJumpImpulseBonus() : 0) / 100.0 + 1;
 
         double jump = aJump * rJump * wJump * cJump;
-        if (s.skills[12]) jump += 0.03;
+        if (skillsSafe(skills, 12)) jump += 0.03;
         jump = Math.floor(jump * 100.0) / 100.0;
         jump = jump * 100 - 100;
+        jump = Math.round(jump * fx.jumpMult) + fx.jumpAddPct;
         out.jumpPct = (int) jump;
 
-        // --- Flags for checkmarks ---
-        out.fireRes = (Elements.FIRE.equals(s.ringElement))
+        // ---------- Flags ----------
+        out.fireRes = (ringEl == Elements.FIRE)
                 || out.armor >= 330
-                || Elements.FIRE.equals(s.armorElement)
-                || s.skills[16];
+                || (armorEl == Elements.FIRE)
+                || skillsSafe(skills, 16);
 
-        out.frostRes     = s.armor.isFrostImmune();
-        out.spikeRes     = Elements.AIR.equals(s.ringElement) || Elements.WATER.equals(s.ringElement)
-                || Elements.AIR.equals(s.armorElement) || Elements.WATER.equals(s.armorElement)
-                || s.skills[29];
-        out.projPersist  = s.weapon.isPersistAgainstProjectile();
-        out.poisonAttack = s.weapon.isPoisonous();
-        out.frostAttack  = s.weapon.isFrost();
-
-        // --- Composite rating (capped 0..10) ---
-        double skillsSum =
-                ((s.skills[3] ? .1 : 0) + (s.skills[4] ? .1 : 0) + (s.skills[5] ? .1 : 0) + (s.skills[6] ? .1 : 0) +
-                        (s.skills[7] ? .1 : 0) + (s.skills[8] ? .1 : 0) + (s.skills[9] ? .1 : 0) + (s.skills[10] ? .1 : 0) +
-                        (s.skills[11] ? .1 : 0) + (s.skills[15] ? .1 : 0) + (s.skills[17] ? .1 : 0) + (s.skills[18] ? .1 : 0) +
-                        (s.skills[19] ? .1 : 0) + (s.skills[20] ? .1 : 0) + (s.skills[21] ? .1 : 0) + (s.skills[22] ? .1 : 0) +
-                        (s.skills[23] ? .1 : 0) + (s.skills[27] ? .1 : 0) + (s.skills[28] ? .1 : 0) + (s.skills[30] ? .1 : 0) +
-                        (s.skills[31] ? .1 : 0) + (s.skills[32] ? .1 : 0) + (s.skills[33] ? .1 : 0) + (s.skills[34] ? .1 : 0) + (s.skills[35] ? .1 : 0)) +
-
-                        (((Elements.FIRE.equals(s.ringElement)) || (Elements.FIRE.equals(s.armorElement)) || (s.skills[13])) ? 0.2 : 0) +
-                        (((Elements.AIR.equals(s.ringElement) || Elements.WATER.equals(s.ringElement)) ||
-                                (Elements.AIR.equals(s.armorElement) || Elements.WATER.equals(s.armorElement)) || (s.skills[29])) ? 0.2 : 0);
-
-        double rating = ((out.damage / 5000.0)
-                + (out.armor / 150.0)
-                + (out.speedPct / 25.0)
-                + (out.jumpPct / 25.0)
-                + skillsSum
-                + (out.pierce / 10.0)
-                + ((currentAttackCooldown - 1400) / 700.0)
-                + (s.weapon.isFrost() ? 0.15 : 0)
-                + (s.weapon.isPoisonous() ? 0.15 : 0));
-
-        if (rating > 10) rating = 10;
-        if (rating < 0)  rating = 0;
-        out.rating = rating;
+        out.frostRes    = (armor != null && armor.isFrostImmune());
+        out.spikeRes    = (ringEl == Elements.AIR || ringEl == Elements.WATER
+                || armorEl == Elements.AIR || armorEl == Elements.WATER
+                || skillsSafe(skills, 29));
+        out.projPersist = (weapon != null && weapon.isPersistAgainstProjectile());
+        out.poisonAttack= (weapon != null && weapon.isPoisonous());
+        out.frostAttack = (weapon != null && weapon.isFrost());
 
         return out;
+    }
+
+    private static boolean skillsSafe(boolean[] skills, int idx) {
+        return skills != null && idx >= 0 && idx < skills.length && skills[idx];
     }
 }

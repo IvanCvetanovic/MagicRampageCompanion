@@ -48,8 +48,8 @@
 
             <ImageButton
                 android:id="@+id/ElementArmorButton"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="bottom|end"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="6dp"
@@ -88,8 +88,8 @@
 
             <ImageButton
                 android:id="@+id/ElementRingButton"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="bottom|end"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="6dp"
@@ -134,11 +134,11 @@
 
             <ImageButton
                 android:id="@+id/ElementWeaponButton"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="bottom|end"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="24dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerInside"
                 android:src="@drawable/icon_lock" />
@@ -162,7 +162,23 @@
                 android:src="@drawable/select_class_button_grey" />
         </FrameLayout>
 
-        <!-- Skill tree button -->
+        <FrameLayout
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/item_frame">
+
+            <ImageButton
+                android:id="@+id/DrinkButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/drink" />
+        </FrameLayout>
+
         <FrameLayout
             android:layout_width="128dp"
             android:layout_height="128dp"
@@ -179,6 +195,23 @@
                 android:src="@drawable/select_skill_tree_button_grey" />
         </FrameLayout>
 
+        <FrameLayout
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/item_frame">
+
+            <ImageButton
+                android:id="@+id/StatsButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/stats_button" />
+        </FrameLayout>
+
     </LinearLayout>
 
     <!-- REMOVE BUTTON placed LAST so it draws on top -->
@@ -190,6 +223,19 @@
         android:layout_margin="4dp"
         android:background="@android:color/transparent"
         android:src="@drawable/remove_symbol"
+        android:elevation="8dp"
+        android:scaleType="centerInside"
+        android:contentDescription="Remove Button"
+        tools:ignore="HardcodedText" />
+
+    <ImageButton
+        android:id="@+id/SaveSetButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="top|start"
+        android:layout_margin="4dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/save_set_icon"
         android:elevation="8dp"
         android:scaleType="centerInside"
         android:contentDescription="Remove Button"

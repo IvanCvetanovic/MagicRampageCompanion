@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ItemData.init(this);
+        ItemSyncer.run(this);
 
         // Apply system insets to keep content clear of status/nav bars
         View scroll = findViewById(R.id.mainScroll);

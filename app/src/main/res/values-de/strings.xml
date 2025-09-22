@@ -1303,4 +1303,38 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="axe_bonus">Axtbonus: </string>
     <string name="hammer_bonus">Hammerbonus: </string>
     <string name="spear_bonus">Speerbonus: </string>
+
+    <string name="max_sets_reached">Maximale Anzahl an Sets erreicht!</string>
+    <string name="pick_item_first">Bitte wähle zuerst einen Gegenstand aus!</string>
+
+    <string name="arcane_precision_tonic">Arkanes Präzisionstonic</string>
+    <string name="elixir_of_duplication">Elixier der Duplikation</string>
+    <string name="forbidden_flowers_extract">Extrakt der verbotenen Blume</string>
+    <string name="instant_charge_blast">Instante Ladungsexplosion</string>
+    <string name="instant_dark_twin">Instanter Dunkler Zwilling</string>
+    <string name="instant_gust">Instanter Windstoß</string>
+    <string name="instant_radiant_shield">Sofortiger Strahlungsschild</string>
+    <string name="instant_thunder_wave">Instante Donnerwelle</string>
+    <string name="levitation_liqueur">Levitationslikör</string>
+    <string name="monsters_juice">Monstersaft</string>
+    <string name="moonjump_mixture">Mondsprung-Mischung</string>
+    <string name="pepper_brew">Pfeffergebräu</string>
+    <string name="starlight_supertonic">Sternenlicht-Supertonikum</string>
+    <string name="tonic_of_invulnerability">Tonic der Unverwundbarkeit</string>
+    <string name="umbranian_water">Umbrisches Wasser</string>
+    <string name="arcane_precision_tonic_desc">Abgefeuerte Projektile verfolgen Ziele automatisch, allerdings wird dabei die Rüstung leicht verringert.</string>
+    <string name="elixir_of_duplication_desc">Vervielfacht die Anzahl der abgefeuerten Projektile und verringert gleichzeitig leicht die Rüstung.</string>
+    <string name="forbidden_flowers_extract_desc">Bietet die Fähigkeit an, hüpfende Feuerbälle abzuschießen.</string>
+    <string name="instant_charge_blast_desc">Lädt einen Angriff auf, der bei der Auslösung massiven Schaden verursacht. Zum Aktivieren einen Angriff abfeuern.</string>
+    <string name="instant_dark_twin_desc">Beschwört einen Dunklen Zwilling, der an der Seite des Soldaten mit schmutzigem Gesicht kämpft. Zum Aktivieren einen Angriff abfeuern.</string>
+    <string name="instant_gust_desc">Stößt Feinde mit einem kräftigen Windstoß bei jedem Angriff zurück.</string>
+    <string name="instant_radiant_shield_desc">Bietet ausgezeichneten Schadensschutz und schützt für eine kurze Zeit vor externen Bedrohungen.</string>
+    <string name="instant_thunder_wave_desc">Beschwört eine Blitzwelle, die alle umliegenden Feinde trifft. Zum Aktivieren einen Angriff abfeuern.</string>
+    <string name="levitation_liqueur_desc">Verhindert das Hinabstürzen in bodenlose Abgründe und gewährt zusätzliche Luftsprünge. Außerdem verursachen aus der Luft abgefeuerte Projektile erhöhten Schaden.</string>
+    <string name="monsters_juice_desc">Verstärkt die Angriffskraft auf Kosten einer verringerten Rüstung.</string>
+    <string name="moonjump_mixture_desc">Reduziert Gravitationseffekte.</string>
+    <string name="pepper_brew_desc">Gewährt Schutz vor Frosteffekten und erhöht die Rüstung.</string>
+    <string name="starlight_supertonic_desc">Gewährt vorübergehende Unverwundbarkeit und erhöht die Waffenschaden für kurze Zeit.</string>
+    <string name="tonic_of_invulnerability_desc">Bietet Immunität gegen Giftwirkungen und erhöht die Rüstung.</string>
+    <string name="umbranian_water_desc">Löscht den aktiven Power-Up-Effekt.</string>
 </resources>

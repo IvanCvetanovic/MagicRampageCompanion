@@ -2,7 +2,6 @@ package xyz.magicrampagecompanion;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,10 +25,12 @@ public class ItemSelection extends AppCompatActivity {
     private int sfxClickId = 0;      // top tab click
     private int sfxBagId = 0;        // armor pick
     private int sfxWeaponId = 0;     // weapon pick
+    private int sfxPotionId = 0;
 
     private boolean sfxClickLoaded = false;
     private boolean sfxBagLoaded = false;
     private boolean sfxWeaponLoaded = false;
+    private boolean sfxPotionLoaded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,8 +167,19 @@ public class ItemSelection extends AppCompatActivity {
             recyclerView.setAdapter(adapter);
             buttonsScrollView.setVisibility(View.GONE);
             ViewCompat.requestApplyInsets(findViewById(R.id.main));
-        }
+        } else if (buttonId == 6) { // Elixirs
+        Log.d("ItemSelection", "Elixir button clicked");
+        ImageAdapter adapter = new ImageAdapter(ItemData.elixirList, (view, position) -> {
+            playSfx(sfxPotionId);
+            Elixir selected = ItemData.elixirList.get(position);
+            returnResult("selectedElixir", selected);
+        });
+        recyclerView.setAdapter(adapter);
+        buttonsScrollView.setVisibility(View.GONE);
+        ViewCompat.requestApplyInsets(findViewById(R.id.main));
     }
+
+}
 
     @Override
     protected void onStart() {
@@ -246,12 +258,14 @@ public class ItemSelection extends AppCompatActivity {
             if (sampleId == sfxClickId)  sfxClickLoaded  = true;
             if (sampleId == sfxBagId)    sfxBagLoaded    = true;
             if (sampleId == sfxWeaponId) sfxWeaponLoaded = true;
+            if (sampleId == sfxPotionId) sfxPotionLoaded = true;
         });
 
         // Preload the SFX you use in this screen
         sfxClickId  = soundPool.load(this, R.raw.click, 1);
         sfxBagId    = soundPool.load(this, R.raw.bag, 1);
         sfxWeaponId = soundPool.load(this, R.raw.projectile_heavy_blade_withdraw, 1);
+        sfxPotionId = soundPool.load(this, R.raw.potion, 1);
     }
 
     private void releaseSoundPool() {
@@ -272,7 +286,8 @@ public class ItemSelection extends AppCompatActivity {
         boolean loaded =
                 (soundId == sfxClickId  && sfxClickLoaded) ||
                         (soundId == sfxBagId    && sfxBagLoaded)   ||
-                        (soundId == sfxWeaponId && sfxWeaponLoaded);
+                        (soundId == sfxWeaponId && sfxWeaponLoaded) ||
+                        (soundId == sfxPotionId && sfxPotionLoaded);
         if (loaded) {
             soundPool.play(soundId, 0.25f, 0.25f, 1, 0, 1.0f);
         }
@@ -288,6 +303,8 @@ public class ItemSelection extends AppCompatActivity {
             resultIntent.putExtra(key, (Weapon) selectedItem);
         } else if (selectedItem instanceof CharacterClass) {
             resultIntent.putExtra(key, (CharacterClass) selectedItem);
+        } else if (selectedItem instanceof Elixir) {
+            resultIntent.putExtra(key, (Elixir) selectedItem);
         }
         setResult(RESULT_OK, resultIntent);
         finish();

@@ -1,0 +1,72 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvDamage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/damage_in_calculation" />
+
+        <TextView
+            android:id="@+id/tvArmor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/armor_in_calculation" />
+
+        <TextView
+            android:id="@+id/tvSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/speed_in_calculation" />
+
+        <TextView
+            android:id="@+id/tvJump"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/jump_impulse_in_calculation" />
+
+        <TextView
+            android:id="@+id/tvAttackSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/attack_speed" />
+
+        <TextView
+            android:id="@+id/tvPierce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pierce_count" />
+
+        <TextView
+            android:id="@+id/tvPierceAreaDamage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pierce_area_damage" />
+
+        <TextView
+            android:id="@+id/tvProjectilePersistence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/projectile_persistence" />
+
+        <TextView
+            android:id="@+id/tvPoisonousAttack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/poisonous_attack" />
+
+        <TextView
+            android:id="@+id/tvFrostAttack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/frost_attack" />
+
+    </LinearLayout>
+</ScrollView>

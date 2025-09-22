@@ -1303,4 +1303,38 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="axe_bonus">Bônus de machado: </string>
     <string name="hammer_bonus">Bônus de martelo: </string>
     <string name="spear_bonus">Bônus de lança: </string>
+
+    <string name="max_sets_reached">Quantidade máxima de conjuntos atingida!</string>
+    <string name="pick_item_first">Por favor, escolha um item primeiro!</string>
+
+    <string name="arcane_precision_tonic">Tônico da Precisão Arcana</string>
+    <string name="elixir_of_duplication">Elixir da Duplicação</string>
+    <string name="forbidden_flowers_extract">Extrato da Flor Banida</string>
+    <string name="instant_charge_blast">Carga Explosiva Instantânea</string>
+    <string name="instant_dark_twin">Gêmeo Sombrio Instantâneo</string>
+    <string name="instant_gust">Vendaval Instantâneo</string>
+    <string name="instant_radiant_shield">Escudo-Radiante Instantâneo</string>
+    <string name="instant_thunder_wave">Onda Trovejante Instantânea</string>
+    <string name="levitation_liqueur">Licor de Levitação</string>
+    <string name="monsters_juice">Suco de Monstro</string>
+    <string name="moonjump_mixture">Mix Luna-pulante</string>
+    <string name="pepper_brew">Soda Apimentada</string>
+    <string name="starlight_supertonic">Sérum de Supernova</string>
+    <string name="tonic_of_invulnerability">Elixir da Invulnerabilidade</string>
+    <string name="umbranian_water">Água Umbraniana</string>
+    <string name="arcane_precision_tonic_desc">Projéteis lançados irão seguir alvos, ao custo de uma leve redução na armadura.</string>
+    <string name="elixir_of_duplication_desc">Multiplica o número de projéteis disparados, mas reduz levemente sua armadura.</string>
+    <string name="forbidden_flowers_extract_desc">Concede o poder de lançar bolas de fogo saltitantes.</string>
+    <string name="instant_charge_blast_desc">Carrega um ataque que libera um dano massivo ao ser liberado. Para ativar, dispare um ataque.</string>
+    <string name="instant_dark_twin_desc">Invoca um gêmeo sombrio que luta ao lado do Soldado do Rosto Sujo. Para ativar, dispare um ataque.</string>
+    <string name="instant_gust_desc">Empurra inimigos para trás com uma rajada poderosa em cada ataque.</string>
+    <string name="instant_radiant_shield_desc">Proporciona excelente proteção contra danos, protegendo contra ameaças externas por um curto período.</string>
+    <string name="instant_thunder_wave_desc">Invoca uma onda de raios que atinge todos os inimigos ao redor. Para ativar, dispare um ataque.</string>
+    <string name="levitation_liqueur_desc">Impede quedas em abismos e concede pulos extras no ar. Além disso, projéteis lançados enquanto estiver no ar causam mais dano.</string>
+    <string name="monsters_juice_desc">Amplifica o poder de ataque ao custo de reduzir a armadura.</string>
+    <string name="moonjump_mixture_desc">Reduz os efeitos da gravidade.</string>
+    <string name="pepper_brew_desc">Protege contra o efeito de congelamento e aumenta os pontos de armadura.</string>
+    <string name="starlight_supertonic_desc">Concede invulnerabilidade temporária e aumenta o dano das armas por um curto período.</string>
+    <string name="tonic_of_invulnerability_desc">Protege contra efeitos de envenenamento e aumenta os pontos de armadura.</string>
+    <string name="umbranian_water_desc">Remove o efeito do power-up que estiver ativo.</string>
 </resources>

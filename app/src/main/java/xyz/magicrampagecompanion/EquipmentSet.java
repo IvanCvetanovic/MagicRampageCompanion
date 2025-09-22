@@ -20,4 +20,6 @@ public class EquipmentSet {
     public Elements armorElement  = Elements.NEUTRAL;
     public Elements weaponElement = Elements.NEUTRAL;
     public Elements ringElement   = Elements.NEUTRAL;
+
+    public Elixir elixir;
 }

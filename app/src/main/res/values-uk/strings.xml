@@ -1301,4 +1301,38 @@
     <string name="axe_bonus">Бонус до сокири: </string>
     <string name="hammer_bonus">Бонус до молота: </string>
     <string name="spear_bonus">Бонус до списа: </string>
+
+    <string name="max_sets_reached">Досягнуто максимальної кількості сетів!</string>
+    <string name="pick_item_first">Будь ласка, спочатку виберіть предмет!</string>
+
+    <string name="arcane_precision_tonic">Тонік магічної точності</string>
+    <string name="elixir_of_duplication">Еліксир дублювання</string>
+    <string name="forbidden_flowers_extract">Екстракт забороненої квітки</string>
+    <string name="instant_charge_blast">Миттєвий вибуховий заряд</string>
+    <string name="instant_dark_twin">Миттєвий темний двійник</string>
+    <string name="instant_gust">Порив вітру</string>
+    <string name="instant_radiant_shield">Сяючий щит готовності</string>
+    <string name="instant_thunder_wave">Миттєвий штормовий фронт</string>
+    <string name="levitation_liqueur">Лікер левітації</string>
+    <string name="monsters_juice">Сік монстра</string>
+    <string name="moonjump_mixture">Мікстура місячного стрибка</string>
+    <string name="pepper_brew">Перцева настоянка</string>
+    <string name="starlight_supertonic">Супертонік зоряного світла</string>
+    <string name="tonic_of_invulnerability">Тонік невразливості</string>
+    <string name="umbranian_water">Умбранська вода</string>
+    <string name="arcane_precision_tonic_desc">Запущені снаряди будуть наводитися на цілі, але з незначним зниженням броні.</string>
+    <string name="elixir_of_duplication_desc">Примножує кількість випущених снарядів, трохи знижуючи броню.</string>
+    <string name="forbidden_flowers_extract_desc">Дає можливість стріляти вогняними кулями, що відскакують.</string>
+    <string name="instant_charge_blast_desc">Заряджає наступну атаку силою, що завдає величезної шкоди.</string>
+    <string name="instant_dark_twin_desc">Викликає темного близнюка, який битиметься на вашому боці. Щоб активувати, зробіть атаку.</string>
+    <string name="instant_gust_desc">При кожній вашій атаці відштовхує ворогів назад потужним поривом вітру.</string>
+    <string name="instant_radiant_shield_desc">Забезпечує чудовий захист від пошкоджень, захищаючи від зовнішніх загроз на короткий час.</string>
+    <string name="instant_thunder_wave_desc">Викликає хвилю блискавок, що вражають усіх ворогів навколо під час наступної атаки.</string>
+    <string name="levitation_liqueur_desc">Запобігає падінню в бездонні ями і дає додаткові стрибки в повітрі. Крім того, випущені в повітрі снаряди завдають підвищеної шкоди.</string>
+    <string name="monsters_juice_desc">Збільшує силу атаки за рахунок зменшення броні.</string>
+    <string name="moonjump_mixture_desc">Зменшує ефект гравітації.</string>
+    <string name="pepper_brew_desc">Захищає від ефектів заморозки та збільшує броню.</string>
+    <string name="starlight_supertonic_desc">Дає тимчасову невразливість і підвищує шкоду від зброї на короткий час.</string>
+    <string name="tonic_of_invulnerability_desc">Дає імунітет від ефектів отрути та збільшує броню.</string>
+    <string name="umbranian_water_desc">Знімає активний ефект посилення.</string>
 </resources>
