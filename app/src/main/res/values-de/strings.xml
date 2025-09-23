@@ -45,6 +45,16 @@
     <string name="element_light">Licht</string>
     <string name="element_earth">Erde</string>
     <string name="element_air">Luft</string>
+    <string name="element_neutral">Neutral</string>
+
+    <!-- Weapon Types -->
+    <string name="weapon_type_sword">Schwert</string>
+    <string name="weapon_type_staff">Stab</string>
+    <string name="weapon_type_dagger">Dolch</string>
+    <string name="weapon_type_axe">Axt</string>
+    <string name="weapon_type_hammer">Hammer</string>
+    <string name="weapon_type_spear">Speer</string>
+
     <string name="skill_description_0">Erhöht Geschwindigkeit um 4\%</string>
     <string name="skill_description_1">Erhöht die Angriffskraft des Schwerts um 15\%.</string>
     <string name="skill_description_2">Erhöht die Angriffskraft des Dolchs um 20\%.</string>
@@ -81,7 +91,6 @@
     <string name="skill_description_33">Erhöht den Explosionsradius geworfener Projektile um 20\%.</string>
     <string name="skill_description_34">Erhöht die Rückstoßkraft aller Waffen um 40\%, sodass Feinde noch weiter weggeschleudert werden.</string>
     <string name="skill_description_35">Erhöht den Flächenschaden aller Waffen um 70\%.</string>
-    <string name="rating">"Bewertung: "</string>
     <string name="rogue">Schurke</string>
     <string name="thief">Dieb</string>
     <string name="mage">Magier</string>
@@ -923,25 +932,20 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="enemy_zombie_rat">Zombie-Ratte</string>
     <string name="enemy_zombie_red_guard">Zombie-Rote-Wache</string>
     <string name="fifty_kills">50</string>
-    <string name="fire_resistance">Feuerresistenz</string>
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Frostangriff</string>
     <string name="frost_resistance">Frostresistenz</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">In Gedenken an:</string>
-    <string name="item_already_at_zero_upgrades">Gegenstand bereits auf null Aufwertungen!</string>
-    <string name="item_already_maxed">Gegenstand bereits maximal aufgewertet!</string>
     <string name="items">📋 Gegenstände 📋</string>
     <string name="jump_impulse">Sprungkraft: </string>
     <string name="jump_impulse_in_calculation">"Sprungkraft: "</string>
     <string name="kills">Kills</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
-    <string name="max">(MAX)</string>
     <string name="pierce_count">Durchdringungsanzahl:</string>
     <string name="poisonous_attack">Giftangriff</string>
     <string name="projectile_persistence">Projektil-Beständigkeit</string>
-    <string name="rating_start">Bewertung: 0/10 💩</string>
     <string name="reset_all">Alle zurücksetzen</string>
     <string name="rewards">Belohnungen</string>
     <string name="robe_of_distant_visions">Robe der fernen Visionen</string>
@@ -957,7 +961,6 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
     <string name="speed">Geschwindigkeit: </string>
     <string name="speed_in_calculation">"Geschwindigkeit: "</string>
-    <string name="spike_resistance">Stachelresistenz</string>
     <string name="staffs_and_grimoires">Stäbe und Grimoires</string>
     <string name="survival1_text">Hierfür benötigst du eine Waffe, die die mittlere Plattform nicht trifft. Dies ermöglicht es dir, die Gegner auf der anderen Seite zu treffen und die Projektile zu blockieren. Wenn eine Spinne vor dir spawnt, greife einfach den Stein hinter dir an, um sie leicht zu töten.</string>
     <string name="survival2_text">Der zweite Überlebens-Dungeon erfordert nicht viel Bewegung. Bleibe in der Mitte und greife zu den Seiten an, bewege dich gelegentlich auf und ab, um zusätzliche Gegner zu töten und dem Blitz auszuweichen.</string>
@@ -1286,7 +1289,6 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="stone_thrower">Steinwerfer</string>
     <string name="knife_thrower">Messerwerfer</string>
 
-    <string name="failed_to_download_model">Fehler beim Herunterladen des Übersetzungsmodells.</string>
     <string name="failed_to_load_news">Fehler beim Laden der Nachrichten.\nBitte überprüfen Sie Ihre Verbindung.</string>
 
     <string name="open_with">Öffnen mit</string>
@@ -1343,7 +1345,6 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="load">Set laden</string>
     <string name="saved">Set gespeichert!</string>
     <string name="nothing_to_load">Nichts zum Laden!</string>
-    <string name="loaded">Set geladen!</string>
     <string name="load_set_title">Wähle ein Set!</string>
     <string name="load_failed">Laden fehlgeschlagen!</string>
     <string name="enter_set_name_hint">Set-Namen eingeben</string>

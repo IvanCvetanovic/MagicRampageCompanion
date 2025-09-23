@@ -45,6 +45,16 @@
     <string name="element_light">Luce</string>
     <string name="element_earth">Terra</string>
     <string name="element_air">Aria</string>
+    <string name="element_neutral">Neutrale</string>
+
+    <!-- Weapon Types -->
+    <string name="weapon_type_sword">Spada</string>
+    <string name="weapon_type_staff">Bastone</string>
+    <string name="weapon_type_dagger">Pugnale</string>
+    <string name="weapon_type_axe">Ascia</string>
+    <string name="weapon_type_hammer">Martello</string>
+    <string name="weapon_type_spear">Lancia</string>
+
     <string name="skill_description_0">Potenzia la velocità di un 4\%</string>
     <string name="skill_description_1">Potenzia il potere d\'attacco della spada passiva di un 15\%.</string>
     <string name="skill_description_2">Potenzia il potere d\'attacco del pugnale passivo di un 20\%.</string>
@@ -81,7 +91,6 @@
     <string name="skill_description_33">Aumenta il raggio di esplosiene dei proiettili di un 20\%.</string>
     <string name="skill_description_34">Aumenta la potenza del colpo di tutte le armi di un 40\%, facendo volare via i nemici ancora più lontano.</string>
     <string name="skill_description_35">Aumenta l\'area totale dei danni inlitti da tutte le armi di un 70\%.</string>
-    <string name="rating">"Valutazione: "</string>
     <string name="rogue">Canaglia</string>
     <string name="thief">Ladro</string>
     <string name="mage">Mago</string>
@@ -924,25 +933,20 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="enemy_zombie_rat">Ratto Zombi</string>
     <string name="enemy_zombie_red_guard">Guardia Rossa Zombi</string>
     <string name="fifty_kills">50</string>
-    <string name="fire_resistance">Resistenza al Fuoco</string>
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Attacco di Gelo</string>
     <string name="frost_resistance">Resistenza al Gelo</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">In memoria di:</string>
-    <string name="item_already_at_zero_upgrades">Oggetto già a zero potenziamenti!</string>
-    <string name="item_already_maxed">Oggetto già al massimo potenziamento!</string>
     <string name="items">📋 Oggetti 📋</string>
-    <string name="jump_impulse">Impulso di Salto: 0%</string>
+    <string name="jump_impulse">Impulso di Salto: </string>
     <string name="jump_impulse_in_calculation">"Impulso di Salto: "</string>
     <string name="kills">Uccisioni</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
-    <string name="max">(MAX)</string>
     <string name="pierce_count">Conteggio Perforazioni:</string>
     <string name="poisonous_attack">Attacco Velenoso</string>
     <string name="projectile_persistence">Persistenza del Proiettile</string>
-    <string name="rating_start">Valutazione: 0/10 💩</string>
     <string name="reset_all">Resetta Tutto</string>
     <string name="rewards">Ricompense</string>
     <string name="robe_of_distant_visions">Veste delle Visioni Lontane</string>
@@ -958,7 +962,6 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
     <string name="speed">"Velocità: "</string>
     <string name="speed_in_calculation">"Velocità: "</string>
-    <string name="spike_resistance">Resistenza alle Spine</string>
     <string name="staffs_and_grimoires">Bastoni e Grimori</string>
     <string name="survival1_text">Per questo avrai bisogno di un\'arma che non colpisca la piattaforma centrale. Ciò ti permetterà di colpire i nemici dall\'altra parte e bloccare i proiettili. Se un ragno appare di fronte a te, attacca semplicemente la pietra dietro di te per ucciderlo facilmente.</string>
     <string name="survival2_text">Il secondo dungeon di sopravvivenza non richiede molto movimento. Rimani al centro e attacca ai lati, muovendoti occasionalmente su e giù per uccidere nemici aggiuntivi ed evitare i fulmini.</string>
@@ -1287,7 +1290,6 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="stone_thrower">Lanciatore di pietre</string>
     <string name="knife_thrower">Lanciatore di coltelli</string>
 
-    <string name="failed_to_download_model">Download del modello di traduzione non riuscito.</string>
     <string name="failed_to_load_news">Caricamento delle notizie non riuscito.\nControlla la tua connessione.</string>
 
     <string name="open_with">Apri con</string>
@@ -1344,7 +1346,6 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="load">Carica set</string>
     <string name="saved">Set salvato!</string>
     <string name="nothing_to_load">Niente da caricare!</string>
-    <string name="loaded">Set caricato!</string>
     <string name="load_set_title">Scegli un set!</string>
     <string name="load_failed">Caricamento fallito!</string>
     <string name="enter_set_name_hint">Inserisci il nome del set</string>

@@ -519,16 +519,11 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="jump_impulse">Jump Impulse: </string>
     <string name="select_skills">Select Skills</string>
     <string name="upgrades">Upgrades:</string>
-    <string name="max">(MAX)</string>
-    <string name="fire_resistance">Fire Resistance </string>
-    <string name="spike_resistance">Spike Resistance</string>
     <string name="damage_in_calculation">"Damage: "</string>
     <string name="armor_in_calculation">"Armor: "</string>
     <string name="speed_in_calculation">"Speed: "</string>
     <string name="jump_impulse_in_calculation">"Jump Impulse: "</string>
     <string name="frost_resistance">Frost Resistance</string>
-    <string name="item_already_maxed">Item already at maximum upgrade!</string>
-    <string name="item_already_at_zero_upgrades">Item already at zero upgrades!</string>
     <string name="element_cannot_be_picked">Element cannot be picked for this item!</string>
 
     <!-- Elements -->
@@ -538,6 +533,16 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="element_light">Light</string>
     <string name="element_earth">Earth</string>
     <string name="element_air">Air</string>
+    <string name="element_neutral">Neutral</string>
+
+    <!-- Weapon Types -->
+
+    <string name="weapon_type_sword">Sword</string>
+    <string name="weapon_type_staff">Staff</string>
+    <string name="weapon_type_dagger">Dagger</string>
+    <string name="weapon_type_axe">Axe</string>
+    <string name="weapon_type_hammer">Hammer</string>
+    <string name="weapon_type_spear">Spear</string>
 
     <!-- Skill Tree Description -->
     <string name="skill_description_0">Boosts speed by 4\%.</string>
@@ -581,8 +586,6 @@ Above the third golden pot, there is a dagger of light, which is very good for e
 
     <!-- Equipment Tester -->
     <string name="skill_description_default">No description available.</string>
-    <string name="rating_start">Rating: 0/10 💩</string>
-    <string name="rating">Rating: </string>
 
     <!-- Classes -->
     <string name="rogue">Rogue</string>
@@ -1523,7 +1526,6 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="waypoints">Waypoints</string>
     <string name="stone_thrower">Stone Thrower</string>
     <string name="knife_thrower">Knife Thrower</string>
-    <string name="failed_to_download_model">Failed to download translation model.</string>
     <string name="failed_to_load_news">Failed to load news.\n Please check your connection.</string>
 
     <string name="open_with">Open with</string>
@@ -1577,7 +1579,6 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="load">Load Set</string>
     <string name="saved">Set Saved!</string>
     <string name="nothing_to_load">Nothing to load!</string>
-    <string name="loaded">Set Loaded!</string>
     <string name="load_set_title">Choose a set!</string>
     <string name="load_failed">Loading Failed!</string>
     <string name="enter_set_name_hint">Enter set name</string>

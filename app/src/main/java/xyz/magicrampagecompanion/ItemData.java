@@ -34,7 +34,7 @@ public class ItemData {
     public static int SkillTreeJumpBonus   = 3;
 
     // Elixirs
-    public static int precisionTonicDamageBonus        = -5;
+    public static int precisionTonicArmorBonus        = -5;
     public static int elixirOfDuplicationDamageBonus   = -60;
     public static int elixirOfDuplicationSpeedBonus    = 5;
     public static int monstersJuiceDamageBonus         = 60;

@@ -128,7 +128,6 @@
             app:srcCompat="@drawable/dungeon5bonus3" />
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

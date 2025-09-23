@@ -12,8 +12,8 @@ android {
         applicationId "xyz.magicrampagecompanion"
         minSdk 28
         targetSdk 36
-        versionCode 33
-        versionName "1.0.0"
+        versionCode 34
+        versionName "1.0.1"
 
         multiDexEnabled true
 

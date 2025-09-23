@@ -39,7 +39,6 @@ public class Elixir implements Parcelable {
     // ---- Live-bound bonuses pulled from ItemData each time ----
     public int getDamageBonus() {
         switch (type) {
-            case ARCANE_PRECISION_TONIC:   return ItemData.precisionTonicDamageBonus;
             case ELIXIR_OF_DUPLICATION:    return ItemData.elixirOfDuplicationDamageBonus;
             case MONSTERS_JUICE:           return ItemData.monstersJuiceDamageBonus;
             case STARLIGHT_SUPERTONIC:     return ItemData.starlightSupertonicDamageBonus;
@@ -49,6 +48,7 @@ public class Elixir implements Parcelable {
 
     public int getArmorBonus() {
         switch (type) {
+            case ARCANE_PRECISION_TONIC:   return ItemData.precisionTonicArmorBonus;
             case MONSTERS_JUICE:           return ItemData.monstersJuiceArmorBonus;
             case PEPPER_BREW:              return ItemData.pepperBrewArmorBonus;
             case TONIC_OF_INVULNERABILITY: return ItemData.tonicOfInvulnerabilityArmorBonus;

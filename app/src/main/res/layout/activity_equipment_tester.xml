@@ -9,7 +9,6 @@
     tools:context=".EquipmentTester">
 
     <LinearLayout
-        android:id="@+id/mainContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -17,7 +16,6 @@
 
         <!-- Top section: horizontal card list ONLY -->
         <LinearLayout
-            android:id="@+id/cardRowContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -34,7 +32,6 @@
 
         <!-- Stats panel -->
         <LinearLayout
-            android:id="@+id/statsPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"

@@ -100,16 +100,18 @@ public class ItemDetail extends AppCompatActivity {
     private CharSequence buildWeaponDesc(Weapon w) {
         SpannableStringBuilder ssb = new SpannableStringBuilder();
         Elements element = w.getElement();
-        String elementName = element.name();
 
-        ssb.append(getString(R.string.type)).append(w.getType().name()).append("\n");
+        ssb.append(getString(R.string.type))
+                .append(getLocalizedWeaponType(w.getType()))
+                .append("\n");
 
         ssb.append(getString(R.string.element));
         int color = getElementColor(element);
+        String localizedElementName = getLocalizedElementName(element);
         if (element != Elements.NEUTRAL) {
-            ssb.append(elementName, new ForegroundColorSpan(color), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            ssb.append(localizedElementName, new ForegroundColorSpan(color), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         } else {
-            ssb.append(elementName);
+            ssb.append(localizedElementName);
         }
         ssb.append("\n");
 
@@ -159,15 +161,14 @@ public class ItemDetail extends AppCompatActivity {
     private CharSequence buildArmorDesc(Armor a) {
         SpannableStringBuilder ssb = new SpannableStringBuilder();
         Elements element = a.getElement();
-        String elementName = element.name();
 
         ssb.append(getString(R.string.element));
-        int start = ssb.length();
-        ssb.append(elementName);
-        int end = ssb.length();
         int color = getElementColor(element);
+        String localizedElementName = getLocalizedElementName(element);
         if (element != Elements.NEUTRAL) {
-            ssb.setSpan(new ForegroundColorSpan(color), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            ssb.append(localizedElementName, new ForegroundColorSpan(color), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            ssb.append(localizedElementName);
         }
         ssb.append("\n");
 
@@ -192,15 +193,14 @@ public class ItemDetail extends AppCompatActivity {
     private CharSequence buildRingDesc(Ring r) {
         SpannableStringBuilder ssb = new SpannableStringBuilder();
         Elements element = r.getElement();
-        String elementName = element.name();
 
         ssb.append(getString(R.string.element));
-        int start = ssb.length();
-        ssb.append(elementName);
-        int end = ssb.length();
         int color = getElementColor(element);
+        String localizedElementName = getLocalizedElementName(element);
         if (element != Elements.NEUTRAL) {
-            ssb.setSpan(new ForegroundColorSpan(color), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            ssb.append(localizedElementName, new ForegroundColorSpan(color), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            ssb.append(localizedElementName);
         }
         ssb.append("\n");
 
@@ -222,5 +222,29 @@ public class ItemDetail extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(LocaleHelper.applyLocale(newBase));
+    }
+
+    private String getLocalizedElementName(Elements element) {
+        switch (element) {
+            case FIRE:     return getString(R.string.element_fire);
+            case WATER:    return getString(R.string.element_water);
+            case DARKNESS: return getString(R.string.element_darkness);
+            case LIGHT:    return getString(R.string.element_light);
+            case EARTH:    return getString(R.string.element_earth);
+            case AIR:      return getString(R.string.element_air);
+            default:       return getString(R.string.element_neutral); // ensure this exists in strings.xml
+        }
+    }
+
+    private String getLocalizedWeaponType(WeaponTypes type) {
+        switch (type) {
+            case SWORD:  return getString(R.string.weapon_type_sword);
+            case STAFF:  return getString(R.string.weapon_type_staff);
+            case DAGGER: return getString(R.string.weapon_type_dagger);
+            case AXE:    return getString(R.string.weapon_type_axe);
+            case HAMMER: return getString(R.string.weapon_type_hammer);
+            case SPEAR:  return getString(R.string.weapon_type_spear);
+            default:     return "";
+        }
     }
 }

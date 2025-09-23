@@ -15,7 +15,6 @@
         tools:context=".Dungeon39">
 
         <TextView
-            android:id="@+id/Dungeon39Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dungeon_39"

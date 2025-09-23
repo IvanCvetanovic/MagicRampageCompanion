@@ -227,7 +227,7 @@ public final class LiveStatsSyncer {
                     // Example: 1.05 -> -5 (nerf)
                     int pct = toPercentNegFromMultiplier(value);
                     return setIntWithLog("ARCANE_PRECISION_TONIC_DAMAGE_NERF(raw=" + value + ")",
-                            ItemData.precisionTonicDamageBonus, pct, v -> ItemData.precisionTonicDamageBonus = v);
+                            ItemData.precisionTonicArmorBonus, pct, v -> ItemData.precisionTonicArmorBonus = v);
                 }
                 case "ELIXIR_OF_DUPLICATION_DAMAGE_NERF": {
                     int pct = toPercentNegFromMultiplier(value);

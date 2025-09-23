@@ -45,6 +45,16 @@
     <string name="element_light">光</string>
     <string name="element_earth">地</string>
     <string name="element_air">風</string>
+    <string name="element_neutral">ニュートラル</string>
+
+    <!-- Weapon Types -->
+    <string name="weapon_type_sword">剣</string>
+    <string name="weapon_type_staff">杖</string>
+    <string name="weapon_type_dagger">短剣</string>
+    <string name="weapon_type_axe">斧</string>
+    <string name="weapon_type_hammer">ハンマー</string>
+    <string name="weapon_type_spear">槍</string>
+
     <string name="skill_description_0">スピードが4\%上昇する</string>
     <string name="skill_description_1">剣の攻撃力が15\%上昇する</string>
     <string name="skill_description_2">ダガーの攻撃力が20\%上昇する</string>
@@ -81,7 +91,6 @@
     <string name="skill_description_33">飛び道具の爆発範囲が20\%拡大する</string>
     <string name="skill_description_34">すべての武器のノックバック効果が40\%上昇し、敵をより遠くに吹き飛ばせる</string>
     <string name="skill_description_35">すべての武器による範囲ダメージが70\%増加する</string>
-    <string name="rating">"評価: "</string>
     <string name="rogue">ローグ</string>
     <string name="thief">シーフ</string>
     <string name="mage">メイジ</string>
@@ -923,25 +932,20 @@
     <string name="enemy_zombie_rat">ゾンビ・ラット</string>
     <string name="enemy_zombie_red_guard">ゾンビ・レッドガード</string>
     <string name="fifty_kills">50</string>
-    <string name="fire_resistance">火耐性</string>
     <string name="fourty_kills">40</string>
     <string name="frost_attack">氷結攻撃</string>
     <string name="frost_resistance">氷結耐性</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">追悼：</string>
-    <string name="item_already_at_zero_upgrades">アイテムは既にアップグレードがゼロです！</string>
-    <string name="item_already_maxed">アイテムは既に最大アップグレードです！</string>
     <string name="items">📋 アイテム 📋</string>
-    <string name="jump_impulse">ジャンプ力: 0%</string>
+    <string name="jump_impulse">ジャンプ力: </string>
     <string name="jump_impulse_in_calculation">"ジャンプ力: "</string>
     <string name="kills">キル数</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
-    <string name="max">(MAX)</string>
     <string name="pierce_count">貫通回数：</string>
     <string name="poisonous_attack">毒攻撃</string>
     <string name="projectile_persistence">飛び道具の持続性</string>
-    <string name="rating_start">評価: 0/10 💩</string>
     <string name="reset_all">すべてリセット</string>
     <string name="rewards">報酬</string>
     <string name="robe_of_distant_visions">遠見のローブ</string>
@@ -957,7 +961,6 @@
     <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
     <string name="speed">"スピード: "</string>
     <string name="speed_in_calculation">"スピード: "</string>
-    <string name="spike_resistance">トゲ耐性</string>
     <string name="staffs_and_grimoires">杖と魔導書</string>
     <string name="survival1_text">これには中央のプラットフォームに当たらない武器が必要です。これにより、反対側の敵を攻撃し、飛び道具をブロックできます。目の前にクモが出現した場合は、後ろの石を攻撃して簡単に倒せます。</string>
     <string name="survival2_text">2番目のサバイバルダンジョンはあまり動き回る必要がありません。中央に留まり、両側を攻撃し、時々上下に移動して追加の敵を倒し、雷を避けてください。</string>
@@ -1285,7 +1288,6 @@
     <string name="stone_thrower">石投げ</string>
     <string name="knife_thrower">ナイフ投げ</string>
 
-    <string name="failed_to_download_model">翻訳モデルのダウンロードに失敗しました。</string>
     <string name="failed_to_load_news">ニュースの読み込みに失敗しました。\n接続を確認してください。</string>
 
     <string name="open_with">アプリで開く</string>
@@ -1342,7 +1344,6 @@
     <string name="load">セットを読み込む</string>
     <string name="saved">セットを保存しました！</string>
     <string name="nothing_to_load">読み込むものがありません！</string>
-    <string name="loaded">セットを読み込みました！</string>
     <string name="load_set_title">セットを選んでください！</string>
     <string name="load_failed">読み込みに失敗しました！</string>
     <string name="enter_set_name_hint">セット名を入力</string>

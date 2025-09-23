@@ -155,7 +155,6 @@
             app:srcCompat="@drawable/dungeon11bonus4" />
 
         <TextView
-            android:id="@+id/TutorialText4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

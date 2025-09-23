@@ -45,6 +45,16 @@
     <string name="element_light">Luz</string>
     <string name="element_earth">Tierra</string>
     <string name="element_air">Aire</string>
+    <string name="element_neutral">Neutral</string>
+
+    <!-- Weapon Types -->
+    <string name="weapon_type_sword">Espada</string>
+    <string name="weapon_type_staff">Bastón</string>
+    <string name="weapon_type_dagger">Daga</string>
+    <string name="weapon_type_axe">Hacha</string>
+    <string name="weapon_type_hammer">Martillo</string>
+    <string name="weapon_type_spear">Lanza</string>
+
     <string name="skill_description_0">Aumenta la velocidad en un 4 \%</string>
     <string name="skill_description_1">Aumenta el poder de ataque pasivo con espada en un 15 \%.</string>
     <string name="skill_description_2">Aumenta el poder de ataque pasivo con daga en un 20 \%.</string>
@@ -81,7 +91,6 @@
     <string name="skill_description_33">Aumenta el radio de explosión de los proyectiles lanzados en un 20%.</string>
     <string name="skill_description_34">Aumenta la fuerza de empuje de todas las armas en un 40%, por lo que los enemigos salen disparados aún más lejos.</string>
     <string name="skill_description_35">Aumenta el daño de área total que infligen todas las armas en un 70%.</string>
-    <string name="rating">Calificación: </string>
     <string name="rogue">Pícaro</string>
     <string name="thief">Ladrón</string>
     <string name="mage">Mago</string>
@@ -923,25 +932,20 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="enemy_zombie_rat">Rata Zombi</string>
     <string name="enemy_zombie_red_guard">Guardia Zombi Rojo</string>
     <string name="fifty_kills">50</string>
-    <string name="fire_resistance">Resistencia al Fuego</string>
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Ataque de Escarcha</string>
     <string name="frost_resistance">Resistencia a la Escarcha</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">En memoria de:</string>
-    <string name="item_already_at_zero_upgrades">¡El objeto ya está en el mínimo de mejoras!</string>
-    <string name="item_already_maxed">¡El objeto ya está mejorado al máximo!</string>
     <string name="items">📋 Objetos 📋</string>
     <string name="jump_impulse">Impulso de Salto: 0%</string>
     <string name="jump_impulse_in_calculation">Impulso de Salto: </string>
     <string name="kills">Bajas</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
-    <string name="max">(MAX)</string>
     <string name="pierce_count">Cantidad de Perforación:</string>
     <string name="poisonous_attack">Ataque de Veneno</string>
     <string name="projectile_persistence">Persistencia de Proyectil</string>
-    <string name="rating_start">Calificación: 0/10 💩</string>
     <string name="reset_all">Reiniciar Todo</string>
     <string name="rewards">Recompensas</string>
     <string name="robe_of_distant_visions">Túnica de Visiones Lejanas</string>
@@ -957,7 +961,6 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
     <string name="speed">"Velocidad: "</string>
     <string name="speed_in_calculation">"Velocidad: "</string>
-    <string name="spike_resistance">Resistencia a las Púas</string>
     <string name="staffs_and_grimoires">Bastones y Grimorios</string>
     <string name="survival1_text">Para este necesitarás un arma que no golpee la plataforma del medio. Esto te permitirá golpear a los enemigos del otro lado y bloquear los proyectiles. Si una araña aparece frente a ti, simplemente ataca la piedra detrás de ti para matarla con el daño de área.</string>
     <string name="survival2_text">La segunda mazmorra de supervivencia no necesita mucho movimiento. Quédate en el medio y ataca a los lados, moviéndote eventualmente hacia arriba y hacia abajo para matar enemigos adicionales y evitar los rayos.</string>
@@ -1286,7 +1289,6 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="stone_thrower">Lanzador de piedras</string>
     <string name="knife_thrower">Lanzador de cuchillos</string>
 
-    <string name="failed_to_download_model">No se pudo descargar la traducción.</string>
     <string name="failed_to_load_news">Error al cargar las noticias.\nPor favor, compruebe su conexión.</string>
 
     <string name="open_with">Abrir con</string>
@@ -1343,7 +1345,6 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="load">Set laden</string>
     <string name="saved">Set gespeichert!</string>
     <string name="nothing_to_load">Nichts zum Laden!</string>
-    <string name="loaded">Set geladen!</string>
     <string name="load_set_title">Wähle ein Set!</string>
     <string name="load_failed">Laden fehlgeschlagen!</string>
     <string name="enter_set_name_hint">Set-Namen eingeben</string>

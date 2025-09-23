@@ -45,6 +45,16 @@
     <string name="element_light">Світло</string>
     <string name="element_earth">Земля</string>
     <string name="element_air">Повітря</string>
+    <string name="element_neutral">Нейтральний</string>
+
+    <!-- Weapon Types -->
+    <string name="weapon_type_sword">Меч</string>
+    <string name="weapon_type_staff">Посох</string>
+    <string name="weapon_type_dagger">Кинджал</string>
+    <string name="weapon_type_axe">Сокира</string>
+    <string name="weapon_type_hammer">Молот</string>
+    <string name="weapon_type_spear">Спис</string>
+
     <string name="skill_description_0">Підвищує швидкість руху на 4\%</string>
     <string name="skill_description_1">Підвищує пасивну атаку мечем на 15\%.</string>
     <string name="skill_description_2">Підвищує пасивну атаку кинджалом на 20\%.</string>
@@ -81,7 +91,6 @@
     <string name="skill_description_33">Підвищує радіус вибуху пущених снарядів на 20\%.</string>
     <string name="skill_description_34">Посилює відкидання всіма видами зброї на 40\% - тепер ваші вороги відлітатимуть ще далі.</string>
     <string name="skill_description_35">Підвищує шкоду по площі, що наноситься всіма видами зброї, на 70\%.</string>
-    <string name="rating">"Рейтинг: "</string>
     <string name="rogue">Розбійник</string>
     <string name="thief">Злодій</string>
     <string name="mage">Маг</string>
@@ -921,26 +930,21 @@
     <string name="enemy_zombie_rat">Щур-зомбі</string>
     <string name="enemy_zombie_red_guard">Червоний страж-зомбі</string>
     <string name="fifty_kills">50</string>
-    <string name="fire_resistance">Опір вогню</string>
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Атака морозом</string>
     <string name="frost_resistance">Опір морозу</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">В пам\'ять про:</string>
-    <string name="item_already_at_zero_upgrades">Предмет вже на нульовому рівні покращення!</string>
-    <string name="item_already_maxed">Предмет вже покращено до максимуму!</string>
     <string name="achievements">🏆 Досягнення 🏆</string>
     <string name="items">📋 Предмети 📋</string>
-    <string name="jump_impulse">Сила стрибка: 0%</string>
+    <string name="jump_impulse">Сила стрибка: </string>
     <string name="jump_impulse_in_calculation">"Сила стрибка: "</string>
     <string name="kills">Вбивства</string>
     <string name="kitty_bucher">Кетлін Енн Бучер 1952 – 2022</string>
-    <string name="max">(МАКС)</string>
     <string name="pierce_count">Кількість пробивань:</string>
     <string name="poisonous_attack">Отруйна атака</string>
     <string name="projectile_persistence">Стійкість снарядів</string>
-    <string name="rating_start">Рейтинг: 0/10 💩</string>
     <string name="reset_all">Скинути все</string>
     <string name="rewards">Нагороди</string>
     <string name="robe_of_distant_visions">Мантія далеких видінь</string>
@@ -956,7 +960,6 @@
     <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
     <string name="speed">Швидкість: 0%</string>
     <string name="speed_in_calculation">"Швидкість: "</string>
-    <string name="spike_resistance">Опір шипам</string>
     <string name="staffs_and_grimoires">Посохи та гримуари</string>
     <string name="survival1_text">Для цього вам знадобиться зброя, яка не влучає в середню платформу. Це дозволить вам вражати ворогів на іншій стороні і блокувати снаряди. Якщо перед вами з\'явиться павук, просто атакуйте камінь за собою, щоб легко його вбити.</string>
     <string name="survival2_text">Друге підземелля на виживання не вимагає багато рухів. Залишайтеся в центрі і атакуйте по боках, час від часу рухаючись вгору і вниз, щоб вбивати додаткових ворогів і уникати блискавок.</string>
@@ -1284,7 +1287,6 @@
     <string name="stone_thrower">Каменемет</string>
     <string name="knife_thrower">Метальник ножів</string>
 
-    <string name="failed_to_download_model">Не вдалося завантажити модель перекладу.</string>
     <string name="failed_to_load_news">Не вдалося завантажити новини.\nБудь ласка, перевірте з\'єднання.</string>
 
     <string name="open_with">Відкрити за допомогою</string>
@@ -1341,7 +1343,6 @@
     <string name="load">Завантажити набір</string>
     <string name="saved">Набір збережено!</string>
     <string name="nothing_to_load">Немає що завантажувати!</string>
-    <string name="loaded">Набір завантажено!</string>
     <string name="load_set_title">Виберіть набір!</string>
     <string name="load_failed">Помилка завантаження!</string>
     <string name="enter_set_name_hint">Введіть назву набору</string>

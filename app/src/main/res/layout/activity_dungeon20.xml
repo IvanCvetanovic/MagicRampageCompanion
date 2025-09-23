@@ -157,7 +157,6 @@
             app:srcCompat="@drawable/dungeon20boss2" />
 
         <TextView
-            android:id="@+id/BossFightText2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

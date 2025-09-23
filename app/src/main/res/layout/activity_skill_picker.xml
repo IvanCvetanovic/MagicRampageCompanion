@@ -55,7 +55,6 @@
                     android:tag="overlayView">
 
                     <ImageView
-                        android:id="@+id/buttonEnhancedVelocity"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -101,7 +100,6 @@
                     android:tag="overlayView">
 
                     <ImageView
-                        android:id="@+id/buttonSwordMaster"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -147,7 +145,6 @@
                     android:tag="overlayView">
 
                     <ImageView
-                        android:id="@+id/buttonDaggerSpecialist"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -193,7 +190,6 @@
                     android:tag="overlayView">
 
                     <ImageView
-                        android:id="@+id/buttonObstinateShot"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -239,7 +235,6 @@
                     android:tag="overlayView">
 
                     <ImageView
-                        android:id="@+id/buttonCorrosiveShot"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -285,7 +280,6 @@
                     android:tag="overlayView">
 
                     <ImageView
-                        android:id="@+id/buttonSphericalShieldBreaker"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -331,7 +325,6 @@
                     android:tag="overlayView">
 
                     <ImageView
-                        android:id="@+id/buttonVoraciousShot"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -377,7 +370,6 @@
                     android:tag="overlayView">
 
                     <ImageView
-                        android:id="@+id/buttonMonstrousVigour"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -423,7 +415,6 @@
                     android:tag="overlayView">
 
                     <ImageView
-                        android:id="@+id/buttonChargeBlast"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -467,7 +458,6 @@
                     android:focusable="true"
                     android:tag="overlayView">
                     <ImageView
-                        android:id="@+id/buttonFinalWrath"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:srcCompat="@drawable/skill_final_wrath" />
@@ -504,7 +494,6 @@
                     android:focusable="true"
                     android:tag="overlayView">
                     <ImageView
-                        android:id="@+id/buttonRushOfTheDoomed"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:srcCompat="@drawable/skill_rush_of_the_doomed" />
@@ -543,7 +532,6 @@
                     android:focusable="true"
                     android:tag="overlayView">
                     <ImageView
-                        android:id="@+id/buttonOvercharge"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:srcCompat="@drawable/skill_overcharge" />
@@ -586,7 +574,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonFearlessJump"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -633,7 +620,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonVirtuousWizard"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -682,7 +668,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonThrowingLegend"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -731,7 +716,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonGoldMagnet"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -778,7 +762,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonFireproofSkin"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -825,7 +808,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonToxicHaze"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -873,7 +855,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonShadowCamouflage"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -921,7 +902,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonMagicJump"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -969,7 +949,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonDarkTwin"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1013,7 +992,6 @@
                     android:focusable="true"
                     android:tag="overlayView">
                     <ImageView
-                        android:id="@+id/buttonArcaneDiscipline"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:contentDescription="TODO"
@@ -1055,7 +1033,6 @@
                     android:focusable="true"
                     android:tag="overlayView">
                     <ImageView
-                        android:id="@+id/buttonSwiftCast"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:contentDescription="TODO"
@@ -1097,7 +1074,6 @@
                     android:focusable="true"
                     android:tag="overlayView">
                     <ImageView
-                        android:id="@+id/buttonAirborneDancer"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:contentDescription="TODO"
@@ -1141,7 +1117,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonUnstoppableStrength"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1188,7 +1163,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonCrushingStrength"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1237,7 +1211,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonSlicingMaster"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1286,7 +1259,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonMonstrousMetabolism"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1333,7 +1305,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonEnhancedVitality"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1380,7 +1351,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonUntouchableSkin"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1428,7 +1398,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonConfidentMove"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1476,7 +1445,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonArcaneProtection"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1524,7 +1492,6 @@
                     tools:ignore="UselessParent">
 
                     <ImageView
-                        android:id="@+id/buttonThunderWave"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:importantForAccessibility="no"
@@ -1568,7 +1535,6 @@
                     android:focusable="true"
                     android:tag="overlayView">
                     <ImageView
-                        android:id="@+id/buttonSeismicReach"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:contentDescription="TODO"
@@ -1611,7 +1577,6 @@
                     android:focusable="true"
                     android:tag="overlayView">
                     <ImageView
-                        android:id="@+id/buttonTitansPush"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:contentDescription="TODO"
@@ -1654,7 +1619,6 @@
                     android:focusable="true"
                     android:tag="overlayView">
                     <ImageView
-                        android:id="@+id/buttonShockwaveForce"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:contentDescription="TODO"

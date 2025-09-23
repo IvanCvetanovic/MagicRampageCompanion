@@ -45,6 +45,16 @@
     <string name="element_light">Işık</string>
     <string name="element_earth">Toprak</string>
     <string name="element_air">Hava</string>
+    <string name="element_neutral">Nötr</string>
+
+    <!-- Weapon Types -->
+    <string name="weapon_type_sword">Kılıç</string>
+    <string name="weapon_type_staff">Asa</string>
+    <string name="weapon_type_dagger">Hançer</string>
+    <string name="weapon_type_axe">Balta</string>
+    <string name="weapon_type_hammer">Çekiç</string>
+    <string name="weapon_type_spear">Mızrak</string>
+
     <string name="skill_description_0">Hareket hızını \%4 arttırır</string>
     <string name="skill_description_1">Pasif kılıç saldırı gücünü \% 15 artırır</string>
     <string name="skill_description_2">Pasif bıçak saldırı gücünü \% 20 arttırır.</string>
@@ -81,7 +91,6 @@
     <string name="skill_description_33">Fırlatılan mermilerin patlama yarıçapını 20\% artırır.</string>
     <string name="skill_description_34">Tüm silahların geri itme gücünü 40\% artırır, düşmanları daha da uzağa savurur.</string>
     <string name="skill_description_35">Tüm silahların verdiği alan hasarını 70\% artırır.</string>
-    <string name="rating">"Derecelendirme: "</string>
     <string name="rogue">Düzenbaz</string>
     <string name="thief">Hırsız</string>
     <string name="mage">Büyücü</string>
@@ -921,25 +930,20 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="enemy_zombie_rat">Zombi Fare</string>
     <string name="enemy_zombie_red_guard">Kırmızı Zombi Muhafız</string>
     <string name="fifty_kills">50</string>
-    <string name="fire_resistance">Ateş Direnci</string>
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Buz Saldırısı</string>
     <string name="frost_resistance">Buz Direnci</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">Anısına:</string>
-    <string name="item_already_at_zero_upgrades">Eşya zaten sıfır geliştirmede!</string>
-    <string name="item_already_maxed">Eşya zaten maksimum geliştirmede!</string>
     <string name="items">📋 Eşyalar 📋</string>
-    <string name="jump_impulse">Zıplama Gücü: 0%</string>
+    <string name="jump_impulse">Zıplama Gücü: </string>
     <string name="jump_impulse_in_calculation">"Zıplama Gücü: "</string>
     <string name="kills">Öldürme</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
-    <string name="max">(MAKS)</string>
     <string name="pierce_count">Delme Sayısı:</string>
     <string name="poisonous_attack">Zehirli Saldırı</string>
     <string name="projectile_persistence">Mermi Kalıcılığı</string>
-    <string name="rating_start">Değerlendirme: 0/10 💩</string>
     <string name="reset_all">Tümünü Sıfırla</string>
     <string name="rewards">Ödüller</string>
     <string name="robe_of_distant_visions">Uzak Görüş Cübbesi</string>
@@ -955,7 +959,6 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011</string>
     <string name="speed">"Hız: "</string>
     <string name="speed_in_calculation">"Hız: "</string>
-    <string name="spike_resistance">Diken Direnci</string>
     <string name="staffs_and_grimoires">Asalar ve Büyü Kitapları</string>
     <string name="survival1_text">Bunun için orta platforma vurmayan bir silaha ihtiyacın olacak. Bu, diğer taraftaki düşmanlara vurmanı ve mermileri engellemeni sağlayacak. Önünde bir örümcek belirirse, onu kolayca öldürmek için arkandaki taşa saldır.</string>
     <string name="survival2_text">İkinci hayatta kalma zindanı çok fazla hareket gerektirmez. Ortada kal ve yanlara saldır, ek düşmanları öldürmek ve yıldırımdan kaçmak için zaman yukarı ve aşağı hareket et.</string>
@@ -1284,7 +1287,6 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="stone_thrower">Taş Atıcı</string>
     <string name="knife_thrower">Bıçak Atıcı</string>
 
-    <string name="failed_to_download_model">Çeviri modeli indirilemedi.</string>
     <string name="failed_to_load_news">Haberler yüklenemedi.\nLütfen bağlantınızı kontrol edin.</string>
 
     <string name="open_with">Şununla aç</string>
@@ -1341,7 +1343,6 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="load">Seti yükle</string>
     <string name="saved">Set kaydedildi!</string>
     <string name="nothing_to_load">Yüklenecek bir şey yok!</string>
-    <string name="loaded">Set yüklendi!</string>
     <string name="load_set_title">Bir set seç!</string>
     <string name="load_failed">Yükleme başarısız!</string>
     <string name="enter_set_name_hint">Set adı girin</string>
