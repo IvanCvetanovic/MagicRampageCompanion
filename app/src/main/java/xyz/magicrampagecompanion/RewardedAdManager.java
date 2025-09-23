@@ -18,7 +18,7 @@ public class RewardedAdManager {
     private static final String TAG = "RewardedAdManager";
 
     // For now, always use test ad unit
-    private final String adUnitId = BuildConfig.testAPIKeyEquipmentTester;
+    private final String adUnitId = BuildConfig.realAPIKeyEquipmentTester;
 
     private RewardedAd rewardedAd;
     private boolean isLoading = false;
