@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ItemData.init(this);
         ItemSyncer.run(this);
+        LiveStatsSyncer.sync(this);
 
         // Apply system insets to keep content clear of status/nav bars
         View scroll = findViewById(R.id.mainScroll);

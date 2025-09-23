@@ -1337,4 +1337,25 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="starlight_supertonic_desc">Otorga invulnerabilidad temporal y aumenta el daño del arma durante un breve periodo de tiempo.</string>
     <string name="tonic_of_invulnerability_desc">Proporciona inmunidad a los efectos del veneno y aumenta la armadura.</string>
     <string name="umbranian_water_desc">Elimina el efecto potenciador activo.</string>
+
+    <string name="new_set">Neues Set</string>
+    <string name="recommend">Set holen</string>
+    <string name="load">Set laden</string>
+    <string name="saved">Set gespeichert!</string>
+    <string name="nothing_to_load">Nichts zum Laden!</string>
+    <string name="loaded">Set geladen!</string>
+    <string name="load_set_title">Wähle ein Set!</string>
+    <string name="load_failed">Laden fehlgeschlagen!</string>
+    <string name="enter_set_name_hint">Set-Namen eingeben</string>
+    <string name="save_set_title">Gib einen Namen für dein Set ein:</string>
+    <string name="set_name_empty">Set-Name ist leer!</string>
+    <string name="overwrite_question">Möchten Sie das Set mit demselben Namen überschreiben?</string>
+    <string name="overwrite">Überschreiben?</string>
+    <string name="loaded_named">Set geladen!</string>
+    <string name="delete_question">Möchten Sie dieses Set löschen?</string>
+    <string name="delete">Löschen</string>
+    <string name="set_stats_title">Aktuelle Werte:</string>
+    <string name="no_reward_sets">Keine Belohnungs-Sets definiert!</string>
+    <string name="ad_failed">Anzeige fehlgeschlagen: </string>
+    <string name="ad_still_loading">Anzeige wird noch geladen, bitte später erneut versuchen.</string>
 </resources>

@@ -1337,4 +1337,25 @@
     <string name="starlight_supertonic_desc">Дает временную неуязвимость и повышает урон от оружия на короткое время.</string>
     <string name="tonic_of_invulnerability_desc">Дает иммунитет от эффектов яда и увеличивает броню.</string>
     <string name="umbranian_water_desc">Снимает активный эффект усиления.</string>
+
+    <string name="new_set">Новый набор</string>
+    <string name="recommend">Получить набор</string>
+    <string name="load">Загрузить набор</string>
+    <string name="saved">Набор сохранён!</string>
+    <string name="nothing_to_load">Нечего загружать!</string>
+    <string name="loaded">Набор загружен!</string>
+    <string name="load_set_title">Выберите набор!</string>
+    <string name="load_failed">Ошибка загрузки!</string>
+    <string name="enter_set_name_hint">Введите имя набора</string>
+    <string name="save_set_title">Введите имя для набора:</string>
+    <string name="set_name_empty">Имя набора пустое!</string>
+    <string name="overwrite_question">Хотите перезаписать набор с тем же именем?</string>
+    <string name="overwrite">Перезаписать?</string>
+    <string name="loaded_named">Набор загружен!</string>
+    <string name="delete_question">Хотите удалить этот набор?</string>
+    <string name="delete">Удалить</string>
+    <string name="set_stats_title">Текущие характеристики:</string>
+    <string name="no_reward_sets">Наборы наград не определены!</string>
+    <string name="ad_failed">Ошибка объявления: </string>
+    <string name="ad_still_loading">Объявление всё ещё загружается, попробуйте позже.</string>
 </resources>

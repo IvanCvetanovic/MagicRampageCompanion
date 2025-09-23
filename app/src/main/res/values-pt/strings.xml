@@ -1337,4 +1337,25 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="starlight_supertonic_desc">Concede invulnerabilidade temporária e aumenta o dano das armas por um curto período.</string>
     <string name="tonic_of_invulnerability_desc">Protege contra efeitos de envenenamento e aumenta os pontos de armadura.</string>
     <string name="umbranian_water_desc">Remove o efeito do power-up que estiver ativo.</string>
+
+    <string name="new_set">Novo conjunto</string>
+    <string name="recommend">Obter conjunto</string>
+    <string name="load">Carregar conjunto</string>
+    <string name="saved">Conjunto salvo!</string>
+    <string name="nothing_to_load">Nada para carregar!</string>
+    <string name="loaded">Conjunto carregado!</string>
+    <string name="load_set_title">Escolha um conjunto!</string>
+    <string name="load_failed">Falha ao carregar!</string>
+    <string name="enter_set_name_hint">Digite o nome do conjunto</string>
+    <string name="save_set_title">Digite um nome para o seu conjunto:</string>
+    <string name="set_name_empty">O nome do conjunto está vazio!</string>
+    <string name="overwrite_question">Deseja sobrescrever o conjunto com o mesmo nome?</string>
+    <string name="overwrite">Sobrescrever?</string>
+    <string name="loaded_named">Conjunto carregado!</string>
+    <string name="delete_question">Deseja excluir este conjunto?</string>
+    <string name="delete">Excluir</string>
+    <string name="set_stats_title">Estatísticas atuais:</string>
+    <string name="no_reward_sets">Nenhum conjunto de recompensas definido!</string>
+    <string name="ad_failed">Falha do anúncio: </string>
+    <string name="ad_still_loading">O anúncio ainda está carregando, tente novamente em breve.</string>
 </resources>

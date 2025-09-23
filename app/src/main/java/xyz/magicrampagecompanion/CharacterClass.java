@@ -67,6 +67,10 @@ public class CharacterClass implements Parcelable {
         return null;
     }
 
+    public ClassNames getClassEnum() {
+        return name;
+    }
+
     public int getArmorBonus() {
         return armorBonus;
     }

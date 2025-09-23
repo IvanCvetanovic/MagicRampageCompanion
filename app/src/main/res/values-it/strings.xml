@@ -1338,4 +1338,25 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="starlight_supertonic_desc">Fornisce una invulnerabilitè temporanea e potenzia la produzione di danni da arma per un breve periodo.</string>
     <string name="tonic_of_invulnerability_desc">Fornisce immunità agli effetti del veleno e aumenta la protezione della corazza.</string>
     <string name="umbranian_water_desc">Annulla l\'effetto del potenziamento attivo.</string>
+
+    <string name="new_set">Nuovo set</string>
+    <string name="recommend">Ottieni set</string>
+    <string name="load">Carica set</string>
+    <string name="saved">Set salvato!</string>
+    <string name="nothing_to_load">Niente da caricare!</string>
+    <string name="loaded">Set caricato!</string>
+    <string name="load_set_title">Scegli un set!</string>
+    <string name="load_failed">Caricamento fallito!</string>
+    <string name="enter_set_name_hint">Inserisci il nome del set</string>
+    <string name="save_set_title">Inserisci un nome per il tuo set:</string>
+    <string name="set_name_empty">Il nome del set è vuoto!</string>
+    <string name="overwrite_question">Vuoi sovrascrivere il set con lo stesso nome?</string>
+    <string name="overwrite">Sovrascrivere?</string>
+    <string name="loaded_named">Set caricato!</string>
+    <string name="delete_question">Vuoi eliminare questo set?</string>
+    <string name="delete">Elimina</string>
+    <string name="set_stats_title">Statistiche attuali:</string>
+    <string name="no_reward_sets">Nessun set ricompense definito!</string>
+    <string name="ad_failed">Annuncio fallito: </string>
+    <string name="ad_still_loading">L’annuncio è ancora in caricamento, riprova più tardi.</string>
 </resources>

@@ -150,6 +150,13 @@ public class AchievementsPage extends AppCompatActivity {
         achievements.add(new Achievement(getString(R.string.the_untold_story_3), getString(R.string.the_untold_story_3_desc), Arrays.asList("", "", getString(R.string.moonlit_razor)), Achievement.AchievementCategory.NORMAL));
         achievements.add(new Achievement(getString(R.string.ninth_circle), getString(R.string.ninth_circle_desc), Arrays.asList("", "", getString(R.string.winter_witch_armor)), Achievement.AchievementCategory.NORMAL));
         achievements.add(new Achievement(getString(R.string.the_darkest_side), getString(R.string.the_darkest_side_desc), Arrays.asList("", "", getString(R.string.path_of_exile), "+1"), Achievement.AchievementCategory.NORMAL));
+        achievements.add(new Achievement(getString(R.string.duels_of_destiny), getString(R.string.duels_of_destiny_desc), Arrays.asList("", "400/1200"), Achievement.AchievementCategory.NORMAL));
+        achievements.add(new Achievement(getString(R.string.first_steps_into_destiny), getString(R.string.first_steps_into_destiny_desc), Arrays.asList("", "", getString(R.string.gatekeepers_bionic_arm)), Achievement.AchievementCategory.NORMAL));
+        achievements.add(new Achievement(getString(R.string.bronze_duel_rank_achievement), getString(R.string.bronze_duel_rank_achievement_desc), Arrays.asList("", "200/600", "", "+1"), Achievement.AchievementCategory.NORMAL));
+        achievements.add(new Achievement(getString(R.string.silver_duel_rank_achievement), getString(R.string.silver_duel_rank_achievement_desc), Arrays.asList("", "400/1200", "", "+1"), Achievement.AchievementCategory.NORMAL));
+        achievements.add(new Achievement(getString(R.string.gold_duel_rank_achievement), getString(R.string.gold_duel_rank_achievement_desc), Arrays.asList("", "800/2400", "", "+1"), Achievement.AchievementCategory.NORMAL));
+        achievements.add(new Achievement(getString(R.string.platinum_duel_rank_achievement), getString(R.string.platinum_duel_rank_achievement_desc), Arrays.asList("", "1600/4800", "", "+1"), Achievement.AchievementCategory.NORMAL));
+        achievements.add(new Achievement(getString(R.string.diamond_duel_rank_achievement), getString(R.string.diamond_duel_rank_achievement_desc), Arrays.asList("", "1600/4800", "", "+1"), Achievement.AchievementCategory.NORMAL));
 
         // Not yet released
         achievements.add(new Achievement(getString(R.string.salesman_payback), getString(R.string.salesman_payback_desc), Arrays.asList(), Achievement.AchievementCategory.NOT_RELEASED));
@@ -164,14 +171,7 @@ public class AchievementsPage extends AppCompatActivity {
         achievements.add(new Achievement(getString(R.string.weekly_dungeons_time_30), getString(R.string.weekly_dungeons_time_30_desc), Arrays.asList(), Achievement.AchievementCategory.NOT_RELEASED));
         achievements.add(new Achievement(getString(R.string.weekly_dungeons_time_50), getString(R.string.weekly_dungeons_time_50_desc), Arrays.asList(), Achievement.AchievementCategory.NOT_RELEASED));
         achievements.add(new Achievement(getString(R.string.complete_103), getString(R.string.complete_103_desc), Arrays.asList(), Achievement.AchievementCategory.NOT_RELEASED));
-        achievements.add(new Achievement(getString(R.string.duels_of_destiny), getString(R.string.duels_of_destiny_desc), Arrays.asList("", "400/1200"), Achievement.AchievementCategory.NOT_RELEASED));
-        achievements.add(new Achievement(getString(R.string.bronze_duel_rank_achievement), getString(R.string.bronze_duel_rank_achievement_desc), Arrays.asList("", "200/600", "", "+1"), Achievement.AchievementCategory.NOT_RELEASED));
-        achievements.add(new Achievement(getString(R.string.silver_duel_rank_achievement), getString(R.string.silver_duel_rank_achievement_desc), Arrays.asList("", "400/1200", "", "+1"), Achievement.AchievementCategory.NOT_RELEASED));
-        achievements.add(new Achievement(getString(R.string.gold_duel_rank_achievement), getString(R.string.gold_duel_rank_achievement_desc), Arrays.asList("", "800/2400", "", "+1"), Achievement.AchievementCategory.NOT_RELEASED));
-        achievements.add(new Achievement(getString(R.string.platinum_duel_rank_achievement), getString(R.string.platinum_duel_rank_achievement_desc), Arrays.asList("", "1600/4800", "", "+1"), Achievement.AchievementCategory.NOT_RELEASED));
-        achievements.add(new Achievement(getString(R.string.diamond_duel_rank_achievement), getString(R.string.diamond_duel_rank_achievement_desc), Arrays.asList("", "1600/4800", "", "+1"), Achievement.AchievementCategory.NOT_RELEASED));
-        achievements.add(new Achievement(getString(R.string.first_steps_into_destiny), getString(R.string.first_steps_into_destiny_desc), Arrays.asList("", "", getString(R.string.gatekeepers_bionic_arm)), Achievement.AchievementCategory.NOT_RELEASED));
-    }
+        }
 
     @Override
     protected void attachBaseContext(Context newBase) {

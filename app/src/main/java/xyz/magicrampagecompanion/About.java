@@ -22,27 +22,25 @@ public class About extends AppCompatActivity {
         setContentView(R.layout.activity_about);
     }
 
-    public void openDiscordInvite(View view) {
-        final String inviteUrl = "https://discord.gg/HcGA9x5erx";
-        Uri uri = Uri.parse(inviteUrl);
-
+    // ---------- Shared safe-open helper ----------
+    private void openUrlWithFallback(String url, String playStorePkg, String clipboardLabel) {
+        Uri uri = Uri.parse(url);
         Intent viewIntent = new Intent(Intent.ACTION_VIEW, uri);
         viewIntent.addCategory(Intent.CATEGORY_BROWSABLE);
-
         try {
             startActivity(Intent.createChooser(viewIntent, getString(R.string.open_with)));
         } catch (ActivityNotFoundException e) {
-            // No browser/Discord available → try Play Store (Discord app)
+            // Try Play Store for the corresponding app
             try {
                 startActivity(new Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse("market://details?id=com.discord")
+                        Uri.parse("market://details?id=" + playStorePkg)
                 ));
             } catch (ActivityNotFoundException e2) {
-                // No Play Store either → copy to clipboard + toast
+                // No Play Store either → copy link + toast
                 ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 if (cm != null) {
-                    cm.setPrimaryClip(ClipData.newPlainText("Discord invite", inviteUrl));
+                    cm.setPrimaryClip(ClipData.newPlainText(clipboardLabel, url));
                 }
                 Toast.makeText(
                         this,
@@ -51,6 +49,41 @@ public class About extends AppCompatActivity {
                 ).show();
             }
         }
+    }
+
+    // ---------- Social onClick handlers ----------
+    public void openFacebook(View view) {
+        // Facebook group
+        openUrlWithFallback(
+                "https://www.facebook.com/groups/magicrampage",
+                "com.facebook.katana",
+                "Facebook Group"
+        );
+    }
+
+    public void openInstagram(View view) {
+        openUrlWithFallback(
+                "https://www.instagram.com/ivan_cvetanovich/",
+                "com.instagram.android",
+                "Instagram"
+        );
+    }
+
+    public void openTwitter(View view) {
+        // X/Twitter
+        openUrlWithFallback(
+                "https://x.com/PrOfS3S",
+                "com.twitter.android",
+                "Twitter"
+        );
+    }
+
+    public void openDiscordInvite(View view) {
+        openUrlWithFallback(
+                "https://discord.gg/HcGA9x5erx",
+                "com.discord",
+                "Discord invite"
+        );
     }
 
     @Override

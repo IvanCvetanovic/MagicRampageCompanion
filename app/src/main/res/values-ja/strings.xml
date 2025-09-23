@@ -1336,4 +1336,25 @@
     <string name="starlight_supertonic_desc">短時間の無敵状態を付与し、武器のダメージ出力を強化する</string>
     <string name="tonic_of_invulnerability_desc">毒に対しての免疫を得ることができ、防御力を高められる</string>
     <string name="umbranian_water_desc">発動中の能力強化を無効にする</string>
+
+    <string name="new_set">新しいセット</string>
+    <string name="recommend">セットを取得</string>
+    <string name="load">セットを読み込む</string>
+    <string name="saved">セットを保存しました！</string>
+    <string name="nothing_to_load">読み込むものがありません！</string>
+    <string name="loaded">セットを読み込みました！</string>
+    <string name="load_set_title">セットを選んでください！</string>
+    <string name="load_failed">読み込みに失敗しました！</string>
+    <string name="enter_set_name_hint">セット名を入力</string>
+    <string name="save_set_title">セット名を入力してください：</string>
+    <string name="set_name_empty">セット名が空です！</string>
+    <string name="overwrite_question">同じ名前のセットを上書きしますか？</string>
+    <string name="overwrite">上書き？</string>
+    <string name="loaded_named">セットを読み込みました！</string>
+    <string name="delete_question">このセットを削除しますか？</string>
+    <string name="delete">削除</string>
+    <string name="set_stats_title">現在のステータス：</string>
+    <string name="no_reward_sets">報酬セットが定義されていません！</string>
+    <string name="ad_failed">広告失敗: </string>
+    <string name="ad_still_loading">広告を読み込み中です。後でもう一度お試しください。</string>
 </resources>

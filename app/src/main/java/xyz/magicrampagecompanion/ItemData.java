@@ -21,6 +21,29 @@ public class ItemData {
         return ctx.getString(resId);
     }
 
+    // ================== Dynamic Stats (from LiveStatsSyncer) ==================
+
+    // Skill Tree
+    public static int SkillTreeDaggerBonus = 20;
+    public static int SkillTreeSwordBonus  = 15;
+    public static int SkillTreeStaffBonus  = 20;
+    public static int SkillTreeSpearBonus  = 40;
+    public static int SkillTreeHammerBonus = 60;
+    public static int SkillTreeAxeBonus    = 50;
+    public static int SkillTreeSpeedBonus  = 4;
+    public static int SkillTreeJumpBonus   = 3;
+
+    // Elixirs
+    public static int precisionTonicDamageBonus        = -5;
+    public static int elixirOfDuplicationDamageBonus   = -60;
+    public static int elixirOfDuplicationSpeedBonus    = 5;
+    public static int monstersJuiceDamageBonus         = 60;
+    public static int monstersJuiceArmorBonus          = -40;
+    public static int pepperBrewArmorBonus              = 25;
+    public static int starlightSupertonicDamageBonus   = 70;
+    public static int tonicOfInvulnerabilityArmorBonus = 25;
+
+
     public static void init(Context context) {
         swordList.clear();
         staffList.clear();
@@ -607,23 +630,138 @@ public class ItemData {
         enemyList.add(new Enemy(str(context, R.string.enemy_xmas_mimic), 999999999, 40, 30, 0, 14.0, 28.0, context.getString(R.string.waypoints), context.getString(R.string.stone_thrower), R.drawable.enemy_xmas_mimic));
 
         // Elixirs
-        elixirList.add(new Elixir(str(context, R.string.arcane_precision_tonic), str(context, R.string.arcane_precision_tonic_desc), R.drawable.elixir_arcane_precision_tonic, -5, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.elixir_of_duplication), str(context, R.string.elixir_of_duplication_desc), R.drawable.elixir_elixir_of_duplication, -60, 0, 5));
-        elixirList.add(new Elixir(str(context, R.string.forbidden_flowers_extract), str(context, R.string.forbidden_flowers_extract_desc), R.drawable.elixir_forbidden_flowers_extract, 0, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.instant_charge_blast), str(context, R.string.instant_charge_blast_desc), R.drawable.elixir_instant_charge_blast, 0, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.instant_dark_twin), str(context, R.string.instant_dark_twin_desc), R.drawable.elixir_instant_dark_twin, 0, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.instant_gust), str(context, R.string.instant_gust_desc), R.drawable.elixir_instant_gust, 0, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.instant_radiant_shield), str(context, R.string.instant_radiant_shield_desc), R.drawable.elixir_instant_radiant_shield, 0, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.instant_thunder_wave), str(context, R.string.instant_thunder_wave_desc), R.drawable.elixir_instant_thunder_wave, 0, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.levitation_liqueur), str(context, R.string.levitation_liqueur_desc), R.drawable.elixir_levitation_liqueur,0, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.monsters_juice), str(context, R.string.monsters_juice_desc), R.drawable.elixir_monsters_juice, 60, -40, 0));
-        elixirList.add(new Elixir(str(context, R.string.moonjump_mixture), str(context, R.string.moonjump_mixture_desc), R.drawable.elixir_moonjump_mixture, 0, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.pepper_brew), str(context, R.string.pepper_brew_desc), R.drawable.elixir_pepper_brew, 0, 25, 0));
-        elixirList.add(new Elixir(str(context, R.string.starlight_supertonic), str(context, R.string.starlight_supertonic_desc), R.drawable.elixir_starlight_supertonic, 70, 0, 0));
-        elixirList.add(new Elixir(str(context, R.string.tonic_of_invulnerability), str(context, R.string.tonic_of_invulnerability_desc), R.drawable.elixir_tonic_of_invulnerability, 0, 25, 0));
-        elixirList.add(new Elixir(str(context, R.string.umbranian_water), str(context, R.string.umbranian_water_desc), R.drawable.elixir_umbranian_water, 0, 0, 0));
+        elixirList.add(new Elixir(
+                str(context, R.string.arcane_precision_tonic),
+                str(context, R.string.arcane_precision_tonic_desc),
+                R.drawable.elixir_arcane_precision_tonic,
+                ElixirType.ARCANE_PRECISION_TONIC
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.elixir_of_duplication),
+                str(context, R.string.elixir_of_duplication_desc),
+                R.drawable.elixir_elixir_of_duplication,
+                ElixirType.ELIXIR_OF_DUPLICATION
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.forbidden_flowers_extract),
+                str(context, R.string.forbidden_flowers_extract_desc),
+                R.drawable.elixir_forbidden_flowers_extract,
+                ElixirType.FORBIDDEN_FLOWERS_EXTRACT
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.instant_charge_blast),
+                str(context, R.string.instant_charge_blast_desc),
+                R.drawable.elixir_instant_charge_blast,
+                ElixirType.INSTANT_CHARGE_BLAST
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.instant_dark_twin),
+                str(context, R.string.instant_dark_twin_desc),
+                R.drawable.elixir_instant_dark_twin,
+                ElixirType.INSTANT_DARK_TWIN
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.instant_gust),
+                str(context, R.string.instant_gust_desc),
+                R.drawable.elixir_instant_gust,
+                ElixirType.INSTANT_GUST
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.instant_radiant_shield),
+                str(context, R.string.instant_radiant_shield_desc),
+                R.drawable.elixir_instant_radiant_shield,
+                ElixirType.INSTANT_RADIANT_SHIELD
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.instant_thunder_wave),
+                str(context, R.string.instant_thunder_wave_desc),
+                R.drawable.elixir_instant_thunder_wave,
+                ElixirType.INSTANT_THUNDER_WAVE
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.levitation_liqueur),
+                str(context, R.string.levitation_liqueur_desc),
+                R.drawable.elixir_levitation_liqueur,
+                ElixirType.LEVITATION_LIQUEUR
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.monsters_juice),
+                str(context, R.string.monsters_juice_desc),
+                R.drawable.elixir_monsters_juice,
+                ElixirType.MONSTERS_JUICE
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.moonjump_mixture),
+                str(context, R.string.moonjump_mixture_desc),
+                R.drawable.elixir_moonjump_mixture,
+                ElixirType.MOONJUMP_MIXTURE
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.pepper_brew),
+                str(context, R.string.pepper_brew_desc),
+                R.drawable.elixir_pepper_brew,
+                ElixirType.PEPPER_BREW
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.starlight_supertonic),
+                str(context, R.string.starlight_supertonic_desc),
+                R.drawable.elixir_starlight_supertonic,
+                ElixirType.STARLIGHT_SUPERTONIC
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.tonic_of_invulnerability),
+                str(context, R.string.tonic_of_invulnerability_desc),
+                R.drawable.elixir_tonic_of_invulnerability,
+                ElixirType.TONIC_OF_INVULNERABILITY
+        ));
+        elixirList.add(new Elixir(
+                str(context, R.string.umbranian_water),
+                str(context, R.string.umbranian_water_desc),
+                R.drawable.elixir_umbranian_water,
+                ElixirType.UMBRANIAN_WATER
+        ));
 
-        rewardSets.add(new EquipmentSet() {{ weapon = swordList.get(1); armor = armorList.get(0); ring = ringList.get(0); characterClass = !classList.isEmpty() ? classList.get(0) : null; skills = new boolean[]{ true,true,true,true,true,true,true,true, false,false,false, false, true,true,true,true,true,true,true,true, false,false,false,false,false, true,true,true,true,true,true,true,true,true, false,false,false}; elixir = !elixirList.isEmpty() ? elixirList.get(0) : null; }});
+        // Reward Sets
+        { int w=indexOfWeaponByName(swordList,str(context,R.string.all_seeing_sword)), a=indexOfArmorByName(armorList,str(context,R.string.warden_of_demons)), r=indexOfRingByName(ringList,str(context,R.string.spektator)), c=indexOfClassByEnum(classList,ClassNames.WARRIOR); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=swordList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true, false,false,false, false, true,true,true,true,true,true,true,true, false,false,false,false,false, true,true,true,true,true,true,true,true,true, false,false,false}; elixir=null; ringElement=Elements.DARKNESS; }}); }
+        { int w=indexOfWeaponByName(hammerList,str(context,R.string.falcon_hammer)), a=indexOfArmorByName(armorList,str(context,R.string.heros_set_plus)), r=indexOfRingByName(ringList,str(context,R.string.falcon_ring)), c=indexOfClassByEnum(classList,ClassNames.ELITE_WARRIOR); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=hammerList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+        { int w=indexOfWeaponByName(daggerList,str(context,R.string.venomous_dagger)), a=indexOfArmorByName(armorList,str(context,R.string.tunic_of_distant_ancestors)), r=indexOfRingByName(ringList,str(context,R.string.ghostwalker)), c=indexOfClassByEnum(classList,ClassNames.ROGUE); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=daggerList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false}; elixir=null; weaponElement=Elements.EARTH; ringElement=Elements.EARTH; }}); }
+        { int w=indexOfWeaponByName(swordList,str(context,R.string.whisper_of_death)), a=indexOfArmorByName(armorList,str(context,R.string.storm)), r=indexOfRingByName(ringList,str(context,R.string.the_daemon_codices)), c=indexOfClassByEnum(classList,ClassNames.HIGH_MAGE); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=swordList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false}; elixir=null; }}); }
+        { int w=indexOfWeaponByName(swordList,str(context,R.string.all_seeing_sword)), a=indexOfArmorByName(armorList,str(context,R.string.swamp_witch_suit)), r=indexOfRingByName(ringList,str(context,R.string.nightshade)), c=indexOfClassByEnum(classList,ClassNames.HIGH_MAGE); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=swordList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false}; elixir=null; armorElement=Elements.DARKNESS; ringElement=Elements.DARKNESS; }}); }
+        { int w=indexOfWeaponByName(daggerList,str(context,R.string.iron_dagger_plus)), a=indexOfArmorByName(armorList,str(context,R.string.barrenlands_banditin)), r=indexOfRingByName(ringList,str(context,R.string.spektator)), c=indexOfClassByEnum(classList,ClassNames.HIGH_MAGE); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=daggerList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false}; elixir=null; armorElement=Elements.LIGHT; ringElement=Elements.LIGHT; weaponElement=Elements.LIGHT; }}); }
+        { int w=indexOfWeaponByName(swordList,str(context,R.string.arachnid_sword)), a=indexOfArmorByName(armorList,str(context,R.string.time_patroller_suit)), r=indexOfRingByName(ringList,str(context,R.string.spektator)), c=indexOfClassByEnum(classList,ClassNames.WARRIOR); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=swordList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false}; elixir=null; armorElement=Elements.DARKNESS; ringElement=Elements.DARKNESS; weaponElement=Elements.DARKNESS; }}); }
+        { int w=indexOfWeaponByName(spearList,str(context,R.string.ruby_queens_spear)), a=indexOfArmorByName(armorList,str(context,R.string.swamp_witch_suit)), r=indexOfRingByName(ringList,str(context,R.string.spektator)), c=indexOfClassByEnum(classList,ClassNames.DRUID); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=spearList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false}; elixir=null; armorElement=Elements.FIRE; ringElement=Elements.FIRE; }}); }
+        { int w=indexOfWeaponByName(swordList,str(context,R.string.volcano_sword)), a=indexOfArmorByName(armorList,str(context,R.string.swamp_witch_suit)), r=indexOfRingByName(ringList,str(context,R.string.spektator)), c=indexOfClassByEnum(classList,ClassNames.RANGER); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=swordList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false}; elixir=null; armorElement=Elements.FIRE; ringElement=Elements.FIRE; }}); }
+        { int w=indexOfWeaponByName(swordList,str(context,R.string.dawnlight)), a=indexOfArmorByName(armorList,str(context,R.string.robe_of_imminent_fires)), r=indexOfRingByName(ringList,str(context,R.string.ghostwalker)), c=indexOfClassByEnum(classList,ClassNames.WARLOCK); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=swordList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false}; elixir=null; ringElement=Elements.LIGHT; }}); }
+        { int w=indexOfWeaponByName(spearList,str(context,R.string.air_piercer)), a=indexOfArmorByName(armorList,str(context,R.string.wind_witch_suit)), r=indexOfRingByName(ringList,str(context,R.string.falcon_ring)), c=indexOfClassByEnum(classList,ClassNames.RANGER); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=spearList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false}; elixir=null; }}); }
+        { int w=indexOfWeaponByName(staffList,str(context,R.string.the_ancient_codices)), a=indexOfArmorByName(armorList,str(context,R.string.tunic_of_endless_justice)), r=indexOfRingByName(ringList,str(context,R.string.spektator)), c=indexOfClassByEnum(classList,ClassNames.DRUID); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=staffList.get(w); weaponElement=Elements.LIGHT; armor=armorList.get(a); ring=ringList.get(r); ringElement=Elements.LIGHT; characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+        { int w=indexOfWeaponByName(staffList,str(context,R.string.voidcaller_staff)), a=indexOfArmorByName(armorList,str(context,R.string.scarlet_shadowweaver)), r=indexOfRingByName(ringList,str(context,R.string.whisper_of_death)), c=indexOfClassByEnum(classList,ClassNames.WITCHDOCTOR); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=staffList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+        { int w=indexOfWeaponByName(daggerList,str(context,R.string.shooting_star_shuriken)), a=indexOfArmorByName(armorList,str(context,R.string.desert_rogue_suit)), r=indexOfRingByName(ringList,str(context,R.string.spektator)), c=indexOfClassByEnum(classList,ClassNames.WITCHDOCTOR); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=daggerList.get(w); weaponElement=Elements.LIGHT; armor=armorList.get(a); armorElement=Elements.LIGHT; ring=ringList.get(r); ringElement=Elements.LIGHT; characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+        { int w=indexOfWeaponByName(staffList,str(context,R.string.the_ancient_codices)), a=indexOfArmorByName(armorList,str(context,R.string.swamp_witch_suit)), r=indexOfRingByName(ringList,str(context,R.string.sea_wave_ring)), c=indexOfClassByEnum(classList,ClassNames.HIGH_MAGE); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=staffList.get(w); weaponElement=Elements.WATER; armor=armorList.get(a); armorElement=Elements.WATER; ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+        { int w=indexOfWeaponByName(swordList,str(context,R.string.golden_needle)), a=indexOfArmorByName(armorList,str(context,R.string.wind_witch_suit)), r=indexOfRingByName(ringList,str(context,R.string.vindicator_guardian)), c=indexOfClassByEnum(classList,ClassNames.RANGER); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=swordList.get(w); weaponElement=Elements.AIR; armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+        { int w=indexOfWeaponByName(staffList,str(context,R.string.compendium_of_trees)), a=indexOfArmorByName(armorList,str(context,R.string.robe_of_distant_visions)), r=indexOfRingByName(ringList,str(context,R.string.vina)), c=indexOfClassByEnum(classList,ClassNames.DRUID); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=staffList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+        { int w=indexOfWeaponByName(staffList,str(context,R.string.hippie_dragon_staff_plus)), a=indexOfArmorByName(armorList,str(context,R.string.protector_of_the_oracle)), r=indexOfRingByName(ringList,str(context,R.string.vina)), c=indexOfClassByEnum(classList,ClassNames.DRUID); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=staffList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+        { int w=indexOfWeaponByName(staffList,str(context,R.string.stormcaller)), a=indexOfArmorByName(armorList,str(context,R.string.interrogator)), r=indexOfRingByName(ringList,str(context,R.string.tidecaller_ring)), c=indexOfClassByEnum(classList,ClassNames.PALADIN); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=staffList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+        { int w=indexOfWeaponByName(hammerList,str(context,R.string.enlightened_hammer)), a=indexOfArmorByName(armorList,str(context,R.string.destroyer_of_the_corrupted)), r=indexOfRingByName(ringList,str(context,R.string.whisper_of_light)), c=indexOfClassByEnum(classList,ClassNames.PALADIN); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=hammerList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
+
+    }
+
+    private static int indexOfWeaponByName(List<Weapon> list, String name) {
+        for (int i = 0; i < list.size(); i++) if (list.get(i).getName().equalsIgnoreCase(name)) return i;
+        return -1;
+    }
+    private static int indexOfArmorByName(List<Armor> list, String name) {
+        for (int i = 0; i < list.size(); i++) if (list.get(i).getName().equalsIgnoreCase(name)) return i;
+        return -1;
+    }
+    private static int indexOfRingByName(List<Ring> list, String name) {
+        for (int i = 0; i < list.size(); i++) if (list.get(i).getName().equalsIgnoreCase(name)) return i;
+        return -1;
+    }
+    private static int indexOfClassByEnum(List<CharacterClass> list, ClassNames cn) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getClassEnum() == cn) return i;
+        }
+        return -1;
     }
 }
 

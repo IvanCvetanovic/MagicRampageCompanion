@@ -25,7 +25,7 @@ public final class StatsCalculator {
 
         fx.damageMult *= (1.0 + (dmg / 100.0));
         fx.armorMult  *= (1.0 + (arm / 100.0));
-        fx.speedAddPct *= spd;
+        fx.speedAddPct *= (1.0 + (spd / 100.0));
 
         return fx;
     }
@@ -150,7 +150,7 @@ public final class StatsCalculator {
             if (ring != null)   armorVal *= (1 + ring.getArmorBonus() / 100.0);
             if (weapon != null) armorVal *= (1 + weapon.getArmorBonus() / 100.0);
             if (clazz != null)  armorVal *= (1 + clazz.getArmorBonus() / 100.0);
-            if (skillsSafe(skills, 18)) armorVal *= 1.25;
+            if (skillsSafe(skills, 25)) armorVal *= 1.20;
 
             // Elixir multiplier
             armorVal *= fx.armorMult;
@@ -183,11 +183,11 @@ public final class StatsCalculator {
         double wSpd = (weapon != null ? weapon.getSpeed() : 0) / 100.0 + 1;
         double rSpd = (ring   != null ? ring.getSpeed()   : 0) / 100.0 + 1;
 
-        int speedPct = (int) ((aSpd * wSpd * rSpd) * 100 - 100);
+        double speedPct = (aSpd * wSpd * rSpd) * 100 - 100;
         if (clazz != null) speedPct += clazz.getSpeedBonus();
         if (skillsSafe(skills, 0)) speedPct += 4;
-        speedPct = (int) ((int) Math.round(speedPct * fx.speedMult) * fx.speedAddPct);
-        out.speedPct = speedPct;
+        speedPct = (int) (Math.round(speedPct * fx.speedMult) * fx.speedAddPct);
+        out.speedPct = (int) speedPct;
 
         double aJump = (armor  != null ? armor.getJump()  : 0) / 100.0 + 1;
         double wJump = (weapon != null ? weapon.getJump() : 0) / 100.0 + 1;

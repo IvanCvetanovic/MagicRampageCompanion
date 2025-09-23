@@ -121,16 +121,30 @@ public class EquipmentTester extends AppCompatActivity {
 
                 if (rewardedAdManager != null && rewardedAdManager.isReady()) {
                     rewardedAdManager.show(EquipmentTester.this, new RewardedAdManager.RewardCallback() {
-                        @Override
-                        public void onUserEarnedReward(RewardItem rewardItem) {
+                        @Override public void onUserEarnedReward(RewardItem rewardItem) {
                             if (!ItemData.rewardSets.isEmpty()) {
-                                // For now, just take the first reward set
-                                EquipmentSet reward = ItemData.rewardSets.get(0);
+                                int idx = new java.util.Random().nextInt(ItemData.rewardSets.size());
+                                EquipmentSet src = ItemData.rewardSets.get(idx);
 
-                                // Add it to the page
-                                appendLoadedSet(reward, "Reward Set");
+                                EquipmentSet set = normalizeCopy(src); // your existing copy
+
+                                // Preserve manual element overrides from the source reward set
+                                if (src.weaponElement != null && src.weaponElement != Elements.NEUTRAL &&
+                                        (set.weapon == null || set.weapon.getElement() == null || set.weapon.getElement() == Elements.NEUTRAL)) {
+                                    set.weaponElement = src.weaponElement;
+                                }
+                                if (src.armorElement != null && src.armorElement != Elements.NEUTRAL &&
+                                        (set.armor == null || set.armor.getElement() == null || set.armor.getElement() == Elements.NEUTRAL)) {
+                                    set.armorElement = src.armorElement;
+                                }
+                                if (src.ringElement != null && src.ringElement != Elements.NEUTRAL &&
+                                        (set.ring == null || set.ring.getElement() == null || set.ring.getElement() == Elements.NEUTRAL)) {
+                                    set.ringElement = src.ringElement;
+                                }
+
+                                appendLoadedSet(set, "Reward Set (random #" + (idx + 1) + ")");
                             } else {
-                                Toast.makeText(EquipmentTester.this, "No reward sets defined!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EquipmentTester.this, R.string.no_reward_sets, Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -141,16 +155,16 @@ public class EquipmentTester extends AppCompatActivity {
 
                         @Override
                         public void onAdFailed(AdError error) {
-                            Toast.makeText(EquipmentTester.this, "Ad failed: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EquipmentTester.this, R.string.ad_failed + error.getMessage(), Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
                         public void onAdNotReady() {
-                            Toast.makeText(EquipmentTester.this, "Ad is still loading, try again soon.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EquipmentTester.this, R.string.ad_still_loading, Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {
-                    Toast.makeText(EquipmentTester.this, "Ad is loading, try again soon.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EquipmentTester.this, R.string.ad_still_loading, Toast.LENGTH_SHORT).show();
                     if (rewardedAdManager != null) rewardedAdManager.loadAd(EquipmentTester.this);
                 }
             }
@@ -395,7 +409,7 @@ public class EquipmentTester extends AppCompatActivity {
         TextView tvDamage = content.findViewById(R.id.tvDamage);
         tvDamage.setText(
                 android.text.Html.fromHtml(
-                        dmgLabel + ": " + baseDamage + " <font color='#8cfdfc'>+" + bonusDamage + "</font>",
+                        dmgLabel + baseDamage + " <font color='#8cfdfc'>+" + bonusDamage + "</font>",
                         android.text.Html.FROM_HTML_MODE_LEGACY
                 )
         );
@@ -404,7 +418,7 @@ public class EquipmentTester extends AppCompatActivity {
         TextView tvArmor = content.findViewById(R.id.tvArmor);
         tvArmor.setText(
                 android.text.Html.fromHtml(
-                        armorLabel + ": " + baseArmor + " <font color='#8cfdfc'>+" + bonusArmor + "</font>",
+                        armorLabel + baseArmor + " <font color='#8cfdfc'>+" + bonusArmor + "</font>",
                         android.text.Html.FROM_HTML_MODE_LEGACY
                 )
         );
@@ -416,13 +430,13 @@ public class EquipmentTester extends AppCompatActivity {
 
         // --- Speed / Jump / Pierce numbers ---
         TextView tvSpeed = content.findViewById(R.id.tvSpeed);
-        tvSpeed.setText(speedLabel + ": +" + stats.speedPct + "%");
+        tvSpeed.setText(speedLabel + stats.speedPct + "%");
 
         TextView tvJump = content.findViewById(R.id.tvJump);
-        tvJump.setText(jumpLabel + ": +" + stats.jumpPct + "%");
+        tvJump.setText(jumpLabel + stats.jumpPct + "%");
 
         TextView tvPierce = content.findViewById(R.id.tvPierce);
-        tvPierce.setText(pierceLabel + ": " + stats.pierce);
+        tvPierce.setText(pierceLabel + stats.pierce);
 
         // --- Boolean flags (each has its own TextView in your layout) ---
         boolean pierceArea  = (set.weapon != null && set.weapon.isEnablePierceAreaDamage());
@@ -469,7 +483,7 @@ public class EquipmentTester extends AppCompatActivity {
     /** Builds "Label: ★★★☆☆" using your star drawable as ImageSpans. */
     private CharSequence starsLine(String label, int starCount, int iconPx) {
         android.text.SpannableStringBuilder ssb = new android.text.SpannableStringBuilder();
-        ssb.append(label).append(": ");
+        ssb.append(label);
 
         android.graphics.drawable.Drawable star = androidx.core.content.ContextCompat.getDrawable(this, R.drawable.star);
         if (star != null) {
@@ -691,6 +705,32 @@ public class EquipmentTester extends AppCompatActivity {
         if (d.getButton(AlertDialog.BUTTON_NEGATIVE) != null)
             d.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(cancel);
     }
+
+    private EquipmentSet normalizeCopy(EquipmentSet src) {
+        EquipmentSet dst = new EquipmentSet();
+
+        // Shallow copy items/classes/elixir
+        dst.weapon = src.weapon;
+        dst.armor = src.armor;
+        dst.ring = src.ring;
+        dst.characterClass = src.characterClass;
+        dst.elixir = src.elixir;
+
+        // Skills: clone to avoid sharing the same array
+        dst.skills = (src.skills != null) ? src.skills.clone() : null;
+
+        // Upgrades default like in onActivityResult
+        dst.weaponUpgrades = (dst.weapon != null) ? dst.weapon.getUpgrades() : 0;
+        dst.armorUpgrades  = (dst.armor  != null) ? dst.armor.getUpgrades()  : 0;
+
+        // Elements default like in onActivityResult
+        dst.weaponElement = (dst.weapon != null) ? dst.weapon.getElement() : null;
+        dst.armorElement  = (dst.armor  != null) ? dst.armor.getElement()  : null;
+        dst.ringElement   = (dst.ring   != null) ? dst.ring.getElement()   : null;
+
+        return dst;
+    }
+
 }
 
 

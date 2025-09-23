@@ -1335,4 +1335,25 @@
     <string name="starlight_supertonic_desc">Дає тимчасову невразливість і підвищує шкоду від зброї на короткий час.</string>
     <string name="tonic_of_invulnerability_desc">Дає імунітет від ефектів отрути та збільшує броню.</string>
     <string name="umbranian_water_desc">Знімає активний ефект посилення.</string>
+
+    <string name="new_set">Новий набір</string>
+    <string name="recommend">Отримати набір</string>
+    <string name="load">Завантажити набір</string>
+    <string name="saved">Набір збережено!</string>
+    <string name="nothing_to_load">Немає що завантажувати!</string>
+    <string name="loaded">Набір завантажено!</string>
+    <string name="load_set_title">Виберіть набір!</string>
+    <string name="load_failed">Помилка завантаження!</string>
+    <string name="enter_set_name_hint">Введіть назву набору</string>
+    <string name="save_set_title">Введіть назву для вашого набору:</string>
+    <string name="set_name_empty">Назва набору порожня!</string>
+    <string name="overwrite_question">Бажаєте перезаписати набір з тією ж назвою?</string>
+    <string name="overwrite">Перезаписати?</string>
+    <string name="loaded_named">Набір завантажено!</string>
+    <string name="delete_question">Видалити цей набір?</string>
+    <string name="delete">Видалити</string>
+    <string name="set_stats_title">Поточна статистика:</string>
+    <string name="no_reward_sets">Набори винагород не визначені!</string>
+    <string name="ad_failed">Помилка оголошення: </string>
+    <string name="ad_still_loading">Оголошення ще завантажується, спробуйте знову пізніше.</string>
 </resources>
