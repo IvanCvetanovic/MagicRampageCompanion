@@ -147,25 +147,43 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         // Compute stats once
         SetStats stats = StatsCalculator.compute(set);
 
-        // Armor value (base + bonus)
+        // Armor value (base + bonus/penalty)
         if (set.armor != null) {
             int baseArmor = set.armor.getMaxArmor();
-            int bonusArmor = Math.max(0, stats.armor - baseArmor);
-            String armorText = baseArmor + " <font color='#8cfdfc'>+" + bonusArmor + "</font>";
+            int bonusArmor = stats.armor - baseArmor;
+
+            String armorText;
+            if (bonusArmor > 0) {
+                armorText = baseArmor + " <font color='#8cfdfc'>+" + bonusArmor + "</font>";
+            } else if (bonusArmor < 0) {
+                armorText = baseArmor + " <font color='#ff4c4c'>-" + Math.abs(bonusArmor) + "</font>";
+            } else {
+                armorText = String.valueOf(baseArmor);
+            }
             h.armorValue.setText(Html.fromHtml(armorText, Html.FROM_HTML_MODE_LEGACY));
         } else {
             h.armorValue.setText(h.itemView.getContext().getString(R.string.armor));
         }
 
-        // Weapon value (base + bonus)
+// Weapon value (base + bonus/penalty)
         if (set.weapon != null) {
             int baseDmg = set.weapon.getMaxDamage();
-            int bonusDmg = Math.max(0, stats.damage - baseDmg);
-            String weaponText = baseDmg + " <font color='#8cfdfc'>+" + bonusDmg + "</font>";
+            int bonusDmg = stats.damage - baseDmg;
+
+            String weaponText;
+            if (bonusDmg > 0) {
+                weaponText = baseDmg + " <font color='#8cfdfc'>+" + bonusDmg + "</font>";
+            } else if (bonusDmg < 0) {
+                weaponText = baseDmg + " <font color='#ff4c4c'>-" + Math.abs(bonusDmg) + "</font>";
+            } else {
+                weaponText = String.valueOf(baseDmg);
+            }
             h.weaponValue.setText(Html.fromHtml(weaponText, Html.FROM_HTML_MODE_LEGACY));
         } else {
             h.weaponValue.setText(h.itemView.getContext().getString(R.string.damage));
         }
+
+
 
         // Fire resistance side icon
         if (stats.fireRes) {

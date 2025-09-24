@@ -389,10 +389,23 @@ public class EquipmentTester extends AppCompatActivity {
 
         // --- base/bonus pieces ---
         int baseDamage = (set.weapon != null) ? set.weapon.getMaxDamage() : 0;
-        int bonusDamage = Math.max(0, stats.damage - baseDamage);
+        int bonusDamage = stats.damage - baseDamage;
 
-        int baseArmor = (set.armor != null) ? set.armor.getMaxArmor() : 0;
-        int bonusArmor = Math.max(0, stats.armor - baseArmor);
+        // --- ARMOR: use the same upgraded-base as StatsCalculator before multipliers ---
+        int baseArmor;
+        if (set.armor != null) {
+            int aUpgradesTotal  = Math.max(set.armor.getUpgrades(), 1);
+            int aUpgradesChosen = Math.min(Math.max(set.armorUpgrades, 0), aUpgradesTotal);
+
+            double baseArmorRaw = set.armor.getMinArmor()
+                    + ((set.armor.getMaxArmor() - set.armor.getMinArmor()) / (double) aUpgradesTotal) * aUpgradesChosen;
+
+            // Match rounding style consistently (ceil keeps the base from being undercounted).
+            baseArmor = (int) Math.ceil(baseArmorRaw);
+        } else {
+            baseArmor = 0;
+        }
+        int bonusArmor = stats.armor - baseArmor;
 
         // --- labels ---
         String dmgLabel    = getString(R.string.damage_in_calculation);
@@ -407,21 +420,36 @@ public class EquipmentTester extends AppCompatActivity {
 
         // --- Damage (base + bonus) ---
         TextView tvDamage = content.findViewById(R.id.tvDamage);
+        String dmgText;
+        if (bonusDamage > 0) {
+            dmgText = dmgLabel + baseDamage +
+                    " <font color='#8cfdfc'>+" + bonusDamage + "</font>";
+        } else if (bonusDamage < 0) {
+            dmgText = dmgLabel + baseDamage +
+                    " <font color='#ff4c4c'>-" + Math.abs(bonusDamage) + "</font>";
+        } else {
+            dmgText = dmgLabel + baseDamage;
+        }
         tvDamage.setText(
-                android.text.Html.fromHtml(
-                        dmgLabel + baseDamage + " <font color='#8cfdfc'>+" + bonusDamage + "</font>",
-                        android.text.Html.FROM_HTML_MODE_LEGACY
-                )
+                android.text.Html.fromHtml(dmgText, android.text.Html.FROM_HTML_MODE_LEGACY)
         );
 
-        // --- Armor (base + bonus) ---
+// --- Armor (base + bonus/penalty) ---
         TextView tvArmor = content.findViewById(R.id.tvArmor);
+        String armorText;
+        if (bonusArmor > 0) {
+            armorText = armorLabel + baseArmor +
+                    " <font color='#8cfdfc'>+" + bonusArmor + "</font>";
+        } else if (bonusArmor < 0) {
+            armorText = armorLabel + baseArmor +
+                    " <font color='#ff4c4c'>-" + Math.abs(bonusArmor) + "</font>";
+        } else {
+            armorText = armorLabel + baseArmor;
+        }
         tvArmor.setText(
-                android.text.Html.fromHtml(
-                        armorLabel + baseArmor + " <font color='#8cfdfc'>+" + bonusArmor + "</font>",
-                        android.text.Html.FROM_HTML_MODE_LEGACY
-                )
+                android.text.Html.fromHtml(armorText, android.text.Html.FROM_HTML_MODE_LEGACY)
         );
+
 
         // --- Attack Speed (stars) ---
         TextView tvAttackSpeed = content.findViewById(R.id.tvAttackSpeed);
@@ -450,7 +478,6 @@ public class EquipmentTester extends AppCompatActivity {
                 TextView.BufferType.SPANNABLE
         );
 
-        // NOTE: your XML id is "tvProjectilePersistenec" (typo). Use it as-is or fix the XML & update here.
         TextView tvProjectile = content.findViewById(R.id.tvProjectilePersistence);
         tvProjectile.setText(
                 checkLine(getString(R.string.projectile_persistence), projPersist, iconPx),
@@ -469,6 +496,9 @@ public class EquipmentTester extends AppCompatActivity {
                 TextView.BufferType.SPANNABLE
         );
 
+        // (Optional) quick sanity log to verify numbers:
+        Log.d("STATS_UI", "baseArmor=" + baseArmor + " finalArmor=" + stats.armor + " bonusArmor=" + bonusArmor);
+
         AlertDialog dlg = new AlertDialog.Builder(this)
                 .setTitle(R.string.set_stats_title)
                 .setView(content)
@@ -477,8 +507,6 @@ public class EquipmentTester extends AppCompatActivity {
 
         tintDialogButtons(dlg);
     }
-
-
 
     /** Builds "Label: ★★★☆☆" using your star drawable as ImageSpans. */
     private CharSequence starsLine(String label, int starCount, int iconPx) {

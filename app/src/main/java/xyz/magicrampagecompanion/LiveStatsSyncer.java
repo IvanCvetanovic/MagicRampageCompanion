@@ -224,10 +224,14 @@ public final class LiveStatsSyncer {
 
                 // ======== Elixirs (multipliers → +/- %) ========
                 case "ARCANE_PRECISION_TONIC_DAMAGE_NERF": {
-                    // Example: 1.05 -> -5 (nerf)
-                    int pct = toPercentNegFromMultiplier(value);
-                    return setIntWithLog("ARCANE_PRECISION_TONIC_DAMAGE_NERF(raw=" + value + ")",
-                            ItemData.precisionTonicArmorBonus, pct, v -> ItemData.precisionTonicArmorBonus = v);
+                    // Force a fixed nerf of -15
+                    int pct = -15;
+                    return setIntWithLog(
+                            "ARCANE_PRECISION_TONIC_DAMAGE_NERF(raw=" + value + ")",
+                            ItemData.precisionTonicArmorBonus,
+                            pct,
+                            v -> ItemData.precisionTonicArmorBonus = v
+                    );
                 }
                 case "ELIXIR_OF_DUPLICATION_DAMAGE_NERF": {
                     int pct = toPercentNegFromMultiplier(value);
