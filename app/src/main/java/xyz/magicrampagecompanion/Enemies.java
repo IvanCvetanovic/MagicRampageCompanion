@@ -1,14 +1,17 @@
 package xyz.magicrampagecompanion;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 
 import java.util.List;
 
@@ -20,14 +23,29 @@ public class Enemies extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-EdgeToEdge.enable(this);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_enemies);
+
+        final View root = findViewById(R.id.enemies_root);
+        // Save base paddings so we don't accumulate on re-applies
+        final int baseL = root.getPaddingLeft();
+        final int baseT = root.getPaddingTop();
+        final int baseR = root.getPaddingRight();
+        final int baseB = root.getPaddingBottom();
+
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            // Push content below status bar / cutout and above nav bar
+            root.setPadding(baseL, baseT + bars.top, baseR, baseB + bars.bottom);
+            return insets;
+        });
+        ViewCompat.requestApplyInsets(root);
 
         recyclerView = findViewById(R.id.recyclerViewEnemies);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        recyclerView.setClipToPadding(false); // keep last row visible above nav inset
 
-        // ← use your existing ItemData.enemyList
         loadEnemies(ItemData.enemyList);
     }
 

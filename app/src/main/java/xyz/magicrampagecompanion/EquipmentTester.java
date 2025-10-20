@@ -41,7 +41,7 @@ public class EquipmentTester extends AppCompatActivity {
     // Sounds
     private SoundPool soundPool;
     private int sfxClickId = 0;      // generic UI click
-    private int sfxBagId = 0;        // equip / save / confirm
+    private int sfxBagId = 0;        // (kept loaded, but not used anymore for actions)
     private int sfxWeaponId = 0;     // weapon-ish action
     private int sfxPotionId = 0;     // elixir confirm
 
@@ -72,9 +72,9 @@ public class EquipmentTester extends AppCompatActivity {
         rv.setHasFixedSize(true);
 
         adapter = new EquipmentSetAdapter(new EquipmentSetAdapter.Listener() {
-            @Override public void onPickArmor(int position)  { playSfx(sfxBagId); pendingPosition = position; openItemSelection(1); }
-            @Override public void onPickRing(int position)   { playSfx(sfxBagId); pendingPosition = position; openItemSelection(2); }
-            @Override public void onPickWeapon(int position) { playSfx(sfxBagId); pendingPosition = position; openItemSelection(3); }
+            @Override public void onPickArmor(int position)  { playSfx(sfxClickId); pendingPosition = position; openItemSelection(1); }
+            @Override public void onPickRing(int position)   { playSfx(sfxClickId); pendingPosition = position; openItemSelection(2); }
+            @Override public void onPickWeapon(int position) { playSfx(sfxClickId); pendingPosition = position; openItemSelection(3); }
             @Override public void onPickClass(int position)  { playSfx(sfxClickId); pendingPosition = position; openItemSelection(4); }
             @Override public void onPickSkills(int position) { playSfx(sfxClickId); pendingPosition = position; openSkillPicker(); }
             @Override public void onRemoveSet(int position)  { playSfx(sfxClickId); adapter.removeAt(position); }
@@ -150,7 +150,7 @@ public class EquipmentTester extends AppCompatActivity {
 
                         @Override
                         public void onAdClosed() {
-                            // Optional: maybe toast or UI refresh
+                            // Optional
                         }
 
                         @Override
@@ -249,7 +249,6 @@ public class EquipmentTester extends AppCompatActivity {
 
         final AlertDialog[] dlgHolder = new AlertDialog[1];
 
-        // This is a *different* adapter (SavedSetsAdapter, not EquipmentSetAdapter)
         final SavedSetsAdapter[] holder = new SavedSetsAdapter[1];
 
         SavedSetsAdapter savedAdapter = new SavedSetsAdapter(
@@ -258,7 +257,7 @@ public class EquipmentTester extends AppCompatActivity {
                     EquipmentSet loaded = SaveLoadManager.loadSetByName(this, name);
                     if (loaded != null) {
                         appendLoadedSet(loaded, name);
-                        playSfx(sfxBagId);
+                        playSfx(sfxClickId);
                         if (dlgHolder[0] != null) dlgHolder[0].dismiss();
                     } else {
                         Toast.makeText(this, R.string.load_failed, Toast.LENGTH_SHORT).show();
@@ -270,7 +269,7 @@ public class EquipmentTester extends AppCompatActivity {
                             .setMessage(getString(R.string.delete_question, name))
                             .setNegativeButton(android.R.string.cancel, (d,w) -> playSfx(sfxClickId))
                             .setPositiveButton(R.string.delete, (d,w) -> {
-                                playSfx(sfxBagId);
+                                playSfx(sfxClickId);
                                 SaveLoadManager.deleteNamed(this, name);
                                 if (holder[0] != null) {
                                     holder[0].removeName(name);
@@ -286,7 +285,6 @@ public class EquipmentTester extends AppCompatActivity {
         holder[0] = savedAdapter;
 
         list.setAdapter(savedAdapter);
-
 
         AlertDialog dlg = new AlertDialog.Builder(this)
                 .setTitle(R.string.load_set_title)
@@ -334,7 +332,7 @@ public class EquipmentTester extends AppCompatActivity {
 
         adapter.notifyItemChanged(position);
         requestRecalc();
-        playSfx(sfxBagId);
+        playSfx(sfxClickId);
     }
     // ---- END ELEMENT PICKER ----
 
@@ -355,7 +353,7 @@ public class EquipmentTester extends AppCompatActivity {
                 .setView(container)
                 .setNegativeButton(android.R.string.cancel, (dlg, w) -> playSfx(sfxClickId))
                 .setPositiveButton(android.R.string.ok, (dlg, w) -> {
-                    playSfx(sfxBagId);
+                    playSfx(sfxClickId);
                     String name = input.getText().toString().trim();
                     if (name.isEmpty()) {
                         Toast.makeText(this, R.string.set_name_empty, Toast.LENGTH_SHORT).show();
@@ -366,7 +364,7 @@ public class EquipmentTester extends AppCompatActivity {
                                 .setMessage(getString(R.string.overwrite_question, name))
                                 .setNegativeButton(android.R.string.cancel, (d2, w2) -> playSfx(sfxClickId))
                                 .setPositiveButton(R.string.overwrite, (d2, w2) -> {
-                                    playSfx(sfxBagId);
+                                    playSfx(sfxClickId);
                                     SaveLoadManager.saveSetNamed(this, name, set);
                                     Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show();
                                 })
@@ -391,7 +389,7 @@ public class EquipmentTester extends AppCompatActivity {
         int baseDamage = (set.weapon != null) ? set.weapon.getMaxDamage() : 0;
         int bonusDamage = stats.damage - baseDamage;
 
-        // --- ARMOR: use the same upgraded-base as StatsCalculator before multipliers ---
+        // --- ARMOR base calculation (matches StatsCalculator) ---
         int baseArmor;
         if (set.armor != null) {
             int aUpgradesTotal  = Math.max(set.armor.getUpgrades(), 1);
@@ -400,14 +398,12 @@ public class EquipmentTester extends AppCompatActivity {
             double baseArmorRaw = set.armor.getMinArmor()
                     + ((set.armor.getMaxArmor() - set.armor.getMinArmor()) / (double) aUpgradesTotal) * aUpgradesChosen;
 
-            // Match rounding style consistently (ceil keeps the base from being undercounted).
             baseArmor = (int) Math.ceil(baseArmorRaw);
         } else {
             baseArmor = 0;
         }
         int bonusArmor = stats.armor - baseArmor;
 
-        // --- labels ---
         String dmgLabel    = getString(R.string.damage_in_calculation);
         String armorLabel  = getString(R.string.armor_in_calculation);
         String speedLabel  = getString(R.string.speed_in_calculation);
@@ -415,48 +411,35 @@ public class EquipmentTester extends AppCompatActivity {
         String atkLabel    = getString(R.string.attack_speed);
         String pierceLabel = getString(R.string.pierce_count);
 
-        // icon size (dp → px) for stars & checkmarks
         int iconPx = (int) (getResources().getDisplayMetrics().density * 20);
 
-        // --- Damage (base + bonus) ---
         TextView tvDamage = content.findViewById(R.id.tvDamage);
         String dmgText;
         if (bonusDamage > 0) {
             dmgText = dmgLabel + baseDamage +
-                    " <font color='#8cfdfc'>+" + bonusDamage + "</font>";
-        } else if (bonusDamage < 0) {
-            dmgText = dmgLabel + baseDamage +
-                    " <font color='#ff4c4c'>-" + Math.abs(bonusDamage) + "</font>";
+                    " <font color='#8cfdfc'>+" + bonusDamage + "</font>" + " = (" + stats.damage + ")";
         } else {
             dmgText = dmgLabel + baseDamage;
         }
-        tvDamage.setText(
-                android.text.Html.fromHtml(dmgText, android.text.Html.FROM_HTML_MODE_LEGACY)
-        );
+        tvDamage.setText(Html.fromHtml(dmgText, Html.FROM_HTML_MODE_LEGACY));
 
-// --- Armor (base + bonus/penalty) ---
         TextView tvArmor = content.findViewById(R.id.tvArmor);
         String armorText;
         if (bonusArmor > 0) {
             armorText = armorLabel + baseArmor +
-                    " <font color='#8cfdfc'>+" + bonusArmor + "</font>";
+                    " <font color='#8cfdfc'>+" + bonusArmor + "</font>" + " = (" + stats.armor + ")";
         } else if (bonusArmor < 0) {
             armorText = armorLabel + baseArmor +
-                    " <font color='#ff4c4c'>-" + Math.abs(bonusArmor) + "</font>";
+                    " <font color='#ff4c4c'>-" + Math.abs(bonusArmor) + "</font>" + " = (" + stats.armor + ")";
         } else {
             armorText = armorLabel + baseArmor;
         }
-        tvArmor.setText(
-                android.text.Html.fromHtml(armorText, android.text.Html.FROM_HTML_MODE_LEGACY)
-        );
+        tvArmor.setText(Html.fromHtml(armorText, Html.FROM_HTML_MODE_LEGACY));
 
-
-        // --- Attack Speed (stars) ---
         TextView tvAttackSpeed = content.findViewById(R.id.tvAttackSpeed);
         tvAttackSpeed.setText(starsLine(atkLabel, stats.attackSpeedStars, iconPx),
                 TextView.BufferType.SPANNABLE);
 
-        // --- Speed / Jump / Pierce numbers ---
         TextView tvSpeed = content.findViewById(R.id.tvSpeed);
         tvSpeed.setText(speedLabel + stats.speedPct + "%");
 
@@ -466,7 +449,6 @@ public class EquipmentTester extends AppCompatActivity {
         TextView tvPierce = content.findViewById(R.id.tvPierce);
         tvPierce.setText(pierceLabel + stats.pierce);
 
-        // --- Boolean flags (each has its own TextView in your layout) ---
         boolean pierceArea  = (set.weapon != null && set.weapon.isEnablePierceAreaDamage());
         boolean projPersist = stats.projPersist;
         boolean poisonous   = stats.poisonAttack;
@@ -496,7 +478,6 @@ public class EquipmentTester extends AppCompatActivity {
                 TextView.BufferType.SPANNABLE
         );
 
-        // (Optional) quick sanity log to verify numbers:
         Log.d("STATS_UI", "baseArmor=" + baseArmor + " finalArmor=" + stats.armor + " bonusArmor=" + bonusArmor);
 
         AlertDialog dlg = new AlertDialog.Builder(this)
@@ -508,12 +489,11 @@ public class EquipmentTester extends AppCompatActivity {
         tintDialogButtons(dlg);
     }
 
-    /** Builds "Label: ★★★☆☆" using your star drawable as ImageSpans. */
     private CharSequence starsLine(String label, int starCount, int iconPx) {
         android.text.SpannableStringBuilder ssb = new android.text.SpannableStringBuilder();
         ssb.append(label);
 
-        android.graphics.drawable.Drawable star = androidx.core.content.ContextCompat.getDrawable(this, R.drawable.star);
+        android.graphics.drawable.Drawable star = ContextCompat.getDrawable(this, R.drawable.star);
         if (star != null) {
             star.setBounds(0, 0, iconPx, iconPx);
             for (int i = 0; i < starCount; i++) {
@@ -523,19 +503,17 @@ public class EquipmentTester extends AppCompatActivity {
                         start, start + 1, android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
         } else {
-            // Fallback to unicode stars
             for (int i = 0; i < starCount; i++) ssb.append("★");
         }
         return ssb;
     }
 
-    /** Builds "Label: [✓]" (or [✗]) using your icon_check / icon_uncheck as ImageSpans. */
     private CharSequence checkLine(String label, boolean checked, int iconPx) {
         android.text.SpannableStringBuilder ssb = new android.text.SpannableStringBuilder();
         ssb.append(label).append(": ");
 
         int iconRes = checked ? R.drawable.icon_check : R.drawable.icon_uncheck;
-        android.graphics.drawable.Drawable icon = androidx.core.content.ContextCompat.getDrawable(this, iconRes);
+        android.graphics.drawable.Drawable icon = ContextCompat.getDrawable(this, iconRes);
         if (icon != null) {
             icon.setBounds(0, 0, iconPx, iconPx);
             int start = ssb.length();
@@ -547,8 +525,6 @@ public class EquipmentTester extends AppCompatActivity {
         }
         return ssb;
     }
-
-
 
     @SuppressLint("StringFormatInvalid")
     private void appendLoadedSet(EquipmentSet loaded, String name) {
@@ -562,8 +538,6 @@ public class EquipmentTester extends AppCompatActivity {
         requestRecalc();
         Toast.makeText(this, getString(R.string.loaded_named, name), Toast.LENGTH_SHORT).show();
     }
-
-    // ---- END SAVE helpers ----
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -590,7 +564,7 @@ public class EquipmentTester extends AppCompatActivity {
                     set.armor = selectedArmor;
                     set.armorUpgrades = selectedArmor.getUpgrades();
                     set.armorElement = selectedArmor.getElement();
-                    playSfx(sfxBagId);
+                    playSfx(sfxClickId);
                 }
                 break;
             }
@@ -599,7 +573,7 @@ public class EquipmentTester extends AppCompatActivity {
                 if (selectedRing != null) {
                     set.ring = selectedRing;
                     set.ringElement = selectedRing.getElement();
-                    playSfx(sfxBagId);
+                    playSfx(sfxClickId);
                 }
                 break;
             }
@@ -617,7 +591,7 @@ public class EquipmentTester extends AppCompatActivity {
                 CharacterClass selectedClass = data.getParcelableExtra("selectedClass");
                 if (selectedClass != null) {
                     set.characterClass = selectedClass;
-                    playSfx(sfxBagId);
+                    playSfx(sfxClickId);
                 }
                 break;
             }
@@ -626,13 +600,13 @@ public class EquipmentTester extends AppCompatActivity {
                 int count = 0; for (boolean b : skillsPicked) if (b) count++;
                 Log.d("SKILLS", "skills picked count = " + count + " (from SharedPreferences)");
                 set.skills = (skillsPicked != null) ? skillsPicked.clone() : null;
-                playSfx(sfxBagId);
+                playSfx(sfxClickId);
                 break;
             }
             case 6: {
                 Elixir selectedElixir = data.getParcelableExtra("selectedElixir");
                 set.elixir = selectedElixir;
-                playSfx(sfxPotionId != 0 ? sfxPotionId : sfxBagId);
+                playSfx(sfxPotionId != 0 ? sfxPotionId : sfxClickId);
                 break;
             }
         }
@@ -662,7 +636,7 @@ public class EquipmentTester extends AppCompatActivity {
         if (rewardedAdManager == null) {
             rewardedAdManager = new RewardedAdManager();
         }
-        rewardedAdManager.loadAd(this); // preload on start
+        rewardedAdManager.loadAd(this);
     }
 
     @Override
@@ -737,28 +711,21 @@ public class EquipmentTester extends AppCompatActivity {
     private EquipmentSet normalizeCopy(EquipmentSet src) {
         EquipmentSet dst = new EquipmentSet();
 
-        // Shallow copy items/classes/elixir
         dst.weapon = src.weapon;
         dst.armor = src.armor;
         dst.ring = src.ring;
         dst.characterClass = src.characterClass;
         dst.elixir = src.elixir;
 
-        // Skills: clone to avoid sharing the same array
         dst.skills = (src.skills != null) ? src.skills.clone() : null;
 
-        // Upgrades default like in onActivityResult
         dst.weaponUpgrades = (dst.weapon != null) ? dst.weapon.getUpgrades() : 0;
         dst.armorUpgrades  = (dst.armor  != null) ? dst.armor.getUpgrades()  : 0;
 
-        // Elements default like in onActivityResult
         dst.weaponElement = (dst.weapon != null) ? dst.weapon.getElement() : null;
         dst.armorElement  = (dst.armor  != null) ? dst.armor.getElement()  : null;
         dst.ringElement   = (dst.ring   != null) ? dst.ring.getElement()   : null;
 
         return dst;
     }
-
 }
-
-

@@ -10,27 +10,48 @@ import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ItemSelection extends AppCompatActivity {
 
+    // --- Audio ---
     private SoundPool soundPool;
     private int sfxClickId = 0;      // top tab click
-    private int sfxBagId = 0;        // armor pick
+    private int sfxBagId = 0;        // armor/ring/class pick
     private int sfxWeaponId = 0;     // weapon pick
-    private int sfxPotionId = 0;
+    private int sfxPotionId = 0;     // elixir pick
 
     private boolean sfxClickLoaded = false;
     private boolean sfxBagLoaded = false;
     private boolean sfxWeaponLoaded = false;
     private boolean sfxPotionLoaded = false;
+
+    // --- UI ---
+    private RecyclerView recyclerView;
+    private HorizontalScrollView buttonsScrollView;
+    private EditText searchEdit;
+
+    // --- Data for current list ---
+    private List<?> currentFullList = new ArrayList<>();
+    private String currentReturnKey = "";  // "selectedWeapon", "selectedArmor", etc.
+    private int currentPickSoundId = 0;
+
+    // --- Weapon tab highlighting ---
+    private Button currentSelectedTab = null;
+    private final List<Button> weaponTabs = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +59,19 @@ public class ItemSelection extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_item_selection);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView1);
+        initSoundPoolIfNeeded();
+
+        recyclerView = findViewById(R.id.recyclerView1);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
         int buttonId = getIntent().getIntExtra("buttonId", -1);
 
-        HorizontalScrollView buttonsScrollView = findViewById(R.id.buttonsScrollView);
-        // We won't use layoutParams.topMargin anymore — insets will handle spacing.
+        buttonsScrollView = findViewById(R.id.buttonsScrollView);
+        searchEdit = findViewById(R.id.searchEdit);
 
+        // Weapon tabs ONLY (no Armor/Rings buttons here!)
+        Button buttonAll     = findViewById(R.id.button0); // ALL
         Button buttonSwords  = findViewById(R.id.button1);
         Button buttonStaffs  = findViewById(R.id.button2);
         Button buttonDaggers = findViewById(R.id.button3);
@@ -54,194 +79,240 @@ public class ItemSelection extends AppCompatActivity {
         Button buttonSpears  = findViewById(R.id.button5);
         Button buttonHammers = findViewById(R.id.button6);
 
-        // ---- Edge-to-edge insets handling ----
-        applySystemInsets(findViewById(R.id.main), buttonsScrollView, recyclerView);
+        // Register weapon tabs for selection highlighting
+        weaponTabs.clear();
+        weaponTabs.add(buttonAll);
+        weaponTabs.add(buttonSwords);
+        weaponTabs.add(buttonStaffs);
+        weaponTabs.add(buttonDaggers);
+        weaponTabs.add(buttonAxes);
+        weaponTabs.add(buttonSpears);
+        weaponTabs.add(buttonHammers);
 
-        // Sword tab click
+        // Insets (handles case when tabs row is gone/visible)
+        applySystemInsets(findViewById(R.id.main), buttonsScrollView, searchEdit, recyclerView);
+
+        // Search listener → filters whatever list is currently shown
+        searchEdit.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override public void afterTextChanged(Editable s) { applyFilter(s.toString()); }
+        });
+
+        // --- Weapon tab listeners ---
+        if (buttonAll != null) {
+            buttonAll.setOnClickListener(v -> {
+                selectTab((Button) v);
+                showList(getAllWeapons(), "selectedWeapon", sfxWeaponId);
+            });
+        }
         buttonSwords.setOnClickListener(v -> {
-            playTopTabClick();
-            ImageAdapter adapter = new ImageAdapter(ItemData.swordList, (view, position) -> {
-                Weapon selectedWeapon = ItemData.swordList.get(position);
-                playSfx(sfxWeaponId);
-                returnResult("selectedWeapon", selectedWeapon);
-            });
-            recyclerView.setAdapter(adapter);
+            selectTab((Button) v);
+            showList(ItemData.swordList, "selectedWeapon", sfxWeaponId);
         });
-
-        // Staff tab click
         buttonStaffs.setOnClickListener(v -> {
-            playTopTabClick();
-            ImageAdapter adapter = new ImageAdapter(ItemData.staffList, (view, position) -> {
-                Weapon selectedWeapon = ItemData.staffList.get(position);
-                playSfx(sfxWeaponId);
-                returnResult("selectedWeapon", selectedWeapon);
-            });
-            recyclerView.setAdapter(adapter);
+            selectTab((Button) v);
+            showList(ItemData.staffList, "selectedWeapon", sfxWeaponId);
         });
-
-        // Dagger tab click
         buttonDaggers.setOnClickListener(v -> {
-            playTopTabClick();
-            ImageAdapter adapter = new ImageAdapter(ItemData.daggerList, (view, position) -> {
-                Weapon selectedWeapon = ItemData.daggerList.get(position);
-                playSfx(sfxWeaponId);
-                returnResult("selectedWeapon", selectedWeapon);
-            });
-            recyclerView.setAdapter(adapter);
+            selectTab((Button) v);
+            showList(ItemData.daggerList, "selectedWeapon", sfxWeaponId);
         });
-
-        // Axe tab click
         buttonAxes.setOnClickListener(v -> {
-            playTopTabClick();
-            ImageAdapter adapter = new ImageAdapter(ItemData.axeList, (view, position) -> {
-                Weapon selectedWeapon = ItemData.axeList.get(position);
-                playSfx(sfxWeaponId);
-                returnResult("selectedWeapon", selectedWeapon);
-            });
-            recyclerView.setAdapter(adapter);
+            selectTab((Button) v);
+            showList(ItemData.axeList, "selectedWeapon", sfxWeaponId);
         });
-
-        // Hammer tab click
-        buttonHammers.setOnClickListener(v -> {
-            playTopTabClick();
-            ImageAdapter adapter = new ImageAdapter(ItemData.hammerList, (view, position) -> {
-                Weapon selectedWeapon = ItemData.hammerList.get(position);
-                playSfx(sfxWeaponId);
-                returnResult("selectedWeapon", selectedWeapon);
-            });
-            recyclerView.setAdapter(adapter);
-        });
-
-        // Spear tab click
         buttonSpears.setOnClickListener(v -> {
-            playTopTabClick();
-            ImageAdapter adapter = new ImageAdapter(ItemData.spearList, (view, position) -> {
-                Weapon selectedWeapon = ItemData.spearList.get(position);
-                playSfx(sfxWeaponId);
-                returnResult("selectedWeapon", selectedWeapon);
-            });
-            recyclerView.setAdapter(adapter);
+            selectTab((Button) v);
+            showList(ItemData.spearList, "selectedWeapon", sfxWeaponId);
+        });
+        buttonHammers.setOnClickListener(v -> {
+            selectTab((Button) v);
+            showList(ItemData.hammerList, "selectedWeapon", sfxWeaponId);
         });
 
-        // Load based on button ID
-        if (buttonId == 1) { // Armor
-            Log.d("ItemSelection", "Armor button clicked");
-            ImageAdapter adapter = new ImageAdapter(ItemData.armorList, (view, position) -> {
-                playSfx(sfxBagId); // armor pick sound
-                Armor selectedArmor = ItemData.armorList.get(position);
-                returnResult("selectedArmor", selectedArmor);
-            });
-            recyclerView.setAdapter(adapter);
+        // --- Initial load depending on entry point ---
+        if (buttonId == 1) { // Armor picker (no weapon tabs)
+            Log.d("ItemSelection", "Armor picker");
             buttonsScrollView.setVisibility(View.GONE);
-            ViewCompat.requestApplyInsets(findViewById(R.id.main));
+            selectTab(null); // clear any prior selection state
+            showList(ItemData.armorList, "selectedArmor", sfxBagId);
 
-        } else if (buttonId == 2) { // Ring
-            Log.d("ItemSelection", "Ring button clicked");
-            ImageAdapter adapter = new ImageAdapter(ItemData.ringList, (view, position) -> {
-                playSfx(sfxBagId);
-                Ring selectedRing = ItemData.ringList.get(position);
-                returnResult("selectedRing", selectedRing);
-            });
-            recyclerView.setAdapter(adapter);
+        } else if (buttonId == 2) { // Ring picker (no weapon tabs)
+            Log.d("ItemSelection", "Ring picker");
             buttonsScrollView.setVisibility(View.GONE);
-            ViewCompat.requestApplyInsets(findViewById(R.id.main));
+            selectTab(null);
+            showList(ItemData.ringList, "selectedRing", sfxBagId);
 
-        } else if (buttonId == 3) { // Weapons (default: sword tab shown)
-            Log.d("ItemSelection", "Weapon button clicked");
-            ImageAdapter adapter = new ImageAdapter(ItemData.swordList, (view, position) -> {
-                playSfx(sfxWeaponId); // weapon pick sound
-                Weapon selectedWeapon = ItemData.swordList.get(position);
-                returnResult("selectedWeapon", selectedWeapon);
-            });
-            recyclerView.setAdapter(adapter);
+        } else if (buttonId == 3) { // Weapon picker (show tabs, default to ALL)
+            Log.d("ItemSelection", "Weapon picker");
             buttonsScrollView.setVisibility(View.VISIBLE);
-            ViewCompat.requestApplyInsets(findViewById(R.id.main));
+            selectTab(buttonAll);
+            showList(getAllWeapons(), "selectedWeapon", sfxWeaponId);
+            buttonsScrollView.post(() -> buttonsScrollView.smoothScrollTo(0, 0));
 
-        } else if (buttonId == 4) { // Character class
-            Log.d("ItemSelection", "Class button clicked");
-            ImageAdapter adapter = new ImageAdapter(ItemData.classList, (view, position) -> {
-                playSfx(sfxBagId);
-                CharacterClass selectedClass = ItemData.classList.get(position);
-                returnResult("selectedClass", selectedClass);
-            });
-            recyclerView.setAdapter(adapter);
+        } else if (buttonId == 4) { // Class picker (no weapon tabs)
+            Log.d("ItemSelection", "Class picker");
             buttonsScrollView.setVisibility(View.GONE);
-            ViewCompat.requestApplyInsets(findViewById(R.id.main));
-        } else if (buttonId == 6) { // Elixirs
-        Log.d("ItemSelection", "Elixir button clicked");
-        ImageAdapter adapter = new ImageAdapter(ItemData.elixirList, (view, position) -> {
-            playSfx(sfxPotionId);
-            Elixir selected = ItemData.elixirList.get(position);
-            returnResult("selectedElixir", selected);
-        });
-        recyclerView.setAdapter(adapter);
-        buttonsScrollView.setVisibility(View.GONE);
-        ViewCompat.requestApplyInsets(findViewById(R.id.main));
+            selectTab(null);
+            showList(ItemData.classList, "selectedClass", sfxBagId);
+
+        } else if (buttonId == 6) { // Elixir picker (no weapon tabs)
+            Log.d("ItemSelection", "Elixir picker");
+            buttonsScrollView.setVisibility(View.GONE);
+            selectTab(null);
+            showList(ItemData.elixirList, "selectedElixir", sfxPotionId);
+
+        } else {
+            // Fallback: hide tabs, empty list
+            buttonsScrollView.setVisibility(View.GONE);
+            selectTab(null);
+            showList(new ArrayList<>(), "", 0);
+        }
     }
 
-}
+    // --- Tab selection highlighting (weapons only) ---
+    private void selectTab(Button tab) {
+        currentSelectedTab = tab;
+        for (Button b : weaponTabs) {
+            if (b == null) continue;
+            boolean isSelected = (b == tab);
+            b.setSelected(isSelected);
+            b.setAlpha(isSelected ? 1.0f : 0.8f);
+        }
+        if (tab != null) {
+            tab.announceForAccessibility(tab.getText() + " selected");
+            if (buttonsScrollView != null) {
+                buttonsScrollView.post(() ->
+                        buttonsScrollView.smoothScrollTo(Math.max(0, tab.getLeft() - 32), 0));
+            }
+        }
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
-        // Defer init slightly so first frame draws before audio work
+        // Defer init so first frame draws before audio setup
         getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        // keep SoundPool alive during transition so click is audible
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
         releaseSoundPool();
     }
 
-    // === Edge-to-edge helper ===
-    private void applySystemInsets(View root, HorizontalScrollView buttonsScrollView, RecyclerView recyclerView) {
-        final int baseButtonsLeft   = buttonsScrollView.getPaddingLeft();
-        final int baseButtonsTop    = buttonsScrollView.getPaddingTop();
-        final int baseButtonsRight  = buttonsScrollView.getPaddingRight();
-        final int baseButtonsBottom = buttonsScrollView.getPaddingBottom();
+    // --- Show list & re-apply current search ---
+    private void showList(List<?> list, String returnKey, int soundId) {
+        // Only play click if we're actually switching tabs in the weapons view
+        if (buttonsScrollView.getVisibility() == View.VISIBLE) playTopTabClick();
 
-        final int baseRvLeft   = recyclerView.getPaddingLeft();
-        final int baseRvTop    = recyclerView.getPaddingTop();
-        final int baseRvRight  = recyclerView.getPaddingRight();
-        final int baseRvBottom = recyclerView.getPaddingBottom();
+        currentFullList = (list != null) ? list : new ArrayList<>();
+        currentReturnKey = returnKey;
+        currentPickSoundId = soundId;
+
+        applyFilter(searchEdit.getText() != null ? searchEdit.getText().toString() : "");
+        ViewCompat.requestApplyInsets(findViewById(R.id.main));
+    }
+
+    // --- Filter current list based on query; set adapter snapshot ---
+    private void applyFilter(String query) {
+        String q = query == null ? "" : query.trim().toLowerCase();
+        List<Object> filtered = new ArrayList<>();
+        if (q.isEmpty()) {
+            for (Object o : currentFullList) filtered.add(o);
+        } else {
+            for (Object o : currentFullList) {
+                String text = itemText(o).toLowerCase();
+                if (text.contains(q)) filtered.add(o);
+            }
+        }
+
+        ImageAdapter adapter = new ImageAdapter(filtered, (view, position) -> {
+            Object selected = filtered.get(position);
+            playSfx(currentPickSoundId);
+            returnResult(currentReturnKey, selected);
+        });
+        recyclerView.setAdapter(adapter);
+    }
+
+    // Extract human-readable label for search
+    private String itemText(Object o) {
+        try {
+            if (o instanceof Weapon) return ((Weapon) o).getName();
+            if (o instanceof Armor) return ((Armor) o).getName();
+            if (o instanceof Ring) return ((Ring) o).getName();
+            if (o instanceof CharacterClass) return ((CharacterClass) o).getName(this);
+            if (o instanceof Elixir) return ((Elixir) o).getName();
+        } catch (Exception ignored) {}
+        return String.valueOf(o);
+    }
+
+    // Merge all weapon lists for "ALL"
+    private List<Weapon> getAllWeapons() {
+        List<Weapon> all = new ArrayList<>();
+        if (ItemData.swordList  != null) all.addAll(ItemData.swordList);
+        if (ItemData.staffList  != null) all.addAll(ItemData.staffList);
+        if (ItemData.daggerList != null) all.addAll(ItemData.daggerList);
+        if (ItemData.axeList    != null) all.addAll(ItemData.axeList);
+        if (ItemData.spearList  != null) all.addAll(ItemData.spearList);
+        if (ItemData.hammerList != null) all.addAll(ItemData.hammerList);
+        return all;
+    }
+
+    // --- Edge-to-edge helper (tabs + search + RV) ---
+    private void applySystemInsets(View root, HorizontalScrollView tabs, EditText search, RecyclerView rv) {
+        final int baseRootL = root.getPaddingLeft();
+        final int baseRootT = root.getPaddingTop();
+        final int baseRootR = root.getPaddingRight();
+        final int baseRootB = root.getPaddingBottom();
+
+        final int baseTabsL = tabs.getPaddingLeft();
+        final int baseTabsT = tabs.getPaddingTop();
+        final int baseTabsR = tabs.getPaddingRight();
+        final int baseTabsB = tabs.getPaddingBottom();
+
+        final int baseSearchL = search.getPaddingLeft();
+        final int baseSearchT = search.getPaddingTop();
+        final int baseSearchR = search.getPaddingRight();
+        final int baseSearchB = search.getPaddingBottom();
+
+        final int baseRvL = rv.getPaddingLeft();
+        final int baseRvT = rv.getPaddingTop();
+        final int baseRvR = rv.getPaddingRight();
+        final int baseRvB = rv.getPaddingBottom();
 
         ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
-            Insets sysBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            int topInset = sysBars.top;
-            int bottomInset = sysBars.bottom;
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            int top = bars.top;
+            int bottom = bars.bottom;
 
-            if (buttonsScrollView.getVisibility() == View.VISIBLE) {
-                // Push the tabs below the status bar
-                buttonsScrollView.setPadding(
-                        baseButtonsLeft,
-                        baseButtonsTop + topInset,
-                        baseButtonsRight,
-                        baseButtonsBottom
-                );
-                // RecyclerView sits below tabs; no extra top pad needed
-                recyclerView.setPadding(
-                        baseRvLeft,
-                        baseRvTop,
-                        baseRvRight,
-                        baseRvBottom + bottomInset
-                );
+            if (tabs.getVisibility() == View.VISIBLE) {
+                // Tabs present → tabs get the top inset
+                root.setPadding(baseRootL, baseRootT, baseRootR, baseRootB);
+                tabs.setPadding(baseTabsL, baseTabsT + top, baseTabsR, baseTabsB);
+                search.setPadding(baseSearchL, baseSearchT, baseSearchR, baseSearchB);
+                rv.setPadding(baseRvL, baseRvT, baseRvR, baseRvB + bottom);
             } else {
-                // Tabs hidden: give the top inset to the RecyclerView
-                recyclerView.setPadding(
-                        baseRvLeft,
-                        baseRvTop + topInset,
-                        baseRvRight,
-                        baseRvBottom + bottomInset
-                );
+                // Tabs hidden → parent gets the top inset so search is tappable
+                root.setPadding(baseRootL, baseRootT + top, baseRootR, baseRootB);
+                tabs.setPadding(baseTabsL, baseTabsT, baseTabsR, baseTabsB);
+                search.setPadding(baseSearchL, baseSearchT, baseSearchR, baseSearchB);
+                rv.setPadding(baseRvL, baseRvT, baseRvR, baseRvB + bottom);
             }
             return insets;
         });
 
-        // Trigger initial insets pass
         ViewCompat.requestApplyInsets(root);
     }
 
+    // --- Audio ---
     private void initSoundPoolIfNeeded() {
         if (soundPool != null) return;
 
@@ -272,8 +343,8 @@ public class ItemSelection extends AppCompatActivity {
         if (soundPool != null) {
             soundPool.release();
             soundPool = null;
-            sfxClickLoaded = sfxBagLoaded = sfxWeaponLoaded = false;
-            sfxClickId = sfxBagId = sfxWeaponId = 0;
+            sfxClickLoaded = sfxBagLoaded = sfxWeaponLoaded = sfxPotionLoaded = false;
+            sfxClickId = sfxBagId = sfxWeaponId = sfxPotionId = 0;
         }
     }
 
@@ -286,13 +357,14 @@ public class ItemSelection extends AppCompatActivity {
         boolean loaded =
                 (soundId == sfxClickId  && sfxClickLoaded) ||
                         (soundId == sfxBagId    && sfxBagLoaded)   ||
-                        (soundId == sfxWeaponId && sfxWeaponLoaded) ||
+                        (soundId == sfxWeaponId && sfxWeaponLoaded)||
                         (soundId == sfxPotionId && sfxPotionLoaded);
         if (loaded) {
             soundPool.play(soundId, 0.25f, 0.25f, 1, 0, 1.0f);
         }
     }
 
+    // --- Returning the selected item to caller ---
     private void returnResult(String key, Object selectedItem) {
         Intent resultIntent = new Intent();
         if (selectedItem instanceof Armor) {

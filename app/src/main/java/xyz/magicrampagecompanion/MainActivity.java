@@ -3,6 +3,7 @@ package xyz.magicrampagecompanion;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import android.util.Log;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,18 +14,38 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String SKILL_PREFERENCES = "SkillState";
-    private static final String APP_PREFERENCES = "AppPrefs";
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.ads.mediation.admob.AdMobAdapter;
+import com.google.android.ump.ConsentInformation;
+import com.google.android.ump.ConsentRequestParameters;
+import com.google.android.ump.UserMessagingPlatform;
 
+public class MainActivity extends AppCompatActivity {
+    // ---------------- App prefs ----------------
+    private static final String SKILL_PREFERENCES = "SkillState";
+    private static final String APP_PREFERENCES   = "AppPrefs";
+
+    // ---------------- Ads prefs (manual toggle) ----------------
+    // Users can force non-personalized ads even if UMP would allow personalized.
+    private static final String ADS_PREFERENCES = "AdsPrefs";
+    private static final String KEY_PERSONALIZED = "ads_personalized"; // default true
+
+    // ---------------- Audio ----------------
     private SoundPool soundPool;
     private int clickSfxId = 0;
     private boolean clickSfxLoaded = false;
+
+    // ---------------- UMP ----------------
+    private ConsentInformation consentInformation;
+
+    private static final String TAG = "ConsentDebug";
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -36,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        // App init
         ItemData.init(this);
         ItemSyncer.run(this);
         LiveStatsSyncer.sync(this);
@@ -51,7 +74,20 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btnLanguage = findViewById(R.id.btnLanguage);
         btnLanguage.setOnClickListener(v -> showLanguageDialog());
 
-        // --- News Button (New) ---
+        ImageButton btnAdPreferences = findViewById(R.id.btnAdPreferences);
+        btnAdPreferences.setOnClickListener(v -> {
+            // This opens Google's official Privacy Options UI
+            UserMessagingPlatform.showPrivacyOptionsForm(
+                    this,
+                    formError -> {
+                        if (formError != null) {
+                            Toast.makeText(this, "Privacy options unavailable: " + formError.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+            );
+        });
+
+        // --- News Button ---
         Button newsButton = findViewById(R.id.NewsButton);
         newsButton.setOnClickListener(v -> {
             openNews();
@@ -77,30 +113,163 @@ public class MainActivity extends AppCompatActivity {
             playSound();
         });
 
-        Button aboutButton = findViewById(R.id.AboutButton);
-        aboutButton.setOnClickListener(v -> {
-            openAboutSection();
-            playSound();
-        });
-
         Button achievementsButton = findViewById(R.id.AchievementButton);
         achievementsButton.setOnClickListener(v -> {
             openAchievementsSection();
             playSound();
         });
 
-        Button ItemsButton = findViewById(R.id.ItemsButton);
-        ItemsButton.setOnClickListener(v -> {
+        Button itemsButton = findViewById(R.id.ItemsButton);
+        itemsButton.setOnClickListener(v -> {
             openItemSelection();
             playSound();
         });
 
-        Button EnemiesButton = findViewById(R.id.EnemiesButton);
-        EnemiesButton.setOnClickListener(v -> {
+        Button enemiesButton = findViewById(R.id.EnemiesButton);
+        enemiesButton.setOnClickListener(v -> {
             openEnemies();
             playSound();
         });
+
+        // --- NEW: Skins Button ---
+        Button skinsButton = findViewById(R.id.SkinsButton);
+        if (skinsButton != null) {
+            skinsButton.setOnClickListener(v -> {
+                openSkins();
+                playSound();
+            });
+        }
+
+        Button aboutButton = findViewById(R.id.AboutButton);
+        aboutButton.setOnClickListener(v -> {
+            openAboutSection();
+            playSound();
+        });
+
+        // Long-press About to open the Privacy & Ads dialog (no new XML needed)
+        aboutButton.setOnLongClickListener(v -> {
+            showPrivacyAndAdsDialog();
+            return true;
+        });
+
+        // ---------------- Ads SDK + UMP ----------------
+        // 1) Initialize the Mobile Ads SDK
+        MobileAds.initialize(this, initializationStatus -> {
+            // Optionally inspect adapters here
+        });
+
+        // 2) Request/update consent info and show the consent form if required
+        requestConsentAndMaybeShowForm();
     }
+
+    // Request consent info on every app start and show form if required.
+    private void requestConsentAndMaybeShowForm() {
+        Log.d(TAG, "Starting consent info request...");
+
+        ConsentRequestParameters params =
+                new ConsentRequestParameters.Builder()
+                        // Add ConsentDebugSettings here if needed for testing.
+                        .build();
+
+        consentInformation = UserMessagingPlatform.getConsentInformation(this);
+
+        consentInformation.requestConsentInfoUpdate(
+                this,
+                params,
+                () -> {
+                    Log.d(TAG, "Consent info updated. Form available: "
+                            + consentInformation.isConsentFormAvailable());
+
+                    UserMessagingPlatform.loadAndShowConsentFormIfRequired(
+                            this,
+                            formError -> {
+                                if (formError != null) {
+                                    Log.w(TAG, "Form error: " + formError.getMessage());
+                                } else {
+                                    Log.d(TAG, "Consent form was shown and closed by the user.");
+                                }
+                                onConsentFlowFinished();
+                            }
+                    );
+
+                    if (!consentInformation.isConsentFormAvailable()) {
+                        Log.d(TAG, "Consent form is NOT available for this user/region.");
+                    }
+                },
+                requestError -> {
+                    Log.e(TAG, "Consent info request failed: " + requestError.getMessage());
+                    onConsentFlowFinished();
+                }
+        );
+    }
+
+    // After UMP has settled, decide if we can request ads now.
+    private void onConsentFlowFinished() {
+        boolean canRequest = consentInformation != null && consentInformation.canRequestAds();
+        Log.d(TAG, "Consent flow finished. canRequestAds = " + canRequest);
+    }
+
+    // ---------- Privacy & Ads dialog (no extra XML) ----------
+    private void showPrivacyAndAdsDialog() {
+        Log.d(TAG, "Opening Privacy Options form...");
+        final SharedPreferences prefs = getSharedPreferences(ADS_PREFERENCES, MODE_PRIVATE);
+        final boolean currentPersonalized = prefs.getBoolean(KEY_PERSONALIZED, true);
+
+        final boolean[] temp = new boolean[]{ currentPersonalized }; // single checkbox state
+
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.app_name) + " – Privacy & Ads")
+                // One checkbox row: "Personalized ads"
+                .setMultiChoiceItems(new CharSequence[]{"Personalized ads"}, new boolean[]{ currentPersonalized },
+                        (d, which, isChecked) -> temp[0] = isChecked)
+                // Opens UMP's official Privacy Options screen (only works when required/available).
+                .setNeutralButton("Privacy options…", (d, w) -> {
+                    if (consentInformation != null &&
+                            consentInformation.getPrivacyOptionsRequirementStatus()
+                                    == ConsentInformation.PrivacyOptionsRequirementStatus.REQUIRED) {
+                        UserMessagingPlatform.showPrivacyOptionsForm(
+                                this,
+                                formError -> {
+                                    // Returned after user closes the form (formError may be null/has info).
+                                }
+                        );
+                    } else {
+                        Toast.makeText(this, "Privacy options not required/available on this device.", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .setPositiveButton(android.R.string.ok, (d, w) -> {
+                    prefs.edit().putBoolean(KEY_PERSONALIZED, temp[0]).apply();
+                    Toast.makeText(this,
+                            temp[0] ? "Personalized ads enabled" : "Personalized ads disabled",
+                            Toast.LENGTH_SHORT).show();
+                })
+                .create();
+
+        dialog.show();
+    }
+
+    /**
+     * Build an AdRequest that respects the user’s manual toggle.
+     * Note: Google’s own demand already respects UMP consent. Only add `npa=1`
+     * when the user explicitly turned off personalized ads via our toggle.
+     */
+    public static AdRequest buildAdRequest(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(ADS_PREFERENCES, MODE_PRIVATE);
+        boolean wantsPersonalized = prefs.getBoolean(KEY_PERSONALIZED, true);
+
+        AdRequest.Builder builder = new AdRequest.Builder();
+
+        if (!wantsPersonalized) {
+            Bundle extras = new Bundle();
+            extras.putString("npa", "1");
+            builder.addNetworkExtrasBundle(AdMobAdapter.class, extras);
+        }
+
+        return builder.build();
+    }
+
+    // ---------------- Existing code below ----------------
 
     @Override
     protected void onStart() {
@@ -190,6 +359,7 @@ public class MainActivity extends AppCompatActivity {
     public void openAchievementsSection() { startActivity(new Intent(this, AchievementsPage.class)); }
     public void openItemSelection() { startActivity(new Intent(this, Items.class)); }
     public void openEnemies() { startActivity(new Intent(this, Enemies.class)); }
+    public void openSkins() { startActivity(new Intent(this, Skins.class)); } // NEW
 
     private void playSound() {
         if (soundPool != null && clickSfxLoaded) {

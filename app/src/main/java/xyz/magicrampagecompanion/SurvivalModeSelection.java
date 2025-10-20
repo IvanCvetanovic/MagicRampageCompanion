@@ -8,7 +8,12 @@ import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class SurvivalModeSelection extends AppCompatActivity {
 
@@ -21,6 +26,15 @@ public class SurvivalModeSelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_survival_mode_selection);
+
+        // ---- Apply system bar insets (status bar / camera cutout / nav bar) ----
+        // If your XML has dedicated containers, give them these IDs:
+        //   - R.id.survivalScroll (ScrollView or Recycler)
+        //   - R.id.survivalContentRoot (the topmost inner container)
+        // If they don't exist, this helper safely falls back to the root view.
+        View scroll = findViewById(R.id.survivalScroll);
+        View content = findViewById(R.id.survivalContentRoot);
+        applySystemInsets(scroll, content);
 
         ImageButton survivalButton1 = findViewById(R.id.SurvivalButton1);
         survivalButton1.setOnClickListener(v -> { openSurvivalDungeon1(); playSound(); });
@@ -101,5 +115,47 @@ public class SurvivalModeSelection extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(LocaleHelper.applyLocale(newBase));
+    }
+
+    // ---- Edge-to-edge helper (mirrors your MainActivity, with safe fallbacks) ----
+    private void applySystemInsets(View scrollViewOrNull, View contentRootOrNull) {
+        // Fallbacks if IDs aren’t present
+        final View root = findViewById(android.R.id.content);
+        final View contentRoot = (contentRootOrNull != null) ? contentRootOrNull : root;
+        final View scrollView   = (scrollViewOrNull   != null) ? scrollViewOrNull   : contentRoot;
+
+        final int baseScrollLeft   = scrollView.getPaddingLeft();
+        final int baseScrollTop    = scrollView.getPaddingTop();
+        final int baseScrollRight  = scrollView.getPaddingRight();
+        final int baseScrollBottom = scrollView.getPaddingBottom();
+
+        final int baseContentLeft   = contentRoot.getPaddingLeft();
+        final int baseContentTop    = contentRoot.getPaddingTop();
+        final int baseContentRight  = contentRoot.getPaddingRight();
+        final int baseContentBottom = contentRoot.getPaddingBottom();
+
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+            // Push the first touchable pixel below the status bar / camera cutout
+            contentRoot.setPadding(
+                    baseContentLeft,
+                    baseContentTop + bars.top,
+                    baseContentRight,
+                    baseContentBottom
+            );
+
+            // Keep the last item above the gesture nav bar
+            scrollView.setPadding(
+                    baseScrollLeft,
+                    baseScrollTop,
+                    baseScrollRight,
+                    baseScrollBottom + bars.bottom
+            );
+
+            return insets;
+        });
+
+        ViewCompat.requestApplyInsets(root);
     }
 }

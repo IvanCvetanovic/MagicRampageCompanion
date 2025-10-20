@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Internet permission (kept) -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID"
-        tools:ignore="AdvertisingIdPolicy" />
-
-    <!-- Package visibility / handlers for VIEW https and Discord -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="com.google.android.gms.permission.AD_ID"
+        tools:ignore="AdvertisingIdPolicy" /> <!-- Package visibility / handlers for VIEW https and Discord -->
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
+
             <data android:scheme="https" />
         </intent>
+
         <package android:name="com.discord" />
     </queries>
 
@@ -28,6 +28,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MagicRampageCompanion"
         tools:targetApi="33">
+        <activity
+            android:name=".Skins"
+            android:exported="false" />
         <activity
             android:name=".News"
             android:exported="false" />
@@ -355,9 +358,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        </activity> <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-9121645145370204~1734649227" />

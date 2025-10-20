@@ -11,15 +11,6 @@ import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * Fetches live balance stats from the ENML endpoint, caches them,
- * and applies mapped values into ItemData static fields.
- *
- * Verbose logging:
- *  - Source (network/cache), version, timings
- *  - Per-key old -> new (only when changed)
- *  - Summary counts (changed / unchanged / unmapped / errors)
- */
 public final class LiveStatsSyncer {
     private LiveStatsSyncer() {}
     private static final String TAG = "LiveStatsSyncer";
@@ -222,9 +213,9 @@ public final class LiveStatsSyncer {
                     return setIntWithLog("SK_JUMP_BOOST", ItemData.SkillTreeJumpBonus,
                             toInt(value), v -> ItemData.SkillTreeJumpBonus = v);
 
-                // ======== Elixirs (multipliers → +/- %) ========
+                // ======== Elixirs (multipliers → (value*100 - 100)) ========
                 case "ARCANE_PRECISION_TONIC_DAMAGE_NERF": {
-                    // Force a fixed nerf of -15
+                    // Keep fixed
                     int pct = -15;
                     return setIntWithLog(
                             "ARCANE_PRECISION_TONIC_DAMAGE_NERF(raw=" + value + ")",
@@ -233,38 +224,43 @@ public final class LiveStatsSyncer {
                             v -> ItemData.precisionTonicArmorBonus = v
                     );
                 }
-                case "ELIXIR_OF_DUPLICATION_DAMAGE_NERF": {
-                    int pct = toPercentNegFromMultiplier(value);
-                    return setIntWithLog("ELIXIR_OF_DUPLICATION_DAMAGE_NERF(raw=" + value + ")",
-                            ItemData.elixirOfDuplicationDamageBonus, pct, v -> ItemData.elixirOfDuplicationDamageBonus = v);
+                case "ELIXIR_OF_DUPLICATION_ARMOR_NERF": {
+                    // Keep fixed
+                    int pct = -15;
+                    return setIntWithLog(
+                            "ELIXIR_OF_DUPLICATION_ARMOR_NERF(raw=" + value + ")",
+                            ItemData.elixirOfDuplicationArmorBonus,
+                            pct,
+                            v -> ItemData.elixirOfDuplicationArmorBonus = v
+                    );
                 }
                 case "ELIXIR_OF_DUPLICATION_SPEED_BOOST": {
-                    int pct = toPercentFromMultiplier(value);
+                    int pct = (int) Math.round(Double.parseDouble(value) * 100.0 - 100.0);
                     return setIntWithLog("ELIXIR_OF_DUPLICATION_SPEED_BOOST(raw=" + value + ")",
                             ItemData.elixirOfDuplicationSpeedBonus, pct, v -> ItemData.elixirOfDuplicationSpeedBonus = v);
                 }
                 case "MONSTERS_JUICE_ATTACK_BUFF": {
-                    int pct = toPercentFromMultiplier(value);
+                    int pct = (int) Math.round(Double.parseDouble(value) * 100.0 - 100.0);
                     return setIntWithLog("MONSTERS_JUICE_ATTACK_BUFF(raw=" + value + ")",
                             ItemData.monstersJuiceDamageBonus, pct, v -> ItemData.monstersJuiceDamageBonus = v);
                 }
                 case "MONSTERS_JUICE_ARMOR_NERF": {
-                    int pct = toPercentFromMultiplier(value); // <1.0 → negative
+                    int pct = (int) Math.round(Double.parseDouble(value) * 100.0 - 100.0);
                     return setIntWithLog("MONSTERS_JUICE_ARMOR_NERF(raw=" + value + ")",
                             ItemData.monstersJuiceArmorBonus, pct, v -> ItemData.monstersJuiceArmorBonus = v);
                 }
                 case "PEPPER_BREW_ARMOR_BUFF": {
-                    int pct = toPercentFromMultiplier(value);
+                    int pct = (int) Math.round(Double.parseDouble(value) * 100.0 - 100.0);
                     return setIntWithLog("PEPPER_BREW_ARMOR_BUFF(raw=" + value + ")",
                             ItemData.pepperBrewArmorBonus, pct, v -> ItemData.pepperBrewArmorBonus = v);
                 }
                 case "STARLIGHT_SUPERTONIC_DAMAGE_BOOST": {
-                    int pct = toPercentFromMultiplier(value);
+                    int pct = (int) Math.round(Double.parseDouble(value) * 100.0 - 100.0);
                     return setIntWithLog("STARLIGHT_SUPERTONIC_DAMAGE_BOOST(raw=" + value + ")",
                             ItemData.starlightSupertonicDamageBonus, pct, v -> ItemData.starlightSupertonicDamageBonus = v);
                 }
                 case "TONIC_OF_INVULNERABILITY_ARMOR_BUFF": {
-                    int pct = toPercentFromMultiplier(value);
+                    int pct = (int) Math.round(Double.parseDouble(value) * 100.0 - 100.0);
                     return setIntWithLog("TONIC_OF_INVULNERABILITY_ARMOR_BUFF(raw=" + value + ")",
                             ItemData.tonicOfInvulnerabilityArmorBonus, pct, v -> ItemData.tonicOfInvulnerabilityArmorBonus = v);
                 }

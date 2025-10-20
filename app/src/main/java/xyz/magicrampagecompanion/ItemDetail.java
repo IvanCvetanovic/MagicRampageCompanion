@@ -1,6 +1,11 @@
 package xyz.magicrampagecompanion;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -10,11 +15,9 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 public class ItemDetail extends AppCompatActivity {
     public static final String EXTRA_ITEM = "xyz.magicrampagecompanion.EXTRA_ITEM";
@@ -29,10 +32,26 @@ public class ItemDetail extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_item_detail);
 
+        // --- Edge-to-edge: apply system bar insets from base paddings (no cumulative creep) ---
+        final View root = findViewById(R.id.detail_root);
+        final int baseL = root.getPaddingLeft();
+        final int baseT = root.getPaddingTop();
+        final int baseR = root.getPaddingRight();
+        final int baseB = root.getPaddingBottom();
+
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            root.setPadding(baseL, baseT + bars.top, baseR, baseB + bars.bottom);
+            return insets;
+        });
+        ViewCompat.requestApplyInsets(root);
+
+        // --- UI refs ---
         itemImage       = findViewById(R.id.itemImage);
         itemName        = findViewById(R.id.itemName);
         itemDescription = findViewById(R.id.itemDescription);
 
+        // --- Fill with data ---
         Parcelable parcel = getIntent().getParcelableExtra(EXTRA_ITEM);
         if (parcel instanceof Weapon) {
             Weapon w = (Weapon) parcel;
@@ -57,21 +76,14 @@ public class ItemDetail extends AppCompatActivity {
     private int getElementColor(Elements element) {
         Context context = this;
         switch (element) {
-            case WATER:
-                return ContextCompat.getColor(context, R.color.water_element_color);
-            case EARTH:
-                return ContextCompat.getColor(context, R.color.earth_element_color);
-            case FIRE:
-                return ContextCompat.getColor(context, R.color.fire_element_color);
-            case DARKNESS:
-                return ContextCompat.getColor(context, R.color.darkness_element_color);
-            case LIGHT:
-                return ContextCompat.getColor(context, R.color.light_element_color);
-            case AIR:
-                return ContextCompat.getColor(context, R.color.air_element_color);
+            case WATER:    return ContextCompat.getColor(context, R.color.water_element_color);
+            case EARTH:    return ContextCompat.getColor(context, R.color.earth_element_color);
+            case FIRE:     return ContextCompat.getColor(context, R.color.fire_element_color);
+            case DARKNESS: return ContextCompat.getColor(context, R.color.darkness_element_color);
+            case LIGHT:    return ContextCompat.getColor(context, R.color.light_element_color);
+            case AIR:      return ContextCompat.getColor(context, R.color.air_element_color);
             case NEUTRAL:
-            default:
-                return ContextCompat.getColor(context, R.color.white);
+            default:       return ContextCompat.getColor(context, R.color.white);
         }
     }
 
@@ -84,7 +96,6 @@ public class ItemDetail extends AppCompatActivity {
         if (iconDrawable != null) {
             int iconSize = 80;
             iconDrawable.setBounds(0, 0, iconSize, iconSize);
-
             int start = ssb.length();
             ssb.append(" ");
             int end = ssb.length();
@@ -125,11 +136,11 @@ public class ItemDetail extends AppCompatActivity {
         ssb.append(getString(R.string.attack_speed));
         double currentAttackSpeed = w.getAttackCooldown();
         int starCount;
-        if (currentAttackSpeed <= 300) { starCount = 5; }
-        else if (currentAttackSpeed <= 450) { starCount = 4; }
-        else if (currentAttackSpeed <= 650) { starCount = 3; }
-        else if (currentAttackSpeed <= 750) { starCount = 2; }
-        else { starCount = 1; }
+        if (currentAttackSpeed <= 300)      starCount = 5;
+        else if (currentAttackSpeed <= 450) starCount = 4;
+        else if (currentAttackSpeed <= 650) starCount = 3;
+        else if (currentAttackSpeed <= 750) starCount = 2;
+        else                                starCount = 1;
 
         Drawable starDrawable = ContextCompat.getDrawable(this, R.drawable.star);
         if (starDrawable != null) {
@@ -232,7 +243,7 @@ public class ItemDetail extends AppCompatActivity {
             case LIGHT:    return getString(R.string.element_light);
             case EARTH:    return getString(R.string.element_earth);
             case AIR:      return getString(R.string.element_air);
-            default:       return getString(R.string.element_neutral); // ensure this exists in strings.xml
+            default:       return getString(R.string.element_neutral);
         }
     }
 

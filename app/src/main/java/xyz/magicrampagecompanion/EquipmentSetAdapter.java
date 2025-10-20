@@ -172,9 +172,7 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             String weaponText;
             if (bonusDmg > 0) {
-                weaponText = baseDmg + " <font color='#8cfdfc'>+" + bonusDmg + "</font>";
-            } else if (bonusDmg < 0) {
-                weaponText = baseDmg + " <font color='#ff4c4c'>-" + Math.abs(bonusDmg) + "</font>";
+                weaponText = baseDmg + " <font color='#8cfdfc'>+" + bonusDmg + "</font>";;
             } else {
                 weaponText = String.valueOf(baseDmg);
             }

@@ -21,6 +21,22 @@ public class ItemData {
         return ctx.getString(resId);
     }
 
+    public static final List<SkinItem> rangerSkins = new ArrayList<>();
+    public static final List<SkinItem> priestSkins = new ArrayList<>();
+    public static final List<SkinItem> warlockSkins = new ArrayList<>();
+    public static final List<SkinItem> blackMageSkins = new ArrayList<>();
+    public static final List<SkinItem> rogueSkins = new ArrayList<>();
+    public static final List<SkinItem> thiefSkins = new ArrayList<>();
+    public static final List<SkinItem> warriorSkins = new ArrayList<>();
+    public static final List<SkinItem> mageSkins = new ArrayList<>();
+    public static final List<SkinItem> druidSkins = new ArrayList<>();
+    public static final List<SkinItem> paladinSkins = new ArrayList<>();
+    public static final List<SkinItem> highMageSkins = new ArrayList<>();
+    public static final List<SkinItem> eliteWarriorSkins = new ArrayList<>();
+    public static final List<SkinItem> witchdoctorSkins = new ArrayList<>();
+
+
+
     // ================== Dynamic Stats (from LiveStatsSyncer) ==================
 
     // Skill Tree
@@ -35,7 +51,7 @@ public class ItemData {
 
     // Elixirs
     public static int precisionTonicArmorBonus        = -5;
-    public static int elixirOfDuplicationDamageBonus   = -60;
+    public static int elixirOfDuplicationArmorBonus = -15;
     public static int elixirOfDuplicationSpeedBonus    = 5;
     public static int monstersJuiceDamageBonus         = 60;
     public static int monstersJuiceArmorBonus          = -40;
@@ -57,6 +73,19 @@ public class ItemData {
         classList.clear();
         elixirList.clear();
         rewardSets.clear();
+        rangerSkins.clear();
+        priestSkins.clear();
+        warlockSkins.clear();
+        blackMageSkins.clear();
+        rogueSkins.clear();
+        thiefSkins.clear();
+        warriorSkins.clear();
+        mageSkins.clear();
+        druidSkins.clear();
+        paladinSkins.clear();
+        highMageSkins.clear();
+        eliteWarriorSkins.clear();
+        witchdoctorSkins.clear();
 
         // Swords
         swordList.add(new Weapon(str(context, R.string.recruit_sword), WeaponTypes.SWORD, Elements.NEUTRAL, 7, 12, 3, 0, 4, 0, R.drawable.sword_recruit_fire_sword, 650, 0, true, false, false, false));
@@ -76,6 +105,7 @@ public class ItemData {
         swordList.add(new Weapon(str(context, R.string.sword_of_light), WeaponTypes.SWORD, Elements.LIGHT, 40, 145, 11, 0, 5, 2, R.drawable.sword_sword_of_light, 350, 1, true, true, false, false));
         swordList.add(new Weapon(str(context, R.string.throat_cutter), WeaponTypes.SWORD, Elements.DARKNESS, 50, 230, 15, 0, 4, 2, R.drawable.sword_throat_cutter, 500, 0, true, false, false, false));
         swordList.add(new Weapon(str(context, R.string.ice_claw), WeaponTypes.SWORD, Elements.WATER, 66, 303, 15, 40, 5, 2, R.drawable.sword_ice_claw, 500, 0, true, false, false, true));
+        swordList.add(new Weapon(str(context, R.string.sovereigns_onyx_sword), WeaponTypes.SWORD, Elements.EARTH, 72, 331, 15, 40, 4, 4, R.drawable.sword_sovereigns_onyx_sword, 500, 0, true, false, false, true));
         swordList.add(new Weapon(str(context, R.string.moonlit_razor), WeaponTypes.SWORD, Elements.NEUTRAL, 80, 329, 13, 40, 6, 3, R.drawable.sword_moonlit_razor, 550, 2, false, false, false, false));
         swordList.add(new Weapon(str(context, R.string.light_piercer), WeaponTypes.SWORD, Elements.LIGHT, 90, 414, 15, 25, 7, 5, R.drawable.sword_light_piercer, 550, 1, false, true, false, false));
         swordList.add(new Weapon(str(context, R.string.air_piercer), WeaponTypes.SWORD, Elements.AIR, 77, 354, 15, 0, 10, 3, R.drawable.sword_air_piercer, 450, 1, false, true, false, false));
@@ -83,6 +113,7 @@ public class ItemData {
         swordList.add(new Weapon(str(context, R.string.gorgon_blade), WeaponTypes.SWORD, Elements.NEUTRAL, 80, 368, 15, 30, 9, 0, R.drawable.sword_gorgon_blade, 550, 1, true, true, true, false));
         swordList.add(new Weapon(str(context, R.string.air_striker), WeaponTypes.SWORD, Elements.AIR, 85, 391, 15, 40, 5, 5, R.drawable.sword_air_striker, 600, 0, true, true, false, false));
         swordList.add(new Weapon(str(context, R.string.glass_blade), WeaponTypes.SWORD, Elements.NEUTRAL, 85, 391, 15, 15, 7, 3, R.drawable.sword_glass_blade, 550, 1, false, false, false, false));
+        swordList.add(new Weapon(str(context, R.string.sovereigns_ruby_sword), WeaponTypes.SWORD, Elements.FIRE, 86, 395, 15, 40, 4, 4, R.drawable.sword_sovereigns_ruby_sword, 500, 1, true, false, true, false));
         swordList.add(new Weapon(str(context, R.string.arachnid_sword), WeaponTypes.SWORD, Elements.NEUTRAL, 86, 395, 15, 20, 4, 6, R.drawable.sword_arachnid_sword, 500, 1, false, true, true, false));
         swordList.add(new Weapon(str(context, R.string.frost_heart), WeaponTypes.SWORD, Elements.DARKNESS, 88, 404, 15, 30, 3, 2, R.drawable.sword_frostheart, 500, 1, false, false, false, true));
         swordList.add(new Weapon(str(context, R.string.volcano_sword), WeaponTypes.SWORD, Elements.FIRE, 100, 460, 15, 25, 5, 0, R.drawable.sword_volcano_sword, 500, 1, false, true, false, false));
@@ -338,10 +369,11 @@ public class ItemData {
         armorList.add(new Armor(str(context, R.string.steelblow_armor_plus), Elements.AIR, false, 28, 135, 16, 9, 5, 65, 70, 0, 80, 0, 0, 0, R.drawable.armor_steelblow_armor));
         armorList.add(new Armor(str(context, R.string.firestorm_armor_plus), Elements.FIRE, true, 28, 135, 16, 8, 3, 80, 80, 0, 50, 70, 0, 70, R.drawable.armor_firestorm_armor));
         armorList.add(new Armor(str(context, R.string.swamp_ranger_suit), Elements.NEUTRAL, true, 40, 136, 10, 5, 3, 70, 100, 0, 100, 130, 0, 130, R.drawable.armor_swamp_ranger_suit));
+        armorList.add(new Armor(str(context, R.string.blaze_armor), Elements.FIRE, true, 30, 138, 15, 6, 3, 100, 130, 0, 0, 0, 140, 0, R.drawable.armor_blaze_armor));
         armorList.add(new Armor(str(context, R.string.vest_of_phantoms_keeper), Elements.DARKNESS, false, 30, 138, 15, 4, 2, 100, 120, 0, 120, 0, 0, 0, R.drawable.armor_vest_of_phantoms_keeper));
         armorList.add(new Armor(str(context, R.string.enchanted_nutcracker), Elements.NEUTRAL, false, 30, 138, 15, 2, 4, 100, 120, 120, 0, 0, 0, 0, R.drawable.armor_enchanted_nutcracker));
         armorList.add(new Armor(str(context, R.string.steelblow_armor), Elements.AIR, false, 45, 142, 9, 8, 4, 60, 65, 0, 75, 0, 0, 0, R.drawable.armor_steelblow_armor));
-        armorList.add(new Armor(str(context, R.string.heros_set_plus), Elements.AIR, false, 32, 147, 15, 15, 4, 70, 100, 0, 0, 0, 100, 100, R.drawable.armor_heros_set));
+        armorList.add(new Armor(str(context, R.string.heros_set_plus), Elements.AIR, false, 28, 128, 15, 15, 2, 40, 100, 0, 0, 0, 100, 100, R.drawable.armor_heros_set));
         armorList.add(new Armor(str(context, R.string.bankers_coat_plus), Elements.DARKNESS, false, 32, 147, 15, 5, 4, 60, 0, 0, 200, 0, 0, 0, R.drawable.armor_bankers_coat));
         armorList.add(new Armor(str(context, R.string.cthulhu_set), Elements.NEUTRAL, false, 32, 147, 15, 2, 3, 130, 100, 100, 100, 100, 100, 100, R.drawable.armor_cthulhu_set));
         armorList.add(new Armor(str(context, R.string.champion_set), Elements.NEUTRAL, false, 90, 154, 3, 4, 4, 70, 100, 0, 0, 0, 0, 120, R.drawable.armor_champion_set));
@@ -357,8 +389,8 @@ public class ItemData {
         armorList.add(new Armor(str(context, R.string.iron_widow), Elements.NEUTRAL, true, 56, 190, 10, 0, 0, 70, 140, 0, 0, 160, 140, 160, R.drawable.armor_iron_widow));
         armorList.add(new Armor(str(context, R.string.unholy_storm), Elements.WATER, false, 42, 193, 15, 6, 4, 150, 0, 80, 80, 0, 0, 80, R.drawable.armor_unholy_storm));
         armorList.add(new Armor(str(context, R.string.umbranian_tanker), Elements.NEUTRAL, false, 80, 195, 6, 3, 2, 0, 60, 0, 0, 60, 60, 0, R.drawable.armor_umbranian_tanker));
-        armorList.add(new Armor(str(context, R.string.time_patroller_suit), Elements.NEUTRAL, false, 60, 203, 10, 4, 4, 300, 0, 0, 0, 0, 0, 0, R.drawable.armor_time_patroller_suit));
-        armorList.add(new Armor(str(context, R.string.innkeepers_costume), Elements.NEUTRAL, false, 46, 211, 15, 0, 30, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_innkeepers_costume));
+        armorList.add(new Armor(str(context, R.string.time_patroller_suit), Elements.NEUTRAL, false, 56, 190, 10, 2, 2, 300, 0, 0, 0, 0, 0, 0, R.drawable.armor_time_patroller_suit));
+        armorList.add(new Armor(str(context, R.string.innkeepers_costume), Elements.NEUTRAL, false, 26, 119, 15, 0, 30, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_innkeepers_costume));
         armorList.add(new Armor(str(context, R.string.greenfang_ensemble), Elements.DARKNESS, false, 48, 220, 15, 6, 4, 100, 0, 0, 135, 0, 135, 0, R.drawable.armor_greenfang_ensemble));
         armorList.add(new Armor(str(context, R.string.interrogator), Elements.WATER, false, 51, 234, 15, 0, 0, 110, 0, 0, 0, 120, 140, 160, R.drawable.armor_interrogator));
         armorList.add(new Armor(str(context, R.string.protector_of_the_oracle), Elements.EARTH, false, 51, 234, 15, -1, 0, 120, 0, 70, 0, 0, 170, 100, R.drawable.armor_protector_of_the_oracle));
@@ -629,6 +661,300 @@ public class ItemData {
         enemyList.add(new Enemy(str(context, R.string.enemy_warlock_final_boss), 999999999, 0, 400, 0, 7.0, 28.0, context.getString(R.string.waypoints), context.getString(R.string.stone_thrower), R.drawable.enemy_warlock_final_boss));
         enemyList.add(new Enemy(str(context, R.string.enemy_xmas_mimic), 999999999, 40, 30, 0, 14.0, 28.0, context.getString(R.string.waypoints), context.getString(R.string.stone_thrower), R.drawable.enemy_xmas_mimic));
 
+        // Skins
+        // Put this once before the lists to avoid repeating the lookup:
+        final String COLORED = " " + context.getString(R.string.suffix_colored);
+
+// --- Ranger ---
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger1),  R.drawable.skin_ranger1));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger2),  R.drawable.skin_ranger2));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger3),  R.drawable.skin_ranger3));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger4),  R.drawable.skin_ranger4));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger5),  R.drawable.skin_ranger5));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger6),  R.drawable.skin_ranger6));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger7),  R.drawable.skin_ranger7));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger8),  R.drawable.skin_ranger8));
+// 9 & 10 are colored variants of 1 & 2
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger1) + COLORED, R.drawable.skin_ranger9));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger2) + COLORED, R.drawable.skin_ranger10));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger11), R.drawable.skin_ranger11));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger12), R.drawable.skin_ranger12));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger13), R.drawable.skin_ranger13));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger14), R.drawable.skin_ranger14));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger15), R.drawable.skin_ranger15));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger16), R.drawable.skin_ranger16));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger17), R.drawable.skin_ranger17));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger18), R.drawable.skin_ranger18));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger19), R.drawable.skin_ranger19));
+
+// --- Priest ---
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest1),  R.drawable.skin_priest1));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest2),  R.drawable.skin_priest2));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest3),  R.drawable.skin_priest3));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest4),  R.drawable.skin_priest4));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest5),  R.drawable.skin_priest5));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest6),  R.drawable.skin_priest6));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest7),  R.drawable.skin_priest7));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest8),  R.drawable.skin_priest8));
+// 9 & 10 colored
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest1) + COLORED, R.drawable.skin_priest9));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest2) + COLORED, R.drawable.skin_priest10));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest11), R.drawable.skin_priest11));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest12), R.drawable.skin_priest12));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest13), R.drawable.skin_priest13));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest14), R.drawable.skin_priest14));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest15), R.drawable.skin_priest15));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest16), R.drawable.skin_priest16));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest17), R.drawable.skin_priest17));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest18), R.drawable.skin_priest18));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest19), R.drawable.skin_priest19));
+
+// --- Warlock ---
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock1),  R.drawable.skin_warlock1));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock2),  R.drawable.skin_warlock2));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock3),  R.drawable.skin_warlock3));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock4),  R.drawable.skin_warlock4));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock5),  R.drawable.skin_warlock5));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock6),  R.drawable.skin_warlock6));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock7),  R.drawable.skin_warlock7));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock8),  R.drawable.skin_warlock8));
+// 9 & 10 colored
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock1) + COLORED, R.drawable.skin_warlock9));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock2) + COLORED, R.drawable.skin_warlock10));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock11), R.drawable.skin_warlock11));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock12), R.drawable.skin_warlock12));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock13), R.drawable.skin_warlock13));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock14), R.drawable.skin_warlock14));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock15), R.drawable.skin_warlock15));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock16), R.drawable.skin_warlock16));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock17), R.drawable.skin_warlock17));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock18), R.drawable.skin_warlock18));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock19), R.drawable.skin_warlock19));
+
+// --- Black Mage ---
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage1),  R.drawable.skin_black_mage1));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage2),  R.drawable.skin_black_mage2));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage3),  R.drawable.skin_black_mage3));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage4),  R.drawable.skin_black_mage4));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage5),  R.drawable.skin_black_mage5));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage6),  R.drawable.skin_black_mage6));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage7),  R.drawable.skin_black_mage7));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage8),  R.drawable.skin_black_mage8));
+// 9 & 10 colored
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage1) + COLORED, R.drawable.skin_black_mage9));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage2) + COLORED, R.drawable.skin_black_mage10));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage11), R.drawable.skin_black_mage11));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage12), R.drawable.skin_black_mage12));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage13), R.drawable.skin_black_mage13));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage14), R.drawable.skin_black_mage14));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage14) + " B", R.drawable.skin_black_mage14_b));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage15), R.drawable.skin_black_mage15));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage16), R.drawable.skin_black_mage16));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage17), R.drawable.skin_black_mage17));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage18), R.drawable.skin_black_mage18));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage19), R.drawable.skin_black_mage19));
+
+// --- Rogue ---
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue1),  R.drawable.skin_rogue1));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue2),  R.drawable.skin_rogue2));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue3),  R.drawable.skin_rogue3));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue4),  R.drawable.skin_rogue4));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue5),  R.drawable.skin_rogue5));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue6),  R.drawable.skin_rogue6));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue7),  R.drawable.skin_rogue7));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue8),  R.drawable.skin_rogue8));
+// 9 & 10 colored
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue1) + COLORED, R.drawable.skin_rogue9));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue2) + COLORED, R.drawable.skin_rogue10));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue11), R.drawable.skin_rogue11));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue12), R.drawable.skin_rogue12));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue13), R.drawable.skin_rogue13));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue14), R.drawable.skin_rogue14));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue15), R.drawable.skin_rogue15));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue16), R.drawable.skin_rogue16));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue17), R.drawable.skin_rogue17));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue18), R.drawable.skin_rogue18));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue19), R.drawable.skin_rogue19));
+
+// --- Thief ---
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief1),  R.drawable.skin_thief1));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief2),  R.drawable.skin_thief2));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief3),  R.drawable.skin_thief3));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief4),  R.drawable.skin_thief4));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief5),  R.drawable.skin_thief5));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief6),  R.drawable.skin_thief6));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief7),  R.drawable.skin_thief7));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief8),  R.drawable.skin_thief8));
+// 9 & 10 colored
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief1) + COLORED, R.drawable.skin_thief9));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief2) + COLORED, R.drawable.skin_thief10));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief11), R.drawable.skin_thief11));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief12), R.drawable.skin_thief12));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief13), R.drawable.skin_thief13));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief14), R.drawable.skin_thief14));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief15), R.drawable.skin_thief15));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief16), R.drawable.skin_thief16));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief17), R.drawable.skin_thief17));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief18), R.drawable.skin_thief18));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief19), R.drawable.skin_thief19));
+
+// --- Warrior ---
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior1),  R.drawable.skin_warrior1));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior2),  R.drawable.skin_warrior2));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior3),  R.drawable.skin_warrior3));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior4),  R.drawable.skin_warrior4));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior5),  R.drawable.skin_warrior5));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior6),  R.drawable.skin_warrior6));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior7),  R.drawable.skin_warrior7));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior8),  R.drawable.skin_warrior8));
+// 9 & 10 colored
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior1) + COLORED, R.drawable.skin_warrior9));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior2) + COLORED, R.drawable.skin_warrior10));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior11), R.drawable.skin_warrior11));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior12), R.drawable.skin_warrior12));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior13), R.drawable.skin_warrior13));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior14), R.drawable.skin_warrior14));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior15), R.drawable.skin_warrior15));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior16), R.drawable.skin_warrior16));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior17), R.drawable.skin_warrior17));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior18), R.drawable.skin_warrior18));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior19), R.drawable.skin_warrior19));
+
+// --- Mage ---
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage1),  R.drawable.skin_mage1));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage2),  R.drawable.skin_mage2));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage3),  R.drawable.skin_mage3));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage4),  R.drawable.skin_mage4));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage5),  R.drawable.skin_mage5));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage6),  R.drawable.skin_mage6));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage7),  R.drawable.skin_mage7));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage8),  R.drawable.skin_mage8));
+// 9 & 10 colored
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage1) + COLORED, R.drawable.skin_mage9));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage2) + COLORED, R.drawable.skin_mage10));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage11), R.drawable.skin_mage11));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage12), R.drawable.skin_mage12));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage13), R.drawable.skin_mage13));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage14), R.drawable.skin_mage14));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage14) + " B", R.drawable.skin_mage14_b));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage15), R.drawable.skin_mage15));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage16), R.drawable.skin_mage16));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage17), R.drawable.skin_mage17));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage18), R.drawable.skin_mage18));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage19), R.drawable.skin_mage19));
+
+// --- Druid ---
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid1),  R.drawable.skin_druid1));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid2),  R.drawable.skin_druid2));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid3),  R.drawable.skin_druid3));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid4),  R.drawable.skin_druid4));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid5),  R.drawable.skin_druid5));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid6),  R.drawable.skin_druid6));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid7),  R.drawable.skin_druid7));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid8),  R.drawable.skin_druid8));
+// 9 & 10 colored
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid1) + COLORED, R.drawable.skin_druid9));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid2) + COLORED, R.drawable.skin_druid10));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid11), R.drawable.skin_druid11));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid12), R.drawable.skin_druid12));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid13), R.drawable.skin_druid13));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid14), R.drawable.skin_druid14));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid15), R.drawable.skin_druid15));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid16), R.drawable.skin_druid16));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid17), R.drawable.skin_druid17));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid18), R.drawable.skin_druid18));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid19), R.drawable.skin_druid19));
+
+// --- Paladin ---
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin1),  R.drawable.skin_paladin1));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin2),  R.drawable.skin_paladin2));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin3),  R.drawable.skin_paladin3));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin4),  R.drawable.skin_paladin4));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin5),  R.drawable.skin_paladin5));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin6),  R.drawable.skin_paladin6));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin7),  R.drawable.skin_paladin7));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin8),  R.drawable.skin_paladin8));
+// 9 & 10 colored
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin1) + COLORED, R.drawable.skin_paladin9));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin2) + COLORED, R.drawable.skin_paladin10));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin11), R.drawable.skin_paladin11));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin12), R.drawable.skin_paladin12));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin13), R.drawable.skin_paladin13));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin14), R.drawable.skin_paladin14));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin15), R.drawable.skin_paladin15));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin16), R.drawable.skin_paladin16));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin17), R.drawable.skin_paladin17));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin18), R.drawable.skin_paladin18));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin19), R.drawable.skin_paladin19));
+
+// --- High Mage ---
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage1),  R.drawable.skin_high_mage1));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage2),  R.drawable.skin_high_mage2));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage3),  R.drawable.skin_high_mage3));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage4),  R.drawable.skin_high_mage4));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage5),  R.drawable.skin_high_mage5));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage6),  R.drawable.skin_high_mage6));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage7),  R.drawable.skin_high_mage7));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage8),  R.drawable.skin_high_mage8));
+// 9 & 10 colored
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage1) + COLORED, R.drawable.skin_high_mage9));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage2) + COLORED, R.drawable.skin_high_mage10));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage11), R.drawable.skin_high_mage11));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage12), R.drawable.skin_high_mage12));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage13), R.drawable.skin_high_mage13));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage14), R.drawable.skin_high_mage14));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage15), R.drawable.skin_high_mage15));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage16), R.drawable.skin_high_mage16));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage17), R.drawable.skin_high_mage17));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage18), R.drawable.skin_high_mage18));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage19), R.drawable.skin_high_mage19));
+
+        // --- Elite Warrior ---
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior1),  R.drawable.skin_elite_warrior1));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior2),  R.drawable.skin_elite_warrior2));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior3),  R.drawable.skin_elite_warrior3));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior4),  R.drawable.skin_elite_warrior4));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior5),  R.drawable.skin_elite_warrior5));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior6),  R.drawable.skin_elite_warrior6));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior7),  R.drawable.skin_elite_warrior7));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior8),  R.drawable.skin_elite_warrior8));
+        // 9 & 10 colored
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior1) + COLORED, R.drawable.skin_elite_warrior9));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior2) + COLORED, R.drawable.skin_elite_warrior10));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior11), R.drawable.skin_elite_warrior11));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior12), R.drawable.skin_elite_warrior12));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior12) + " A", R.drawable.skin_elite_warrior12a));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior13), R.drawable.skin_elite_warrior13));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior14), R.drawable.skin_elite_warrior14));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior15), R.drawable.skin_elite_warrior15));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior16), R.drawable.skin_elite_warrior16));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior17), R.drawable.skin_elite_warrior17));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior18), R.drawable.skin_elite_warrior18));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior19), R.drawable.skin_elite_warrior19));
+
+        // --- Witchdoctor ---
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor1),  R.drawable.skin_witchdoctor1));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor2),  R.drawable.skin_witchdoctor2));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor3),  R.drawable.skin_witchdoctor3));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor4),  R.drawable.skin_witchdoctor4));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor5),  R.drawable.skin_witchdoctor5));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor6),  R.drawable.skin_witchdoctor6));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor7),  R.drawable.skin_witchdoctor7));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor8),  R.drawable.skin_witchdoctor8));
+        // 9 & 10 colored
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor1) + COLORED, R.drawable.skin_witchdoctor9));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor2) + COLORED, R.drawable.skin_witchdoctor10));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor11), R.drawable.skin_witchdoctor11));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor12), R.drawable.skin_witchdoctor12));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor13), R.drawable.skin_witchdoctor13));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor14), R.drawable.skin_witchdoctor14));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor15), R.drawable.skin_witchdoctor15));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor16), R.drawable.skin_witchdoctor16));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor17), R.drawable.skin_witchdoctor17));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor18), R.drawable.skin_witchdoctor18));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor19), R.drawable.skin_witchdoctor19));
+
+
         // Elixirs
         elixirList.add(new Elixir(
                 str(context, R.string.arcane_precision_tonic),
@@ -742,7 +1068,7 @@ public class ItemData {
         { int w=indexOfWeaponByName(staffList,str(context,R.string.hippie_dragon_staff_plus)), a=indexOfArmorByName(armorList,str(context,R.string.protector_of_the_oracle)), r=indexOfRingByName(ringList,str(context,R.string.vina)), c=indexOfClassByEnum(classList,ClassNames.DRUID); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=staffList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
         { int w=indexOfWeaponByName(staffList,str(context,R.string.stormcaller)), a=indexOfArmorByName(armorList,str(context,R.string.interrogator)), r=indexOfRingByName(ringList,str(context,R.string.tidecaller_ring)), c=indexOfClassByEnum(classList,ClassNames.PALADIN); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=staffList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
         { int w=indexOfWeaponByName(hammerList,str(context,R.string.enlightened_hammer)), a=indexOfArmorByName(armorList,str(context,R.string.destroyer_of_the_corrupted)), r=indexOfRingByName(ringList,str(context,R.string.whisper_of_light)), c=indexOfClassByEnum(classList,ClassNames.PALADIN); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=hammerList.get(w); armor=armorList.get(a); ring=ringList.get(r); characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
-
+        { int w=indexOfWeaponByName(daggerList,str(context,R.string.gayan_shuriken)), a=indexOfArmorByName(armorList,str(context,R.string.tunic_of_distant_ancestors)), r=indexOfRingByName(ringList,str(context,R.string.spektator)), c=indexOfClassByEnum(classList,ClassNames.PALADIN); if(w>=0&&a>=0&&r>=0&&c>=0) rewardSets.add(new EquipmentSet(){{ weapon=daggerList.get(w); armor=armorList.get(a); ring=ringList.get(r); ringElement=Elements.EARTH; characterClass=classList.get(c); skills=new boolean[]{ true,true,true,true,true,true,true,true,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false }; elixir=null; }}); }
     }
 
     private static int indexOfWeaponByName(List<Weapon> list, String name) {

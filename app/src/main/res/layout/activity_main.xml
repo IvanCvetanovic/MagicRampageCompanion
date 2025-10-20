@@ -18,10 +18,14 @@
         android:outlineSpotShadowColor="#1E0D0D"
         android:paddingBottom="24dp">
 
+        <!-- Game Logo -->
+
+        <!-- Language Button moved to top-right corner -->
         <ImageView
             android:id="@+id/GameLogo"
             android:layout_width="match_parent"
             android:layout_height="212dp"
+            android:layout_marginTop="12dp"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,28 +44,32 @@
             android:adjustViewBounds="true"
             android:src="@drawable/options_icon"
             android:contentDescription="@string/change_language"
-            app:layout_constraintTop_toBottomOf="@+id/GameLogo"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"/>
 
-        <TextView
-            android:id="@+id/wipLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/work_in_progress"
-            android:textColor="#FF0000"
+        <!-- Privacy / Ad Preferences Button -->
+        <ImageButton
+            android:id="@+id/btnAdPreferences"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ad_preferences_button"
+            android:contentDescription="TODO"
+            app:layout_constraintTop_toBottomOf="@id/btnLanguage"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/GameLogo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            tools:ignore="ContentDescription,HardcodedText" />
 
+        <!-- Buttons -->
         <Button
             android:id="@+id/NewsButton"
             android:layout_width="320dp"
@@ -71,7 +79,7 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/news"
-            app:layout_constraintTop_toBottomOf="@id/wipLabel"
+            app:layout_constraintTop_toBottomOf="@id/GameLogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"
@@ -167,6 +175,22 @@
             app:strokeColor="@color/black"
             app:strokeWidth="1dp" />
 
+        <!-- NEW: Skins button inserted here -->
+        <Button
+            android:id="@+id/SkinsButton"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="24dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="30"
+            android:textSize="16sp"
+            android:text="@string/skins"
+            app:layout_constraintTop_toBottomOf="@+id/EnemiesButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
         <Button
             android:id="@+id/AboutButton"
             android:layout_width="320dp"
@@ -176,7 +200,7 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/about"
-            app:layout_constraintTop_toBottomOf="@+id/EnemiesButton"
+            app:layout_constraintTop_toBottomOf="@+id/SkinsButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"

@@ -9,6 +9,7 @@
     android:background="@drawable/grey_background"
     tools:context=".ItemSelection">
 
+    <!-- Top: weapon category tabs -->
     <HorizontalScrollView
         android:id="@+id/buttonsScrollView"
         android:layout_width="match_parent"
@@ -23,25 +24,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- 7: Armors -->
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/button0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:text="@string/Armors"
+                android:text="@string/all"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/gradientbuttoncolor"
-                tools:ignore="ButtonStyle"/>
-
-            <!-- 8: Rings -->
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Rings"
-                android:textColor="#FFFFFF"
-                android:background="@drawable/gradientbuttoncolor"
+                android:background="@drawable/tab_button_bg"
                 tools:ignore="ButtonStyle"/>
 
             <!-- 1: Swords -->
@@ -52,7 +42,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/swords"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/gradientbuttoncolor"
+                android:background="@drawable/tab_button_bg"
                 tools:ignore="ButtonStyle"/>
 
             <!-- 2: Staffs & Grimoires -->
@@ -63,7 +53,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/staffs_and_grimoires"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/gradientbuttoncolor"
+                android:background="@drawable/tab_button_bg"
                 tools:ignore="ButtonStyle"/>
 
             <!-- 3: Daggers & Shurikens -->
@@ -74,7 +64,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/daggers_and_shurikens"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/gradientbuttoncolor"
+                android:background="@drawable/tab_button_bg"
                 tools:ignore="ButtonStyle"/>
 
             <!-- 4: Axes -->
@@ -85,7 +75,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/axes"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/gradientbuttoncolor"
+                android:background="@drawable/tab_button_bg"
                 tools:ignore="ButtonStyle"/>
 
             <!-- 5: Spears -->
@@ -96,7 +86,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/spears"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/gradientbuttoncolor"
+                android:background="@drawable/tab_button_bg"
                 tools:ignore="ButtonStyle"/>
 
             <!-- 6: Hammers & Maces -->
@@ -107,12 +97,38 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/hammers_and_maces"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/gradientbuttoncolor"
+                android:background="@drawable/tab_button_bg"
                 tools:ignore="ButtonStyle"/>
 
         </LinearLayout>
     </HorizontalScrollView>
 
+    <!-- Search bar under tabs -->
+    <EditText
+        android:id="@+id/searchEdit"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="6dp"
+        android:autofillHints=""
+        android:hint="@string/search_hint"
+        android:inputType="text"
+        android:singleLine="true"
+
+        android:background="@drawable/search_field_bg"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#99FFFFFF"
+        android:drawablePadding="8dp"
+
+        app:layout_constraintTop_toBottomOf="@id/buttonsScrollView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- Grid list under search -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView1"
         android:layout_width="0dp"
@@ -120,7 +136,7 @@
         android:padding="8dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="3"
-        app:layout_constraintTop_toBottomOf="@id/buttonsScrollView"
+        app:layout_constraintTop_toBottomOf="@id/searchEdit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
