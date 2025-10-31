@@ -1603,4 +1603,21 @@
     <string name="class_high_mage">Вищий маг</string>
     <string name="class_elite_warrior">Елітний воїн</string>
     <string name="class_witchdoctor">Чаклун</string>
+
+    <string name="root_of_judgement">Корень Приговора</string>
+    <string name="eye_of_the_rift">Око Бездны</string>
+    <string name="staff_of_withering">Посох занепаду</string>
+    <string name="crowned_dragonhead">Дракон Царственного Пламени</string>
+    <string name="knight_of_discord">Knight of Discord</string>
+    <string name="bloodforged_charm_earring">Кровонароджена сережка</string>
+    <string name="moonbound_necklace">Місячне намисто</string>
+    <string name="skybreaker_band">Доручи підкорювача небес</string>
+
+    <string name="price_freemium_gold">Ціна freemium-золота: </string>
+    <string name="price_premium_gold">Ціна premium-золота: </string>
+    <string name="price_freemium_token">Ціна freemium-токена: </string>
+    <string name="price_premium_token">Ціна premium-токена: </string>
+    <string name="price_freemium_sell">Freemium-ціна продажу: </string>
+    <string name="price_premium_sell">Premium-ціна продажу: </string>
+
 </resources>

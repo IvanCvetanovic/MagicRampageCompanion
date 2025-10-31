@@ -20,14 +20,13 @@ import java.util.concurrent.Executors;
 public class ItemSyncer {
     private static final String TAG = "ItemSyncer";
 
-    // Raw JSON URL of your gist
+    // Always-latest JSON URL
     private static final String JSON_URL =
             "https://gist.githubusercontent.com/andresan87/5670c559e5a930129aa03dfce7827306/raw/items.json";
 
     public static void run(Context context) {
         Executors.newSingleThreadExecutor().execute(() -> {
             try {
-                // 1) Download JSON
                 HttpURLConnection conn = (HttpURLConnection) new URL(JSON_URL).openConnection();
                 conn.setRequestMethod("GET");
                 conn.setConnectTimeout(10000);
@@ -46,7 +45,6 @@ public class ItemSyncer {
                 br.close();
                 conn.disconnect();
 
-                // 2) Parse → map by lowercased name_en
                 JSONArray arr = new JSONArray(sb.toString());
                 HashMap<String, JsonItem> map = new HashMap<>();
                 for (int i = 0; i < arr.length(); i++) {
@@ -56,13 +54,11 @@ public class ItemSyncer {
                     if (ji.name_en != null && !ji.name_en.isEmpty()) {
                         map.put(ji.name_en.toLowerCase(), ji);
                     }
-                    // fallback: also allow mapping by "name"
                     if (ji.name != null && !ji.name.isEmpty()) {
                         map.putIfAbsent(ji.name.toLowerCase(), ji);
                     }
                 }
 
-                // 3) Sync all lists
                 int updatedWeapons = 0;
                 updatedWeapons += syncWeapons(map, ItemData.swordList);
                 updatedWeapons += syncWeapons(map, ItemData.daggerList);
@@ -96,8 +92,15 @@ public class ItemSyncer {
                 continue;
             }
 
+            int newFG = (ji.freemiumGoldPrice     != null) ? ji.freemiumGoldPrice     : old.getFreemiumGoldPrice();
+            int newPG = (ji.premiumGoldPrice      != null) ? ji.premiumGoldPrice      : old.getPremiumGoldPrice();
+            int newFC = (ji.freemiumCoinPrice     != null) ? ji.freemiumCoinPrice     : old.getFreemiumCoinPrice();
+            int newPC = (ji.premiumCoinPrice      != null) ? ji.premiumCoinPrice      : old.getPremiumCoinPrice();
+            int newSF = (ji.baseFreemiumSellPrice != null) ? ji.baseFreemiumSellPrice : old.getBaseFreemiumSellPrice();
+            int newSP = (ji.basePremiumSellPrice  != null) ? ji.basePremiumSellPrice  : old.getBasePremiumSellPrice();
+
             Elements element   = mapElement(ji.element, old.getElement());
-            int upgrades = protectUpgrade(old.getUpgrades(), ji.maxLevelAllowed);
+            int upgrades       = protectUpgrade(old.getUpgrades(), ji.maxLevelAllowed);
             int minDamage      = ji.damage != null ? ji.damage : old.getMinDamage();
             int maxDamage      = ji.maxLevelDamage != null ? ji.maxLevelDamage : old.getMaxDamage();
             int cooldown       = ji.attackCooldown != null ? ji.attackCooldown : old.getAttackCooldown();
@@ -125,7 +128,13 @@ public class ItemSyncer {
                             frost == old.isFrost() &&
                             speedPct == old.getSpeed() &&
                             jumpPct == old.getJump() &&
-                            (int)armorBonus == (int)old.getArmorBonus();
+                            (int)armorBonus == (int)old.getArmorBonus()
+                            && newFG == old.getFreemiumGoldPrice()
+                            && newPG == old.getPremiumGoldPrice()
+                            && newFC == old.getFreemiumCoinPrice()
+                            && newPC == old.getPremiumCoinPrice()
+                            && newSF == old.getBaseFreemiumSellPrice()
+                            && newSP == old.getBasePremiumSellPrice();;
 
             if (same) continue;
 
@@ -148,6 +157,13 @@ public class ItemSyncer {
                     frost
             );
 
+            updatedW.setFreemiumGoldPrice(newFG);
+            updatedW.setPremiumGoldPrice(newPG);
+            updatedW.setFreemiumCoinPrice(newFC);
+            updatedW.setPremiumCoinPrice(newPC);
+            updatedW.setBaseFreemiumSellPrice(newSF);
+            updatedW.setBasePremiumSellPrice(newSP);
+
             Log.i(TAG, "Updated weapon: " + old.getName());
             logDiff(old.getName(), "element", old.getElement(), element);
             logDiff(old.getName(), "upgrades", old.getUpgrades(), upgrades);
@@ -162,12 +178,18 @@ public class ItemSyncer {
             logDiff(old.getName(), "speed", old.getSpeed(), speedPct);
             logDiff(old.getName(), "jump", old.getJump(), jumpPct);
             logDiff(old.getName(), "armorBonus", old.getArmorBonus(), armorBonus);
+            logDiff(old.getName(), "freemiumGoldPrice", old.getFreemiumGoldPrice(), newFG);
+            logDiff(old.getName(), "premiumGoldPrice",  old.getPremiumGoldPrice(),  newPG);
+            logDiff(old.getName(), "freemiumCoinPrice", old.getFreemiumCoinPrice(), newFC);
+            logDiff(old.getName(), "premiumCoinPrice",  old.getPremiumCoinPrice(),  newPC);
+            logDiff(old.getName(), "baseFreemiumSellPrice", old.getBaseFreemiumSellPrice(), newSF);
+            logDiff(old.getName(), "basePremiumSellPrice",  old.getBasePremiumSellPrice(),  newSP);
+
             list.set(i, updatedW);
             updated++;
         }
         return updated;
     }
-
     // ==================
     // Armors full update
     // ==================
@@ -181,9 +203,16 @@ public class ItemSyncer {
                 continue;
             }
 
+            int newFG = (ji.freemiumGoldPrice     != null) ? ji.freemiumGoldPrice     : old.getFreemiumGoldPrice();
+            int newPG = (ji.premiumGoldPrice      != null) ? ji.premiumGoldPrice      : old.getPremiumGoldPrice();
+            int newFC = (ji.freemiumCoinPrice     != null) ? ji.freemiumCoinPrice     : old.getFreemiumCoinPrice();
+            int newPC = (ji.premiumCoinPrice      != null) ? ji.premiumCoinPrice      : old.getPremiumCoinPrice();
+            int newSF = (ji.baseFreemiumSellPrice != null) ? ji.baseFreemiumSellPrice : old.getBaseFreemiumSellPrice();
+            int newSP = (ji.basePremiumSellPrice  != null) ? ji.basePremiumSellPrice  : old.getBasePremiumSellPrice();
+
             Elements element   = mapElement(ji.element, old.getElement());
             boolean frostImm   = ji.frost != null ? ji.frost : old.isFrostImmune();
-            int upgrades = protectUpgrade(old.getUpgrades(), ji.maxLevelAllowed);
+            int upgrades       = protectUpgrade(old.getUpgrades(), ji.maxLevelAllowed);
 
             int minArmor       = ji.armor != null ? ji.armor : old.getMinArmor();
             int maxArmor       = ji.maxLevelArmor != null ? ji.maxLevelArmor : old.getMaxArmor();
@@ -212,7 +241,13 @@ public class ItemSyncer {
                             daggerPct == (int)old.getDagger() &&
                             axePct == (int)old.getAxe() &&
                             hammerPct == (int)old.getHammer() &&
-                            spearPct == (int)old.getSpear();
+                            spearPct == (int)old.getSpear()
+                            && newFG == old.getFreemiumGoldPrice()
+                            && newPG == old.getPremiumGoldPrice()
+                            && newFC == old.getFreemiumCoinPrice()
+                            && newPC == old.getPremiumCoinPrice()
+                            && newSF == old.getBaseFreemiumSellPrice()
+                            && newSP == old.getBasePremiumSellPrice();
 
             if (same) continue;
 
@@ -235,6 +270,13 @@ public class ItemSyncer {
                     old.getImageResId()
             );
 
+            updatedA.setFreemiumGoldPrice(newFG);
+            updatedA.setPremiumGoldPrice(newPG);
+            updatedA.setFreemiumCoinPrice(newFC);
+            updatedA.setPremiumCoinPrice(newPC);
+            updatedA.setBaseFreemiumSellPrice(newSF);
+            updatedA.setBasePremiumSellPrice(newSP);
+
             Log.i(TAG, "Updated armor: " + old.getName());
             logDiff(old.getName(), "element", old.getElement(), element);
             logDiff(old.getName(), "frostImmune", old.isFrostImmune(), frostImm);
@@ -250,6 +292,12 @@ public class ItemSyncer {
             logDiff(old.getName(), "axe", (int)old.getAxe(), axePct);
             logDiff(old.getName(), "hammer", (int)old.getHammer(), hammerPct);
             logDiff(old.getName(), "spear", (int)old.getSpear(), spearPct);
+            logDiff(old.getName(), "freemiumGoldPrice", old.getFreemiumGoldPrice(), newFG);
+            logDiff(old.getName(), "premiumGoldPrice",  old.getPremiumGoldPrice(),  newPG);
+            logDiff(old.getName(), "freemiumCoinPrice", old.getFreemiumCoinPrice(), newFC);
+            logDiff(old.getName(), "premiumCoinPrice",  old.getPremiumCoinPrice(),  newPC);
+            logDiff(old.getName(), "baseFreemiumSellPrice", old.getBaseFreemiumSellPrice(), newSF);
+            logDiff(old.getName(), "basePremiumSellPrice",  old.getBasePremiumSellPrice(),  newSP);
 
             list.set(i, updatedA);
             updated++;
@@ -269,6 +317,13 @@ public class ItemSyncer {
                 Log.w(TAG, "No JSON match for ring: " + old.getName());
                 continue;
             }
+
+            int newFG = (ji.freemiumGoldPrice     != null) ? ji.freemiumGoldPrice     : old.getFreemiumGoldPrice();
+            int newPG = (ji.premiumGoldPrice      != null) ? ji.premiumGoldPrice      : old.getPremiumGoldPrice();
+            int newFC = (ji.freemiumCoinPrice     != null) ? ji.freemiumCoinPrice     : old.getFreemiumCoinPrice();
+            int newPC = (ji.premiumCoinPrice      != null) ? ji.premiumCoinPrice      : old.getPremiumCoinPrice();
+            int newSF = (ji.baseFreemiumSellPrice != null) ? ji.baseFreemiumSellPrice : old.getBaseFreemiumSellPrice();
+            int newSP = (ji.basePremiumSellPrice  != null) ? ji.basePremiumSellPrice  : old.getBasePremiumSellPrice();
 
             Elements element   = mapElement(ji.element, old.getElement());
 
@@ -296,7 +351,13 @@ public class ItemSyncer {
                             axePct == (int)old.getAxe() &&
                             hammerPct == (int)old.getHammer() &&
                             spearPct == (int)old.getSpear() &&
-                            (int)armorBonus == (int)old.getArmorBonus();
+                            (int)armorBonus == (int)old.getArmorBonus()
+                            && newFG == old.getFreemiumGoldPrice()
+                            && newPG == old.getPremiumGoldPrice()
+                            && newFC == old.getFreemiumCoinPrice()
+                            && newPC == old.getPremiumCoinPrice()
+                            && newSF == old.getBaseFreemiumSellPrice()
+                            && newSP == old.getBasePremiumSellPrice();
 
             if (same) continue;
 
@@ -317,6 +378,13 @@ public class ItemSyncer {
                     old.getImageResId()
             );
 
+            updatedR.setFreemiumGoldPrice(newFG);
+            updatedR.setPremiumGoldPrice(newPG);
+            updatedR.setFreemiumCoinPrice(newFC);
+            updatedR.setPremiumCoinPrice(newPC);
+            updatedR.setBaseFreemiumSellPrice(newSF);
+            updatedR.setBasePremiumSellPrice(newSP);
+
             Log.i(TAG, "Updated ring: " + old.getName());
             logDiff(old.getName(), "element", old.getElement(), element);
             logDiff(old.getName(), "armor", old.getArmor(), armor);
@@ -330,6 +398,12 @@ public class ItemSyncer {
             logDiff(old.getName(), "axe", (int)old.getAxe(), axePct);
             logDiff(old.getName(), "hammer", (int)old.getHammer(), hammerPct);
             logDiff(old.getName(), "spear", (int)old.getSpear(), spearPct);
+            logDiff(old.getName(), "freemiumGoldPrice", old.getFreemiumGoldPrice(), newFG);
+            logDiff(old.getName(), "premiumGoldPrice",  old.getPremiumGoldPrice(),  newPG);
+            logDiff(old.getName(), "freemiumCoinPrice", old.getFreemiumCoinPrice(), newFC);
+            logDiff(old.getName(), "premiumCoinPrice",  old.getPremiumCoinPrice(),  newPC);
+            logDiff(old.getName(), "baseFreemiumSellPrice", old.getBaseFreemiumSellPrice(), newSF);
+            logDiff(old.getName(), "basePremiumSellPrice",  old.getBasePremiumSellPrice(),  newSP);
 
             list.set(i, updatedR);
             updated++;
@@ -358,14 +432,11 @@ public class ItemSyncer {
         }
     }
 
-    // Convert multiplier (e.g., 1.10) → integer percent (10)
     private static int pctInt(Double mult, int fallback) {
         if (mult == null) return fallback;
         return (int)Math.round((mult - 1.0) * 100.0);
-        // If mult==1.0 -> 0; if 1.06 -> 6; if 0.90 (unlikely) -> -10
     }
 
-    // Same but keep as double (for armorBonus fields)
     private static double pctDouble(Double mult, double fallback) {
         if (mult == null) return fallback;
         return Math.round((mult - 1.0) * 100.0);
@@ -373,36 +444,43 @@ public class ItemSyncer {
 
     private static JsonItem toJsonItem(JSONObject o) {
         JsonItem ji = new JsonItem();
-        ji.name             = optStr(o, "name");
-        ji.name_en          = optStr(o, "name_en");
-        ji.element          = optStr(o, "element");
+        ji.name  = optStr(o, "name");
+        ji.name_en = optStr(o, "name_en");
+        ji.element = optStr(o, "element");
 
-        ji.maxLevelAllowed  = optInt(o, "maxLevelAllowed");
-
-        ji.attackCooldown   = optInt(o, "attackCooldown");
-        ji.damage           = optInt(o, "damage");
-        ji.maxLevelDamage   = optInt(o, "maxLevelDamage");
-        ji.pierceCount      = optInt(o, "pierceCount");
+        ji.maxLevelAllowed = optInt(o, "maxLevelAllowed");
+        ji.attackCooldown  = optInt(o, "attackCooldown");
+        ji.damage          = optInt(o, "damage");
+        ji.maxLevelDamage  = optInt(o, "maxLevelDamage");
+        ji.pierceCount     = optInt(o, "pierceCount");
 
         ji.enablePierceAreaDamage   = optBool(o, "enablePierceAreaDamage");
         ji.persistAgainstProjectile = optBool(o, "persistAgainstProjectile");
         ji.poisonous                = optBool(o, "poisonous");
         ji.frost                    = optBool(o, "frost");
 
-        ji.speedBoost       = optDouble(o, "speedBoost");
-        ji.jumpBoost        = optDouble(o, "jumpBoost");
-        ji.armorBoost       = optDouble(o, "armorBoost");
+        ji.speedBoost = optDouble(o, "speedBoost");
+        ji.jumpBoost  = optDouble(o, "jumpBoost");
+        ji.armorBoost = optDouble(o, "armorBoost");
 
-        ji.armor            = optInt(o, "armor");
-        ji.maxLevelArmor    = optInt(o, "maxLevelArmor");
+        ji.armor         = optInt(o, "armor");
+        ji.maxLevelArmor = optInt(o, "maxLevelArmor");
 
-        ji.magicBoost       = optDouble(o, "magicBoost");
-        ji.swordBoost       = optDouble(o, "swordBoost");
-        ji.staffBoost       = optDouble(o, "staffBoost");
-        ji.daggerBoost      = optDouble(o, "daggerBoost");
-        ji.axeBoost         = optDouble(o, "axeBoost");
-        ji.hammerBoost      = optDouble(o, "hammerBoost");
-        ji.spearBoost       = optDouble(o, "spearBoost");
+        ji.magicBoost  = optDouble(o, "magicBoost");
+        ji.swordBoost  = optDouble(o, "swordBoost");
+        ji.staffBoost  = optDouble(o, "staffBoost");
+        ji.daggerBoost = optDouble(o, "daggerBoost");
+        ji.axeBoost    = optDouble(o, "axeBoost");
+        ji.hammerBoost = optDouble(o, "hammerBoost");
+        ji.spearBoost  = optDouble(o, "spearBoost");
+
+        // 💰 New price fields
+        ji.freemiumGoldPrice     = optInt(o, "freemiumGoldPrice");
+        ji.premiumGoldPrice      = optInt(o, "premiumGoldPrice");
+        ji.freemiumCoinPrice     = optInt(o, "freemiumCoinPrice");
+        ji.premiumCoinPrice      = optInt(o, "premiumCoinPrice");
+        ji.baseFreemiumSellPrice = optInt(o, "baseFreemiumSellPrice");
+        ji.basePremiumSellPrice  = optInt(o, "basePremiumSellPrice");
         return ji;
     }
 
@@ -419,7 +497,6 @@ public class ItemSyncer {
         return o.has(k) && !o.isNull(k) ? o.optDouble(k) : null;
     }
 
-    // ---- logging helper ----
     private static void logDiff(String itemName, String field, Object oldVal, Object newVal) {
         if (oldVal == null && newVal == null) return;
         if (oldVal != null && oldVal.equals(newVal)) return;
@@ -428,7 +505,6 @@ public class ItemSyncer {
         Log.i(TAG, "  " + itemName + " | " + field + ": " + oldVal + " → " + newVal);
     }
 
-    // Never allow upgrades to drop below 1 when the old value is already ≥1.
     private static int protectUpgrade(int oldUpgrades, Integer jsonMaxLevelAllowed) {
         if (jsonMaxLevelAllowed == null) return oldUpgrades;
         if (oldUpgrades >= 1 && jsonMaxLevelAllowed < 1) {
@@ -437,6 +513,4 @@ public class ItemSyncer {
         }
         return jsonMaxLevelAllowed;
     }
-
-
 }

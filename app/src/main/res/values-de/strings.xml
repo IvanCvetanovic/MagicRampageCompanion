@@ -1605,4 +1605,20 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="class_high_mage">Hochmagier</string>
     <string name="class_elite_warrior">Elitekrieger</string>
     <string name="class_witchdoctor">Hexendoktor</string>
+
+    <string name="root_of_judgement">Wurzel des Urteils</string>
+    <string name="eye_of_the_rift">Auge des Risses</string>
+    <string name="staff_of_withering">Stab des Verwelkens</string>
+    <string name="crowned_dragonhead">Gekrönter Drachenkopf</string>
+    <string name="knight_of_discord">Ritter von Discord</string>
+    <string name="bloodforged_charm_earring">Blutgeschmiedeter Talisman</string>
+    <string name="moonbound_necklace">Mondgebundene Kette</string>
+    <string name="skybreaker_band">Himmelbrecher-Ring</string>
+
+    <string name="price_freemium_gold">Freemium-Goldpreis: </string>
+    <string name="price_premium_gold">Premium-Goldpreis: </string>
+    <string name="price_freemium_token">Freemium-Token-Preis: </string>
+    <string name="price_premium_token">Premium-Token-Preis: </string>
+    <string name="price_freemium_sell">Freemium-Verkaufspreis: </string>
+    <string name="price_premium_sell">Premium-Verkaufspreis: </string>
 </resources>

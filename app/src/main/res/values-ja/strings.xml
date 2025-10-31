@@ -1604,4 +1604,21 @@
     <string name="class_high_mage">ハイメイジ</string>
     <string name="class_elite_warrior">エリートウォーリアー</string>
     <string name="class_witchdoctor">ウィッチドクター</string>
+
+    <string name="root_of_judgement">Root of Judgement</string>
+    <string name="eye_of_the_rift">Eye of the Rift</string>
+    <string name="staff_of_withering">枯死の杖</string>
+    <string name="crowned_dragonhead">Crowned Dragonhead</string>
+    <string name="knight_of_discord">Knight of Discord</string>
+    <string name="bloodforged_charm_earring">血鍛のチャーム</string>
+    <string name="moonbound_necklace">月縛のネックレス</string>
+    <string name="skybreaker_band">天翔ける者の腕輪</string>
+
+    <string name="price_freemium_gold">フリーミアムゴールド価格: </string>
+    <string name="price_premium_gold">プレミアムゴールド価格: </string>
+    <string name="price_freemium_token">フリーミアムトークン価格: </string>
+    <string name="price_premium_token">プレミアムトークン価格: </string>
+    <string name="price_freemium_sell">フリーミアム販売価格: </string>
+    <string name="price_premium_sell">プレミアム販売価格: </string>
+
 </resources>

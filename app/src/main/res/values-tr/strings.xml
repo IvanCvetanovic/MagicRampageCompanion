@@ -1603,4 +1603,21 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="class_high_mage">Yüce Büyücü</string>
     <string name="class_elite_warrior">Seçkin Savaşçı</string>
     <string name="class_witchdoctor">Cadı Doktor</string>
+
+    <string name="root_of_judgement">Root of Judgement</string>
+    <string name="eye_of_the_rift">Eye of the Rift</string>
+    <string name="staff_of_withering">Solduran Asası</string>
+    <string name="crowned_dragonhead">Crowned Dragonhead</string>
+    <string name="knight_of_discord">Knight of Discord</string>
+    <string name="bloodforged_charm_earring">Kandövme Tılsımı</string>
+    <string name="moonbound_necklace">Ayyeminli Kolye</string>
+    <string name="skybreaker_band">Gökkıran Kuşağı</string>
+
+    <string name="price_freemium_gold">Freemium altın fiyatı: </string>
+    <string name="price_premium_gold">Premium altın fiyatı: </string>
+    <string name="price_freemium_token">Freemium jeton fiyatı: </string>
+    <string name="price_premium_token">Premium jeton fiyatı: </string>
+    <string name="price_freemium_sell">Freemium satış fiyatı: </string>
+    <string name="price_premium_sell">Premium satış fiyatı: </string>
+
 </resources>

@@ -1605,4 +1605,22 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="class_high_mage">Alto mago</string>
     <string name="class_elite_warrior">Guerrero de élite</string>
     <string name="class_witchdoctor">Hechicero</string>
+
+    <string name="root_of_judgement">Raíz del juicio</string>
+    <string name="eye_of_the_rift">Ojo de la grieta</string>
+    <string name="staff_of_withering">Báculo de marchitamiento</string>
+    <string name="crowned_dragonhead">Cabeza de dragón coronada</string>
+    <string name="knight_of_discord">Caballero de Discord</string>
+    <string name="bloodforged_charm_earring">Amuleto forjado en sangre</string>
+    <string name="moonbound_necklace">Collar vinculado a la luna</string>
+    <string name="skybreaker_band">Banda de rompecielos</string>
+
+    <string name="price_freemium_gold">Precio de oro freemium: </string>
+    <string name="price_premium_gold">Precio de oro premium: </string>
+    <string name="price_freemium_token">Precio de token freemium: </string>
+    <string name="price_premium_token">Precio de token premium: </string>
+    <string name="price_freemium_sell">Precio de venta freemium: </string>
+    <string name="price_premium_sell">Precio de venta premium: </string>
+
+
 </resources>

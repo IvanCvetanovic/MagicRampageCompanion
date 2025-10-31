@@ -46,7 +46,8 @@
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/itemImageContainer"  app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/itemImageContainer"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <ScrollView
@@ -62,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
+        <TextView
             android:id="@+id/itemDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

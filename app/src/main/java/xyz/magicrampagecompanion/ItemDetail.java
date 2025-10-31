@@ -32,7 +32,7 @@ public class ItemDetail extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_item_detail);
 
-        // --- Edge-to-edge: apply system bar insets from base paddings (no cumulative creep) ---
+        // --- Edge-to-edge padding fix ---
         final View root = findViewById(R.id.detail_root);
         final int baseL = root.getPaddingLeft();
         final int baseT = root.getPaddingTop();
@@ -108,6 +108,28 @@ public class ItemDetail extends AppCompatActivity {
         ssb.append("\n");
     }
 
+    private void appendIfNonZeroInt(SpannableStringBuilder ssb, int labelResId, int value) {
+        if (value != 0) {
+            ssb.append(getString(labelResId)).append(String.valueOf(value)).append("\n");
+        }
+    }
+
+    private void appendIfNonZeroPercent(SpannableStringBuilder ssb, int labelResId, int percentValue) {
+        if (percentValue != 0) {
+            ssb.append(getString(labelResId)).append(String.valueOf(percentValue)).append("%\n");
+        }
+    }
+
+    private void appendPrices(SpannableStringBuilder ssb,
+                              int fg, int pg, int fc, int pc, int sf, int sp) {
+        appendIfNonZeroInt(ssb, R.string.price_freemium_gold, fg);
+        appendIfNonZeroInt(ssb, R.string.price_premium_gold,  pg);
+        appendIfNonZeroInt(ssb, R.string.price_freemium_token, fc);
+        appendIfNonZeroInt(ssb, R.string.price_premium_token,  pc);
+        appendIfNonZeroInt(ssb, R.string.price_freemium_sell,  sf);
+        appendIfNonZeroInt(ssb, R.string.price_premium_sell,   sp);
+    }
+
     private CharSequence buildWeaponDesc(Weapon w) {
         SpannableStringBuilder ssb = new SpannableStringBuilder();
         Elements element = w.getElement();
@@ -128,10 +150,11 @@ public class ItemDetail extends AppCompatActivity {
 
         ssb.append(getString(R.string.damage_in_calculation))
                 .append(String.valueOf(w.getMinDamage())).append("-").append(String.valueOf(w.getMaxDamage())).append("\n")
-                .append(getString(R.string.upgrades)).append(String.valueOf(w.getUpgrades())).append("\n")
-                .append(getString(R.string.armor_bonus)).append(String.valueOf((int) w.getArmorBonus())).append("%\n")
-                .append(getString(R.string.speed)).append(String.valueOf(w.getSpeed())).append("%\n")
-                .append(getString(R.string.jump_impulse)).append(String.valueOf(w.getJump())).append("%\n");
+                .append(getString(R.string.upgrades)).append(String.valueOf(w.getUpgrades())).append("\n");
+
+        appendIfNonZeroPercent(ssb, R.string.armor_bonus, (int) w.getArmorBonus());
+        appendIfNonZeroPercent(ssb, R.string.speed,       w.getSpeed());
+        appendIfNonZeroPercent(ssb, R.string.jump_impulse, w.getJump());
 
         ssb.append(getString(R.string.attack_speed));
         double currentAttackSpeed = w.getAttackCooldown();
@@ -159,12 +182,22 @@ public class ItemDetail extends AppCompatActivity {
         }
         ssb.append("\n");
 
-        ssb.append(getString(R.string.pierce_count)).append(String.valueOf(w.getPierceCount())).append("\n");
+        appendIfNonZeroInt(ssb, R.string.pierce_count, w.getPierceCount());
 
         appendBooleanStatus(ssb, getString(R.string.pierce_area_damage), w.isEnablePierceAreaDamage());
         appendBooleanStatus(ssb, getString(R.string.projectile_persistence), w.isPersistAgainstProjectile());
         appendBooleanStatus(ssb, getString(R.string.poisonous_attack), w.isPoisonous());
         appendBooleanStatus(ssb, getString(R.string.frost_attack), w.isFrost());
+
+        appendPrices(
+                ssb,
+                w.getFreemiumGoldPrice(),
+                w.getPremiumGoldPrice(),
+                w.getFreemiumCoinPrice(),
+                w.getPremiumCoinPrice(),
+                w.getBaseFreemiumSellPrice(),
+                w.getBasePremiumSellPrice()
+        );
 
         return ssb;
     }
@@ -185,18 +218,29 @@ public class ItemDetail extends AppCompatActivity {
 
         ssb.append(getString(R.string.armor_in_calculation))
                 .append(String.valueOf(a.getMinArmor())).append("-").append(String.valueOf(a.getMaxArmor())).append("\n")
-                .append(getString(R.string.upgrades)).append(String.valueOf(a.getUpgrades())).append("\n")
-                .append(getString(R.string.speed)).append(String.valueOf(a.getSpeed())).append("%\n")
-                .append(getString(R.string.jump_impulse)).append(String.valueOf(a.getJump())).append("%\n")
-                .append(getString(R.string.magic_bonus)).append(String.valueOf((int) a.getMagic())).append("%\n")
-                .append(getString(R.string.sword_bonus)).append(String.valueOf((int) a.getSword())).append("%\n")
-                .append(getString(R.string.staff_bonus)).append(String.valueOf((int) a.getStaff())).append("%\n")
-                .append(getString(R.string.dagger_bonus)).append(String.valueOf((int) a.getDagger())).append("%\n")
-                .append(getString(R.string.axe_bonus)).append(String.valueOf((int) a.getAxe())).append("%\n")
-                .append(getString(R.string.hammer_bonus)).append(String.valueOf((int) a.getHammer())).append("%\n")
-                .append(getString(R.string.spear_bonus)).append(String.valueOf((int) a.getSpear())).append("%\n");
+                .append(getString(R.string.upgrades)).append(String.valueOf(a.getUpgrades())).append("\n");
+
+        appendIfNonZeroPercent(ssb, R.string.speed,        a.getSpeed());
+        appendIfNonZeroPercent(ssb, R.string.jump_impulse, a.getJump());
+        appendIfNonZeroPercent(ssb, R.string.magic_bonus,  (int) a.getMagic());
+        appendIfNonZeroPercent(ssb, R.string.sword_bonus,  (int) a.getSword());
+        appendIfNonZeroPercent(ssb, R.string.staff_bonus,  (int) a.getStaff());
+        appendIfNonZeroPercent(ssb, R.string.dagger_bonus, (int) a.getDagger());
+        appendIfNonZeroPercent(ssb, R.string.axe_bonus,    (int) a.getAxe());
+        appendIfNonZeroPercent(ssb, R.string.hammer_bonus, (int) a.getHammer());
+        appendIfNonZeroPercent(ssb, R.string.spear_bonus,  (int) a.getSpear());
 
         appendBooleanStatus(ssb, getString(R.string.frost_resistance), a.isFrostImmune());
+
+        appendPrices(
+                ssb,
+                a.getFreemiumGoldPrice(),
+                a.getPremiumGoldPrice(),
+                a.getFreemiumCoinPrice(),
+                a.getPremiumCoinPrice(),
+                a.getBaseFreemiumSellPrice(),
+                a.getBasePremiumSellPrice()
+        );
 
         return ssb;
     }
@@ -215,17 +259,28 @@ public class ItemDetail extends AppCompatActivity {
         }
         ssb.append("\n");
 
-        ssb.append(getString(R.string.armor_in_calculation)).append(String.valueOf(r.getArmor())).append("\n")
-                .append(getString(R.string.armor_bonus)).append(String.valueOf((int) r.getArmorBonus())).append("%\n")
-                .append(getString(R.string.speed)).append(String.valueOf(r.getSpeed())).append("%\n")
-                .append(getString(R.string.jump_impulse)).append(String.valueOf(r.getJump())).append("%\n")
-                .append(getString(R.string.magic_bonus)).append(String.valueOf((int) r.getMagic())).append("%\n")
-                .append(getString(R.string.sword_bonus)).append(String.valueOf((int) r.getSword())).append("%\n")
-                .append(getString(R.string.staff_bonus)).append(String.valueOf((int) r.getStaff())).append("%\n")
-                .append(getString(R.string.dagger_bonus)).append(String.valueOf((int) r.getDagger())).append("%\n")
-                .append(getString(R.string.axe_bonus)).append(String.valueOf((int) r.getAxe())).append("%\n")
-                .append(getString(R.string.hammer_bonus)).append(String.valueOf((int) r.getHammer())).append("%\n")
-                .append(getString(R.string.spear_bonus)).append(String.valueOf((int) r.getSpear())).append("%\n");
+        ssb.append(getString(R.string.armor_in_calculation)).append(String.valueOf(r.getArmor())).append("\n");
+
+        appendIfNonZeroPercent(ssb, R.string.armor_bonus, (int) r.getArmorBonus());
+        appendIfNonZeroPercent(ssb, R.string.speed,       r.getSpeed());
+        appendIfNonZeroPercent(ssb, R.string.jump_impulse, r.getJump());
+        appendIfNonZeroPercent(ssb, R.string.magic_bonus,  (int) r.getMagic());
+        appendIfNonZeroPercent(ssb, R.string.sword_bonus,  (int) r.getSword());
+        appendIfNonZeroPercent(ssb, R.string.staff_bonus,  (int) r.getStaff());
+        appendIfNonZeroPercent(ssb, R.string.dagger_bonus, (int) r.getDagger());
+        appendIfNonZeroPercent(ssb, R.string.axe_bonus,    (int) r.getAxe());
+        appendIfNonZeroPercent(ssb, R.string.hammer_bonus, (int) r.getHammer());
+        appendIfNonZeroPercent(ssb, R.string.spear_bonus,  (int) r.getSpear());
+
+        appendPrices(
+                ssb,
+                r.getFreemiumGoldPrice(),
+                r.getPremiumGoldPrice(),
+                r.getFreemiumCoinPrice(),
+                r.getPremiumCoinPrice(),
+                r.getBaseFreemiumSellPrice(),
+                r.getBasePremiumSellPrice()
+        );
 
         return ssb;
     }

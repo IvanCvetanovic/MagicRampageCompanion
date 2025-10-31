@@ -35,4 +35,12 @@ public class JsonItem {
     public Double  axeBoost;
     public Double  hammerBoost;
     public Double  spearBoost;
+
+    // 💰 New price fields (to sync)
+    public Integer freemiumGoldPrice;
+    public Integer premiumGoldPrice;
+    public Integer freemiumCoinPrice;
+    public Integer premiumCoinPrice;
+    public Integer baseFreemiumSellPrice;
+    public Integer basePremiumSellPrice;
 }

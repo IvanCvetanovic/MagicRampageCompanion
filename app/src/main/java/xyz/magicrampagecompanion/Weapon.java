@@ -24,6 +24,14 @@ public class Weapon implements Parcelable {
     private boolean isPoisonous;
     private boolean isFrost;
 
+    // NEW: pricing fields
+    private int freemiumGoldPrice;
+    private int premiumGoldPrice;
+    private int freemiumCoinPrice;
+    private int premiumCoinPrice;
+    private int baseFreemiumSellPrice;
+    private int basePremiumSellPrice;
+
     public Weapon(String name, WeaponTypes type, Elements element, int minDamage, int maxDamage, int upgrades,
                   double armorBonus, int speed, int jump, int imageResId,
                   int attackCooldown, int pierceCount, boolean enablePierceAreaDamage,
@@ -44,80 +52,68 @@ public class Weapon implements Parcelable {
         this.persistAgainstProjectile = persistAgainstProjectile;
         this.isPoisonous = isPoisonous;
         this.isFrost = isFrost;
+
+        // default prices to 0
+        this.freemiumGoldPrice = 0;
+        this.premiumGoldPrice = 0;
+        this.freemiumCoinPrice = 0;
+        this.premiumCoinPrice = 0;
+        this.baseFreemiumSellPrice = 0;
+        this.basePremiumSellPrice = 0;
     }
 
-    public String getName() {
-        return name;
+    // NEW: overloaded constructor with prices (order: FG, PG, FC, PC, SellF, SellP)
+    public Weapon(String name, WeaponTypes type, Elements element, int minDamage, int maxDamage, int upgrades,
+                  double armorBonus, int speed, int jump, int imageResId,
+                  int attackCooldown, int pierceCount, boolean enablePierceAreaDamage,
+                  boolean persistAgainstProjectile, boolean isPoisonous, boolean isFrost,
+                  int freemiumGoldPrice, int premiumGoldPrice, int freemiumCoinPrice, int premiumCoinPrice,
+                  int baseFreemiumSellPrice, int basePremiumSellPrice) {
+        this(name, type, element, minDamage, maxDamage, upgrades,
+                armorBonus, speed, jump, imageResId,
+                attackCooldown, pierceCount, enablePierceAreaDamage, persistAgainstProjectile, isPoisonous, isFrost);
+        this.freemiumGoldPrice = freemiumGoldPrice;
+        this.premiumGoldPrice = premiumGoldPrice;
+        this.freemiumCoinPrice = freemiumCoinPrice;
+        this.premiumCoinPrice = premiumCoinPrice;
+        this.baseFreemiumSellPrice = baseFreemiumSellPrice;
+        this.basePremiumSellPrice = basePremiumSellPrice;
     }
 
-    public WeaponTypes getType() {
-        return type;
-    }
+    public String getName() { return name; }
+    public WeaponTypes getType() { return type; }
+    public Elements getElement() { return element; }
+    public void setElement(Elements element) { this.element = element; }
+    public int getMinDamage() { return minDamage; }
+    public int getMaxDamage() { return maxDamage; }
+    public int getUpgrades() { return upgrades; }
+    public double getArmorBonus() { return armorBonus; }
+    public int getSpeed() { return speed; }
+    public int getJump() { return jump; }
+    public int getImageResId() { return imageResId; }
+    public int getAttackCooldown() { return attackCooldown; }
+    public int getPierceCount() { return pierceCount; }
+    public boolean isEnablePierceAreaDamage() { return enablePierceAreaDamage; }
+    public boolean isPersistAgainstProjectile() { return persistAgainstProjectile; }
+    public boolean isPoisonous() { return isPoisonous; }
+    public boolean isFrost() { return isFrost; }
 
-    public Elements getElement() {
-        return element;
-    }
-
-    public void setElement(Elements element) {
-        this.element = element;
-    }
-
-    public int getMinDamage() {
-        return minDamage;
-    }
-
-    public int getMaxDamage() {
-        return maxDamage;
-    }
-
-    public int getUpgrades() {
-        return upgrades;
-    }
-
-    public double getArmorBonus() {
-        return armorBonus;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public int getJump() {
-        return jump;
-    }
-
-    public int getImageResId() {
-        return imageResId;
-    }
-
-    public int getAttackCooldown() {
-        return attackCooldown;
-    }
-
-    public int getPierceCount() {
-        return pierceCount;
-    }
-
-    public boolean isEnablePierceAreaDamage() {
-        return enablePierceAreaDamage;
-    }
-
-    public boolean isPersistAgainstProjectile() {
-        return persistAgainstProjectile;
-    }
-
-    public boolean isPoisonous() {
-        return isPoisonous;
-    }
-
-    public boolean isFrost() {
-        return isFrost;
-    }
+    // NEW: price getters
+    public int getFreemiumGoldPrice() { return freemiumGoldPrice; }
+    public int getPremiumGoldPrice() { return premiumGoldPrice; }
+    public int getFreemiumCoinPrice() { return freemiumCoinPrice; }
+    public int getPremiumCoinPrice() { return premiumCoinPrice; }
+    public int getBaseFreemiumSellPrice() { return baseFreemiumSellPrice; }
+    public int getBasePremiumSellPrice() { return basePremiumSellPrice; }
+    public void setFreemiumGoldPrice(int value) { this.freemiumGoldPrice = value; }
+    public void setPremiumGoldPrice(int value) { this.premiumGoldPrice = value; }
+    public void setFreemiumCoinPrice(int value) { this.freemiumCoinPrice = value; }
+    public void setPremiumCoinPrice(int value) { this.premiumCoinPrice = value; }
+    public void setBaseFreemiumSellPrice(int value) { this.baseFreemiumSellPrice = value; }
+    public void setBasePremiumSellPrice(int value) { this.basePremiumSellPrice = value; }
 
     @Override
-    public int describeContents() {
-        return 0;
-    }
+    public int describeContents() { return 0; }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -137,6 +133,14 @@ public class Weapon implements Parcelable {
         dest.writeByte((byte) (persistAgainstProjectile ? 1 : 0));
         dest.writeByte((byte) (isPoisonous ? 1 : 0));
         dest.writeByte((byte) (isFrost ? 1 : 0));
+
+        // NEW: prices
+        dest.writeInt(freemiumGoldPrice);
+        dest.writeInt(premiumGoldPrice);
+        dest.writeInt(freemiumCoinPrice);
+        dest.writeInt(premiumCoinPrice);
+        dest.writeInt(baseFreemiumSellPrice);
+        dest.writeInt(basePremiumSellPrice);
     }
 
     protected Weapon(Parcel in) {
@@ -156,18 +160,20 @@ public class Weapon implements Parcelable {
         persistAgainstProjectile = in.readByte() != 0;
         isPoisonous = in.readByte() != 0;
         isFrost = in.readByte() != 0;
+
+        // NEW: prices
+        freemiumGoldPrice = in.readInt();
+        premiumGoldPrice = in.readInt();
+        freemiumCoinPrice = in.readInt();
+        premiumCoinPrice = in.readInt();
+        baseFreemiumSellPrice = in.readInt();
+        basePremiumSellPrice = in.readInt();
     }
 
     public static final Creator<Weapon> CREATOR = new Creator<Weapon>() {
         @Override
-        public Weapon createFromParcel(Parcel in) {
-            return new Weapon(in);
-        }
-
+        public Weapon createFromParcel(Parcel in) { return new Weapon(in); }
         @Override
-        public Weapon[] newArray(int size) {
-            return new Weapon[size];
-        }
+        public Weapon[] newArray(int size) { return new Weapon[size]; }
     };
-
 }

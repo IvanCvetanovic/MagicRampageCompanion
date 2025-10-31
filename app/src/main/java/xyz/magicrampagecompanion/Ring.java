@@ -21,6 +21,14 @@ public class Ring implements Parcelable {
     private int spear;
     private int imageResId; // Now storing the image resource ID
 
+    // NEW: pricing fields
+    private int freemiumGoldPrice;
+    private int premiumGoldPrice;
+    private int freemiumCoinPrice;
+    private int premiumCoinPrice;
+    private int baseFreemiumSellPrice;
+    private int basePremiumSellPrice;
+
     public Ring(String name, Elements element, int armor, double armorBonus, int speed, int jump, int magic,
                 int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResId) {
         this.name = name;
@@ -37,72 +45,64 @@ public class Ring implements Parcelable {
         this.hammer = hammer;
         this.spear = spear;
         this.imageResId = imageResId;
+
+        // default prices to 0
+        this.freemiumGoldPrice = 0;
+        this.premiumGoldPrice = 0;
+        this.freemiumCoinPrice = 0;
+        this.premiumCoinPrice = 0;
+        this.baseFreemiumSellPrice = 0;
+        this.basePremiumSellPrice = 0;
     }
 
-    public String getName() {
-        return name;
+    // NEW: overloaded constructor with prices (order: FG, PG, FC, PC, SellF, SellP)
+    public Ring(String name, Elements element, int armor, double armorBonus, int speed, int jump, int magic,
+                int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResId,
+                int freemiumGoldPrice, int premiumGoldPrice, int freemiumCoinPrice, int premiumCoinPrice,
+                int baseFreemiumSellPrice, int basePremiumSellPrice) {
+        this(name, element, armor, armorBonus, speed, jump, magic, sword, staff, dagger, axe, hammer, spear, imageResId);
+        this.freemiumGoldPrice = freemiumGoldPrice;
+        this.premiumGoldPrice = premiumGoldPrice;
+        this.freemiumCoinPrice = freemiumCoinPrice;
+        this.premiumCoinPrice = premiumCoinPrice;
+        this.baseFreemiumSellPrice = baseFreemiumSellPrice;
+        this.basePremiumSellPrice = basePremiumSellPrice;
     }
 
-    public Elements getElement() {
-        return element;
-    }
+    public String getName() { return name; }
+    public Elements getElement() { return element; }
+    public void setElement(Elements element) { this.element = element; }
+    public int getArmor() { return armor; }
+    public double getArmorBonus() { return armorBonus; }
+    public int getSpeed() { return speed; }
+    public int getJump() { return jump; }
+    public double getMagic() { return magic; }
+    public double getSword() { return sword; }
+    public double getStaff() { return staff; }
+    public double getDagger() { return dagger; }
+    public double getAxe() { return axe; }
+    public double getHammer() { return hammer; }
+    public double getSpear() { return spear; }
+    public int getImageResId() { return imageResId; }
 
-    public void setElement(Elements element) {
-        this.element = element;
-    }
+    // NEW: price getters
+    public int getFreemiumGoldPrice() { return freemiumGoldPrice; }
+    public int getPremiumGoldPrice() { return premiumGoldPrice; }
+    public int getFreemiumCoinPrice() { return freemiumCoinPrice; }
+    public int getPremiumCoinPrice() { return premiumCoinPrice; }
+    public int getBaseFreemiumSellPrice() { return baseFreemiumSellPrice; }
+    public int getBasePremiumSellPrice() { return basePremiumSellPrice; }
 
-    public int getArmor() {
-        return armor;
-    }
+    public void setFreemiumGoldPrice(int value) { this.freemiumGoldPrice = value; }
+    public void setPremiumGoldPrice(int value) { this.premiumGoldPrice = value; }
+    public void setFreemiumCoinPrice(int value) { this.freemiumCoinPrice = value; }
+    public void setPremiumCoinPrice(int value) { this.premiumCoinPrice = value; }
+    public void setBaseFreemiumSellPrice(int value) { this.baseFreemiumSellPrice = value; }
+    public void setBasePremiumSellPrice(int value) { this.basePremiumSellPrice = value; }
 
-    public double getArmorBonus() {
-        return armorBonus;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public int getJump() {
-        return jump;
-    }
-
-    public double getMagic() {
-        return magic;
-    }
-
-    public double getSword() {
-        return sword;
-    }
-
-    public double getStaff() {
-        return staff;
-    }
-
-    public double getDagger() {
-        return dagger;
-    }
-
-    public double getAxe() {
-        return axe;
-    }
-
-    public double getHammer() {
-        return hammer;
-    }
-
-    public double getSpear() {
-        return spear;
-    }
-
-    public int getImageResId() {
-        return imageResId;
-    }
 
     @Override
-    public int describeContents() {
-        return 0;
-    }
+    public int describeContents() { return 0; }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -120,6 +120,14 @@ public class Ring implements Parcelable {
         dest.writeInt(hammer);
         dest.writeInt(spear);
         dest.writeInt(imageResId); // Write the resource ID
+
+        // NEW: prices
+        dest.writeInt(freemiumGoldPrice);
+        dest.writeInt(premiumGoldPrice);
+        dest.writeInt(freemiumCoinPrice);
+        dest.writeInt(premiumCoinPrice);
+        dest.writeInt(baseFreemiumSellPrice);
+        dest.writeInt(basePremiumSellPrice);
     }
 
     protected Ring(Parcel in) {
@@ -137,17 +145,20 @@ public class Ring implements Parcelable {
         hammer = in.readInt();
         spear = in.readInt();
         imageResId = in.readInt(); // Read the resource ID
+
+        // NEW: prices
+        freemiumGoldPrice = in.readInt();
+        premiumGoldPrice = in.readInt();
+        freemiumCoinPrice = in.readInt();
+        premiumCoinPrice = in.readInt();
+        baseFreemiumSellPrice = in.readInt();
+        basePremiumSellPrice = in.readInt();
     }
 
     public static final Creator<Ring> CREATOR = new Creator<Ring>() {
         @Override
-        public Ring createFromParcel(Parcel in) {
-            return new Ring(in);
-        }
-
+        public Ring createFromParcel(Parcel in) { return new Ring(in); }
         @Override
-        public Ring[] newArray(int size) {
-            return new Ring[size];
-        }
+        public Ring[] newArray(int size) { return new Ring[size]; }
     };
 }

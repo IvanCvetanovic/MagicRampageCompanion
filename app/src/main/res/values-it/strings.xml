@@ -1606,4 +1606,21 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="class_high_mage">Mago supremo</string>
     <string name="class_elite_warrior">Guerriero élite</string>
     <string name="class_witchdoctor">Sciamano</string>
+
+    <string name="root_of_judgement">Root of Judgement</string>
+    <string name="eye_of_the_rift">Eye of the Rift</string>
+    <string name="staff_of_withering">Bastone raggelante</string>
+    <string name="crowned_dragonhead">Crowned Dragonhead</string>
+    <string name="knight_of_discord">Knight of Discord</string>
+    <string name="bloodforged_charm_earring">Orecchino di sangue</string>
+    <string name="moonbound_necklace">Collana vincolo lunare</string>
+    <string name="skybreaker_band">Fascia spaccacielo</string>
+
+    <string name="price_freemium_gold">Prezzo oro freemium: </string>
+    <string name="price_premium_gold">Prezzo oro premium: </string>
+    <string name="price_freemium_token">Prezzo token freemium: </string>
+    <string name="price_premium_token">Prezzo token premium: </string>
+    <string name="price_freemium_sell">Prezzo di vendita freemium: </string>
+    <string name="price_premium_sell">Prezzo di vendita premium: </string>
+
 </resources>

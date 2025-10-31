@@ -1605,4 +1605,21 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="class_elite_warrior">Guerrier d\'élite</string>
     <string name="class_witchdoctor">Sorcier</string>
 
+    <string name="root_of_judgement">Racine du jugement</string>
+    <string name="eye_of_the_rift">Œil du gouffre</string>
+    <string name="staff_of_withering">Bâton flétrissant</string>
+    <string name="crowned_dragonhead">Tête de dragon couronnée</string>
+    <string name="knight_of_discord">Chevalier de la Discord</string>
+    <string name="bloodforged_charm_earring">Charme forgé dans le sang</string>
+    <string name="moonbound_necklace">Collier lunaire</string>
+    <string name="skybreaker_band">Bandeau du briseur de ciel</string>
+
+    <string name="price_freemium_gold">Prix d’or freemium : </string>
+    <string name="price_premium_gold">Prix d’or premium : </string>
+    <string name="price_freemium_token">Prix du jeton freemium : </string>
+    <string name="price_premium_token">Prix du jeton premium : </string>
+    <string name="price_freemium_sell">Prix de vente freemium : </string>
+    <string name="price_premium_sell">Prix de vente premium : </string>
+
+
 </resources>

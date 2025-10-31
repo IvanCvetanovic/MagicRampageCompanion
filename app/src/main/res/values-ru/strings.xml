@@ -1605,4 +1605,21 @@
     <string name="class_high_mage">Высший Маг</string>
     <string name="class_elite_warrior">Элитный Воин</string>
     <string name="class_witchdoctor">Чумной Доктор</string>
+
+    <string name="root_of_judgement">Root of Judgement</string>
+    <string name="eye_of_the_rift">Eye of the Rift</string>
+    <string name="staff_of_withering">Посох увядания</string>
+    <string name="crowned_dragonhead">Crowned Dragonhead</string>
+    <string name="knight_of_discord">Knight of Discord</string>
+    <string name="bloodforged_charm_earring">Кроверожденная серьга</string>
+    <string name="moonbound_necklace">Лунное ожерелье</string>
+    <string name="skybreaker_band">Поручи разрушителя небес</string>
+
+    <string name="price_freemium_gold">Цена фримиум-золота: </string>
+    <string name="price_premium_gold">Цена премиум-золота: </string>
+    <string name="price_freemium_token">Цена фримиум-токена: </string>
+    <string name="price_premium_token">Цена премиум-токена: </string>
+    <string name="price_freemium_sell">Фримиум-цена продажи: </string>
+    <string name="price_premium_sell">Премиум-цена продажи: </string>
+
 </resources>
