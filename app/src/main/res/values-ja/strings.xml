@@ -1621,4 +1621,26 @@
     <string name="price_freemium_sell">フリーミアム販売価格: </string>
     <string name="price_premium_sell">プレミアム販売価格: </string>
 
+    <string name="chapter_one_random_drop">チャプター1 ランダムドロップ</string>
+    <string name="chapter_two_random_drop">チャプター2 ランダムドロップ</string>
+    <string name="chapter_three_random_drop">チャプター3 ランダムドロップ</string>
+    <string name="chapter_four_random_drop">チャプター4 ランダムドロップ</string>
+    <string name="chapter_five_random_drop">チャプター5 ランダムドロップ</string>
+    <string name="shop">ショップ</string>
+    <string name="pvp_golden_blue_chest">PvP ゴールデンブルーチェスト</string>
+    <string name="pvp_golden_red_chest">PvP レッドチェスト</string>
+    <string name="pvp_golden_purple_chest">PvP ゴールデンパープルチェスト</string>
+    <string name="pvp_silver_purple_chest">PvP シルバーパープルチェスト</string>
+    <string name="achievement">実績</string>
+    <string name="weekly_dungeon_golden_chest">週間ダンジョン ゴールデンチェスト</string>
+    <string name="survival_mode_1">サバイバルモード 1</string>
+    <string name="survival_mode_2">サバイバルモード 2</string>
+    <string name="survival_mode_3">サバイバルモード 3</string>
+    <string name="survival_mode_4">サバイバルモード 4</string>
+    <string name="survival_mode_5">サバイバルモード 5</string>
+    <string name="survival_mode_6">サバイバルモード 6</string>
+    <string name="for_content_makers">コンテンツ制作者向け</string>
+    <string name="obtainability">"入手可能性: "</string>
+    <string name="loading_translation">翻訳中…</string>
+
 </resources>

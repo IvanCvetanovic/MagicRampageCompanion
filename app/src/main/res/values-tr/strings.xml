@@ -1620,4 +1620,26 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="price_freemium_sell">Freemium satış fiyatı: </string>
     <string name="price_premium_sell">Premium satış fiyatı: </string>
 
+    <string name="chapter_one_random_drop">Bölüm 1 Rastgele Düşüş</string>
+    <string name="chapter_two_random_drop">Bölüm 2 Rastgele Düşüş</string>
+    <string name="chapter_three_random_drop">Bölüm 3 Rastgele Düşüş</string>
+    <string name="chapter_four_random_drop">Bölüm 4 Rastgele Düşüş</string>
+    <string name="chapter_five_random_drop">Bölüm 5 Rastgele Düşüş</string>
+    <string name="shop">Mağaza</string>
+    <string name="pvp_golden_blue_chest">PvP Altın Mavi Sandık</string>
+    <string name="pvp_golden_red_chest">PvP Kırmızı Sandık</string>
+    <string name="pvp_golden_purple_chest">PvP Altın Mor Sandık</string>
+    <string name="pvp_silver_purple_chest">PvP Gümüş Mor Sandık</string>
+    <string name="achievement">Başarım</string>
+    <string name="weekly_dungeon_golden_chest">Haftalık Zindan Altın Sandık</string>
+    <string name="survival_mode_1">Hayatta Kalma Modu 1</string>
+    <string name="survival_mode_2">Hayatta Kalma Modu 2</string>
+    <string name="survival_mode_3">Hayatta Kalma Modu 3</string>
+    <string name="survival_mode_4">Hayatta Kalma Modu 4</string>
+    <string name="survival_mode_5">Hayatta Kalma Modu 5</string>
+    <string name="survival_mode_6">Hayatta Kalma Modu 6</string>
+    <string name="for_content_makers">İçerik Üreticileri İçin</string>
+    <string name="obtainability">"Elde Edilebilirlik: "</string>
+    <string name="loading_translation">Çevriliyor…</string>
+
 </resources>

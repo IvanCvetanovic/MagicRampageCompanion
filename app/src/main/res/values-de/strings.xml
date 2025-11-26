@@ -1621,4 +1621,27 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="price_premium_token">Premium-Token-Preis: </string>
     <string name="price_freemium_sell">Freemium-Verkaufspreis: </string>
     <string name="price_premium_sell">Premium-Verkaufspreis: </string>
+
+    <string name="chapter_one_random_drop">Kapitel 1 Zufälliger Drop</string>
+    <string name="chapter_two_random_drop">Kapitel 2 Zufälliger Drop</string>
+    <string name="chapter_three_random_drop">Kapitel 3 Zufälliger Drop</string>
+    <string name="chapter_four_random_drop">Kapitel 4 Zufälliger Drop</string>
+    <string name="chapter_five_random_drop">Kapitel 5 Zufälliger Drop</string>
+    <string name="shop">Shop</string>
+    <string name="pvp_golden_blue_chest">PvP Goldene Blaue Truhe</string>
+    <string name="pvp_golden_red_chest">PvP Rote Truhe</string>
+    <string name="pvp_golden_purple_chest">PvP Goldene Violette Truhe</string>
+    <string name="pvp_silver_purple_chest">PvP Silberne Violette Truhe</string>
+    <string name="achievement">Erfolg</string>
+    <string name="weekly_dungeon_golden_chest">Wöchentlicher Dungeon Goldene Truhe</string>
+    <string name="survival_mode_1">Überlebensmodus 1</string>
+    <string name="survival_mode_2">Überlebensmodus 2</string>
+    <string name="survival_mode_3">Überlebensmodus 3</string>
+    <string name="survival_mode_4">Überlebensmodus 4</string>
+    <string name="survival_mode_5">Überlebensmodus 5</string>
+    <string name="survival_mode_6">Überlebensmodus 6</string>
+    <string name="for_content_makers">Für Content-Ersteller</string>
+    <string name="obtainability">"Erhältlichkeit: "</string>
+    <string name="loading_translation">Übersetze…</string>
+
 </resources>

@@ -1533,7 +1533,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="element">"Element: "</string>
     <string name="type">"Type: "</string>
     <string name="armor_bonus">"Armor Bonus: "</string>
-    <string name="pierce_area_damage">Pierce Area Damage: </string>
+    <string name="pierce_area_damage">Pierce Area Damage</string>
     <string name="magic_bonus">"Magic Bonus: "</string>
     <string name="sword_bonus">"Sword Bonus: "</string>
     <string name="staff_bonus">"Staff Bonus: "</string>
@@ -1873,4 +1873,6 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="survival_mode_5">Survival Mode 5</string>
     <string name="survival_mode_6">Survival Mode 6</string>
     <string name="for_content_makers">For Content Makers</string>
+    <string name="obtainability">Obtainability: </string>
+    <string name="loading_translation">Translating…</string>
 </resources>

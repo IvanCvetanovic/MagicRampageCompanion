@@ -1621,5 +1621,26 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="price_freemium_sell">Preço de venda freemium: </string>
     <string name="price_premium_sell">Preço de venda premium: </string>
 
+    <string name="chapter_one_random_drop">Capítulo 1 Drop Aleatório</string>
+    <string name="chapter_two_random_drop">Capítulo 2 Drop Aleatório</string>
+    <string name="chapter_three_random_drop">Capítulo 3 Drop Aleatório</string>
+    <string name="chapter_four_random_drop">Capítulo 4 Drop Aleatório</string>
+    <string name="chapter_five_random_drop">Capítulo 5 Drop Aleatório</string>
+    <string name="shop">Loja</string>
+    <string name="pvp_golden_blue_chest">Baú Azul Dourado PvP</string>
+    <string name="pvp_golden_red_chest">Baú Vermelho PvP</string>
+    <string name="pvp_golden_purple_chest">Baú Roxo Dourado PvP</string>
+    <string name="pvp_silver_purple_chest">Baú Roxo Prateado PvP</string>
+    <string name="achievement">Conquista</string>
+    <string name="weekly_dungeon_golden_chest">Baú Dourado da Masmorra Semanal</string>
+    <string name="survival_mode_1">Modo Sobrevivência 1</string>
+    <string name="survival_mode_2">Modo Sobrevivência 2</string>
+    <string name="survival_mode_3">Modo Sobrevivência 3</string>
+    <string name="survival_mode_4">Modo Sobrevivência 4</string>
+    <string name="survival_mode_5">Modo Sobrevivência 5</string>
+    <string name="survival_mode_6">Modo Sobrevivência 6</string>
+    <string name="for_content_makers">Para Criadores de Conteúdo</string>
+    <string name="obtainability">"Disponibilidade: "</string>
+    <string name="loading_translation">Traduzindo…</string>
 
 </resources>

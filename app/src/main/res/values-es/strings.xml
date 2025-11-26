@@ -1622,5 +1622,26 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="price_freemium_sell">Precio de venta freemium: </string>
     <string name="price_premium_sell">Precio de venta premium: </string>
 
+    <string name="chapter_one_random_drop">Capítulo 1 Botín Aleatorio</string>
+    <string name="chapter_two_random_drop">Capítulo 2 Botín Aleatorio</string>
+    <string name="chapter_three_random_drop">Capítulo 3 Botín Aleatorio</string>
+    <string name="chapter_four_random_drop">Capítulo 4 Botín Aleatorio</string>
+    <string name="chapter_five_random_drop">Capítulo 5 Botín Aleatorio</string>
+    <string name="shop">Tienda</string>
+    <string name="pvp_golden_blue_chest">Cofre Azul Dorado PvP</string>
+    <string name="pvp_golden_red_chest">Cofre Rojo PvP</string>
+    <string name="pvp_golden_purple_chest">Cofre Morado Dorado PvP</string>
+    <string name="pvp_silver_purple_chest">Cofre Morado Plateado PvP</string>
+    <string name="achievement">Logro</string>
+    <string name="weekly_dungeon_golden_chest">Cofre Dorado de Mazmorra Semanal</string>
+    <string name="survival_mode_1">Modo Supervivencia 1</string>
+    <string name="survival_mode_2">Modo Supervivencia 2</string>
+    <string name="survival_mode_3">Modo Supervivencia 3</string>
+    <string name="survival_mode_4">Modo Supervivencia 4</string>
+    <string name="survival_mode_5">Modo Supervivencia 5</string>
+    <string name="survival_mode_6">Modo Supervivencia 6</string>
+    <string name="for_content_makers">Para Creadores de Contenido</string>
+    <string name="obtainability">"Disponibilidad: "</string>
+    <string name="loading_translation">Traduciendo…</string>
 
 </resources>

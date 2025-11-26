@@ -1622,4 +1622,27 @@
     <string name="price_freemium_sell">Фримиум-цена продажи: </string>
     <string name="price_premium_sell">Премиум-цена продажи: </string>
 
+
+    <string name="chapter_one_random_drop">Глава 1 Случайный Дроп</string>
+    <string name="chapter_two_random_drop">Глава 2 Случайный Дроп</string>
+    <string name="chapter_three_random_drop">Глава 3 Случайный Дроп</string>
+    <string name="chapter_four_random_drop">Глава 4 Случайный Дроп</string>
+    <string name="chapter_five_random_drop">Глава 5 Случайный Дроп</string>
+    <string name="shop">Магазин</string>
+    <string name="pvp_golden_blue_chest">PvP Золотой Синий Сундук</string>
+    <string name="pvp_golden_red_chest">PvP Красный Сундук</string>
+    <string name="pvp_golden_purple_chest">PvP Золотой Фиолетовый Сундук</string>
+    <string name="pvp_silver_purple_chest">PvP Серебряный Фиолетовый Сундук</string>
+    <string name="achievement">Достижение</string>
+    <string name="weekly_dungeon_golden_chest">Еженедельный Подземелье Золотой Сундук</string>
+    <string name="survival_mode_1">Режим Выживания 1</string>
+    <string name="survival_mode_2">Режим Выживания 2</string>
+    <string name="survival_mode_3">Режим Выживания 3</string>
+    <string name="survival_mode_4">Режим Выживания 4</string>
+    <string name="survival_mode_5">Режим Выживания 5</string>
+    <string name="survival_mode_6">Режим Выживания 6</string>
+    <string name="for_content_makers">Для Создателей Контента</string>
+    <string name="obtainability">"Доступность: "</string>
+    <string name="loading_translation">Перевод…</string>
+
 </resources>

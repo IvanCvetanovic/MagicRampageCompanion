@@ -1,50 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/grey_background"
-        android:outlineAmbientShadowColor="#FFFFFF"
-        android:outlineSpotShadowColor="#1E0D0D"
-        tools:context=".SkillPicker"
-        android:id="@+id/skillRoot">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/grey_background"
+    tools:context=".ui.items.SkillPicker">
 
-    <TextView
-        android:id="@+id/textSkillPointsLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/skill_points_left"
-        android:textColor="@android:color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:shadowColor="@color/black"
-        android:shadowRadius="10"/>
-
-    <HorizontalScrollView
-        android:id="@+id/HorizontalScrollView"
+    <LinearLayout
+        android:id="@+id/skillRoot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="34dp"
-        android:paddingBottom="8dp">
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/textSkillPointsLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="16dp"
-            android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
+            android:text="@string/skill_points_left"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="10" />
 
-            <LinearLayout
+        <HorizontalScrollView
+            android:id="@+id/HorizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp"
+            android:paddingBottom="8dp"
+            android:scrollbars="none">
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
                 android:orientation="horizontal"
-                tools:ignore="UselessParent">
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:ignore="UselessParent">
 
                 <FrameLayout
                     android:id="@+id/frameEnhancedVelocity"
@@ -1644,39 +1649,42 @@
                         android:visibility="gone"
                         tools:ignore="ContentDescription,HardcodedText"/>
                 </FrameLayout>
-            </LinearLayout>
+            </LinearLayout> <!-- end of skill items inside HorizontalScrollView -->
 
-        </RelativeLayout>
-    </HorizontalScrollView>
+            </RelativeLayout>
+        </HorizontalScrollView>
 
-    <Button
-        android:id="@+id/btnDeselectAllSkills"
-        android:layout_width="140dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/HorizontalScrollView"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:shadowColor="@color/black"
-        android:text="@string/reset_all"
-        android:textSize="12sp"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp" />
+        <!-- Buttons section inside the ScrollView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="40dp">
 
-    <Button
-        android:id="@+id/SelectSkills"
-        android:layout_width="140dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/HorizontalScrollView"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:shadowColor="@color/black"
-        android:text="@string/select_skills"
-        android:textSize="12sp"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp" />
+            <Button
+                android:id="@+id/btnDeselectAllSkills"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="30dp"
+                android:text="@string/reset_all"
+                android:textSize="12sp"
+                android:shadowColor="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
 
-</RelativeLayout >
+            <Button
+                android:id="@+id/SelectSkills"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:text="@string/select_skills"
+                android:textSize="12sp"
+                android:shadowColor="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+        </LinearLayout>
+
+    </LinearLayout> <!-- end of root LinearLayout -->
+</ScrollView>   <!-- end of ScrollView -->

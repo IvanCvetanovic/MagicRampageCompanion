@@ -1621,5 +1621,26 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="price_freemium_sell">Prix de vente freemium : </string>
     <string name="price_premium_sell">Prix de vente premium : </string>
 
+    <string name="chapter_one_random_drop">Chapitre 1 Butin Aléatoire</string>
+    <string name="chapter_two_random_drop">Chapitre 2 Butin Aléatoire</string>
+    <string name="chapter_three_random_drop">Chapitre 3 Butin Aléatoire</string>
+    <string name="chapter_four_random_drop">Chapitre 4 Butin Aléatoire</string>
+    <string name="chapter_five_random_drop">Chapitre 5 Butin Aléatoire</string>
+    <string name="shop">Boutique</string>
+    <string name="pvp_golden_blue_chest">Coffre Bleu Doré PvP</string>
+    <string name="pvp_golden_red_chest">Coffre Rouge PvP</string>
+    <string name="pvp_golden_purple_chest">Coffre Violet Doré PvP</string>
+    <string name="pvp_silver_purple_chest">Coffre Violet Argenté PvP</string>
+    <string name="achievement">Succès</string>
+    <string name="weekly_dungeon_golden_chest">Coffre Doré du Donjon Hebdomadaire</string>
+    <string name="survival_mode_1">Mode Survie 1</string>
+    <string name="survival_mode_2">Mode Survie 2</string>
+    <string name="survival_mode_3">Mode Survie 3</string>
+    <string name="survival_mode_4">Mode Survie 4</string>
+    <string name="survival_mode_5">Mode Survie 5</string>
+    <string name="survival_mode_6">Mode Survie 6</string>
+    <string name="for_content_makers">Pour Créateurs de Contenu</string>
+    <string name="obtainability">Disponibilité:</string>
+    <string name="loading_translation">Traduction en cours…</string>
 
 </resources>

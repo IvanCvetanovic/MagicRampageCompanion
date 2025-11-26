@@ -1623,4 +1623,26 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="price_freemium_sell">Prezzo di vendita freemium: </string>
     <string name="price_premium_sell">Prezzo di vendita premium: </string>
 
+    <string name="chapter_one_random_drop">Capitolo 1 Drop Casuale</string>
+    <string name="chapter_two_random_drop">Capitolo 2 Drop Casuale</string>
+    <string name="chapter_three_random_drop">Capitolo 3 Drop Casuale</string>
+    <string name="chapter_four_random_drop">Capitolo 4 Drop Casuale</string>
+    <string name="chapter_five_random_drop">Capitolo 5 Drop Casuale</string>
+    <string name="shop">Negozio</string>
+    <string name="pvp_golden_blue_chest">Scrigno Blu Dorato PvP</string>
+    <string name="pvp_golden_red_chest">Scrigno Rosso PvP</string>
+    <string name="pvp_golden_purple_chest">Scrigno Viola Dorato PvP</string>
+    <string name="pvp_silver_purple_chest">Scrigno Viola Argentato PvP</string>
+    <string name="achievement">Obiettivo</string>
+    <string name="weekly_dungeon_golden_chest">Scrigno Dorato del Dungeon Settimanale</string>
+    <string name="survival_mode_1">Modalità Sopravvivenza 1</string>
+    <string name="survival_mode_2">Modalità Sopravvivenza 2</string>
+    <string name="survival_mode_3">Modalità Sopravvivenza 3</string>
+    <string name="survival_mode_4">Modalità Sopravvivenza 4</string>
+    <string name="survival_mode_5">Modalità Sopravvivenza 5</string>
+    <string name="survival_mode_6">Modalità Sopravvivenza 6</string>
+    <string name="for_content_makers">Per Creatori di Contenuti</string>
+    <string name="obtainability">"Disponibilità: "</string>
+    <string name="loading_translation">Traducendo…</string>
+
 </resources>

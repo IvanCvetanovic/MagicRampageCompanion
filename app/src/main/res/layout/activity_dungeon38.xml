@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/grey_background"
     android:fillViewport="true"
-    tools:context=".Dungeon38">
+    tools:context=".ui.dungeons.Dungeon38">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

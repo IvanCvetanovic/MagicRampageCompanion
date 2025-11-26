@@ -1620,4 +1620,26 @@
     <string name="price_freemium_sell">Freemium-ціна продажу: </string>
     <string name="price_premium_sell">Premium-ціна продажу: </string>
 
+    <string name="chapter_one_random_drop">Розділ 1 Випадковий Дроп</string>
+    <string name="chapter_two_random_drop">Розділ 2 Випадковий Дроп</string>
+    <string name="chapter_three_random_drop">Розділ 3 Випадковий Дроп</string>
+    <string name="chapter_four_random_drop">Розділ 4 Випадковий Дроп</string>
+    <string name="chapter_five_random_drop">Розділ 5 Випадковий Дроп</string>
+    <string name="shop">Крамниця</string>
+    <string name="pvp_golden_blue_chest">PvP Золота Синя Скарбниця</string>
+    <string name="pvp_golden_red_chest">PvP Червона Скарбниця</string>
+    <string name="pvp_golden_purple_chest">PvP Золота Фіолетова Скарбниця</string>
+    <string name="pvp_silver_purple_chest">PvP Срібна Фіолетова Скарбниця</string>
+    <string name="achievement">Досягнення</string>
+    <string name="weekly_dungeon_golden_chest">Щотижневий Підземелля Золотий Сундук</string>
+    <string name="survival_mode_1">Режим Виживання 1</string>
+    <string name="survival_mode_2">Режим Виживання 2</string>
+    <string name="survival_mode_3">Режим Виживання 3</string>
+    <string name="survival_mode_4">Режим Виживання 4</string>
+    <string name="survival_mode_5">Режим Виживання 5</string>
+    <string name="survival_mode_6">Режим Виживання 6</string>
+    <string name="for_content_makers">Для Творців Контенту</string>
+    <string name="obtainability">"Доступність: "</string>
+    <string name="loading_translation">Переклад…</string>
+
 </resources>

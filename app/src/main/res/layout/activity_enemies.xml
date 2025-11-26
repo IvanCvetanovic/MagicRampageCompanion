@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grey_background"
-    tools:context=".Enemies">
+    tools:context=".ui.enemies.Enemies">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEnemies"

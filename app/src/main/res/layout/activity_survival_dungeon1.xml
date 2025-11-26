@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/grey_background"
     android:fillViewport="true"
-    tools:context=".SurvivalDungeon1">
+    tools:context=".ui.survival.SurvivalDungeon1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/survivalContentRoot"

@@ -18,7 +18,7 @@
     </queries>
 
     <application
-        android:name=".MyApplication"
+        android:name=".ui.main.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -29,19 +29,19 @@
         android:theme="@style/Theme.MagicRampageCompanion"
         tools:targetApi="33">
         <activity
-            android:name=".Skins"
+            android:name=".ui.items.Skins"
             android:exported="false" />
         <activity
-            android:name=".News"
+            android:name=".ui.main.News"
             android:exported="false" />
         <activity
-            android:name=".EnemyDetail"
+            android:name=".ui.enemies.EnemyDetail"
             android:exported="false" />
         <activity
-            android:name=".Enemies"
+            android:name=".ui.enemies.Enemies"
             android:exported="false" />
         <activity
-            android:name=".Items"
+            android:name=".ui.items.Items"
             android:exported="false" />
 
         <property
@@ -50,304 +50,304 @@
             tools:replace="android:resource" />
 
         <activity
-            android:name=".AchievementsPage"
+            android:name=".ui.achievements.AchievementsPage"
             android:exported="false" />
         <activity
-            android:name=".About"
+            android:name=".ui.main.About"
             android:exported="false" />
         <activity
-            android:name=".SurvivalDungeon6"
+            android:name=".ui.survival.SurvivalDungeon6"
             android:exported="false" />
         <activity
-            android:name=".SurvivalDungeon5"
+            android:name=".ui.survival.SurvivalDungeon5"
             android:exported="false" />
         <activity
-            android:name=".SurvivalDungeon4"
+            android:name=".ui.survival.SurvivalDungeon4"
             android:exported="false" />
         <activity
-            android:name=".SurvivalDungeon3"
+            android:name=".ui.survival.SurvivalDungeon3"
             android:exported="false" />
         <activity
-            android:name=".SurvivalDungeon2"
+            android:name=".ui.survival.SurvivalDungeon2"
             android:exported="false" />
         <activity
-            android:name=".SurvivalDungeon1"
+            android:name=".ui.survival.SurvivalDungeon1"
             android:exported="false" />
         <activity
-            android:name=".SkillPicker"
+            android:name=".ui.items.SkillPicker"
             android:exported="false" />
         <activity
-            android:name=".ItemSelection"
+            android:name=".ui.items.ItemSelection"
             android:exported="false" />
         <activity
-            android:name=".EquipmentTester"
+            android:name=".ui.items.EquipmentTester"
             android:exported="false" />
         <activity
-            android:name=".Dungeon44"
+            android:name=".ui.dungeons.Dungeon44"
             android:exported="false" />
         <activity
-            android:name=".Dungeon43Bonus"
+            android:name=".ui.dungeons.Dungeon43Bonus"
             android:exported="false" />
         <activity
-            android:name=".Dungeon43"
+            android:name=".ui.dungeons.Dungeon43"
             android:exported="false" />
         <activity
-            android:name=".Dungeon42Bonus"
+            android:name=".ui.dungeons.Dungeon42Bonus"
             android:exported="false" />
         <activity
-            android:name=".Dungeon42"
+            android:name=".ui.dungeons.Dungeon42"
             android:exported="false" />
         <activity
-            android:name=".Dungeon41"
+            android:name=".ui.dungeons.Dungeon41"
             android:exported="false" />
         <activity
-            android:name=".Chapter5"
+            android:name=".ui.chapters.Chapter5"
             android:exported="false" />
         <activity
-            android:name=".Dungeon40"
+            android:name=".ui.dungeons.Dungeon40"
             android:exported="false" />
         <activity
-            android:name=".Dungeon39"
+            android:name=".ui.dungeons.Dungeon39"
             android:exported="false" />
         <activity
-            android:name=".Dungeon38"
+            android:name=".ui.dungeons.Dungeon38"
             android:exported="false" />
         <activity
-            android:name=".Dungeon37"
+            android:name=".ui.dungeons.Dungeon37"
             android:exported="false" />
         <activity
-            android:name=".Dungeon36"
+            android:name=".ui.dungeons.Dungeon36"
             android:exported="false" />
         <activity
-            android:name=".Dungeon35"
+            android:name=".ui.dungeons.Dungeon35"
             android:exported="false" />
         <activity
-            android:name=".Dungeon34"
+            android:name=".ui.dungeons.Dungeon34"
             android:exported="false" />
         <activity
-            android:name=".Dungeon33"
+            android:name=".ui.dungeons.Dungeon33"
             android:exported="false" />
         <activity
-            android:name=".Dungeon32"
+            android:name=".ui.dungeons.Dungeon32"
             android:exported="false" />
         <activity
-            android:name=".Dungeon31Bonus"
+            android:name=".ui.dungeons.Dungeon31Bonus"
             android:exported="false" />
         <activity
-            android:name=".Dungeon31"
+            android:name=".ui.dungeons.Dungeon31"
             android:exported="false" />
         <activity
-            android:name=".Chapter4"
+            android:name=".ui.chapters.Chapter4"
             android:exported="false" />
         <activity
-            android:name=".Dungeon30"
+            android:name=".ui.dungeons.Dungeon30"
             android:exported="false" />
         <activity
-            android:name=".Dungeon29Bonus"
+            android:name=".ui.dungeons.Dungeon29Bonus"
             android:exported="false" />
         <activity
-            android:name=".Dungeon29"
+            android:name=".ui.dungeons.Dungeon29"
             android:exported="false" />
         <activity
-            android:name=".Dungeon28"
+            android:name=".ui.dungeons.Dungeon28"
             android:exported="false" />
         <activity
-            android:name=".Dungeon27Bonus"
+            android:name=".ui.dungeons.Dungeon27Bonus"
             android:exported="false" />
         <activity
-            android:name=".Dungeon27"
+            android:name=".ui.dungeons.Dungeon27"
             android:exported="false" />
         <activity
-            android:name=".Dungeon26"
+            android:name=".ui.dungeons.Dungeon26"
             android:exported="false" />
         <activity
-            android:name=".Dungeon25"
+            android:name=".ui.dungeons.Dungeon25"
             android:exported="false" />
         <activity
-            android:name=".Dungeon24"
+            android:name=".ui.dungeons.Dungeon24"
             android:exported="false" />
         <activity
-            android:name=".Dungeon23Bonus"
+            android:name=".ui.dungeons.Dungeon23Bonus"
             android:exported="false" />
         <activity
-            android:name=".Dungeon23"
+            android:name=".ui.dungeons.Dungeon23"
             android:exported="false" />
         <activity
-            android:name=".Dungeon22"
+            android:name=".ui.dungeons.Dungeon22"
             android:exported="false" />
         <activity
-            android:name=".Dungeon21"
+            android:name=".ui.dungeons.Dungeon21"
             android:exported="false" />
         <activity
-            android:name=".Chapter3"
+            android:name=".ui.chapters.Chapter3"
             android:exported="false" />
         <activity
-            android:name=".Dungeon20"
+            android:name=".ui.dungeons.Dungeon20"
             android:exported="false" />
         <activity
-            android:name=".Dungeon19BonusButton"
+            android:name=".ui.dungeons.Dungeon19BonusButton"
             android:exported="false" />
         <activity
-            android:name=".Dungeon19"
+            android:name=".ui.dungeons.Dungeon19"
             android:exported="false" />
         <activity
-            android:name=".Dungeon18"
+            android:name=".ui.dungeons.Dungeon18"
             android:exported="false" />
         <activity
-            android:name=".Dungeon17Bonus"
+            android:name=".ui.dungeons.Dungeon17Bonus"
             android:exported="false" />
         <activity
-            android:name=".Dungeon17"
+            android:name=".ui.dungeons.Dungeon17"
             android:exported="false" />
         <activity
-            android:name=".Dungeon16"
+            android:name=".ui.dungeons.Dungeon16"
             android:exported="false" />
         <activity
-            android:name=".Dungeon15"
+            android:name=".ui.dungeons.Dungeon15"
             android:exported="false" />
         <activity
-            android:name=".Dungeon14"
+            android:name=".ui.dungeons.Dungeon14"
             android:exported="false" />
         <activity
-            android:name=".Dungeon13Bonus"
+            android:name=".ui.dungeons.Dungeon13Bonus"
             android:exported="false" />
         <activity
-            android:name=".Dungeon13"
+            android:name=".ui.dungeons.Dungeon13"
             android:exported="false" />
         <activity
-            android:name=".Dungeon12"
+            android:name=".ui.dungeons.Dungeon12"
             android:exported="false" />
         <activity
-            android:name=".SurvivalModeSelection"
+            android:name=".ui.survival.SurvivalModeSelection"
             android:exported="false" />
         <activity
-            android:name=".Dungeon11Bonus"
+            android:name=".ui.dungeons.Dungeon11Bonus"
             android:exported="false" />
         <activity
-            android:name=".Dungeon11"
+            android:name=".ui.dungeons.Dungeon11"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Chapter2"
+            android:name=".ui.chapters.Chapter2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon10"
+            android:name=".ui.dungeons.Dungeon10"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon9"
+            android:name=".ui.dungeons.Dungeon9"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon8"
+            android:name=".ui.dungeons.Dungeon8"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon7Bonus"
+            android:name=".ui.dungeons.Dungeon7Bonus"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon7"
+            android:name=".ui.dungeons.Dungeon7"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon6"
+            android:name=".ui.dungeons.Dungeon6"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon5Bonus"
+            android:name=".ui.dungeons.Dungeon5Bonus"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon5"
+            android:name=".ui.dungeons.Dungeon5"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon4"
+            android:name=".ui.dungeons.Dungeon4"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon3Bonus"
+            android:name=".ui.dungeons.Dungeon3Bonus"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon3"
+            android:name=".ui.dungeons.Dungeon3"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dungeon2"
+            android:name=".ui.dungeons.Dungeon2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".ItemDetail" />
+        <activity android:name=".ui.items.ItemDetail" />
         <activity
-            android:name=".Dungeon1"
+            android:name=".ui.dungeons.Dungeon1"
             android:exported="false"
-            android:parentActivityName=".Chapter1">
+            android:parentActivityName=".ui.chapters.Chapter1">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Chapter1"
+            android:name=".ui.chapters.Chapter1"
             android:exported="false"
-            android:parentActivityName=".ChapterSelection">
+            android:parentActivityName=".ui.chapters.ChapterSelection">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ChapterSelection"
+            android:name=".ui.chapters.ChapterSelection"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".ui.main.MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

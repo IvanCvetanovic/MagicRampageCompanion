@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grey_background"
-    tools:context=".EnemyDetail">
+    tools:context=".ui.enemies.EnemyDetail">
 
     <RelativeLayout
         android:id="@+id/enemyImageContainer"
