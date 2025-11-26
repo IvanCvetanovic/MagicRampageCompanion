@@ -1013,7 +1013,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="special_thanks">Special Thanks:</string>
     <string name="in_memory_of">In Memory Of:</string>
     <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
-    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Mat2011 \n Sidhanth Da RAMPAGER</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n MattYT \n Sidhanth Da RAMPAGER</string>
 
     <!-- Equipment Tester -->
     <string name="attack_speed">Attack Speed: </string>
@@ -1854,5 +1854,23 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="price_freemium_sell">Freemium Sell Price: </string>
     <string name="price_premium_sell">Premium Sell Price: </string>
 
-
+    <string name="chapter_one_random_drop">Chapter 1 Random Drop</string>
+    <string name="chapter_two_random_drop">Chapter 2 Random Drop</string>
+    <string name="chapter_three_random_drop">Chapter 3 Random Drop</string>
+    <string name="chapter_four_random_drop">Chapter 4 Random Drop</string>
+    <string name="chapter_five_random_drop">Chapter 5 Random Drop</string>
+    <string name="shop">Shop</string>
+    <string name="pvp_golden_blue_chest">PvP Golden Blue Chest</string>
+    <string name="pvp_golden_red_chest">PvP Red Chest</string>
+    <string name="pvp_golden_purple_chest">PvP Golden Purple Chest</string>
+    <string name="pvp_silver_purple_chest">PvP Silver Purple Chest</string>
+    <string name="achievement">Achievement</string>
+    <string name="weekly_dungeon_golden_chest">Weekly Dungeon Golden Chest</string>
+    <string name="survival_mode_1">Survival Mode 1</string>
+    <string name="survival_mode_2">Survival Mode 2</string>
+    <string name="survival_mode_3">Survival Mode 3</string>
+    <string name="survival_mode_4">Survival Mode 4</string>
+    <string name="survival_mode_5">Survival Mode 5</string>
+    <string name="survival_mode_6">Survival Mode 6</string>
+    <string name="for_content_makers">For Content Makers</string>
 </resources>

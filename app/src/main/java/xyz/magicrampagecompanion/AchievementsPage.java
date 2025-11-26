@@ -81,7 +81,7 @@ public class AchievementsPage extends AppCompatActivity {
         achievements.add(new Achievement(getString(R.string.pimp_my_char), getString(R.string.pimp_my_char_desc), Arrays.asList("", "", getString(R.string.high_cleric_tunic)), Achievement.AchievementCategory.NORMAL));
         achievements.add(new Achievement(getString(R.string.bag_expanded), getString(R.string.bag_expanded_desc), Arrays.asList("", "", getString(R.string.dagger_of_sand)), Achievement.AchievementCategory.NORMAL));
         achievements.add(new Achievement(getString(R.string.bag_expanded_2), getString(R.string.bag_expanded_2_desc), Arrays.asList("", "", getString(R.string.dark_dagger_plus)), Achievement.AchievementCategory.NORMAL));
-        achievements.add(new Achievement(getString(R.string.have_a_toast), getString(R.string.have_a_toast_desc), Arrays.asList("", "250/750"), Achievement.AchievementCategory.NORMAL));
+        achievements.add(new Achievement(getString(R.string.have_a_toast), getString(R.string.have_a_toast_desc), Arrays.asList("", "250/750", getString(R.string.innkeepers_costume)), Achievement.AchievementCategory.NORMAL));
         achievements.add(new Achievement(getString(R.string.dirty_faced_rookie), getString(R.string.dirty_faced_rookie_desc), Arrays.asList("5000/20000"), Achievement.AchievementCategory.NORMAL));
         achievements.add(new Achievement(getString(R.string.bring_it_on), getString(R.string.bring_it_on_desc), Arrays.asList("8000/32000"), Achievement.AchievementCategory.NORMAL));
         achievements.add(new Achievement(getString(R.string.veni_vidi_vici), getString(R.string.veni_vidi_vici_desc), Arrays.asList("20000/80000"), Achievement.AchievementCategory.NORMAL));

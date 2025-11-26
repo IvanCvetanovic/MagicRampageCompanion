@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "xyz.magicrampagecompanion"
-        minSdk 28
+        minSdk 24
         targetSdk 36
         versionCode 40
         versionName "1.1.1"
@@ -68,7 +68,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:2.9.4"
     implementation 'androidx.core:core-ktx:1.17.0'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation "com.google.android.ump:user-messaging-platform:3.2.0"
+    implementation "com.google.android.ump:user-messaging-platform:4.0.0"
 }
 java {
     toolchain {

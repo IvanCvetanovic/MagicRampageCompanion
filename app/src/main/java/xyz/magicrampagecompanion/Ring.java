@@ -1,9 +1,8 @@
 package xyz.magicrampagecompanion;
 
-import androidx.activity.EdgeToEdge;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.util.List;
 
 public class Ring implements Parcelable {
     private String name;
@@ -19,9 +18,8 @@ public class Ring implements Parcelable {
     private int axe;
     private int hammer;
     private int spear;
-    private int imageResId; // Now storing the image resource ID
+    private int imageResId;
 
-    // NEW: pricing fields
     private int freemiumGoldPrice;
     private int premiumGoldPrice;
     private int freemiumCoinPrice;
@@ -29,8 +27,13 @@ public class Ring implements Parcelable {
     private int baseFreemiumSellPrice;
     private int basePremiumSellPrice;
 
+    private List<String> obtainability;
+
     public Ring(String name, Elements element, int armor, double armorBonus, int speed, int jump, int magic,
-                int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResId) {
+                int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResId,
+                int freemiumGoldPrice, int premiumGoldPrice, int freemiumCoinPrice, int premiumCoinPrice,
+                int baseFreemiumSellPrice, int basePremiumSellPrice, List<String> obtainability) {
+
         this.name = name;
         this.element = element;
         this.armor = armor;
@@ -46,32 +49,18 @@ public class Ring implements Parcelable {
         this.spear = spear;
         this.imageResId = imageResId;
 
-        // default prices to 0
-        this.freemiumGoldPrice = 0;
-        this.premiumGoldPrice = 0;
-        this.freemiumCoinPrice = 0;
-        this.premiumCoinPrice = 0;
-        this.baseFreemiumSellPrice = 0;
-        this.basePremiumSellPrice = 0;
-    }
-
-    // NEW: overloaded constructor with prices (order: FG, PG, FC, PC, SellF, SellP)
-    public Ring(String name, Elements element, int armor, double armorBonus, int speed, int jump, int magic,
-                int sword, int staff, int dagger, int axe, int hammer, int spear, int imageResId,
-                int freemiumGoldPrice, int premiumGoldPrice, int freemiumCoinPrice, int premiumCoinPrice,
-                int baseFreemiumSellPrice, int basePremiumSellPrice) {
-        this(name, element, armor, armorBonus, speed, jump, magic, sword, staff, dagger, axe, hammer, spear, imageResId);
         this.freemiumGoldPrice = freemiumGoldPrice;
         this.premiumGoldPrice = premiumGoldPrice;
         this.freemiumCoinPrice = freemiumCoinPrice;
         this.premiumCoinPrice = premiumCoinPrice;
         this.baseFreemiumSellPrice = baseFreemiumSellPrice;
         this.basePremiumSellPrice = basePremiumSellPrice;
+
+        this.obtainability = obtainability;
     }
 
     public String getName() { return name; }
     public Elements getElement() { return element; }
-    public void setElement(Elements element) { this.element = element; }
     public int getArmor() { return armor; }
     public double getArmorBonus() { return armorBonus; }
     public int getSpeed() { return speed; }
@@ -85,7 +74,6 @@ public class Ring implements Parcelable {
     public double getSpear() { return spear; }
     public int getImageResId() { return imageResId; }
 
-    // NEW: price getters
     public int getFreemiumGoldPrice() { return freemiumGoldPrice; }
     public int getPremiumGoldPrice() { return premiumGoldPrice; }
     public int getFreemiumCoinPrice() { return freemiumCoinPrice; }
@@ -93,13 +81,7 @@ public class Ring implements Parcelable {
     public int getBaseFreemiumSellPrice() { return baseFreemiumSellPrice; }
     public int getBasePremiumSellPrice() { return basePremiumSellPrice; }
 
-    public void setFreemiumGoldPrice(int value) { this.freemiumGoldPrice = value; }
-    public void setPremiumGoldPrice(int value) { this.premiumGoldPrice = value; }
-    public void setFreemiumCoinPrice(int value) { this.freemiumCoinPrice = value; }
-    public void setPremiumCoinPrice(int value) { this.premiumCoinPrice = value; }
-    public void setBaseFreemiumSellPrice(int value) { this.baseFreemiumSellPrice = value; }
-    public void setBasePremiumSellPrice(int value) { this.basePremiumSellPrice = value; }
-
+    public List<String> getObtainability() { return obtainability; }
 
     @Override
     public int describeContents() { return 0; }
@@ -119,15 +101,16 @@ public class Ring implements Parcelable {
         dest.writeInt(axe);
         dest.writeInt(hammer);
         dest.writeInt(spear);
-        dest.writeInt(imageResId); // Write the resource ID
+        dest.writeInt(imageResId);
 
-        // NEW: prices
         dest.writeInt(freemiumGoldPrice);
         dest.writeInt(premiumGoldPrice);
         dest.writeInt(freemiumCoinPrice);
         dest.writeInt(premiumCoinPrice);
         dest.writeInt(baseFreemiumSellPrice);
         dest.writeInt(basePremiumSellPrice);
+
+        dest.writeStringList(obtainability);
     }
 
     protected Ring(Parcel in) {
@@ -144,15 +127,16 @@ public class Ring implements Parcelable {
         axe = in.readInt();
         hammer = in.readInt();
         spear = in.readInt();
-        imageResId = in.readInt(); // Read the resource ID
+        imageResId = in.readInt();
 
-        // NEW: prices
         freemiumGoldPrice = in.readInt();
         premiumGoldPrice = in.readInt();
         freemiumCoinPrice = in.readInt();
         premiumCoinPrice = in.readInt();
         baseFreemiumSellPrice = in.readInt();
         basePremiumSellPrice = in.readInt();
+
+        obtainability = in.createStringArrayList();
     }
 
     public static final Creator<Ring> CREATOR = new Creator<Ring>() {

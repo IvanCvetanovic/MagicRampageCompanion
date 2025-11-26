@@ -1,9 +1,9 @@
 package xyz.magicrampagecompanion;
 
-import androidx.activity.EdgeToEdge;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.util.List;
 
 public class Armor implements Parcelable {
     private String name;
@@ -21,9 +21,8 @@ public class Armor implements Parcelable {
     private int axe;
     private int hammer;
     private int spear;
-    private int imageResId; // Now storing the image resource ID
+    private int imageResId;
 
-    // NEW: pricing fields
     private int freemiumGoldPrice;
     private int premiumGoldPrice;
     private int freemiumCoinPrice;
@@ -31,15 +30,26 @@ public class Armor implements Parcelable {
     private int baseFreemiumSellPrice;
     private int basePremiumSellPrice;
 
-    public Armor(String name, Elements element, boolean frostImmune, int minArmor, int maxArmor, int upgrades,
-                 int speed, int jump, int magic, int sword, int staff, int dagger, int axe, int hammer, int spear,
-                 int imageResId) {
+    List<String> obtainability;
+
+    public Armor(String name, Elements element, boolean frostImmune,
+                 int minArmor, int maxArmor, int upgrades,
+                 int speed, int jump, int magic, int sword, int staff,
+                 int dagger, int axe, int hammer, int spear,
+                 int imageResId,
+                 int freemiumGoldPrice, int premiumGoldPrice,
+                 int freemiumCoinPrice, int premiumCoinPrice,
+                 int baseFreemiumSellPrice, int basePremiumSellPrice,
+                 List<String> obtainability) {
+
         this.name = name;
         this.element = element;
         this.frostImmune = frostImmune;
+
         this.minArmor = minArmor;
         this.maxArmor = maxArmor;
         this.upgrades = upgrades;
+
         this.speed = speed;
         this.jump = jump;
         this.magic = magic;
@@ -49,31 +59,18 @@ public class Armor implements Parcelable {
         this.axe = axe;
         this.hammer = hammer;
         this.spear = spear;
+
         this.imageResId = imageResId;
 
-        // default prices to 0
-        this.freemiumGoldPrice = 0;
-        this.premiumGoldPrice = 0;
-        this.freemiumCoinPrice = 0;
-        this.premiumCoinPrice = 0;
-        this.baseFreemiumSellPrice = 0;
-        this.basePremiumSellPrice = 0;
-    }
-
-    // NEW: overloaded constructor with prices (order: FG, PG, FC, PC, SellF, SellP)
-    public Armor(String name, Elements element, boolean frostImmune, int minArmor, int maxArmor, int upgrades,
-                 int speed, int jump, int magic, int sword, int staff, int dagger, int axe, int hammer, int spear,
-                 int imageResId,
-                 int freemiumGoldPrice, int premiumGoldPrice, int freemiumCoinPrice, int premiumCoinPrice,
-                 int baseFreemiumSellPrice, int basePremiumSellPrice) {
-        this(name, element, frostImmune, minArmor, maxArmor, upgrades,
-                speed, jump, magic, sword, staff, dagger, axe, hammer, spear, imageResId);
         this.freemiumGoldPrice = freemiumGoldPrice;
         this.premiumGoldPrice = premiumGoldPrice;
         this.freemiumCoinPrice = freemiumCoinPrice;
         this.premiumCoinPrice = premiumCoinPrice;
+
         this.baseFreemiumSellPrice = baseFreemiumSellPrice;
         this.basePremiumSellPrice = basePremiumSellPrice;
+
+        this.obtainability = obtainability;
     }
 
     public String getName() { return name; }
@@ -108,6 +105,8 @@ public class Armor implements Parcelable {
     public void setBaseFreemiumSellPrice(int value) { this.baseFreemiumSellPrice = value; }
     public void setBasePremiumSellPrice(int value) { this.basePremiumSellPrice = value; }
 
+    public List<String> getObtainability() { return this.obtainability; }
+
     @Override
     public int describeContents() { return 0; }
 
@@ -116,6 +115,7 @@ public class Armor implements Parcelable {
         dest.writeString(name);
         dest.writeString(String.valueOf(element));
         dest.writeByte((byte) (frostImmune ? 1 : 0));
+
         dest.writeInt(minArmor);
         dest.writeInt(maxArmor);
         dest.writeInt(upgrades);
@@ -128,21 +128,25 @@ public class Armor implements Parcelable {
         dest.writeInt(axe);
         dest.writeInt(hammer);
         dest.writeInt(spear);
-        dest.writeInt(imageResId); // Write the resource ID
 
-        // NEW: prices
+        dest.writeInt(imageResId);
+
         dest.writeInt(freemiumGoldPrice);
         dest.writeInt(premiumGoldPrice);
         dest.writeInt(freemiumCoinPrice);
         dest.writeInt(premiumCoinPrice);
         dest.writeInt(baseFreemiumSellPrice);
         dest.writeInt(basePremiumSellPrice);
+
+        dest.writeStringList(obtainability);
     }
+
 
     protected Armor(Parcel in) {
         name = in.readString();
         element = Elements.valueOf(in.readString());
         frostImmune = in.readByte() != 0;
+
         minArmor = in.readInt();
         maxArmor = in.readInt();
         upgrades = in.readInt();
@@ -155,15 +159,17 @@ public class Armor implements Parcelable {
         axe = in.readInt();
         hammer = in.readInt();
         spear = in.readInt();
-        imageResId = in.readInt(); // Read the resource ID
 
-        // NEW: prices
+        imageResId = in.readInt();
+
         freemiumGoldPrice = in.readInt();
         premiumGoldPrice = in.readInt();
         freemiumCoinPrice = in.readInt();
         premiumCoinPrice = in.readInt();
         baseFreemiumSellPrice = in.readInt();
         basePremiumSellPrice = in.readInt();
+
+        obtainability = in.createStringArrayList();
     }
 
     public static final Creator<Armor> CREATOR = new Creator<Armor>() {

@@ -1,10 +1,8 @@
 package xyz.magicrampagecompanion;
 
-import androidx.activity.EdgeToEdge;
-
-import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.util.List;
 
 public class Weapon implements Parcelable {
     private String name;
@@ -24,7 +22,6 @@ public class Weapon implements Parcelable {
     private boolean isPoisonous;
     private boolean isFrost;
 
-    // NEW: pricing fields
     private int freemiumGoldPrice;
     private int premiumGoldPrice;
     private int freemiumCoinPrice;
@@ -32,10 +29,16 @@ public class Weapon implements Parcelable {
     private int baseFreemiumSellPrice;
     private int basePremiumSellPrice;
 
+    private List<String> obtainability;
+
     public Weapon(String name, WeaponTypes type, Elements element, int minDamage, int maxDamage, int upgrades,
                   double armorBonus, int speed, int jump, int imageResId,
                   int attackCooldown, int pierceCount, boolean enablePierceAreaDamage,
-                  boolean persistAgainstProjectile, boolean isPoisonous, boolean isFrost) {
+                  boolean persistAgainstProjectile, boolean isPoisonous, boolean isFrost,
+                  int freemiumGoldPrice, int premiumGoldPrice, int freemiumCoinPrice, int premiumCoinPrice,
+                  int baseFreemiumSellPrice, int basePremiumSellPrice,
+                  List<String> obtainability) {
+
         this.name = name;
         this.type = type;
         this.element = element;
@@ -53,37 +56,19 @@ public class Weapon implements Parcelable {
         this.isPoisonous = isPoisonous;
         this.isFrost = isFrost;
 
-        // default prices to 0
-        this.freemiumGoldPrice = 0;
-        this.premiumGoldPrice = 0;
-        this.freemiumCoinPrice = 0;
-        this.premiumCoinPrice = 0;
-        this.baseFreemiumSellPrice = 0;
-        this.basePremiumSellPrice = 0;
-    }
-
-    // NEW: overloaded constructor with prices (order: FG, PG, FC, PC, SellF, SellP)
-    public Weapon(String name, WeaponTypes type, Elements element, int minDamage, int maxDamage, int upgrades,
-                  double armorBonus, int speed, int jump, int imageResId,
-                  int attackCooldown, int pierceCount, boolean enablePierceAreaDamage,
-                  boolean persistAgainstProjectile, boolean isPoisonous, boolean isFrost,
-                  int freemiumGoldPrice, int premiumGoldPrice, int freemiumCoinPrice, int premiumCoinPrice,
-                  int baseFreemiumSellPrice, int basePremiumSellPrice) {
-        this(name, type, element, minDamage, maxDamage, upgrades,
-                armorBonus, speed, jump, imageResId,
-                attackCooldown, pierceCount, enablePierceAreaDamage, persistAgainstProjectile, isPoisonous, isFrost);
         this.freemiumGoldPrice = freemiumGoldPrice;
         this.premiumGoldPrice = premiumGoldPrice;
         this.freemiumCoinPrice = freemiumCoinPrice;
         this.premiumCoinPrice = premiumCoinPrice;
         this.baseFreemiumSellPrice = baseFreemiumSellPrice;
         this.basePremiumSellPrice = basePremiumSellPrice;
+
+        this.obtainability = obtainability;
     }
 
     public String getName() { return name; }
     public WeaponTypes getType() { return type; }
     public Elements getElement() { return element; }
-    public void setElement(Elements element) { this.element = element; }
     public int getMinDamage() { return minDamage; }
     public int getMaxDamage() { return maxDamage; }
     public int getUpgrades() { return upgrades; }
@@ -98,19 +83,14 @@ public class Weapon implements Parcelable {
     public boolean isPoisonous() { return isPoisonous; }
     public boolean isFrost() { return isFrost; }
 
-    // NEW: price getters
     public int getFreemiumGoldPrice() { return freemiumGoldPrice; }
     public int getPremiumGoldPrice() { return premiumGoldPrice; }
     public int getFreemiumCoinPrice() { return freemiumCoinPrice; }
     public int getPremiumCoinPrice() { return premiumCoinPrice; }
     public int getBaseFreemiumSellPrice() { return baseFreemiumSellPrice; }
     public int getBasePremiumSellPrice() { return basePremiumSellPrice; }
-    public void setFreemiumGoldPrice(int value) { this.freemiumGoldPrice = value; }
-    public void setPremiumGoldPrice(int value) { this.premiumGoldPrice = value; }
-    public void setFreemiumCoinPrice(int value) { this.freemiumCoinPrice = value; }
-    public void setPremiumCoinPrice(int value) { this.premiumCoinPrice = value; }
-    public void setBaseFreemiumSellPrice(int value) { this.baseFreemiumSellPrice = value; }
-    public void setBasePremiumSellPrice(int value) { this.basePremiumSellPrice = value; }
+
+    public List<String> getObtainability() { return obtainability; }
 
     @Override
     public int describeContents() { return 0; }
@@ -134,13 +114,14 @@ public class Weapon implements Parcelable {
         dest.writeByte((byte) (isPoisonous ? 1 : 0));
         dest.writeByte((byte) (isFrost ? 1 : 0));
 
-        // NEW: prices
         dest.writeInt(freemiumGoldPrice);
         dest.writeInt(premiumGoldPrice);
         dest.writeInt(freemiumCoinPrice);
         dest.writeInt(premiumCoinPrice);
         dest.writeInt(baseFreemiumSellPrice);
         dest.writeInt(basePremiumSellPrice);
+
+        dest.writeStringList(obtainability);
     }
 
     protected Weapon(Parcel in) {
@@ -161,13 +142,14 @@ public class Weapon implements Parcelable {
         isPoisonous = in.readByte() != 0;
         isFrost = in.readByte() != 0;
 
-        // NEW: prices
         freemiumGoldPrice = in.readInt();
         premiumGoldPrice = in.readInt();
         freemiumCoinPrice = in.readInt();
         premiumCoinPrice = in.readInt();
         baseFreemiumSellPrice = in.readInt();
         basePremiumSellPrice = in.readInt();
+
+        obtainability = in.createStringArrayList();
     }
 
     public static final Creator<Weapon> CREATOR = new Creator<Weapon>() {
