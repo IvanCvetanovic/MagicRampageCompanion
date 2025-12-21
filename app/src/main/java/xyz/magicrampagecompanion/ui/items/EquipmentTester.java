@@ -575,55 +575,50 @@ public class EquipmentTester extends AppCompatActivity {
         Log.d("SKILLS", "onActivityResult: requestCode=" + requestCode + ", pos=" + pendingPosition);
 
         switch (requestCode) {
-            case 1: {
-                Armor selectedArmor = data.getParcelableExtra("selectedArmor");
-                if (selectedArmor != null) {
-                    set.armor = selectedArmor;
-                    set.armorUpgrades = selectedArmor.getUpgrades();
-                    set.armorElement = selectedArmor.getElement();
-                    playSfx(sfxClickId);
+            case 1: { // ARMOR
+                int armorId = data.getIntExtra("selectedArmorId", -1);
+                Armor armor = ItemData.getArmorById(armorId);
+                if (armor != null) {
+                    set.armor = armor;
+                    set.armorUpgrades = armor.getUpgrades();
+                    set.armorElement = armor.getElement();
                 }
                 break;
             }
-            case 2: {
-                Ring selectedRing = data.getParcelableExtra("selectedRing");
-                if (selectedRing != null) {
-                    set.ring = selectedRing;
-                    set.ringElement = selectedRing.getElement();
-                    playSfx(sfxClickId);
+
+            case 2: { // RING
+                int ringId = data.getIntExtra("selectedRingId", -1);
+                Ring ring = ItemData.getRingById(ringId);
+                if (ring != null) {
+                    set.ring = ring;
+                    set.ringElement = ring.getElement();
                 }
                 break;
             }
-            case 3: {
-                Weapon selectedWeapon = data.getParcelableExtra("selectedWeapon");
-                if (selectedWeapon != null) {
-                    set.weapon = selectedWeapon;
-                    set.weaponUpgrades = selectedWeapon.getUpgrades();
-                    set.weaponElement = selectedWeapon.getElement();
-                    playSfx(sfxWeaponId);
+
+            case 3: { // WEAPON
+                int weaponId = data.getIntExtra("selectedWeaponId", -1);
+                Weapon weapon = ItemData.getWeaponById(weaponId);
+                if (weapon != null) {
+                    set.weapon = weapon;
+                    set.weaponUpgrades = weapon.getUpgrades();
+                    set.weaponElement = weapon.getElement();
                 }
                 break;
             }
-            case 4: {
-                CharacterClass selectedClass = data.getParcelableExtra("selectedClass");
-                if (selectedClass != null) {
-                    set.characterClass = selectedClass;
-                    playSfx(sfxClickId);
+
+            case 4: { // CLASS
+                int classId = data.getIntExtra("selectedClassId", -1);
+                CharacterClass cls = ItemData.getClassById(classId);
+                if (cls != null) {
+                    set.characterClass = cls;
                 }
                 break;
             }
-            case 5: {
-                boolean[] skillsPicked = retrieveSkillsPickedFromSharedPreferences();
-                int count = 0; for (boolean b : skillsPicked) if (b) count++;
-                Log.d("SKILLS", "skills picked count = " + count + " (from SharedPreferences)");
-                set.skills = (skillsPicked != null) ? skillsPicked.clone() : null;
-                playSfx(sfxClickId);
-                break;
-            }
-            case 6: {
-                Elixir selectedElixir = data.getParcelableExtra("selectedElixir");
-                set.elixir = selectedElixir;
-                playSfx(sfxPotionId != 0 ? sfxPotionId : sfxClickId);
+
+            case 6: { // ELIXIR
+                int elixirId = data.getIntExtra("selectedElixirId", -1);
+                set.elixir = ItemData.getElixirById(elixirId);
                 break;
             }
         }

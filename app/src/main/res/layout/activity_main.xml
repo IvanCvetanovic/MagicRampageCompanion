@@ -19,8 +19,6 @@
         android:paddingBottom="24dp">
 
         <!-- Game Logo -->
-
-        <!-- Language Button moved to top-right corner -->
         <ImageView
             android:id="@+id/GameLogo"
             android:layout_width="match_parent"
@@ -29,7 +27,6 @@
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/gamelogo"
@@ -51,7 +48,6 @@
             android:shadowColor="@color/black"
             android:shadowRadius="30"/>
 
-        <!-- Privacy / Ad Preferences Button -->
         <ImageButton
             android:id="@+id/btnAdPreferences"
             android:layout_width="48dp"
@@ -94,7 +90,7 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/dungeons"
-            app:layout_constraintTop_toBottomOf="@+id/NewsButton"
+            app:layout_constraintTop_toBottomOf="@id/NewsButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"
@@ -109,7 +105,7 @@
             android:shadowRadius="30"
             android:textSize="15sp"
             android:text="@string/survival_mode"
-            app:layout_constraintTop_toBottomOf="@+id/ChapterSelectionButton"
+            app:layout_constraintTop_toBottomOf="@id/ChapterSelectionButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"
@@ -124,7 +120,23 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/test_equipment"
-            app:layout_constraintTop_toBottomOf="@+id/SurvivalModeSelectionButton"
+            app:layout_constraintTop_toBottomOf="@id/SurvivalModeSelectionButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+        <!-- ✅ NEW: Level Viewer button -->
+        <Button
+            android:id="@+id/LevelViewerButton"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="24dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="30"
+            android:textSize="16sp"
+            android:text="Level Viewer"
+            app:layout_constraintTop_toBottomOf="@id/EquipmentTesterButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"
@@ -139,7 +151,7 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/achievements"
-            app:layout_constraintTop_toBottomOf="@+id/EquipmentTesterButton"
+            app:layout_constraintTop_toBottomOf="@id/LevelViewerButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"
@@ -154,7 +166,7 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/items"
-            app:layout_constraintTop_toBottomOf="@+id/AchievementButton"
+            app:layout_constraintTop_toBottomOf="@id/AchievementButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"
@@ -169,13 +181,12 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/enemies"
-            app:layout_constraintTop_toBottomOf="@+id/ItemsButton"
+            app:layout_constraintTop_toBottomOf="@id/ItemsButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"
             app:strokeWidth="1dp" />
 
-        <!-- NEW: Skins button inserted here -->
         <Button
             android:id="@+id/SkinsButton"
             android:layout_width="320dp"
@@ -185,7 +196,7 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/skins"
-            app:layout_constraintTop_toBottomOf="@+id/EnemiesButton"
+            app:layout_constraintTop_toBottomOf="@id/EnemiesButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"
@@ -200,7 +211,7 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/about"
-            app:layout_constraintTop_toBottomOf="@+id/SkinsButton"
+            app:layout_constraintTop_toBottomOf="@id/SkinsButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"

@@ -53,6 +53,12 @@
             android:name=".ui.achievements.AchievementsPage"
             android:exported="false" />
         <activity
+            android:name=".ui.levelviewer.LevelListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.levelviewer.LevelViewerActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.main.About"
             android:exported="false" />
         <activity

@@ -182,4 +182,8 @@ public class Armor implements Parcelable {
     };
 
     public void setUpgrades(int i) { this.upgrades = i; }
+
+    public int getId() {
+        return imageResId;
+    }
 }

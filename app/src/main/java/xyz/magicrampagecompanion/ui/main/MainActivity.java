@@ -35,6 +35,7 @@ import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.ui.items.Items;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.ui.items.Skins;
+import xyz.magicrampagecompanion.ui.levelviewer.LevelListActivity;
 import xyz.magicrampagecompanion.ui.survival.SurvivalModeSelection;
 import xyz.magicrampagecompanion.ui.chapters.ChapterSelection;
 import xyz.magicrampagecompanion.data.storage.ItemSyncer;
@@ -125,6 +126,14 @@ public class MainActivity extends AppCompatActivity {
             openEquipmentTester();
             playSound();
         });
+
+        Button levelEditorButton = findViewById(R.id.LevelViewerButton);
+
+        levelEditorButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, LevelListActivity.class);
+            startActivity(intent);
+        });
+
 
         Button achievementsButton = findViewById(R.id.AchievementButton);
         achievementsButton.setOnClickListener(v -> {
@@ -262,11 +271,6 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    /**
-     * Build an AdRequest that respects the user’s manual toggle.
-     * Note: Google’s own demand already respects UMP consent. Only add `npa=1`
-     * when the user explicitly turned off personalized ads via our toggle.
-     */
     public static AdRequest buildAdRequest(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(ADS_PREFERENCES, MODE_PRIVATE);
         boolean wantsPersonalized = prefs.getBoolean(KEY_PERSONALIZED, true);

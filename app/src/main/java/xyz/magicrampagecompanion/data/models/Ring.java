@@ -155,4 +155,8 @@ public class Ring implements Parcelable {
         @Override
         public Ring[] newArray(int size) { return new Ring[size]; }
     };
+
+    public int getId() {
+        return imageResId;
+    }
 }

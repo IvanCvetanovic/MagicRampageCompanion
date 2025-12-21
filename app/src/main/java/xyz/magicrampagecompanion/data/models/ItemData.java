@@ -129,7 +129,7 @@ public class ItemData {
         swordList.add(new Weapon(str(context, R.string.all_seeing_sword), WeaponTypes.SWORD, Elements.DARKNESS, 120, 552, 15, 30, 2, 5, R.drawable.sword_all_seeing_sword, 700, 1, true, false, false, false, 0, 0, 6000, 3601, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         swordList.add(new Weapon(str(context, R.string.sword_of_1000_lies), WeaponTypes.SWORD, Elements.FIRE, 115, 529, 15, 20, 0, 2, R.drawable.sword_sword_of_1000_lies, 850, 1, false, false, false, false, 5, 2, 0, 0, 0, 1, List.of(str(context, R.string.achievement))));
         swordList.add(new Weapon(str(context, R.string.blade_of_survival), WeaponTypes.SWORD, Elements.NEUTRAL, 120, 552, 15, 40, 0, 0, R.drawable.sword_blade_of_survival, 800, 0, true, true, false, false, 0, 0, 3000, 1801, 66444, 132888, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
-        swordList.add(new Weapon(str(context, R.string.unleashed_kraken), WeaponTypes.SWORD, Elements.WATER, 130, 598, 15, 25, 2, 1, R.drawable.sword_unleashed_kraken, 550, 0, true, true, false, false, 0, 0, 4500, 2700, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        swordList.add(new Weapon(str(context, R.string.unleashed_kraken), WeaponTypes.SWORD, Elements.WATER, 135, 621, 15, 25, 3, 2, R.drawable.sword_unleashed_kraken, 550, 0, true, true, false, false, 0, 0, 4500, 2700, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
 
         // Daggers
         daggerList.add(new Weapon(str(context, R.string.iron_dagger), WeaponTypes.DAGGER, Elements.NEUTRAL, 4, 6, 3, 0, 5, 0, R.drawable.dagger_iron_fire_dagger, 450, 0, true, false, false, false, 300, 150, 0, 0, 33, 66, List.of(str(context, R.string.chapter_one_random_drop))));
@@ -194,9 +194,9 @@ public class ItemData {
         hammerList.add(new Weapon(str(context, R.string.verdant_hammer), WeaponTypes.HAMMER, Elements.EARTH, 48, 232, 16, 80, 0, 3, R.drawable.hammer_verdant_hammer, 1050, 1, true, true, false, false, 150000, 77000, 0, 0, 16666, 33333, List.of(str(context, R.string.pvp_golden_red_chest))));
         hammerList.add(new Weapon(str(context, R.string.smasher_of_decay), WeaponTypes.HAMMER, Elements.NEUTRAL, 52, 239, 15, 50, 0, 0, R.drawable.hammer_smasher_of_decay, 900, 0, true, true, false, false, 113000, 58000, 0, 0, 12555, 25111, List.of(str(context, R.string.chapter_five_random_drop), str(context, R.string.survival_mode_3))));
         hammerList.add(new Weapon(str(context, R.string.mojaras_hammer), WeaponTypes.HAMMER, Elements.DARKNESS, 55, 266, 16, 70, 2, 2, R.drawable.hammer_mojaras_hammer, 1050, 1, true, true, false, false, 150000, 77000, 0, 0, 16666, 33333, List.of(str(context, R.string.pvp_golden_red_chest))));
-        hammerList.add(new Weapon(str(context, R.string.wit_of_ancient_power), WeaponTypes.HAMMER, Elements.NEUTRAL, 56, 271, 16, 80, 0, 0, R.drawable.hammer_wit_of_ancient_power, 1400, 1, true, true, false, false, 5, 2, 0, 0, 0, 1, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        hammerList.add(new Weapon(str(context, R.string.wit_of_ancient_power), WeaponTypes.HAMMER, Elements.NEUTRAL, 56, 271, 16, 80, 0, 0, R.drawable.hammer_wit_of_ancient_power, 1400, 1, true, true, false, false, 5, 2, 0, 0, 0, 1, List.of(str(context, R.string.dungeon_43))));
         hammerList.add(new Weapon(str(context, R.string.bone_hammer), WeaponTypes.HAMMER, Elements.NEUTRAL, 62, 285, 15, 70, 0, 2, R.drawable.hammer_bone_hammer, 1050, 1, true, true, false, false, 573000, 295000, 0, 0, 63666, 127333, List.of(str(context, R.string.shop))));
-        hammerList.add(new Weapon(str(context, R.string.war_forged_smasher), WeaponTypes.HAMMER, Elements.FIRE, 64, 294, 15, 70, 0, 0, R.drawable.hammer_war_forged_smasher, 700, 1, true, true, false, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        hammerList.add(new Weapon(str(context, R.string.war_forged_smasher), WeaponTypes.HAMMER, Elements.FIRE, 64, 294, 15, 70, 0, 0, R.drawable.hammer_war_forged_smasher, 700, 1, true, true, false, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.shop))));
         hammerList.add(new Weapon(str(context, R.string.enlightened_hammer), WeaponTypes.HAMMER, Elements.LIGHT, 64, 294, 15, 60, 0, 0, R.drawable.hammer_enlightened_hammer, 650, 2, true, true, false, false, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.shop))));
         hammerList.add(new Weapon(str(context, R.string.root_of_judgement), WeaponTypes.HAMMER, Elements.EARTH, 64, 294, 15, 70, 0, 4, R.drawable.hammer_root_of_judgement, 700, 1, true, true, false, false, 0, 0, 3900, 2340, 16666, 33333, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         hammerList.add(new Weapon(str(context, R.string.eye_of_the_rift), WeaponTypes.HAMMER, Elements.DARKNESS, 64, 294, 15, 70, 0, 0, R.drawable.hammer_eye_of_the_rift, 700, 1, true, true, false, false, 0, 0, 3900, 2340, 16666, 33333, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
@@ -236,8 +236,8 @@ public class ItemData {
         staffList.add(new Weapon(str(context, R.string.death_scythe), WeaponTypes.STAFF, Elements.DARKNESS, 80, 368, 15, 0, 2, 1, R.drawable.staff_death_scythe, 650, 0, true, true, false, false, 273000, 140000, 0, 0, 30333, 60666, List.of(str(context, R.string.shop))));
         staffList.add(new Weapon(str(context, R.string.water_staff), WeaponTypes.STAFF, Elements.WATER, 80, 368, 15, 0, 3, 3, R.drawable.staff_water_staff, 650, 0, true, true, false, false, 274000, 140000, 0, 0, 30444, 60888, List.of(str(context, R.string.shop))));
         staffList.add(new Weapon(str(context, R.string.death_scythe_plus), WeaponTypes.STAFF, Elements.DARKNESS, 85, 391, 15, 0, 2, 3, R.drawable.staff_death_scythe, 450, 1, true, true, false, false, 1090000, 562000, 0, 0, 121111, 242222, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
-        staffList.add(new Weapon(str(context, R.string.legacy_of_the_oracle), WeaponTypes.STAFF, Elements.EARTH, 88, 404, 15, 15, 3, 6, R.drawable.staff_legacy_of_the_oracle, 600, 1, true, true, false, false, 0, 0, 3000, 1801, 27777, 55555, List.of(str(context, R.string.shop), str(context, R.string.weekly_dungeon_golden_chest))));
-        staffList.add(new Weapon(str(context, R.string.staff_of_withering), WeaponTypes.STAFF, Elements.EARTH, 88, 404, 15, 10, 7, 2, R.drawable.staff_staff_of_withering, 600, 1, true, true, false, false, 0, 0, 4500, 2700, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        staffList.add(new Weapon(str(context, R.string.legacy_of_the_oracle), WeaponTypes.STAFF, Elements.EARTH, 88, 404, 15, 15, 3, 7, R.drawable.staff_legacy_of_the_oracle, 600, 1, true, true, false, false, 0, 0, 3000, 1801, 27777, 55555, List.of(str(context, R.string.shop), str(context, R.string.weekly_dungeon_golden_chest))));
+        staffList.add(new Weapon(str(context, R.string.staff_of_withering), WeaponTypes.STAFF, Elements.EARTH, 88, 404, 15, 0, 7, 0, R.drawable.staff_staff_of_withering, 600, 1, true, true, false, false, 0, 0, 4500, 2700, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         staffList.add(new Weapon(str(context, R.string.toxic_staff), WeaponTypes.STAFF, Elements.EARTH, 90, 414, 15, 0, 5, 2, R.drawable.staff_toxic_staff, 450, 0, true, true, true, false, 380000, 195000, 0, 0, 42222, 84444, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         staffList.add(new Weapon(str(context, R.string.dead_vulture_staff), WeaponTypes.STAFF, Elements.DARKNESS, 95, 437, 15, 0, 2, 1, R.drawable.staff_dead_vulture_staff, 650, 1, true, true, false, false, 0, 0, 3000, 1801, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         staffList.add(new Weapon(str(context, R.string.seabane), WeaponTypes.STAFF, Elements.WATER, 95, 437, 15, 15, 4, 3, R.drawable.staff_seabane, 700, 1, true, true, false, false, 1360000, 702000, 0, 0, 151111, 302222, List.of(str(context, R.string.shop), str(context, R.string.weekly_dungeon_golden_chest))));
@@ -279,19 +279,19 @@ public class ItemData {
         axeList.add(new Weapon(str(context, R.string.eggscellent_axe), WeaponTypes.AXE, Elements.NEUTRAL, 52, 239, 15, 30, 3, 17, R.drawable.axe_eggscellent_axe, 500, 0, true, true, false, false, 0, 0, 1500, 901, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         axeList.add(new Weapon(str(context, R.string.axe_of_rusted_gods), WeaponTypes.AXE, Elements.NEUTRAL, 53, 243, 15, 35, 0, 0, R.drawable.axe_axe_of_rusted_gods, 800, 0, true, true, false, false, 117000, 60000, 0, 0, 13000, 26000, List.of(str(context, R.string.chapter_five_random_drop), str(context, R.string.survival_mode_6))));
         axeList.add(new Weapon(str(context, R.string.bone_axe), WeaponTypes.AXE, Elements.NEUTRAL, 60, 276, 15, 20, 7, 3, R.drawable.axe_bone_axe, 380, 1, true, true, false, false, 534000, 274000, 0, 0, 59333, 118666, List.of(str(context, R.string.chapter_five_random_drop), str(context, R.string.shop), str(context, R.string.weekly_dungeon_golden_chest))));
-        axeList.add(new Weapon(str(context, R.string.steel_axe), WeaponTypes.AXE, Elements.NEUTRAL, 70, 322, 15, 35, 0, 0, R.drawable.axe_steel_axe, 800, 2, true, true, false, false, 797000, 409000, 0, 0, 88555, 177111, List.of(str(context, R.string.chapter_five_random_drop))));
+        axeList.add(new Weapon(str(context, R.string.steel_axe), WeaponTypes.AXE, Elements.NEUTRAL, 70, 322, 15, 35, 0, 0, R.drawable.axe_steel_axe, 800, 2, true, true, false, false, 797000, 409000, 0, 0, 88555, 177111, List.of(str(context, R.string.dungeon_42))));
         axeList.add(new Weapon(str(context, R.string.ice_axe), WeaponTypes.AXE, Elements.NEUTRAL, 70, 322, 15, 30, 2, 5, R.drawable.axe_ice_axe, 450, 0, true, false, false, true, 0, 0, 3000, 1801, 24444, 48888, List.of(str(context, R.string.shop))));
         axeList.add(new Weapon(str(context, R.string.path_of_exile), WeaponTypes.AXE, Elements.FIRE, 74, 340, 15, 40, 4, 0, R.drawable.axe_path_of_exile, 750, 1, true, true, false, false, 5, 2, 0, 0, 0, 1, List.of(str(context, R.string.achievement))));
         axeList.add(new Weapon(str(context, R.string.windpearl_axe), WeaponTypes.AXE, Elements.AIR, 75, 345, 15, 20, 8, 1, R.drawable.axe_windpearl_axe, 600, 1, true, true, false, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.shop))));
         axeList.add(new Weapon(str(context, R.string.cthulhu_axe), WeaponTypes.AXE, Elements.DARKNESS, 78, 358, 15, 40, 4, 3, R.drawable.axe_cthulhu_axe, 600, 1, true, true, true, false, 1010000, 523000, 0, 0, 112222, 224444, List.of(str(context, R.string.shop), str(context, R.string.weekly_dungeon_golden_chest))));
-        axeList.add(new Weapon(str(context, R.string.dawnlight), WeaponTypes.AXE, Elements.LIGHT, 80, 368, 15, 50, 4, 4, R.drawable.axe_dawnlight, 450, 1, true, true, false, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        axeList.add(new Weapon(str(context, R.string.dawnlight), WeaponTypes.AXE, Elements.LIGHT, 80, 368, 15, 50, 4, 4, R.drawable.axe_dawnlight, 450, 1, true, true, false, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.shop))));
         axeList.add(new Weapon(str(context, R.string.path_of_exile_plus), WeaponTypes.AXE, Elements.FIRE, 82, 377, 15, 60, 7, 3, R.drawable.axe_path_of_exile, 550, 1, true, true, false, false, 5, 2, 0, 0, 0, 1, List.of(str(context, R.string.achievement))));
-        axeList.add(new Weapon(str(context, R.string.stormcaller), WeaponTypes.AXE, Elements.WATER, 85, 391, 15, 30, 3, 3, R.drawable.axe_stormcaller, 600, 1, true, true, false, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
-        axeList.add(new Weapon(str(context, R.string.gorgon_axe), WeaponTypes.AXE, Elements.EARTH, 92, 423, 15, 40, 6, 1, R.drawable.axe_gorgon_axe, 600, 1, true, false, true, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        axeList.add(new Weapon(str(context, R.string.stormcaller), WeaponTypes.AXE, Elements.WATER, 85, 391, 15, 30, 3, 3, R.drawable.axe_stormcaller, 600, 1, true, true, false, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.stormcaller))));
+        axeList.add(new Weapon(str(context, R.string.gorgon_axe), WeaponTypes.AXE, Elements.EARTH, 92, 423, 15, 40, 6, 1, R.drawable.axe_gorgon_axe, 600, 1, true, false, true, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.shop))));
         axeList.add(new Weapon(str(context, R.string.all_seeing_axe), WeaponTypes.AXE, Elements.DARKNESS, 105, 483, 15, 50, 3, 3, R.drawable.axe_all_seeing_axe, 600, 1, true, true, false, false, 0, 0, 6000, 3601, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
 
         // Armors
-        armorList.add(new Armor(str(context, R.string.jumpman_suit), Elements.AIR, false, 0, 0, 1, -20, 28, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_jumpman_suit, 200, 100, 0, 0, 22, 44, List.of(str(context, R.string.chapter_one_random_drop))));
+        armorList.add(new Armor(str(context, R.string.jumpman_suit), Elements.AIR, false, 0, 0, 1, 0, 28, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_jumpman_suit, 400, 200, 0, 0, 44, 88, List.of(str(context, R.string.chapter_one_random_drop))));
         armorList.add(new Armor(str(context, R.string.minion_vest), Elements.NEUTRAL, false, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_minion_warlock_vest, 200, 100, 0, 0, 22, 44, List.of(str(context, R.string.chapter_one_random_drop))));
         armorList.add(new Armor(str(context, R.string.recruit_set), Elements.NEUTRAL, false, 6, 10, 3, 0, 0, 0, 10, 0, 15, 0, 0, 0, R.drawable.armor_recruit_soldier_set, 550, 300, 0, 0, 61, 122, List.of(str(context, R.string.chapter_one_random_drop))));
         armorList.add(new Armor(str(context, R.string.improved_jumpman_suit), Elements.AIR, false, 10, 10, 1, 5, 28, 0, 0, 0, 0, 0, 0, 0, R.drawable.armor_jumpman_suit, 5, 2, 0, 0, 0, 1, List.of(str(context, R.string.achievement))));
@@ -340,7 +340,7 @@ public class ItemData {
         armorList.add(new Armor(str(context, R.string.kings_spectre_tunic), Elements.NEUTRAL, false, 28, 95, 10, 4, 4, 400, 0, 0, 0, 0, 0, 0, R.drawable.armor_kings_spectre_tunic, 5, 2, 0, 0, 0, 1, List.of(str(context, R.string.achievement))));
         armorList.add(new Armor(str(context, R.string.moonkeeper_set), Elements.EARTH, false, 36, 96, 7, 6, 4, 60, 0, 0, 40, 0, 40, 0, R.drawable.armor_moonkeeper_set, 45500, 23500, 0, 0, 5055, 10111, List.of(str(context, R.string.chapter_five_random_drop), str(context, R.string.shop))));
         armorList.add(new Armor(str(context, R.string.wind_witch_suit), Elements.AIR, false, 21, 96, 15, 6, 4, 140, 100, 0, 140, 0, 0, 140, R.drawable.armor_wind_witch_suit, 0, 0, 3900, 2340, 27777, 55555, List.of(str(context, R.string.shop), str(context, R.string.weekly_dungeon_golden_chest))));
-        armorList.add(new Armor(str(context, R.string.tunic_of_ending_nights), Elements.NEUTRAL, true, 21, 96, 15, 3, 2, 150, 0, 140, 100, 0, 0, 0, R.drawable.armor_tunic_of_ending_nights, 0, 0, 4500, 2700, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        armorList.add(new Armor(str(context, R.string.tunic_of_ending_nights), Elements.NEUTRAL, true, 21, 96, 15, 3, 2, 150, 0, 140, 100, 0, 0, 0, R.drawable.armor_tunic_of_ending_nights, 0, 0, 4500, 2700, 27777, 55555, List.of(str(context, R.string.shop))));
         armorList.add(new Armor(str(context, R.string.light_spellmaster_suit), Elements.LIGHT, false, 100, 100, 1, 6, 3, 110, 80, 80, 0, 0, 0, 0, R.drawable.armor_light_spellmaster_suit, 225000, 115000, 0, 0, 25000, 50000, List.of(str(context, R.string.shop))));
         armorList.add(new Armor(str(context, R.string.purple_witch_suit), Elements.DARKNESS, false, 22, 101, 15, 3, 3, 50, 0, 30, 0, 0, 0, 0, R.drawable.armor_purple_witch_suit, 36500, 18500, 0, 0, 4055, 8111, List.of(str(context, R.string.chapter_two_random_drop), str(context, R.string.chapter_three_random_drop), str(context, R.string.chapter_four_random_drop), str(context, R.string.chapter_five_random_drop), str(context, R.string.shop))));
         armorList.add(new Armor(str(context, R.string.arcane_mage_suit), Elements.NEUTRAL, true, 30, 101, 10, 5, 3, 110, 0, 120, 80, 0, 80, 100, R.drawable.armor_arcane_mage_suit, 2500000, 1280000, 0, 0, 277777, 555555, List.of(str(context, R.string.shop))));
@@ -395,15 +395,14 @@ public class ItemData {
         armorList.add(new Armor(str(context, R.string.easterminator), Elements.NEUTRAL, false, 40, 184, 15, 5, 18, 40, 50, 0, 50, 0, 50, 0, R.drawable.armor_easterminator, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         armorList.add(new Armor(str(context, R.string.time_patroller), Elements.NEUTRAL, false, 56, 190, 10, 2, 2, 300, 0, 0, 0, 0, 0, 0, R.drawable.armor_time_patroller_suit, 5, 2, 0, 0, 0, 1, List.of(str(context, R.string.achievement))));
         armorList.add(new Armor(str(context, R.string.iron_widow), Elements.NEUTRAL, true, 56, 190, 10, 0, 0, 70, 140, 0, 0, 160, 140, 160, R.drawable.armor_iron_widow, 3350000, 1720000, 0, 0, 372222, 744444, List.of(str(context, R.string.shop))));
-        armorList.add(new Armor(str(context, R.string.unholy_storm), Elements.WATER, false, 42, 193, 15, 6, 4, 150, 0, 80, 80, 0, 0, 80, R.drawable.armor_unholy_storm, 0, 0, 5000, 3000, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         armorList.add(new Armor(str(context, R.string.umbranian_tanker), Elements.NEUTRAL, false, 80, 195, 6, 3, 2, 0, 60, 0, 0, 60, 60, 0, R.drawable.armor_umbranian_tanker, 117000, 60500, 0, 0, 13000, 26000, List.of(str(context, R.string.shop))));
         armorList.add(new Armor(str(context, R.string.greenfang_ensemble), Elements.DARKNESS, false, 48, 220, 15, 0, 4, 100, 0, 0, 135, 0, 135, 0, R.drawable.armor_greenfang_ensemble, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         armorList.add(new Armor(str(context, R.string.interrogator), Elements.WATER, false, 51, 234, 15, 0, 0, 110, 0, 0, 0, 120, 140, 160, R.drawable.armor_interrogator, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.shop))));
-        armorList.add(new Armor(str(context, R.string.protector_of_the_oracle), Elements.EARTH, false, 51, 234, 15, -1, 0, 120, 0, 70, 0, 0, 170, 100, R.drawable.armor_protector_of_the_oracle, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        armorList.add(new Armor(str(context, R.string.protector_of_the_oracle), Elements.EARTH, false, 51, 234, 15, -1, 0, 120, 0, 70, 0, 0, 170, 100, R.drawable.armor_protector_of_the_oracle, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.shop))));
         armorList.add(new Armor(str(context, R.string.warden_of_demons), Elements.DARKNESS, false, 52, 239, 15, 0, 0, 80, 140, 0, 0, 140, 145, 0, R.drawable.armor_warden_of_demons, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
-        armorList.add(new Armor(str(context, R.string.destroyer_of_the_corrupted), Elements.LIGHT, false, 52, 239, 15, 0, 0, 80, 100, 0, 0, 140, 175, 0, R.drawable.armor_destroyer_of_the_corrupted, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        armorList.add(new Armor(str(context, R.string.destroyer_of_the_corrupted), Elements.LIGHT, false, 52, 239, 15, 0, 0, 80, 100, 0, 0, 140, 175, 0, R.drawable.armor_destroyer_of_the_corrupted, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.shop))));
         armorList.add(new Armor(str(context, R.string.vanquisher), Elements.AIR, false, 55, 253, 15, 0, 0, 70, 160, 0, 0, 0, 0, 170, R.drawable.armor_vanquisher, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.shop))));
-        armorList.add(new Armor(str(context, R.string.cataclysmic_plate), Elements.FIRE, false, 56, 257, 15, -1, 0, 55, 140, 0, 0, 170, 220, 0, R.drawable.armor_cataclysmic_plate, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        armorList.add(new Armor(str(context, R.string.cataclysmic_plate), Elements.FIRE, false, 56, 257, 15, -1, 0, 55, 140, 0, 0, 170, 220, 0, R.drawable.armor_cataclysmic_plate, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.shop))));
 
         // Rings
         ringList.add(new Ring(str(context, R.string.ring_of_agility), Elements.NEUTRAL, 0, 0, 2, 2, 0, 20, 0, 0, 0, 0, 0, R.drawable.ring_ring_of_agility, 2100, 1100, 0, 0, 233, 466, List.of(str(context, R.string.chapter_two_random_drop), str(context, R.string.chapter_three_random_drop), str(context, R.string.shop))));
@@ -441,7 +440,7 @@ public class ItemData {
         ringList.add(new Ring(str(context, R.string.cait), Elements.NEUTRAL, 30, 0, 6, 4, 80, 0, 80, 80, 0, 0, 0, R.drawable.ring_cait, 0, 0, 2000, 1200, 27777, 55555, List.of(str(context, R.string.shop))));
         ringList.add(new Ring(str(context, R.string.spektator), Elements.NEUTRAL, 30, 0, 5, 3, 110, 80, 80, 80, 0, 0, 80, R.drawable.ring_spektator, 0, 0, 3000, 1801, 27777, 55555, List.of(str(context, R.string.shop))));
         ringList.add(new Ring(str(context, R.string.ancient_warden), Elements.WATER, 30, 0, 4, 6, 100, 100, 100, 0, 0, 140, 0, R.drawable.ring_ancient_warden, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
-        ringList.add(new Ring(str(context, R.string.ghostwalker), Elements.NEUTRAL, 30, 150, 0, 0, 60, 0, 0, 0, 0, 0, 0, R.drawable.ring_ghostwalker, 0, 0, 2500, 1500, 27777, 55555, List.of(str(context, R.string.chapter_five_random_drop))));
+        ringList.add(new Ring(str(context, R.string.ghostwalker), Elements.NEUTRAL, 30, 150, -2, 0, 40, 0, 0, 0, 0, 0, 0, R.drawable.ring_ghostwalker, 0, 0, 2500, 1500, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         ringList.add(new Ring(str(context, R.string.golden_guardian), Elements.NEUTRAL, 30, 0, 0, 0, 100, 0, 0, 0, 0, 130, 100, R.drawable.ring_golden_guardian, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         ringList.add(new Ring(str(context, R.string.tidecaller_ring), Elements.WATER, 30, 0, 4, 6, 100, 0, 0, 100, 100, 0, 100, R.drawable.ring_tidecaller_ring, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         ringList.add(new Ring(str(context, R.string.dragon_eye_ring), Elements.EARTH, 36, 0, 4, 2, 60, 0, 0, 0, 0, 50, 70, R.drawable.ring_dragon_eye_ring, 125000, 64000, 0, 0, 13888, 27777, List.of(str(context, R.string.shop))));
@@ -452,7 +451,7 @@ public class ItemData {
         ringList.add(new Ring(str(context, R.string.whisper_of_death), Elements.DARKNESS, 40, 0, 5, 3, 100, 0, 90, 90, 0, 90, 0, R.drawable.ring_whisper_of_death, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.shop), str(context, R.string.weekly_dungeon_golden_chest))));
         ringList.add(new Ring(str(context, R.string.magic_cog), Elements.NEUTRAL, 40, 0, 5, 3, 210, 0, 0, 0, 0, 0, 0, R.drawable.ring_magic_cog, 5, 2, 0, 0, 0, 1, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         ringList.add(new Ring(str(context, R.string.vindicator_guardian), Elements.AIR, 40, 0, 5, 4, 100, 90, 0, 100, 0, 0, 110, R.drawable.ring_vindicator_guardian, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
-        ringList.add(new Ring(str(context, R.string.whisper_of_light), Elements.LIGHT, 40, 0, 5, 3, 100, 90, 90, 0, 0, 120, 0, R.drawable.ring_whisper_of_light, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        ringList.add(new Ring(str(context, R.string.whisper_of_light), Elements.LIGHT, 40, 0, 5, 3, 100, 90, 90, 0, 0, 120, 0, R.drawable.ring_whisper_of_light, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.shop))));
         ringList.add(new Ring(str(context, R.string.phoenix), Elements.FIRE, 40, 0, 2, 3, 100, 0, 0, 90, 0, 130, 90, R.drawable.ring_phoenix, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.shop))));
         ringList.add(new Ring(str(context, R.string.vina), Elements.EARTH, 50, 0, 2, 3, 100, 100, 100, 0, 0, 0, 0, R.drawable.ring_vina, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.shop))));
 
@@ -1097,5 +1096,44 @@ public class ItemData {
         }
         return -1;
     }
+
+    public static Armor getArmorById(int id) {
+        for (Armor a : armorList) {
+            if (a.getId() == id) return a;
+        }
+        return null;
+    }
+
+    public static Ring getRingById(int id) {
+        for (Ring r : ringList) {
+            if (r.getId() == id) return r;
+        }
+        return null;
+    }
+
+    public static Weapon getWeaponById(int id) {
+        for (Weapon w : swordList)  if (w.getId() == id) return w;
+        for (Weapon w : staffList)  if (w.getId() == id) return w;
+        for (Weapon w : daggerList) if (w.getId() == id) return w;
+        for (Weapon w : axeList)    if (w.getId() == id) return w;
+        for (Weapon w : hammerList) if (w.getId() == id) return w;
+        for (Weapon w : spearList)  if (w.getId() == id) return w;
+        return null;
+    }
+
+    public static Elixir getElixirById(int id) {
+        for (Elixir e : elixirList) {
+            if (e.getId() == id) return e;
+        }
+        return null;
+    }
+
+    public static CharacterClass getClassById(int id) {
+        for (CharacterClass c : classList) {
+            if (c.getId() == id) return c;
+        }
+        return null;
+    }
+
 }
 

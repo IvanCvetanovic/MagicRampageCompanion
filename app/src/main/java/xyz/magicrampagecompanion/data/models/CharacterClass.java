@@ -163,4 +163,8 @@ public class CharacterClass implements Parcelable {
             return new CharacterClass[size];
         }
     };
+
+    public int getId() {
+        return imageResId;
+    }
 }

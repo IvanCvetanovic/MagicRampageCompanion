@@ -377,17 +377,19 @@ public class ItemSelection extends AppCompatActivity {
     // --- Returning the selected item to caller ---
     private void returnResult(String key, Object selectedItem) {
         Intent resultIntent = new Intent();
+
         if (selectedItem instanceof Armor) {
-            resultIntent.putExtra(key, (Armor) selectedItem);
+            resultIntent.putExtra(key + "Id", ((Armor) selectedItem).getId());
         } else if (selectedItem instanceof Ring) {
-            resultIntent.putExtra(key, (Ring) selectedItem);
+            resultIntent.putExtra(key + "Id", ((Ring) selectedItem).getId());
         } else if (selectedItem instanceof Weapon) {
-            resultIntent.putExtra(key, (Weapon) selectedItem);
+            resultIntent.putExtra(key + "Id", ((Weapon) selectedItem).getId());
         } else if (selectedItem instanceof CharacterClass) {
-            resultIntent.putExtra(key, (CharacterClass) selectedItem);
+            resultIntent.putExtra(key + "Id", ((CharacterClass) selectedItem).getId());
         } else if (selectedItem instanceof Elixir) {
-            resultIntent.putExtra(key, (Elixir) selectedItem);
+            resultIntent.putExtra(key + "Id", ((Elixir) selectedItem).getId());
         }
+
         setResult(RESULT_OK, resultIntent);
         finish();
     }

@@ -169,4 +169,8 @@ public class Weapon implements Parcelable {
         @Override
         public Weapon[] newArray(int size) { return new Weapon[size]; }
     };
+
+    public int getId() {
+        return imageResId;
+    }
 }
