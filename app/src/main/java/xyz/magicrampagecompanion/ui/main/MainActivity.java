@@ -127,12 +127,12 @@ public class MainActivity extends AppCompatActivity {
             playSound();
         });
 
-        Button levelEditorButton = findViewById(R.id.LevelViewerButton);
+        /*Button levelEditorButton = findViewById(R.id.LevelViewerButton);
 
         levelEditorButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, LevelListActivity.class);
             startActivity(intent);
-        });
+        });*/
 
 
         Button achievementsButton = findViewById(R.id.AchievementButton);
@@ -153,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
             playSound();
         });
 
-        // --- NEW: Skins Button ---
         Button skinsButton = findViewById(R.id.SkinsButton);
         if (skinsButton != null) {
             skinsButton.setOnClickListener(v -> {

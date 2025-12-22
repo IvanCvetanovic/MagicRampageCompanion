@@ -1,25 +1,33 @@
 package xyz.magicrampagecompanion.ui.levelviewer;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+
 import xyz.magicrampagecompanion.level.Level;
 
 public class LevelRenderView extends View {
 
-    private Paint paint;
-    private Paint selectedPaint;
+    private static final String TAG = "LevelRenderView";
 
+    private Paint debugPaint;
     private Level level;
-    private LevelEntity selectedEntity;
 
     private float scale = 1f;
     private float offsetX = 0f;
@@ -31,6 +39,9 @@ public class LevelRenderView extends View {
 
     private ScaleGestureDetector scaleDetector;
     private boolean centeredOnce = false;
+
+    // 🔹 Sprite cache
+    private final Map<String, Bitmap> spriteCache = new HashMap<>();
 
     public LevelRenderView(Context context) {
         super(context);
@@ -47,39 +58,40 @@ public class LevelRenderView extends View {
         init(context);
     }
 
-    public LevelRenderView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(context);
-    }
-
     private void init(Context context) {
-        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.RED);
-        paint.setStyle(Paint.Style.FILL);
-
-        selectedPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        selectedPaint.setColor(Color.YELLOW);
-        selectedPaint.setStyle(Paint.Style.STROKE);
-        selectedPaint.setStrokeWidth(3f);
+        debugPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        debugPaint.setColor(Color.RED);
+        debugPaint.setStyle(Paint.Style.FILL);
 
         scaleDetector = new ScaleGestureDetector(context, new ScaleListener());
+        setClickable(true); // 👈 required for performClick
     }
 
     public void setLevel(Level level) {
         this.level = level;
-        selectedEntity = null;
         centeredOnce = false;
+        spriteCache.clear();
+
+        if (level != null && level.entities != null) {
+            Log.d(TAG, "Level loaded with " + level.entities.size() + " entities");
+        }
+
         invalidate();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (level == null || level.entities == null || level.entities.isEmpty()) return;
+
+        if (level == null || level.entities == null || level.entities.isEmpty()) {
+            Log.w(TAG, "Nothing to draw: level or entities empty");
+            return;
+        }
 
         if (!centeredOnce) {
             centerLevel();
             centeredOnce = true;
+            Log.d(TAG, "Level centered");
         }
 
         canvas.save();
@@ -94,10 +106,64 @@ public class LevelRenderView extends View {
     }
 
     private void drawEntity(Canvas canvas, LevelEntity entity) {
-        canvas.drawCircle(entity.x, entity.y, 10, paint);
+        if (entity == null) return;
 
-        if (entity == selectedEntity) {
-            canvas.drawCircle(entity.x, entity.y, 14, selectedPaint);
+        Log.v(TAG, "Drawing entity: name=" + entity.entityName +
+                ", sprite=" + entity.spriteFile +
+                ", x=" + entity.x +
+                ", y=" + entity.y);
+
+        Bitmap sprite = loadSprite(entity.spriteFile);
+
+        if (sprite == null) {
+            // 🔴 fallback
+            Log.w(TAG, "Missing sprite for entity '" + entity.entityName +
+                    "' (spriteFile=" + entity.spriteFile + ")");
+            canvas.drawCircle(entity.x, entity.y, 10, debugPaint);
+            return;
+        }
+
+        Matrix m = new Matrix();
+
+        float cx = sprite.getWidth() / 2f;
+        float cy = sprite.getHeight() / 2f;
+
+        m.postTranslate(-cx, -cy);
+        m.postScale(entity.scaleX, entity.scaleY);
+        m.postRotate(entity.angle);
+        m.postTranslate(entity.x, entity.y);
+
+        canvas.drawBitmap(sprite, m, null);
+    }
+
+    // --------------------
+    // SPRITE LOADING
+    // --------------------
+
+    private Bitmap loadSprite(String spriteName) {
+        if (spriteName == null || spriteName.trim().isEmpty()) {
+            Log.w(TAG, "Sprite name is null or empty");
+            return null;
+        }
+
+        String key = spriteName.endsWith(".png") ? spriteName : spriteName + ".png";
+
+        if (spriteCache.containsKey(key)) {
+            return spriteCache.get(key);
+        }
+
+        try {
+            InputStream is = getContext().getAssets().open("entities/" + key);
+            Bitmap bmp = BitmapFactory.decodeStream(is);
+            spriteCache.put(key, bmp);
+
+            Log.d(TAG, "Loaded sprite: entities/" + key);
+            return bmp;
+
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to load sprite: entities/" + key, e);
+            spriteCache.put(key, null);
+            return null;
         }
     }
 
@@ -118,11 +184,14 @@ public class LevelRenderView extends View {
             maxY = Math.max(maxY, e.y);
         }
 
-        float levelWidth = maxX - minX;
-        float levelHeight = maxY - minY;
+        float levelW = maxX - minX;
+        float levelH = maxY - minY;
 
-        offsetX = (getWidth() - levelWidth * scale) / 2f - minX * scale;
-        offsetY = (getHeight() - levelHeight * scale) / 2f - minY * scale;
+        offsetX = (getWidth() - levelW * scale) / 2f - minX * scale;
+        offsetY = (getHeight() - levelH * scale) / 2f - minY * scale;
+
+        Log.d(TAG, "Center bounds: min=(" + minX + "," + minY +
+                "), max=(" + maxX + "," + maxY + ")");
     }
 
     // --------------------
@@ -144,6 +213,7 @@ public class LevelRenderView extends View {
                 if (!scaleDetector.isInProgress() && isPanning) {
                     offsetX += event.getX() - lastTouchX;
                     offsetY += event.getY() - lastTouchY;
+
                     lastTouchX = event.getX();
                     lastTouchY = event.getY();
                     invalidate();
@@ -151,10 +221,8 @@ public class LevelRenderView extends View {
                 break;
 
             case MotionEvent.ACTION_UP:
-                if (!scaleDetector.isInProgress()) {
-                    handleTap(event.getX(), event.getY());
-                }
                 isPanning = false;
+                performClick(); // 👈 REQUIRED
                 break;
 
             case MotionEvent.ACTION_CANCEL:
@@ -165,19 +233,10 @@ public class LevelRenderView extends View {
         return true;
     }
 
-    private void handleTap(float screenX, float screenY) {
-        float worldX = (screenX - offsetX) / scale;
-        float worldY = (screenY - offsetY) / scale;
-
-        selectedEntity = null;
-        for (LevelEntity e : level.entities) {
-            if (e.hitTest(worldX, worldY)) {
-                selectedEntity = e;
-                break;
-            }
-        }
-
-        invalidate();
+    @Override
+    public boolean performClick() {
+        super.performClick();
+        return true;
     }
 
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {

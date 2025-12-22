@@ -616,6 +616,15 @@ public class EquipmentTester extends AppCompatActivity {
                 break;
             }
 
+            case 5: { // SKILLS
+                boolean[] skillsPicked = retrieveSkillsPickedFromSharedPreferences();
+                if (skillsPicked != null) {
+                    set.skills = skillsPicked.clone();
+                }
+                playSfx(sfxClickId);
+                break;
+            }
+
             case 6: { // ELIXIR
                 int elixirId = data.getIntExtra("selectedElixirId", -1);
                 set.elixir = ItemData.getElixirById(elixirId);

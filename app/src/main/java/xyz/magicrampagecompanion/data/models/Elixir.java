@@ -83,6 +83,6 @@ public class Elixir implements Parcelable {
     @Override public int hashCode() { return type.hashCode(); }
 
     public int getId() {
-        return imageResId;
+        return (getClass().getSimpleName() + ":" + name).hashCode();
     }
 }

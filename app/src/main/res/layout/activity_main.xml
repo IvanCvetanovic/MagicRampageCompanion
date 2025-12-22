@@ -126,7 +126,7 @@
             app:strokeColor="@color/black"
             app:strokeWidth="1dp" />
 
-        <!-- ✅ NEW: Level Viewer button -->
+        <!-- ❌ Level Viewer button TEMPORARILY DISABLED
         <Button
             android:id="@+id/LevelViewerButton"
             android:layout_width="320dp"
@@ -141,6 +141,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"
             app:strokeWidth="1dp" />
+        -->
 
         <Button
             android:id="@+id/AchievementButton"
@@ -151,7 +152,7 @@
             android:shadowRadius="30"
             android:textSize="16sp"
             android:text="@string/achievements"
-            app:layout_constraintTop_toBottomOf="@id/LevelViewerButton"
+            app:layout_constraintTop_toBottomOf="@id/EquipmentTesterButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/black"

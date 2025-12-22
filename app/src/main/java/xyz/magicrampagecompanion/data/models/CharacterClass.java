@@ -165,6 +165,6 @@ public class CharacterClass implements Parcelable {
     };
 
     public int getId() {
-        return imageResId;
+        return (getClass().getSimpleName() + ":" + name).hashCode();
     }
 }
