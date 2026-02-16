@@ -94,7 +94,14 @@ public class EquipmentTester extends AppCompatActivity {
             @Override public void onPickWeapon(int position) { playSfx(sfxClickId); pendingPosition = position; openItemSelection(3); }
             @Override public void onPickClass(int position)  { playSfx(sfxClickId); pendingPosition = position; openItemSelection(4); }
             @Override public void onPickSkills(int position) { playSfx(sfxClickId); pendingPosition = position; openSkillPicker(); }
-            @Override public void onRemoveSet(int position)  { playSfx(sfxClickId); adapter.removeAt(position); }
+            @Override public void onRemoveSet(int position) {
+                playSfx(sfxClickId);
+                adapter.removeAt(position);
+
+                if (pendingPosition == position) {
+                    pendingPosition = RecyclerView.NO_POSITION;
+                }
+            }
 
             @Override public void onSaveSet(int position) {
                 playSfx(sfxClickId);
@@ -571,7 +578,16 @@ public class EquipmentTester extends AppCompatActivity {
             return;
         }
 
-        EquipmentSet set = adapter.getItem(pendingPosition);
+        List<EquipmentSet> items = adapter.getItems();
+
+        if (pendingPosition < 0 || pendingPosition >= items.size()) {
+            Log.w("EquipmentTester", "Invalid pendingPosition: " + pendingPosition +
+                    ", size=" + items.size());
+            pendingPosition = RecyclerView.NO_POSITION;
+            return;
+        }
+
+        EquipmentSet set = items.get(pendingPosition);
         Log.d("SKILLS", "onActivityResult: requestCode=" + requestCode + ", pos=" + pendingPosition);
 
         switch (requestCode) {
