@@ -14,6 +14,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.Executors;
 
@@ -65,6 +66,50 @@ public class ItemSyncer {
                         map.putIfAbsent(ji.name.toLowerCase(), ji);
                     }
                 }
+
+                // ===== CHECK: JSON items not present locally =====
+                HashSet<String> localNames = new HashSet<>();
+
+                collectNames(localNames, ItemData.swordList);
+                collectNames(localNames, ItemData.daggerList);
+                collectNames(localNames, ItemData.axeList);
+                collectNames(localNames, ItemData.spearList);
+                collectNames(localNames, ItemData.hammerList);
+                collectNames(localNames, ItemData.staffList);
+                collectNames(localNames, ItemData.armorList);
+                collectNames(localNames, ItemData.ringList);
+
+                int missingCount = 0;
+
+                for (int i = 0; i < arr.length(); i++) {
+                    JSONObject o = arr.getJSONObject(i);
+
+                    // 🔹 Ignore supply type items
+                    String type = optStr(o, "type");
+                    if (type != null && type.equalsIgnoreCase("supply")) {
+                        continue;
+                    }
+
+                    String name   = optStr(o, "name");
+                    String nameEn = optStr(o, "name_en");
+
+                    boolean exists = false;
+
+                    if (name != null && localNames.contains(safeLower(name))) {
+                        exists = true;
+                    }
+
+                    if (!exists && nameEn != null && localNames.contains(safeLower(nameEn))) {
+                        exists = true;
+                    }
+
+                    if (!exists) {
+                        Log.w(TAG, "JSON item not found locally: name=" + name + " | name_en=" + nameEn);
+                        missingCount++;
+                    }
+                }
+
+                Log.i(TAG, "JSON-only items (not in app): " + missingCount);
 
                 int updatedWeapons = 0;
                 updatedWeapons += syncWeapons(map, ItemData.swordList);
@@ -541,4 +586,17 @@ public class ItemSyncer {
         }
         return jsonMaxLevelAllowed;
     }
+
+    private static void collectNames(HashSet<String> set, List<?> list) {
+        for (Object o : list) {
+            if (o instanceof Weapon) {
+                set.add(safeLower(((Weapon) o).getName()));
+            } else if (o instanceof Armor) {
+                set.add(safeLower(((Armor) o).getName()));
+            } else if (o instanceof Ring) {
+                set.add(safeLower(((Ring) o).getName()));
+            }
+        }
+    }
+
 }
