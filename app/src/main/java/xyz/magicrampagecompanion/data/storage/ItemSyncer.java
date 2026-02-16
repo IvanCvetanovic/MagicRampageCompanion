@@ -28,6 +28,12 @@ import xyz.magicrampagecompanion.enums.Elements;
 public class ItemSyncer {
     private static final String TAG = "ItemSyncer";
 
+    private static final HashSet<String> IGNORE_JSON_NAMES = new HashSet<String>() {{
+        add("clockwork soldier");
+        add("nutcracker guard");
+        add("unholy storm");
+    }};
+
     // Always-latest JSON URL
     private static final String JSON_URL =
             "https://gist.githubusercontent.com/andresan87/5670c559e5a930129aa03dfce7827306/raw/items.json";
@@ -92,6 +98,14 @@ public class ItemSyncer {
 
                     String name   = optStr(o, "name");
                     String nameEn = optStr(o, "name_en");
+
+                    String nameLower   = name != null ? safeLower(name) : null;
+                    String nameEnLower = nameEn != null ? safeLower(nameEn) : null;
+
+                    if ((nameLower != null && IGNORE_JSON_NAMES.contains(nameLower)) ||
+                            (nameEnLower != null && IGNORE_JSON_NAMES.contains(nameEnLower))) {
+                        continue;
+                    }
 
                     boolean exists = false;
 
