@@ -1642,5 +1642,8 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="for_content_makers">Pour Créateurs de Contenu</string>
     <string name="obtainability">Disponibilité:</string>
     <string name="loading_translation">Traduction en cours…</string>
+    <string name="all_seeing_hammer">Marteau omniscient</string>
+    <string name="staff_shooting_star_staff">Bâton Étoile Filante</string>
+    <string name="black_shuriken">Shuriken noir</string>
 
 </resources>

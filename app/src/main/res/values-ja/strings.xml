@@ -1642,5 +1642,8 @@
     <string name="for_content_makers">コンテンツ制作者向け</string>
     <string name="obtainability">"入手可能性: "</string>
     <string name="loading_translation">翻訳中…</string>
+    <string name="all_seeing_hammer">達眼のハンマー</string>
+    <string name="staff_shooting_star_staff">シューティングスター・スタッフ</string>
+    <string name="black_shuriken">黒手裏剣</string>
 
 </resources>

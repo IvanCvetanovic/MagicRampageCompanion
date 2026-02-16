@@ -1641,5 +1641,8 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="for_content_makers">İçerik Üreticileri İçin</string>
     <string name="obtainability">"Elde Edilebilirlik: "</string>
     <string name="loading_translation">Çevriliyor…</string>
+    <string name="all_seeing_hammer">Her şeyi gören Çekiç</string>
+    <string name="staff_shooting_star_staff">Kayan Yıldız Asası</string>
+    <string name="black_shuriken">Koyu Shuriken</string>
 
 </resources>

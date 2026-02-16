@@ -1643,5 +1643,8 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="for_content_makers">Für Content-Ersteller</string>
     <string name="obtainability">"Erhältlichkeit: "</string>
     <string name="loading_translation">Übersetze…</string>
+    <string name="all_seeing_hammer">Allsehender Hammer</string>
+    <string name="staff_shooting_star_staff">Sternschnuppen-Stab</string>
+    <string name="black_shuriken">Schwarze Shuriken</string>
 
 </resources>

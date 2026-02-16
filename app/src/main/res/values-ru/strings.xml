@@ -1644,5 +1644,8 @@
     <string name="for_content_makers">Для Создателей Контента</string>
     <string name="obtainability">"Доступность: "</string>
     <string name="loading_translation">Перевод…</string>
+    <string name="all_seeing_hammer">Всевидящий молот</string>
+    <string name="staff_shooting_star_staff">Посох Падающей Звезды</string>
+    <string name="black_shuriken">Чёрный сюрикен</string>
 
 </resources>
