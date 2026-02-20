@@ -1646,5 +1646,7 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="all_seeing_hammer">Allsehender Hammer</string>
     <string name="staff_shooting_star_staff">Sternschnuppen-Stab</string>
     <string name="black_shuriken">Schwarze Shuriken</string>
+    <string name="scorpion_fang">Skorpionfangzahn</string>
+    <string name="oasis_blade">Oasenklinge</string>
 
 </resources>

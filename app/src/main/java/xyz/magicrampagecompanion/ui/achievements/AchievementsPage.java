@@ -9,6 +9,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.core.graphics.Insets;
@@ -35,26 +36,15 @@ public class AchievementsPage extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_achievements_page);
 
+        View root = findViewById(R.id.main);
         RecyclerView recyclerView = findViewById(R.id.achievementsRecyclerView);
         EditText searchEdit = findViewById(R.id.searchEdit);
+
+        applySystemInsets(root, searchEdit, recyclerView);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setClipToPadding(false);
 
-        final int basePadLeft   = recyclerView.getPaddingLeft();
-        final int basePadTop    = recyclerView.getPaddingTop();
-        final int basePadRight  = recyclerView.getPaddingRight();
-        final int basePadBottom = recyclerView.getPaddingBottom();
-        ViewCompat.setOnApplyWindowInsetsListener(recyclerView, (v, insets) -> {
-            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(
-                    basePadLeft + bars.left,
-                    basePadTop + bars.top,
-                    basePadRight + bars.right,
-                    basePadBottom + bars.bottom
-            );
-            return insets;
-        });
         ViewCompat.requestApplyInsets(recyclerView);
 
         achievements = new ArrayList<>();
@@ -205,5 +195,43 @@ public class AchievementsPage extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(LocaleHelper.applyLocale(newBase));
+    }
+
+    private void applySystemInsets(View root, EditText search, RecyclerView rv) {
+
+        final int baseRootL = root.getPaddingLeft();
+        final int baseRootT = root.getPaddingTop();
+        final int baseRootR = root.getPaddingRight();
+        final int baseRootB = root.getPaddingBottom();
+
+        final int baseSearchL = search.getPaddingLeft();
+        final int baseSearchT = search.getPaddingTop();
+        final int baseSearchR = search.getPaddingRight();
+        final int baseSearchB = search.getPaddingBottom();
+
+        final int baseRvL = rv.getPaddingLeft();
+        final int baseRvT = rv.getPaddingTop();
+        final int baseRvR = rv.getPaddingRight();
+        final int baseRvB = rv.getPaddingBottom();
+
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+            int top = bars.top;
+            int bottom = bars.bottom;
+
+            // Root gets top inset so search bar is tappable
+            root.setPadding(baseRootL, baseRootT + top, baseRootR, baseRootB);
+
+            // RecyclerView gets bottom inset
+            rv.setPadding(baseRvL, baseRvT, baseRvR, baseRvB + bottom);
+
+            // Search keeps its own padding
+            search.setPadding(baseSearchL, baseSearchT, baseSearchR, baseSearchB);
+
+            return insets;
+        });
+
+        ViewCompat.requestApplyInsets(root);
     }
 }
