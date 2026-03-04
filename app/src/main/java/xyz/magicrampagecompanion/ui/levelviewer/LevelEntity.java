@@ -3,6 +3,7 @@ package xyz.magicrampagecompanion.ui.levelviewer;
 public class LevelEntity {
     public int id = -1;
     public int spriteFrame = 0;
+    public int blendMode = 0; // 0 = normal, 1 = additive
 
     public String entityName = "";
     public String spriteFile = "";

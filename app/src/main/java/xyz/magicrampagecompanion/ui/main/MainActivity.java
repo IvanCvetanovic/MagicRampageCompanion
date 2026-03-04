@@ -127,12 +127,11 @@ public class MainActivity extends AppCompatActivity {
             playSound();
         });
 
-        /*Button levelEditorButton = findViewById(R.id.LevelViewerButton);
-
-        levelEditorButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, LevelListActivity.class);
-            startActivity(intent);
-        });*/
+        Button levelViewerButton = findViewById(R.id.LevelViewerButton);
+        levelViewerButton.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, LevelListActivity.class));
+            playSound();
+        });
 
 
         Button achievementsButton = findViewById(R.id.AchievementButton);

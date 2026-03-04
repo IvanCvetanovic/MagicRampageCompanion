@@ -58,10 +58,16 @@ public class LevelParser {
                                     // If there's no id, we don't treat it as a real entity
                                     current = null;
                                 }
+                            } else if (entityDepth == 2 && current != null) {
+                                // Inner entity — read rendering properties
+                                String bm = parser.getAttributeValue(null, "blendMode");
+                                if (bm != null) current.blendMode = safeParseInt(bm, 0);
                             }
                         } else if ("EntityName".equals(tag) && current != null) {
                             current.entityName = safeText(parser);
-                        } else if ("Position".equals(tag) && current != null) {
+                        } else if ("Position".equals(tag) && current != null && entityDepth == 1) {
+                            // Only read the world-space Position from the outer entity.
+                            // Inner entities contain <Collision><Position> offsets that must be ignored.
                             current.x = parseFloatAttr(parser, "x", current.x);
                             current.y = parseFloatAttr(parser, "y", current.y);
                             current.z = parseFloatAttr(parser, "z", current.z);
@@ -71,6 +77,11 @@ public class LevelParser {
                         } else if ("Scale".equals(tag) && current != null) {
                             current.scaleX = parseFloatAttr(parser, "x", current.scaleX);
                             current.scaleY = parseFloatAttr(parser, "y", current.scaleY);
+                        } else if ("FileName".equals(tag) && current != null) {
+                            String fileName = safeText(parser);
+                            if (!fileName.isEmpty()) {
+                                parseEntFile(ctx, current, fileName);
+                            }
                         }
 
                         break;
@@ -94,6 +105,44 @@ public class LevelParser {
             }
 
             return level;
+        }
+    }
+
+    /**
+     * Opens assets/entities/{fileName}, parses it as an Ethanon entity definition,
+     * and fills in sprite, scale, and blendMode on the entity if not already set.
+     * The .ent XML mirrors the inline inner <Entity> block in .esc files.
+     */
+    private static void parseEntFile(Context ctx, LevelEntity entity, String fileName) {
+        try (InputStream is = ctx.getAssets().open("entities/" + fileName)) {
+            XmlPullParser p = Xml.newPullParser();
+            p.setInput(is, "UTF-8");
+
+            int event = p.getEventType();
+            while (event != XmlPullParser.END_DOCUMENT) {
+                if (event == XmlPullParser.START_TAG) {
+                    String tag = p.getName();
+                    if ("Entity".equals(tag)) {
+                        // Root element carries blendMode
+                        String bm = p.getAttributeValue(null, "blendMode");
+                        if (bm != null) entity.blendMode = safeParseInt(bm, 0);
+                    } else if ("Sprite".equals(tag)) {
+                        String sprite = p.nextText();
+                        if (sprite != null && !sprite.trim().isEmpty()) {
+                            entity.spriteFile = sprite.trim();
+                        }
+                        // nextText() consumed the end tag; skip the extra next() below
+                        event = p.getEventType();
+                        continue;
+                    } else if ("Scale".equals(tag)) {
+                        entity.scaleX = parseFloatAttr(p, "x", entity.scaleX);
+                        entity.scaleY = parseFloatAttr(p, "y", entity.scaleY);
+                    }
+                }
+                event = p.next();
+            }
+        } catch (Exception ignored) {
+            // .ent not present or unreadable — entity stays with empty spriteFile
         }
     }
 
