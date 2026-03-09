@@ -995,11 +995,11 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="survival_dungeon_3">Survival Dungeon 3</string>
     <string name="survival3_text">The third survival dungeon will require you to use a weapon that can hit spiders easily. It also has the most \"complicated\" attack pattern out of all survival dungeons, meaning that you will need to invest more effort in it.</string>
     <string name="survival_dungeon_4">Survival Dungeon 4</string>
-    <string name="survival4_text">For this dungeon, be sure to use a weapon with low piercing power, os that you can kill the swamp monster with one shot. It is pretty simple to follow the attack patterns of the dungeon. Additionally you can use Warrior class for some extra protection against the enemy that wis spawning to your right.</string>
+    <string name="survival4_text">For this dungeon, be sure to use a weapon with low piercing power, so that you can kill the swamp monster with one shot. It is pretty simple to follow the attack patterns of the dungeon. Additionally, you can use Warrior class for some extra protection against the enemy that is spawning to your right.</string>
     <string name="survival_dungeon_5">Survival Dungeon 5</string>
     <string name="survival5_text">The best and easiest dungeon for farming gold. Be sure to use a weapon with high area of damage and limited range, like hammers and axes in order to be able to stay at one place and kill the enemies from afar.</string>
     <string name="survival_dungeon_6">Survival Dungeon 6</string>
-    <string name="survival6_text">The last survvial dungeon requires a bit more effort compared to others, as you need ot constantly change the location in order to avoid projectiles, hit the flying units amd avoid the thunder strikes.</string>
+    <string name="survival6_text">The last survival dungeon requires a bit more effort compared to others, as you need to constantly change the location in order to avoid projectiles, hit the flying units and avoid the thunder strikes.</string>
 
     <!-- Other -->
     <string name="golden_key">Golden Key</string>
