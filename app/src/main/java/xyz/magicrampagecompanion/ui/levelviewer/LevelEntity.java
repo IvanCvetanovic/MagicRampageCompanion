@@ -16,6 +16,11 @@ public class LevelEntity {
     public float scaleX = 1f;
     public float scaleY = 1f;
 
+    // Sprite sheet layout from <SpriteCut x="N" y="M" /> in the .ent file.
+    // 0 means "not set" — fall back to aspect-ratio guess.
+    public int spriteCutX = 0;
+    public int spriteCutY = 0;
+
     // Editor helpers
     public static final float HIT_RADIUS = 20f;
 

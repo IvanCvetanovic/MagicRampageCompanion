@@ -12,7 +12,10 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.Xml;
 import android.view.MotionEvent;
+
+import org.xmlpull.v1.XmlPullParser;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 
@@ -21,8 +24,10 @@ import androidx.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -67,8 +72,20 @@ public class LevelRenderView extends View {
     // Sprite cache
     private final Map<String, Bitmap> spriteCache = new HashMap<>();
 
+    // Atlas cache: sheet filename → ordered list of sprite entries (null = no XML exists)
+    private final Map<String, List<AtlasSprite>> atlasCache = new HashMap<>();
+
+    /** One entry from a TextureAtlas XML file. */
+    private static class AtlasSprite {
+        int srcX, srcY, srcW, srcH; // source rect in the PNG
+        int oX, oY, oW, oH;        // offset and logical frame size
+    }
+
     // Tracks sprite names already logged as missing (avoids per-frame spam)
     private final Set<String> loggedMissingSprites = new HashSet<>();
+
+    // Set to true after the first draw so we log the sprite-load summary exactly once
+    private boolean spriteSummaryLogged = false;
 
     // Paints (created once in init)
     private Paint bgPaint;
@@ -119,8 +136,10 @@ public class LevelRenderView extends View {
     public void setLevel(Level level) {
         this.level = level;
         spriteCache.clear();
+        atlasCache.clear();
         sortedEntities.clear();
         loggedMissingSprites.clear();
+        spriteSummaryLogged = false;
         boundsReady = false;
 
         if (level != null && level.entities != null) {
@@ -171,12 +190,20 @@ public class LevelRenderView extends View {
         // position key → list of "sprite(z=N)" strings for visible entities
         Map<String, List<String>> clusters = new TreeMap<>();
 
+        // Track no-sprite entity names (name → count) for diagnosis
+        Map<String, Integer> noSpriteName = new LinkedHashMap<>();
+        // Track distinct sprite files used
+        Set<String> distinctSprites = new HashSet<>();
+
         for (LevelEntity e : sortedEntities) {
             if (e.spriteFile.isEmpty()) {
                 invisible++;
+                String key = e.entityName.isEmpty() ? "<no-name>" : e.entityName;
+                noSpriteName.merge(key, 1, Integer::sum);
                 continue;
             }
             withSprite++;
+            distinctSprites.add(e.spriteFile);
             String key = (int) e.x + "," + (int) e.y;
             clusters.computeIfAbsent(key, k -> new ArrayList<>())
                     .add(e.spriteFile + "(z=" + (int) e.z + ")");
@@ -186,7 +213,33 @@ public class LevelRenderView extends View {
         Log.d(TAG, "Total entities  : " + total);
         Log.d(TAG, "With sprite     : " + withSprite + "  (will render)");
         Log.d(TAG, "No sprite       : " + invisible + "  (skipped)");
+        Log.d(TAG, "Distinct sprites: " + distinctSprites.size());
         Log.d(TAG, "Bounds: x=[" + minX + ".." + maxX + "]  y=[" + minY + ".." + maxY + "]");
+
+        // --- No-sprite entity names sorted by count (most common first) ---
+        if (!noSpriteName.isEmpty()) {
+            List<Map.Entry<String, Integer>> sorted = new ArrayList<>(noSpriteName.entrySet());
+            sorted.sort((a, b) -> b.getValue() - a.getValue());
+            Log.d(TAG, "--- No-sprite entities (name → count, top 20) ---");
+            int shown = 0;
+            for (Map.Entry<String, Integer> entry : sorted) {
+                Log.d(TAG, "  " + entry.getValue() + "x  " + entry.getKey());
+                if (++shown >= 20) break;
+            }
+            if (sorted.size() > 20) {
+                Log.d(TAG, "  ... and " + (sorted.size() - 20) + " more distinct names");
+            }
+        }
+
+        // --- Distinct sprite files used by the 'withSprite' entities ---
+        if (!distinctSprites.isEmpty()) {
+            List<String> spriteList = new ArrayList<>(distinctSprites);
+            Collections.sort(spriteList);
+            Log.d(TAG, "--- Sprite files referenced (" + spriteList.size() + ") ---");
+            for (String s : spriteList) {
+                Log.d(TAG, "  " + s);
+            }
+        }
 
         // Report every position where 2+ visible entities overlap
         Log.d(TAG, "--- Stacked entity clusters ---");
@@ -260,16 +313,62 @@ public class LevelRenderView extends View {
         }
 
         canvas.restore();
+
+        // One-shot summary after the first full draw (all sheets attempted)
+        if (!spriteSummaryLogged) {
+            spriteSummaryLogged = true;
+            logSpriteSummary();
+        }
+    }
+
+    private void logSpriteSummary() {
+        int loaded = 0, missing = 0;
+        List<String> missingList = new ArrayList<>();
+        List<String> loadedList = new ArrayList<>();
+        for (Map.Entry<String, Bitmap> entry : spriteCache.entrySet()) {
+            String key = entry.getKey();
+            // Only log sheet keys (no "#frame" suffix) to avoid duplicates
+            if (key.contains("#")) continue;
+            if (entry.getValue() == null) {
+                missing++;
+                missingList.add(key);
+            } else {
+                loaded++;
+                loadedList.add(key);
+            }
+        }
+        Collections.sort(missingList);
+        Collections.sort(loadedList);
+        Log.d(TAG, "=== SPRITE LOAD SUMMARY (after first draw) ===");
+        Log.d(TAG, "  Sheets loaded OK : " + loaded);
+        Log.d(TAG, "  Sheets MISSING   : " + missing);
+        if (!missingList.isEmpty()) {
+            Log.w(TAG, "--- Missing PNG sheets (" + missingList.size() + ") ---");
+            for (String s : missingList) {
+                Log.w(TAG, "  MISSING: " + s);
+            }
+        }
+        if (!loadedList.isEmpty()) {
+            Log.d(TAG, "--- Loaded PNG sheets (" + loadedList.size() + ") ---");
+            for (String s : loadedList) {
+                Log.d(TAG, "  loaded: " + s);
+            }
+        }
+        Log.d(TAG, "=== END SPRITE LOAD SUMMARY ===");
     }
 
     private void drawEntity(Canvas canvas, LevelEntity entity) {
         if (entity == null) return;
 
-        // No sprite defined means this is an invisible game-logic object (marker,
-        // camera control, trigger zone, light source, fog volume, etc.) — skip it.
-        if (entity.spriteFile.isEmpty()) return;
+        if (entity.spriteFile.isEmpty()) {
+            // No sprite — either a pure runtime FX emitter (skip silently) or a
+            // game-logic object worth showing as a placeholder overlay.
+            if (!isLogicEntity(entity)) return;
+            drawEntityFallback(canvas, entity);
+            return;
+        }
 
-        Bitmap frame = loadSpriteFrame(entity.spriteFile, entity.spriteFrame);
+        Bitmap frame = loadSpriteFrame(entity.spriteFile, entity.spriteFrame, entity.spriteCutX, entity.spriteCutY);
 
         if (frame != null) {
             Matrix m = new Matrix();
@@ -284,6 +383,21 @@ public class LevelRenderView extends View {
         } else {
             drawEntityFallback(canvas, entity);
         }
+    }
+
+    /**
+     * Returns true for spriteless entities that represent game-logic objects
+     * worth visualising as a placeholder (walls, triggers, spawns, markers).
+     * Returns false for pure runtime FX (particle emitters, volumetric fog)
+     * that have no useful static representation.
+     */
+    private boolean isLogicEntity(LevelEntity entity) {
+        String name = entity.entityName.toLowerCase();
+        // Pure FX — skip
+        if (name.contains("fireflies") || name.contains("fire_sparkling")
+                || name.contains("volumetric") || name.contains("fog")) return false;
+        // Everything else with no sprite is a logic/trigger entity — show it
+        return true;
     }
 
     private void drawEntityFallback(Canvas canvas, LevelEntity entity) {
@@ -329,7 +443,20 @@ public class LevelRenderView extends View {
         String sprite = entity.spriteFile.toLowerCase();
 
         if (name.contains("invisible") || name.contains("wall") || name.contains("collide"))
-            return Color.argb(100, 180, 180, 180);
+            return Color.argb(80, 200, 200, 200);
+        if (name.contains("instant_death") || name.contains("death") || name.contains("spike")
+                || name.contains("lava") || name.contains("void"))
+            return Color.argb(180, 220, 0, 0);
+        if (name.contains("spawn") || name.contains("respawn"))
+            return Color.argb(200, 0, 220, 120);
+        if (name.contains("level_end") || name.contains("exit"))
+            return Color.argb(220, 0, 200, 255);
+        if (name.contains("secret"))
+            return Color.argb(180, 200, 0, 255);
+        if (name.contains("cam") || name.contains("camera"))
+            return Color.argb(140, 100, 180, 255);
+        if (name.contains("turnstile") || name.contains("switch") || name.contains("lever"))
+            return Color.argb(200, 255, 140, 0);
         if (name.startsWith("_marker") || name.contains("marker") || name.contains("waypoint"))
             return Color.argb(220, 255, 160, 0);
         if (name.contains("light") || name.contains("beam") || name.contains("ambient") || name.contains("glow"))
@@ -377,12 +504,39 @@ public class LevelRenderView extends View {
     // SPRITE LOADING
     // --------------------
 
+    /** Sprites that have a white background baked in and need it stripped. */
+    private boolean needsWhiteStripped(String sheetKey) {
+        String k = sheetKey.toLowerCase();
+        return k.contains("blood_decal");
+    }
+
     /**
-     * Returns the cropped frame bitmap for a sprite sheet, cached after first use.
-     * Frame width is assumed to equal the sheet height (square frames in a horizontal strip).
-     * Single-frame sprites (width <= height) are returned as-is.
+     * Returns a new ARGB_8888 bitmap where pixels brighter than a threshold on
+     * all three channels are made fully transparent.
      */
-    private Bitmap loadSpriteFrame(String spriteName, int frameIndex) {
+    private Bitmap stripWhiteBackground(Bitmap src) {
+        Bitmap out = src.copy(Bitmap.Config.ARGB_8888, true);
+        int w = out.getWidth(), h = out.getHeight();
+        int[] pixels = new int[w * h];
+        out.getPixels(pixels, 0, w, 0, 0, w, h);
+        for (int i = 0; i < pixels.length; i++) {
+            int r = (pixels[i] >> 16) & 0xFF;
+            int g = (pixels[i] >>  8) & 0xFF;
+            int b =  pixels[i]        & 0xFF;
+            if (r > 200 && g > 200 && b > 200) {
+                pixels[i] = 0x00000000; // fully transparent
+            }
+        }
+        out.setPixels(pixels, 0, w, 0, 0, w, h);
+        return out;
+    }
+
+    /**
+     * Returns the frame bitmap for a sprite, cached after first use.
+     * Prefers a TextureAtlas XML for exact source coordinates; falls back to
+     * SpriteCut-based uniform grid slicing.
+     */
+    private Bitmap loadSpriteFrame(String spriteName, int frameIndex, int spriteCutX, int spriteCutY) {
         if (spriteName == null || spriteName.trim().isEmpty()) return null;
 
         String sheetKey = spriteName.endsWith(".png") ? spriteName : spriteName + ".png";
@@ -395,8 +549,10 @@ public class LevelRenderView extends View {
             try {
                 InputStream is = getContext().getAssets().open("entities/" + sheetKey);
                 Bitmap bmp = BitmapFactory.decodeStream(is);
+                if (needsWhiteStripped(sheetKey)) {
+                    bmp = stripWhiteBackground(bmp);
+                }
                 spriteCache.put(sheetKey, bmp);
-                Log.d(TAG, "Loaded sheet: " + sheetKey);
             } catch (IOException e) {
                 if (loggedMissingSprites.add(sheetKey)) {
                     Log.w(TAG, "MISSING PNG: entities/" + sheetKey);
@@ -413,27 +569,112 @@ public class LevelRenderView extends View {
             return null;
         }
 
-        // Determine number of frames: if width > height, assume horizontal strip of square frames
-        int numFrames = (sheet.getWidth() > sheet.getHeight())
-                ? sheet.getWidth() / sheet.getHeight()
-                : 1;
-        int frameWidth = sheet.getWidth() / numFrames;
-        int clampedFrame = Math.min(Math.max(frameIndex, 0), numFrames - 1);
-
-        Bitmap frameBitmap;
-        if (numFrames > 1) {
-            frameBitmap = Bitmap.createBitmap(sheet, clampedFrame * frameWidth, 0, frameWidth, sheet.getHeight());
-        } else {
-            frameBitmap = sheet;
+        // --- Atlas path ---
+        List<AtlasSprite> atlas = loadAtlas(sheetKey);
+        if (atlas != null && !atlas.isEmpty()) {
+            int idx = Math.min(Math.max(frameIndex, 0), atlas.size() - 1);
+            Bitmap frameBitmap = buildAtlasFrame(sheet, atlas.get(idx));
+            spriteCache.put(frameKey, frameBitmap);
+            return frameBitmap;
         }
+
+        // --- Uniform grid fallback (SpriteCut) ---
+        // If no SpriteCut is defined, treat the entire image as a single frame.
+        // Entities with multiple frames always declare SpriteCut in their .ent file.
+        int numCols, numRows;
+        if (spriteCutX > 0) {
+            numCols = spriteCutX;
+            numRows = (spriteCutY > 0) ? spriteCutY : 1;
+        } else {
+            numCols = 1;
+            numRows = 1;
+        }
+        int frameWidth  = sheet.getWidth()  / numCols;
+        int frameHeight = sheet.getHeight() / numRows;
+        int totalFrames  = numCols * numRows;
+        int clampedFrame = Math.min(Math.max(frameIndex, 0), totalFrames - 1);
+        int col = clampedFrame % numCols;
+        int row = clampedFrame / numCols;
+
+        Bitmap frameBitmap = (totalFrames > 1)
+                ? Bitmap.createBitmap(sheet, col * frameWidth, row * frameHeight, frameWidth, frameHeight)
+                : sheet;
 
         spriteCache.put(frameKey, frameBitmap);
         return frameBitmap;
     }
 
+    /**
+     * Loads and caches the TextureAtlas XML for a sprite sheet.
+     * Returns null if no XML exists (normal for non-packed sheets).
+     */
+    private List<AtlasSprite> loadAtlas(String sheetKey) {
+        if (atlasCache.containsKey(sheetKey)) return atlasCache.get(sheetKey);
+
+        String xmlName = sheetKey.substring(0, sheetKey.length() - 4) + ".xml"; // replace .png
+        try (InputStream is = getContext().getAssets().open("entities/" + xmlName)) {
+            List<AtlasSprite> entries = new ArrayList<>();
+            XmlPullParser p = Xml.newPullParser();
+            p.setInput(is, null);
+            int event = p.getEventType();
+            while (event != XmlPullParser.END_DOCUMENT) {
+                if (event == XmlPullParser.START_TAG && "sprite".equals(p.getName())) {
+                    AtlasSprite s = new AtlasSprite();
+                    s.srcX = safeInt(p.getAttributeValue(null, "x"));
+                    s.srcY = safeInt(p.getAttributeValue(null, "y"));
+                    s.srcW = safeInt(p.getAttributeValue(null, "w"));
+                    s.srcH = safeInt(p.getAttributeValue(null, "h"));
+                    s.oX   = safeInt(p.getAttributeValue(null, "oX"));
+                    s.oY   = safeInt(p.getAttributeValue(null, "oY"));
+                    s.oW   = safeInt(p.getAttributeValue(null, "oW"));
+                    s.oH   = safeInt(p.getAttributeValue(null, "oH"));
+                    entries.add(s);
+                }
+                event = p.next();
+            }
+            atlasCache.put(sheetKey, entries);
+            return entries;
+        } catch (Exception e) {
+            atlasCache.put(sheetKey, null);
+            return null;
+        }
+    }
+
+    /** Crops the sprite from the atlas source rect and places it into its logical output frame. */
+    private Bitmap buildAtlasFrame(Bitmap sheet, AtlasSprite s) {
+        // Clamp source rect to sheet bounds
+        int srcX = Math.max(0, Math.min(s.srcX, sheet.getWidth()  - 1));
+        int srcY = Math.max(0, Math.min(s.srcY, sheet.getHeight() - 1));
+        int srcW = Math.min(s.srcW, sheet.getWidth()  - srcX);
+        int srcH = Math.min(s.srcH, sheet.getHeight() - srcY);
+        if (srcW <= 0 || srcH <= 0) return null;
+
+        Bitmap crop = Bitmap.createBitmap(sheet, srcX, srcY, srcW, srcH);
+
+        // If no output frame metadata, return the raw crop
+        if (s.oW <= 0 || s.oH <= 0) return crop;
+
+        // Place crop into the logical output frame at the given offset
+        Bitmap frame = Bitmap.createBitmap(s.oW, s.oH, Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(frame);
+        c.drawBitmap(crop, s.oX, s.oY, null);
+        crop.recycle();
+        return frame;
+    }
+
+    private static int safeInt(String v) {
+        if (v == null) return 0;
+        try { return Integer.parseInt(v.trim()); } catch (Exception e) { return 0; }
+    }
+
     // --------------------
     // TOUCH
     // --------------------
+
+    // Screen position where the finger first went down (for tap detection)
+    private float tapStartX, tapStartY;
+    // Max finger travel (in screen px) that still counts as a tap, not a pan
+    private static final float TAP_SLOP_PX = 12f;
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -443,6 +684,8 @@ public class LevelRenderView extends View {
             case MotionEvent.ACTION_DOWN:
                 lastTouchX = event.getX();
                 lastTouchY = event.getY();
+                tapStartX  = event.getX();
+                tapStartY  = event.getY();
                 isPanning = true;
                 break;
 
@@ -458,6 +701,12 @@ public class LevelRenderView extends View {
 
             case MotionEvent.ACTION_UP:
                 isPanning = false;
+                float dx = event.getX() - tapStartX;
+                float dy = event.getY() - tapStartY;
+                if (!scaleDetector.isInProgress()
+                        && dx * dx + dy * dy <= TAP_SLOP_PX * TAP_SLOP_PX) {
+                    handleTap(event.getX(), event.getY());
+                }
                 performClick();
                 break;
 
@@ -473,6 +722,50 @@ public class LevelRenderView extends View {
     public boolean performClick() {
         super.performClick();
         return true;
+    }
+
+    private void handleTap(float screenX, float screenY) {
+        // Convert screen → world coordinates
+        float worldX = (screenX - offsetX) / scale;
+        float worldY = (screenY - offsetY) / scale;
+
+        // Collect all entities whose bounding box contains the tap point.
+        // Use the same half-extents as drawEntityFallback so the hit area
+        // matches what the user actually sees.
+        List<LevelEntity> hits = new ArrayList<>();
+        for (LevelEntity e : sortedEntities) {
+            float hw = Math.max(e.scaleX * BASE_TILE / 2f, LevelEntity.HIT_RADIUS);
+            float hh = Math.max(e.scaleY * BASE_TILE / 2f, LevelEntity.HIT_RADIUS);
+            float lx = worldX - e.x;
+            float ly = worldY - e.y;
+            if (lx >= -hw && lx <= hw && ly >= -hh && ly <= hh) {
+                hits.add(e);
+            }
+        }
+
+        if (hits.isEmpty()) {
+            Log.d(TAG, "TAP (world " + (int) worldX + ", " + (int) worldY + ") — no entity");
+            return;
+        }
+
+        // Sort hits: rendered-on-top last in draw order = highest z → log that one first,
+        // then list the others so the user knows what's stacked here.
+        hits.sort((a, b) -> Float.compare(b.z, a.z));
+
+        Log.d(TAG, "=== TAP at world (" + (int) worldX + ", " + (int) worldY + ") — "
+                + hits.size() + " hit(s) ===");
+        for (int i = 0; i < hits.size(); i++) {
+            LevelEntity e = hits.get(i);
+            Log.d(TAG, "  [" + i + "] id=" + e.id
+                    + "  name='" + e.entityName + "'"
+                    + "  sprite='" + e.spriteFile + "'"
+                    + "  pos=(" + e.x + ", " + e.y + ", z=" + e.z + ")"
+                    + "  scale=(" + e.scaleX + ", " + e.scaleY + ")"
+                    + "  angle=" + e.angle
+                    + "  blendMode=" + e.blendMode
+                    + "  frame=" + e.spriteFrame);
+        }
+        Log.d(TAG, "=== END TAP ===");
     }
 
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
