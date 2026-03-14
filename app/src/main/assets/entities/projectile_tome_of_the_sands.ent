@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0.2" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>dagger_shadow.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="16" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="200" randomLifeTime="100" angleDir="0" randAngle="0" size="32" randomizeSize="0" growth="-2.1" minSize="0" maxSize="500" angleStart="0" randAngleStart="360">
+                <Bitmap>skull_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="4" />
+                <RandomizeDir x="0.75" y="0.75" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="32" />
+                <Color0 r="0" g="0" b="0" a="0.2" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="19" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="500" randomLifeTime="250" angleDir="0" randAngle="7" size="112.32" randomizeSize="0" growth="3" minSize="0" maxSize="1560" angleStart="0" randAngleStart="360">
+                <Bitmap>white_dust.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="3" />
+                <RandomizeDir x="1.56" y="1.56" />
+                <SpriteCut x="4" y="3" />
+                <StartPoint x="0" y="0" z="-0.013" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="2" g="1.8" b="1.2" a="0.2" />
+                <Color1 r="0.25" g="0.225" b="0.15" a="0.14" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="36" y="80" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=-0.3;} v1{x=0;y=-1;} v2{x=0.5;y=-0.3;} v3{x=0;y=1;} ]]>
+</Polygon>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>explosionEntity</Name>
+                <Value>explosion_sand_dagger.ent</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>sand</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>soundPack</Name>
+                <Value>power</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

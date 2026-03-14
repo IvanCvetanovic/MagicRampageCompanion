@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="1" g="1" b="1" a="0.5" />
+        <SpriteCut x="2" y="2" />
+        <Sprite>arrows_entity.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="192" y="320" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>autoHide</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>customHeight</Name>
+                <Value>-1</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>customWidth</Name>
+                <Value>-1</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>offsetX</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>offsetY</Name>
+                <Value>150</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

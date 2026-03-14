@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="2" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Scale x="1.1" y="1.1" />
+        <Sprite>portal_background.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="12" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="700" randomLifeTime="250" angleDir="0" randAngle="0" size="284" randomizeSize="0" growth="-6" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>dark-energy-particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0.001" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="0" />
+                <Color1 r="0" g="0" b="0" a="0.5" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="1" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="400" randomLifeTime="150" angleDir="0" randAngle="0" size="253" randomizeSize="0" growth="0" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>soft_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0.001" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="0.8" />
+                <Color1 r="0" g="0" b="0" a="0.8" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

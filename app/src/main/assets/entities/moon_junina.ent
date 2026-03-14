@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.9" g="0.9" b="0.9" a="1" />
+        <Sprite>junina-moon.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>vector2</Type>
+                <Name>normPos</Name>
+                <Value x="0" y="0" />
+            </Variable>
+            <Variable>
+                <Type>vector2</Type>
+                <Name>offset</Name>
+                <Value x="0" y="0" />
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

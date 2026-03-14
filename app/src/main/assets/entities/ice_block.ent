@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="1" friction="0" density="3" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="10" y="1" />
+        <PivotAdjust x="0" y="40" />
+        <Sprite>ice_block.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="48" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="400" randomLifeTime="100" angleDir="0" randAngle="0" size="48" randomizeSize="20" growth="-1.5" minSize="0" maxSize="1000" angleStart="45" randAngleStart="360">
+                <Bitmap>half-explosion-particles-bw.png</Bitmap>
+                <Gravity x="0" y="-0.1" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="4" y="0" />
+                <SpriteCut x="8" y="3" />
+                <StartPoint x="0" y="60" z="0.01" />
+                <RandStartPoint x="84" y="2" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="1.47" g="1.814" b="2" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="12" allAtOnce="1" alphaMode="1" repeat="0" animationMode="1" lifeTime="600" randomLifeTime="600" angleDir="0" randAngle="0" size="16" randomizeSize="12" growth="0" minSize="0" maxSize="1000" angleStart="45" randAngleStart="0">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0.15" />
+                <Direction x="0" y="-4" />
+                <RandomizeDir x="1" y="-4" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="54" z="2" />
+                <RandStartPoint x="48" y="8" />
+                <Color0 r="2.94" g="3.628" b="4" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="80" y="110" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=0;y=1;} v1{x=-1;y=0.9;} v2{x=-0.5;y=-0.8;} v3{x=0;y=-1;} v4{x=0.5;y=-0.8;} v5{x=1;y=0.9;} ]]>
+</Polygon>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>int</Type>
+                <Name>team</Name>
+                <Value>2</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="24" allAtOnce="1" alphaMode="0" repeat="1" animationMode="2" lifeTime="1000" randomLifeTime="1000" angleDir="0" randAngle="1" size="25.6" randomizeSize="6.4" growth="-0.3" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>particle_harder.png</Bitmap>
+                <Gravity x="0" y="0.05" />
+                <Direction x="0" y="-3.5" />
+                <RandomizeDir x="4" y="3" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="-72" z="1" />
+                <RandStartPoint x="256" y="128" />
+                <Color0 r="1" g="1" b="1" a="0" />
+                <Color1 r="1" g="1" b="1" a="1" />
+                <Luminance r="0" g="0" b="0" />
+            </ParticleSystem>
+            <ParticleSystem particles="3" allAtOnce="1" alphaMode="0" repeat="1" animationMode="1" lifeTime="400" randomLifeTime="200" angleDir="0" randAngle="0" size="400" randomizeSize="0" growth="-0.8" minSize="0" maxSize="1440" angleStart="2" randAngleStart="0">
+                <Bitmap>smoke_jump.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="2" y="4" />
+                <StartPoint x="0" y="-128" z="1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="2" g="2" b="2" a="0.1" />
+                <Color1 r="2" g="2" b="2" a="0.1" />
+                <Luminance r="0.7" g="0.7" b="0.9" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

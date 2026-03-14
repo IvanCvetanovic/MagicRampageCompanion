@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="1" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="550" randomLifeTime="100" angleDir="0" randAngle="1" size="92.88" randomizeSize="0" growth="0.54" minSize="0" maxSize="540" angleStart="0" randAngleStart="180">
+                <Bitmap>explosion.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.8" g="0.8" b="1.8" a="1" />
+                <Color1 r="1.8" g="0.8" b="1.8" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="1" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="600" randomLifeTime="0" angleDir="0" randAngle="2" size="5.76" randomizeSize="0" growth="4.32" minSize="0" maxSize="480" angleStart="0" randAngleStart="30">
+                <Bitmap>white_ring.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.8" g="0.8" b="1.8" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>range</Name>
+                <Value>100</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

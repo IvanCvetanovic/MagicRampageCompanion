@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.62" g="0.62" b="0.62" a="1" />
+        <SpriteCut x="2" y="1" />
+        <Sprite>chapter4-block-edges.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>allowDecals</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>stone</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

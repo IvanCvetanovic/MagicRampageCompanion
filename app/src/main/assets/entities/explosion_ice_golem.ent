@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="9" allAtOnce="0" alphaMode="0" repeat="1" animationMode="1" lifeTime="400" randomLifeTime="100" angleDir="0" randAngle="1" size="220" randomizeSize="0" growth="1.632" minSize="0" maxSize="1632" angleStart="0" randAngleStart="330">
+                <Bitmap>white_dust_smaller_canvas.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0.1" />
+                <RandStartPoint x="0" y="128" />
+                <Color0 r="1.46" g="1.82" b="2.0" a="1" />
+                <Color1 r="0.73" g="0.91" b="1.0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="1" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" lifeTime="1500" randomLifeTime="0" angleDir="0.1" randAngle="0" size="56.32" randomizeSize="0" growth="19.36" minSize="0" maxSize="400" angleStart="350" randAngleStart="360">
+                <Bitmap>particle_cross_128.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="5" g="1.5" b="3" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

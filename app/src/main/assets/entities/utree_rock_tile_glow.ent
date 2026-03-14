@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="1">
+        <DiffuseColor r="1" g="0.5" b="0.1" a="1" />
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Scale x="4" y="4" />
+        <Sprite>halo_dusty.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

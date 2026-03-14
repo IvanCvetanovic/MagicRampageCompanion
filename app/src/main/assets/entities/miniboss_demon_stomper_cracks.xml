@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="miniboss_demon_stomper_cracks.png" width="256" height="256">
+    <sprite n="miniboss_demon_stomper_crack_00.png" x="1" y="1" w="65" h="116" pX="0.5" pY="0.5" oX="126" oY="120" oW="256" oH="256"/>
+    <sprite n="miniboss_demon_stomper_crack_01.png" x="1" y="119" w="88" h="106" pX="0.5" pY="0.5" oX="137" oY="19" oW="256" oH="256"/>
+    <sprite n="miniboss_demon_stomper_crack_02.png" x="68" y="1" w="105" h="69" pX="0.5" pY="0.5" oX="31" oY="168" oW="256" oH="256"/>
+</TextureAtlas>

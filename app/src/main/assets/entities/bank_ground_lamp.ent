@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <PivotAdjust x="0" y="-82" />
+        <Sprite>bank-ground-lamp.png</Sprite>
+        <Particles />
+        <Light active="1" static="1" castShadows="0" range="2" haloBrightness="0.65" haloSize="340">
+            <Position x="0" y="0" z="1" />
+            <Color r="0.55" g="0.55" b="0.35" />
+            <HaloBitmap>hard_halo.png</HaloBitmap>
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>mace_0.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" boundingSphere="614.4" lifeTime="300" randomLifeTime="50" angleDir="0" randAngle="0" size="46.8" randomizeSize="0" growth="0" minSize="0" maxSize="1200" angleStart="0" randAngleStart="360">
+                <Bitmap>shock_strike.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="5" y="2" />
+                <StartPoint x="1" y="-22" z="-0.1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.1" g="0" b="0" a="1" />
+                <Color1 r="8" g="2" b="2" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="64" y="64" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

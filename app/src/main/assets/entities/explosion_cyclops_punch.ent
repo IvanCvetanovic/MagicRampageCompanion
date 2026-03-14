@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="3" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="400" randomLifeTime="100" angleDir="0" randAngle="1" size="163.52" randomizeSize="0" growth="1.12" minSize="0" maxSize="1120" angleStart="0" randAngleStart="330">
+                <Bitmap>explosion.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="2" g="0.2" b="0.2" a="1" />
+                <Color1 r="2" g="0.2" b="0.2" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="1" allAtOnce="1" alphaMode="0" repeat="1" animationMode="1" lifeTime="500" randomLifeTime="0" angleDir="0" randAngle="0" size="249.6" randomizeSize="0" growth="0" minSize="0" maxSize="1950" angleStart="0" randAngleStart="0">
+                <Bitmap>smoke_puff_up.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="2" y="4" />
+                <StartPoint x="0" y="-76" z="-0.01" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="1" b="1" a="0.5" />
+                <Color1 r="1" g="1" b="1" a="0.5" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>range</Name>
+                <Value>256</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

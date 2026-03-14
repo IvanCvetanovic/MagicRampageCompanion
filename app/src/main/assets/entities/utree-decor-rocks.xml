@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="utree-decor-rocks.png" width="256" height="128">
+    <sprite n="utree assets II-02.png" x="126" y="0" w="118" h="64" oX="5" oY="0" oW="128" oH="64"/>
+    <sprite n="utree assets II-03.png" x="0" y="0" w="124" h="64" oX="2" oY="0" oW="128" oH="64"/>
+    <sprite n="utree assets II-04.png" x="126" y="66" w="102" h="62" oX="13" oY="2" oW="128" oH="64"/>
+    <sprite n="utree assets II-05.png" x="0" y="66" w="124" h="62" oX="2" oY="2" oW="128" oH="64"/>
+</TextureAtlas>

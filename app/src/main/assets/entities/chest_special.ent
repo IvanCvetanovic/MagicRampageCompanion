@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="0.9" g="0.9" b="0.9" a="0" />
+        <SpriteCut x="3" y="1" />
+        <Sprite>chest1.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="144" y="68" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>open</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

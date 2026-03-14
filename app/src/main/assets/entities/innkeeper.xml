@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="Innkeeper.png" width="512" height="512">
+    <sprite n="Sprite 1.png" x="2" y="205" w="153" h="196" pX="0.5" pY="0.5" oX="52" oY="29" oW="256" oH="256"/>
+    <sprite n="Sprite 2.png" x="2" y="2" w="154" h="199" pX="0.5" pY="0.5" oX="52" oY="26" oW="256" oH="256"/>
+    <sprite n="Sprite 3.png" x="159" y="205" w="153" h="196" pX="0.5" pY="0.5" oX="52" oY="29" oW="256" oH="256"/>
+    <sprite n="Sprite 4.png" x="317" y="2" w="151" h="194" pX="0.5" pY="0.5" oX="52" oY="31" oW="256" oH="256"/>
+    <sprite n="Sprite 5.png" x="160" y="2" w="153" h="196" pX="0.5" pY="0.5" oX="52" oY="29" oW="256" oH="256"/>
+</TextureAtlas>

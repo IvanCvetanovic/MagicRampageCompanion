@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<TextureAtlas imagePath="halloween-decor.png" width="512" height="512">
+    <sprite n="halloween_2022-21.png" x="133" y="160" w="110" h="250" oX="9" oY="5" oW="128" oH="256"/>
+    <sprite n="halloween_2022-22.png" x="401" y="3" w="104" h="230" oX="7" oY="25" oW="128" oH="256"/>
+    <sprite n="halloween_2022-24.png" x="267" y="3" w="128" h="133" oX="0" oY="116" oW="128" oH="256"/>
+    <sprite n="halloween_2022-25.png" x="133" y="3" w="128" h="151" oX="0" oY="98" oW="128" oH="256"/>
+    <sprite n="halloween_2022-26.png" x="267" y="142" w="114" h="150" oX="7" oY="99" oW="128" oH="256"/>
+    <sprite n="halloween_2022-27.png" x="3" y="3" w="124" h="502" oX="2" oY="0" oW="128" oH="512"/>
+</TextureAtlas>

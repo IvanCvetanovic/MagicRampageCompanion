@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<TextureAtlas imagePath="Cordel_plataformas.png" width="256" height="512">
+    <sprite n="Cordel_Tile-15.png" x="0" y="0" w="128" h="128"/>
+    <sprite n="Cordel_Tile-25.png" x="128" y="0" w="128" h="73" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="Cordel_Tile-26.png" x="0" y="128" w="128" h="76" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="Cordel_Tile-27.png" x="128" y="128" w="128" h="74" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="Cordel_Tile-28.png" x="0" y="204" w="128" h="73" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="Cordel_Tile-29.png" x="128" y="204" w="128" h="72" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="Cordel_Tile-30.png" x="0" y="277" w="128" h="72" oX="0" oY="0" oW="128" oH="128"/>
+</TextureAtlas>

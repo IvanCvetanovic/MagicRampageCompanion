@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0" hideFromSceneEditor="1">
+        <Particles>
+            <ParticleSystem particles="16" allAtOnce="0" alphaMode="0" repeat="1" animationMode="1" lifeTime="700" randomLifeTime="250" angleDir="0" randAngle="0" size="372.6" randomizeSize="0" growth="-10.08" minSize="0" maxSize="1800" angleStart="0" randAngleStart="360">
+                <Bitmap>dark-energy-particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="0" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="1" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" lifeTime="1700" randomLifeTime="250" angleDir="0.6" randAngle="0" size="200" randomizeSize="0" growth="30.73" minSize="0" maxSize="500.92" angleStart="0" randAngleStart="360">
+                <Bitmap>sparkle_dot_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0.01" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="3" g="3" b="2" a="0" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

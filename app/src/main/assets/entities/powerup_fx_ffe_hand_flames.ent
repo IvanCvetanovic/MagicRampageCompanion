@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="0" animationMode="2" lifeTime="350" randomLifeTime="200" angleDir="0" randAngle="5" size="72" randomizeSize="16" growth="-3" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>fire.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-3.5" />
+                <RandomizeDir x="1.2" y="-1" />
+                <SpriteCut x="4" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="2" g="1.2" b="0.2" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="9" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="200" randomLifeTime="0" angleDir="0" randAngle="2" size="88.4621" randomizeSize="0" growth="-1.22864" minSize="0" maxSize="98.2912" angleStart="323" randAngleStart="360">
+                <Bitmap>explosion_4x4.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-4" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="8" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="2.3526" g="1.4115" b="0.4705" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="0" castShadows="0" range="2" haloBrightness="1" haloSize="236">
+            <Position x="0" y="-18" z="0" />
+            <Color r="1" g="0.5" b="0.1" />
+            <HaloBitmap>glowing-dot-halo-noise.png</HaloBitmap>
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

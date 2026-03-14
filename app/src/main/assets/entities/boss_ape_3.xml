@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="boss_ape_3.png" width="512" height="512">
+    <sprite n="boss_ape_3-0-0.png" x="249" y="0" w="240" h="210" pX="0.5" pY="0.5" oX="12" oY="133" oW="256" oH="512"/>
+    <sprite n="boss_ape_3-0-1.png" x="0" y="261" w="228" h="238" pX="0.5" pY="0.5" oX="17" oY="105" oW="256" oH="512"/>
+    <sprite n="boss_ape_3-0-2.png" x="249" y="210" w="231" h="253" pX="0.5" pY="0.5" oX="25" oY="87" oW="256" oH="512"/>
+    <sprite n="boss_ape_3-0-3.png" x="0" y="0" w="249" h="261" pX="0.5" pY="0.5" oX="0" oY="84" oW="256" oH="512"/>
+</TextureAtlas>

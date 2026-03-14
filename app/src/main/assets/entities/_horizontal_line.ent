@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="1280" y="10" z="10" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

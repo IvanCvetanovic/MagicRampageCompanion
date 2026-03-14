@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" hideFromSceneEditor="1" static="0" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>lightning.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="26" y="512" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

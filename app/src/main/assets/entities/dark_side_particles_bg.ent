@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0" hideFromSceneEditor="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>flag-entity.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="64" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="4000" randomLifeTime="1000" angleDir="-0.25" randAngle="-0.175" size="300" randomizeSize="200" growth="-0.1" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4_alpha.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0.6" y="0" />
+                <RandomizeDir x="0.3" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="-720" z="0" />
+                <RandStartPoint x="0" y="480" />
+                <Color0 r="0.436" g="0.791" b="0.727" a="0" />
+                <Color1 r="0.565" g="0.436" b="0.791" a="0.39" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="0" castShadows="0" range="7" haloBrightness="1" haloSize="64">
+            <Position x="0" y="0" z="0" />
+            <Color r="1" g="1" b="1" />
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

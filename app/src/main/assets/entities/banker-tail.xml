@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="banker-tail.png" width="512" height="512">
+    <sprite n="banker-tail-0-0.png" x="141" y="206" w="196" h="161" pX="0.5" pY="0.5" oX="48" oY="56" oW="272" oH="263"/>
+    <sprite n="banker-tail-0-1.png" x="298" y="0" w="177" h="186" pX="0.5" pY="0.5" oX="75" oY="29" oW="272" oH="263"/>
+    <sprite n="banker-tail-0-2.png" x="0" y="188" w="141" h="200" pX="0.5" pY="0.5" oX="121" oY="16" oW="272" oH="263"/>
+    <sprite n="banker-tail-1-0.png" x="177" y="0" w="121" h="206" pX="0.5" pY="0.5" oX="120" oY="11" oW="272" oH="263"/>
+    <sprite n="banker-tail-1-1.png" x="337" y="186" w="147" h="194" pX="0.5" pY="0.5" oX="99" oY="24" oW="272" oH="263"/>
+    <sprite n="banker-tail-1-2.png" x="0" y="0" w="177" h="188" pX="0.5" pY="0.5" oX="69" oY="30" oW="272" oH="263"/>
+</TextureAtlas>

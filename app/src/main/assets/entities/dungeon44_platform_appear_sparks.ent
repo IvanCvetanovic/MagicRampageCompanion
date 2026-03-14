@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="16" allAtOnce="0" alphaMode="1" repeat="3" animationMode="1" lifeTime="600" randomLifeTime="300" angleDir="0" randAngle="0" size="0" randomizeSize="0" growth="2.6" minSize="0" maxSize="48" angleStart="45" randAngleStart="0">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="128" y="128" />
+                <Color0 r="1" g="1" b="0.5" a="1" />
+                <Color1 r="1" g="1" b="0.5" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

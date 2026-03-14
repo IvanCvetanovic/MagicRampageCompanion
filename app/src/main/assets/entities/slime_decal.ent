@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.48627451" g="0.81568627" b="0.105882" a="1" />
+        <SpriteCut x="2" y="2" />
+        <Sprite>blood_decal_wall.png</Sprite>
+        <Particles />
+        <CustomData />
+        <Scale x="1.6" y="1.25" />
+    </Entity>
+</Ethanon>

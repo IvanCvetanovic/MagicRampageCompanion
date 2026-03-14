@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="1" y="1" />
+        <PivotAdjust x="0" y="0" />
+        <Scale x="1" y="1" />
+        <Sprite>run_boss_spidemon_egg_2.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

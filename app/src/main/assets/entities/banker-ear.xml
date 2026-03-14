@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="banker-ear.png" width="128" height="128">
+    <sprite n="banker-ear-0-0.png" x="81" y="0" w="41" h="48" pX="0.5" pY="0.5" oX="144" oY="60" oW="272" oH="263"/>
+    <sprite n="banker-ear-0-1.png" x="81" y="48" w="46" h="40" pX="0.5" pY="0.5" oX="145" oY="76" oW="272" oH="263"/>
+    <sprite n="banker-ear-0-2.png" x="0" y="88" w="48" h="37" pX="0.5" pY="0.5" oX="139" oY="79" oW="272" oH="263"/>
+    <sprite n="banker-ear-1-0.png" x="0" y="49" w="47" h="39" pX="0.5" pY="0.5" oX="141" oY="77" oW="272" oH="263"/>
+    <sprite n="banker-ear-1-1.png" x="0" y="0" w="41" h="49" pX="0.5" pY="0.5" oX="145" oY="60" oW="272" oH="263"/>
+    <sprite n="banker-ear-1-2.png" x="41" y="0" w="40" h="49" pX="0.5" pY="0.5" oX="146" oY="60" oW="272" oH="263"/>
+</TextureAtlas>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="utree-blocks-half.png" width="256" height="256">
+    <sprite n="half-01.png" x="0" y="0" w="128" h="78" oX="0" oY="50" oW="128" oH="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="half-02.png" x="128" y="0" w="128" h="78" oX="0" oY="50" oW="128" oH="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="half-03.png" x="0" y="78" w="128" h="78" oX="0" oY="50" oW="128" oH="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="half-04.png" x="128" y="78" w="128" h="78" oX="0" oY="50" oW="128" oH="128" oX="0" oY="0" oW="128" oH="128"/>
+</TextureAtlas>

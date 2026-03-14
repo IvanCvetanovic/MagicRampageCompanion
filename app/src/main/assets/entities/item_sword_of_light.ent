@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>sword_5.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="6" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" boundingSphere="64" lifeTime="500" randomLifeTime="200" angleDir="1.4" randAngle="0" size="28" randomizeSize="8" growth="-0.6" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>sparkles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="4" z="0" />
+                <RandStartPoint x="32" y="64" />
+                <Color0 r="2" g="2" b="1.5" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="64" y="64" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

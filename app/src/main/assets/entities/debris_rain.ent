@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="22" allAtOnce="0" alphaMode="0" repeat="0" animationMode="2" boundingSphere="666" lifeTime="5000" randomLifeTime="1000" angleDir="0" randAngle="6.8" size="32" randomizeSize="0" growth="-0.04" minSize="0" maxSize="32" angleStart="0" randAngleStart="360">
+                <Bitmap>dirt_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="-0.9" y="2" />
+                <RandomizeDir x="1.6" y="0.8" />
+                <SpriteCut x="4" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="1200" y="0" />
+                <Color0 r="0" g="0" b="0" a="0.8" />
+                <Color1 r="0" g="0" b="0" a="0.2" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="600" y="50" z="10" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

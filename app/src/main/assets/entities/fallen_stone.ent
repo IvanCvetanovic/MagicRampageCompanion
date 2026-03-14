@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="1" friction="1" density="5" restitution="0" gravityScale="10" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="2" y="1" />
+        <Sprite>dungeon_stone_heads_1.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="10" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" boundingSphere="512" lifeTime="250" randomLifeTime="0" angleDir="0" randAngle="0" size="194" randomizeSize="0" growth="-3" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>block_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="-20" z="-2" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="2" g="2" b="2" a="0.1" />
+                <Color1 r="2" g="2" b="2" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="189" y="215" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>allowDecals</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>stone</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

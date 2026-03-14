@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="1" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Scale x="0.6" y="0.6" />
+        <Sprite>beverage-forbidden-flowers-extract.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="4" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="950" randomLifeTime="500" angleDir="1.4" randAngle="0" size="67.5" randomizeSize="37.5" growth="-0.7" minSize="0" maxSize="3750" angleStart="0" randAngleStart="360">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="14" z="0.01" />
+                <RandStartPoint x="64" y="128" />
+                <Color0 r="2.4" g="2" b="0.88" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="1" castShadows="0" range="2" haloBrightness="0.55" haloSize="200">
+            <Position x="0" y="6" z="0" />
+            <Color r="1" g="0.8333" b="0.3666" />
+            <HaloBitmap>halo_dusty.png</HaloBitmap>
+        </Light>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="36" y="98" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>itemName</Name>
+                <Value>Forbidden Flowers Extract</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

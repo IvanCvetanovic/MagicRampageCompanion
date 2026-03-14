@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="26" allAtOnce="0" alphaMode="0" repeat="5" animationMode="1" lifeTime="800" randomLifeTime="400" angleDir="0" randAngle="2" size="96" randomizeSize="0" growth="-0.3" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>half-explosion-particles-w.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-3" />
+                <RandomizeDir x="0" y="0.2" />
+                <SpriteCut x="8" y="3" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="128" y="0" />
+                <Color0 r="0.6" g="0.6" b="0.6" a="0" />
+                <Color1 r="0.6" g="0.6" b="0.6" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

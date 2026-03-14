@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="0" bullet="0" fixedRotation="0" friction="1" density="0.8" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="64" y="64" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>explosionEntity</Name>
+                <Value>explosion_snow_monster_hit.ent</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>lifeTime</Name>
+                <Value>30</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>flesh</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>soundPack</Name>
+                <Value>monster</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>type</Name>
+                <Value>melee</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

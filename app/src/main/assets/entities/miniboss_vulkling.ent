@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="1" friction="0" density="0.2" restitution="0" gravityScale="3" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="14" y="1" />
+        <PivotAdjust x="0" y="36" />
+        <Sprite>miniboss_vulkling.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="90" y="130" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=1;} v1{x=-1;y=0.7;} v2{x=-1;y=-0.8;} v3{x=-0.7;y=-1;} v4{x=0.7;y=-1;} v5{x=1;y=-0.8;} v6{x=1;y=0.7;} v7{x=0.5;y=1;} ]]>
+</Polygon>
+            <Joints>revoluteJoint { attachPointAX = 0.0; attachPointAY = 0.91; attachPointBX = 0.0; attachPointBY = 0.0; }</Joints>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>bloodColor</Name>
+                <Value>gray</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>blowUpEntity</Name>
+                <Value>explosion_golem.ent</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>debrisBitmap</Name>
+                <Value>debris_golem.png</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>debrisScale</Name>
+                <Value>0.7</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>doNotPaintDebris</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>stone</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

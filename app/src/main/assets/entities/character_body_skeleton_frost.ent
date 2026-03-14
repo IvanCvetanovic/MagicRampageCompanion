@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="1" friction="0" density="0.2" restitution="0" gravityScale="3" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="14" y="1" />
+        <Sprite>character_body_b.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="800" randomLifeTime="400" angleDir="0" randAngle="0" size="128" randomizeSize="0" growth="3" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4_alpha.png</Bitmap>
+                <Gravity x="0" y="0.01" />
+                <Direction x="0" y="-0.5" />
+                <RandomizeDir x="1.2" y="0.2" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="-0.01" />
+                <RandStartPoint x="0" y="128" />
+                <Color0 r="0.735" g="0.907" b="1" a="0" />
+                <Color1 r="0.735" g="0.907" b="1" a="0.3" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="-3" z="0" />
+            <Size x="44" y="116" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=1;} v1{x=-1;y=0.7;} v2{x=-1;y=-0.8;} v3{x=-0.7;y=-1;} v4{x=0.7;y=-1;} v5{x=1;y=-0.8;} v6{x=1;y=0.7;} v7{x=0.5;y=1;} ]]>
+</Polygon>
+            <Joints>revoluteJoint { attachPointAX = 0.0; attachPointAY = 0.91; attachPointBX = 0.0; attachPointBY = 0.0; }</Joints>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>bloodColor</Name>
+                <Value>black</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>debrisBitmap</Name>
+                <Value>bone_debris.png</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>doNotPaintDebris</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>immuneToToxicity</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>isStandardCharacterBody</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>itemDropChance</Name>
+                <Value>8</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>flesh</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

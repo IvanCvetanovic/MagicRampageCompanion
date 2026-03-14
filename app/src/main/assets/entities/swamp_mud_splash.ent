@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="1" alphaMode="0" repeat="1" animationMode="1" boundingSphere="512" lifeTime="900" randomLifeTime="100" angleDir="0" randAngle="4" size="51" randomizeSize="27" growth="-0.8" minSize="0" maxSize="48" angleStart="0" randAngleStart="360">
+                <Bitmap>hard_sparkle_default.png</Bitmap>
+                <Gravity x="0" y="0.35" />
+                <Direction x="0" y="-12" />
+                <RandomizeDir x="3.3" y="2" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="4" z="0" />
+                <RandStartPoint x="48" y="0" />
+                <Color0 r="0.658824" g="0.776471" b="0.490196" a="1" />
+                <Color1 r="0.658824" g="0.776471" b="0.490196" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

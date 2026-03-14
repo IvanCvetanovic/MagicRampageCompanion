@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="4" y="4" />
+        <Scale x="2" y="2" />
+        <Sprite>character_body_highlight_darker_seams.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="9" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="600" randomLifeTime="300" angleDir="0" randAngle="0" size="52" randomizeSize="0" growth="-0.8" minSize="0" maxSize="64" angleStart="0" randAngleStart="0">
+                <Bitmap>flare_particles_darker_seams.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="-4" y="6" z="0.051" />
+                <RandStartPoint x="48" y="64" />
+                <Color0 r="2.5" g="2.5" b="5" a="1" />
+                <Color1 r="2.5" g="2.5" b="5" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

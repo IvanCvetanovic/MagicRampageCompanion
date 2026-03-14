@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>redirecting_agent.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="16" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="600" randomLifeTime="300" angleDir="2.9" randAngle="0" size="162.552" randomizeSize="0" growth="-5" minSize="0" maxSize="312" angleStart="0" randAngleStart="360">
+                <Bitmap>white-energy-particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="-0.1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="0.93" g="0.759" b="0.195" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="80" y="80" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>dirX</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>dirY</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>noSlowMotion</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>maximumRedirectsAllowed</Name>
+                <Value>15</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>trackProjectile</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>untrackProjectile</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

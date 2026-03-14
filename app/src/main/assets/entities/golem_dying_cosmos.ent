@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="10" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="2100" randomLifeTime="0" angleDir="0" randAngle="0" size="343.2" randomizeSize="0" growth="-1.2" minSize="0" maxSize="1200" angleStart="0" randAngleStart="360">
+                <Bitmap>white_dust.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-3.36" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="3" />
+                <StartPoint x="0" y="64" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.7" g="0.7" b="0.7" a="0.03" />
+                <Color1 r="0.7" g="0.7" b="0.7" a="0.15" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

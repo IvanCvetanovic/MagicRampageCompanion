@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="1" specularPower="50" specularBrightness="1" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="0" g="0" b="0" a="0" />
+        <Scale x="1.5006" y="1.5006" />
+        <Sprite>column-of-the-watchers-single-specter.png</Sprite>
+        <Normal>column-of-the-watchers-single-specter-normal.png</Normal>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

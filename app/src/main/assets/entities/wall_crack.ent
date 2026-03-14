@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Scale x="2" y="2" />
+        <Sprite>wall_crack.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="26" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" boundingSphere="327.68" lifeTime="1100" randomLifeTime="450" angleDir="0" randAngle="4" size="5.12" randomizeSize="0" growth="1.792" minSize="0" maxSize="44.8" angleStart="0" randAngleStart="360">
+                <Bitmap>hard_sparkle.png</Bitmap>
+                <Gravity x="0" y="0.096" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0.384" y="0.256" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="-0.8" z="0" />
+                <RandStartPoint x="3.84" y="0" />
+                <Color0 r="1.2" g="0.5" b="0.2" a="1" />
+                <Color1 r="1.2" g="0.5" b="0.2" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

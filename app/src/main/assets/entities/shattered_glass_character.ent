@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="24" allAtOnce="1" alphaMode="1" repeat="1" animationMode="2" lifeTime="500" randomLifeTime="150" angleDir="0" randAngle="24" size="24" randomizeSize="16" growth="-0.2" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>shattered_glass_black_bg.png</Bitmap>
+                <Gravity x="0" y="0.09" />
+                <Direction x="0" y="-1" />
+                <RandomizeDir x="16" y="16" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="16" y="64" />
+                <Color0 r="2" g="2" b="0.888" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

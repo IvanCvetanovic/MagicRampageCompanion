@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>spider_web_projectile_entity.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="10" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" boundingSphere="512" lifeTime="400" randomLifeTime="0" angleDir="0" randAngle="0" size="64" randomizeSize="0" growth="-5" minSize="16" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>spider_shoot.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="1" b="1" a="1" />
+                <Color1 r="1" g="1" b="1" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="34" y="34" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>lifeTime</Name>
+                <Value>1000</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>shouldBeIgnoredByButton</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>explosionEntity</Name>
+                <Value>spider_web_explosion.ent</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>keepParticles</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>cloth</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>soundPack</Name>
+                <Value>magic</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

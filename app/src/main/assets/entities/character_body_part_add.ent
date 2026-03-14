@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="7" y="2" />
+        <Sprite>hair_zombie_0a.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

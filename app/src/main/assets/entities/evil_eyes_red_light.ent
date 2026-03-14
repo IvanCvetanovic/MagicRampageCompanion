@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="1.01" static="1" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="3" g="0.9" b="0.9" a="1" />
+        <SpriteCut x="1" y="4" />
+        <Sprite>evil_mage_eyes.png</Sprite>
+        <Particles />
+        <Light active="1" static="1" castShadows="0" range="286" haloBrightness="0.4" haloSize="546">
+            <Position x="0" y="2" z="0" />
+            <Color r="1" g="0" b="0" />
+            <HaloBitmap>halo_dusty.png</HaloBitmap>
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

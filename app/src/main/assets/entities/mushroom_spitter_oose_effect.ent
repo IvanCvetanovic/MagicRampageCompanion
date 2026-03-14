@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="3" allAtOnce="1" alphaMode="0" repeat="1" animationMode="1" lifeTime="350" randomLifeTime="200" angleDir="0" randAngle="0" size="156" randomizeSize="0" growth="1" minSize="0" maxSize="1000" angleStart="0" randAngleStart="40">
+                <Bitmap>blood_effect_1.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="3" y="2" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.738" g="0.954" b="0.0" a="1.0" />
+                <Color1 r="0.575" g="0.97" b="0.0" a="1.0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>bloodColor</Name>
+                <Value>green</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

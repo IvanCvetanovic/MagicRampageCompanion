@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="sand-pile.png" width="128" height="256">
+    <sprite n="Areia_Prancheta 1 cópia 2.png" x="1" y="69" w="109" h="34" oX="10" oY="15" oW="128" oH="64"/>
+    <sprite n="Areia_Prancheta 1 cópia 3.png" x="1" y="1" w="124" h="32" oX="2" oY="16" oW="128" oH="64"/>
+    <sprite n="Areia_Prancheta 1 cópia 4.png" x="1" y="141" w="104" h="60" oX="12" oY="2" oW="128" oH="64"/>
+    <sprite n="Areia_Prancheta 1 cópia 5.png" x="1" y="35" w="124" h="32" oX="2" oY="16" oW="128" oH="64"/>
+    <sprite n="Areia_Prancheta 1 cópia.png" x="1" y="105" w="106" h="34" oX="11" oY="15" oW="128" oH="64"/>
+    <sprite n="Areia_Prancheta 1.png" x="1" y="203" w="80" h="34" oX="24" oY="15" oW="128" oH="64"/>
+</TextureAtlas>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="3" static="1" blendMode="0">
+        <DiffuseColor r="0.54902" g="0.533333" b="0.407843" a="1" />
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>branch_1.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="206" y="52" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

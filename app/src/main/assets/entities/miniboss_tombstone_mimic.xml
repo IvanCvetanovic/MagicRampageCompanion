@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<TextureAtlas imagePath="Tombstone_mimic.png" width="256" height="512">
+    <sprite n="Sprite 1.png" x="2" y="2" w="110" h="170" oX="9" oY="78" oW="128" oH="256"/>
+    <sprite n="Sprite 2.png" x="116" y="152" w="104" h="138" oX="12" oY="110" oW="128" oH="256"/>
+    <sprite n="Sprite 3.png" x="2" y="176" w="103" h="147" oX="13" oY="101" oW="128" oH="256"/>
+    <sprite n="Sprite 4.png" x="2" y="327" w="101" h="178" oX="12" oY="60" oW="128" oH="256"/>
+    <sprite n="Sprite 5.png" x="116" y="2" w="110" h="146" oX="9" oY="101" oW="128" oH="256"/>
+    <sprite n="Sprite 6.png" x="230" y="2" w="1" h="1" oX="0" oY="0" oW="128" oH="256"/>
+    <sprite n="Sprite 7.png" x="230" y="2" w="1" h="1" oX="0" oY="0" oW="128" oH="256"/>
+    <sprite n="Sprite 8.png" x="230" y="2" w="1" h="1" oX="0" oY="0" oW="128" oH="256"/>
+</TextureAtlas>

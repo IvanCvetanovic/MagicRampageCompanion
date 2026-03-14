@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="sand-pile-biggest.png" width="512" height="512">
+    <sprite n="Areia-08" x="1" y="126" w="247" h="172" oX="5" oY="42" oW="256" oH="256"/>
+    <sprite n="Areia-10" x="258" y="1" w="252" h="170" oX="2" oY="43" oW="256" oH="256"/>
+    <sprite n="Areia-11" x="1" y="301" w="242" h="126" oX="7" oY="1" oW="256" oH="128"/>
+    <sprite n="Areia-12" x="1" y="1" w="254" h="122" oX="1" oY="3" oW="256" oH="128"/>
+    <sprite n="Areia-13" x="251" y="174" w="244" h="124" oX="6" oY="2" oW="256" oH="128"/>
+    <sprite n="Areia-14" x="246" y="386" w="230" h="122" oX="13" oY="3" oW="256" oH="128"/>
+    <sprite n="Areia-15" x="246" y="301" w="238" h="82" oX="9" oY="23" oW="256" oH="128"/>
+</TextureAtlas>

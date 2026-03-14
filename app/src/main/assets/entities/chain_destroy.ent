@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="16" allAtOnce="1" alphaMode="0" repeat="1" animationMode="1" boundingSphere="108" lifeTime="1800" randomLifeTime="250" angleDir="0" randAngle="8.8" size="56" randomizeSize="33" growth="0.3" minSize="0" maxSize="1000" angleStart="0" randAngleStart="300">
+                <Bitmap>smoke_particle.png</Bitmap>
+                <Gravity x="0" y="-0.025" />
+                <Direction x="0" y="1" />
+                <RandomizeDir x="1" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="260" />
+                <Color0 r="0.5" g="0.5" b="0.5" a="1" />
+                <Color1 r="0.6" g="0.6" b="0.6" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

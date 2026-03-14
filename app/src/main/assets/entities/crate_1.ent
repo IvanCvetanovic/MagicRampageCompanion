@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="1" fixedRotation="1" friction="0.4" density="0.2" restitution="0.1" gravityScale="1" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>crate_1.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="1" y="1" z="0" />
+            <Size x="176" y="154" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>alternativeName</Name>
+                <Value>crate</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>metal</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="2" restitution="0.05" gravityScale="1.8" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>spider_egg.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="16" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" boundingSphere="442.368" lifeTime="550" randomLifeTime="300" angleDir="0" randAngle="0" size="172.8" randomizeSize="0" growth="-0.6912" minSize="0" maxSize="864" angleStart="0" randAngleStart="360">
+                <Bitmap>Explosion1spritesheet-pow2.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="8" y="6" />
+                <StartPoint x="0" y="0" z="-0.1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.4" g="1.4" b="1.4" a="1" />
+                <Color1 r="0.6" g="0.6" b="0.6" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="88" y="84" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=-1;} v1{x=0.5;y=-1;} v2{x=1;y=-0.5;} v3{x=1;y=0.5;} v4{x=0.5;y=1;} v5{x=-0.5;y=1;} v6{x=-1;y=0.5;} v7{x=-1;y=-0.5;} ]]>
+</Polygon>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>autoWaypointsStride</Name>
+                <Value>128</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>autoWaypointsTime</Name>
+                <Value>400</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>debrisBitmap</Name>
+                <Value>debris_2.png</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>dontDoDecals</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>dontDropBlood</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>dontDropCoins</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>explosionRange</Name>
+                <Value>280</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>fileName</Name>
+                <Value>npcs/enemies/spider-blow.character</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>hatchTime</Name>
+                <Value>3500</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>blowTime</Name>
+                <Value>2000</Value>
+            </Variable>
+            <Variable>
+                <Type>int</Type>
+                <Name>hp</Name>
+                <Value>50</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>id</Name>
+                <Value>spiderChild</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>itemDropChance</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>ceramic</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>playerTeam</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>tolerance</Name>
+                <Value>256</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>type</Name>
+                <Value>blowing-jumper</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>waypoints</Name>
+                <Value>auto</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>explosionSound</Name>
+                <Value>explosion_huge.mp3</Value>
+            </Variable>            
+        </CustomData>
+    </Entity>
+</Ethanon>

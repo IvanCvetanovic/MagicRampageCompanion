@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<TextureAtlas imagePath="Cordel_composto.png" width="256" height="512">
+    <sprite n="Cordel_Tile-13.png" x="0" y="0" w="128" h="128"/>
+    <sprite n="Cordel_Tile-14.png" x="128" y="0" w="128" h="128"/>
+    <sprite n="Cordel_Tile-16.png" x="0" y="128" w="128" h="128"/>
+    <sprite n="Cordel_Tile-21.png" x="128" y="128" w="128" h="128"/>
+    <sprite n="Cordel_Tile-22.png" x="0" y="256" w="128" h="128"/>
+    <sprite n="Cordel_Tile-23.png" x="128" y="256" w="128" h="128"/>
+    <sprite n="Cordel_Tile-24.png" x="0" y="384" w="128" h="128"/>
+</TextureAtlas>

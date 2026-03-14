@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="0" bullet="0" fixedRotation="1" friction="0" density="0.2" restitution="0" gravityScale="1.3" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="4" y="1" />
+        <PivotAdjust x="0" y="-6" />
+        <Sprite>spider_0.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="12" allAtOnce="0" alphaMode="1" repeat="0" animationMode="2" boundingSphere="512" lifeTime="250" randomLifeTime="100" angleDir="0" randAngle="17.9" size="75" randomizeSize="0" growth="-2.2" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>fire.png</Bitmap>
+                <Gravity x="0" y="-0.5" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="2" y="2.1" />
+                <SpriteCut x="4" y="1" />
+                <StartPoint x="0" y="0" z="-2" />
+                <RandStartPoint x="54" y="10" />
+                <Color0 r="2" g="1" b="0.4" a="1" />
+                <Color1 r="0" g="0" b="0.2" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="70" y="54" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=1;} v1{x=-1;y=0.7;} v2{x=-1;y=-0.8;} v3{x=-0.7;y=-1;} v4{x=0.7;y=-1;} v5{x=1;y=-0.8;} v6{x=1;y=0.7;} v7{x=0.5;y=1;} ]]>
+</Polygon>
+            <Joints>revoluteJoint { attachPointAX = 0.0; attachPointAY = 0.91; attachPointBX = 0.0; attachPointBY = 0.0; }</Joints>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>bloodColor</Name>
+                <Value>green</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>blowUpDeath</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>forceBlowUpDeath</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>debrisBitmap</Name>
+                <Value>corpse_debris.png</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>itemDropChance</Name>
+                <Value>8</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>flesh</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>immuneToToxicity</Name>
+                <Value>1</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

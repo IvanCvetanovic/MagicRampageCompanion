@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="2" y="1" />
+        <Sprite>red_agent.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="1000" randomLifeTime="400" angleDir="2" randAngle="0" size="419.203" randomizeSize="0" growth="-7.41312" minSize="0" maxSize="6739.2" angleStart="0" randAngleStart="360">
+                <Bitmap>white-energy-particle-alpha.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="-0.01" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.745" g="0.141" b="0.122" a="0" />
+                <Color1 r="3.3525" g="0.6345" b="0.549" a="0.4" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="0" repeat="0" animationMode="0" lifeTime="700" randomLifeTime="300" angleDir="2" randAngle="0.5" size="300" randomizeSize="0" growth="-7" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4_alpha_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-3" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="148" z="0.1" />
+                <RandStartPoint x="32" y="0" />
+                <Color0 r="1.67625" g="0.31725" b="0.2745" a="0" />
+                <Color1 r="3.3525" g="0.6345" b="0.549" a="0.4" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="1" castShadows="0" range="2" haloBrightness="0.6" haloSize="640">
+            <Position x="0" y="0" z="0" />
+            <Color r="0.745" g="0.141" b="0.122" />
+            <HaloBitmap>halo_dusty.png</HaloBitmap>
+        </Light>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="110" y="110" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>projectilePullBias</Name>
+                <Value>0.75</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>radius</Name>
+                <Value>300</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

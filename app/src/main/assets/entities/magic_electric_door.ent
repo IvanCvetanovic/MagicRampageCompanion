@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.4627" g="0.9803" b="0.2705" a="1" />
+        <Scale x="1.5" y="1.5" />
+        <Sprite>magic_electric_door.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="12" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="400" randomLifeTime="150" angleDir="9.2" randAngle="0" size="23.4664" randomizeSize="2.66664" growth="-1.06666" minSize="0" maxSize="533.328" angleStart="0" randAngleStart="0">
+                <Bitmap>white_drop_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="2.13331" y="2.13331" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.1627" g="1.8803" b="0.6705" a="1" />
+                <Color1 r="0.4627" g="0.9803" b="0.2705" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="24" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="1200" randomLifeTime="600" angleDir="0" randAngle="1.4" size="19.1998" randomizeSize="0" growth="-0.159998" minSize="0" maxSize="799.992" angleStart="0" randAngleStart="360">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="3" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="-2" />
+                <RandStartPoint x="46.3995" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="1.1627" g="1.8803" b="0.6705" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="1" castShadows="0" range="1" haloBrightness="1.5" haloSize="440">
+            <Position x="0" y="0" z="0" />
+            <Color r="0.6" g="1" b="0.3" />
+            <HaloBitmap>sparkle_dot_entity.png</HaloBitmap>
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

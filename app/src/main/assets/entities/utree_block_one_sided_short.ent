@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>utree-blocks-one-sided-short.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="-16" z="0" />
+            <Size x="128" y="32" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>earth</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>shouldBeIgnoredByProjectile</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

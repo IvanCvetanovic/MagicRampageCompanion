@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>coin_2.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="6" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" boundingSphere="1126.4" lifeTime="2150" randomLifeTime="1000" angleDir="1.4" randAngle="0" size="26.4" randomizeSize="17.6" growth="-0.22" minSize="0" maxSize="2200" angleStart="0" randAngleStart="360">
+                <Bitmap>sparkles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="35.2" y="35.2" />
+                <Color0 r="1" g="1" b="1" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="2" z="0" />
+            <Size x="82" y="82" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=-1;} v1{x=0.5;y=-1;} v2{x=1;y=-0.5;} v3{x=1;y=0.5;} v4{x=0.5;y=1;} v5{x=-0.5;y=1;} v6{x=-1;y=0.5;} v7{x=-1;y=-0.5;} ]]>
+</Polygon>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>gold</Name>
+                <Value>3</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>premiumEffect</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>shouldBeIgnoredByFeet</Name>
+                <Value>1</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

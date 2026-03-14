@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <DiffuseColor r="0.3" g="0.3" b="0.3" a="1" />
+        <EmissiveColor r="0" g="0" b="0" a="0" />
+        <Sprite>dead-guy-1.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

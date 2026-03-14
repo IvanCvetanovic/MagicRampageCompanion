@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="24" allAtOnce="1" alphaMode="0" repeat="1" animationMode="2" lifeTime="2500" randomLifeTime="2200" angleDir="0" randAngle="1" size="25.6" randomizeSize="6.4" growth="-0.15" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>particle_harder.png</Bitmap>
+                <Gravity x="0" y="0.01" />
+                <Direction x="0" y="-1" />
+                <RandomizeDir x="1" y="1" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="-3" />
+                <RandStartPoint x="320" y="160" />
+                <Color0 r="1" g="1" b="1" a="0" />
+                <Color1 r="1" g="1" b="1" a="1" />
+                <Luminance r="0" g="0" b="0" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

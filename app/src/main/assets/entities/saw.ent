@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="2" y="2" />
+        <Sprite>saw_motion.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="5" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" boundingSphere="563.2" lifeTime="300" randomLifeTime="100" angleDir="1.8" randAngle="1.5" size="147.4" randomizeSize="0" growth="2.09" minSize="0" maxSize="1100" angleStart="0" randAngleStart="360">
+                <Bitmap>half-explosion-particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="8" y="3" />
+                <StartPoint x="0" y="0" z="-0.1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="3.8" g="3.8" b="4" a="1" />
+                <Color1 r="3.8" g="3.8" b="4" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="6" allAtOnce="0" alphaMode="1" repeat="0" animationMode="2" boundingSphere="614.4" lifeTime="500" randomLifeTime="50" angleDir="0" randAngle="0" size="12" randomizeSize="0" growth="-0.24" minSize="7.2" maxSize="1200" angleStart="0" randAngleStart="360">
+                <Bitmap>white_drop_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="12" y="12" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="-0.1" />
+                <RandStartPoint x="76.8" y="76.8" />
+                <Color0 r="3" g="1.5" b="0.6" a="1" />
+                <Color1 r="1" g="0.5" b="0.2" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="116" y="116" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>allowDecals</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

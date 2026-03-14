@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Scale x="0.7" y="0.7" />
+        <Sprite>key_time.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="6" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="600" randomLifeTime="200" angleDir="0.3" randAngle="0.6" size="0" randomizeSize="0" growth="3.4" minSize="0" maxSize="28" angleStart="0" randAngleStart="360">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="-26" z="0" />
+                <RandStartPoint x="64" y="34" />
+                <Color0 r="2" g="1.75" b="1.15" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="5" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="600" randomLifeTime="200" angleDir="0.3" randAngle="0.6" size="28" randomizeSize="0" growth="-0.4" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="8" y="20" z="0.1" />
+                <RandStartPoint x="32" y="48" />
+                <Color0 r="2" g="1.75" b="1.15" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="64" y="64" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

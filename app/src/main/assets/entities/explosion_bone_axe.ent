@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="2" allAtOnce="1" alphaMode="0" repeat="1" animationMode="1" lifeTime="900" randomLifeTime="100" angleDir="0" randAngle="1" size="125.798" randomizeSize="0" growth="3.69824" minSize="0" maxSize="2620.8" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4_alpha.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.2" g="0.95" b="0.85" a="0.9" />
+                <Color1 r="1.2" g="0.95" b="0.85" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="8" allAtOnce="1" alphaMode="0" repeat="1" animationMode="2" lifeTime="300" randomLifeTime="200" angleDir="0" randAngle="14" size="64" randomizeSize="32" growth="-0.1" minSize="0" maxSize="721.2" angleStart="0" randAngleStart="360">
+                <Bitmap>bone_debris_particles.png</Bitmap>
+                <Gravity x="0" y="0.12" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="12" y="12" />
+                <SpriteCut x="6" y="1" />
+                <StartPoint x="0" y="4" z="-0.02" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.15" g="1" b="0.9" a="2" />
+                <Color1 r="1.15" g="1" b="0.9" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>range</Name>
+                <Value>220</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

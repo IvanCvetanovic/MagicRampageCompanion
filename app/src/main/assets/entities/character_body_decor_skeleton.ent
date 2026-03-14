@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="1" g="0.957" b="0.827" a="1" />
+        <SpriteCut x="14" y="1" />
+        <Sprite>character_body_b.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>bloodColor</Name>
+                <Value>black</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>debrisBitmap</Name>
+                <Value>bone_debris.png</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>doNotPaintDebris</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>immuneToToxicity</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>isStandardCharacterBody</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>itemDropChance</Name>
+                <Value>8</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>flesh</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

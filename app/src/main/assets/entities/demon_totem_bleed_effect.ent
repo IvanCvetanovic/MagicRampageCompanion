@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="6" allAtOnce="0" alphaMode="0" repeat="2" animationMode="1" boundingSphere="512" lifeTime="600" randomLifeTime="150" angleDir="0" randAngle="0" size="3" randomizeSize="0" growth="2.5" minSize="0" maxSize="47" angleStart="180" randAngleStart="0">
+                <Bitmap>blood_wave_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="108" z="-0.1" />
+                <RandStartPoint x="140" y="0" />
+                <Color0 r="1" g="1" b="1" a="4" />
+                <Color1 r="1" g="1" b="1" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="12" allAtOnce="0" alphaMode="0" repeat="2" animationMode="1" boundingSphere="512" lifeTime="800" randomLifeTime="150" angleDir="0" randAngle="3" size="32" randomizeSize="0" growth="-0.6" minSize="0" maxSize="47" angleStart="180" randAngleStart="0">
+                <Bitmap>blood_drop_particle.png</Bitmap>
+                <Gravity x="0" y="0.2" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="108" z="-0.1" />
+                <RandStartPoint x="160" y="0" />
+                <Color0 r="1" g="1" b="1" a="1" />
+                <Color1 r="1" g="1" b="1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

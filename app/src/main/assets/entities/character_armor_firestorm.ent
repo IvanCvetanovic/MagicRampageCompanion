@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="14" y="1" />
+        <Sprite>armor_leather_2b.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="0" animationMode="2" lifeTime="900" randomLifeTime="350" angleDir="0" randAngle="0" size="12" randomizeSize="0" growth="-0.15" minSize="2" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>white_drop_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-1.8" />
+                <RandomizeDir x="0.2" y="0.2" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="40" z="0.013" />
+                <RandStartPoint x="64" y="64" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="2" g="0.8" b="0.5" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="6" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="900" randomLifeTime="300" angleDir="0" randAngle="3" size="166" randomizeSize="8" growth="-1" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-4.3" />
+                <RandomizeDir x="1" y="1" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="50" z="0.013" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="0.2449" g="0.1714" b="0.0735" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="0" castShadows="0" range="2" haloBrightness="0.25" haloSize="990">
+            <Position x="0" y="0" z="0" />
+            <Color r="1" g="0.6" b="0.25" />
+            <HaloBitmap>sparkle_dot_entity.png</HaloBitmap>
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="1" friction="0" density="0.2" restitution="0" gravityScale="3" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="3" y="1" />
+        <Sprite>character_ghost.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="12" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" boundingSphere="512" lifeTime="300" randomLifeTime="100" angleDir="0" randAngle="7.6" size="1" randomizeSize="0" growth="10" minSize="0" maxSize="99" angleStart="0" randAngleStart="360">
+                <Bitmap>smoke_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="-0.1" />
+                <RandStartPoint x="16" y="64" />
+                <Color0 r="0.5" g="0.36" b="0.75" a="0.2" />
+                <Color1 r="0.5" g="0.36" b="0.75" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="44" y="124" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=1;} v1{x=-1;y=0.7;} v2{x=-1;y=-0.8;} v3{x=-0.7;y=-1;} v4{x=0.7;y=-1;} v5{x=1;y=-0.8;} v6{x=1;y=0.7;} v7{x=0.5;y=1;} ]]>
+</Polygon>
+            <Joints>revoluteJoint { attachPointAX = 0.0; attachPointAY = 0.91; attachPointBX = 0.0; attachPointBY = 0.0; }</Joints>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>bloodColor</Name>
+                <Value>black</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>debrisBitmap</Name>
+                <Value>corpse_debris.png</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>itemDropChance</Name>
+                <Value>8</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>flesh</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>touchDamage</Name>
+                <Value>35</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>touchDamageExplosionEntity</Name>
+                <Value>explosion_ghost_small.ent</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

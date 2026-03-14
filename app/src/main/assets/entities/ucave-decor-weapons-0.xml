@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="ucave-decor-weapons-0.png" width="256" height="256">
+    <sprite n="1" x="178" y="116" w="64" h="93" pX="0.5" pY="0.5" oX="0" oY="14" oW="64" oH="128"/>
+    <sprite n="2" x="36" y="2" w="20" h="181" pX="0.5" pY="0.5" oX="5" oY="38" oW="32" oH="256"/>
+    <sprite n="3" x="2" y="2" w="32" h="187" pX="0.5" pY="0.5" oX="0" oY="31" oW="32" oH="256"/>
+    <sprite n="4" x="102" y="129" w="40" h="116" pX="0.5" pY="0.5" oX="12" oY="4" oW="64" oH="128"/>
+    <sprite n="5" x="148" y="2" w="42" h="112" pX="0.5" pY="0.5" oX="11" oY="9" oW="64" oH="128"/>
+    <sprite n="6" x="58" y="2" w="54" h="125" pX="0.5" pY="0.5" oX="7" oY="0" oW="64" oH="128"/>
+    <sprite n="7" x="114" y="2" w="32" h="114" pX="0.5" pY="0.5" oX="0" oY="6" oW="32" oH="128"/>
+    <sprite n="8" x="144" y="118" w="32" h="113" pX="0.5" pY="0.5" oX="0" oY="7" oW="32" oH="128"/>
+    <sprite n="9" x="192" y="2" w="32" h="109" pX="0.5" pY="0.5" oX="0" oY="10" oW="32" oH="128"/>
+    <sprite n="10" x="58" y="129" w="42" h="123" pX="0.5" pY="0.5" oX="11" oY="0" oW="64" oH="128"/>
+</TextureAtlas>

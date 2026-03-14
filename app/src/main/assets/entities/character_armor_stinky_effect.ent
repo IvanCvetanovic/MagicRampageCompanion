@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="14" y="1" />
+        <Sprite>armor_special_k.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="32" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="1200" randomLifeTime="1000" angleDir="0" randAngle="0" size="64" randomizeSize="0" growth="0" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>smoke_particle.png</Bitmap>
+                <Gravity x="0" y="0.01" />
+                <Direction x="0" y="-2.5" />
+                <RandomizeDir x="3.5" y="4.0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="12" z="-0.1" />
+                <RandStartPoint x="16" y="96" />
+                <Color0 r="0.4" g="0.5" b="0.35" a="0.1" />
+                <Color1 r="0.4" g="0.5" b="0.35" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="14" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="1200" randomLifeTime="1000" angleDir="0" randAngle="0" size="32" randomizeSize="0" growth="1.5" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>smoke_particle.png</Bitmap>
+                <Gravity x="0" y="0.01" />
+                <Direction x="0" y="-2.5" />
+                <RandomizeDir x="1.5" y="0.2" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="12" z="0.013" />
+                <RandStartPoint x="16" y="96" />
+                <Color0 r="0.4" g="0.5" b="0.35" a="0.1" />
+                <Color1 r="0.2" g="0.25" b="0.175" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

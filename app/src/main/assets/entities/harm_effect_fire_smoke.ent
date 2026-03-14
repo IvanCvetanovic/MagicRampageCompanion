@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+        <PivotAdjust x="0" y="-61" />
+        <Particles>
+            <ParticleSystem particles="4" allAtOnce="0" alphaMode="0" repeat="1" animationMode="1" lifeTime="1200" randomLifeTime="200" angleDir="0" randAngle="2" size="128" randomizeSize="0" growth="1.2" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>Explosion1spritesheet-pow2.png</Bitmap>
+                <Gravity x="0" y="-0.02" />
+                <Direction x="0" y="-0.8" />
+                <RandomizeDir x="1" y="0.2" />
+                <SpriteCut x="8" y="6" />
+                <StartPoint x="0" y="0" z="-0.2" />
+                <RandStartPoint x="16" y="0" />
+                <Color0 r="0.1" g="0.1" b="0.1" a="0" />
+                <Color1 r="0.1" g="0.1" b="0.1" a="0.35" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="4" allAtOnce="0" alphaMode="0" repeat="1" animationMode="1" lifeTime="700" randomLifeTime="200" angleDir="0" randAngle="2" size="128" randomizeSize="0" growth="1.2" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>Explosion1spritesheet-pow2.png</Bitmap>
+                <Gravity x="0" y="-0.02" />
+                <Direction x="0" y="-1.2" />
+                <RandomizeDir x="1" y="0.2" />
+                <SpriteCut x="8" y="6" />
+                <StartPoint x="0" y="32" z="0.044" />
+                <RandStartPoint x="16" y="0" />
+                <Color0 r="0.1" g="0.1" b="0.1" a="0" />
+                <Color1 r="0.1" g="0.1" b="0.1" a="0.1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0" g="0" b="0" a="1" />
+        <Sprite>umbral_mist_gradient.png</Sprite>
+        <Scale x="2" y="16" />
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

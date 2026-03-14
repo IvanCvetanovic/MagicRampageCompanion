@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="16" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" boundingSphere="512" lifeTime="1300" randomLifeTime="850" angleDir="0" randAngle="6.7" size="40" randomizeSize="30" growth="4.5" minSize="0" maxSize="74" angleStart="0" randAngleStart="360">
+                <Bitmap>sparkles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0.6" y="0.6" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="2" />
+                <RandStartPoint x="256" y="300" />
+                <Color0 r="5" g="2" b="2" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

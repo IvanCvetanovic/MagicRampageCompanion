@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Scale x="4" y="3" />
+        <Sprite>dungeon_portal_bg.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="20" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="2000" randomLifeTime="400" angleDir="0.7" randAngle="0" size="111.078" randomizeSize="0" growth="-0.9438" minSize="0" maxSize="376.794" angleStart="0" randAngleStart="360">
+                <Bitmap>white-energy-particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0.1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="0.25" g="0.05" b="0.025" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="14" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="1800" randomLifeTime="150" angleDir="0" randAngle="3.3" size="117.6" randomizeSize="0" growth="-0.576" minSize="0" maxSize="480" angleStart="0" randAngleStart="360">
+                <Bitmap>half-explosion-particles-bw.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-0.912" />
+                <RandomizeDir x="0.336" y="0.576" />
+                <SpriteCut x="8" y="3" />
+                <StartPoint x="0" y="60" z="0.15" />
+                <RandStartPoint x="0" y="25.92" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="0.1" g="0.2" b="0.5" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

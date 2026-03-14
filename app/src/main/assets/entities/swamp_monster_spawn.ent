@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="256" y="32" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>autoWaypointsStride</Name>
+                <Value>64</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>autoWaypointsTime</Name>
+                <Value>500</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>distance</Name>
+                <Value>256</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>fileName</Name>
+                <Value>npcs/enemies/swamp-monster.character</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>playerTeam</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>tolerance</Name>
+                <Value>256</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>type</Name>
+                <Value>swamp-monster</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>waypoints</Name>
+                <Value>auto</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

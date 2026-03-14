@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="1" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" lifeTime="1000" randomLifeTime="0" angleDir="2" randAngle="0" size="0" randomizeSize="0" growth="20" minSize="0" maxSize="300" angleStart="40" randAngleStart="0">
+                <Bitmap>particle_cross_128.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.47" g="1.814" b="2" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="16" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" lifeTime="1550" randomLifeTime="750" angleDir="0" randAngle="0" size="12" randomizeSize="4" growth="0" minSize="0" maxSize="1000" angleStart="45" randAngleStart="0">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0.05" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0.01" />
+                <RandStartPoint x="24" y="8" />
+                <Color0 r="2.94" g="3.628" b="4" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

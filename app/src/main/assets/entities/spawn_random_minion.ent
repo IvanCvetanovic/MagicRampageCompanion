@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+        <SpriteCut x="4" y="2" />
+        <Scale x="4" y="4" />
+        <Sprite>mario_sheet.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>armor</Name>
+                <Value>Recruit Set</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>armorLevel</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>artifact</Name>
+                <Value>Nenya</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>autoWaypointsStride</Name>
+                <Value>128</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>autoWaypointsTime</Name>
+                <Value>4000</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>fileName</Name>
+                <Value>npcs/allies/minion.character</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>playerTeam</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>tolerance</Name>
+                <Value>256</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>type</Name>
+                <Value>default</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>waypoints</Name>
+                <Value>auto</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>weapon</Name>
+                <Value>Iron Dagger</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>weaponLevel</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

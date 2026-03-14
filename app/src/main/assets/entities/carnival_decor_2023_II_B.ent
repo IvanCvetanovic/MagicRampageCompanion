@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>carnival_decor_2023_II_B.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>open</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

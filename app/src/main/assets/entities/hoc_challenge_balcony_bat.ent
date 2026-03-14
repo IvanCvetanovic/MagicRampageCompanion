@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="4" y="1" />
+        <Scale x="0.5" y="0.5" />
+        <PivotAdjust x="-48" y="80" />
+        <Sprite>character_body_bat.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>autoWaypointsStride</Name>
+                <Value>128</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>autoWaypointsTime</Name>
+                <Value>1000</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>fileName</Name>
+                <Value>npcs/enemies/fire-bat-adult.character</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>playerTeam</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>tolerance</Name>
+                <Value>480</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>type</Name>
+                <Value>bat</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>waypoints</Name>
+                <Value>BAT0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

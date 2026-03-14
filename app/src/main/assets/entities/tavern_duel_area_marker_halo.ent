@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="1" static="1" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.3665" g="0.8" b="0.0268" a="1" />
+        <Particles />
+        <Light active="1" static="1" castShadows="0" range="2" haloBrightness="0.8" haloSize="80">
+            <Position x="0" y="0" z="2" />
+            <Color r="0.2291" g="0.5" b="0.0167" />
+            <HaloBitmap>light_beam_chest_open.png</HaloBitmap>
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

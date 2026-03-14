@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="boss_vindicator.png" width="1024" height="512">
+    <sprite n="0 - idle.png" x="261" y="1" w="257" h="242" oX="12" oY="14" oW="278" oH="278"/>
+    <sprite n="1 - attack.png" x="520" y="1" w="250" h="242" oX="11" oY="11" oW="278" oH="278"/>
+    <sprite n="2 - attack.png" x="1" y="248" w="256" h="245" oX="12" oY="2" oW="278" oH="278"/>
+    <sprite n="3 - attack.png" x="522" y="245" w="261" h="237" oX="14" oY="21" oW="278" oH="278"/>
+    <sprite n="4 - damage.png" x="772" y="1" w="250" h="240" oX="15" oY="18" oW="278" oH="278"/>
+    <sprite n="5 - rage.png" x="1" y="1" w="258" h="245" oX="11" oY="1" oW="278" oH="278"/>
+    <sprite n="6.png" x="1" y="495" w="3" h="3" oX="0" oY="0" oW="278" oH="278"/>
+    <sprite n="7 - walk.png" x="259" y="248" w="261" h="242" oX="7" oY="10" oW="278" oH="278"/>
+    <sprite n="10.png" x="1" y="495" w="3" h="3" oX="0" oY="0" oW="278" oH="278"/>
+    <sprite n="11.png" x="1" y="495" w="3" h="3" oX="0" oY="0" oW="278" oH="278"/>
+    <sprite n="12.png" x="1" y="495" w="3" h="3" oX="0" oY="0" oW="278" oH="278"/>
+</TextureAtlas>

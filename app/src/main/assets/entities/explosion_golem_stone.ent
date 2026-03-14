@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0" hideFromSceneEditor="1">
+        <Particles>
+            <ParticleSystem particles="16" allAtOnce="1" alphaMode="0" repeat="1" animationMode="2" lifeTime="300" randomLifeTime="150" angleDir="0" randAngle="35" size="128" randomizeSize="0" growth="-5.5" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>debris_stone.png</Bitmap>
+                <Gravity x="0" y="1" />
+                <Direction x="0" y="-12" />
+                <RandomizeDir x="15" y="15" />
+                <SpriteCut x="6" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="1" b="1" a="1" />
+                <Color1 r="1" g="1" b="1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="1" allAtOnce="1" alphaMode="0" repeat="1" animationMode="1" lifeTime="1100" randomLifeTime="0" angleDir="0" randAngle="1" size="256" randomizeSize="0" growth="0" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>white_dust.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="3" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.7" g="0.7" b="0.7" a="0.6" />
+                <Color1 r="0.7" g="0.7" b="0.7" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>range</Name>
+                <Value>135</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

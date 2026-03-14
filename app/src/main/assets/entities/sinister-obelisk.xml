@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="sinister-obelisk.png" width="512" height="1024">
+    <sprite n="Obelisco Sinistro_A" x="1" y="709" w="219" h="310" oX="66" oY="227" oW="363" oH="725"/>
+    <sprite n="Obelisco Sinistro_B" x="1" y="514" w="326" h="190" oX="12" oY="524" oW="363" oH="725"/>
+    <sprite n="Obelisco Sinistro_C" x="1" y="1" w="355" h="508" oX="5" oY="204" oW="363" oH="725"/>
+    <sprite n="Obelisco Sinistro_D" x="225" y="709" w="227" h="240" oX="73" oY="222" oW="363" oH="725"/>
+</TextureAtlas>

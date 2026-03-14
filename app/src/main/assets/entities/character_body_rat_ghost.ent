@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="1" friction="0" density="0.2" restitution="0" gravityScale="3" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="7" y="2" />
+        <Sprite>character_body_rat_ghost.png</Sprite>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="44" y="124" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=1;} v1{x=-1;y=0.7;} v2{x=-1;y=-0.8;} v3{x=-0.7;y=-1;} v4{x=0.7;y=-1;} v5{x=1;y=-0.8;} v6{x=1;y=0.7;} v7{x=0.5;y=1;} ]]>
+</Polygon>
+            <Joints>revoluteJoint { attachPointAX = 0.0; attachPointAY = 0.91; attachPointBX = 0.0; attachPointBY = 0.0; }</Joints>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>bloodColor</Name>
+                <Value>black</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>debrisBitmap</Name>
+                <Value>corpse_debris.png</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>floatEffectOffset</Name>
+                <Value>2.0</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>itemDropChance</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>flesh</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>touchDamage</Name>
+                <Value>35</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>touchDamageExplosionEntity</Name>
+                <Value>explosion_ghost_small.ent</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

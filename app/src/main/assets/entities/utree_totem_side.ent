@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="0.6" g="0.6" b="0.6" a="0" />
+        <Scale x="1" y="1" />
+        <Sprite>utree-totem-side.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

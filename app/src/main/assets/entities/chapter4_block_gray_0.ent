@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="2">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="1.000" g="1.000" b="1.000" a="1" />
+        <Sprite>chapter4-4x1-block.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="512" y="128" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>allowDecals</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>stone</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

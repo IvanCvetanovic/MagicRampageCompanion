@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="tavern-food-and-drinks.png" width="128" height="128">
+    <sprite n="Taverna_Prancheta 1 6.png" x="66" y="2" w="32" h="57" oX="0" oY="7" oW="32" oH="64"/>
+    <sprite n="Taverna_Prancheta 1 24.png" x="98" y="2" w="24" h="55" oX="4" oY="9" oW="32" oH="64"/>
+    <sprite n="Taverna_Prancheta 1 25.png" x="2" y="34" w="32" h="32"/>
+    <sprite n="Taverna_Prancheta 1 26.png" x="34" y="34" w="32" h="32"/>
+    <sprite n="Taverna_Prancheta 1 27.png" x="2" y="2" w="64" h="32"/>
+    <sprite n="Taverna_Prancheta 1 29.png" x="66" y="59" w="32" h="32"/>
+    <sprite n="Taverna_Prancheta 1 30.png" x="2" y="91" w="32" h="10" oX="0" oY="22" oW="32" oH="32"/>
+</TextureAtlas>

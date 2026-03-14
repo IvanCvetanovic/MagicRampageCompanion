@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="snow-edge.png" width="512" height="512">
+    <sprite n="snow-edge-00.png" x="157" y="435" w="85" h="71" pX="0.5" pY="0.5" oX="0" oY="0" oW="85" oH="71"/>
+    <sprite n="snow-edge-01.png" x="2" y="116" w="208" h="176" pX="0.5" pY="0.5" oX="0" oY="0" oW="208" oH="176"/>
+    <sprite n="snow-edge-02.png" x="247" y="435" w="66" h="63" pX="0.5" pY="0.5" oX="0" oY="0" oW="66" oH="63"/>
+    <sprite n="snow-edge-03.png" x="292" y="287" w="63" h="56" pX="0.5" pY="0.5" oX="0" oY="0" oW="63" oH="56"/>
+    <sprite n="snow-edge-04.png" x="2" y="460" w="58" h="32" pX="0.5" pY="0.5" oX="0" oY="0" oW="58" oH="32"/>
+    <sprite n="snow-edge-05.png" x="157" y="297" w="130" h="133" pX="0.5" pY="0.5" oX="0" oY="0" oW="130" oH="133"/>
+    <sprite n="snow-edge-06.png" x="366" y="153" w="125" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="125" oH="96"/>
+    <sprite n="snow-edge-07.png" x="215" y="153" w="146" h="129" pX="0.5" pY="0.5" oX="0" oY="0" oW="146" oH="129"/>
+    <sprite n="snow-edge-08.png" x="366" y="254" w="95" h="79" pX="0.5" pY="0.5" oX="0" oY="0" oW="95" oH="79"/>
+    <sprite n="snow-edge-09.png" x="2" y="297" w="150" h="158" pX="0.5" pY="0.5" oX="0" oY="0" oW="150" oH="158"/>
+    <sprite n="snow-edge-10.png" x="2" y="2" w="247" h="109" pX="0.5" pY="0.5" oX="0" oY="0" oW="247" oH="109"/>
+    <sprite n="snow-edge-11.png" x="254" y="2" w="225" h="146" pX="0.5" pY="0.5" oX="0" oY="0" oW="225" oH="146"/>
+</TextureAtlas>

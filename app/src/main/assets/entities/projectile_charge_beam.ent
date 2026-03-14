@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="1">
+        <DiffuseColor r="2" g="1" b="0.2" a="1" />
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="6" y="1" />
+        <Scale x="1.4" y="1.4" />
+        <PivotAdjust x="-5" y="0" />
+        <Sprite>portal_projectile.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="32" y="32" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>vector3</Type>
+                <Name>color</Name>
+                <Value x="2" y="1" z="0.2" />
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>explosionEntity</Name>
+                <Value>explosion_charge_beam.ent</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>frameStride</Name>
+                <Value>15</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>fire</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>soundPack</Name>
+                <Value>magic</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="utree-blocks-connections.png" width="1024" height="512">
+    <sprite n="basic-connection-01.png" x="2" y="2" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-03.png" x="134" y="2" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-04.png" x="266" y="2" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-05.png" x="398" y="2" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-06.png" x="530" y="2" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-07.png" x="662" y="2" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-10.png" x="794" y="2" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-11.png" x="2" y="134" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-12.png" x="134" y="134" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-13.png" x="266" y="134" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-14.png" x="398" y="134" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="basic-connection-15.png" x="530" y="134" w="128" h="124" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="half-01.png" x="662" y="134" w="128" h="77" oX="0" oY="51" oW="128" oH="128"/>
+    <sprite n="half-02.png" x="794" y="134" w="128" h="77" oX="0" oY="51" oW="128" oH="128"/>
+    <sprite n="half-03.png" x="2" y="266" w="128" h="77" oX="0" oY="51" oW="128" oH="128"/>
+    <sprite n="half-04.png" x="134" y="266" w="128" h="77" oX="0" oY="51" oW="128" oH="128"/>
+    <sprite n="half-05.png" x="266" y="266" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="half-06.png" x="398" y="266" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="half-07.png" x="530" y="266" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+    <sprite n="half-071.png" x="662" y="266" w="128" h="128" oX="0" oY="0" oW="128" oH="128"/>
+</TextureAtlas>

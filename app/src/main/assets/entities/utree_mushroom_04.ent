@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="1" specularPower="50" specularBrightness="1" castShadow="0" type="0" static="1" blendMode="0">
+        <Scale x="1.3" y="1.3" />
+        <Sprite>utree_mushroom_3.png</Sprite>
+        <Normal>utree_mushroom_3_normal.png</Normal>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>fogBias</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

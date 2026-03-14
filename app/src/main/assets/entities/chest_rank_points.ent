@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="3" y="1" />
+        <PivotAdjust x="0" y="16" />
+        <Sprite>chest4.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="32" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="1000" randomLifeTime="300" angleDir="0" randAngle="0" size="24" randomizeSize="10" growth="-0.46" minSize="0" maxSize="920" angleStart="20" randAngleStart="0">
+                <Bitmap>sparkle-cross.png</Bitmap>
+                <Gravity x="0" y="-0.032" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0.092" />
+                <RandStartPoint x="220" y="128" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="1.5" g="4" b="2" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="24" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="1200" randomLifeTime="1000" angleDir="0" randAngle="0" size="72" randomizeSize="0" growth="-0.5" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="-52" z="0.01" />
+                <RandStartPoint x="48" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="0.4" g="1" b="0.5" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="144" y="80" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>open</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>shouldBeIgnoredByFeet</Name>
+                <Value>1</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

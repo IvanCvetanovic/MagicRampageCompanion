@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="1.3" static="1" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="2" y="4" />
+        <Sprite>evil_mage_eyes.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<TextureAtlas imagePath="Cordel_tile_cantos.png" width="256" height="256">
+    <sprite n="Cordel_Tile-01.png" x="0" y="0" w="128" h="128"/>
+    <sprite n="Cordel_Tile-02.png" x="128" y="0" w="128" h="128"/>
+    <sprite n="Cordel_Tile-03.png" x="0" y="128" w="128" h="128"/>
+    <sprite n="Cordel_Tile-04.png" x="128" y="128" w="128" h="128"/>
+</TextureAtlas>

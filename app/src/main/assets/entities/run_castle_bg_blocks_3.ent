@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.45" g="0.45" b="0.45" a="1" />
+        <Sprite>run_course_rocks_3.png</Sprite>
+        <Scale x="1.7" y="1.7" />
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

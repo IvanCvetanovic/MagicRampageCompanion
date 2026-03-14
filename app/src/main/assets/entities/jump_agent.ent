@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>jumping_agent.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="1" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="900" randomLifeTime="0" angleDir="0" randAngle="0" size="44" randomizeSize="0" growth="4.6" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>white_ring.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="-0.1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.8" g="1" b="0.3" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="120" y="120" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>tolerance</Name>
+                <Value>128</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

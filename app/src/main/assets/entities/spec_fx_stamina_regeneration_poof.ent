@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="12" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" lifeTime="400" randomLifeTime="190" angleDir="0" randAngle="0" size="14" randomizeSize="0" growth="-0.4" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>white_drop_particle.png</Bitmap>
+                <Gravity x="0" y="-0.3" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="48" y="100" />
+                <Color0 r="1" g="1" b="1" a="1" />
+                <Color1 r="0.05" g="0.05" b="0.05" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="4" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" lifeTime="400" randomLifeTime="0" angleDir="0" randAngle="0" size="128" randomizeSize="0" growth="-1" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="72" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="1" g="1" b="1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData>
+            <Variable>
+                <Type>vector3</Type>
+                <Name>particleColor0A</Name>
+                <Value x="6" y="6" z="6" />
+            </Variable>
+            <Variable>
+                <Type>vector3</Type>
+                <Name>particleColor0B</Name>
+                <Value x="0.05" y="0.05" z="0.05" />
+            </Variable>
+            <Variable>
+                <Type>vector3</Type>
+                <Name>particleColor1A</Name>
+                <Value x="0" y="0" z="0" />
+            </Variable>
+            <Variable>
+                <Type>vector3</Type>
+                <Name>particleColor1B</Name>
+                <Value x="1" y="1" z="1" />
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

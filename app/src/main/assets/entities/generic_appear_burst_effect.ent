@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="7" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="400" randomLifeTime="300" angleDir="0" randAngle="0" size="128" randomizeSize="0" growth="0" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>fireball_hit_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="2" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.16" g="0.16" b="0.16" a="1" />
+                <Color1 r="0.16" g="0.16" b="0.16" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="7" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="800" randomLifeTime="600" angleDir="0" randAngle="0" size="5.39" randomizeSize="3.85" growth="-0.0385" minSize="0" maxSize="770" angleStart="0" randAngleStart="0">
+                <Bitmap>particle_opaque_harder.png</Bitmap>
+                <Gravity x="0" y="0.0616" />
+                <Direction x="0" y="-0.616" />
+                <RandomizeDir x="1.155" y="1.155" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="55.44" y="55.44" />
+                <Color0 r="2" g="2" b="2" a="1" />
+                <Color1 r="1" g="1" b="1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="0" castShadows="0" range="2" haloBrightness="0.5" haloSize="220">
+            <Position x="0" y="0" z="0" />
+            <Color r="1" g="1" b="1" />
+            <HaloBitmap>halo_dusty.png</HaloBitmap>
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

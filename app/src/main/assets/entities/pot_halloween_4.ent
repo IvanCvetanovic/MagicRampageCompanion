@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1.4" restitution="0" gravityScale="1.1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <PivotAdjust x="0" y="10" />
+        <Sprite>halloween-pot-4.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="150" y="140" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=-1;} v1{x=0.5;y=-1;} v2{x=0.7;y=-0.7;} v3{x=1;y=0.3;} v4{x=0.4;y=1;} v5{x=-0.4;y=1;} v6{x=-1;y=0.3;} v7{x=-0.7;y=-0.7;} ]]>
+</Polygon>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>alternativeName</Name>
+                <Value>pot</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>debrisBitmap</Name>
+                <Value>debris_pumpkin_halloween.png</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>destroyEffect</Name>
+                <Value>pumpkin_pot_explosion.ent</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>dontDropCoins</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>dropDiamond</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>int</Type>
+                <Name>hp</Name>
+                <Value>30</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>itemDropChance</Name>
+                <Value>10</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>soft</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

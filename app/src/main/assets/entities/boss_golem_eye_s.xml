@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="boss_golem_eye_s.png" width="256" height="512">
+    <sprite n="boss_golem_eye_s-0-0.png" x="147" y="0" w="72" h="71" pX="0.5" pY="0.5" oX="98" oY="82" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-0-1.png" x="147" y="71" w="72" h="71" pX="0.5" pY="0.5" oX="99" oY="82" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-0-2.png" x="75" y="72" w="72" h="71" pX="0.5" pY="0.5" oX="94" oY="82" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-0-3.png" x="142" y="213" w="71" h="70" pX="0.5" pY="0.5" oX="94" oY="82" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-0-4.png" x="71" y="214" w="71" h="67" pX="0.5" pY="0.5" oX="104" oY="85" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-0-5.png" x="0" y="0" w="75" h="75" pX="0.5" pY="0.5" oX="95" oY="32" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-0-6.png" x="219" y="0" w="5" h="5" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-1-0.png" x="147" y="142" w="71" h="71" pX="0.5" pY="0.5" oX="113" oY="75" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-1-1.png" x="71" y="143" w="71" h="71" pX="0.5" pY="0.5" oX="108" oY="75" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-1-2.png" x="0" y="218" w="70" h="69" pX="0.5" pY="0.5" oX="102" oY="81" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-1-3.png" x="0" y="147" w="71" h="71" pX="0.5" pY="0.5" oX="111" oY="85" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-1-4.png" x="0" y="75" w="71" h="72" pX="0.5" pY="0.5" oX="110" oY="83" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-1-5.png" x="75" y="0" w="72" h="72" pX="0.5" pY="0.5" oX="110" oY="82" oW="200" oH="249"/>
+    <sprite n="boss_golem_eye_s-1-6.png" x="219" y="0" w="5" h="5" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="249"/>
+</TextureAtlas>

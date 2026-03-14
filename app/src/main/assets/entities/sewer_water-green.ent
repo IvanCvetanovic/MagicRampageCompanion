@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.64" g="1.2" b="0.32" a="1" />
+        <SpriteCut x="4" y="4" />
+        <Sprite>sewer_water_a.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="128" y="128" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>vector3</Type>
+                <Name>color</Name>
+                <Value x="1.9" y="2.5" z="1" />
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>shouldBeIgnoredByFeet</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>toxic</Name>
+                <Value>1</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

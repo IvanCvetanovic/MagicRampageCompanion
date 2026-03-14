@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="2">
+        <Scale x="1.40625" y="1.40625" />
+        <SpriteCut x="1" y="2" />
+        <Sprite>ucave-bg.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>fogBias</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

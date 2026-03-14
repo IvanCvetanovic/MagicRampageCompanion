@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="6" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="2000" randomLifeTime="0" angleDir="0" randAngle="0.25" size="150" randomizeSize="0" growth="0.5" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>dusty-explosion-8x6_bw.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-0.5" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="8" y="6" />
+                <StartPoint x="0" y="-32" z="0" />
+                <RandStartPoint x="0" y="100" />
+                <Color0 r="0.1824" g="0.2274" b="0.25" a="1" />
+                <Color1 r="0.0912" g="0.1137" b="0.125" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+
+            <ParticleSystem particles="24" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" boundingSphere="884.736" lifeTime="150" randomLifeTime="100" angleDir="0" randAngle="0" size="17.28" randomizeSize="0" growth="-1.3824" minSize="0" maxSize="1728" angleStart="0" randAngleStart="0">
+                <Bitmap>hard_sparkle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="13.824" y="13.824" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="-32" z="0" />
+                <RandStartPoint x="0" y="100" />
+                <Color0 r="1" g="1" b="0.5" a="1" />
+                <Color1 r="1" g="1" b="0.6" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+
+
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

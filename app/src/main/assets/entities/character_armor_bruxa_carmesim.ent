@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="14" y="1" />
+        <Sprite>armor_bruxa_carmesim_A.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="24" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="800" randomLifeTime="400" angleDir="0" randAngle="10" size="48" randomizeSize="0" growth="-1" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>hard_sparkle_default.png</Bitmap>
+                <Gravity x="0" y="-0.03" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="4" y="0.8" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="60" z="-0.01" />
+                <RandStartPoint x="64" y="0" />
+                <Color0 r="0" g="0" b="0" a="0" />
+                <Color1 r="0" g="0" b="0" a="4" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="16" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="800" randomLifeTime="400" angleDir="0" randAngle="10" size="32" randomizeSize="0" growth="-0.666" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>hard_sparkle_default.png</Bitmap>
+                <Gravity x="0" y="-0.03" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="4" y="0.8" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="60" z="0.01" />
+                <RandStartPoint x="72" y="0" />
+                <Color0 r="0" g="0" b="0" a="0" />
+                <Color1 r="0" g="0" b="0" a="4" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

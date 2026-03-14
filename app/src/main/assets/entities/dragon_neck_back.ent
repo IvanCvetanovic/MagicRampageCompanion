@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Scale x="1.6" y="1.6" />
+        <PivotAdjust x="187" y="83" />
+        <Sprite>dragon_neck_1295scale.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>int</Type>
+                <Name>hp</Name>
+                <Value>9999999</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

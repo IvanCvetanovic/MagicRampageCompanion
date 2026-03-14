@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="4">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>sewer_puzzle_answer_tbnf.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="hoc_rank_shields.png" width="512" height="512">
+    <sprite n="0.png" x="318" y="372" w="94" h="94" pX="0.5" pY="0.5" oX="49" oY="49" oW="192" oH="192"/>
+    <sprite n="1.png" x="176" y="380" w="94" h="98" pX="0.5" pY="0.5" oX="49" oY="49" oW="192" oH="192"/>
+    <sprite n="2.png" x="24" y="380" w="104" h="103" pX="0.5" pY="0.5" oX="44" oY="46" oW="192" oH="192"/>
+    <sprite n="3.png" x="233" y="213" w="116" h="111" pX="0.5" pY="0.5" oX="38" oY="38" oW="192" oH="192"/>
+    <sprite n="4.png" x="24" y="213" w="161" h="119" pX="0.5" pY="0.5" oX="15" oY="32" oW="192" oH="192"/>
+    <sprite n="5.png" x="24" y="24" w="184" h="141" pX="0.5" pY="0.5" oX="4" oY="13" oW="192" oH="192"/>
+    <sprite n="6.png" x="256" y="24" w="180" h="141" pX="0.5" pY="0.5" oX="6" oY="16" oW="192" oH="192"/>
+</TextureAtlas>

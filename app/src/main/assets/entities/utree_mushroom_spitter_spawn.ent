@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="4" y="2" />
+        <Sprite>character_body_mushroom_spitter.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>coinDropCount</Name>
+                <Value>16</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>fileName</Name>
+                <Value>npcs/enemies/mushroom-spitter.character</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>playerTeam</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>tolerance</Name>
+                <Value>256</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

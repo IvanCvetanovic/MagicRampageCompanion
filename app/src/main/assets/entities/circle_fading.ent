@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <DiffuseColor r="0" g="0" b="0" a="1" />
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>circle_entity.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

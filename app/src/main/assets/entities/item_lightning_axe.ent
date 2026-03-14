@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>axe_0.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="2" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" boundingSphere="512" lifeTime="450" randomLifeTime="150" angleDir="0" randAngle="0" size="60" randomizeSize="0" growth="0" minSize="0" maxSize="1000" angleStart="342" randAngleStart="45">
+                <Bitmap>shock_tesla.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="5" y="2" />
+                <StartPoint x="0" y="-10" z="0.1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.5" g="1.5" b="0.7" a="1" />
+                <Color1 r="1.5" g="1.5" b="0.7" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="64" y="64" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

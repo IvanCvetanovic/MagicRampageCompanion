@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="banker-pen.png" width="256" height="256">
+    <sprite n="banker-pen-0-0.png" x="100" y="0" w="43" h="92" pX="0.5" pY="0.5" oX="12" oY="52" oW="272" oH="263"/>
+    <sprite n="banker-pen-0-1.png" x="0" y="0" w="50" h="105" pX="0.5" pY="0.5" oX="31" oY="50" oW="272" oH="263"/>
+    <sprite n="banker-pen-0-2.png" x="0" y="105" w="50" h="105" pX="0.5" pY="0.5" oX="31" oY="50" oW="272" oH="263"/>
+    <sprite n="banker-pen-1-0.png" x="50" y="105" w="43" h="93" pX="0.5" pY="0.5" oX="12" oY="52" oW="272" oH="263"/>
+    <sprite n="banker-pen-1-1.png" x="93" y="105" w="42" h="93" pX="0.5" pY="0.5" oX="13" oY="52" oW="272" oH="263"/>
+    <sprite n="banker-pen-1-2.png" x="50" y="0" w="50" h="105" pX="0.5" pY="0.5" oX="31" oY="51" oW="272" oH="263"/>
+</TextureAtlas>

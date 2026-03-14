@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="15" allAtOnce="0" alphaMode="1" repeat="10" animationMode="1" lifeTime="700" randomLifeTime="0" angleDir="0" randAngle="0" size="210" randomizeSize="24.864" growth="-4.9" minSize="0" maxSize="458.304" angleStart="90" randAngleStart="0">
+                <Bitmap>bright_trail.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="-1.47" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="0.5" b="0.1" a="1" />
+                <Color1 r="0.1" g="0.05" b="0.01" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

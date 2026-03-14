@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="0.5" restitution="0.2" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>bone_projectile.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="6" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" boundingSphere="64" lifeTime="350" randomLifeTime="0" angleDir="0" randAngle="0" size="102" randomizeSize="0" growth="-2" minSize="0" maxSize="1000" angleStart="0" randAngleStart="300">
+                <Bitmap>white_dust.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="3" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="1" b="1" a="0" />
+                <Color1 r="1" g="1" b="1" a="0.2" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="8" y="52" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=-0.3;} v1{x=0;y=-1;} v2{x=0.5;y=-0.3;} v3{x=0;y=1;} ]]>
+</Polygon>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>explosionEntity</Name>
+                <Value>spider_web_explosion.ent</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>lifeTime</Name>
+                <Value>1400</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>bone</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>soundPack</Name>
+                <Value>blunt</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

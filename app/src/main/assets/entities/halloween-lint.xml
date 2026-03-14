@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<TextureAtlas imagePath="halloween-lint.png" width="512" height="256">
+    <sprite n="halloween_2022-15.png" x="263" y="3" w="122" h="221" oX="3" oY="33" oW="128" oH="256"/>
+    <sprite n="halloween_2022-16.png" x="133" y="3" w="124" h="231" oX="2" oY="23" oW="128" oH="256"/>
+    <sprite n="halloween_2022-17.png" x="3" y="3" w="124" h="239" oX="2" oY="15" oW="128" oH="256"/>
+</TextureAtlas>

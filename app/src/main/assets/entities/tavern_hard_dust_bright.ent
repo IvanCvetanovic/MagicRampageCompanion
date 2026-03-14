@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="22" allAtOnce="0" alphaMode="0" repeat="0" animationMode="2" lifeTime="3500" randomLifeTime="1000" angleDir="0" randAngle="3" size="48" randomizeSize="32" growth="-0.25" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>upsidedown_dust_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0.3" y="0.3" />
+                <SpriteCut x="4" y="2" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="400" y="192" />
+                <Color0 r="1" g="1" b="1" a="0" />
+                <Color1 r="1" g="1" b="1" a="0.65" />
+                <Luminance r="0" g="0" b="0" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

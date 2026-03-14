@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="Cyclop_01.png" width="1024" height="512">
+    <sprite n="1.png" x="836" y="175" w="152" h="173" oX="52" oY="49" oW="256" oH="256"/>
+    <sprite n="2.png" x="2" y="214" w="190" h="207" oX="33" oY="15" oW="256" oH="256"/>
+    <sprite n="3.png" x="176" y="2" w="210" h="204" oX="29" oY="42" oW="256" oH="256"/>
+    <sprite n="4.png" x="836" y="2" w="172" h="169" oX="42" oY="53" oW="256" oH="256"/>
+    <sprite n="5.png" x="324" y="210" w="146" h="194" oX="55" oY="28" oW="256" oH="256"/>
+    <sprite n="6.png" x="532" y="2" w="142" h="185" oX="57" oY="37" oW="256" oH="256"/>
+    <sprite n="7.png" x="2" y="425" w="1" h="1" oX="0" oY="0" oW="256" oH="256"/>
+    <sprite n="8.png" x="196" y="210" w="124" h="195" oX="66" oY="27" oW="256" oH="256"/>
+    <sprite n="9.png" x="678" y="2" w="154" h="180" oX="51" oY="21" oW="256" oH="256"/>
+    <sprite n="10.png" x="2" y="2" w="170" h="208" oX="43" oY="14" oW="256" oH="256"/>
+    <sprite n="11.png" x="390" y="2" w="138" h="192" oX="59" oY="30" oW="256" oH="256"/>
+    <sprite n="12.png" x="640" y="191" w="177" h="184" oX="40" oY="10" oW="256" oH="256"/>
+    <sprite n="13.png" x="474" y="198" w="162" h="191" oX="47" oY="31" oW="256" oH="256"/>
+    <sprite n="14.png" x="2" y="425" w="1" h="1" oX="0" oY="0" oW="256" oH="256"/>
+    <sprite n="15.png" x="2" y="425" w="1" h="1" oX="0" oY="0" oW="256" oH="256"/>
+    <sprite n="16.png" x="2" y="425" w="1" h="1" oX="0" oY="0" oW="256" oH="256"/>
+</TextureAtlas>

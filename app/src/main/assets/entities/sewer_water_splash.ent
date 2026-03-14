@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="1" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" boundingSphere="512" lifeTime="650" randomLifeTime="250" angleDir="0" randAngle="0" size="107" randomizeSize="0" growth="3.8" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>water_wave_particle.png</Bitmap>
+                <Gravity x="0" y="0.06" />
+                <Direction x="0" y="3.76" />
+                <RandomizeDir x="1.4" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="-79" z="-0.05" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="3" g="2" b="1" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="6" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" boundingSphere="512" lifeTime="650" randomLifeTime="250" angleDir="0" randAngle="0" size="16" randomizeSize="8" growth="-0.2" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>hard_sparkle.png</Bitmap>
+                <Gravity x="0" y="0.6" />
+                <Direction x="0" y="-12.1" />
+                <RandomizeDir x="2" y="-2.6" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="-0.05" />
+                <RandStartPoint x="48" y="0" />
+                <Color0 r="1.5" g="1" b="0.5" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0" hideFromSceneEditor="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>flag-entity.png</Sprite>
+        <Particles>
+
+
+
+            <ParticleSystem particles="24" allAtOnce="0" alphaMode="1" repeat="0" animationMode="2" lifeTime="4000" randomLifeTime="1000" angleDir="0" randAngle="0" size="54" randomizeSize="36" growth="-0.2" minSize="0" maxSize="1800" angleStart="0" randAngleStart="360">
+                <Bitmap>white_drop_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0.8" y="0" />
+                <RandomizeDir x="0.4" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="-540" z="-90" />
+                <RandStartPoint x="0" y="512" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="0.5" g="0.1" b="0.1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+
+
+
+            <ParticleSystem particles="96" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="4000" randomLifeTime="1000" angleDir="-0.25" randAngle="-0.175" size="300" randomizeSize="200" growth="-0.1" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4_alpha.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="1.0" y="0" />
+                <RandomizeDir x="0.5" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="-580" z="0" />
+                <RandStartPoint x="0" y="512" />
+                <Color0 r="0" g="0" b="0" a="0" />
+                <Color1 r="0.323" g="0.188" b="0.341" a="0.7" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+
+
+        </Particles>
+        <Light active="1" static="0" castShadows="0" range="7" haloBrightness="1" haloSize="64">
+            <Position x="0" y="0" z="0" />
+            <Color r="1" g="1" b="1" />
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

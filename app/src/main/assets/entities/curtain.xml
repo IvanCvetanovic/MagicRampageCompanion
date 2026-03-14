@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="curtain.png" width="512" height="256">
+    <sprite n="curtain-0-0.png" x="0" y="0" w="159" h="175" pX="0.5" pY="0.5" oX="49" oY="32" oW="256" oH="256"/>
+    <sprite n="curtain-0-1.png" x="159" y="0" w="159" h="175" pX="0.5" pY="0.5" oX="49" oY="32" oW="256" oH="256"/>
+    <sprite n="curtain-1-0.png" x="318" y="0" w="158" h="122" pX="0.5" pY="0.5" oX="50" oY="32" oW="256" oH="256"/>
+    <sprite n="curtain-1-1.png" x="0" y="175" w="158" h="76" pX="0.5" pY="0.5" oX="49" oY="32" oW="256" oH="256"/>
+</TextureAtlas>

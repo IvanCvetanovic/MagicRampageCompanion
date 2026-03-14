@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>halloween-decor-1.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="0" animationMode="2" lifeTime="500" randomLifeTime="150" angleDir="0" randAngle="0" size="24" randomizeSize="0" growth="-0.75" minSize="0" maxSize="10000" angleStart="0" randAngleStart="360">
+                <Bitmap>white_drop_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-0.7" />
+                <RandomizeDir x="0.14" y="0.2" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="-8" y="12" z="0.01" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="1" a="1" />
+                <Color1 r="2" g="1" b="0.31" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

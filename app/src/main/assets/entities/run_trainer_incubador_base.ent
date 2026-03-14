@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <Scale x="0.8" y="0.8" />
+        <SpriteCut x="1" y="2" />
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>run_trainer_incubator_base.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

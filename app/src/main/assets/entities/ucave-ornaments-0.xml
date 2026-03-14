@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="ucave-ornaments-0.png" width="256" height="512">
+    <sprite n="caverna ornamentos-01" x="114" y="328" w="92" h="72" pX="0.5" pY="0.5" oX="18" oY="28" oW="128" oH="128"/>
+    <sprite n="caverna ornamentos-02" x="2" y="292" w="124" h="34" pX="0.5" pY="0.5" oX="2" oY="15" oW="128" oH="64"/>
+    <sprite n="caverna ornamentos-05" x="68" y="446" w="32" h="32" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="32"/>
+    <sprite n="caverna ornamentos-06" x="208" y="328" w="36" h="94" pX="0.5" pY="0.5" oX="14" oY="17" oW="64" oH="128"/>
+    <sprite n="caverna ornamentos-08" x="2" y="2" w="244" h="102" pX="0.5" pY="0.5" oX="6" oY="13" oW="256" oH="128"/>
+    <sprite n="caverna ornamentos-11" x="132" y="106" w="110" h="124" pX="0.5" pY="0.5" oX="9" oY="2" oW="128" oH="128"/>
+    <sprite n="caverna ornamentos-12" x="2" y="328" w="110" h="116" pX="0.5" pY="0.5" oX="9" oY="6" oW="128" oH="128"/>
+    <sprite n="caverna ornamentos-13" x="130" y="232" w="124" h="94" pX="0.5" pY="0.5" oX="2" oY="17" oW="128" oH="128"/>
+    <sprite n="caverna ornamentos-18" x="2" y="446" w="64" h="54" pX="0.5" pY="0.5" oX="0" oY="5" oW="64" oH="64"/>
+    <sprite n="caverna ornamentos-24" x="114" y="402" w="82" h="90" pX="0.5" pY="0.5" oX="23" oY="19" oW="128" oH="128"/>
+    <sprite n="caverna ornamentos-25" x="2" y="208" w="126" h="82" pX="0.5" pY="0.5" oX="1" oY="23" oW="128" oH="128"/>
+    <sprite n="caverna ornamentos-26" x="2" y="106" w="128" h="100" pX="0.5" pY="0.5" oX="0" oY="14" oW="128" oH="128"/>
+</TextureAtlas>

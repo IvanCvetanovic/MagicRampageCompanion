@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="3" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="400" randomLifeTime="100" angleDir="0" randAngle="1" size="282.563" randomizeSize="0" growth="1.93536" minSize="0" maxSize="1935.36" angleStart="0" randAngleStart="330">
+                <Bitmap>explosion.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="1" b="0.4" a="1" />
+                <Color1 r="1" g="1" b="0.4" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="12" allAtOnce="1" alphaMode="1" repeat="1" animationMode="2" lifeTime="350" randomLifeTime="100" angleDir="0" randAngle="0" size="239.117" randomizeSize="0" growth="-0.160124" minSize="0" maxSize="1868.1" angleStart="0" randAngleStart="360">
+                <Bitmap>shock_tesla.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="5" y="2" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="2" g="2" b="0.9" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>range</Name>
+                <Value>360</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" hideFromSceneEditor="1" static="1" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.4627" g="0.9803" b="0.2705" a="1" />
+        <Scale x="1.5" y="1.5" />
+        <PivotAdjust x="0" y="28" />
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="72" y="256" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

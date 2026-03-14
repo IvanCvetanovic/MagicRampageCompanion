@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="2" y="1" />
+        <Sprite>sewer_pipes.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="128" y="128" z="1" />
+            <Polygon>
+                <![CDATA[
+
+// this is a basic triangle sample
+// polygons must be convex and ordered clockwise
+v0
+{
+	x=-0.9;
+	y=-1;
+}
+v1
+{
+	x=0.9;
+	y=-1;
+}
+v2
+{
+	x=1;
+	y=-0.9;
+}
+v3
+{
+	x=1;
+	y=0.9;
+}
+v4
+{
+	x=0.9;
+	y=1;
+}
+v5
+{
+	x=-0.9;
+	y=1;
+}
+v6
+{
+	x=-1;
+	y=0.9;
+}
+v7
+{
+	x=-1;
+	y=-0.9;
+}
+]]>
+</Polygon>
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="ucave-strings-1.png" width="256" height="128">
+    <sprite n="caverna ornamentos-22" x="2" y="2" w="150" h="77" pX="0.5" pY="0.5" oX="53" oY="26" oW="256" oH="128"/>
+    <sprite n="caverna ornamentos-28" x="154" y="2" w="98" h="77" pX="0.5" pY="0.5" oX="15" oY="26" oW="128" oH="128"/>
+</TextureAtlas>

@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <DiffuseColor r="1" g="0.9" b="0.45" a="1" />
+        <Scale x="0.5" y="0.5" />
+        <Sprite>sparkle_dot_entity.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>disableParticles</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>xpLevel</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>notMagnetizable</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

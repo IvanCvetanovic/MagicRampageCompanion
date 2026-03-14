@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="run_home_portal_diamonds.png" width="128" height="128">
+    <sprite n="run_home_portal_diamond_blue" x="1" y="1" w="61" h="51" pX="0.5" pY="0.5" oX="105" oY="188" oW="512" oH="512"/>
+    <sprite n="run_home_portal_diamond_red" x="64" y="1" w="60" h="51" pX="0.5" pY="0.5" oX="347" oY="188" oW="512" oH="512"/>
+    <sprite n="run_home_portal_diamond_purple" x="1" y="54" w="32" h="61" pX="0.5" pY="0.5" oX="240" oY="115" oW="512" oH="512"/>
+</TextureAtlas>

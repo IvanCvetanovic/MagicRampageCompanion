@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>autoWaypointsStride</Name>
+                <Value>200</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>finalScale</Name>
+                <Value>0.55</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>autoWaypointsTime</Name>
+                <Value>1000</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>fileName</Name>
+                <Value>npcs/enemies/cthulhu-imp.character</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>instantSpawn</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>playerTeam</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>float</Type>
+                <Name>tolerance</Name>
+                <Value>256</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>type</Name>
+                <Value>patroller</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>waypoints</Name>
+                <Value>auto</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

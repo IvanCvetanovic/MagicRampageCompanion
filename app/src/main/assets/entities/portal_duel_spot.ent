@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.318" g="1" b="0.361" a="0.6" />
+        <SpriteCut x="8" y="1" />
+        <Scale x="0.5" y="0.5" />
+        <Sprite>waypoint_flag.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>autoHide</Name>
+                <Value>1</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

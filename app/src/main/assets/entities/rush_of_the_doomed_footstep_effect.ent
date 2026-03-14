@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <PivotAdjust x="0" y="-61" />
+        <Gloss>hard_sparkle_entity.png</Gloss>
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="1" animationMode="2" lifeTime="400" randomLifeTime="150" angleDir="0" randAngle="12" size="50.8032" randomizeSize="0" growth="-2.05632" minSize="0" maxSize="604.8" angleStart="0" randAngleStart="360">
+                <Bitmap>fire.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-2.05632" />
+                <RandomizeDir x="1.2096" y="1.33056" />
+                <SpriteCut x="4" y="1" />
+                <StartPoint x="0" y="26" z="-1.008" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="0.5" b="0.1" a="1" />
+                <Color1 r="1" g="0.5" b="0.1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="1" castShadows="0" range="7" haloBrightness="0.8" haloSize="676">
+            <Position x="0" y="-6" z="0" />
+            <Color r="1" g="0.5" b="0.1" />
+            <HaloBitmap>sparkle_dot_entity.png</HaloBitmap>
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

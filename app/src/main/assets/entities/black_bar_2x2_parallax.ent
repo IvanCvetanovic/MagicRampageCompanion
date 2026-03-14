@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Scale x="2" y="4" />
+        <Sprite>black_bar.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

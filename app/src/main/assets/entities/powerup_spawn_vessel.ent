@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0" g="0" b="0" a="1" />
+        <Particles>
+            <ParticleSystem particles="4" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="300" randomLifeTime="100" angleDir="0" randAngle="0" size="32" randomizeSize="16" growth="0" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="32" y="48" />
+                <Color0 r="0.424" g="0.925" b="0.031" a="1" />
+                <Color1 r="0.848" g="1.85" b="0.062" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="1" castShadows="0" range="1" haloBrightness="0.7" haloSize="208">
+            <Position x="0" y="0" z="0" />
+            <Color r="0.424" g="0.925" b="0.031" />
+            <HaloBitmap>halo_cross_128.png</HaloBitmap>
+        </Light>
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>index</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>powerUps</Name>
+                <Value>Moonjump Mixture,Levitation Liqueur,Instant Dark Twin,Instant Charge Blast,Instant Thunder Wave,Starlight Supertonic</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>spawnStride</Name>
+                <Value>30000</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <PivotAdjust x="-80" y="-55" />
+        <Sprite>dragon_lower_head.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="90" y="88" z="0" />
+            <Size x="252" y="89" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>int</Type>
+                <Name>hp</Name>
+                <Value>999999</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

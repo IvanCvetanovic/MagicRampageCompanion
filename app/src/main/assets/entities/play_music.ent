@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>music.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>autoHide</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>loop</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>name</Name>
+                <Value>watchingAndWaiting</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

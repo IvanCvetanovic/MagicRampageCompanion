@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="/Users/andresantee/Documents/GitHub/projectx/game/entities/ship_objects.png/ship_objects.png" width="256" height="256">
+    <sprite n="Ship_1.png" x="104" y="130" w="127" h="30" oX="0" oY="17" oW="128" oH="64"/>
+    <sprite n="Ship_12.png" x="104" y="1" w="127" h="127" oX="1" oY="1" oW="128" oH="128"/>
+    <sprite n="Ship_13.png" x="1" y="1" w="101" h="128" oX="13" oY="0" oW="128" oH="128"/>
+    <sprite n="Ship_14.png" x="1" y="162" w="119" h="76" oX="106" oY="26" oW="256" oH="128"/>
+</TextureAtlas>

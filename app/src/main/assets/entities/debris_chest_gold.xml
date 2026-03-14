@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="debris_chest_gold.png" width="128" height="128">
+    <sprite n="debris_chest_gold-0-0.png" x="54" y="48" w="49" h="37" pX="0.5" pY="0.5" oX="20" oY="15" oW="72" oH="64"/>
+    <sprite n="debris_chest_gold-0-1.png" x="48" y="85" w="35" h="41" pX="0.5" pY="0.5" oX="21" oY="12" oW="72" oH="64"/>
+    <sprite n="debris_chest_gold-0-2.png" x="0" y="0" w="54" h="49" pX="0.5" pY="0.5" oX="10" oY="8" oW="72" oH="64"/>
+    <sprite n="debris_chest_gold-0-3.png" x="54" y="0" w="52" h="48" pX="0.5" pY="0.5" oX="9" oY="8" oW="72" oH="64"/>
+    <sprite n="debris_chest_gold-0-4.png" x="83" y="85" w="41" h="38" pX="0.5" pY="0.5" oX="19" oY="13" oW="72" oH="64"/>
+    <sprite n="debris_chest_gold-0-5.png" x="0" y="85" w="48" h="42" pX="0.5" pY="0.5" oX="11" oY="11" oW="72" oH="64"/>
+</TextureAtlas>

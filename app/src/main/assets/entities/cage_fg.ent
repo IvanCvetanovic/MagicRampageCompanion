@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="4" sensor="0" bullet="1" fixedRotation="0" friction="1" density="3" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>cage_2.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="230" y="280" z="1" />
+            <Compound>
+                <![CDATA[
+bottom
+{
+    shape = box;
+    sizeX = 2.0;
+    sizeY = 0.2;
+    posX = 0.0;
+    posY = 1.0;
+    angle = 0;
+}
+
+top_left
+{
+    shape = box;
+    sizeX = 1.4;
+    sizeY = 0.1;
+    posX =-0.5;
+    posY =-0.5;
+    angle =-45;
+}
+
+top_right
+{
+    shape = box;
+    sizeX = 1.4;
+    sizeY = 0.1;
+    posX = 0.5;
+    posY =-0.5;
+    angle = 45;
+}
+
+left
+{
+    shape = box;
+    sizeX = 0.2;
+    sizeY = 1.0;
+    posX =-1.0;
+    posY = 0.5;
+    angle = 0;
+}
+
+right
+{
+    shape = box;
+    sizeX = 0.2;
+    sizeY = 1.0;
+    posX = 1.0;
+    posY = 0.5;
+    angle = 0;
+}
+]]>
+</Compound>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>int</Type>
+                <Name>hp</Name>
+                <Value>999999</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

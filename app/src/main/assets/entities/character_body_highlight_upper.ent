@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="4" y="4" />
+        <Scale x="2" y="2" />
+        <Sprite>character_body_upper_highlight.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

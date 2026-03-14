@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="2" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="600" randomLifeTime="100" angleDir="0" randAngle="1" size="360" randomizeSize="0" growth="0" minSize="0" maxSize="1632" angleStart="0" randAngleStart="330">
+                <Bitmap>explosion.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.73" g="0.91" b="1" a="1" />
+                <Color1 r="0.365" g="0.455" b="0.5" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="1" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" lifeTime="800" randomLifeTime="0" angleDir="0" randAngle="0.2" size="0" randomizeSize="0" growth="12" minSize="0" maxSize="2800" angleStart="0" randAngleStart="360">
+                <Bitmap>white_ring_2x.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.73" g="0.91" b="1" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>range</Name>
+                <Value>320</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

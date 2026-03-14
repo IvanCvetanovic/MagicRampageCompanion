@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" hideFromSceneEditor="1" type="0" static="1" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.98" g="0.2759" b="0.2831" a="1" />
+        <Sprite>hard_halo.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="12" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="250" randomLifeTime="100" angleDir="0" randAngle="2" size="88.4621" randomizeSize="0" growth="-1.22864" minSize="0" maxSize="98.2912" angleStart="323" randAngleStart="360">
+                <Bitmap>explosion_4x4.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="-4" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="8" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="2.2820" g="0.6296" b="0.6462" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

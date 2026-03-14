@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="0.8" restitution="0.2" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>sword_0.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="20" allAtOnce="0" alphaMode="1" repeat="0" animationMode="2" boundingSphere="614.4" lifeTime="100" randomLifeTime="100" angleDir="0" randAngle="24" size="24" randomizeSize="24" growth="4.8" minSize="0" maxSize="1200" angleStart="0" randAngleStart="360">
+                <Bitmap>fire.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0.6" y="10.8" />
+                <SpriteCut x="4" y="1" />
+                <StartPoint x="0" y="24" z="-1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="0.4" b="0.2" a="1" />
+                <Color1 r="0.1" g="0" b="0.1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="25" y="99" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=-0.3;} v1{x=0;y=-1;} v2{x=0.5;y=-0.3;} v3{x=0;y=1;} ]]>
+</Polygon>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>explosionEntity</Name>
+                <Value>fire_ball_explosion.ent</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>keepParticles</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>fire</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>soundPack</Name>
+                <Value>magic</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>dontVanishAfterHit</Name>
+                <Value>1</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="1" specularPower="50" specularBrightness="1" castShadow="0" type="0" static="1" blendMode="2">
+        <DiffuseColor r="1.0" g="1.0" b="1.0" a="1" />
+        <Scale x="1.40625" y="1.40625" />
+        <Sprite>sewer_wall.png</Sprite>
+        <Normal>sewer_wall_normal.png</Normal>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

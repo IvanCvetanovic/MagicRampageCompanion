@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="0" bullet="0" fixedRotation="1" friction="1" density="0.001" restitution="0" gravityScale="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Sprite>wheel_sprite.png</Sprite>
+        <Emissive r="1" g="1" b="1" />
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="34" y="34" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

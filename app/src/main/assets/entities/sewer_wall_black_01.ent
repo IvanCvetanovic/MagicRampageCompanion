@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="2">
+        <DiffuseColor r="0" g="0" b="0" a="1" />
+        <Scale x="1.40625" y="1.40625" />
+        <SpriteCut x="8" y="1" />
+        <Sprite>sewer_wall.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

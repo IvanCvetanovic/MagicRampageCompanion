@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="1" friction="0" density="1" restitution="0" gravityScale="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="2" y="1" />
+        <Sprite>miniboss_demon_stomper.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="16" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="300" randomLifeTime="50" angleDir="0" randAngle="0" size="238" randomizeSize="0" growth="0.6" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>miniboss_demon_stomper_shape.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="-1" y="0" z="-0.2" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.5" g="0.1" b="0.1" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="184" y="212" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.9;y=-1;} v1{x=0.9;y=-1;} v2{x=1;y=-0.9;} v3{x=1;y=0.9;} v4{x=0.9;y=1;} v5{x=-0.9;y=1;} v6{x=-1;y=0.9;} v7{x=-1;y=-0.9;} ]]>
+</Polygon>
+            <Joints>revoluteJoint { attachPointAX = 0.0; attachPointAY = 0.91; attachPointBX = 0.0; attachPointBY = 0.0; }</Joints>
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <PivotAdjust x="0" y="-61" />
+        <Gloss>hard_sparkle_entity.png</Gloss>
+        <Particles>
+            <ParticleSystem particles="3" allAtOnce="1" alphaMode="0" repeat="1" animationMode="1" lifeTime="1500" randomLifeTime="400" angleDir="0" randAngle="0" size="77" randomizeSize="44" growth="-0.1" minSize="0" maxSize="379" angleStart="0" randAngleStart="360">
+                <Bitmap>Explosion1spritesheet-pow2.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0.3" y="0" />
+                <SpriteCut x="8" y="6" />
+                <StartPoint x="0" y="-20" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="0.2" />
+                <Color1 r="0" g="0" b="0" a="0.1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

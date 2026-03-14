@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="1" hideFromSceneEditor="1" >
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>portal_spiral_small.png</Sprite>
+        <Scale x="1.6" y="1.6" />
+        <CustomData />
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="600" randomLifeTime="200" angleDir="1" randAngle="3" size="84" randomizeSize="0" growth="0" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_rings_half.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="2" y="2" />
+                <StartPoint x="0" y="0" z="0.006" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="1.696" g="3.7" b="0.124" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+    </Entity>
+</Ethanon>

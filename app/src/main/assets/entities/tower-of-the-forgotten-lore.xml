@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<TextureAtlas imagePath="tower-of-the-forgotten-lore.png" width="256" height="256">
+    <sprite n="arm-00.png" x="1" y="103" w="74" h="60" oX="27" oY="34" oW="128" oH="128"/>
+    <sprite n="belly-00.png" x="1" y="165" w="46" h="44" oX="9" oY="10" oW="64" oH="64"/>
+    <sprite n="head-00.png" x="1" y="1" w="102" h="100" oX="13" oY="14" oW="128" oH="128"/>
+    <sprite n="joint-00.png" x="1" y="211" w="36" h="40" oX="14" oY="12" oW="64" oH="64"/>
+    <sprite n="leg-00.png" x="105" y="56" w="76" h="58" oX="26" oY="35" oW="128" oH="128"/>
+    <sprite n="leg-01.png" x="183" y="67" w="64" h="52" oX="0" oY="6" oW="64" oH="64"/>
+    <sprite n="z-crystal-00.png" x="39" y="211" w="44" h="32" oX="10" oY="16" oW="64" oH="64"/>
+    <sprite n="z-crystal-01.png" x="105" y="1" w="92" h="53" oX="18" oY="38" oW="128" oH="128"/>
+    <sprite n="z-crystal-02.png" x="77" y="121" w="46" h="26" oX="9" oY="19" oW="64" oH="64"/>
+    <sprite n="z-crystal-03.png" x="49" y="165" w="38" h="29" oX="13" oY="18" oW="64" oH="64"/>
+    <sprite n="z-crystal-04.png" x="199" y="1" w="46" h="64" oX="9" oY="0" oW="64" oH="64"/>
+</TextureAtlas>

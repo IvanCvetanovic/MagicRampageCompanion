@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="12" allAtOnce="1" alphaMode="0" repeat="1" animationMode="1" lifeTime="800" randomLifeTime="400" angleDir="0" randAngle="0.3" size="256" randomizeSize="0" growth="1" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>white_dust_smaller_canvas.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="96" y="96" />
+                <Color0 r="0.8" g="0.8" b="0.8" a="1" />
+                <Color1 r="0.6" g="0.6" b="0.6" a="0.3" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="5" allAtOnce="0" alphaMode="0" repeat="1" animationMode="1" lifeTime="2500" randomLifeTime="500" angleDir="0" randAngle="0.2" size="418.8" randomizeSize="0" growth="0.18" minSize="0" maxSize="1200" angleStart="0" randAngleStart="360">
+                <Bitmap>half-explosion-particles-w.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0.24" y="0.24" />
+                <SpriteCut x="8" y="3" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.8" g="0.8" b="0.8" a="0" />
+                <Color1 r="0.8" g="0.8" b="0.8" a="2" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

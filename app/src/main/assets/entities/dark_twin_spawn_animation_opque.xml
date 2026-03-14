@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="dark_twin_spawn_animation.png" width="512" height="256">
+    <sprite n="Sprite 1.png" x="433" y="1" w="61" h="66" oX="206" oY="260" oW="512" oH="512"/>
+    <sprite n="Sprite 2.png" x="1" y="145" w="138" h="70" oX="172" oY="256" oW="512" oH="512"/>
+    <sprite n="Sprite 3.png" x="141" y="145" w="175" h="69" oX="148" oY="257" oW="512" oH="512"/>
+    <sprite n="Sprite 4.png" x="279" y="1" w="152" h="124" oX="164" oY="202" oW="512" oH="512"/>
+    <sprite n="Sprite 5.png" x="146" y="1" w="131" h="141" oX="181" oY="185" oW="512" oH="512"/>
+    <sprite n="Sprite 6.png" x="1" y="1" w="143" h="142" oX="184" oY="184" oW="512" oH="512"/>
+</TextureAtlas>

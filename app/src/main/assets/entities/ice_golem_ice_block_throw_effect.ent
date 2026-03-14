@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="2" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="1500" randomLifeTime="500" angleDir="0" randAngle="0.2" size="174" randomizeSize="0" growth="2" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="4" y="0" />
+                <RandomizeDir x="0.4" y="0.4" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="0.735" g="0.907" b="1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="24" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" lifeTime="1350" randomLifeTime="500" angleDir="1.4" randAngle="0" size="32" randomizeSize="8" growth="-0.3" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="80" y="80" />
+                <Color0 r="1.47" g="1.814" b="2" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="100" y="100" z="1" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

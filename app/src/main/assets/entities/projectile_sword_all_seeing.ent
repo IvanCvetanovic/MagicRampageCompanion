@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1.5" restitution="0.2" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>sword_all_seeing.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="12" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="500" randomLifeTime="0" angleDir="0" randAngle="0" size="117.6" randomizeSize="0" growth="-4.48" minSize="0" maxSize="330.96" angleStart="90" randAngleStart="0">
+                <Bitmap>bright_trail.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="-0.8" y="-6.72" z="-0.0112" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="5.6" g="1.9599" b="0.5599" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="0" animationMode="2" boundingSphere="512" lifeTime="600" randomLifeTime="100" angleDir="0" randAngle="0" size="10" randomizeSize="0" growth="-0.2" minSize="6" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>white_drop_particle.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0.2" y="0.2" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="2" />
+                <RandStartPoint x="64" y="64" />
+                <Color0 r="3" g="1.5" b="0.6" a="1" />
+                <Color1 r="1" g="0.5" b="0.2" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="32" y="119" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=-0.5;y=-0.3;} v1{x=0;y=-1;} v2{x=0.5;y=-0.3;} v3{x=0;y=1;} ]]>
+</Polygon>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>explosionEntity</Name>
+                <Value>fireskull_sword_explosion.ent</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>fire</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>soundPack</Name>
+                <Value>heavy-flesh-blade</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

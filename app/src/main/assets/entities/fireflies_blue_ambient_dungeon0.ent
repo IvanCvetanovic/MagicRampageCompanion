@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="4" allAtOnce="0" alphaMode="1" repeat="0" animationMode="2" lifeTime="3000" randomLifeTime="1300" angleDir="0" randAngle="4" size="40" randomizeSize="0" growth="-0.12" minSize="0" maxSize="468" angleStart="0" randAngleStart="360">
+                <Bitmap>particle_opaque.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0.3" y="0.3" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="400" y="170" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="0.24" g="0.32" b="0.42" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

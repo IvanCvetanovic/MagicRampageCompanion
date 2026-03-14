@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="0" g="0" b="0" a="0" />
+        <DiffuseColor r="0.7" g="0.7" b="0.7" a="1" />
+        <SpriteCut x="1" y="2" />
+        <Sprite>hoc_512x128-1x4.png</Sprite>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>allowDecals</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>stone</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

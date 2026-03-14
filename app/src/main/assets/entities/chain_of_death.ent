@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <PivotAdjust x="0" y="128" />
+        <Sprite>chain_of_death.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="1" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" boundingSphere="512" lifeTime="0" randomLifeTime="0" angleDir="0" randAngle="0" size="64" randomizeSize="0" growth="0" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>chain_of_death_axis.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="8" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="1" b="1" a="1" />
+                <Color1 r="1" g="1" b="1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="1" blendMode="1">
+        <Scale x="2.8125" y="2.8125" />
+        <Sprite>bank-wall-light.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

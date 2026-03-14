@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="4">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="2" y="2" />
+        <Sprite>sewer_slime_2x2.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

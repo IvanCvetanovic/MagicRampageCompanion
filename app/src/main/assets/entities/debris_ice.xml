@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="debris_ice.png" width="256" height="256">
+    <sprite n="Sprite 2.png" x="136" y="2" w="80" h="52" oX="24" oY="38" oW="128" oH="128"/>
+    <sprite n="Sprite 3.png" x="58" y="130" w="74" h="87" oX="27" oY="21" oW="128" oH="128"/>
+    <sprite n="Sprite 5.png" x="136" y="136" w="55" h="74" oX="37" oY="27" oW="128" oH="128"/>
+    <sprite n="Sprite 7.png" x="136" y="58" w="77" h="74" oX="26" oY="27" oW="128" oH="128"/>
+    <sprite n="Sprite 8.png" x="72" y="2" w="60" h="63" oX="34" oY="33" oW="128" oH="128"/>
+    <sprite n="Sprite 10.png" x="2" y="130" w="52" h="97" oX="38" oY="16" oW="128" oH="128"/>
+    <sprite n="Sprite 13.png" x="2" y="2" w="66" h="124" oX="31" oY="2" oW="128" oH="128"/>
+    <sprite n="Sprite 16.png" x="220" y="2" w="33" h="59" oX="48" oY="35" oW="128" oH="128"/>
+</TextureAtlas>

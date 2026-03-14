@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="1" hideFromSceneEditor="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <PivotAdjust x="0" y="-66" />
+        <Particles>
+            <ParticleSystem particles="2" allAtOnce="1" alphaMode="0" repeat="0" animationMode="1" lifeTime="600" randomLifeTime="300" angleDir="0" randAngle="3" size="32" randomizeSize="0" growth="6.1" minSize="0" maxSize="130" angleStart="0" randAngleStart="360">
+                <Bitmap>Explosion1spritesheet-pow2.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="6" />
+                <RandomizeDir x="1.5" y="0.2" />
+                <SpriteCut x="8" y="6" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="1" b="1" a="1" />
+                <Color1 r="1" g="1" b="1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

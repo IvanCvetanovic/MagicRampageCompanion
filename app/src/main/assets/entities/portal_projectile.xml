@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="portal_projectile.png" width="256" height="512">
+    <sprite n="fireball_0001.png" x="128" y="284" w="121" h="128" oX="23" oY="23" oW="162" oH="162"/>
+    <sprite n="fireball_0002.png" x="1" y="278" w="125" h="134" oX="22" oY="22" oW="162" oH="162"/>
+    <sprite n="fireball_0003.png" x="1" y="139" w="126" h="137" oX="21" oY="20" oW="162" oH="162"/>
+    <sprite n="fireball_0004.png" x="1" y="1" w="127" h="136" oX="21" oY="20" oW="162" oH="162"/>
+    <sprite n="fireball_0005.png" x="129" y="143" w="125" h="139" oX="22" oY="21" oW="162" oH="162"/>
+    <sprite n="fireball_0006.png" x="130" y="1" w="125" h="140" oX="22" oY="22" oW="162" oH="162"/>
+</TextureAtlas>

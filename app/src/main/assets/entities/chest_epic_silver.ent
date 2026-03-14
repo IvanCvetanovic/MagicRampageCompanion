@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <SpriteCut x="3" y="1" />
+        <PivotAdjust x="0" y="32" />
+        <Sprite>chest-epic-b.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="6" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="1000" randomLifeTime="300" angleDir="0" randAngle="7" size="20" randomizeSize="8" growth="-0.26" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>sparkle-cross.png</Bitmap>
+                <Gravity x="0" y="-0.01" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="-94" z="0.1" />
+                <RandStartPoint x="18" y="22" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="1.6" g="4" b="0.8" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Light active="1" static="1" castShadows="0" range="1" haloBrightness="0.7" haloSize="320">
+            <Position x="0" y="-94" z="0" />
+            <Color r="0.4" g="1" b="0.2" />
+            <HaloBitmap>sparkle_dot_entity.png</HaloBitmap>
+        </Light>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="144" y="80" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>uint</Type>
+                <Name>coins</Name>
+                <Value>100</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>dontRandomDrop</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>epicDrop</Name>
+                <Value>1</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>key</Name>
+                <Value>coins</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>open</Name>
+                <Value>0</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

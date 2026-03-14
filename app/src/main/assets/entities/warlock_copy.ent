@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="1">
+    	<Scale x="2.35" y="2.35" />
+        <PivotAdjust x="0" y="11.5" />
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>evil_warlock_stamp.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="1" g="0.8" b="0.4" a="1" />
+        <Scale x="1.5" y="2.5" />
+        <PivotAdjust x="0" y="96" />
+        <Sprite>light_beam.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

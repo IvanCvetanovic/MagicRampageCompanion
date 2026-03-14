@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="snow-vert.png" width="512" height="512">
+    <sprite n="snow-vert-00.png" x="2" y="2" w="239" h="258" pX="0.5" pY="0.5" oX="0" oY="0" oW="239" oH="258" />
+    <sprite n="snow-vert-01.png" x="245" y="2" w="242" h="183" pX="0.5" pY="0.5" oX="0" oY="0" oW="242" oH="183" />
+    <sprite n="snow-vert-04.png" x="158" y="397" w="118" h="91" pX="0.5" pY="0.5" oX="0" oY="0" oW="118" oH="91" />
+    <sprite n="snow-vert-06.png" x="158" y="264" w="126" h="129" pX="0.5" pY="0.5" oX="0" oY="0" oW="126" oH="129" />
+    <sprite n="snow-vert-07.png" x="2" y="264" w="152" h="158" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="158" />
+</TextureAtlas>

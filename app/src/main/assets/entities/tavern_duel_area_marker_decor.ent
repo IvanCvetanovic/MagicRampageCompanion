@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="1">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <DiffuseColor r="0.4582" g="1" b="0.0335" a="1" />
+        <PivotAdjust x="0" y="37" />
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="400" randomLifeTime="100" angleDir="10" randAngle="4" size="24" randomizeSize="0" growth="-0.7" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>particle_cross_128.png</Bitmap>
+                <Gravity x="0" y="0.01" />
+                <Direction x="0" y="-2.5" />
+                <RandomizeDir x="0" y="0.9" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="96" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="0.2291" g="0.5" b="0.0167" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

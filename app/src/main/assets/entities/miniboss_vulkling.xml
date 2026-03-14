@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="miniboss_vulcling.png" width="1024" height="512">
+    <!-- idle -->
+    <sprite n="lava boss2 [www.imagesplitter.net]-0-6.png" x="595" y="359" w="199" h="148" pX="0.5" pY="0.5" oX="5" oY="105" oW="206" oH="256"/>
+
+    <!-- attack -->
+    <sprite n="lava boss2 [www.imagesplitter.net]-1-0.png" x="817" y="2" w="199" h="157" pX="0.5" pY="0.5" oX="6" oY="99" oW="206" oH="256"/>
+    <sprite n="lava boss2 [www.imagesplitter.net]-1-1.png" x="817" y="163" w="199" h="157" pX="0.5" pY="0.5" oX="6" oY="95" oW="206" oH="256"/>
+    <sprite n="lava boss2 [www.imagesplitter.net]-1-2.png" x="2" y="205" w="201" h="197" pX="0.5" pY="0.5" oX="5" oY="55" oW="206" oH="256"/>
+
+    <!-- damage -->
+    <sprite n="lava boss2 [www.imagesplitter.net]-1-5.png" x="613" y="2" w="200" h="160" pX="0.5" pY="0.5" oX="5" oY="92" oW="206" oH="256"/>
+    <sprite n="lava boss2 [www.imagesplitter.net]-1-6.png" x="411" y="359" w="180" h="151" pX="0.5" pY="0.5" oX="19" oY="99" oW="206" oH="256"/>
+
+    <!-- extra -->
+    <sprite n="lava boss2 [www.imagesplitter.net]-1-3.png" x="411" y="187" w="203" h="168" pX="0.5" pY="0.5" oX="0" oY="84" oW="206" oH="256"/>
+
+    <!-- walk -->
+    <sprite n="lava boss2 [www.imagesplitter.net]-0-0.png" x="456" y="2" w="153" h="165" pX="0.5" pY="0.5" oX="9" oY="84" oW="206" oH="256"/>
+    <sprite n="lava boss2 [www.imagesplitter.net]-0-1.png" x="309" y="2" w="143" h="181" pX="0.5" pY="0.5" oX="2" oY="67" oW="206" oH="256"/>
+    <sprite n="lava boss2 [www.imagesplitter.net]-0-2.png" x="2" y="2" w="155" h="199" pX="0.5" pY="0.5" oX="19" oY="50" oW="206" oH="256"/>
+    <sprite n="lava boss2 [www.imagesplitter.net]-0-3.png" x="161" y="2" w="144" h="197" pX="0.5" pY="0.5" oX="53" oY="53" oW="206" oH="256"/>
+    <sprite n="lava boss2 [www.imagesplitter.net]-0-4.png" x="798" y="324" w="178" h="158" pX="0.5" pY="0.5" oX="28" oY="90" oW="206" oH="256"/>
+    <sprite n="lava boss2 [www.imagesplitter.net]-0-5.png" x="618" y="166" w="193" h="146" pX="0.5" pY="0.5" oX="0" oY="103" oW="206" oH="256"/>
+
+    <!-- extra -->
+    <sprite n="lava boss2 [www.imagesplitter.net]-1-4.png" x="207" y="203" w="200" h="187" pX="0.5" pY="0.5" oX="3" oY="65" oW="206" oH="256"/>
+</TextureAtlas>

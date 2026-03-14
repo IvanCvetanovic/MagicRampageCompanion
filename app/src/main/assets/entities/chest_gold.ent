@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0.1" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <PivotAdjust x="0" y="2" />
+        <Sprite>chest_gold.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="158" y="106" z="1" />
+            <Polygon>
+                <![CDATA[v0{x=0.7;y=-1;} v1{x=1;y=0;} v2{x=0.7;y=1;} v3{x=-0.7;y=1;} v4{x=-1;y=0;} v5{x=-0.7;y=-1;} ]]>
+</Polygon>
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>debrisBitmap</Name>
+                <Value>debris_chest_gold.png</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>dropDiamond</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>dropSpecificItem</Name>
+                <Value>none</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>gold</Name>
+                <Value>100</Value>
+            </Variable>
+            <Variable>
+                <Type>int</Type>
+                <Name>hp</Name>
+                <Value>10000</Value>
+            </Variable>
+            <Variable>
+                <Type>uint</Type>
+                <Name>itemDropChance</Name>
+                <Value>0</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>wood</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

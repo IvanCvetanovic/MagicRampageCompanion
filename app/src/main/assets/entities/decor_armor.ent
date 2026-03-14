@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Scale x="0.65" y="0.65" />
+        <SpriteCut x="14" y="1" />
+        <Sprite>armor_cloth_0a.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

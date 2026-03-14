@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <Particles>
+            <ParticleSystem particles="3" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" boundingSphere="122.88" lifeTime="400" randomLifeTime="100" angleDir="0" randAngle="2" size="280.32" randomizeSize="0" growth="1.92" minSize="0" maxSize="1920" angleStart="0" randAngleStart="30">
+                <Bitmap>explosion.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0.768" y="0.768" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="19.2" y="19.2" />
+                <Color0 r="0.8" g="2" b="0.7" a="1" />
+                <Color1 r="0.5" g="1" b="0.3" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="1" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" boundingSphere="206.438" lifeTime="400" randomLifeTime="100" angleDir="0" randAngle="2" size="38.7072" randomizeSize="0" growth="19.3536" minSize="0" maxSize="3225.6" angleStart="0" randAngleStart="30">
+                <Bitmap>white_ring.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="2" b="1" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData>
+            <Variable>
+                <Type>float</Type>
+                <Name>range</Name>
+                <Value>250</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

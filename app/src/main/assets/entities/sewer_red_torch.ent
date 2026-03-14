@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="0.8" g="0.8" b="0.8" a="0" />
+        <Sprite>hoc_torch.png</Sprite>
+        <Particles />
+        <Light active="1" static="1" castShadows="0" range="1391.5" haloBrightness="0.6" haloSize="640">
+            <Position x="0" y="-50" z="48" />
+            <Color r="2" g="0.1" b="0.1" />
+        </Light>
+        <CustomData />
+    </Entity>
+</Ethanon>

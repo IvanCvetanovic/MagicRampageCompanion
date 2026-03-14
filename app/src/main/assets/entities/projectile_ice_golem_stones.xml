@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="projectile_golem_stones.png" width="256" height="512">
+    <sprite n="boss_bolem_stones-0-0.png" x="92" y="188" w="92" h="91" pX="0.5" pY="0.5" oX="57" oY="83" oW="205" oH="256"/>
+    <sprite n="boss_bolem_stones-0-1.png" x="94" y="94" w="93" h="94" pX="0.5" pY="0.5" oX="57" oY="83" oW="205" oH="256"/>
+    <sprite n="boss_bolem_stones-0-2.png" x="92" y="279" w="89" h="91" pX="0.5" pY="0.5" oX="56" oY="83" oW="205" oH="256"/>
+    <sprite n="boss_bolem_stones-0-3.png" x="0" y="188" w="92" h="94" pX="0.5" pY="0.5" oX="56" oY="81" oW="205" oH="256"/>
+    <sprite n="boss_bolem_stones-0-4.png" x="0" y="0" w="94" h="94" pX="0.5" pY="0.5" oX="54" oY="81" oW="205" oH="256"/>
+    <sprite n="boss_bolem_stones-0-5.png" x="94" y="0" w="94" h="94" pX="0.5" pY="0.5" oX="56" oY="81" oW="205" oH="256"/>
+    <sprite n="boss_bolem_stones-0-6.png" x="0" y="94" w="94" h="94" pX="0.5" pY="0.5" oX="54" oY="81" oW="205" oH="256"/>
+</TextureAtlas>

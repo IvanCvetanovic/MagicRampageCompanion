@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="ice_block.png" width="256" height="512">
+    <sprite n="crystal_grow_white_border_01.png" x="121" y="437" w="99" h="30" oX="27" oY="183" oW="150" oH="213"/>
+    <sprite n="crystal_grow_white_border_02.png" x="124" y="387" w="100" h="48" oX="23" oY="165" oW="150" oH="213"/>
+    <sprite n="crystal_grow_white_border_03.png" x="124" y="320" w="112" h="65" oX="19" oY="148" oW="150" oH="213"/>
+    <sprite n="crystal_grow_white_border_04.png" x="6" y="421" w="113" h="82" oX="19" oY="131" oW="150" oH="213"/>
+    <sprite n="crystal_grow_white_border_05.png" x="129" y="218" w="116" h="100" oX="17" oY="113" oW="150" oH="213"/>
+    <sprite n="crystal_grow_white_border_06.png" x="6" y="320" w="116" h="99" oX="17" oY="114" oW="150" oH="213"/>
+    <sprite n="crystal_grow_white_border_07.png" x="131" y="113" w="117" h="103" oX="17" oY="110" oW="150" oH="213"/>
+    <sprite n="crystal_grow_white_border_08.png" x="131" y="6" w="118" h="105" oX="16" oY="108" oW="150" oH="213"/>
+    <sprite n="crystal_grow_white_border_09.png" x="6" y="180" w="121" h="138" oX="14" oY="75" oW="150" oH="213"/>
+    <sprite n="crystal_grow_white_border_12_.png" x="6" y="6" w="123" h="172" oX="13" oY="41" oW="150" oH="213"/>
+</TextureAtlas>

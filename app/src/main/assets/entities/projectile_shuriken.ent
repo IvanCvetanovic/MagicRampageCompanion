@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="2" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0.2" gravityScale="1" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>shuriken_1.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="9" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="200" randomLifeTime="0" angleDir="0" randAngle="0" size="48" randomizeSize="0" growth="8" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>white_ring.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0.1" g="0.1" b="0.1" a="1" />
+                <Color1 r="0" g="0" b="0" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="48" y="48" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>string</Type>
+                <Name>material</Name>
+                <Value>metal</Value>
+            </Variable>
+            <Variable>
+                <Type>string</Type>
+                <Name>soundPack</Name>
+                <Value>light-blade</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

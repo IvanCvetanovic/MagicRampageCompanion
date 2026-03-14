@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="covil-labs-sprites.png" width="512" height="512">
+    <sprite n="covil-05.png" x="4" y="329" w="102" h="122" pX="0.5" pY="0.5" oX="13" oY="6" oW="128" oH="128"/>
+    <sprite n="covil-06.png" x="436" y="70" w="66" h="122" pX="0.5" pY="0.5" oX="30" oY="3" oW="128" oH="128"/>
+    <sprite n="covil-07.png" x="4" y="4" w="240" h="254" pX="0.5" pY="0.5" oX="8" oY="1" oW="256" oH="256"/>
+    <sprite n="covil-08.png" x="246" y="4" w="254" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="256" oH="64"/>
+    <sprite n="covil-10.png" x="38" y="260" w="64" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="64"/>
+    <sprite n="covil-11.png" x="104" y="260" w="64" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="64"/>
+    <sprite n="covil-12.png" x="236" y="303" w="64" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="64"/>
+    <sprite n="covil-13.png" x="170" y="260" w="64" h="104" pX="0.5" pY="0.5" oX="0" oY="12" oW="64" oH="128"/>
+    <sprite n="covil-14.png" x="4" y="303" w="32" h="24" pX="0.5" pY="0.5" oX="0" oY="4" oW="32" oH="32"/>
+    <sprite n="covil-15.png" x="4" y="453" w="60" h="46" pX="0.5" pY="0.5" oX="2" oY="9" oW="64" oH="64"/>
+    <sprite n="covil-16.png" x="246" y="177" w="128" h="124" pX="0.5" pY="0.5" oX="0" oY="2" oW="128" oH="128"/>
+    <sprite n="covil-17.png" x="376" y="211" w="124" h="116" pX="0.5" pY="0.5" oX="2" oY="6" oW="128" oH="128"/>
+    <sprite n="covil-18.png" x="376" y="177" w="56" h="32" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="32"/>
+    <sprite n="covil-19.png" x="246" y="70" w="188" h="105" pX="0.5" pY="0.5" oX="34" oY="11" oW="256" oH="128"/>
+</TextureAtlas>

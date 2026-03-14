@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="0.4" g="0.4" b="0.4" a="0" />
+        <SpriteCut x="1" y="1" />
+        <Sprite>covil-big-board.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

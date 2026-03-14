@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="walker_debris.png" width="256" height="256">
+    <sprite n="debris_0.png" x="1" y="1" w="95" h="116" oX="35" oY="25" oW="166" oH="166"/>
+    <sprite n="debris_1.png" x="187" y="78" w="61" h="75" oX="11" oY="4" oW="83" oH="83"/>
+    <sprite n="debris_2.png" x="94" y="181" w="73" h="71" oX="5" oY="6" oW="83" oH="83"/>
+    <sprite n="debris_4.png" x="183" y="155" w="57" h="57" oX="13" oY="13" oW="83" oH="83"/>
+    <sprite n="debris_5.png" x="1" y="119" w="91" h="102" oX="37" oY="32" oW="166" oH="166"/>
+    <sprite n="debris_6.png" x="187" y="1" w="67" h="75" oX="8" oY="4" oW="83" oH="83"/>
+    <sprite n="debris_7.png" x="98" y="1" w="87" h="97" oX="40" oY="35" oW="168" oH="166"/>
+    <sprite n="debris_8.png" x="98" y="100" w="83" h="79" oX="42" oY="2" oW="166" oH="83"/>
+</TextureAtlas>

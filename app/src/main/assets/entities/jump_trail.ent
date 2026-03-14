@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="15" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="700" randomLifeTime="0" angleDir="0" randAngle="0" size="300" randomizeSize="35.52" growth="-7" minSize="0" maxSize="654.72" angleStart="90" randAngleStart="0">
+                <Bitmap>sand_falling.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="-2.1" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1" g="1" b="1" a="0" />
+                <Color1 r="1" g="1" b="1" a="0.4" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

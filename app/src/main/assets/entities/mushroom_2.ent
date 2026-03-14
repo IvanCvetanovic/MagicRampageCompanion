@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>mushroom_2.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" boundingSphere="64" lifeTime="1000" randomLifeTime="600" angleDir="1.4" randAngle="0" size="28" randomizeSize="8" growth="-0.3" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>sparkles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="-24" z="0.1" />
+                <RandStartPoint x="110" y="68" />
+                <Color0 r="2" g="1.8" b="0.9" a="1" />
+                <Color1 r="0" g="0" b="0" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="51" y="135" z="1" />
+        </Collision>
+        <CustomData>
+            <Variable>
+                <Type>int</Type>
+                <Name>hp</Name>
+                <Value>999999</Value>
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

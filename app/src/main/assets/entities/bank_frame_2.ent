@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+        <Scale x="1.40625" y="1.40625" />
+        <EmissiveColor r="0.1" g="0.1" b="0.1" a="0" />
+        <Sprite>bank-frame-2.png</Sprite>
+        <Particles />
+        <CustomData />
+    </Entity>
+</Ethanon>

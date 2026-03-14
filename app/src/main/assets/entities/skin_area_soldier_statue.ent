@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="1" specularPower="50" specularBrightness="1" castShadow="0" type="0" static="1" blendMode="0">
+        <Scale x="1.55" y="1.55" />
+        <Sprite>hoc_soldier_statue.png</Sprite>
+        <Normal>soldier_statue_normal.png</Normal>
+        <Particles />
+        <CustomData>
+            <Variable>
+                <Type>vector3</Type>
+                <Name>lightmapColor</Name>
+                <Value x="0.25" y="0.5" z="0.35" />
+            </Variable>
+            <Variable>
+                <Type>vector3</Type>
+                <Name>lightmapEmissive</Name>
+                <Value x="1" y="1" z="1" />
+            </Variable>
+        </CustomData>
+    </Entity>
+</Ethanon>

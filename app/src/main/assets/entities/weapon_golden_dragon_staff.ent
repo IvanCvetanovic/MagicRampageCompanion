@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Sprite>staff_13.png</Sprite>
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="200" randomLifeTime="50" angleDir="0" randAngle="0" size="76.8" randomizeSize="0" growth="-6.4" minSize="0" maxSize="800" angleStart="0" randAngleStart="360">
+                <Bitmap>sparkles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="1.12" y="1.12" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="-48" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="0" g="0" b="0" a="1" />
+                <Color1 r="2" g="1.8" b="0.8" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="1" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="0" randomLifeTime="0" angleDir="0" randAngle="0" size="58.4" randomizeSize="0" growth="0" minSize="0" maxSize="800" angleStart="0" randAngleStart="0">
+                <Bitmap>sparkles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="-46" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="2" g="1.8" b="0.8" a="1" />
+                <Color1 r="2" g="1.8" b="0.8" a="0" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

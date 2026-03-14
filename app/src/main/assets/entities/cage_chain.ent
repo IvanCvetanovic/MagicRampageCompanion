@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="1" sensor="1" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <PivotAdjust x="0" y="-22" />
+        <Sprite>chain_3.png</Sprite>
+        <Particles />
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="32" y="256" z="1" />
+            <Joints>
+            revoluteJoint0
+            {
+              attachPointAX = 0.0;
+              attachPointAY =-1.0;
+
+              attachPointBX = 0.0;
+              attachPointBY = 0.0;
+
+              otherEntityName = cage_anchor;
+            }
+
+            revoluteJoint1
+            {
+              attachPointAX = 0.0;
+              attachPointAY = 1.0;
+
+              attachPointBX = 0.0;
+              attachPointBY =-1.0;
+
+              otherEntityName = cage_fg.ent;
+            }
+            </Joints>
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="1" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="1000" randomLifeTime="250" angleDir="0" randAngle="0" size="256" randomizeSize="0" growth="0" minSize="0" maxSize="1000" angleStart="0" randAngleStart="0">
+                <Bitmap>suck_effect_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="5" y="2" />
+                <StartPoint x="-72" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="1.272" g="2.775" b="0.093" a="1" />
+                <Color1 r="0.424" g="0.9249" b="0.031" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="8" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="2500" randomLifeTime="1200" angleDir="0" randAngle="6.7" size="128" randomizeSize="30" growth="-0.7" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                <Bitmap>flare_particles.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="1.6" y="1.6" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="64" y="100" />
+                <Color0 r="1.272" g="2.775" b="0.093" a="1" />
+                <Color1 r="0.424" g="0.925" b="0.031" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <CustomData />
+    </Entity>
+</Ethanon>

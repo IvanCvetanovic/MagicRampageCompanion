@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <Entity shape="0" applyLight="0" castShadow="0" type="0" hideFromSceneEditor="1" static="0" blendMode="0">
+        <EmissiveColor r="1" g="1" b="1" a="0" />
+        <Particles>
+            <ParticleSystem particles="8" allAtOnce="0" alphaMode="1" repeat="1" animationMode="1" lifeTime="1500" randomLifeTime="400" angleDir="0" randAngle="0" size="340" randomizeSize="37.44" growth="-1.5" minSize="0" maxSize="3510" angleStart="0" randAngleStart="360">
+                <Bitmap>explosion_4x4.png</Bitmap>
+                <Gravity x="0" y="0" />
+                <Direction x="0" y="0" />
+                <RandomizeDir x="0" y="0" />
+                <SpriteCut x="4" y="4" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="0" y="0" />
+                <Color0 r="3" g="1.5" b="0.3" a="1" />
+                <Color1 r="3" g="1.5" b="0.3" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+            <ParticleSystem particles="6" allAtOnce="1" alphaMode="1" repeat="1" animationMode="1" lifeTime="6000" randomLifeTime="4000" angleDir="0" randAngle="0" size="18" randomizeSize="10" growth="-0.03" minSize="0" maxSize="1800" angleStart="0" randAngleStart="0">
+                <Bitmap>white_drop_particle.png</Bitmap>
+                <Gravity x="0" y="0.012" />
+                <Direction x="0" y="-1.5" />
+                <RandomizeDir x="1.8" y="1.8" />
+                <SpriteCut x="1" y="1" />
+                <StartPoint x="0" y="0" z="0" />
+                <RandStartPoint x="256" y="256" />
+                <Color0 r="2" g="1" b="0.2" a="1" />
+                <Color1 r="1" g="0.5" b="0.1" a="1" />
+                <Luminance r="1" g="1" b="1" />
+            </ParticleSystem>
+        </Particles>
+        <Collision>
+            <Position x="0" y="0" z="0" />
+            <Size x="128" y="128" z="10" />
+        </Collision>
+        <CustomData />
+    </Entity>
+</Ethanon>

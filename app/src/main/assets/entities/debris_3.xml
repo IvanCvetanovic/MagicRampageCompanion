@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="debris_3.png" width="128" height="64">
+    <sprite n="1.png" x="38" y="35" w="37" h="27" pX="0.5" pY="0.5" oX="24" oY="2" oW="73" oH="32"/>
+    <sprite n="2.png" x="2" y="2" w="32" h="30" pX="0.5" pY="0.5" oX="19" oY="1" oW="73" oH="32"/>
+    <sprite n="3.png" x="77" y="2" w="48" h="28" pX="0.5" pY="0.5" oX="13" oY="1" oW="73" oH="32"/>
+    <sprite n="4.png" x="2" y="36" w="32" h="25" pX="0.5" pY="0.5" oX="18" oY="4" oW="73" oH="32"/>
+    <sprite n="5.png" x="79" y="34" w="46" h="23" pX="0.5" pY="0.5" oX="12" oY="6" oW="73" oH="32"/>
+    <sprite n="6.png" x="38" y="2" w="35" h="29" pX="0.5" pY="0.5" oX="18" oY="1" oW="73" oH="32"/>
+</TextureAtlas>
