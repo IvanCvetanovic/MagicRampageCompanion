@@ -1,0 +1,105 @@
+character
+{
+	name = Rat Zombie Knife Guard;
+	bagSlots = 16;
+	bodySprite = character_body_rat.png;
+	bodyEntity = character_body_rat.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = rat4;
+	jumpImpulse = 38;
+	level = 1;
+	speed = 5;
+	resistance = 2000;
+	scale = 1.1;
+	//walkStyle = slow;
+	//attackStyle = slow;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 20;
+	bodyColor = 4294967295;
+	eyeColor = 4294901760;
+
+	enableDustEffects = true;
+
+	attackMinimumDistance = 2560;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:true\;dodge-cooldown:1800;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Zombified Heros Set;
+	type = armor;
+	secondaryType = leather;
+
+	sprite = armor_zombie_rat.png;
+	color  = 13224889;
+
+	daggerBoost = 1.4;
+	speedBoost = 1.04;
+	jumpBoost = 1.03;
+
+	armor = 25;
+
+	element = air;
+
+	level = 6;
+}
+
+equippedItem1
+{
+	name = Ring;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_0.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = earth;
+
+	swordBoost = 1;
+	jumpBoost = 1;
+	speedBoost = 1;
+}
+
+equippedItem2
+{
+	name = Poisoned Dagger;
+
+	type = weapon;
+	secondaryType = meleeDodge;
+	sprite = dagger_4.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 2000;
+	damage = 51;
+	speedBoost = 1.2;
+	jumpBoost = 1.04;
+	//shootBelowChest = true;
+
+	soundPack = light-blade;
+
+	poisonous = true;
+
+	projectileEntity = projectile_dagger_4_longer.ent;
+	element = earth;
+	projectileSpeed = 14.0;
+}
+
+EOF____

@@ -1,0 +1,76 @@
+character
+{
+	name = Rat Fire Mage;
+	bagSlots = 16;
+	bodySprite = character_body_rat.png;
+	bodyEntity = character_body_rat.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = rat0;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 5.4;
+	scale = 0.75;
+	resistance = 1000;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4294967295;
+	dropEyes = true;
+	eyeColor = 4294967295;
+	keepClassHelm = true;
+
+	preciseAttack = true;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	threatDetectedSound = rat_attack_01.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Dragon Orb Staff;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = staff_11.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 500;
+	damage = 80;
+
+	attackCooldown = 3000;
+
+	soundPack = power;
+
+	jumpBoost = 1.01;
+	speedBoost = 1.01;
+	projectileSpeed = 13.0;
+	projectileSpin = 14.0;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_heavy_fire_ball.ent;
+	equipEntity = weapon_dragon_orb_staff.ent;
+
+	element = fire;
+}
+
+equippedItem1
+{
+	reference = Dragon Vest;
+	stackSize = 1;
+}
+
+EOF____

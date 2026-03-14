@@ -1,0 +1,73 @@
+character
+{
+	name = Jumping Green Bear Small;
+	bagSlots = 4;
+	bodySprite = xmas-green-bear.png;
+	bodyEntity = xmas-green-bear-dagger.ent;
+
+	scale = 0.65
+	gold = 0;
+	hairSprite = faceless;
+
+	jumpImpulse = 38;
+	level = 1;
+	speed = 10;
+	resistance = 3000;
+	idleTimeBeforeJump = 1300;
+	fieldOfView = 45;
+	//bodyColor = 16711680;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = false;
+
+	attackMinimumDistance = 260;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+  name = Poisoned Dart;
+
+  type = weapon;
+  secondaryType = meleeDodge;
+  secondaryType = jumperMelee;
+  sprite = faceless.png;
+
+  depthOffset = -0.04;
+
+  equippedAngle = -34.0;
+  smoothFollow = 0.2;
+
+  equipOffsetX = -36;
+  equipOffsetY = -14;
+
+  attackCooldown = 700;
+  damage = 50;
+  speedBoost = 1.2;
+  jumpBoost = 1.04;
+
+  soundPack = light-blade;
+
+  projectileEntity = projectile_dagger_dart.ent;
+  persistAgainstProjectile = true;
+
+  poisonous = true;
+
+  projectileSpeed = 27.0;
+
+  maxLevelAllowed = 16;
+
+  explosionRange = 100;
+
+  fixedPrice = 10;
+}
+
+EOF____

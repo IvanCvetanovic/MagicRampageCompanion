@@ -1,0 +1,63 @@
+character
+{
+	name = Dark Tanker;
+	bagSlots = 16;
+	bodySprite = armor_plate_2a.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 25;
+	level = 1;
+	speed = 5;
+	resistance = 40;
+	scale = 1.35;
+	walkStyle = slow;
+
+	idleTimeBeforeJump = 250;
+	fieldOfView = 20;
+	bodyColor = 16777215;
+
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	//confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Dark Gadarast's Staff;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 2000;
+	damage = 35;
+
+	soundPack = power;
+
+	projectileSpeed = 11.0;
+
+	projectileEntity = projectile_deadly_red_beam.ent;
+	//equipEntity = weapon_nature_staff_dark.ent;
+
+	element = darkness;
+}
+
+EOF____

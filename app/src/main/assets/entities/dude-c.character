@@ -1,0 +1,71 @@
+character
+{
+	name = Dude Guard;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = castleGuard1;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 7;
+	resistance = 120;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4289830521;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	attackMinimumDistance = 420;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	threatDetectedSound = male_02_grunt_14.mp3;
+	//confusedSound = zombie_confused.mp3;
+	damageSound = male_02_grunt_14.mp3;
+}
+
+equippedItem0
+{
+	reference = Elite Soldier Set;
+}
+
+equippedItem1
+{
+	name = Lightning Axe;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = axe_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 2500;
+	damage = 29;
+	speedBoost = 1.03;
+	jumpBoost  = 1.02;
+
+	soundPack = electric-blade;
+
+	invertProjectile = true;
+
+	projectileEntity = projectile_lightning_axe_dude.ent;
+	equipEntity = weapon_lightning_axe.ent;
+	dropEntityName = item_lightning_axe.ent;
+
+	projectileSpin = 16;
+	projectileSpeed = 15.0;
+
+	element = light;
+}
+
+EOF____

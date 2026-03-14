@@ -1,0 +1,56 @@
+character
+{
+	name = Demon Stomper;
+	bagSlots = 4;
+	bodySprite = faceless.png;
+	bodyEntity = miniboss_demon_stomper.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 6.5;
+	resistance = 999999999;
+	scale = 1;
+	walkStyle = demonStomper;
+	attackStyle = demonStomper;
+	fieldOfView = 270;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 64;
+
+	jumpImpulse = 1;
+	idleTimeBeforeJump = 1500;
+
+	enableWalkDustEffects = false;
+
+	enableWalkOnWater = true;
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	//threatDetectedSound = beholder_appear.mp3;
+	confusedSound = large_creature_01_grunt_01.mp3;
+	//damageSound = beholder_appear.mp3;
+
+	preciseAttack = false;
+	//walkDuringCooldown = true;
+}
+
+equippedItem0
+{
+	name = Air;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_dummy.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = air;
+}
+
+EOF____

@@ -1,0 +1,68 @@
+character
+{
+	name = Chest Demon;
+	bagSlots = 4;
+	bodySprite = miniboss_chest.png;
+	bodyEntity = miniboss_chest.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 20;
+	level = 1;
+	speed = 11;
+	resistance = 999999999;
+	scale = 1.2;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 100;
+	fieldOfView = 190;
+
+	eyeColor = 16711680;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 150;
+
+	threatDetectedSound = spider_scream.mp3;
+	confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	passiveDamage = 30;
+
+	enableDamageAnimation = false;
+}
+
+equippedItem0
+{
+	name = Chest Bite;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1500;
+	damage = 40;
+	//projectileSpeed = 12;
+
+	knockback = 0;
+
+	soundPack = zombie;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_chest_bite.ent;
+}
+
+EOF____

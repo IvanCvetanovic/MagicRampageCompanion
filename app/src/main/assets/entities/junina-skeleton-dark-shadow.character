@@ -1,0 +1,63 @@
+character
+{
+	name = Lampiao;
+	bagSlots = 16;
+	bodySprite = character_body_junina_shadow.png;
+	bodyEntity = character_body_junina_dark_shadow.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 29.5;
+	level = 1;
+	speed = 6;
+	resistance = 4000;
+	idleTimeBeforeJump = 300;
+	fieldOfView = 45;
+	bodyColor = 16711680;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 200;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Staff of Darkness;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -29.0;
+	smoothFollow = true;
+
+	equipOffsetX = -29;
+	equipOffsetY = -1;
+
+	attackCooldown = 2500;
+	damage = 20;
+
+	soundPack = power;
+
+	speedBoost = 1.01;
+
+	projectileEntity = projectile_dark_beam.ent;
+	equipEntity = weapon_darkness_staff.ent;
+
+	element = darkness;
+	projectileSpeed = 10.0;
+}
+
+EOF____

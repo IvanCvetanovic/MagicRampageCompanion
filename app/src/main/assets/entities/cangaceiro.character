@@ -1,0 +1,88 @@
+character
+{
+	name = Cangaceiro;
+	bagSlots = 4;
+	bodySprite = cangaceiro_boss.png;
+	bodyEntity = cangaceiro_boss.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 13;
+	resistance = 999999999;
+	scale = 1.1;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	jumpImpulse = 0;
+	idleTimeBeforeJump = 500;
+
+	enableWalkDustEffects = true;
+
+	enableWalkOnWater = false;
+	enableDamageAnimation = false;
+	enableJumpEffects = true;
+	enableDustEffects = true;
+	eyeColor = 13565952;
+	dropEyes = false;
+
+	attackCooldown = 100;
+
+	patrolBehaviour = waypoints;
+	//attackBehaviour = knifeThrower;
+	attackMinimumDistance = 1000;
+
+
+	passiveDamage = 20;
+
+	preciseAttack = true;
+	walkDuringCooldown = false;
+}
+
+equippedItem0
+{
+	name = Air;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_dummy.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = air;
+}
+
+equippedItem1
+{
+	name = Epic Fire Staff;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 100;
+	damage = 60;
+	jumpBoost  = 1.04;
+	speedBoost = 1.04;
+
+	soundPack = power;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_beholder_beam.ent;
+	projectileSpeed = 4.0;
+	projectileSpin = 16;
+
+	element = light;
+
+	level = 1;
+}
+
+EOF____

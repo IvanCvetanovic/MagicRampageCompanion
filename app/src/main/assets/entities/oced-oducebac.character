@@ -1,0 +1,58 @@
+character
+{
+	name = Oced Oducebac;
+	bodySprite = character_body.png;
+	bodyEntity = character_body.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4280295456;
+
+	bagSlots = 16;
+	level = 1;
+	resistance = 140;
+	jumpImpulse = 33;
+	speed = 8;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	walkingDustStride = 70.0f;
+	seriousDamageWaitTime = 0;
+
+	attackMinimumDistance = 300;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+}
+
+equippedItem0
+{
+	name = Unknown;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = question_mark_entity.png;
+
+	depthOffset = 0.04;
+
+	equippedAngle = 0.0;
+	smoothFollow = true;
+
+	equipOffsetX = -16;
+	equipOffsetY = 0;
+
+	attackCooldown = 1000;
+	damage = 23;
+
+	soundPack = heavy-blade;
+
+	flipWhileEquipped = true;
+	invertProjectile = true;
+	projectileEntity = projectile_question_mark.ent;
+	projectileSpin = 18;
+	projectileSpeed = 10;
+}
+
+EOF____

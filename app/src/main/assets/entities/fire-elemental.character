@@ -1,0 +1,71 @@
+character
+{
+	name = Fire Elemental;
+	bagSlots = 16;
+	bodySprite = character_body_fire_elemental.png;
+	bodyEntity = character_body_fire_elemental.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 30;
+	level = 1;
+	speed = 4.5;
+	resistance = 1000;
+	//scale = 1.0;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 400;
+	fieldOfView = 35;
+
+	//enableWalkOnWater = true;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 110;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	enableDamageAnimation = false;
+}
+
+equippedItem0
+{
+	name = Fire Monster Hit;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX =  64;
+	equipOffsetY =  24;
+
+	attackCooldown = 600;
+	damage = 20;
+	//projectileSpeed = 12;
+
+	knockback = 6;
+
+	soundPack = monster;
+
+	element = fire;
+
+	level = 2;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_fire_elemental_hit.ent;
+}
+
+EOF____

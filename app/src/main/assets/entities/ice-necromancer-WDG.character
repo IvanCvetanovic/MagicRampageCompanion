@@ -1,0 +1,77 @@
+character
+{
+	name = Ice Necromancer;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton_frost.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	level = 1;
+	scale = 1.4;
+	resistance = 10000;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 30;
+	bodyColor = 16641930;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Icebane Magic Staff;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = staff_ice.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -40;
+	equipOffsetY = -8;
+
+	attackCooldown = 3000;
+	damage = 180;
+	explosionRange = 200;
+
+	soundPack = power;
+
+	projectileSpeed = 10.0;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_ice_tanker_staff.ent;
+	equipEntity = weapon_staff_ice.ent;
+
+	element = water;
+	frost = true;
+}
+
+equippedItem1
+{
+	name = Cloth Winter Armor;
+	type = armor;
+	secondaryType = ice;
+	sprite = armor_frozen_mage_a.png;
+
+	armor = 70;
+
+	depthOffset = 0.01;
+
+	frost = true;
+}
+
+EOF____

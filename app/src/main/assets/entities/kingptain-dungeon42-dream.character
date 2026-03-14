@@ -1,0 +1,78 @@
+character
+{
+	name = Kingptain;
+	bagSlots = 16;
+	bodySprite = character_body_king.png;
+	bodyEntity = character_body_kingptain.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 36;
+	level = 1;
+	speed = 8.0;
+	resistance = 999999999;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 4294967295;
+	seriousDamageWaitTime = 350;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	attackMinimumDistance = 400;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	//threatDetectedSound = zombie_threat_detect.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	scale = 1.1;
+	walkDuringCooldown = true;
+}
+
+equippedItem0
+{
+	name = Kingptain Protection;
+	type = armor;
+	secondaryType = plate;
+	sprite = faceless.png;
+	armor = 400;
+	element = air;
+}
+
+equippedItem1
+{
+	name = Patroller Dark Energy Gun;
+
+	type = weapon;
+	secondaryType = jumperRanged;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 2600;
+	damage = 6;
+
+	persistAgainstProjectile = true;
+
+	soundPack = power;
+
+	projectileSpeed = 10.0;
+
+	projectileEntity = projectile_patroller_beam.ent;
+
+	element = darkness;
+
+	level = 0;
+}
+
+EOF____

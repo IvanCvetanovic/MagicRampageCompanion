@@ -1,0 +1,95 @@
+character
+{
+	name = Witchdoctor Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 8;
+	resistance = 35;
+	idleTimeBeforeJump = 70;
+	fieldOfView = 45;
+	bodyColor = 4294962864;
+	dropEyes = false;
+	scale = 0.85;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+	enableWalkOnWater = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 200;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Bone;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1300;
+	damage = 23;
+	projectileSpeed = 11;
+
+	soundPack = blunt;
+
+	persistAgainstProjectile = true;
+
+	projectileEntity = projectile_witchdoctor_skeleton_bone.ent;
+	projectileSpin = 16.0;
+
+	level = 1;
+}
+
+equippedItem1
+{
+	name = Air Vest;
+	type = armor;
+	secondaryType = cloth;
+
+	element = air;
+
+	equipEntity = none;
+	armor = 0;
+}
+
+equippedItem2
+{
+	name = Ring;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_7.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	magicBoost = 2.0;
+
+	armor = 70;
+
+	element = earth;
+}
+
+EOF____

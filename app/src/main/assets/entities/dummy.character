@@ -1,0 +1,57 @@
+character
+{
+	account = no_account_set;
+	accountDisplayName = no_account_set;
+	attackMinimumDistance = 64;
+	bagSlots = 36;
+	bodyColor = 4289789884;
+	bodySprite = character_body.png;
+	coins = 0;
+	dropEyes = false;
+	enableAttackAnimation = true;
+	enableDamageAnimation = true;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	enableWalkDustEffects = true;
+	enableWalkOnWater = false;
+	eyeColor = 4284940236;
+	eyeSprite = eyeEvil;
+	facts = created-after-331:true\;hd-71331a87:true\;post-v760:true\;;
+	fieldOfView = 45;
+	gold = 0;
+	hairSprite = helmet0;
+	idleTimeBeforeJump = 450;
+	jumpImpulse = 33;
+	keepClassHelm = false;
+	level = 1;
+	name = Slot 3;
+	passiveDamage = 0;
+	playTime = 0;
+	preciseAttack = false;
+	progress = 0;
+	resistance = 60;
+	runPendulum = 0;
+	scale = 1;
+	seriousDamageWaitTime = 450;
+	speed = 8;
+	version = 2.0;
+	walkDuringCooldown = false;
+	walkingDustStride = 100;
+	xp = 0;
+}
+
+equippedItem0
+{
+	level = 0;
+	originalSlot = 0;
+	reference = Recruit Set;
+	stackSize = 1;
+}
+
+id
+{
+	hash = ac644817adccc149131b0d51849ce4ce;
+	time = 2013:12:26:0:0:0;
+}
+
+EOF____

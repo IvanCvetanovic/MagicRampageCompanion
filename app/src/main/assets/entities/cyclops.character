@@ -1,0 +1,111 @@
+character
+{
+	name = Cyclops;
+	bagSlots = 4;
+	bodySprite = cyclops_01.png;
+	bodyEntity = boss_cyclops.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 8;
+	resistance = 999999999;
+	scale = 1.4;
+	walkStyle = orc;
+	attackStyle = orc;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 128;
+
+	jumpImpulse = 29;
+	idleTimeBeforeJump = 300;
+
+	enableWalkDustEffects = true;
+
+	enableWalkOnWater = false;
+	enableDamageAnimation = false;
+	enableJumpEffects = true;
+	enableDustEffects = true;
+	eyeColor = 4294959616;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = false;
+}
+
+equippedItem0
+{
+	name = Air;
+	type = artifact;
+	secondaryType = ring;
+
+	armor = 70;
+
+	equipEntity = none;
+	sprite = ring_dummy.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = air;
+}
+
+equippedItem1
+{
+	name = Cyclops Strike;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = false;
+
+	equipOffsetX =  64;
+	equipOffsetY =  24;
+
+	attackCooldown = 3000;
+	damage = 140;
+
+	knockback = 9;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_cyclops_punch.ent;
+
+	level = 1;
+	element = fire;
+}
+
+item0
+{
+	name = Cyclops Strike II;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = false;
+
+	equipOffsetX =  64;
+	equipOffsetY =  24;
+
+	attackCooldown = 3000;
+	damage = 140;
+
+	knockback = 9;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_cyclops_punch.ent;
+
+	level = 1;
+	element = fire;
+}
+
+EOF____

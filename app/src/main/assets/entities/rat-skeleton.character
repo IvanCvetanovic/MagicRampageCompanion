@@ -1,0 +1,66 @@
+character
+{
+	name = Rat Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_rat_skeleton.png;
+	bodyEntity = character_body_rat_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 36;
+	level = 1;
+	scale = 0.9;
+	speed = 7.5;
+	resistance = 1000;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 4294967295;
+	dropEyes = false;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:false\;dodge-cooldown:1100;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 300;
+
+	threatDetectedSound = monster_confused.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Bone;
+
+	type = weapon;
+	secondaryType = meleeDodge;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1300;
+	damage = 40;
+	projectileSpeed = 11;
+
+	persistAgainstProjectile = true;
+
+	knockback = 1.5;
+
+	soundPack = blunt;
+
+	projectileEntity = projectile_bone_long_range.ent;
+	projectileSpin = 16.0;
+}
+
+EOF____

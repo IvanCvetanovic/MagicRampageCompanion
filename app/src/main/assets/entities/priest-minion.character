@@ -1,0 +1,95 @@
+character
+{
+	name = Minion;
+
+	bagSlots = 8;
+	bodyColor = 4294919493;
+	bodySprite = character_body.png;
+
+	dropEyes = false;
+	enableAttackAnimation = true;
+	enableDamageAnimation = true;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	enableWalkDustEffects = true;
+	enableWalkOnWater = false;
+	eyeColor = 4294914816;
+	eyeSprite = eyeFemaleA;
+
+	fieldOfView = 45;
+
+	attackMinimumDistance = 300;
+
+	hairSprite = hood2;
+	idleTimeBeforeJump = 450;
+	jumpImpulse = 33;
+	keepClassHelm = false;
+
+	passiveDamage = 0;
+
+	preciseAttack = false;
+
+	resistance = 999999999;
+
+	scale = 1;
+	seriousDamageWaitTime = 450;
+	speed = 8;
+
+	walkDuringCooldown = false;
+	walkingDustStride = 80;
+}
+
+equippedItem0
+{
+	level = 10;
+	modElement = light;
+	originalSlot = 0;
+	reference = Arcane Mage Suit;
+	stackSize = 1;
+}
+
+equippedItem1
+{
+	level = 0;
+	originalSlot = 0;
+	reference = Whisper Of Light;
+	stackSize = 1;
+}
+
+equippedItem2
+{
+	type = weapon;
+	secondaryType = melee;
+	bloodEffectType = spear;
+
+	sprite = spear_light.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -34;
+	equipOffsetY = 2;
+
+	attackCooldown = 2750;
+	damage = 28;
+	jumpBoost  = 1.07;
+	speedBoost = 1.06;
+	armorBoost = 1.4;
+
+	soundPack = heavy-blade;
+
+	pierceCount = 4;
+	enablePierceAreaDamage = false;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_light_spear.ent;
+	alternativeMaxedEquipEntity = weapon_light_spear.ent;
+	projectileSpeed = 17.0;
+	invertProjectile = true;
+
+	element = light;
+}
+
+EOF____

@@ -1,0 +1,108 @@
+character
+{
+	name = Fire Lord;
+	bagSlots = 4;
+	bodySprite = miniboss_fire_lord.png;
+	bodyEntity = boss_fire_lord.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 5;
+	resistance = 999999999;
+	scale = 1.2;
+	walkStyle = fireLord;
+	attackStyle = fireLord;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 320;
+
+	jumpImpulse = 1;
+	idleTimeBeforeJump = 1500;
+
+	enableWalkDustEffects = false;
+
+	enableWalkOnWater = true;
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 13565952;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = false;
+
+	damageSound = projectile_blunt_hit.mp3;
+}
+
+equippedItem0
+{
+	name = Fire Stream;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = false;
+
+	equipOffsetX =  64;
+	equipOffsetY =  24;
+
+	attackCooldown = 2500;
+	damage = 110;
+	//projectileSpeed = 12;
+
+	element = fire;
+
+	//soundPack = blob;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_fire_lord.ent;
+
+	level = 2;
+}
+
+item0
+{
+	name = Fire Hadouken;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 4000;
+	damage = 110;
+
+	knockback = 16;
+
+	soundPack = bomb;
+
+	projectileSpeed = 15.0;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_fire_hadouken.ent;
+
+	element = fire;
+
+	fixedPrice = 10;
+
+	maxLevelAllowed = 13;
+
+	level = 2;
+}
+
+EOF____

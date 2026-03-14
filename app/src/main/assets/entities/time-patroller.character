@@ -1,0 +1,80 @@
+character
+{
+	name = Time Patroller;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 38;
+	level = 1;
+	speed = 6.5;
+	resistance = 3500;
+	idleTimeBeforeJump = 100;
+	fieldOfView = 45;
+	bodyColor = 16774355; //4291809231;
+	dropEyes = false;
+	scale = 1.1;
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 200;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+
+	seriousDamageWaitTime = 50;
+	preciseAttack = false;
+}
+
+equippedItem0
+{
+	name = Time Patroller Set;
+	type = armor;
+	secondaryType = plate;
+	sprite = armor_cloth_special_f1.png;
+	color  = 4294958669;
+	colorMultiplier = 1;
+	depthOffset = 0.04;
+
+	element = darkness;
+}
+
+equippedItem1
+{
+	name = Patroller Dark Energy Gun;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 600;
+	damage = 240;
+
+	knockback = 0;
+
+	soundPack = power;
+
+	projectileSpeed = 10.0;
+
+	projectileEntity = projectile_patroller_beam.ent;
+
+	element = darkness;
+
+	level = 0;
+}
+
+EOF____

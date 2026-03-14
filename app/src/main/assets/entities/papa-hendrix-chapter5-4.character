@@ -1,0 +1,71 @@
+character
+{
+	name = Papa Hendrix;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	bodyEntity = character_body_immune_to_toxicity.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = oldDad0;
+	jumpImpulse = 32;
+	level = 1;
+	speed = 7;
+	resistance = 9999999;
+	idleTimeBeforeJump = 100;
+	fieldOfView = 45;
+	bodyColor = 11177075;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	attackMinimumDistance = 768;
+
+	keepClassHelm = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	threatDetectedSound = male_02_grunt_14.mp3;
+	preciseAttack = true;
+	damageSound = male_02_grunt_14.mp3;
+}
+
+equippedItem0
+{
+	reference = Dragon Vest;
+}
+
+equippedItem1
+{
+	name = Fire Pierce;
+
+	type = weapon;
+	secondaryType = spear;
+	sprite = spear_fire.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -34;
+	equipOffsetY = 2;
+
+	attackCooldown = 1200;
+	damage = 120;
+
+	pierceCount = 4;
+	enablePierceAreaDamage = false;
+
+	soundPack = heavy-blade;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_fire_spear.ent;
+	equipEntity = weapon_fire_spear.ent;
+	projectileSpeed = 13.0;
+	invertProjectile = true;
+	flipWhileEquipped = true;
+
+	element = fire;
+}
+EOF____

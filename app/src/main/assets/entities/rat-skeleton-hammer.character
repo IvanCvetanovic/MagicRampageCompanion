@@ -1,0 +1,73 @@
+character
+{
+	name = Rat Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_rat_skeleton.png;
+	bodyEntity = character_body_rat_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 36;
+	level = 1;
+	scale = 1.1;
+	speed = 7.5;
+	resistance = 5000;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 15198183;
+	dropEyes = false;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:false\;dodge-cooldown:1100;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = false;
+
+	attackMinimumDistance = 700;
+
+	threatDetectedSound = monster_confused.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Warhammer;
+
+	type = weapon;
+	secondaryType = hammer;
+	sprite = hammer_1.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -10;
+
+	attackCooldown = 800;
+	damage = 28;
+	armorBoost = 1.5;
+
+	knockback = 15.5;
+
+	soundPack = blunt;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_hammer_1.ent;
+	equipEntity = weapon_warhammer.ent;
+	dropEntityName = item_warhammer.ent;
+	invertProjectile = true;
+	projectileSpeed = 14.0;
+
+	autoPaintEntities = true;
+	autoPaintColorA = 0.4845, 0.449, 0.3785, 1.0, 0.0, 0.0, 0.0, 1.0;
+	autoPaintColorB = 0.969, 0.898, 0.757, 1.0,   0.0, 0.0, 0.0, 1.0;
+	effectColor     = 0.4845, 0.449, 0.3785, 1.0, 0.0, 0.0, 0.0, 1.0;
+}
+
+EOF____

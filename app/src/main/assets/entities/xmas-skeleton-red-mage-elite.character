@@ -1,0 +1,80 @@
+character
+{
+	name = Xmas Red Skeleton Mage Elite;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_red_cosmos.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 5.4;
+	scale = 1.4;
+	resistance = 7500;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 30;
+	bodyColor = 16641930;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = true;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Staff of Darkness;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = staff_3.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -29.0;
+	smoothFollow = true;
+
+	equipOffsetX = -29;
+	equipOffsetY = -1;
+
+	persistAgainstProjectile = true;
+
+	attackCooldown = 2500;
+	damage = 80;
+
+	soundPack = power;
+
+	speedBoost = 1.01;
+
+	projectileEntity = projectile_dark_beam.ent;
+	equipEntity = weapon_darkness_staff.ent;
+
+	element = darkness;
+	projectileSpeed = 10.0;
+}
+
+equippedItem1
+{
+	name = Xmas Armor Red;
+	type = armor;
+	secondaryType = fire;
+	sprite = xmas_armor_red.png;
+	speedBoost = 1.05;
+	jumpBoost = 1.03;
+
+	armor = 150;
+
+	depthOffset = 0.01;
+
+	frost = true;
+}
+
+EOF____

@@ -1,0 +1,72 @@
+character
+{
+	name = Mush Vacuum;
+	bagSlots = 4;
+	bodySprite = character_body_mush_vacuum.png;
+	bodyEntity = character_body_mush_vacuum.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 6;
+	resistance = 12000;
+	scale = 1.2;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 720;
+
+	jumpImpulse = 0;
+	idleTimeBeforeJump = 2000;
+
+	enableWalkDustEffects = false;
+
+	enableAttackAnimation = true;
+	enableWalkOnWater = false;
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 13565952;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = false;
+
+	confusedSound = zombie_confused.mp3;
+	damageSound = projectile_blunt_hit.mp3;
+}
+
+equippedItem0
+{
+	name = Stone;
+
+	type = weapon;
+	secondaryType = ranged;
+	sprite = projectile_golem_stones.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = 16;
+	equipOffsetY = -48;
+
+	attackCooldown = 1300;
+	damage = 40;
+
+	knockback = 2;
+
+	soundPack = stone;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_vacuum_stone.ent;
+	explosionEntity = explosion_golem_stone.ent;
+	explosionRange = 0;
+	projectileSpeed = 14;
+	projectileSpin = 12;
+}
+
+EOF____

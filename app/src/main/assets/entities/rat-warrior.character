@@ -1,0 +1,83 @@
+character
+{
+	name = Rat Warrior;
+	bagSlots = 16;
+	bodySprite = character_body_rat.png;
+	bodyEntity = character_body_rat.ent;
+	scale = 1.1;
+	hairSprite = rat2;
+	jumpImpulse = 39;
+	level = 1;
+	speed = 6;
+	resistance = 4000;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 25;
+	bodyColor = 4294967295;
+	dropEyes = true;
+	eyeColor = 4294967295;
+	keepClassHelm = true;
+
+	preciseAttack = false;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:true\;dodge-cooldown:1200;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 256;
+
+	threatDetectedSound = swamp_monster_scream.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Bone Axe;
+
+	type = weapon;
+	secondaryType = meleeDodge;
+	bloodEffectType = axe;
+	sprite = axe_bone.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -42;
+	equipOffsetY = -18;
+
+	attackCooldown = 2500;
+	damage = 70;
+	armorBoost = 1.2;
+	speedBoost = 1.03;
+	jumpBoost = 1.03;
+
+	persistAgainstProjectile = true;
+
+	pierceCount = 1;
+	enablePierceAreaDamage = true;
+
+	flipWhileEquipped = true;
+
+	knockback = 5;
+
+	soundPack = heavy-blade;
+
+	projectileEntity = projectile_bone_axe.ent;
+	projectileSpin = 17;
+	projectileSpeed = 13.0;
+}
+
+equippedItem1
+{
+	reference = Desert Rogue Suit;
+	level = 2;
+	stackSize = 1;
+}
+
+EOF____

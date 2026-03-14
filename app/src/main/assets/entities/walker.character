@@ -1,0 +1,58 @@
+character
+{
+	name = Walker;
+	bagSlots = 4;
+	bodySprite = character_body_walker.png;
+	bodyEntity = character_body_walker.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 8;
+	resistance = 999999999;
+	scale = 1.0;
+	walkStyle = walker;
+	attackStyle = walker;
+	fieldOfView = 35;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 720;
+
+	jumpImpulse = 18;
+	idleTimeBeforeJump = 200;
+
+	enableWalkDustEffects = true;
+
+	enableAttackAnimation = true;
+
+	enableWalkOnWater = false;
+	enableDamageAnimation = false;
+	enableJumpEffects = true;
+	enableDustEffects = true;
+	eyeColor = 13565952;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = false;
+
+	damageSound = projectile_heavy-blade_hit.mp3;
+}
+
+equippedItem0
+{
+	name = Armor;
+	type = armor;
+	secondaryType = plate;
+	sprite = faceless.png;
+	equipEntity = character_armor_walker_cosmos.ent;
+
+	magicBoost = 1.0;
+	jumpBoost = 1.0;
+	speedBoost = 1.0;
+
+	armor = 200000;
+}
+
+EOF____

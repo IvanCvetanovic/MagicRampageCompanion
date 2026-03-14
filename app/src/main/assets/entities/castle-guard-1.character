@@ -1,0 +1,41 @@
+character
+{
+	name = Castle Guard 1;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = castleGuard2;
+	jumpImpulse = 28;
+	level = 1;
+	speed = 5.0;
+	scale = 1.05;
+	resistance = 35;
+	idleTimeBeforeJump = 500;
+	fieldOfView = 45;
+	bodyColor = 4289432420;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	threatDetectedSound = male_02_grunt_14.mp3;
+	//confusedSound = zombie_confused.mp3;
+	damageSound = male_02_grunt_14.mp3;
+}
+
+equippedItem0
+{
+	reference = Elite Soldier Set;
+	stackSize = 1;
+}
+
+equippedItem1
+{
+	reference = Umbranian Long Sword;
+	stackSize = 1;
+}
+
+EOF____

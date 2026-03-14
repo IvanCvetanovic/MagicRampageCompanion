@@ -1,0 +1,39 @@
+character
+{
+	name = Warlock Final;
+	bagSlots = 16;
+	bodySprite = character_body_warlock_final.png;
+	bodyEntity = character_body_warlock_final.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 28;
+	level = 1;
+	speed = 7;
+	resistance = 999999999;
+	scale = 1.2;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 190;
+
+	eyeColor = 4294962493;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 200;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	passiveDamage = 400;
+
+	enableDamageAnimation = false;
+}
+
+EOF____

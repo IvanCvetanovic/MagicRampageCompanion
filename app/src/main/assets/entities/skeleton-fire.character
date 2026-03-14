@@ -1,0 +1,63 @@
+character
+{
+	name = Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_fire_skeleton.png;
+	bodyEntity = character_body_skeleton_fire.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 29.5;
+	level = 1;
+	speed = 6;
+	resistance = 3000;
+	idleTimeBeforeJump = 300;
+	fieldOfView = 45;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 200;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Bone;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1300;
+	damage = 23;
+	projectileSpeed = 11;
+
+	knockback = 1.5;
+
+	soundPack = blunt;
+
+	projectileEntity = projectile_bone_fire.ent;
+	projectileSpin = 16.0;
+
+	element = fire;
+}
+
+EOF____

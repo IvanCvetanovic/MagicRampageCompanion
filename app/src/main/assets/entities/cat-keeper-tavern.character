@@ -1,0 +1,77 @@
+character
+{
+	name = Catkeeper;
+	bagSlots = 16;
+	bodySprite = character_body_gatekeeper.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 6.0;
+	resistance = 99999999;
+	idleTimeBeforeJump = 300;
+	fieldOfView = 20;
+	bodyColor = 4294496156;
+	seriousDamageWaitTime = 350;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	attackMinimumDistance = 300;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	walkStyle = slow;
+
+	//threatDetectedSound = zombie_threat_detect.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = zombie_confused.mp3;
+}
+
+equippedItem0
+{
+	level = 15;
+	reference = Gatekeepers Bionic Arm;
+	stackSize = 1;
+}
+
+equippedItem1
+{
+	level = 15;
+
+	name = Precious Skewer Dagger;
+
+	type = weapon;
+	secondaryType = dagger;
+	sprite = dagger_treasure.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1200;
+	damage = 35;
+	speedBoost = 1.3;
+	jumpBoost = 1.03;
+
+	autoPaintEntities = true;
+	autoPaintSwitchesProjectileSprite = true;
+
+	soundPack = light-blade;
+
+	projectileEntity = projectile_dagger_9.ent;
+	projectileSpeed = 19;
+
+	maxLevelAllowed = 15;
+
+	modElement = darkness;
+}
+
+EOF____

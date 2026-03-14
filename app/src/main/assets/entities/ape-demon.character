@@ -1,0 +1,54 @@
+character
+{
+	name = Ape Demon;
+	bagSlots = 4;
+	bodySprite = miniboss_ape.png;
+	bodyEntity = miniboss_ape.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 15;
+	resistance = 999999999;
+	scale = 1.2;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 100;
+	fieldOfView = 190;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 190;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	passiveDamage = 80;
+
+	enableDamageAnimation = false;
+}
+
+equippedItem0
+{
+	name = Armor;
+	type = armor;
+	secondaryType = plate;
+	equipEntity = boss_ape_demon_armor.ent;
+	sprite = boss_ape_1.png;
+
+	magicBoost = 1.0;
+	jumpBoost = 1.0;
+	speedBoost = 1.0;
+
+	armor = 0;
+}
+
+EOF____

@@ -1,0 +1,59 @@
+character
+{
+	name = Santas Minion;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = femaleCastleGuard0;
+	jumpImpulse = 28;
+	level = 1;
+	speed = 12.0;
+	resistance = 999999999;
+	idleTimeBeforeJump = 100;
+	bodyColor = 4294298804;
+	scale = 1.05;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	keepClassHelm = false;
+
+	attackMinimumDistance = 420;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = true;
+}
+
+equippedItem0
+{
+	name = Santa Claus;
+	type = armor;
+	secondaryType = cloth;
+	sprite = armor_christmas_2022_A.png;
+	headlessAlternativeSprite = armor_christmas_2022_B.png;
+
+	color  = 4290583853;
+	colorMultiplier = 1.45;
+
+	jumpBoost = 1.2;
+	speedBoost = 1.08;
+
+	frost = true;
+
+	element = light;
+
+	hideFace = true;
+	forceEyes = true;
+
+	armor = 30;
+
+	maxLevelAllowed = 0;
+
+	fixedPrice = 10;
+
+	text = Jumpman-Suit-desc;
+}
+
+EOF____

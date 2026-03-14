@@ -1,0 +1,64 @@
+character
+{
+	name = Zombie Rat;
+	bagSlots = 16;
+	bodySprite = character_body_rat.png;
+	bodyEntity = character_body_rat.ent;
+	scale = 1.0;
+	hairSprite = rat3;
+	jumpImpulse = 32;
+	level = 1;
+	speed = 6;
+	resistance = 5000;
+	keepClassHelm = true;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 700;
+	fieldOfView = 20;
+	//bodyColor = 4289789884;
+	eyeColor = 16514990;
+
+	walkingDustStride = 30.0f;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	threatDetectedSound = spider_scream.mp3;
+	//confusedSound = zombie_confused.mp3;
+	damageSound = swamp_monster_scream.mp3;
+}
+
+equippedItem0
+{
+	name = Zombie Bite;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1000;
+	damage = 100;
+	//projectileSpeed = 12;
+
+	poisonous = true;
+
+	knockback = 0;
+
+	soundPack = zombie;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_bite.ent;
+}
+
+EOF____

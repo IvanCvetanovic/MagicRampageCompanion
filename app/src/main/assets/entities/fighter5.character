@@ -1,0 +1,77 @@
+character
+{
+	name = Papa Hendrix;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = dad0;
+	idleTimeBeforeJump = 300;
+	fieldOfView = 45;
+	bodyColor = 4289367155;
+	walkStyle = slow;
+
+	bagSlots = 16;
+	level = 1;
+	resistance = 180;
+	jumpImpulse = 33;
+	speed = 7.6;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	walkingDustStride = 70.0f;
+	seriousDamageWaitTime = 0;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	threatDetectedSound = male_02_grunt_14.mp3;
+	preciseAttack = true;
+	damageSound = male_02_grunt_14.mp3;
+}
+
+equippedItem0
+{
+	name = Dragon Vest;
+	type = armor;
+	secondaryType = cloth;
+	sprite = armor_cloth_special_a1.png;
+	color  = 16096587;
+	colorMultiplier = 1.45;
+	depthOffset = 0.04;
+
+	magicBoost = 1.2;
+	element = fire;
+
+	armor = 10;
+}
+
+equippedItem1
+{
+	name = Fire Staff;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = staff_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 450;
+	damage = 28;
+
+	soundPack = magic;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_fire_ball.ent;
+	equipEntity = weapon_fire_staff.ent;
+	projectileSpin = 16;
+	projectileSpeed = 13.0;
+
+	element = fire;
+}
+
+EOF____

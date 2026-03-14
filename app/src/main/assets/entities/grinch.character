@@ -1,0 +1,39 @@
+character
+{
+	name = Grinch;
+	bagSlots = 16;
+	bodySprite = ape_grinch.png;
+	bodyEntity = character_body_white_ape.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 28;
+	level = 1;
+	speed = 11;
+	resistance = 3700;
+	scale = 1.1;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 100;
+	fieldOfView = 190;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 190;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	passiveDamage = 250;
+
+	enableDamageAnimation = false;
+}
+
+EOF____

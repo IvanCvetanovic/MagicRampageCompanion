@@ -1,0 +1,66 @@
+character
+{
+	name = Air Elemental;
+	bagSlots = 16;
+	bodySprite = hotflame16.png;
+	bodyEntity = character_body_tornado.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 10;
+	level = 1;
+	speed = 2.5;
+	resistance = 600;
+	scale = 1.0;
+	dropEyes = false;
+
+	idleTimeBeforeJump = 100;
+	fieldOfView = 190;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = false;
+	enableWalkDustEffects = false;
+	enableWalkOnWater = true;
+	enableJumpEffects = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 8;
+
+	threatDetectedSound = wind.mp3;
+	//confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	enableDamageAnimation = false;
+}
+
+equippedItem0
+{
+	name = Tornado Trail;
+	type = armor;
+	secondaryType = wind;
+	sprite = none;
+
+	equipEntity = weapon_tornado_trail.ent;
+
+	armor = 0;
+
+	element = air;
+}
+
+equippedItem1
+{
+	name = Tornado Trail 2;
+	type = artifact;
+	secondaryType = wind;
+	sprite = none;
+
+	armor = 0;
+
+	element = fire;
+	level = 2;
+}
+
+EOF____

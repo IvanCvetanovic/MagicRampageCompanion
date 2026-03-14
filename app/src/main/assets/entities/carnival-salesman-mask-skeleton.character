@@ -1,0 +1,64 @@
+character
+{
+	name = Ice Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = castleSalesman0;
+	jumpImpulse = 32;
+	level = 1;
+	speed = 5.4;
+	resistance = 600;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 200;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:false\;dodge-cooldown:3000;
+}
+
+equippedItem0
+{
+	name = Nature Staff;
+
+	type = weapon;
+	secondaryType = meleeDodge;
+	sprite = staff_1.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 800;
+	damage = 8;
+
+	soundPack = magic;
+
+	projectileEntity = projectile_nature_beam.ent;
+	equipEntity = weapon_nature_staff.ent;
+	projectileSpin = 48.0;
+	projectileSpeed = 10.0;
+
+	element = earth;
+}
+
+EOF____

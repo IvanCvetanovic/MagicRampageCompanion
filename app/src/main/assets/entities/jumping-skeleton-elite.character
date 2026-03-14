@@ -1,0 +1,88 @@
+character
+{
+	name = Jumping Skeleton;
+	bagSlots = 16;
+	bodySprite = armor_plate_2b.png;
+	bodyEntity = character_body_elite_jumper.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = pilot0;
+	scale = 1.4;
+	jumpImpulse = 35;
+	idleTimeBeforeJump = 1300;
+
+	enableJumpEffects = false;
+	enableDustEffects = true;
+
+	shootBelowChest = true;
+
+	preciseAttack = false;
+	enableWalkDustEffects = true;
+
+	level = 1;
+	speed = 7.2;
+	resistance = 4500;
+
+	fieldOfView = 45;
+
+	bodyColor = 16777215;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	attackMinimumDistance = 132;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Gorgon Dagger;
+
+	type = weapon;
+	secondaryType = dagger;
+	sprite = dagger_snake.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -48;
+	equipOffsetY = -16;
+
+	attackCooldown = 900;
+	damage = 60;
+	//speedBoost = 1.16;
+
+	knockback = 2;
+
+	soundPack = light-blade;
+
+	projectileEntity = projectile_snake_dagger.ent;
+	element = earth;
+	projectileSpeed = 12.0;
+
+	secondaryType = jumperMelee;
+
+	pierceCount = 1;
+	enablePierceAreaDamage = true;
+}
+
+equippedItem1
+{
+	name = Air Vest;
+	type = armor;
+	secondaryType = cloth;
+	sprite = faceless.png;
+
+	element = air;
+
+	equipEntity = none;
+	armor = 0;
+}
+
+EOF____

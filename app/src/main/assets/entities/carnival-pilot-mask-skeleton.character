@@ -1,0 +1,70 @@
+character
+{
+	name = Jumping Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = pilot0;
+
+	jumpImpulse = 35;
+	idleTimeBeforeJump = 1300;
+
+	enableJumpEffects = false;
+	enableDustEffects = true;
+
+	shootBelowChest = true;
+
+	preciseAttack = false;
+	enableWalkDustEffects = true;
+
+	level = 1;
+	speed = 5.4;
+	resistance = 110;
+
+	fieldOfView = 45;
+
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	attackMinimumDistance = 260;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Poisoned Dagger;
+
+	type = weapon;
+	secondaryType = dagger;
+	sprite = dagger_4.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -34.0;
+	smoothFollow = true;
+
+	equipOffsetX = -36;
+	equipOffsetY = -14;
+
+	attackCooldown = 1500;
+	damage = 30;
+	//speedBoost = 1.16;
+
+	soundPack = light-blade;
+
+	projectileEntity = projectile_dagger_4.ent;
+	element = earth;
+	projectileSpeed = 12.0;
+
+	secondaryType = jumperMelee;
+}
+
+EOF____

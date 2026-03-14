@@ -1,0 +1,75 @@
+character
+{
+	name = Dude Guard;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = castleGuard1;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4289830521;
+
+	bagSlots = 16;
+	level = 1;
+	resistance = 180;
+	jumpImpulse = 33;
+	speed = 8;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	walkingDustStride = 70.0f;
+	seriousDamageWaitTime = 0;
+
+	attackMinimumDistance = 420;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	threatDetectedSound = male_02_grunt_14.mp3;
+	//confusedSound = zombie_confused.mp3;
+	damageSound = male_02_grunt_14.mp3;
+}
+
+equippedItem0
+{
+	name = Castle Guard Set;
+	type = armor;
+	secondaryType = leather;
+	sprite = armor_leather_0a.png;
+
+	armor = 23;
+	speedBoost = 1.05;
+	jumpBoost = 1.05;
+	swordBoost = 1.2;
+
+	element = air;
+}
+
+equippedItem1
+{
+	name = Steel Blade;
+
+	type = weapon;
+	secondaryType = sword;
+	sprite = sword_1.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -28.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 0;
+
+	attackCooldown = 350;
+	damage = 25;
+
+	soundPack = heavy-blade;
+
+	projectileEntity = projectile_sword_1.ent;
+	projectileSpeed = 19.0;
+
+	element = air;
+}
+
+EOF____

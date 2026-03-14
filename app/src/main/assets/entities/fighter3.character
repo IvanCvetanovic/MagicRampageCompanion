@@ -1,0 +1,78 @@
+character
+{
+	name = Fire Skeleton;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 30;
+	bodyColor = 4294964435;
+	dropEyes = false;
+
+	bagSlots = 16;
+	level = 1;
+	resistance = 180;
+	jumpImpulse = 33;
+	speed = 8;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	walkingDustStride = 70.0f;
+	seriousDamageWaitTime = 0;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem1
+{
+	name = Fire Mage Vest;
+	type = armor;
+	secondaryType = cloth;
+	sprite = armor_cloth_0b.png;
+	color  = 10358542;
+
+	element = fire;
+	magicBoost = 1.2;
+
+	armor = 7;
+}
+
+equippedItem0
+{
+	name = Fire Staff;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = staff_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -24;
+	equipOffsetY = 0;
+
+	attackCooldown = 500;
+	damage = 22;
+
+	soundPack = magic;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_heavy_fire_ball.ent;
+	projectileSpeed = 8.0;
+	projectileSpin = 16.0;
+
+	shootBelowChest = true;
+
+	element = fire;
+}
+
+EOF____

@@ -1,0 +1,77 @@
+character
+{
+	name = Female Castle Guard;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = femaleCastleGuard0;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 7.0;
+	resistance = 99999999;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4294496156;
+	seriousDamageWaitTime = 350;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	attackMinimumDistance = 300;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	//threatDetectedSound = zombie_threat_detect.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = zombie_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Castle Guard Set;
+	type = armor;
+	secondaryType = leather;
+	sprite = armor_leather_0a.png;
+
+	armor = 80;
+
+	element = air;
+}
+
+equippedItem1
+{
+	name = Axe of Fire;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = axe_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1000;
+	damage = 19;
+	armorBoost = 1.3;
+	speedBoost = 1.03;
+
+	soundPack = heavy-blade;
+
+	projectileEntity = projectile_axe_2.ent;
+	equipEntity = weapon_axe_of_fire.ent;
+	dropEntityName = item_axe_of_fire.ent;
+	projectileSpin = 16;
+	projectileSpeed = 14.0;
+
+	element = fire;
+	level = 1;
+}
+
+EOF____

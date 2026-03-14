@@ -1,0 +1,39 @@
+character
+{
+	name = Armored Ape;
+	bagSlots = 16;
+	bodySprite = character_body_armored_ape.png;
+	bodyEntity = character_body_ape.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 32;
+	level = 1;
+	speed = 14;
+	resistance = 600;
+	scale = 1.15;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 100;
+	fieldOfView = 190;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 190;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	passiveDamage = 120;
+
+	enableDamageAnimation = false;
+}
+
+EOF____

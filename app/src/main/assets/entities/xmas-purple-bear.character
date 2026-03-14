@@ -1,0 +1,73 @@
+character
+{
+	name = Purple Bear;
+	bagSlots = 16;
+	bodySprite = xmas-purple-bear.png;
+	bodyEntity = xmas-purple-bear.ent;
+	scale = 1;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 5.4;
+	resistance = 4000;
+	idleTimeBeforeJump = 45;
+	fieldOfView = 190;
+	//bodyColor = 16711680;
+	dropEyes = false;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:true\;dodge-cooldown:1500;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 350;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Staff of Darkness;
+
+	type = weapon;
+	secondaryType = meleeDodge;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -30;
+	equipOffsetY = 0;
+
+	attackCooldown = 500;
+	damage = 100;
+	explosionRange = 160;
+	armorBoost = 1.2;
+	speedBoost = 1.05;
+	jumpBoost = 1.03;
+
+	element = darkness;
+
+	soundPack = heavy-blade;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_dark_beam.ent;
+
+	pierceCount = 2;
+	enablePierceAreaDamage = true;
+	text = pierce-weapon-std-desc;
+
+	maxLevelAllowed = 15;
+}
+
+EOF____

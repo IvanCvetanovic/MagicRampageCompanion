@@ -1,0 +1,70 @@
+character
+{
+	name = Spider;
+	bagSlots = 16;
+	bodySprite = easter-spider.png;
+	bodyEntity = character_body_spider.ent;
+	feetEntity = character_feet_lighter.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 5;
+	resistance = 600;
+	scale = 0.9;
+	walkStyle = spider;
+	attackStyle = spider;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 200;
+
+	jumpImpulse = 16;
+	idleTimeBeforeJump = 300;
+
+	enableWalkDustEffects = true;
+	enableWalkOnWater = true;
+
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = true;
+	eyeColor = 13565952;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = false;
+}
+
+equippedItem0
+{
+	name = Spider Web;
+
+	type = weapon;
+	secondaryType = jumperMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 2000;
+	damage = 42;
+
+	soundPack = magic;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_spider_web.ent;
+	projectileSpeed = 5;
+	//equipEntity = weapon.ent;
+
+	element = darkness;
+	poisonous = true;
+}
+
+EOF____

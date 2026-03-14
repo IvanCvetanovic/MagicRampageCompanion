@@ -1,0 +1,1140 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <SceneProperties lightIntensity="3" parallaxIntensity="3">
+        <Ambient r="0.9" g="0.6" b="0.3" />
+        <ZAxisDirection x="0" y="0" />
+    </SceneProperties>
+    <EntitiesInScene>
+        <Entity id="24511" spriteFrame="0">
+            <EntityName>dungeon43_light_beam</EntityName>
+            <Position x="760" y="-20143" z="4" angle="10" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="3.2" static="1" blendMode="1">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <DiffuseColor r="0.27" g="0.375" b="0.55" a="1" />
+                <Scale x="3" y="3" />
+                <Sprite>light_beam.png</Sprite>
+                <Normal>reverse_nm.png</Normal>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24208" spriteFrame="0">
+            <EntityName>dungeon43_light_beam</EntityName>
+            <Position x="598" y="-2069" z="6" angle="10" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="3.2" static="1" blendMode="1">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <DiffuseColor r="0.27" g="0.375" b="0.55" a="1" />
+                <Scale x="4" y="2" />
+                <Sprite>light_beam.png</Sprite>
+                <Normal>reverse_nm.png</Normal>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24510" spriteFrame="0">
+            <EntityName>dungeon43_light_beam</EntityName>
+            <Position x="894" y="-2021" z="2" angle="10" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="3.2" static="1" blendMode="1">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <DiffuseColor r="0.27" g="0.375" b="0.55" a="1" />
+                <Scale x="4" y="2" />
+                <Sprite>light_beam.png</Sprite>
+                <Normal>reverse_nm.png</Normal>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="1463" spriteFrame="0">
+            <EntityName>dripping</EntityName>
+            <Position x="966" y="-16" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>campaignFinished</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24625" spriteFrame="0">
+            <EntityName>dripping</EntityName>
+            <Position x="932" y="-16" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>lastLevel</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="1464" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1104" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="1465" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1488" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="1466" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1760" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="66393" spriteFrame="0">
+            <EntityName>curtain_properties</EntityName>
+            <Position x="64" y="64" z="14" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <SpriteCut x="4" y="1" />
+                <Scale x="0.25" y="0.25" />
+                <Sprite>curtain.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoStartGameplayLayer</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>customMusic</Name>
+                        <Value>darkestSide</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>3000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>disableArcaneButton</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>mode</Name>
+                        <Value>dim</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>time</Name>
+                        <Value>4000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="4783" spriteFrame="0">
+            <EntityName>spawn0</EntityName>
+            <Position x="486" y="369" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="44701" spriteFrame="0">
+            <EntityName>dont_seek_alternative_character</EntityName>
+            <Position x="64" y="64" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="2" y="2" />
+                <Sprite>film.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="66502" spriteFrame="0">
+            <EntityName>dungeon43_slot_spawn</EntityName>
+            <Position x="256" y="288" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="2" y="2" />
+                <Sprite>film.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24275" spriteFrame="0">
+            <EntityName>dungeon43_bonus_middle</EntityName>
+            <Position x="768" y="360" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="66450" spriteFrame="0">
+            <EntityName>dungeon43_bonus_events</EntityName>
+            <Position x="768" y="256" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="2" y="2" />
+                <Sprite>film.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="66501" spriteFrame="0">
+            <EntityName>dungeon43_slot_spawn</EntityName>
+            <Position x="864" y="352" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="2" y="2" />
+                <Sprite>film.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>pointLeft</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="66503" spriteFrame="0">
+            <EntityName>dungeon43_evil_eyes</EntityName>
+            <Position x="768" y="268" z="-100" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="2" static="1" blendMode="1">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <SpriteCut x="1" y="4" />
+                <Scale x="2" y="2" />
+                <Sprite>evil_mage_eyes_big.png</Sprite>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="8388" spriteFrame="0">
+            <EntityName>pot</EntityName>
+            <Position x="1080" y="390" z="0" angle="0" />
+            <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="0" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="1.1" y="1.1" />
+                <Sprite>pottery_2.png</Sprite>
+                <Collision>
+                    <Position x="0" y="2" z="0" />
+                    <Size x="58" y="104" z="1" />
+                    <Polygon>
+                        <![CDATA[v0{x=-0.5;y=-1;} v1{x=0.5;y=-1;} v2{x=0.7;y=-0.7;} v3{x=1;y=0.3;} v4{x=0.4;y=1;} v5{x=-0.4;y=1;} v6{x=-1;y=0.3;} v7{x=-0.7;y=-0.7;} ]]>
+</Polygon>
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>alternativeName</Name>
+                        <Value>pot</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>debrisBitmap</Name>
+                        <Value>debris_2.png</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>int</Type>
+                        <Name>hp</Name>
+                        <Value>2</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>itemDropChance</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>ceramic</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="1247" spriteFrame="0">
+            <EntityName>camMin</EntityName>
+            <Position x="-448" y="0" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="66559" spriteFrame="0">
+            <EntityName>blood_fog.ent</EntityName>
+            <Position x="355" y="650" z="0.01" angle="0" />
+            <Entity>
+                <FileName>blood_fog.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="44749" spriteFrame="0">
+            <EntityName>black_bar_4x1.ent</EntityName>
+            <Position x="256" y="768" z="0.01" angle="0" />
+            <Entity>
+                <FileName>black_bar_4x1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="44744" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="256" y="618" z="0.01" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="45744" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="256" y="618" z="-2" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24598" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="384" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="8193" spriteFrame="0" flipX="1">
+            <EntityName>dungeon_block_00.ent</EntityName>
+            <Position x="454" y="512" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_00.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="7997" spriteFrame="0">
+            <EntityName>dungeon_block_04.ent</EntityName>
+            <Position x="454" y="608" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_04.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="4622" spriteFrame="0">
+            <EntityName>dungeon_block_03.ent</EntityName>
+            <Position x="256" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_03.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="4" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="416" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="16" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="2" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="224" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24597" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="128" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24623" spriteFrame="0" flipX="1" flipY="1">
+            <EntityName>blood_decal_wall.ent</EntityName>
+            <Position x="982" y="609" z="0.01" angle="0" />
+            <Entity>
+                <FileName>blood_decal_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>campaignFinished</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="8389" spriteFrame="0">
+            <EntityName>pot</EntityName>
+            <Position x="630" y="590" z="0" angle="235" />
+            <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="0" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="1.1" y="1.1" />
+                <Sprite>pottery_2.png</Sprite>
+                <Collision>
+                    <Position x="0" y="2" z="0" />
+                    <Size x="58" y="104" z="1" />
+                    <Polygon>
+                        <![CDATA[v0{x=-0.5;y=-1;} v1{x=0.5;y=-1;} v2{x=0.7;y=-0.7;} v3{x=1;y=0.3;} v4{x=0.4;y=1;} v5{x=-0.4;y=1;} v6{x=-1;y=0.3;} v7{x=-0.7;y=-0.7;} ]]>
+</Polygon>
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>alternativeName</Name>
+                        <Value>pot</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>debrisBitmap</Name>
+                        <Value>debris_2.png</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>int</Type>
+                        <Name>hp</Name>
+                        <Value>2</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>itemDropChance</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>ceramic</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="44750" spriteFrame="0">
+            <EntityName>black_bar_4x1.ent</EntityName>
+            <Position x="768" y="768" z="0.01" angle="0" />
+            <Entity>
+                <FileName>black_bar_4x1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="44745" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="768" y="618" z="0.01" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="45745" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="768" y="618" z="-2" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24599" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="640" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24600" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="896" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="4623" spriteFrame="0">
+            <EntityName>dungeon_block_03.ent</EntityName>
+            <Position x="768" y="704" z="0" angle="180" />
+            <Entity>
+                <FileName>dungeon_block_03.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="7" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="960" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="6" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="784" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="5" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="608" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="66560" spriteFrame="0">
+            <EntityName>blood_fog.ent</EntityName>
+            <Position x="1172" y="650" z="0.01" angle="0" />
+            <Entity>
+                <FileName>blood_fog.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="44751" spriteFrame="0">
+            <EntityName>black_bar_4x1.ent</EntityName>
+            <Position x="1280" y="768" z="0.01" angle="0" />
+            <Entity>
+                <FileName>black_bar_4x1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="44746" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="1280" y="618" z="0.01" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="45746" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="1280" y="618" z="-2" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24602" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="1408" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24601" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="1152" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="4624" spriteFrame="0">
+            <EntityName>dungeon_block_03.ent</EntityName>
+            <Position x="1280" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_03.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="8192" spriteFrame="0">
+            <EntityName>dungeon_block_00.ent</EntityName>
+            <Position x="1080" y="512" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_00.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="51" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1216" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="983" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1392" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="8000" spriteFrame="0">
+            <EntityName>dungeon_block_04.ent</EntityName>
+            <Position x="1080" y="608" z="0" angle="180" />
+            <Entity>
+                <FileName>dungeon_block_04.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="44752" spriteFrame="0">
+            <EntityName>black_bar_4x1.ent</EntityName>
+            <Position x="1792" y="768" z="0.01" angle="0" />
+            <Entity>
+                <FileName>black_bar_4x1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="44747" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="1792" y="618" z="0.01" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="45747" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="1792" y="618" z="-2" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="18635" spriteFrame="0">
+            <EntityName>camMax</EntityName>
+            <Position x="2026" y="720" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24604" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="1920" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24603" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="1664" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="4625" spriteFrame="0">
+            <EntityName>dungeon_block_03.ent</EntityName>
+            <Position x="1792" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_03.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="980" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1600" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="981" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1920" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="982" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1760" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="44748" spriteFrame="0">
+            <EntityName>black_bar_4x1.ent</EntityName>
+            <Position x="-256" y="768" z="0.01" angle="0" />
+            <Entity>
+                <FileName>black_bar_4x1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24605" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="-384" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24596" spriteFrame="0">
+            <EntityName>swamp_mud</EntityName>
+            <Position x="-128" y="664" z="2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>blood-pool.png</Sprite>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="256" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>splashParticleEntity</Name>
+                        <Value>swamp_mud_splash-blood.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waveParticleEntity</Name>
+                        <Value>swamp_mud_wave-blood.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24207" spriteFrame="0">
+            <EntityName>dungeon_block_03.ent</EntityName>
+            <Position x="-256" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_03.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="44743" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="-256" y="618" z="0.01" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="45743" spriteFrame="0">
+            <EntityName>swamp_mud_surface_medium-blood.ent</EntityName>
+            <Position x="-256" y="618" z="-2" angle="0" />
+            <Entity>
+                <FileName>swamp_mud_surface_medium-blood.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+    </EntitiesInScene>
+</Ethanon>

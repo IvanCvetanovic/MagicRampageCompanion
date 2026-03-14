@@ -1,0 +1,66 @@
+character
+{
+	name = Armored Red Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = tanker0;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 5.4;
+	resistance = 90;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	childFileName = npcs/enemies/dark-ghost.character;
+	childType = ghost;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	attackMinimumDistance = 192;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Silver Mace;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = mace_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -10;
+
+	attackCooldown = 1900;
+	damage = 30;
+	armorBoost = 1.5;
+
+	knockback = 8;
+
+	soundPack = blunt;
+
+	projectileSpeed = 11;
+
+	projectileEntity = projectile_mace_2.ent;
+	invertProjectile = true;
+}
+
+EOF____

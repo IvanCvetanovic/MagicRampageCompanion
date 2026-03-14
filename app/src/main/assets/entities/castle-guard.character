@@ -1,0 +1,56 @@
+character
+{
+	name = Castle Guard;
+	bagSlots = 16;
+	bodySprite = characters_dungeon0b.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 28;
+	level = 1;
+	speed = 4.0;
+	resistance = 35;
+	idleTimeBeforeJump = 500;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	walkingDustStride = 70.0f;
+
+	preciseAttack = true;
+
+	threatDetectedSound = male_02_grunt_14.mp3;
+	//confusedSound = zombie_confused.mp3;
+	damageSound = male_02_grunt_14.mp3;
+}
+
+equippedItem0
+{
+	name = Iron Dagger;
+
+	type = weapon;
+	secondaryType = dagger;
+	sprite = dagger_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1500;
+	damage = 1;
+
+	soundPack = light-blade;
+
+	projectileSpeed = 13;
+	projectileEntity = projectile_dagger_0.ent;
+}
+
+EOF____

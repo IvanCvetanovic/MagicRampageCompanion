@@ -1,0 +1,64 @@
+character
+{
+	name = Easter Bunny Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = bunnyMask;
+	jumpImpulse = 31;
+	level = 1;
+	scale = 1.2;
+	speed = 5.4;
+	resistance = 1200;
+	idleTimeBeforeJump = 40;
+	fieldOfView = 45;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	attackMinimumDistance = 192;
+
+	threatDetectedSound = rat_attack_01.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Carrot Dagger;
+
+	type = weapon;
+	secondaryType = jumperMelee;
+	bloodEffectType = dagger;
+	sprite = easter-dagger.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -42;
+	equipOffsetY = -22;
+
+	attackCooldown = 1600;
+	damage = 30;
+
+	soundPack = light-blade;
+
+	projectileEntity = projectile_dagger_easter.ent;
+}
+
+equippedItem1
+{
+	reference = Bunny Ring;
+}
+
+EOF____

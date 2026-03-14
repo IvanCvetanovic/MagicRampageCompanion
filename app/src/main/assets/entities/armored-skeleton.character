@@ -1,0 +1,67 @@
+character
+{
+	name = Armored Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 5.4;
+	resistance = 90;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 220;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Umbranian Axe;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = axe_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1500;
+	damage = 25;
+
+	knockback = 4;
+
+	soundPack = heavy-blade;
+
+	invertProjectile = true;
+	projectileEntity = projectile_umbranian_axe.ent;
+	projectileSpin = 20;
+	projectileSpeed = 10;
+}
+
+equippedItem1
+{
+	reference = Umbranian Vest;
+	stackSize = 1;
+}
+
+EOF____

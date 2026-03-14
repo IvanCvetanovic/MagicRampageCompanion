@@ -1,0 +1,101 @@
+character
+{
+	name = Jumping Green Bear;
+	bagSlots = 4;
+	bodySprite = xmas-green-bear.png;
+	bodyEntity = xmas-green-bear-dagger.ent;
+
+	gold = 0;
+	hairSprite = faceless;
+
+	jumpImpulse = 35;
+	level = 1;
+	speed = 9;
+	resistance = 4000;
+	scale = 1;
+
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+
+	bodyColor = 4292149111;
+	eyeColor = 4294901760;
+
+	enableDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	attackMinimumDistance = 150;
+
+	dropEyes = false;
+
+	walkDuringCooldown = true;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Toxic Hammer;
+
+	type = weapon;
+	secondaryType = hammer;
+	secondaryType = jumperMelee;
+	sprite = hammer_poison.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -34;
+	equipOffsetY = 2;
+
+	attackCooldown = 800;
+	damage = 70;
+	armorBoost = 1.7;
+
+	knockback = 8;
+
+	soundPack = powerhammer;
+
+	pierceCount = 1;
+	enablePierceAreaDamage = true;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_hammer_volcano.ent;
+	alternativeMaxedEquipEntity = weapon_volcano.ent;
+	projectileSpeed = 10.0;
+	invertProjectile = true;
+
+	autoPaintEntities = true;
+	autoPaintColorA =   0.583, 1.0, 0.0, 1.0,           0,   0,   0, 1.0; // projectile
+	autoPaintColorB =   1.749, 3.0, 0.0, 1.0,       0.583, 1.0, 0.0, 1.0; // projectile
+
+	effectColor     =   0.2915, 1.0, 0.0, 1.0,     0.2915, 1.0, 0.0, 1.0; // explosion/equip
+	effectColorB    =    1.749, 3.0, 0.0, 1.0,          0,   0,   0, 1.0;   // explosion/equip
+
+	poisonous = true;
+
+	coinPrice = 2000;
+	fixedPrice = 500000;
+
+	text = epicHammerDescription;
+
+	maxLevelAllowed = 15;
+}
+
+item1
+{
+	name = Green Shiny Armor;
+	type = armor;
+	equipEntity = character_armor_green_halo.ent;
+	secondaryType = plate;
+	sprite = faceless.png;
+	color  = 8293059;
+	armor = 0;
+}
+
+EOF____

@@ -1,0 +1,73 @@
+character
+{
+	name = Mushroom Spitter;
+	bagSlots = 4;
+	bodySprite = character_body_mushroom_spitter.png;
+	bodyEntity = character_body_mushroom_spitter.ent;
+	feetEntity = character_feet_2x.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 6;
+	resistance = 4500;
+	scale = 1.0;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 720;
+
+	jumpImpulse = 0;
+	idleTimeBeforeJump = 2000;
+
+	enableWalkDustEffects = false;
+
+	enableWalkOnWater = false;
+	enableDamageAnimation = true;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 13565952;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = false;
+
+	confusedSound = zombie_confused.mp3;
+	damageSound = projectile_blunt_hit.mp3;
+}
+
+equippedItem0
+{
+	name = Seed;
+
+	type = weapon;
+	secondaryType = seed;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = 0;
+	equipOffsetY = -72;
+
+	attackCooldown = 1600;
+	damage = 80;
+
+	soundPack = gross;
+
+	persistAgainstProjectile = false;
+	projectileEntity = projectile_mushroom_blob.ent;
+	explosionEntity = explosion_mushroom_blob_main.ent;
+	explosionRange = 135;
+	projectileSpeed = 10;
+	projectileSpin = 12;
+	//invertProjectile = true;
+
+	poisonous = true;
+	element = earth;
+}
+
+EOF____

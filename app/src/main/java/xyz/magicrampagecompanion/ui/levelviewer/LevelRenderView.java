@@ -5,9 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.util.AttributeSet;
@@ -34,6 +37,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import xyz.magicrampagecompanion.level.Level;
+import xyz.magicrampagecompanion.level.LevelParser;
 
 public class LevelRenderView extends View {
 
@@ -57,6 +61,13 @@ public class LevelRenderView extends View {
     private float scale = 1f;
     private float offsetX = 0f;
     private float offsetY = 0f;
+    
+    // Store the base scale used to fit the level to screen
+    private float minFitScale = 1f;
+
+    // Visibility toggles
+    private boolean showLogicEntities = true;
+    private boolean secretsUnlocked = false;
 
     // Level world bounds (computed once per level)
     private float minX, minY, maxX, maxY;
@@ -80,6 +91,9 @@ public class LevelRenderView extends View {
         int srcX, srcY, srcW, srcH; // source rect in the PNG
         int oX, oY, oW, oH;        // offset and logical frame size
     }
+
+    // Cache of tinted paints keyed by packed ARGB color (avoids allocating per frame)
+    private final Map<Integer, Paint> tintPaintCache = new HashMap<>();
 
     // Tracks sprite names already logged as missing (avoids per-frame spam)
     private final Set<String> loggedMissingSprites = new HashSet<>();
@@ -137,6 +151,7 @@ public class LevelRenderView extends View {
         this.level = level;
         spriteCache.clear();
         atlasCache.clear();
+        tintPaintCache.clear();
         sortedEntities.clear();
         loggedMissingSprites.clear();
         spriteSummaryLogged = false;
@@ -155,6 +170,38 @@ public class LevelRenderView extends View {
             fitToScreen();
         }
 
+        invalidate();
+    }
+
+    public void setShowLogicEntities(boolean show) {
+        this.showLogicEntities = show;
+        invalidate();
+    }
+
+    public boolean isShowingLogicEntities() {
+        return showLogicEntities;
+    }
+
+    public void setSecretsUnlocked(boolean unlocked) {
+        this.secretsUnlocked = unlocked;
+        invalidate();
+    }
+
+    public boolean isSecretsUnlocked() {
+        return secretsUnlocked;
+    }
+
+    public void centerOnWorldPos(float worldX, float worldY) {
+        offsetX = getWidth() / 2f - worldX * scale;
+        offsetY = getHeight() / 2f - worldY * scale;
+        invalidate();
+    }
+
+    public void centerAndZoomOnWorldPos(float worldX, float worldY) {
+        // Zoom in more than the initial fit scale (initial is 10x, secret is 25x)
+        this.scale = minFitScale * 25.0f;
+        offsetX = getWidth() / 2f - worldX * scale;
+        offsetY = getHeight() / 2f - worldY * scale;
         invalidate();
     }
 
@@ -263,10 +310,21 @@ public class LevelRenderView extends View {
 
         float fitScaleX = getWidth() / levelW;
         float fitScaleY = getHeight() / levelH;
-        scale = Math.min(fitScaleX, fitScaleY) * 0.88f; // 88% for breathing room
+        minFitScale = Math.min(fitScaleX, fitScaleY);
+        scale = minFitScale * 10.0f; // Significantly zoomed in initially
 
         float levelCenterX = (minX + maxX) / 2f;
         float levelCenterY = (minY + maxY) / 2f;
+
+        // Try to center on spawn0
+        for (LevelEntity e : sortedEntities) {
+            if ("spawn0".equalsIgnoreCase(e.entityName)) {
+                levelCenterX = e.x;
+                levelCenterY = e.y;
+                break;
+            }
+        }
+
         offsetX = getWidth() / 2f - levelCenterX * scale;
         offsetY = getHeight() / 2f - levelCenterY * scale;
     }
@@ -360,28 +418,178 @@ public class LevelRenderView extends View {
     private void drawEntity(Canvas canvas, LevelEntity entity) {
         if (entity == null) return;
 
+        // Resolve NPC-specific sprites at runtime for spawn entities.
+        if ("character_spawn".equalsIgnoreCase(entity.entityName) && !entity.isNPCResolved) {
+            String npcFile = entity.customData.get("fileName");
+            if (npcFile == null) npcFile = entity.customData.get("type");
+            
+            android.util.Log.d("LevelRenderView", "Resolving NPC for id=" + entity.id + " file=" + npcFile);
+
+            if (npcFile != null && !npcFile.trim().isEmpty()) {
+                String oldSprite = entity.spriteFile;
+                
+                if (npcFile.endsWith(".character")) {
+                    LevelParser.parseCharacterFile(getContext(), entity, npcFile);
+                } else if (npcFile.endsWith(".ent")) {
+                    LevelParser.parseEntFile(getContext(), entity, npcFile);
+                } else {
+                    // Try character first, then ent if no extension
+                    LevelParser.parseCharacterFile(getContext(), entity, npcFile);
+                    if (entity.spriteFile.isEmpty() || entity.spriteFile.equals(oldSprite)) {
+                        LevelParser.parseEntFile(getContext(), entity, npcFile);
+                    }
+                }
+                
+                if (!entity.spriteFile.equals(oldSprite) || !entity.hairSprite.isEmpty() || !entity.armorSprite.isEmpty() || !entity.weaponSprite.isEmpty()) {
+                    android.util.Log.d("LevelRenderView", "Successfully resolved " + npcFile + " to sprite " + entity.spriteFile);
+                    // Reset frame to 0 since numbers use spriteFrame for team ID
+                    entity.spriteFrame = 0;
+                    // Reset scale to 1.0; character_spawn uses 4.0 for the mario_sheet numbers
+                    // but actual NPC sprites should be rendered at unit scale.
+                    entity.scaleX = 1.0f;
+                    entity.scaleY = 1.0f;
+                } else {
+                    android.util.Log.w("LevelRenderView", "Failed to resolve sprite for " + npcFile);
+                }
+            }
+            entity.isNPCResolved = true;
+        }
+
+        // Text entities: drawn in world space so they scale with zoom
+        if (!entity.displayText.isEmpty()) {
+            drawTextEntity(canvas, entity);
+            return;
+        }
+
+        // Composited Characters (from .character files)
+        boolean hasExtraLayers = !entity.hairSprite.isEmpty() || !entity.armorSprite.isEmpty() || !entity.weaponSprite.isEmpty() || entity.bodyColor != -1;
+        if (hasExtraLayers) {
+            drawCompositedCharacter(canvas, entity);
+            return;
+        }
+
+        // Secret areas handling: always hide if not unlocked
+        if (entity.entityName.toLowerCase().contains("secret")) {
+            if (!secretsUnlocked) return;
+            // If unlocked, draw it regardless of logic toggle (to highlight it)
+            drawEntityFallback(canvas, entity);
+            return;
+        }
+
         if (entity.spriteFile.isEmpty()) {
             // No sprite — either a pure runtime FX emitter (skip silently) or a
             // game-logic object worth showing as a placeholder overlay.
-            if (!isLogicEntity(entity)) return;
+            if (!showLogicEntities || !isLogicEntity(entity)) return;
             drawEntityFallback(canvas, entity);
+            return;
+        }
+
+        // Hide utility/logic sprites if toggle is off
+        if (!showLogicEntities && isUtilitySprite(entity.spriteFile)) {
             return;
         }
 
         Bitmap frame = loadSpriteFrame(entity.spriteFile, entity.spriteFrame, entity.spriteCutX, entity.spriteCutY);
 
         if (frame != null) {
+            float sx, sy;
+            if (entity.lightHaloSize > 0f && isPureHaloSprite(entity.spriteFile)) {
+                if (!showLogicEntities) return; // Hide wheel/halo sprites if logic entities are hidden
+                // Scale uniformly so the halo sprite fills lightHaloSize world units.
+                float uniform = entity.lightHaloSize / Math.max(frame.getWidth(), frame.getHeight());
+                sx = uniform;
+                sy = uniform;
+            } else {
+                // For regular sprites, scaleX/scaleY from the level file are multipliers
+                // for the actual pixel dimensions of the sprite frame.
+                sx = entity.scaleX;
+                sy = entity.scaleY;
+            }
             Matrix m = new Matrix();
             float cx = frame.getWidth() / 2f;
             float cy = frame.getHeight() / 2f;
             m.postTranslate(-cx, -cy);
-            m.postScale(entity.scaleX, entity.scaleY);
+            m.postScale(sx, sy);
             m.postRotate(entity.angle);
             m.postTranslate(entity.x, entity.y);
-            Paint paint = (entity.blendMode == 1) ? additivePaint : null;
+            Paint paint = resolvePaint(entity);
             canvas.drawBitmap(frame, m, paint);
         } else {
-            drawEntityFallback(canvas, entity);
+            if (showLogicEntities) drawEntityFallback(canvas, entity);
+        }
+    }
+
+    private void drawCompositedCharacter(Canvas canvas, LevelEntity entity) {
+        // Layer order: Weapon (on back) -> Body -> Armor -> Hair
+        String[] layerNames = { "Weapon", "Body", "Armor", "Hair" };
+        String[] layers = { entity.weaponSprite, entity.spriteFile, entity.armorSprite, entity.hairSprite };
+        
+        for (int i = 0; i < layers.length; i++) {
+            String sprite = layers[i];
+            if (sprite == null || sprite.isEmpty() || "none".equalsIgnoreCase(sprite)) continue;
+            
+            // Resolve filenames for layers
+            String resolvedSprite = sprite;
+            int cutX = 4, cutY = 2; // Default for body parts
+
+            if (i == 0) { // Weapon
+                if (!sprite.startsWith("weapon_") && !sprite.endsWith(".png")) resolvedSprite = "weapon_" + sprite;
+                cutX = 1; cutY = 1; // Weapons are usually single frames
+            } else if (i == 2) { // Armor
+                if (!sprite.startsWith("armor_") && !sprite.endsWith(".png")) resolvedSprite = "armor_" + sprite;
+            } else if (i == 3) { // Hair (Mapping via .enml)
+                resolvedSprite = LevelParser.resolveHeadSprite(sprite);
+            }
+
+            Bitmap frame = loadSpriteFrame(resolvedSprite, entity.spriteFrame, cutX, cutY);
+            
+            // Fallback for weapon/armor prefixes
+            if (frame == null && (i == 0 || i == 2) && !resolvedSprite.equals(sprite)) {
+                frame = loadSpriteFrame(sprite, entity.spriteFrame, cutX, cutY);
+            }
+
+            if (frame == null) {
+                Log.w(TAG, "COMPOSITE FAIL: " + layerNames[i] + " (" + sprite + ") could not be loaded as " + resolvedSprite);
+                continue;
+            }
+
+            Matrix m = new Matrix();
+            float cx = frame.getWidth() / 2f;
+            float cy = frame.getHeight() / 2f;
+            
+            float tx = entity.x;
+            float ty = entity.y;
+            float rotation = entity.angle;
+
+            if (i == 0) { // Weapon specific positioning
+                if (entity.weaponOffsetX != 0 || entity.weaponOffsetY != 0) {
+                    tx += entity.weaponOffsetX;
+                    ty += entity.weaponOffsetY;
+                    rotation += entity.weaponAngle;
+                } else {
+                    // Larger default offset if none in file
+                    tx -= 25f; 
+                    ty -= 10f;
+                    rotation += 35f;
+                }
+            }
+
+            m.postTranslate(-cx, -cy);
+            m.postScale(entity.scaleX, entity.scaleY);
+            m.postRotate(rotation);
+            m.postTranslate(tx, ty);
+
+            Paint paint = null;
+            if (i == 1 && entity.bodyColor != -1) { // Body is layer 1 now
+                int color = (int)entity.bodyColor;
+                if ((color & 0xFF000000) == 0) color |= 0xFF000000;
+                paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                paint.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
+            } else {
+                paint = resolvePaint(entity);
+            }
+
+            canvas.drawBitmap(frame, m, paint);
         }
     }
 
@@ -398,6 +606,34 @@ public class LevelRenderView extends View {
                 || name.contains("volumetric") || name.contains("fog")) return false;
         // Everything else with no sprite is a logic/trigger entity — show it
         return true;
+    }
+
+    /** Draws a text entity in world space — scales with zoom just like sprites. */
+    private void drawTextEntity(Canvas canvas, LevelEntity entity) {
+        String cleaned = entity.displayText.replaceAll("<[^>]+>", "");
+        String[] lines = cleaned.split("\\\\n", -1);
+
+        float textSize = 26f; // world units
+        float lineH = textSize * 1.4f;
+        float pad = textSize * 0.5f;
+
+        textPaint.setTextSize(textSize);
+        float maxW = 0;
+        for (String line : lines) maxW = Math.max(maxW, textPaint.measureText(line));
+
+        float boxW = maxW + pad * 2f;
+        float boxH = lineH * lines.length + pad;
+
+        fillPaint.setColor(Color.argb(210, 15, 15, 40));
+        scratchRect.set(entity.x - boxW / 2f, entity.y - boxH,
+                entity.x + boxW / 2f, entity.y + pad * 0.5f);
+        canvas.drawRoundRect(scratchRect, pad, pad, fillPaint);
+
+        textPaint.setColor(Color.argb(255, 230, 230, 180));
+        for (int i = 0; i < lines.length; i++) {
+            float ty = entity.y - (lines.length - 1 - i) * lineH - pad * 0.3f;
+            canvas.drawText(lines[i], entity.x, ty, textPaint);
+        }
     }
 
     private void drawEntityFallback(Canvas canvas, LevelEntity entity) {
@@ -423,15 +659,68 @@ public class LevelRenderView extends View {
             borderPaint.setStrokeWidth(1.5f / scale);
             canvas.drawRect(scratchRect, borderPaint);
 
-            if (renderedW > MIN_LABEL_BOX_PX) {
+            if (renderedW >= MIN_LABEL_BOX_PX) {
                 String label = shortLabel(entity.entityName);
-                // Text size in world units so it appears as ~13 screen-px
-                textPaint.setTextSize(13f / scale);
-                canvas.drawText(label, 0, 4f / scale, textPaint);
+                float labelSize = Math.max(6f, hh * 0.45f);
+                textPaint.setTextSize(labelSize);
+                textPaint.setColor(Color.WHITE);
+                canvas.drawText(label, 0, labelSize * 0.4f, textPaint);
             }
         }
 
         canvas.restore();
+    }
+
+    private void drawScreenLabels(Canvas canvas) {
+        float density  = getResources().getDisplayMetrics().density;
+        float storyPx  = 14f * density;
+        float labelPx  = 11f * density;
+        float pad      = storyPx * 0.4f;
+
+        for (LevelEntity entity : sortedEntities) {
+            // Convert world position to screen position
+            float sx = entity.x * scale + offsetX;
+            float sy = entity.y * scale + offsetY;
+
+            if (!entity.displayText.isEmpty()) {
+                // Story / tip text entity — multi-line box
+                String cleaned = entity.displayText.replaceAll("<[^>]+>", "");
+                String[] lines = cleaned.split("\\\\n", -1);
+
+                textPaint.setTextSize(storyPx);
+                float lineH = storyPx * 1.4f;
+                float maxW = 0;
+                for (String line : lines) maxW = Math.max(maxW, textPaint.measureText(line));
+
+                float boxW = maxW + pad * 2f;
+                float boxH = lineH * lines.length + pad;
+
+                fillPaint.setColor(Color.argb(210, 15, 15, 40));
+                scratchRect.set(sx - boxW / 2f, sy - boxH, sx + boxW / 2f, sy + pad * 0.5f);
+                canvas.drawRoundRect(scratchRect, pad, pad, fillPaint);
+
+                textPaint.setColor(Color.argb(255, 230, 230, 180));
+                for (int i = 0; i < lines.length; i++) {
+                    float ty = sy - (lines.length - 1 - i) * lineH - pad * 0.3f;
+                    canvas.drawText(lines[i], sx, ty, textPaint);
+                }
+
+            } else if (entity.spriteFile.isEmpty() && isLogicEntity(entity)) {
+                // Special case: secret areas only show if unlocked
+                if (entity.entityName.toLowerCase().contains("secret") && !secretsUnlocked) continue;
+                
+                if (!showLogicEntities && !entity.entityName.toLowerCase().contains("secret")) continue;
+                
+                // Fallback box label — only if the box is big enough on screen
+                float renderedW = entity.scaleX * BASE_TILE * scale;
+                if (renderedW < MIN_LABEL_BOX_PX) continue;
+
+                String label = shortLabel(entity.entityName);
+                textPaint.setTextSize(labelPx);
+                textPaint.setColor(Color.WHITE);
+                canvas.drawText(label, sx, sy + labelPx * 0.4f, textPaint);
+            }
+        }
     }
 
     // --------------------
@@ -500,9 +789,71 @@ public class LevelRenderView extends View {
         return label;
     }
 
+    /**
+     * Returns the Paint to use when drawing this entity's sprite.
+     * Handles additive blend mode and light color tinting.
+     */
+    private Paint resolvePaint(LevelEntity entity) {
+        // Pure halo sprites always render additive regardless of declared blendMode,
+        // matching how the game engine renders light halos.
+        boolean isHalo = entity.lightHaloSize > 0f && isPureHaloSprite(entity.spriteFile);
+        int effectiveBlend = isHalo ? 1 : entity.blendMode;
+
+        // Light color tint only applies to pure halo sprites — for everything else
+        // (torches, chests, etc.) the <Light><Color> describes the light they cast,
+        // not a tint on their own sprite.
+        boolean hasTint = isHalo && !Float.isNaN(entity.lightColorR);
+        if (!hasTint) {
+            return (effectiveBlend == 1) ? additivePaint : null;
+        }
+        // Pack the color + effective blend mode into a cache key
+        int r = Math.min(255, (int) (entity.lightColorR * 255));
+        int g = Math.min(255, (int) (entity.lightColorG * 255));
+        int b = Math.min(255, (int) (entity.lightColorB * 255));
+        int key = Color.argb(effectiveBlend, r, g, b);
+        Paint cached = tintPaintCache.get(key);
+        if (cached != null) return cached;
+
+        ColorMatrix cm = new ColorMatrix(new float[]{
+                entity.lightColorR, 0, 0, 0, 0,
+                0, entity.lightColorG, 0, 0, 0,
+                0, 0, entity.lightColorB, 0, 0,
+                0, 0, 0, 1, 0
+        });
+        Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+        p.setColorFilter(new ColorMatrixColorFilter(cm));
+        if (effectiveBlend == 1) {
+            p.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.ADD));
+        }
+        tintPaintCache.put(key, p);
+        return p;
+    }
+
     // --------------------
     // SPRITE LOADING
     // --------------------
+
+    /**
+     * Returns true for sprites that are pure utility or markers that should
+     * be toggled by the showLogicEntities flag.
+     */
+    private boolean isUtilitySprite(String spriteFile) {
+        if (spriteFile == null || spriteFile.isEmpty()) return false;
+        String s = spriteFile.toLowerCase();
+        return s.equals("film.png") || s.equals("waypoint_flag.png") || isPureHaloSprite(s);
+    }
+
+    /**
+     * Returns true for sprites that are pure radial glow textures whose visual
+     * size is defined by the entity's lightHaloSize rather than a <Scale> tag.
+     * All other sprites with a <Light> block should render at their declared scale.
+     */
+    private boolean isPureHaloSprite(String spriteFile) {
+        if (spriteFile == null) return false;
+        String s = spriteFile.toLowerCase();
+        return s.contains("wheel_sprite") || s.equals("hard_halo.png")
+                || s.contains("hard_sparkle");
+    }
 
     /** Sprites that have a white background baked in and need it stripped. */
     private boolean needsWhiteStripped(String sheetKey) {
@@ -540,7 +891,7 @@ public class LevelRenderView extends View {
         if (spriteName == null || spriteName.trim().isEmpty()) return null;
 
         String sheetKey = spriteName.endsWith(".png") ? spriteName : spriteName + ".png";
-        String frameKey = sheetKey + "#" + frameIndex;
+        String frameKey = sheetKey + "#" + frameIndex + "c" + spriteCutX + "x" + spriteCutY;
 
         if (spriteCache.containsKey(frameKey)) return spriteCache.get(frameKey);
 
@@ -680,32 +1031,62 @@ public class LevelRenderView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         scaleDetector.onTouchEvent(event);
 
-        switch (event.getActionMasked()) {
+        int action = event.getActionMasked();
+        int pointerCount = event.getPointerCount();
+
+        // Determine which pointer (if any) is leaving the screen
+        int skipIndex = (action == MotionEvent.ACTION_POINTER_UP) ? event.getActionIndex() : -1;
+
+        // Calculate focal point of remaining fingers
+        float focusX = 0f;
+        float focusY = 0f;
+        int count = 0;
+        for (int i = 0; i < pointerCount; i++) {
+            if (i == skipIndex) continue;
+            focusX += event.getX(i);
+            focusY += event.getY(i);
+            count++;
+        }
+
+        if (count > 0) {
+            focusX /= count;
+            focusY /= count;
+        }
+
+        switch (action) {
             case MotionEvent.ACTION_DOWN:
-                lastTouchX = event.getX();
-                lastTouchY = event.getY();
-                tapStartX  = event.getX();
-                tapStartY  = event.getY();
+                lastTouchX = focusX;
+                lastTouchY = focusY;
+                tapStartX  = focusX;
+                tapStartY  = focusY;
                 isPanning = true;
                 break;
 
+            case MotionEvent.ACTION_POINTER_DOWN:
+            case MotionEvent.ACTION_POINTER_UP:
+                // Update lastTouch to the focal point of the fingers that WILL remain
+                // on screen. This prevents the jump when transitioning between 2 and 1 fingers.
+                lastTouchX = focusX;
+                lastTouchY = focusY;
+                break;
+
             case MotionEvent.ACTION_MOVE:
-                if (!scaleDetector.isInProgress() && isPanning) {
-                    offsetX += event.getX() - lastTouchX;
-                    offsetY += event.getY() - lastTouchY;
-                    lastTouchX = event.getX();
-                    lastTouchY = event.getY();
+                if (isPanning) {
+                    offsetX += focusX - lastTouchX;
+                    offsetY += focusY - lastTouchY;
+                    lastTouchX = focusX;
+                    lastTouchY = focusY;
                     invalidate();
                 }
                 break;
 
             case MotionEvent.ACTION_UP:
                 isPanning = false;
-                float dx = event.getX() - tapStartX;
-                float dy = event.getY() - tapStartY;
+                float dx = focusX - tapStartX;
+                float dy = focusY - tapStartY;
                 if (!scaleDetector.isInProgress()
                         && dx * dx + dy * dy <= TAP_SLOP_PX * TAP_SLOP_PX) {
-                    handleTap(event.getX(), event.getY());
+                    handleTap(focusX, focusY);
                 }
                 performClick();
                 break;

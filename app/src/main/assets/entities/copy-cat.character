@@ -1,0 +1,38 @@
+character
+{
+	name = Copy Cat;
+
+	attackMinimumDistance = 64;
+	bagSlots = 25;
+	bodyColor = 1711388;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_copycat.ent;
+	dropEyes = false;
+	enableAttackAnimation = true;
+	enableDamageAnimation = true;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	exp = 0;
+
+	fieldOfView = 45;
+	gold = 0;
+	idleTimeBeforeJump = 50;
+	jumpImpulse = 33;
+	level = 1;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = false;
+
+	resistance = 380;
+
+	scale = 1;
+	seriousDamageWaitTime = 50;
+	speed = 9;
+	walkDuringCooldown = false;
+
+	hairSprite = faceless;
+}
+
+EOF____

@@ -1,0 +1,81 @@
+character
+{
+	name = Nature Shaman;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 6;
+	resistance = 850;
+	scale = 1.2;
+
+	idleTimeBeforeJump = 200;
+	fieldOfView = 30;
+	bodyColor = 16239960;
+	eyeColor = 4294901760;
+	dropEyes = true;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = true;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Nature Staff;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 2000;
+	damage = 40;
+
+	soundPack = power;
+
+	persistAgainstProjectile = false;
+	projectileEntity = projectile_nature_tanker_staff_3.ent;
+	projectileSpeed = 8;
+
+	element = earth;
+}
+
+equippedItem1
+{
+	name = Nature Shaman Armor;
+	type = armor;
+	secondaryType = plate;
+	sprite = armor_shaman_a.png;
+	magicBoost = 1.35;
+	jumpBoost = 1.03;
+	speedBoost = 1.13;
+	element = earth;
+
+	armor = 40;
+}
+
+equippedItem2
+{
+	reference = Nenya;
+	stackSize = 1;
+}
+
+EOF____

@@ -1,0 +1,59 @@
+character
+{
+	name = Alien;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = alien0;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 7.0;
+	resistance = 9999999;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 4284590503;
+	seriousDamageWaitTime = 350;
+
+	scale = 1.1;
+
+	enableDustEffects = true;
+
+	walkDuringCooldown = true;
+
+	attackMinimumDistance = 300;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	//threatDetectedSound = zombie_threat_detect.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = zombie_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Alien Set;
+	type = armor;
+	secondaryType = plate;
+	sprite = armor_cloth_special_e1.png;
+	color  = 4294958669;
+	colorMultiplier = 1.2;
+	depthOffset = 0.04;
+
+	magicBoost = 1.6;
+	speedBoost = 1.06;
+	jumpBoost  = 1.05;
+	daggerBoost = 1.3;
+
+	element = fire;
+
+	armor = 36;
+
+	fixedPrice = 110000;
+
+	maxLevelAllowed = 7;
+}
+
+EOF____

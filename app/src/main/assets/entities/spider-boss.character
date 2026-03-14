@@ -1,0 +1,74 @@
+character
+{
+	name = Yellow Spider Boss;
+	bagSlots = 16;
+	bodySprite = spider_1.png;
+	bodyEntity = character_body_spider.ent;
+	feetEntity = character_feet_lighter.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 4.5;
+	resistance = 1600;
+	scale = 1.2;
+	walkStyle = spider;
+	attackStyle = spider;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 200;
+
+	jumpImpulse = 30.5;
+	idleTimeBeforeJump = 1300;
+
+	enableWalkDustEffects = false;
+	enableWalkOnWater = true;
+
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = true;
+	eyeColor = 13565952;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = false;
+
+	threatDetectedSound = spider_appear.mp3;
+}
+
+equippedItem0
+{
+	name = Spider Web;
+
+	type = weapon;
+	secondaryType = jumperMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 2000;
+	damage = 42;
+
+	knockback = 3;
+
+	soundPack = magic;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_spider_power_web.ent;
+	projectileSpeed = 5;
+	//equipEntity = weapon.ent;
+
+	element = darkness;
+	poisonous = true;
+}
+
+EOF____

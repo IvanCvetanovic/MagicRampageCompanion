@@ -1,0 +1,47 @@
+character
+{
+	attackMinimumDistance = 64;
+	bagSlots = 25;
+	bodyColor = 4289789884;
+	bodySprite = character_body.png;
+	dropEyes = false;
+	enableAttackAnimation = true;
+	enableDamageAnimation = true;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	exp = 0;
+	eyeColor = 4284940236;
+	eyeSprite = eyeEvil;
+	fieldOfView = 45;
+	gold = 0;
+	hairSprite = helmet0;
+	idleTimeBeforeJump = 450;
+	jumpImpulse = 33;
+	level = 1;
+	name = Minion;
+	preciseAttack = false;
+	progress = 0;
+	resistance = 260;
+	scale = 1;
+	seriousDamageWaitTime = 450;
+	speed = 8;
+	version = 1.0;
+	walkDuringCooldown = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+}
+
+equippedItem0
+{
+	reference = Recruit Set;
+	stackSize = 1;
+}
+
+equippedItem1
+{
+	reference = Iron Dagger;
+	stackSize = 1;
+}
+
+EOF____

@@ -1,0 +1,77 @@
+character
+{
+	name = Ice Skeleton Elite;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton_frost.ent;
+	scale = 1.15;
+	exp = 0;
+	gold = 0;
+	hairSprite = skeletonHelmet;
+	jumpImpulse = 32;
+	level = 1;
+	speed = 5.4;
+	resistance = 4000;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	//bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 300;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Ice Dagger;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = dagger_frost.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1300;
+	damage = 150;
+	projectileSpeed = 14;
+
+	soundPack = light-blade;
+
+	projectileEntity = projectile_dagger_ice.ent;
+
+	frost = true;
+}
+
+equippedItem1
+{
+	name = Leather Winter Armor;
+	type = armor;
+	secondaryType = ice;
+	sprite = armor_elite_frost_skeleton_b.png;
+	speedBoost = 1.05;
+	jumpBoost = 1.03;
+
+	armor = 250;
+
+	depthOffset = 0.01;
+
+	frost = true;
+}
+
+EOF____

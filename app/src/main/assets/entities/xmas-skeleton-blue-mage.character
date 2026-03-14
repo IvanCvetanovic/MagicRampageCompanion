@@ -1,0 +1,87 @@
+character
+{
+	name = Xmas Blue Skeleton Mage;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton_frost.ent;
+	exp = 0;
+	gold = 0;
+	eyeColor = 3224019916;
+	eyeSprite = eyeVivi;
+	hairSprite = faceless;
+	jumpImpulse = 30;
+	level = 1;
+	speed = 5.4;
+	resistance = 1000;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4294967295;
+	dropEyes = false;
+	eyeColor = 4294967295;
+	keepClassHelm = true;
+
+	preciseAttack = true;
+
+	walkDuringCooldown = true;
+	enableWalkOnWater = true;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	threatDetectedSound = monster_confused.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Water Staff;
+
+	type = weapon;
+	secondaryType = jumperRanged;
+	bloodEffectType = staff;
+	sprite = staff_12.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -22.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -10;
+
+	attackCooldown = 3000;
+	damage = 40;
+
+	soundPack = power;
+
+	projectileSpeed = 6.0;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_rat_water_mage_staff.ent;
+	equipEntity = weapon_water_staff.ent;
+	dropEntityName = item_water_staff_1.ent;
+
+	element = water;
+}
+
+equippedItem1
+{
+	name = Xmas Armor Blue;
+	type = armor;
+	secondaryType = ice;
+	sprite = xmas_enemy_blue.png;
+	speedBoost = 1.05;
+	jumpBoost = 1.03;
+
+	armor = 150;
+
+	depthOffset = 0.01;
+
+	frost = true;
+}
+
+EOF____

@@ -1,0 +1,81 @@
+character
+{
+	name = Ice Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 32;
+	level = 1;
+	speed = 5.4;
+	resistance = 600;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 2560;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Beam;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = projectile_beholder_spike.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	projectileSpin = 24.0;
+	projectileSpeed = 14.0;
+
+	attackCooldown = 450;
+	damage = 40;
+	speedBoost = 1.05;
+
+	soundPack = magic;
+
+	element = light;
+
+	projectileEntity = projectile_light_beam.ent;
+}
+
+equippedItem1
+{
+	name = Zombified Heros Set;
+	type = armor;
+	secondaryType = leather;
+
+	sprite = armor_carnival_buffoon_II_A.png;
+	color  = 13224889;
+
+	daggerBoost = 1.4;
+	speedBoost = 1.04;
+	jumpBoost = 1.03;
+
+	armor = 20;
+
+	element = earth;
+
+	level = 6;
+}
+
+
+EOF____

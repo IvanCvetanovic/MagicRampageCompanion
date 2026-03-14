@@ -1,0 +1,36 @@
+character
+{
+	name = Wizard;
+	bagSlots = 16;
+	bodySprite = character_body_wizard.png;
+	bodyEntity = character_body_wizard.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 33;
+	level = 1;
+	speed = 4;
+	resistance = 500000;
+	scale = 1.2;
+
+	idleTimeBeforeJump = 230;
+	fieldOfView = 35;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 110;
+
+	//threatDetectedSound = monster_threat_detect.mp3;
+	//confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	enableDamageAnimation = true;
+}
+
+EOF____

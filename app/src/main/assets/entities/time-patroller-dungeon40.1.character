@@ -1,0 +1,61 @@
+character
+{
+	name = Time Patroller;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = femaleCastleGuardFuture;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 7.0;
+	resistance = 999999999;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 16108724;
+	seriousDamageWaitTime = 350;
+	keepClassHelm = true;
+
+	scale = 1.1;
+
+	enableDustEffects = true;
+
+	walkDuringCooldown = true;
+
+	attackMinimumDistance = 300;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = true;
+
+	//threatDetectedSound = zombie_threat_detect.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = zombie_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Time Patroller;
+	type = armor;
+	secondaryType = plate;
+	sprite = armor_cloth_special_e1.png;
+	color  = 4294958669;
+	colorMultiplier = 1.2;
+	depthOffset = 0.04;
+	hideFace = true;
+
+	magicBoost = 1.6;
+	speedBoost = 1.06;
+	jumpBoost  = 1.05;
+	daggerBoost = 1.3;
+
+	element = fire;
+
+	armor = 36;
+
+	fixedPrice = 110000;
+
+	maxLevelAllowed = 7;
+}
+
+EOF____

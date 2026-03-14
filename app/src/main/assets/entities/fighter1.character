@@ -1,0 +1,72 @@
+character
+{
+	name = Castle Salesman;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = castleSalesman0;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4291410142;
+
+	bagSlots = 16;
+	level = 1;
+	resistance = 180;
+	jumpImpulse = 33;
+	speed = 8;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	walkingDustStride = 70.0f;
+	seriousDamageWaitTime = 0;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+
+	//threatDetectedSound = male_02_grunt_14.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = male_02_grunt_14.mp3;
+}
+
+equippedItem1
+{
+	name = Nature Mage Vest;
+	type = armor;
+	secondaryType = cloth;
+	sprite = armor_cloth_0a.png;
+	color  = 3107922;
+	magicBoost = 1.15;
+	element = earth;
+
+	armor = 20;
+}
+
+equippedItem0
+{
+	name = Nature Staff;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = staff_1.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 450;
+	damage = 25;
+
+	soundPack = magic;
+
+	projectileEntity = projectile_nature_beam.ent;
+	equipEntity = weapon_nature_staff.ent;
+
+	element = earth;
+}
+
+EOF____

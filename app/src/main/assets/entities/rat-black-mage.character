@@ -1,0 +1,73 @@
+character
+{
+	name = Rat Black Mage;
+	bagSlots = 16;
+	bodySprite = character_body_rat.png;
+	bodyEntity = character_body_rat.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = rat2;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 5.4;
+	scale = 0.75;
+	resistance = 1400;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4294967295;
+	dropEyes = true;
+	eyeColor = 4294967295;
+	keepClassHelm = true;
+
+	preciseAttack = true;
+
+	walkDuringCooldown = true;
+	enableWalkOnWater = true;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	threatDetectedSound = rat_attack_01.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Staff of Darkness;
+
+	type = weapon;
+	secondaryType = ranged;
+	bloodEffectType = staff;
+	sprite = staff_3.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -29.0;
+	smoothFollow = true;
+
+	equipOffsetX = -29;
+	equipOffsetY = -1;
+
+	attackCooldown = 3000;
+	damage = 80;
+
+	soundPack = power;
+
+	projectileEntity = projectile_dark_beam.ent;
+	equipEntity = weapon_darkness_staff.ent;
+
+	element = darkness;
+	projectileSpeed = 6.0;
+}
+
+equippedItem1
+{
+	reference = Penumbra Suit;
+	stackSize = 1;
+}
+
+EOF____

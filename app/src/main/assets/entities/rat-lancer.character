@@ -1,0 +1,80 @@
+character
+{
+	name = Rat Lancer;
+	bagSlots = 16;
+	bodySprite = character_body_rat.png;
+	bodyEntity = character_body_rat.ent;
+	scale = 0.85;
+	hairSprite = rat1;
+	jumpImpulse = 37.5;
+	level = 1;
+	speed = 5.5;
+	resistance = 1100;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 10;
+	bodyColor = 4294967295;
+	dropEyes = true;
+	eyeColor = 4294967295;
+	keepClassHelm = true;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:true\;dodge-cooldown:1500;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+
+	attackMinimumDistance = 600;
+
+	threatDetectedSound = rat_attack_01.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Obsidian Spear;
+
+	type = weapon;
+	secondaryType = meleeDodge;
+	bloodEffectType = spear;
+	sprite = spear.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -34;
+	equipOffsetY = 2;
+
+	attackCooldown = 2800;
+	damage = 60;
+	armorBoost  = 1.1;
+	jumpBoost  = 1.03;
+	speedBoost = 1.04;
+
+	soundPack = heavy-blade;
+
+	pierceCount = 4;
+	enablePierceAreaDamage = false;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_spear.ent;
+
+	projectileSpeed = 12.0;
+	invertProjectile = true;
+	flipWhileEquipped = true;
+}
+
+equippedItem1
+{
+	reference = Champion Set;
+	level = 0;
+	stackSize = 1;
+}
+
+EOF____

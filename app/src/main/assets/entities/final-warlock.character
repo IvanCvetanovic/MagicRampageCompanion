@@ -1,0 +1,82 @@
+character
+{
+	name = Evil Warlock;
+	bagSlots = 16;
+	bodySprite = evil_warlock.png;
+	bodyEntity = character_body_evil_warlock_boss.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 36;
+	level = 1;
+	speed = 3;
+	resistance = 999999999;
+	scale = 1.2;
+	walkStyle = evilWarlock;
+	attackStyle = evilWarlock;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+	attackMinimumDistance = 256;
+	idleTimeBeforeJump = 800;
+	enableDamageAnimation = false;
+
+	enableDustEffects = false;
+	enableWalkDustEffects = false;
+
+	patrolBehaviour = waypoints;
+	//attackBehaviour = knifeThrower;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+	//walkDuringCooldown = true;
+
+	//threatDetectedSound = monster_threat_detect.mp3;
+	//confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Fire Staff;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 200;
+	damage = 250;
+
+	knockback = 6;
+
+	soundPack = power;
+	projectileSpeed = 11;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_fire_ball_warlock_boss.ent;
+	projectileSpeed = 9.0;
+	//equipEntity = weapon.ent;
+
+	element = fire;
+}
+
+equippedItem1
+{
+	name = Nazguh Earth Ring;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_2.png;
+
+	element = earth;
+}
+
+EOF____

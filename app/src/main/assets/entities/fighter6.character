@@ -1,0 +1,78 @@
+character
+{
+	name = Vampire;
+	bodySprite = character_body_b.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = zombie1;
+	scale = 1;
+
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 4286013035;
+	eyeColor = 16514990;
+
+	bagSlots = 16;
+	level = 1;
+	resistance = 180;
+	jumpImpulse = 33;
+	speed = 8;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	walkingDustStride = 70.0f;
+	seriousDamageWaitTime = 0;
+
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = true;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Monks Tunic;
+	type = armor;
+	secondaryType = cloth;
+	sprite = armor_special_a2.png;
+	color  = 6834739;
+	colorMultiplier = 1.3;
+
+	element = light;
+
+	armor = 15;
+}
+
+equippedItem1
+{
+	name = Dark Gadarast Staff;
+
+	type = weapon;
+	secondaryType = jumperMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 450;
+	damage = 22;
+
+	soundPack = power;
+
+	projectileSpeed = 10.0;
+
+	projectileEntity = projectile_deadly_red_beam.ent;
+	//equipEntity = weapon_nature_staff_dark.ent;
+
+	element = darkness;
+}
+
+EOF____

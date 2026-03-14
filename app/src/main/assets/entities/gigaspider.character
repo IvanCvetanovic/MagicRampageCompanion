@@ -1,0 +1,78 @@
+character
+{
+	name = Giga Spider;
+	bagSlots = 16;
+	bodySprite = miniboss-gigaspider.png;
+	bodyEntity = character_body_miniboss_giga_spider.ent;
+	feetEntity = character_feet_lighter.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 5;
+	resistance = 999999999;
+	scale = 1.2;
+
+	fieldOfView = 180;
+	bodyColor = 16777215;
+	dropEyes = false;
+
+	attackMinimumDistance = 300;
+
+	jumpImpulse = 24.5;
+	idleTimeBeforeJump = 1300;
+
+	enableWalkDustEffects = true;
+
+	enableDamageAnimation = true;
+	enableAttackAnimation = true;
+
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 13565952;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = false;
+
+	//threatDetectedSound = monster_confused.mp3;
+	//confusedSound = monster_confused.mp3;
+	//damageSound = monster_threat_detect.mp3;
+}
+
+equippedItem0
+{
+	name = Spider Web;
+
+	type = weapon;
+	secondaryType = jumperMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 2300;
+	explosionRange = 200;
+	damage = 30;
+
+	knockback = 6;
+
+	soundPack = power;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_giant_spider_web.ent;
+	projectileSpeed = 12;
+	//equipEntity = weapon.ent;
+
+	element = darkness;
+	poisonous = true;
+}
+
+EOF____

@@ -1,0 +1,62 @@
+character
+{
+	name = Dude Guard;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = castleGuard1;
+	jumpImpulse = 28;
+	level = 1;
+	speed = 4.0;
+	resistance = 105;
+	idleTimeBeforeJump = 500;
+	fieldOfView = 45;
+	bodyColor = 4289830521;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	threatDetectedSound = male_02_grunt_14.mp3;
+	//confusedSound = zombie_confused.mp3;
+	damageSound = male_02_grunt_14.mp3;
+}
+
+equippedItem0
+{
+	name = Castle Guard Set;
+	type = armor;
+	secondaryType = leather;
+	sprite = armor_leather_0a.png;
+
+	armor = 0;
+}
+
+equippedItem1
+{
+	name = Iron Dagger;
+
+	type = weapon;
+	secondaryType = dagger;
+	sprite = dagger_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 600;
+	damage = 2;
+
+	soundPack = light-blade;
+
+	projectileEntity = projectile_dagger_0.ent;
+}
+
+EOF____

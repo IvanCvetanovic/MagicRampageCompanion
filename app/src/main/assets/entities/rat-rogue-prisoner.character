@@ -1,0 +1,46 @@
+character
+{
+	name = Rat Rogue;
+	bagSlots = 16;
+	bodySprite = character_body_rat.png;
+	bodyEntity = character_body_rat.ent;
+	scale = 0.85;
+	hairSprite = rat1;
+	jumpImpulse = 37;
+	level = 1;
+	speed = 8.0;
+	resistance = 1500;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 10;
+	bodyColor = 4294967295;
+	dropEyes = true;
+	eyeColor = 4294967295;
+	keepClassHelm = true;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:false\;dodge-cooldown:3000;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 720;
+
+	threatDetectedSound = rat_attack_01.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Recruit Set;
+	type = armor;
+	secondaryType = leather;
+	sprite = armor_leather_0b.png;
+	color  = 13224889;
+
+	armor = 40;
+}
+
+EOF____

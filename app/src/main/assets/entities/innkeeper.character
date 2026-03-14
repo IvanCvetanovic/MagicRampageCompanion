@@ -1,0 +1,31 @@
+character
+{
+	name = Innkeeper;
+	bagSlots = 16;
+	bodySprite = innkeeper.png;
+	bodyEntity = character_body_innkeeper.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 1;
+	level = 1;
+	speed = 3;
+	resistance = 9999999;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4294967295;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+
+	//threatDetectedSound = male_02_grunt_14.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = male_02_grunt_14.mp3;
+}
+
+EOF____

@@ -1,0 +1,70 @@
+character
+{
+	name = Ifrits Disciple;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = zombie1;
+	jumpImpulse = 30;
+	level = 1;
+	speed = 6;
+	resistance = 600;
+	scale = 1.07;
+
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 16239960;
+	eyeColor = 16514990;
+
+	walkDuringCooldown = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	reference = Fire Mage Vest;
+	level = 8;
+}
+
+equippedItem1
+{
+	name = Epic Fire Staff;
+
+	type = weapon;
+	secondaryType = jumperRanged;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 1500;
+	damage = 30;
+	jumpBoost  = 1.04;
+	speedBoost = 1.04;
+
+	soundPack = power;
+
+	projectileEntity = projectile_epic_fire_ball.ent;
+	projectileSpeed = 10.0;
+	projectileSpin = 16;
+
+	element = fire;
+
+	level = 2;
+}
+
+EOF____

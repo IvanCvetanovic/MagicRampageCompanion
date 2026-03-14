@@ -1,0 +1,90 @@
+character
+{
+	name = Dark Twin;
+
+	attackMinimumDistance = 64;
+	bagSlots = 25;
+	bodyColor = 1711388;
+	bodySprite = character_body.png;
+	bodyEntity = character_body_darktwin.ent;
+	dropEyes = false;
+	enableAttackAnimation = true;
+	enableDamageAnimation = false;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	exp = 0;
+
+	bodyColor = 4278190080;
+
+	fieldOfView = 45;
+	gold = 0;
+	idleTimeBeforeJump = 150;
+	jumpImpulse = 28;
+	level = 1;
+
+	attackMinimumDistance = 500;
+
+	enableWalkOnWater = true;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	enableWalkDustEffects = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = true;
+
+	resistance = 10000;
+
+	scale = 1;
+	seriousDamageWaitTime = 50;
+	speed = 9;
+	walkDuringCooldown = true;
+
+	hairSprite = faceless;
+}
+
+equippedItem0
+{
+	name = Dark Twin Beam;
+
+	type = weapon;
+	secondaryType = grimoire;
+	bloodEffectType = staff;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	attackCooldown = 1500;
+	damage = 1;
+
+	soundPack = power;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_dark_twin_beam.ent;
+	explosionEntity = explosion_dark_twin_beam.ent;
+
+	element = darkness;
+	projectileSpeed = 11;
+	explosionRange = 220;
+
+	maxLevelAllowed = 30;
+
+	pierceCount = 1;
+	enablePierceAreaDamage = true;
+}
+
+equippedItem1
+{
+	name = Ring of Protection;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_4.png;
+
+	element = earth;
+}
+
+
+EOF____

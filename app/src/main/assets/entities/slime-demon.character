@@ -1,0 +1,70 @@
+character
+{
+	name = Slime Demon;
+	bagSlots = 4;
+	bodySprite = miniboss_slime.png;
+	bodyEntity = miniboss_slime.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 15;
+	resistance = 999999999;
+	scale = 1.3;
+	walkStyle = slime;
+	attackStyle = slime;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 250;
+
+	jumpImpulse = 5;
+	idleTimeBeforeJump = 1500;
+
+	enableWalkDustEffects = false;
+
+	enableWalkOnWater = true;
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 13565952;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = false;
+
+	damageSound = projectile_blunt_hit.mp3;
+}
+
+equippedItem0
+{
+	name = Slime Monster Hit;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = false;
+
+	equipOffsetX =  64;
+	equipOffsetY =  24;
+
+	attackCooldown = 1500;
+	damage = 44;
+	//projectileSpeed = 12;
+
+	knockback = 6;
+
+	soundPack = blob;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_slime_monster_hit.ent;
+	poisonous = true;
+}
+
+EOF____

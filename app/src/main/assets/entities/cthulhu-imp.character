@@ -1,0 +1,70 @@
+character
+{
+	name = Imp;
+	bagSlots = 4;
+	bodySprite = character_body_imp_s.png;
+	bodyEntity = character_body_imp.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 40;
+	level = 1;
+	speed = 6;
+	resistance = 1000;
+	scale = 1.3;
+
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 4294967295;
+	eyeColor = 4294901760;
+	dropEyes = true;
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	walkDuringCooldown = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 300;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem1
+{
+	name = Fire ball;
+
+	type = weapon;
+	secondaryType = jumperMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 2000;
+	damage = 35;
+
+	soundPack = power;
+
+	projectileSpeed = 13.0;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_heavy_fire_ball.ent;
+	projectileSpeed = 8.0;
+	projectileSpin = 16.0;
+
+	element = fire;
+
+	level = 1;
+}
+
+EOF____

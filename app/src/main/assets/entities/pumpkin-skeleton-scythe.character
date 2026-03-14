@@ -1,0 +1,93 @@
+character
+{
+	name = Armored Red Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 36;
+	level = 1;
+	speed = 7;
+	scale = 1.3;
+	resistance = 5000;
+	idleTimeBeforeJump = 80;
+	fieldOfView = 45;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	attackMinimumDistance = 192;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Death Scythe+;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = staff_6.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -45.0;
+	smoothFollow = true;
+
+	equipOffsetX = -22;
+	equipOffsetY = -1;
+
+	attackCooldown = 1500;
+	damage = 140;
+
+	soundPack = power;
+
+	pierceCount = 1;
+	enablePierceAreaDamage = true;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_death_beam.ent;
+
+	element = darkness;
+	projectileSpeed = 14.0;
+}
+
+equippedItem1
+{
+	name = Pumpkin Head;
+	type = armor;
+	secondaryType = cloth;
+	sprite = pumpkin_head.png;
+	color  = 0;
+	element = fire;
+
+	armor = 50;
+}
+
+equippedItem2
+{
+	name = Steelblow Ring;
+	type = artifact;
+	secondaryType = ring;
+
+	armor = 0;
+
+	equipEntity = none;
+	sprite = ring_11.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = air;
+}
+
+EOF____

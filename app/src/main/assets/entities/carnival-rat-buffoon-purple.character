@@ -1,0 +1,118 @@
+character
+{
+	name = Rat Zombie Knife Guard Elite;
+	bagSlots = 16;
+	bodySprite = character_body_rat.png;
+	bodyEntity = character_body_elite_fire_rat.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = rat4;
+	jumpImpulse = 39;
+	level = 1;
+	speed = 5;
+	resistance = 8000;
+	scale = 1.25;
+	//walkStyle = slow;
+	//attackStyle = slow;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4294967295;
+	eyeColor = 4294901760;
+
+	preciseAttack = true;
+
+	enableDustEffects = true;
+
+	attackMinimumDistance = 200;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:true\;dodge-cooldown:1800;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Zombified Heros Set;
+	type = armor;
+	secondaryType = leather;
+
+	sprite = armor_carnival_buffoon_I_B.png;
+	color  = 13224889;
+
+	daggerBoost = 1.4;
+	speedBoost = 1.04;
+	jumpBoost = 1.03;
+
+	armor = 25;
+
+	element = air;
+
+	level = 6;
+}
+
+equippedItem1
+{
+	name = Ring;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_0.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = earth;
+
+	swordBoost = 1;
+	jumpBoost = 1;
+	speedBoost = 1;
+}
+
+equippedItem2
+{
+	name = Haunted Slicer;
+
+	type = weapon;
+	secondaryType = meleeDodge;
+	sprite = sword_glass_3.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -30;
+	equipOffsetY = 0;
+
+	attackCooldown = 500;
+	damage = 100;
+	armorBoost = 1.2;
+	speedBoost = 1.05;
+	jumpBoost = 1.03;
+
+	element = darkness;
+
+	soundPack = heavy-blade;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_dark_spear.ent;
+
+	pierceCount = 2;
+	enablePierceAreaDamage = true;
+	text = pierce-weapon-std-desc;
+
+	maxLevelAllowed = 15;
+
+	autoPaintEntities = true;
+	autoPaintColorA = 0.782, 0.615, 0.996, 1,   0, 0, 0, 1;
+	autoPaintColorB =     0,     0,     0, 0,   0, 0, 0, 1;
+	effectColor     = 0.782, 0.615, 0.996, 1,   0, 0, 0, 1;
+	effectColorB    = 0.782, 0.615, 0.996, 1,   0, 0, 0, 1;
+}
+
+EOF____

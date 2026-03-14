@@ -1,0 +1,267 @@
+zombie0
+{
+	name = zombie0;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_zombie_0a.png;
+	depthOffset = 0.01;
+}
+
+zombie1
+{
+	name = zombie1;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_zombie_0b.png;
+	depthOffset = 0.01;
+}
+
+faceless
+{
+	name = faceless;
+	type = head;
+	secondaryType = hair;
+	sprite = faceless.png;
+	depthOffset = 0.01;
+}
+
+dudeHendrix
+{
+	name = dudeHendrix;
+	type = head;
+	secondaryType = hair;
+	sprite = characters_dungeon0a.png;
+	depthOffset = 0.01;
+}
+
+dudeHendrixSerious
+{
+	name = dudeHendrixSerious;
+	type = head;
+	secondaryType = hair;
+	sprite = characters_dungeon0c.png;
+	depthOffset = 0.01;
+}
+
+castleGuard1
+{
+	name = castleGuard1;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_5.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+castleGuard2
+{
+	name = castleGuard2;
+	type = head;
+	secondaryType = hair;
+	sprite = head_castle_guard_00.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+castleGuard3
+{
+	name = castleGuard3;
+	type = head;
+	secondaryType = hair;
+	sprite = head_castle_guard_01.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+castleSalesman0
+{
+	name = castleSalesman0;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_castle_salesman.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+femaleCastleGuard0
+{
+	name = femaleCastleGuard0;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_3.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+	class = paladin;
+}
+
+vampire0
+{
+	name = vampire0;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_npc_0.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+tanker0
+{
+	name = tanker0;
+	type = head;
+	secondaryType = hair;
+	sprite = helmet_1.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+pilot0
+{
+	name = pilot0;
+	type = head;
+	secondaryType = hair;
+	sprite = helmet_2.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+dad0
+{
+	name = dad0;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_0.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+oldDad0
+{
+	name = oldDad0;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_0F.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+deco0
+{
+	name = deco0;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_1.png;
+	class = rogue;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+alien0
+{
+	name = alien0;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_6.png;
+	class = mage;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+femaleCastleGuardFuture
+{
+	name = femaleCastleGuardFuture;
+	type = head;
+	secondaryType = hair;
+	sprite = hair_3c.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+	class = paladin;
+}
+
+rat0
+{
+	name = rat0;
+	type = head;
+	secondaryType = hair;
+	sprite = character_rat_head_0.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+rat1
+{
+	name = rat1;
+	type = head;
+	secondaryType = hair;
+	sprite = character_rat_head_1.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+rat2
+{
+	name = rat2;
+	type = head;
+	secondaryType = hair;
+	sprite = character_rat_head_2.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+rat3
+{
+	name = rat3;
+	type = head;
+	secondaryType = hair;
+	sprite = character_rat_head_3.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+rat4
+{
+	name = rat4;
+	type = head;
+	secondaryType = hair;
+	sprite = character_rat_head_4.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+bunnyMask
+{
+	name = bunnyMask;
+	type = head;
+	secondaryType = hair;
+	sprite = easter_rabbit_mask.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+pumpkin
+{
+	name = pumpkin;
+	type = head;
+	secondaryType = hair;
+	sprite = pumpkin_head.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+ratPumpkin
+{
+	name = ratPumpkin;
+	type = head;
+	secondaryType = hair;
+	sprite = rat_halloween_2020.png;
+	depthOffset = 0.01;
+	equipEntity = character_body_part_5x2.ent;
+}
+
+skeletonHelmet
+{
+	name = skeletonHelmet;
+	type = head;
+	secondaryType = hair;
+	sprite = helmet_skeleton.png;
+	depthOffset = 0.02;
+}

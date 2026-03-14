@@ -1,0 +1,70 @@
+character
+{
+	name = Captain;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = femaleCastleGuard0;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4294298804;
+
+	bagSlots = 16;
+	level = 1;
+	resistance = 180;
+	jumpImpulse = 33;
+	speed = 8;
+	enableDustEffects = true;
+	enableJumpEffects = true;
+	walkingDustStride = 70.0f;
+	seriousDamageWaitTime = 0;
+
+	attackMinimumDistance = 300;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+}
+
+equippedItem0
+{
+	name = Castle Guard Set;
+	type = armor;
+	secondaryType = leather;
+	sprite = armor_leather_0a.png;
+
+	armor = 23;
+	speedBoost = 1.05;
+	jumpBoost = 1.05;
+	swordBoost = 1.25;
+
+	element = air;
+}
+
+equippedItem1
+{
+	name = Silver Axe;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = axe_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 350;
+	damage = 26;
+
+	soundPack = heavy-blade;
+
+	invertProjectile = true;
+	projectileEntity = projectile_axe.ent;
+	projectileSpin = 16;
+}
+
+EOF____

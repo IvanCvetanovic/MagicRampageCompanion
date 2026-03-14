@@ -1,0 +1,39 @@
+character
+{
+	name = Easter Demon;
+	bagSlots = 4;
+	bodySprite = easter_boss.png;
+	bodyEntity = miniboss_ape.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 15;
+	resistance = 999999999;
+	scale = 1.35;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 100;
+	fieldOfView = 190;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 190;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	passiveDamage = 80;
+
+	enableDamageAnimation = false;
+}
+
+EOF____

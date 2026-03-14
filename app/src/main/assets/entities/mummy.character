@@ -1,0 +1,63 @@
+character
+{
+	name = Mummy;
+	bagSlots = 16;
+	bodySprite = character_body_mummy.png;
+	bodyEntity = character_body_mummy.ent;
+	exp = 0;
+	gold = 0;
+	eyeColor = 3294012216;
+    eyeSprite = eyeVivi;
+	hairSprite = faceless;
+	jumpImpulse = 29.5;
+	level = 1;
+	speed = 6;
+	resistance = 40;
+	idleTimeBeforeJump = 300;
+	fieldOfView = 45;
+	bodyColor = 16641930;
+    dropEyes = true;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 200;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Bone;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1300;
+	damage = 23;
+	projectileSpeed = 11;
+
+	knockback = 1.5;
+
+	soundPack = blunt;
+
+	projectileEntity = projectile_bone.ent;
+	projectileSpin = 16.0;
+}
+
+EOF____

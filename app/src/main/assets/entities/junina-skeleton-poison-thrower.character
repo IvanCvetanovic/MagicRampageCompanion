@@ -1,0 +1,68 @@
+character
+{
+	name = Lampiao Poison Thrower;
+	bagSlots = 16;
+	bodySprite = character_body_junina_shadow.png;
+	bodyEntity = character_body_junina_green.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 37;
+	level = 1;
+	scale = 1.05;
+	speed = 7.5;
+	resistance = 3500;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 35;
+	bodyColor = 4294967295;
+	dropEyes = true;
+	eyeColor = 4294901760;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:false\;dodge-cooldown:1500;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 450;
+
+	threatDetectedSound = monster_confused.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Stone;
+
+	type = weapon;
+	secondaryType = meleeDodge;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = 35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -14;
+
+	attackCooldown = 2000;
+	damage = 15;
+
+	knockback = 2;
+
+	soundPack = stone;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_golem_stone.ent;
+	projectileSpeed = 20;
+	projectileSpin = 2;
+	//invertProjectile = true;
+
+	element = fire;
+}
+EOF____

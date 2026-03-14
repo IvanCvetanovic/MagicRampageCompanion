@@ -1,0 +1,41 @@
+character
+{
+	name = Cthulhu;
+	bagSlots = 4;
+	bodySprite = boss_cthulhu.png;
+	bodyEntity = boss_cthulhu.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 5;
+	resistance = 999999999;
+	scale = 1.4;
+
+
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 64;
+
+	jumpImpulse = 15;
+	idleTimeBeforeJump = 1000;
+
+	enableWalkDustEffects = false;
+
+	enableWalkOnWater = true;
+	enableDamageAnimation = false;
+	enableJumpEffects = true;
+	enableDustEffects = false;
+	eyeColor = 4294901760;
+	dropEyes = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = false;
+
+	damageSound = big_nasty_beast_grunt_03.mp3;
+}
+
+EOF____

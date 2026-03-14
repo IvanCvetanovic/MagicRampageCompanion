@@ -1,0 +1,40 @@
+character
+{
+	name = Armadillo;
+	bagSlots = 4;
+	bodySprite = boss_armadimp.png;
+	bodyEntity = miniboss_armadimp.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 12;
+	level = 1;
+	speed = 7;
+	resistance = 999999999;
+	scale = 1.0;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 90;
+
+	eyeColor = 4283751333;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	attackMinimumDistance = 190;
+
+	//threatDetectedSound = monster_threat_detect.mp3;
+	//confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	passiveDamage = 1;
+
+	enableDamageAnimation = false;
+}
+
+EOF____

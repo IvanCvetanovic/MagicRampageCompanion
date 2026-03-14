@@ -1,0 +1,39 @@
+character
+{
+	name = Deco;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = deco0;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 7.0;
+	resistance = 9999999;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 4292130427;
+	seriousDamageWaitTime = 350;
+
+	enableDustEffects = true;
+
+	walkDuringCooldown = true;
+
+	attackMinimumDistance = 300;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	//threatDetectedSound = zombie_threat_detect.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = zombie_confused.mp3;
+}
+
+equippedItem0
+{
+	reference = Moonkeeper Set;
+	stackSize = 1;
+}
+
+EOF____

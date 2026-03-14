@@ -1,0 +1,63 @@
+character
+{
+	name = Junina Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b_shadow.png;
+	bodyEntity = character_body_junina_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 37;
+	level = 1;
+	scale = 1;
+	speed = 5.5;
+	resistance = 2500;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 35;
+	bodyColor = 4294905872;
+	dropEyes = true;
+	eyeColor = 4294901760;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:false\;dodge-cooldown:2500;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = false;
+
+	attackMinimumDistance = 450;
+
+	threatDetectedSound = monster_confused.mp3;
+	confusedSound = gnome_idle_01.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Beam;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	projectileSpin = 24.0;
+	projectileSpeed = 14.0;
+
+	attackCooldown = 850;
+	damage = 40;
+	speedBoost = 1.05;
+
+	soundPack = power;
+
+	element = darkness;
+
+	projectileEntity = projectile_dark_beam.ent;
+}
+EOF____

@@ -1,0 +1,73 @@
+character
+{
+	name = Ice Golem;
+	bagSlots = 4;
+	bodySprite = boss_golem_ice.png;
+	bodyEntity = boss_golem_ice.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 7;
+	resistance = 999999999;
+	scale = 1.1;
+	walkStyle = golem;
+	attackStyle = golem;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 256;
+
+	jumpImpulse = 23;
+	idleTimeBeforeJump = 150;
+
+	enableWalkDustEffects = true;
+
+	enableWalkOnWater = false;
+	enableDamageAnimation = false;
+	enableJumpEffects = true;
+	enableDustEffects = true;
+	eyeColor = 13565952;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = false;
+
+	damageSound = projectile_blunt_hit.mp3;
+}
+
+equippedItem0
+{
+	name = Stone;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = projectile_ice_golem_stones.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = 16;
+	equipOffsetY = -48;
+
+	attackCooldown = 1300;
+	damage = 18;
+
+	knockback = 6;
+
+	soundPack = stone;
+
+	frost = true;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_ice_golem_stone.ent;
+	projectileSpeed = 20;
+	projectileSpin = 12;
+	//invertProjectile = true;
+}
+
+EOF____

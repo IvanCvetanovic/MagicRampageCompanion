@@ -1,0 +1,72 @@
+character
+{
+	name = King;
+	bagSlots = 16;
+	bodySprite = armor_king.png;
+	bodyEntity = character_body_king.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 36;
+	level = 1;
+	speed = 7.0;
+	resistance = 999999999;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 4294967295;
+	seriousDamageWaitTime = 350;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	attackMinimumDistance = 400;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	//threatDetectedSound = zombie_threat_detect.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	scale = 1;
+	walkDuringCooldown = true;
+}
+
+equippedItem0
+{
+	name = Kings Protection;
+	type = armor;
+	equipEntity = character_armor_5x2.ent;
+	secondaryType = plate;
+	sprite = eyeKing.png;
+	armor = 200;
+	element = air;
+}
+
+equippedItem1
+{
+	name = Death Beam;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	attackCooldown = 1600;
+
+	damage = 600;
+
+	soundPack = power;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_death_beam.ent;
+
+	element = fire;
+	projectileSpeed = 14.0;
+
+	level = 2;
+}
+
+EOF____

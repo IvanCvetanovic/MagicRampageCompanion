@@ -1,0 +1,63 @@
+character
+{
+	name = Purple Bear Small;
+	bagSlots = 16;
+	bodySprite = xmas-purple-bear.png;
+	bodyEntity = xmas-purple-bear.ent;
+	scale = 0.65
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 38;
+	level = 1;
+	speed = 6;
+	resistance = 3000;
+	idleTimeBeforeJump = 45;
+	fieldOfView = 190;
+	//bodyColor = 16711680;
+	dropEyes = false;
+
+	facts = dodge-in-the-air:true\;max-dodges-in-a-row:0\;dodge-when-attacking:true\;dodge-when-running:true\;dodge-cooldown:1500;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = false;
+
+	attackMinimumDistance = 200;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Beam;
+
+	type = weapon;
+	secondaryType = melee;
+	secondaryType = jumperMelee;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	projectileSpin = 24.0;
+	projectileSpeed = 14.0;
+
+	attackCooldown = 850;
+	damage = 40;
+	speedBoost = 1.05;
+
+	soundPack = power;
+
+	element = darkness;
+
+	projectileEntity = projectile_dark_beam_small.ent;
+}
+
+EOF____

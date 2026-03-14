@@ -1,0 +1,109 @@
+character
+{
+	name = Orc Fighter;
+	bagSlots = 4;
+	bodySprite = boss_orc.png;
+	bodyEntity = boss_orc.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 6;
+	resistance = 999999999;
+	scale = 1.5;
+	walkStyle = orc;
+	attackStyle = orc;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 100;
+
+	jumpImpulse = 1;
+	idleTimeBeforeJump = 1500;
+
+	enableWalkDustEffects = true;
+
+	enableWalkOnWater = false;
+	enableDamageAnimation = false;
+	enableJumpEffects = true;
+	enableDustEffects = true;
+	eyeColor = 4294959616;
+	dropEyes = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = true;
+}
+
+equippedItem0
+{
+	name = Air;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_dummy.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = air;
+}
+
+equippedItem1
+{
+	name = Orc Punch;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = false;
+
+	equipOffsetX =  64;
+	equipOffsetY =  24;
+
+	attackCooldown = 2200;
+	damage = 120;
+
+	knockback = 10;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_orc_punch.ent;
+
+	level = 1;
+	element = fire;
+}
+
+item0
+{
+	name = Orc Punch;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = false;
+
+	equipOffsetX =  64;
+	equipOffsetY =  24;
+
+	knockback = 10;
+
+	attackCooldown = 2400;
+	damage = 120;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_orc_punch.ent;
+
+	level = 1;
+	element = fire;
+}
+
+EOF____

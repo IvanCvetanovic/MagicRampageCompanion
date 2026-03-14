@@ -1,0 +1,44 @@
+character
+{
+	name = Guard Tanker;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = tanker0;
+	jumpImpulse = 25;
+	level = 1;
+	speed = 5;
+	resistance = 80;
+	scale = 1.0;
+
+	idleTimeBeforeJump = 250;
+	fieldOfView = 20;
+	bodyColor = 0;
+
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	//threatDetectedSound = monster_threat_detect.mp3;
+	//confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Obsidian Set;
+	type = armor;
+	secondaryType = plate;
+	sprite = armor_plate_1b.png;
+	color  = 8293059;
+
+	armor = 0;
+}
+
+EOF____

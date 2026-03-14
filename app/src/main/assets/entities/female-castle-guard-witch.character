@@ -1,0 +1,71 @@
+character
+{
+	name = Female Castle Guard;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = femaleCastleGuard0;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 7.0;
+	resistance = 999999999;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4291358293;
+	seriousDamageWaitTime = 350;
+	keepClassHelm = true;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	attackMinimumDistance = 300;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+}
+
+equippedItem0
+{
+	reference = Witch Dress;
+}
+
+equippedItem1
+{
+	name = Broom Staff;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = staff_halloween.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -30;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = 2;
+
+	attackCooldown = 1800;
+	damage = 150;
+
+	soundPack = power;
+
+	jumpBoost = 1.02;
+	speedBoost = 1.01;
+	projectileSpeed = 11.0;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_witch_broom.ent;
+
+	element = earth;
+
+	maxLevelAllowed = 15;
+
+	pierceCount = 1;
+	enablePierceAreaDamage = true;
+	text = pierce-weapon-std-desc;
+}
+
+EOF____

@@ -1,0 +1,97 @@
+character
+{
+	name = Armored Red Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 36;
+	level = 1;
+	speed = 7;
+	scale = 1.0;
+	resistance = 2000;
+	idleTimeBeforeJump = 80;
+	fieldOfView = 45;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	attackMinimumDistance = 192;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Staff of Darkness;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = staff_3.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -29.0;
+	smoothFollow = true;
+
+	equipOffsetX = -29;
+	equipOffsetY = -1;
+
+	attackCooldown = 1500;
+	damage = 80;
+
+	soundPack = power;
+
+	speedBoost = 1.02;
+	jumpBoost = 1.02;
+
+	projectileEntity = projectile_dark_beam.ent;
+	equipEntity = weapon_darkness_staff.ent;
+
+	element = darkness;
+	projectileSpeed = 16.0;
+
+	text = against-insects;
+
+	maxLevelAllowed = 6;
+}
+
+equippedItem1
+{
+	name = Pumpkin Head;
+	type = armor;
+	secondaryType = cloth;
+	sprite = pumpkin_head.png;
+	color  = 0;
+	element = fire;
+
+	armor = 50;
+}
+
+equippedItem2
+{
+	name = Steelblow Ring;
+	type = artifact;
+	secondaryType = ring;
+
+	armor = 0;
+
+	equipEntity = none;
+	sprite = ring_11.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = air;
+}
+
+EOF____

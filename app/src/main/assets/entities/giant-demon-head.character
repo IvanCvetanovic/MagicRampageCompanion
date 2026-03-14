@@ -1,0 +1,79 @@
+character
+{
+	name = Giant Demon Head;
+	bagSlots = 16;
+	bodySprite = giant_demon_head.png;
+	bodyEntity = character_body_giant_demon_head.ent;
+	feetEntity = character_feet_lighter.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 3;
+	resistance = 600;
+	scale = 1.0;
+
+	fieldOfView = 90;
+	bodyColor = 16777215;
+	dropEyes = false;
+
+	attackMinimumDistance = 400;
+
+	jumpImpulse = 24.5;
+	idleTimeBeforeJump = 1300;
+
+	enableWalkDustEffects = false;
+
+	enableDamageAnimation = false;
+	enableAttackAnimation = true;
+
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 13565952;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = true;
+
+	threatDetectedSound = monster_confused.mp3;
+	//confusedSound = monster_confused.mp3;
+	damageSound = monster_threat_detect.mp3;
+}
+
+equippedItem0
+{
+	name = Fire Staff;
+
+	type = weapon;
+	secondaryType = flyingMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = 70;
+	equipOffsetY = 80;
+
+	attackCooldown = 5000;
+	damage = 10;
+
+	knockback = 6;
+
+	soundPack = power;
+	projectileSpeed = 11;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_fire_ball_warlock.ent;
+	projectileSpeed = 10.0;
+
+	shootBelowChest = true;
+	projectileBelowChestValue = 0.0f;
+
+	element = fire;
+}
+
+EOF____

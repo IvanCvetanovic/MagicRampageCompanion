@@ -38,6 +38,22 @@
             android:ellipsize="end"
             android:maxLines="1" />
 
+        <ImageButton
+            android:id="@+id/btnShowSecrets"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Show Secret Areas" />
+
+        <ImageButton
+            android:id="@+id/btnToggleLogic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_view"
+            android:contentDescription="Toggle Logic Entities" />
+
     </LinearLayout>
 
 </FrameLayout>

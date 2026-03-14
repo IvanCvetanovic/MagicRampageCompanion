@@ -1,0 +1,81 @@
+character
+{
+	name = Fire Shaman;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 30;
+	level = 1;
+	speed = 6;
+	resistance = 850;
+	scale = 1.1;
+
+	idleTimeBeforeJump = 150;
+	fieldOfView = 25;
+	bodyColor = 16239960;
+	eyeColor = 4278247676;
+
+	walkDuringCooldown = true;
+	enableWalkOnWater = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Fire Shaman Armor;
+	type = armor;
+	secondaryType = plate;
+	sprite = armor_shaman_b.png;
+	magicBoost = 1.35;
+	jumpBoost = 1.03;
+	element = fire;
+
+	armor = 40;
+}
+
+equippedItem1
+{
+	name = Epic Fire Staff;
+
+	type = weapon;
+	secondaryType = jumperRanged;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 1200;
+	damage = 60;
+	jumpBoost  = 1.04;
+	speedBoost = 1.04;
+
+	knockback = 2;
+
+	soundPack = power;
+
+	persistAgainstProjectile = false;
+	projectileEntity = projectile_shaman_fire_ball.ent;
+	projectileSpeed = 10.0;
+	projectileSpin = 16;
+
+	element = fire;
+
+	level = 1;
+}
+
+EOF____

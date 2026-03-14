@@ -1,0 +1,71 @@
+character
+{
+	name = Dark Ghost;
+	bagSlots = 16;
+	bodySprite = character_body_rat_ghost.png;
+	bodyEntity = character_body_rat_ghost.ent;
+	feetEntity = character_feet_lighter.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 6.0;
+	resistance = 60;
+	scale = 1.0;
+	fieldOfView = 90;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 96;
+
+	jumpImpulse = 20;
+	idleTimeBeforeJump = 150;
+
+	enableWalkDustEffects = false;
+
+	enableDamageAnimation = false;
+	enableAttackAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 13565952;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = false;
+
+	//threatDetectedSound = monster_threat_detect.mp3;
+	//confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Spider Web;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 900;
+	damage = 25;
+
+	soundPack = magic;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_spider_web.ent;
+	projectileSpeed = 5;
+	//equipEntity = weapon.ent;
+
+	element = light;
+}
+
+EOF____

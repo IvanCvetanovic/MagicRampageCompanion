@@ -1,0 +1,70 @@
+character
+{
+	name = Guard Tanker;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = tanker0;
+	jumpImpulse = 25;
+	level = 1;
+	speed = 5;
+	resistance = 130;
+	scale = 1.12;
+
+	idleTimeBeforeJump = 250;
+	fieldOfView = 20;
+	bodyColor = 0;
+
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	//threatDetectedSound = monster_threat_detect.mp3;
+	//confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Darkskull Sword;
+
+	type = weapon;
+	secondaryType = sword;
+	sprite = sword_4.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -30;
+	equipOffsetY = -2;
+
+	attackCooldown = 3000;
+	damage = 30;
+	armorBoost = 1.2;
+	speedBoost = 1.04;
+
+	knockback = 2;
+
+	soundPack = heavy-blade;
+
+	element = darkness;
+
+	projectileEntity = projectile_sword_4.ent;
+	projectileSpeed = 14.0;
+}
+
+equippedItem1
+{
+	reference = Obsidian Set;
+	stackSize = 1;
+}
+
+EOF____

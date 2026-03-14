@@ -1,0 +1,65 @@
+character
+{
+	name = Nature Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 5.4;
+	resistance = 110;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 30;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = true;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Nature Staff;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = staff_1.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -25.0;
+	smoothFollow = true;
+
+	equipOffsetX = -28;
+	equipOffsetY = 6;
+
+	attackCooldown = 3000;
+	damage = 15;
+
+	soundPack = magic;
+
+	projectileEntity = projectile_nature_skeleton_staff.ent;
+	equipEntity = weapon_nature_staff.ent;
+	projectileSpeed = 10;
+
+	element = earth;
+}
+
+equippedItem1
+{
+	reference = Nature Mage Vest;
+	stackSize = 1;
+}
+
+EOF____

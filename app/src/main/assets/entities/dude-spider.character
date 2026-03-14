@@ -1,0 +1,101 @@
+character
+{
+	name = Dude Spider Minion;
+	bagSlots = 16;
+	bodySprite = spider_2_dude-2.png;
+	bodyEntity = character_body_dude_spider.ent;
+	feetEntity = character_feet_lighter.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 8.0;
+	resistance = 400;
+	scale = 0.75;
+	walkStyle = spider;
+	attackStyle = spider;
+	fieldOfView = 90;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 200;
+
+	jumpImpulse = 30;
+	idleTimeBeforeJump = 50;
+
+	enableWalkDustEffects = true;
+	enableWalkOnWater = true;
+
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = true;
+	eyeColor = 4293759519;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = false;
+}
+
+equippedItem0
+{
+	name = Spider Web;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 3000;
+	damage = 22;
+
+	soundPack = magic;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_druid_spider_web.ent;
+	projectileSpeed = 5;
+	//equipEntity = weapon.ent;
+
+	element = earth;
+	poisonous = true;
+
+	level = 1;
+}
+
+equippedItem1
+{
+	name = Air Vest;
+	type = armor;
+	secondaryType = cloth;
+	sprite = faceless.png;
+
+	element = air;
+
+	equipEntity = none;
+	armor = 80;
+}
+
+equippedItem2
+{
+	name = Spider Ring;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_7.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	armor = 0;
+
+	element = earth;
+}
+
+EOF____

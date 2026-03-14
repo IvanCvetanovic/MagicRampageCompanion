@@ -1,0 +1,86 @@
+character
+{
+	name = Jumping Fire Skeleton;
+	bagSlots = 16;
+	bodySprite = helmet_2.png;
+	bodyEntity = character_body_5x2.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+
+	jumpImpulse = 35;
+	idleTimeBeforeJump = 300;
+
+	enableJumpEffects = false;
+	enableDustEffects = true;
+
+	preciseAttack = false;
+	enableWalkDustEffects = true;
+
+	level = 1;
+	speed = 5.4;
+	resistance = 140;
+
+	fieldOfView = 45;
+
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	attackMinimumDistance = 260;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Fire Staff;
+
+	type = weapon;
+	secondaryType = staff;
+	sprite = staff_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	shootBelowChest = true;
+
+	attackCooldown = 1700;
+	damage = 40;
+
+	level = 1;
+
+	soundPack = magic;
+
+	projectileEntity = projectile_fire_ball.ent;
+	equipEntity = weapon_fire_staff.ent;
+	projectileSpin = 16;
+	projectileSpeed = 8.0;
+
+	element = fire;
+
+	secondaryType = jumperMelee;
+}
+
+equippedItem1
+{
+	name = Air Vest;
+	type = armor;
+	secondaryType = cloth;
+	sprite = armor_plate_2b.png;
+
+	element = air;
+
+	armor = 10;
+}
+
+EOF____

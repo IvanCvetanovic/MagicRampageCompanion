@@ -1,0 +1,63 @@
+character
+{
+	name = Armored Red Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = bunnyMask;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 5.4;
+	resistance = 150;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	attackMinimumDistance = 192;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Iron Mace;
+
+	type = weapon;
+	secondaryType = mace;
+	sprite = mace_1.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -2;
+
+	attackCooldown = 800;
+	damage = 16;
+	armorBoost = 1.3;
+
+	knockback = 5;
+
+	soundPack = blunt;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_mace_1.ent;
+	invertProjectile = true;
+	projectileSpeed = 15.0;
+}
+
+EOF____

@@ -1,0 +1,72 @@
+character
+{
+	name = Zombie Guard;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = zombie0;
+	jumpImpulse = 28;
+	level = 1;
+	speed = 6;
+	resistance = 14;
+	//scale = 1.0;
+	walkStyle = zombie;
+	attackStyle = zombie;
+	idleTimeBeforeJump = 700;
+	fieldOfView = 20;
+	bodyColor = 4289789884;
+	eyeColor = 4294705070;
+
+	walkingDustStride = 30.0f;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	threatDetectedSound = zombie_threat_detect.mp3;
+	//confusedSound = zombie_confused.mp3;
+	damageSound = zombie_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Zombie Set;
+	type = armor;
+	secondaryType = leather;
+	sprite = armor_leather_0b.png;
+
+	armor = 0;
+}
+
+equippedItem1
+{
+	name = Zombie Bite;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1000;
+	damage = 24;
+	//projectileSpeed = 12;
+
+	knockback = 0;
+
+	soundPack = zombie;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_bite.ent;
+}
+
+EOF____

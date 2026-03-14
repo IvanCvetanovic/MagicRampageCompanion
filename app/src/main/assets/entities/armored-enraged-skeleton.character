@@ -1,0 +1,68 @@
+character
+{
+	name = Armored Skeleton;
+	bagSlots = 16;
+	bodySprite = character_body_b.png;
+	bodyEntity = character_body_skeleton.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	level = 1;
+	speed = 5.4;
+	resistance = 15;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 20;
+	bodyColor = 16774355;
+	dropEyes = false;
+
+	enableDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	attackMinimumDistance = 256;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Darkskull Sword;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = sword_4.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -30;
+	equipOffsetY = -2;
+
+	attackCooldown = 1500;
+	damage = 19;
+	armorBoost = 1.2;
+	speedBoost = 1.04;
+
+	soundPack = heavy-blade;
+
+	element = darkness;
+
+	projectileEntity = projectile_sword_4.ent;
+	projectileSpeed = 13.0;
+
+	level = 2;
+}
+
+equippedItem1
+{
+	reference = Crow Set;
+	stackSize = 1;
+}
+
+EOF____

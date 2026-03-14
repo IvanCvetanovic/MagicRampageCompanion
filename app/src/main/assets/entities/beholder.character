@@ -1,0 +1,91 @@
+character
+{
+	name = beholder;
+	bagSlots = 4;
+	bodySprite = boss_beholder.png;
+	bodyEntity = boss_beholder.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 5;
+	resistance = 999999999;
+	scale = 1;
+	walkStyle = beholder;
+	attackStyle = beholder;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 500;
+
+	jumpImpulse = 1;
+	idleTimeBeforeJump = 1500;
+
+	enableWalkDustEffects = false;
+
+	enableWalkOnWater = true;
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	//threatDetectedSound = beholder_appear.mp3;
+	confusedSound = beholder_appear.mp3;
+	//damageSound = beholder_appear.mp3;
+
+	preciseAttack = false;
+	//walkDuringCooldown = true;
+}
+
+equippedItem0
+{
+	name = Air;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_dummy.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = air;
+}
+
+equippedItem1
+{
+	name = Epic Fire Staff;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 3500;
+	damage = 60;
+	jumpBoost  = 1.04;
+	speedBoost = 1.04;
+
+	knockback = 3;
+
+	soundPack = power;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_beholder_beam.ent;
+	projectileSpeed = 4.0;
+	projectileSpin = 16;
+
+	element = light;
+
+	level = 1;
+}
+
+EOF____

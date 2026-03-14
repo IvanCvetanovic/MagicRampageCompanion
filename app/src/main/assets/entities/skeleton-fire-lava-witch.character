@@ -1,0 +1,91 @@
+character
+{
+	name = Skeleton Lava Witch;
+	bagSlots = 16;
+	bodySprite = character_body_fire_skeleton.png;
+	bodyEntity = character_body_skeleton_fire.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 29.5;
+	level = 1;
+	speed = 6;
+	resistance = 7000;
+	idleTimeBeforeJump = 300;
+	fieldOfView = 45;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 600;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Stone;
+
+	type = weapon;
+	secondaryType = jumperMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = 16;
+	equipOffsetY = -48;
+
+	attackCooldown = 1300;
+	damage = 60;
+
+	knockback = 4;
+
+	soundPack = stone;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_vulkling_ball.ent;
+	projectileSpeed = 16;
+	projectileSpin = 12;
+	//invertProjectile = true;
+}
+
+equippedItem1
+{
+    name = Volcan Forgeleather;
+    type = armor;
+    secondaryType = leather;
+    sprite = armor_lava_witch_a.png;
+    headlessAlternativeSprite = armor_lava_witch_a.png;
+
+    alternativeMaxedEquipEntity = character_armor_firestorm.ent;
+
+    hideFace = true;
+    forceEyes = false;
+
+    magicBoost = 1.55;
+    swordBoost = 2.4;
+    hammerBoost = 3.2;
+    axeBoost = 2.7;
+    speedBoost  = 0.99;
+    //jumpBoost  = 0.99;
+
+    armor = 56;
+    element = fire;
+
+    color  = 4294815509;
+    colorMultiplier = 1.4;
+    depthOffset = 0.029;
+    effectsXOffsetAdjust = -16;
+}
+EOF____

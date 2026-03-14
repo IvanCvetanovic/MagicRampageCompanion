@@ -1,0 +1,39 @@
+character
+{
+	name = Mini Slime;
+	bagSlots = 4;
+	bodySprite = character_body_minislime_a.png;
+	bodyEntity = character_body_minislime.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 4;
+	resistance = 500;
+	scale = 1.0;
+	walkStyle = slime;
+	attackStyle = slime;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 1;
+
+	jumpImpulse = 15;
+	idleTimeBeforeJump = 1500;
+
+	enableWalkDustEffects = false;
+
+	enableWalkOnWater = true;
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 13565952;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = false;
+}
+
+EOF____

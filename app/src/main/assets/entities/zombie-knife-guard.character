@@ -1,0 +1,69 @@
+character
+{
+	name = Zombie Knife Guard;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = zombie0;
+	jumpImpulse = 34;
+	level = 1;
+	speed = 5;
+	resistance = 20;
+	//scale = 0.95;
+	//walkStyle = slow;
+	//attackStyle = slow;
+	idleTimeBeforeJump = 700;
+	fieldOfView = 20;
+	bodyColor = 4291539967;
+	eyeColor = 16514990;
+
+	enableDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	//confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Zombie Set;
+	type = armor;
+	secondaryType = leather;
+	sprite = armor_leather_0b.png;
+
+	armor = 2;
+}
+
+equippedItem1
+{
+	name = Iron Dagger;
+
+	type = weapon;
+	secondaryType = dagger;
+	sprite = dagger_0.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 1600;
+	damage = 15;
+	projectileSpeed = 12;
+	shootBelowChest = true;
+
+	knockback = 0.5;
+
+	soundPack = light-blade;
+
+	projectileEntity = projectile_dagger_0.ent;
+}
+
+EOF____

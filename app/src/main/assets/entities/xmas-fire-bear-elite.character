@@ -1,0 +1,75 @@
+character
+{
+	name = Fire Elemental;
+	bagSlots = 16;
+	bodySprite = xmas-fire-bear.png;
+	bodyEntity = xmas-fire-bear.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	jumpImpulse = 31;
+	level = 1;
+	scale = 1.4;
+	speed = 5.6;
+	resistance = 10000;
+	//walkStyle = zombie;
+	//attackStyle = zombie;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+
+	//enableWalkOnWater = true;
+
+	eyeColor = 16711680;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	//attackMinimumDistance = 110;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = zombie_threat_detect.mp3;
+	//damageSound = zombie_confused.mp3;
+
+	enableDamageAnimation = false;
+}
+
+equippedItem0
+{
+	name = Epic Fire Staff;
+
+	type = weapon;
+	secondaryType = jumperRanged;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 1500;
+	damage = 30;
+	jumpBoost  = 1.04;
+	speedBoost = 1.04;
+
+	knockback = 2;
+
+	soundPack = power;
+
+	projectileEntity = projectile_epic_fire_ball.ent;
+	projectileSpeed = 10.0;
+	projectileSpin = 16;
+
+	element = fire;
+
+	level = 2;
+}
+
+
+EOF____

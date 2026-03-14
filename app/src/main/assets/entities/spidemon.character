@@ -1,0 +1,89 @@
+character
+{
+	name = Spidemon;
+	bagSlots = 4;
+	bodySprite = boss_spider_demon.png;
+	bodyEntity = boss_spidemon.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 6.5;
+	resistance = 999999999;
+	scale = 1.2;
+	walkStyle = spidemon;
+	attackStyle = spidemon;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 320;
+
+	jumpImpulse = 15;
+	idleTimeBeforeJump = 1000;
+
+	enableWalkDustEffects = true;
+
+	enableWalkOnWater = true;
+	enableDamageAnimation = true;
+	enableJumpEffects = true;
+	enableDustEffects = true;
+	eyeColor = 13565952;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = false;
+
+	damageSound = big_nasty_beast_grunt_03.mp3;
+}
+
+equippedItem0
+{
+	name = Spikes;
+	type = armor;
+	secondaryType = cloth;
+	equipEntity = boss_spidemon_armor.ent;
+	sprite = boss_spider_demon_armor_0.png;
+
+	magicBoost = 1.0;
+	jumpBoost = 1.0;
+	speedBoost = 1.0;
+	element = darkness;
+
+	armor = 0;
+}
+
+equippedItem1
+{
+	name = Spider Web;
+
+	type = weapon;
+	secondaryType = jumperMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = 64;
+	equipOffsetY = -32;
+
+	attackCooldown = 1600;
+	damage = 23;
+
+	knockback = 6;
+
+	soundPack = power;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_spidemon.ent;
+	projectileSpeed = 8;
+	//equipEntity = weapon.ent;
+
+	element = darkness;
+	poisonous = true;
+}
+
+EOF____

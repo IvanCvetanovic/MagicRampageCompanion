@@ -1,0 +1,48 @@
+character
+{
+	name = Dude Guard;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = dudeHendrix;
+	jumpImpulse = 38;
+	level = 1;
+	speed = 9.5;
+	resistance = 999999999;
+	idleTimeBeforeJump = 200;
+	fieldOfView = 45;
+	bodyColor = 4289830521;
+	scale = 1.05;
+
+	enableDustEffects = true;
+	enableJumpEffects = true;
+
+	keepClassHelm = true;
+
+	attackMinimumDistance = 420;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = true;
+
+	threatDetectedSound = male_02_grunt_14.mp3;
+	//confusedSound = zombie_confused.mp3;
+	damageSound = male_02_grunt_14.mp3;
+}
+
+equippedItem0
+{
+	reference = Swamp Ranger Suit;
+	modElement = earth;
+	level = 6;
+}
+
+equippedItem1
+{
+	reference = Toxic Axe;
+	modElement = light;
+	level = 0;
+}
+
+EOF____

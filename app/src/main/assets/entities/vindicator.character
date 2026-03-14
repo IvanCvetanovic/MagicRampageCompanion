@@ -1,0 +1,87 @@
+character
+{
+	name = Vindicator;
+	bagSlots = 4;
+	bodySprite = boss_vindicator.png;
+	bodyEntity = boss_vindicator.ent;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 5;
+	resistance = 999999999;
+	scale = 1.4;
+	walkStyle = orc;
+	attackStyle = orc;
+	fieldOfView = 180;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 720;
+
+	jumpImpulse = 1;
+	idleTimeBeforeJump = 1500;
+
+	enableWalkDustEffects = false;
+
+	enableWalkOnWater = true;
+	enableDamageAnimation = true;
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 4294959616;
+	dropEyes = false;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+
+	preciseAttack = false;
+	walkDuringCooldown = false;
+}
+
+equippedItem0
+{
+	name = Air;
+	type = artifact;
+	secondaryType = ring;
+
+	equipEntity = none;
+	sprite = ring_dummy.png;
+
+	dropEntityName = item_ring_0.ent;
+
+	element = air;
+}
+
+equippedItem1
+{
+	name = Vindicator Beam;
+
+	type = weapon;
+	secondaryType = melee;
+	sprite = none;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -20.0;
+	smoothFollow = false;
+
+	equipOffsetX =  64;
+	equipOffsetY =  24;
+
+	attackCooldown = 4000;
+	damage = 220;
+
+	projectileSpeed = 9.0;
+
+	pierceCount = 1;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_vindicator_beam.ent;
+
+	knockback = 6;
+
+	soundPack = bomb;
+
+	level = 1;
+	element = darkness;
+}
+
+EOF____

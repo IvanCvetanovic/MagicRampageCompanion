@@ -1,0 +1,72 @@
+character
+{
+	name = Demonic Spider Minion;
+	bagSlots = 16;
+	bodySprite = spider_3.png;
+	bodyEntity = character_body_demonic_spider_minion.ent;
+	feetEntity = character_feet_lighter.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 4;
+	resistance = 50;
+	scale = 1;
+	walkStyle = spider;
+	attackStyle = spider;
+	fieldOfView = 45;
+	bodyColor = 16777215;
+
+	attackMinimumDistance = 200;
+
+	dropEyes = false;
+
+	enableWalkOnWater = true;
+	jumpImpulse = 28;
+	idleTimeBeforeJump = 1300;
+
+	enableWalkDustEffects = true;
+
+	enableDamageAnimation = false;
+	enableJumpEffects = false;
+	enableDustEffects = true;
+	eyeColor = 13565952;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = false;
+}
+
+equippedItem0
+{
+	name = Spider Web;
+
+	type = weapon;
+	secondaryType = jumperMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -26;
+	equipOffsetY = 2;
+
+	attackCooldown = 2000;
+	damage = 23;
+
+	soundPack = magic;
+
+	persistAgainstProjectile = true;
+	projectileEntity = projectile_spider_web.ent;
+	projectileSpeed = 5;
+	//equipEntity = weapon.ent;
+
+	element = darkness;
+	poisonous = true;
+}
+
+EOF____

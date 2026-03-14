@@ -1,0 +1,68 @@
+character
+{
+	name = Deco;
+	bagSlots = 16;
+	bodySprite = character_body.png;
+	exp = 0;
+	gold = 0;
+	hairSprite = deco0;
+	jumpImpulse = 35;
+	level = 1;
+	speed = 7.0;
+	resistance = 9999999;
+	idleTimeBeforeJump = 150;
+	fieldOfView = 45;
+	bodyColor = 4292130427;
+	seriousDamageWaitTime = 350;
+
+	enableDustEffects = true;
+
+	walkDuringCooldown = true;
+
+	attackMinimumDistance = 300;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = knifeThrower;
+	preciseAttack = false;
+
+	//threatDetectedSound = zombie_threat_detect.mp3;
+	//confusedSound = zombie_confused.mp3;
+	//damageSound = zombie_confused.mp3;
+}
+
+equippedItem0
+{
+	reference = Moonkeeper Set;
+	stackSize = 1;
+}
+
+equippedItem1
+{
+	name = Undine's Dagger;
+
+	type = weapon;
+	secondaryType = jumperRanged;
+	sprite = dagger_snake_black_mamba.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle =-30.0;
+	smoothFollow = true;
+
+	equipOffsetX = -32;
+	equipOffsetY = -12;
+
+	attackCooldown = 2500;
+	damage = 3;
+	speedBoost = 1.2;
+	jumpBoost = 1.05;
+
+	soundPack = heavy-blade;
+
+	projectileEntity = projectile_water_dagger.ent;
+	projectileSpin = 12;
+	projectileSpeed = 13.0;
+	element = water;
+}
+
+EOF____

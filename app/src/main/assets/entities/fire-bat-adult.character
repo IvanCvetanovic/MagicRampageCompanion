@@ -1,0 +1,79 @@
+character
+{
+	name = Fire Bat;
+	bagSlots = 16;
+	bodySprite = character_body_bat.png;
+	bodyEntity = character_body_bat.ent;
+	feetEntity = character_feet_lighter.ent;
+	exp = 0;
+	gold = 0;
+	hairSprite = faceless;
+	level = 1;
+	speed = 3;
+	resistance = 200;
+	scale = 0.7;
+
+	fieldOfView = 90;
+	bodyColor = 16777215;
+	dropEyes = false;
+
+	attackMinimumDistance = 400;
+
+	jumpImpulse = 24.5;
+	idleTimeBeforeJump = 1300;
+
+	enableWalkDustEffects = false;
+
+	enableDamageAnimation = false;
+	enableAttackAnimation = true;
+
+	enableJumpEffects = false;
+	enableDustEffects = false;
+	eyeColor = 13565952;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+
+	preciseAttack = true;
+	walkDuringCooldown = true;
+
+	//threatDetectedSound = monster_confused.mp3;
+	//confusedSound = monster_confused.mp3;
+	damageSound = bat_damage.mp3;
+}
+
+equippedItem0
+{
+	name = Fire ball;
+
+	type = weapon;
+	secondaryType = flyingMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = -35.0;
+	smoothFollow = true;
+
+	equipOffsetX = -48;
+	equipOffsetY = 16;
+
+	attackCooldown = 2000;
+	damage = 55;
+
+	soundPack = power;
+	projectileSpeed = 11;
+
+	projectileEntity = projectile_fire_ball.ent;
+	projectileSpeed = 8.5;
+	projectileSpin = 16;
+
+	shootBelowChest = false;
+	//projectileBelowChestValue = -16.0f;
+
+	element = fire;
+
+	level = 1;
+}
+
+EOF____

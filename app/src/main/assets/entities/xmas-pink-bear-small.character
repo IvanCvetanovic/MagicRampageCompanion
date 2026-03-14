@@ -1,0 +1,66 @@
+character
+{
+	name = Pink Bear;
+	bagSlots = 16;
+	bodySprite = xmas-pink-bear.png;
+	bodyEntity = xmas-pink-bear.ent;
+	
+	scale = 0.65
+	gold = 0;
+	hairSprite = faceless;
+
+	jumpImpulse = 38;
+	level = 1;
+	speed = 10;
+	resistance = 3500;
+	idleTimeBeforeJump = 1300;
+	fieldOfView = 45;
+	//bodyColor = 16711680;
+	dropEyes = false;
+
+	enableDustEffects = true;
+	enableWalkDustEffects = true;
+
+	patrolBehaviour = waypoints;
+	attackBehaviour = stoneThrower;
+	preciseAttack = true;
+
+	attackMinimumDistance = 260;
+
+	threatDetectedSound = monster_threat_detect.mp3;
+	confusedSound = monster_confused.mp3;
+	//damageSound = monster_confused.mp3;
+}
+
+equippedItem0
+{
+	name = Necromorphicon;
+
+	type = weapon;
+	secondaryType = meleeDodge;
+	secondaryType = jumperMelee;
+	sprite = faceless.png;
+
+	depthOffset = -0.04;
+
+	equippedAngle = 0.0;
+	smoothFollow = true;
+
+	smoothFollow = 0.2;
+
+	equipOffsetX = -48;
+	equipOffsetY = -8;
+
+	attackCooldown = 1450;
+	damage = 100;
+	explosionRange = 160;
+
+	soundPack = power;
+
+	projectileEntity = pink_projectile_small.ent;
+
+	element = darkness;
+	projectileSpeed = 12.0;
+}
+
+EOF____
