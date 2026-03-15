@@ -597,6 +597,7 @@ Der zweite geheime Bereich ist ohne die Verwendung des Jumpman-Anzugs oder spezi
     <string name="dungeon24text">Alle drei 💎 befinden sich auf dem Weg zum Ende des Dungeons, du kannst sie nicht verfehlen.\n\n
         Für die ersten beiden geheimen Bereiche musst du den Knopf aktivieren. Der Knopf für den ersten geheimen Bereich ist durch einen Block versteckt, den du zerstören musst, und der Knopf für den zweiten geheimen Bereich ist visuell teilweise durch Gras verdeckt.\n\n
         Der dritte geheime Bereich befindet sich, nachdem du die ersten Türen mit dem goldenen Schlüssel geöffnet hast.\n\n
+        Der vierte geheime Bereich befindet sich, nachdem du die ersten Türen mit dem goldenen Schlüssel geöffnet hast. Er wird sich über dem großen Loch befinden, in das du hinuntergehen musst.\n\n
         Der fünfte geheime Bereich befindet sich über dem Ausgang des Dungeons.\n\n</string>
     <string name="dungeon25text">
         Alle drei 💎 sind auf dem Weg zum Dungeon-Ende, Sie können sie nicht verpassen.\n\n
