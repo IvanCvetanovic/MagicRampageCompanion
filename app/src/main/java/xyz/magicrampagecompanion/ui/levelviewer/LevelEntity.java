@@ -34,6 +34,12 @@ public class LevelEntity {
     public float lightColorG = Float.NaN;
     public float lightColorB = Float.NaN;
 
+    // Diffuse color from <DiffuseColor r g b> in the .ent file — used to tint the sprite.
+    // NaN means no tint (treat as white / 1,1,1).
+    public float diffuseColorR = Float.NaN;
+    public float diffuseColorG = Float.NaN;
+    public float diffuseColorB = Float.NaN;
+
     // Custom Data storage for generic variables.
     public Map<String, String> customData = new HashMap<>();
 

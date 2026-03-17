@@ -957,6 +957,22 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="dungeons">🏰 Dungeons 🏰</string>
     <string name="survival_mode">☠️ Survival Mode ☠️</string>
     <string name="test_equipment">🛡️ Test Equipment 🛡️</string>
+    <string name="level_viewer">🗺️ Level Viewer 🗺️</string>
+
+    <!-- Level Viewer -->
+    <string name="utility_markers_visible">Utility markers: Visible</string>
+    <string name="utility_markers_hidden">Utility markers: Hidden</string>
+    <string name="unlock_secret_areas_title">Unlock Secret Areas</string>
+    <string name="unlock_secret_areas_message">Do you want to watch an ad to permanently unlock the positions of all secret areas for this level?</string>
+    <string name="watch_ad">Watch Ad</string>
+    <string name="maybe_later">Maybe later</string>
+    <string name="no_secret_areas">No secret areas found in this level.</string>
+    <string name="select_secret_area">Select Secret Area</string>
+    <string name="moved_to_secret_area">Moved to Secret Area %d</string>
+    <string name="secret_area_item">Secret Area %d</string>
+    <string name="close">Close</string>
+    <string name="secrets_revealed">Secret areas permanently revealed for this level!</string>
+    <string name="ad_still_loading">Ad is still loading, please try again in a moment.</string>
     <string name="about">ℹ️ About ℹ️</string>
     <string name="achievements">🏆 Achievements 🏆</string>
     <string name="items">📋 Items 📋</string>
@@ -1520,6 +1536,15 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="dungeon_43">Dungeon 43</string>
     <string name="dungeon_43_bonus">Dungeon 43 Bonus</string>
     <string name="dungeon_44">Dungeon 44</string>
+    <string name="dungeon_36_1">Dungeon 36.1</string>
+    <string name="dungeon_37_mono">Dungeon 37 Mono</string>
+    <string name="dungeon_38_1">Dungeon 38.1</string>
+    <string name="dungeon_40_1">Dungeon 40.1</string>
+    <string name="dungeon_41_1">Dungeon 41.1</string>
+    <string name="dungeon_42_1">Dungeon 42.1</string>
+    <string name="dungeon_43_1">Dungeon 43.1</string>
+    <string name="dungeon_44_1">Dungeon 44.1</string>
+    <string name="dungeon_44_bonus">Dungeon 44 Bonus</string>
     <string name="select_element">Select Element</string>
     <string name="news">📰 News 📰</string>
 
@@ -1593,7 +1618,6 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="set_stats_title">Current Stats:</string>
     <string name="no_reward_sets">No reward sets defined!</string>
     <string name="ad_failed">"Ad failed: "</string>
-    <string name="ad_still_loading">Ad is still loading, try again soon.</string>
     <string name="blaze_armor">Blaze Armor</string>
     <string name="sovereigns_onyx_sword">Sovereigns Onyx Sword</string>
     <string name="sovereigns_ruby_sword">Sovereigns Ruby Sword</string>

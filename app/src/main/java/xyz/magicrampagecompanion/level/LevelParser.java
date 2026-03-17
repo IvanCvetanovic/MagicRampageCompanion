@@ -285,6 +285,10 @@ public class LevelParser {
                     entity.lightColorR = parseFloatAttr(p, "r", 1f);
                     entity.lightColorG = parseFloatAttr(p, "g", 1f);
                     entity.lightColorB = parseFloatAttr(p, "b", 1f);
+                } else if ("DiffuseColor".equals(tag) && !insideParticles) {
+                    entity.diffuseColorR = parseFloatAttr(p, "r", 1f);
+                    entity.diffuseColorG = parseFloatAttr(p, "g", 1f);
+                    entity.diffuseColorB = parseFloatAttr(p, "b", 1f);
                 }
             } else if (event == XmlPullParser.END_TAG) {
                 String tag = p.getName();

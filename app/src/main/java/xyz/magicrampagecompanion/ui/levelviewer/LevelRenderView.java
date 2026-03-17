@@ -107,6 +107,7 @@ public class LevelRenderView extends View {
     private Paint borderPaint;
     private Paint textPaint;
     private Paint additivePaint;
+    private Paint invertColorsPaint;
     private final RectF scratchRect = new RectF();
 
     public LevelRenderView(Context context) {
@@ -142,6 +143,14 @@ public class LevelRenderView extends View {
 
         additivePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         additivePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.ADD));
+
+        invertColorsPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        invertColorsPaint.setColorFilter(new ColorMatrixColorFilter(new ColorMatrix(new float[]{
+                0,      0,      0,      0,   0,   // R = 0
+                0,      0,      0,      0,   0,   // G = 0
+                0,      0,      0,      0,   0,   // B = 0
+                0.299f, 0.587f, 0.114f, 0,   0    // A = luma of source
+        })));
 
         scaleDetector = new ScaleGestureDetector(context, new ScaleListener());
         setClickable(true);
@@ -797,13 +806,29 @@ public class LevelRenderView extends View {
         // Pure halo sprites always render additive regardless of declared blendMode,
         // matching how the game engine renders light halos.
         boolean isHalo = entity.lightHaloSize > 0f && isPureHaloSprite(entity.spriteFile);
+        boolean forceInvert = "gradient_bg.png".equalsIgnoreCase(entity.spriteFile);
         int effectiveBlend = isHalo ? 1 : entity.blendMode;
 
         // Light color tint only applies to pure halo sprites — for everything else
         // (torches, chests, etc.) the <Light><Color> describes the light they cast,
         // not a tint on their own sprite.
         boolean hasTint = isHalo && !Float.isNaN(entity.lightColorR);
+        boolean hasDiffuse = !Float.isNaN(entity.diffuseColorR)
+                && !(entity.diffuseColorR > 0.99f && entity.diffuseColorG > 0.99f && entity.diffuseColorB > 0.99f);
         if (!hasTint) {
+            if (forceInvert) return invertColorsPaint;
+            if (hasDiffuse) {
+                int dr = Math.min(255, (int)(entity.diffuseColorR * 255));
+                int dg = Math.min(255, (int)(entity.diffuseColorG * 255));
+                int db = Math.min(255, (int)(entity.diffuseColorB * 255));
+                int key = Color.argb(0, dr, dg, db);
+                Paint cached = tintPaintCache.get(key);
+                if (cached != null) return cached;
+                Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+                p.setColorFilter(new PorterDuffColorFilter(Color.rgb(dr, dg, db), PorterDuff.Mode.MULTIPLY));
+                tintPaintCache.put(key, p);
+                return p;
+            }
             return (effectiveBlend == 1) ? additivePaint : null;
         }
         // Pack the color + effective blend mode into a cache key
@@ -840,7 +865,7 @@ public class LevelRenderView extends View {
     private boolean isUtilitySprite(String spriteFile) {
         if (spriteFile == null || spriteFile.isEmpty()) return false;
         String s = spriteFile.toLowerCase();
-        return s.equals("film.png") || s.equals("waypoint_flag.png") || isPureHaloSprite(s);
+        return s.equals("film.png") || s.equals("music.png") || s.equals("waypoint_flag.png") || isPureHaloSprite(s);
     }
 
     /**
@@ -858,24 +883,33 @@ public class LevelRenderView extends View {
     /** Sprites that have a white background baked in and need it stripped. */
     private boolean needsWhiteStripped(String sheetKey) {
         String k = sheetKey.toLowerCase();
-        return k.contains("blood_decal");
+        return k.contains("blood_decal") || k.contains("sewer_slime");
     }
 
     /**
-     * Returns a new ARGB_8888 bitmap where pixels brighter than a threshold on
-     * all three channels are made fully transparent.
+     * Returns a new ARGB_8888 bitmap with the white background removed.
+     *
+     * Uses HSV saturation: white/gray pixels have saturation ≈ 0 regardless of brightness,
+     * while any vivid color (red, green, etc.) has high saturation. Pixels below the
+     * saturation threshold are made fully transparent.
+     *
+     * saturation (0–255 scaled) = (max - min) * 255 / max
      */
     private Bitmap stripWhiteBackground(Bitmap src) {
         Bitmap out = src.copy(Bitmap.Config.ARGB_8888, true);
         int w = out.getWidth(), h = out.getHeight();
         int[] pixels = new int[w * h];
         out.getPixels(pixels, 0, w, 0, 0, w, h);
+        final int threshold = 80; // saturation below this (out of 255) → transparent
         for (int i = 0; i < pixels.length; i++) {
             int r = (pixels[i] >> 16) & 0xFF;
             int g = (pixels[i] >>  8) & 0xFF;
             int b =  pixels[i]        & 0xFF;
-            if (r > 200 && g > 200 && b > 200) {
-                pixels[i] = 0x00000000; // fully transparent
+            int max = Math.max(r, Math.max(g, b));
+            if (max == 0) { pixels[i] = 0x00000000; continue; }
+            int sat = (max - Math.min(r, Math.min(g, b))) * 255 / max;
+            if (sat < threshold) {
+                pixels[i] = 0x00000000;
             }
         }
         out.setPixels(pixels, 0, w, 0, 0, w, h);

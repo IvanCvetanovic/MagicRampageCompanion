@@ -980,6 +980,7 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="swords">Schwerter</string>
     <string name="ten_kills">10</string>
     <string name="test_equipment">🛡️ Ausrüstung testen 🛡️</string>
+    <string name="level_viewer">🗺️ Level-Ansicht 🗺️</string>
     <string name="thirty_kills">30</string>
     <string name="three_hundred_kills">300</string>
     <string name="twenty_kills">20</string>
@@ -1278,9 +1279,9 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="dungeon_43">Dungeon 43</string>
     <string name="dungeon_43_bonus">Dungeon 43 Bonus</string>
     <string name="dungeon_44">Dungeon 44</string>
-    <string name="dungeon_3">Verlies 3</string>
-    <string name="dungeon_4">Verlies 4</string>
-    <string name="dungeon_9">Verlies 9</string>
+    <string name="dungeon_3">Dungeon 3</string>
+    <string name="dungeon_4">Dungeon 4</string>
+    <string name="dungeon_9">Dungeon 9</string>
 
     <string name="select_element">Element auswählen</string>
     <string name="news">📰 Neuigkeiten 📰</string>
@@ -1650,4 +1651,29 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="scorpion_fang">Skorpionfangzahn</string>
     <string name="oasis_blade">Oasenklinge</string>
 
+    <!-- Dungeon names (Level Viewer) -->
+    <string name="dungeon_40_1">Dungeon 40.1</string>
+    <string name="dungeon_41_1">Dungeon 41.1</string>
+    <string name="dungeon_42_1">Dungeon 42.1</string>
+    <string name="dungeon_43_1">Dungeon 43.1</string>
+
+    <string name="dungeon_36_1">Dungeon 36.1</string>
+    <string name="dungeon_37_mono">Dungeon 37 Mono</string>
+    <string name="dungeon_38_1">Dungeon 38.1</string>
+    <string name="dungeon_44_1">Dungeon 44.1</string>
+    <string name="dungeon_44_bonus">Dungeon 44 Bonus</string>
+
+    <!-- Level Viewer -->
+    <string name="utility_markers_visible">Hilfsmarkierungen: Sichtbar</string>
+    <string name="utility_markers_hidden">Hilfsmarkierungen: Ausgeblendet</string>
+    <string name="unlock_secret_areas_title">Geheimgebiete freischalten</string>
+    <string name="unlock_secret_areas_message">Möchten Sie eine Werbung ansehen, um die Positionen aller Geheimgebiete in diesem Level dauerhaft freizuschalten?</string>
+    <string name="watch_ad">Werbung ansehen</string>
+    <string name="maybe_later">Vielleicht später</string>
+    <string name="no_secret_areas">Keine Geheimgebiete in diesem Level gefunden.</string>
+    <string name="select_secret_area">Geheimgebiet auswählen</string>
+    <string name="moved_to_secret_area">Zu Geheimgebiet %d bewegt</string>
+    <string name="secret_area_item">Geheimgebiet %d</string>
+    <string name="close">Schließen</string>
+    <string name="secrets_revealed">Geheimgebiete für dieses Level dauerhaft enthüllt!</string>
 </resources>

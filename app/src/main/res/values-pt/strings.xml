@@ -980,6 +980,7 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="swords">Espadas</string>
     <string name="ten_kills">10</string>
     <string name="test_equipment">🛡️ Testar Equipamento 🛡️</string>
+    <string name="level_viewer">🗺️ Ver Nível 🗺️</string>
     <string name="thirty_kills">30</string>
     <string name="three_hundred_kills">300</string>
     <string name="twenty_kills">20</string>
@@ -1649,4 +1650,29 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="scorpion_fang">Presa do Escorpião</string>
     <string name="oasis_blade">Lâmina do Oásis</string>
 
+    <!-- Dungeon names (Level Viewer) -->
+    <string name="dungeon_40_1">Masmorra 40.1</string>
+    <string name="dungeon_41_1">Masmorra 41.1</string>
+    <string name="dungeon_42_1">Masmorra 42.1</string>
+    <string name="dungeon_43_1">Masmorra 43.1</string>
+
+    <string name="dungeon_36_1">Masmorra 36.1</string>
+    <string name="dungeon_37_mono">Masmorra 37 Mono</string>
+    <string name="dungeon_38_1">Masmorra 38.1</string>
+    <string name="dungeon_44_1">Masmorra 44.1</string>
+    <string name="dungeon_44_bonus">Masmorra 44 Bônus</string>
+
+    <!-- Level Viewer -->
+    <string name="utility_markers_visible">Marcadores utilitários: Visíveis</string>
+    <string name="utility_markers_hidden">Marcadores utilitários: Ocultos</string>
+    <string name="unlock_secret_areas_title">Desbloquear áreas secretas</string>
+    <string name="unlock_secret_areas_message">Deseja assistir a um anúncio para desbloquear permanentemente as posições de todas as áreas secretas deste nível?</string>
+    <string name="watch_ad">Assistir anúncio</string>
+    <string name="maybe_later">Talvez depois</string>
+    <string name="no_secret_areas">Nenhuma área secreta encontrada neste nível.</string>
+    <string name="select_secret_area">Selecionar área secreta</string>
+    <string name="moved_to_secret_area">Movido para a área secreta %d</string>
+    <string name="secret_area_item">Área secreta %d</string>
+    <string name="close">Fechar</string>
+    <string name="secrets_revealed">Áreas secretas reveladas permanentemente para este nível!</string>
 </resources>

@@ -2,6 +2,8 @@ package xyz.magicrampagecompanion.ui.levelviewer;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import xyz.magicrampagecompanion.core.utils.LocaleHelper;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +52,11 @@ public class LevelViewerActivity extends AppCompatActivity {
     private String levelFile;
 
     @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_viewer);
@@ -83,7 +90,13 @@ public class LevelViewerActivity extends AppCompatActivity {
         });
 
         TextView title = findViewById(R.id.levelViewerTitle);
-        title.setText(levelFile.replace(".esc", ""));
+        java.util.regex.Matcher titleMatcher = java.util.regex.Pattern.compile("dungeon(\\d+)")
+                .matcher(levelFile.replace(".esc", ""));
+        String titleKey = titleMatcher.find()
+                ? titleMatcher.replaceFirst("dungeon_" + (Integer.parseInt(titleMatcher.group(1)) + 1)).replace(".", "_")
+                : levelFile.replace(".esc", "");
+        int titleResId = getResources().getIdentifier(titleKey, "string", getPackageName());
+        title.setText(titleResId != 0 ? getString(titleResId) : levelFile.replace(".esc", ""));
 
         ImageButton btnBack = findViewById(R.id.btnLevelBack);
         btnBack.setOnClickListener(v -> finish());
@@ -101,8 +114,8 @@ public class LevelViewerActivity extends AppCompatActivity {
             boolean current = renderView.isShowingLogicEntities();
             renderView.setShowLogicEntities(!current);
             btnToggleLogic.setAlpha(renderView.isShowingLogicEntities() ? 1.0f : 0.4f);
-            String status = renderView.isShowingLogicEntities() ? "Visible" : "Hidden";
-            Toast.makeText(this, "Utility markers: " + status, Toast.LENGTH_SHORT).show();
+            int statusRes = renderView.isShowingLogicEntities() ? R.string.utility_markers_visible : R.string.utility_markers_hidden;
+            Toast.makeText(this, statusRes, Toast.LENGTH_SHORT).show();
         });
 
         // --- Show Secrets Button (Ad-locked + Navigation) ---
@@ -142,10 +155,10 @@ public class LevelViewerActivity extends AppCompatActivity {
 
     private void showAdConfirmationDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("Unlock Secret Areas")
-                .setMessage("Do you want to watch an ad to permanently unlock the positions of all secret areas for this level?")
-                .setPositiveButton("Watch Ad", (dialog, which) -> showAdOrLoad())
-                .setNegativeButton("Maybe later", null)
+                .setTitle(R.string.unlock_secret_areas_title)
+                .setMessage(R.string.unlock_secret_areas_message)
+                .setPositiveButton(R.string.watch_ad, (dialog, which) -> showAdOrLoad())
+                .setNegativeButton(R.string.maybe_later, null)
                 .show();
     }
 
@@ -160,23 +173,23 @@ public class LevelViewerActivity extends AppCompatActivity {
         }
 
         if (secrets.isEmpty()) {
-            Toast.makeText(this, "No secret areas found in this level.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_secret_areas, Toast.LENGTH_SHORT).show();
             return;
         }
 
         String[] names = new String[secrets.size()];
         for (int i = 0; i < secrets.size(); i++) {
-            names[i] = "Secret Area " + (i + 1) + " (ID: " + secrets.get(i).id + ")";
+            names[i] = getString(R.string.secret_area_item, i + 1);
         }
 
         new AlertDialog.Builder(this)
-                .setTitle("Select Secret Area")
+                .setTitle(R.string.select_secret_area)
                 .setItems(names, (dialog, which) -> {
                     LevelEntity selected = secrets.get(which);
                     renderView.centerAndZoomOnWorldPos(selected.x, selected.y);
-                    Toast.makeText(this, "Moved to Secret Area " + (which + 1), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.moved_to_secret_area, which + 1), Toast.LENGTH_SHORT).show();
                 })
-                .setNegativeButton("Close", null)
+                .setNegativeButton(R.string.close, null)
                 .show();
     }
 
@@ -208,12 +221,12 @@ public class LevelViewerActivity extends AppCompatActivity {
                 saveLevelUnlock(levelFile);
                 renderView.setSecretsUnlocked(true);
                 btnShowSecrets.setColorFilter(Color.YELLOW);
-                Toast.makeText(this, "Secret areas permanently revealed for this level!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.secrets_revealed, Toast.LENGTH_LONG).show();
                 rewardedAd = null; // Reset for next use
                 loadRewardedAd(); // Pre-load next
             });
         } else {
-            Toast.makeText(this, "Ad is still loading, please try again in a moment.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.ad_still_loading, Toast.LENGTH_SHORT).show();
             loadRewardedAd();
         }
     }

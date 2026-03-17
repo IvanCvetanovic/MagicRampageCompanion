@@ -1,5 +1,6 @@
 package xyz.magicrampagecompanion.ui.levelviewer;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import xyz.magicrampagecompanion.core.utils.LocaleHelper;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -25,6 +28,11 @@ import xyz.magicrampagecompanion.R;
 public class LevelListActivity extends AppCompatActivity {
 
     private final List<String> levelFiles = new ArrayList<>();
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +83,7 @@ public class LevelListActivity extends AppCompatActivity {
         try {
             String[] files = getAssets().list("levels");
             if (files != null) {
-                Arrays.sort(files);
+                Arrays.sort(files, LevelListActivity::compareNatural);
                 for (String f : files) {
                     if (f.endsWith(".esc")) {
                         levelFiles.add(f);
@@ -85,6 +93,27 @@ public class LevelListActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static int compareNatural(String a, String b) {
+        int ia = 0, ib = 0;
+        while (ia < a.length() && ib < b.length()) {
+            char ca = a.charAt(ia), cb = b.charAt(ib);
+            if (Character.isDigit(ca) && Character.isDigit(cb)) {
+                int sa = ia, sb = ib;
+                while (ia < a.length() && Character.isDigit(a.charAt(ia))) ia++;
+                while (ib < b.length() && Character.isDigit(b.charAt(ib))) ib++;
+                int cmp = Integer.compare(
+                        Integer.parseInt(a.substring(sa, ia)),
+                        Integer.parseInt(b.substring(sb, ib)));
+                if (cmp != 0) return cmp;
+            } else {
+                if (ca != cb) return Character.compare(ca, cb);
+                ia++;
+                ib++;
+            }
+        }
+        return a.length() - b.length();
     }
 
     private class LevelViewHolder extends RecyclerView.ViewHolder {
@@ -111,7 +140,13 @@ public class LevelListActivity extends AppCompatActivity {
         }
 
         void bind(String fileName) {
-            name.setText(fileName.replace(".esc", ""));
+            java.util.regex.Matcher m = java.util.regex.Pattern.compile("dungeon(\\d+)")
+                    .matcher(fileName.replace(".esc", ""));
+            String key = m.find()
+                    ? m.replaceFirst("dungeon_" + (Integer.parseInt(m.group(1)) + 1)).replace(".", "_")
+                    : fileName.replace(".esc", "");
+            int resId = getResources().getIdentifier(key, "string", getPackageName());
+            name.setText(resId != 0 ? getString(resId) : fileName.replace(".esc", ""));
         }
     }
 }

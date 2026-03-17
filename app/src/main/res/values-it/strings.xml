@@ -981,6 +981,7 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="swords">Spade</string>
     <string name="ten_kills">10</string>
     <string name="test_equipment">🛡️ Prova Equipaggiamento 🛡️</string>
+    <string name="level_viewer">🗺️ Visualizza Livello 🗺️</string>
     <string name="thirty_kills">30</string>
     <string name="three_hundred_kills">300</string>
     <string name="twenty_kills">20</string>
@@ -1279,9 +1280,9 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="dungeon_43">Dungeon 43</string>
     <string name="dungeon_43_bonus">Dungeon 43 Bonus</string>
     <string name="dungeon_44">Dungeon 44</string>
-    <string name="dungeon_3">Sotterraneo 3</string>
-    <string name="dungeon_4">Sotterraneo 4</string>
-    <string name="dungeon_9">Sotterraneo 9</string>
+    <string name="dungeon_3">Dungeon 3</string>
+    <string name="dungeon_4">Dungeon 4</string>
+    <string name="dungeon_9">Dungeon 9</string>
 
     <string name="select_element">Seleziona elemento</string>
     <string name="news">📰 Notizie 📰</string>
@@ -1651,4 +1652,29 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="scorpion_fang">Zanna dello scorpione</string>
     <string name="oasis_blade">Lama dell\'oasi</string>
 
+    <!-- Dungeon names (Level Viewer) -->
+    <string name="dungeon_40_1">Dungeon 40.1</string>
+    <string name="dungeon_41_1">Dungeon 41.1</string>
+    <string name="dungeon_42_1">Dungeon 42.1</string>
+    <string name="dungeon_43_1">Dungeon 43.1</string>
+
+    <string name="dungeon_36_1">Dungeon 36.1</string>
+    <string name="dungeon_37_mono">Dungeon 37 Mono</string>
+    <string name="dungeon_38_1">Dungeon 38.1</string>
+    <string name="dungeon_44_1">Dungeon 44.1</string>
+    <string name="dungeon_44_bonus">Dungeon 44 Bonus</string>
+
+    <!-- Level Viewer -->
+    <string name="utility_markers_visible">Marcatori utilità: Visibili</string>
+    <string name="utility_markers_hidden">Marcatori utilità: Nascosti</string>
+    <string name="unlock_secret_areas_title">Sblocca aree segrete</string>
+    <string name="unlock_secret_areas_message">Vuoi guardare un annuncio per sbloccare definitivamente le posizioni di tutte le aree segrete di questo livello?</string>
+    <string name="watch_ad">Guarda annuncio</string>
+    <string name="maybe_later">Forse dopo</string>
+    <string name="no_secret_areas">Nessuna area segreta trovata in questo livello.</string>
+    <string name="select_secret_area">Seleziona area segreta</string>
+    <string name="moved_to_secret_area">Spostato all\'area segreta %d</string>
+    <string name="secret_area_item">Area segreta %d</string>
+    <string name="close">Chiudi</string>
+    <string name="secrets_revealed">Aree segrete rivelate permanentemente per questo livello!</string>
 </resources>

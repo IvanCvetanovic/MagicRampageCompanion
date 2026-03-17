@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for f in de es fr it ja pt ru tr uk)",
+      "Bash(do echo \"=== values-$f ===\")",
+      "Read(//c/Users/PrOfSeS/Desktop/MagicRampageCompanion/app/src/main/res/values-$f/**)",
+      "Bash(done)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(xargs grep:*)"
+    ]
+  }
+}

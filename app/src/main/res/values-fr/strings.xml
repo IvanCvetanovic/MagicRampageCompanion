@@ -979,6 +979,7 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="swords">Épées</string>
     <string name="ten_kills">10</string>
     <string name="test_equipment">🛡️ Tester l\'équipement 🛡️</string>
+    <string name="level_viewer">🗺️ Visionneuse de Niveau 🗺️</string>
     <string name="thirty_kills">30</string>
     <string name="three_hundred_kills">300</string>
     <string name="twenty_kills">20</string>
@@ -1649,4 +1650,29 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="scorpion_fang">Crochet du Scorpion</string>
     <string name="oasis_blade">Lame de l\'Oasis</string>
 
+    <!-- Dungeon names (Level Viewer) -->
+    <string name="dungeon_40_1">Donjon 40.1</string>
+    <string name="dungeon_41_1">Donjon 41.1</string>
+    <string name="dungeon_42_1">Donjon 42.1</string>
+    <string name="dungeon_43_1">Donjon 43.1</string>
+
+    <string name="dungeon_36_1">Donjon 36.1</string>
+    <string name="dungeon_37_mono">Donjon 37 Mono</string>
+    <string name="dungeon_38_1">Donjon 38.1</string>
+    <string name="dungeon_44_1">Donjon 44.1</string>
+    <string name="dungeon_44_bonus">Donjon 44 Bonus</string>
+
+    <!-- Level Viewer -->
+    <string name="utility_markers_visible">Marqueurs utilitaires: Visibles</string>
+    <string name="utility_markers_hidden">Marqueurs utilitaires: Cachés</string>
+    <string name="unlock_secret_areas_title">Débloquer les zones secrètes</string>
+    <string name="unlock_secret_areas_message">Voulez-vous regarder une publicité pour déverrouiller définitivement les positions de toutes les zones secrètes de ce niveau?</string>
+    <string name="watch_ad">Regarder la pub</string>
+    <string name="maybe_later">Peut-être plus tard</string>
+    <string name="no_secret_areas">Aucune zone secrète trouvée dans ce niveau.</string>
+    <string name="select_secret_area">Sélectionner une zone secrète</string>
+    <string name="moved_to_secret_area">Déplacé vers la zone secrète %d</string>
+    <string name="secret_area_item">Zone secrète %d</string>
+    <string name="close">Fermer</string>
+    <string name="secrets_revealed">Zones secrètes révélées définitivement pour ce niveau!</string>
 </resources>
