@@ -699,7 +699,8 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
         Uçan dikenli patronun güdümlü füzeleri önce yok edilebilir kayaları hedef alır. Odadaki kayaları yok etmediğinden emin ol. Eğer kayaları yok edersen, mermilerin seni takip etmemesi için patronun altına geçebilirsin.\n\n
         Beşinci gizli alan, sağındaki düğme ile açılabilir.\n\n</string>
     <string name="dungeon42bonustext1">Bu bölümü, zindan 42\'deki üç 💎\'i de alarak aç.\n\n
-        Mini patron odasının kapılarını açmak için vanaları doğru sırayla etkinleştirmen gerekiyor.\n\n</string>
+        Mini patron odasının kapılarını açmak için vanaları doğru sırayla etkinleştirmen gerekiyor.\n\n
+        Vanaların üzerinde çok fazla altın var, karakterinle her köşeyi kontrol ettiğinden emin ol!\n\n</string>
     <string name="dungeon42bonustext2">Patron, tüm silah türleri için kullanılabilen "Creepy Crawler" adında iyi bir yüzük düşürür. \n\n</string>
     <string name="dungeon42text">💎\'ler yok edilebilir kayaların arkasında saklıdır. Onları almak için her şeyi yok ettiğinden emin ol.\n\n
         Bilmeceye gelince: yakındaki taşa bak, bilmeceyi hangi sırayla yapman gerektiğini gösteriyor.\n\n

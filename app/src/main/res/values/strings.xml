@@ -435,12 +435,13 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="dungeon42text">
         The 💎 are hidden behind destructible rocks. Be sure to destroy everything in order to get them.\n\n
         Regarding the riddle: Look at the nearby stone, it shows you in which order you have to do the riddle.\n\n
-        Be carefu about the rats that throw the poison bombs. After exploding, they release a poison cloud, which lasts for a few seconds.\n\n
+        Be careful about the rats that throw the poison bombs. After exploding, they release a poison cloud, which lasts for a few seconds.\n\n
     </string>
 
     <string name="dungeon42bonustext1">
         Unlock this stage by getting all three 💎 in dungeon 42.\n\n
         In order to open the doors to the mini-boss room you have to activate the valves in the right order.\n\n
+        There is so much gold above the valves, be sure to check every corner with your character!\n\n
     </string>
 
     <string name="dungeon42bonustext2">
