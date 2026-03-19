@@ -110,6 +110,7 @@ public class LevelViewerActivity extends AppCompatActivity {
 
         // --- Toggle Logic Button ---
         ImageButton btnToggleLogic = findViewById(R.id.btnToggleLogic);
+        btnToggleLogic.setAlpha(0.4f); // starts hidden
         btnToggleLogic.setOnClickListener(v -> {
             boolean current = renderView.isShowingLogicEntities();
             renderView.setShowLogicEntities(!current);
@@ -127,6 +128,8 @@ public class LevelViewerActivity extends AppCompatActivity {
         btnShowSecrets.setOnClickListener(v -> {
             if (renderView.isSecretsUnlocked()) {
                 showSecretAreasList();
+            } else if (!hasSecretAreas()) {
+                showNoSecretAreaDialog();
             } else {
                 showAdConfirmationDialog();
             }
@@ -151,6 +154,21 @@ public class LevelViewerActivity extends AppCompatActivity {
     private void saveLevelUnlock(String fileName) {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         prefs.edit().putBoolean(UNLOCK_PREFIX + fileName, true).apply();
+    }
+
+    private boolean hasSecretAreas() {
+        if (currentLevel == null) return false;
+        for (LevelEntity e : currentLevel.entities) {
+            if (e.entityName.toLowerCase().contains("secret")) return true;
+        }
+        return false;
+    }
+
+    private void showNoSecretAreaDialog() {
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.no_secret_area_available)
+                .setPositiveButton(R.string.close, null)
+                .show();
     }
 
     private void showAdConfirmationDialog() {

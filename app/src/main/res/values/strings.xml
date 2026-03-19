@@ -526,6 +526,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="speed_in_calculation">"Speed: "</string>
     <string name="jump_impulse_in_calculation">"Jump Impulse: "</string>
     <string name="frost_resistance">Frost Resistance</string>
+    <string name="frost_immune">Frost Immune</string>
     <string name="element_cannot_be_picked">Element cannot be picked for this item!</string>
 
     <!-- Elements -->
@@ -968,6 +969,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="watch_ad">Watch Ad</string>
     <string name="maybe_later">Maybe later</string>
     <string name="no_secret_areas">No secret areas found in this level.</string>
+    <string name="no_secret_area_available">This dungeon has no secret area.</string>
     <string name="select_secret_area">Select Secret Area</string>
     <string name="moved_to_secret_area">Moved to Secret Area %d</string>
     <string name="secret_area_item">Secret Area %d</string>

@@ -7,7 +7,15 @@
       "Bash(done)",
       "Bash(python3:*)",
       "Bash(python:*)",
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(extract_armor.sh:*)",
+      "Bash(git:*)",
+      "Bash(for f in /mnt/c/Users/PrOfSeS/Desktop/MagicRampageCompanion/app/src/main/assets/levels/*.esc)",
+      "Bash(do)",
+      "Read(//c/Users/PrOfSeS/Desktop/MagicRampageCompanion/**)",
+      "Bash(for f in /c/Users/PrOfSeS/Desktop/MagicRampageCompanion/app/src/main/assets/levels/*.esc)"
     ]
   }
 }

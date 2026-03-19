@@ -19,6 +19,14 @@ public class LevelEntity {
     public float scaleX = 1f;
     public float scaleY = 1f;
 
+    public boolean flipX = false;
+    public boolean flipY = false;
+
+    // Parallax intensity from the .ent file's Entity tag (parallaxIntensity="N").
+    // 1.0 = full z-based y-offset (Ethanon's default when the attribute is absent).
+    // 0.0 = entity stays at its raw world y regardless of z and scene parallax.
+    public float parallaxIntensity = 1.0f;
+
     // Sprite sheet layout from <SpriteCut x="N" y="M" /> in the .ent file.
     // 0 means "not set" — fall back to aspect-ratio guess.
     public int spriteCutX = 0;
@@ -45,6 +53,10 @@ public class LevelEntity {
 
     // Runtime resolution helper
     public boolean isNPCResolved = false;
+
+    // Uniform scale from the .character file (e.g. 0.7 for small spider, 1.2 for gigaspider).
+    // Applied after NPC resolution; defaults to 1.0 if not set.
+    public float characterScale = 1.0f;
 
     // Composited Character Data (from .character files)
     public long bodyColor = -1; // -1 means no tint

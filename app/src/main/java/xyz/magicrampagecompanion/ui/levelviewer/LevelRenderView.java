@@ -36,6 +36,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import java.util.Locale;
+
+import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.level.Level;
 import xyz.magicrampagecompanion.level.LevelParser;
 
@@ -66,7 +69,7 @@ public class LevelRenderView extends View {
     private float minFitScale = 1f;
 
     // Visibility toggles
-    private boolean showLogicEntities = true;
+    private boolean showLogicEntities = false;
     private boolean secretsUnlocked = false;
 
     // Level world bounds (computed once per level)
@@ -94,6 +97,34 @@ public class LevelRenderView extends View {
 
     // Cache of tinted paints keyed by packed ARGB color (avoids allocating per frame)
     private final Map<Integer, Paint> tintPaintCache = new HashMap<>();
+
+    // Item sprite resolution: name (lowercase) → drawable resource ID, and decoded bitmaps
+    private Map<String, Integer> itemSpriteMap = null;
+    private final Map<String, Bitmap> itemBitmapCache = new HashMap<>();
+
+    // Explicit asset filename overrides for items whose names don't map automatically.
+    private static final Map<String, String> ITEM_ASSET_OVERRIDES = new HashMap<String, String>() {{
+        put("iron key",      "key_0.png");
+        put("golden key",    "key_1.png");
+        put("blood key",     "key_2.png");
+        put("red key",       "key_2.png");
+        put("scarlet key",   "key_scarlet.png");
+        put("time key",      "key_time.png");
+        // Runes — file naming is rune_<element>.png, not <element>_rune.png
+        put("arcane rune",   "rune_arcane.png");
+        put("fire rune",     "rune_fire.png");
+        put("burning rune",  "rune_fire.png");   // "Burning Rune" is the fire rune variant
+        put("water rune",    "rune_water.png");
+        put("liquid rune",   "rune_water.png");   // "Liquid Rune" is the water rune variant
+        put("air rune",      "rune_wind.png");
+        put("wind rune",     "rune_wind.png");
+        put("rune of wind",  "rune_wind.png");    // alternate name used in levels
+        put("light rune",    "light_rune.png");
+        put("shiny rune",    "light_rune.png");   // "Shiny Rune" uses the light rune sprite
+        put("darkness rune", "rune_darkness.png");
+        put("dark rune",     "rune_darkness.png");
+        put("earth rune",    "rune_earth.png");
+    }};
 
     // Tracks sprite names already logged as missing (avoids per-frame spam)
     private final Set<String> loggedMissingSprites = new HashSet<>();
@@ -427,8 +458,15 @@ public class LevelRenderView extends View {
     private void drawEntity(Canvas canvas, LevelEntity entity) {
         if (entity == null) return;
 
+        // Purely runtime/cinematic entities that have no meaningful visual in the level viewer.
+        if ("curtain_properties".equalsIgnoreCase(entity.entityName)) return;
+
+        // dungeon43.1.esc: gradient_bg overlays appear out-of-place due to extreme z values.
+        if (level != null && "dungeon43.1.esc".equals(level.name)
+                && "gradient_bg.png".equalsIgnoreCase(entity.spriteFile)) return;
+
         // Resolve NPC-specific sprites at runtime for spawn entities.
-        if ("character_spawn".equalsIgnoreCase(entity.entityName) && !entity.isNPCResolved) {
+        if (!entity.isNPCResolved && "mario_sheet.png".equalsIgnoreCase(entity.spriteFile) && entity.customData.containsKey("fileName")) {
             String npcFile = entity.customData.get("fileName");
             if (npcFile == null) npcFile = entity.customData.get("type");
             
@@ -453,15 +491,58 @@ public class LevelRenderView extends View {
                     android.util.Log.d("LevelRenderView", "Successfully resolved " + npcFile + " to sprite " + entity.spriteFile);
                     // Reset frame to 0 since numbers use spriteFrame for team ID
                     entity.spriteFrame = 0;
-                    // Reset scale to 1.0; character_spawn uses 4.0 for the mario_sheet numbers
-                    // but actual NPC sprites should be rendered at unit scale.
-                    entity.scaleX = 1.0f;
-                    entity.scaleY = 1.0f;
+                    // Apply the character's own scale (e.g. 0.7 for small spider, 1.2 for
+                    // gigaspider) instead of the mario_sheet placeholder scale of 4.0.
+                    entity.scaleX = entity.characterScale;
+                    entity.scaleY = entity.characterScale;
                 } else {
                     android.util.Log.w("LevelRenderView", "Failed to resolve sprite for " + npcFile);
                 }
             }
             entity.isNPCResolved = true;
+        }
+
+        // _number.ent and similar entities use mario_sheet.png without a fileName —
+        // they are pure runtime room-counter markers with no visual relevance in the viewer.
+        if ("mario_sheet.png".equalsIgnoreCase(entity.spriteFile) && !entity.customData.containsKey("fileName")) {
+            return;
+        }
+
+        // Resolve miniboss spawn entities: entity name encodes the boss type,
+        // e.g. "miniboss_spawn_beholder" → load beholder.character.
+        if (!entity.isNPCResolved) {
+            String nameLower = entity.entityName.toLowerCase();
+            if (nameLower.startsWith("miniboss_spawn_")) {
+                String bossName = entity.entityName.substring("miniboss_spawn_".length());
+                String oldSprite = entity.spriteFile;
+                LevelParser.parseCharacterFile(getContext(), entity, bossName);
+                if (!entity.spriteFile.equals(oldSprite) || !entity.hairSprite.isEmpty()
+                        || !entity.armorSprite.isEmpty() || !entity.weaponSprite.isEmpty()) {
+                    entity.spriteFrame = 0;
+                    entity.scaleX = entity.characterScale;
+                    entity.scaleY = entity.characterScale;
+                }
+                entity.isNPCResolved = true;
+            }
+        }
+
+        // Resolve item_spawn: draw the actual item sprite instead of the mario_items_sheet placeholder.
+        if ("mario_items_sheet.png".equalsIgnoreCase(entity.spriteFile)) {
+            String itemName = entity.customData.get("fileName");
+            if (itemName != null && !itemName.isEmpty() && !"none".equalsIgnoreCase(itemName.trim())) {
+                Bitmap itemBitmap = loadItemBitmap(itemName);
+                if (itemBitmap != null) {
+                    // Scale so the longest side fits within one tile (BASE_TILE world units).
+                    float s = 2f * BASE_TILE / Math.max(itemBitmap.getWidth(), itemBitmap.getHeight());
+                    Matrix m = new Matrix();
+                    m.postTranslate(-itemBitmap.getWidth() / 2f, -itemBitmap.getHeight() / 2f);
+                    m.postScale(s, s);
+                    m.postTranslate(entity.x, computeRenderY(entity));
+                    canvas.drawBitmap(itemBitmap, m, null);
+                    return;
+                }
+            }
+            // Unknown item — fall through to draw the placeholder frame as-is.
         }
 
         // Text entities: drawn in world space so they scale with zoom
@@ -518,9 +599,9 @@ public class LevelRenderView extends View {
             float cx = frame.getWidth() / 2f;
             float cy = frame.getHeight() / 2f;
             m.postTranslate(-cx, -cy);
-            m.postScale(sx, sy);
-            m.postRotate(entity.angle);
-            m.postTranslate(entity.x, entity.y);
+            m.postScale(sx * (entity.flipX ? -1f : 1f), sy * (entity.flipY ? -1f : 1f));
+            m.postRotate(-entity.angle); // negate: Ethanon uses CCW-positive, Android CW-positive
+            m.postTranslate(entity.x, computeRenderY(entity));
             Paint paint = resolvePaint(entity);
             canvas.drawBitmap(frame, m, paint);
         } else {
@@ -544,6 +625,9 @@ public class LevelRenderView extends View {
             if (i == 0) { // Weapon
                 if (!sprite.startsWith("weapon_") && !sprite.endsWith(".png")) resolvedSprite = "weapon_" + sprite;
                 cutX = 1; cutY = 1; // Weapons are usually single frames
+            } else if (i == 1) { // Body — use the SpriteCut resolved from the character/ent file
+                if (entity.spriteCutX > 0) cutX = entity.spriteCutX;
+                if (entity.spriteCutY > 0) cutY = entity.spriteCutY;
             } else if (i == 2) { // Armor
                 if (!sprite.startsWith("armor_") && !sprite.endsWith(".png")) resolvedSprite = "armor_" + sprite;
             } else if (i == 3) { // Hair (Mapping via .enml)
@@ -567,7 +651,7 @@ public class LevelRenderView extends View {
             float cy = frame.getHeight() / 2f;
             
             float tx = entity.x;
-            float ty = entity.y;
+            float ty = computeRenderY(entity);
             float rotation = entity.angle;
 
             if (i == 0) { // Weapon specific positioning
@@ -585,7 +669,7 @@ public class LevelRenderView extends View {
 
             m.postTranslate(-cx, -cy);
             m.postScale(entity.scaleX, entity.scaleY);
-            m.postRotate(rotation);
+            m.postRotate(-rotation); // negate: Ethanon uses CCW-positive, Android CW-positive
             m.postTranslate(tx, ty);
 
             Paint paint = null;
@@ -610,9 +694,13 @@ public class LevelRenderView extends View {
      */
     private boolean isLogicEntity(LevelEntity entity) {
         String name = entity.entityName.toLowerCase();
-        // Pure FX — skip
+        // Pure FX emitters (particle-only, no sprite) — skip silently
         if (name.contains("fireflies") || name.contains("fire_sparkling")
                 || name.contains("volumetric") || name.contains("fog")) return false;
+        // Lava surface/wave/smoke/splash/deco are particle-only visual FX, not logic objects
+        if (name.contains("lava_surface") || name.contains("lava_smoke")
+                || name.contains("lava_wave") || name.contains("lava_splash")
+                || name.contains("lava_deco")) return false;
         // Everything else with no sprite is a logic/trigger entity — show it
         return true;
     }
@@ -633,14 +721,15 @@ public class LevelRenderView extends View {
         float boxW = maxW + pad * 2f;
         float boxH = lineH * lines.length + pad;
 
+        float ry = computeRenderY(entity);
         fillPaint.setColor(Color.argb(210, 15, 15, 40));
-        scratchRect.set(entity.x - boxW / 2f, entity.y - boxH,
-                entity.x + boxW / 2f, entity.y + pad * 0.5f);
+        scratchRect.set(entity.x - boxW / 2f, ry - boxH,
+                entity.x + boxW / 2f, ry + pad * 0.5f);
         canvas.drawRoundRect(scratchRect, pad, pad, fillPaint);
 
         textPaint.setColor(Color.argb(255, 230, 230, 180));
         for (int i = 0; i < lines.length; i++) {
-            float ty = entity.y - (lines.length - 1 - i) * lineH - pad * 0.3f;
+            float ty = ry - (lines.length - 1 - i) * lineH - pad * 0.3f;
             canvas.drawText(lines[i], entity.x, ty, textPaint);
         }
     }
@@ -655,8 +744,8 @@ public class LevelRenderView extends View {
         fillPaint.setColor(getEntityColor(entity));
 
         canvas.save();
-        canvas.translate(entity.x, entity.y);
-        if (entity.angle != 0f) canvas.rotate(entity.angle);
+        canvas.translate(entity.x, computeRenderY(entity));
+        if (entity.angle != 0f) canvas.rotate(-entity.angle); // negate: Ethanon CCW-positive vs Android CW-positive
 
         if (renderedW < MIN_BOX_PX) {
             // Too small for a rect — draw a colored dot
@@ -799,6 +888,16 @@ public class LevelRenderView extends View {
     }
 
     /**
+     * Computes the visual y position for an entity, applying the z-based parallax
+     * offset: render_y = world_y - world_z * scene_parallaxIntensity * entity_parallaxIntensity.
+     * Entities with parallaxIntensity=0 (e.g. gradient overlays) stay at their raw world y.
+     */
+    private float computeRenderY(LevelEntity entity) {
+        if (level == null || level.sceneProperties == null) return entity.y;
+        return entity.y - entity.z * level.sceneProperties.parallaxIntensity * entity.parallaxIntensity;
+    }
+
+    /**
      * Returns the Paint to use when drawing this entity's sprite.
      * Handles additive blend mode and light color tinting.
      */
@@ -821,11 +920,50 @@ public class LevelRenderView extends View {
                 int dr = Math.min(255, (int)(entity.diffuseColorR * 255));
                 int dg = Math.min(255, (int)(entity.diffuseColorG * 255));
                 int db = Math.min(255, (int)(entity.diffuseColorB * 255));
-                int key = Color.argb(0, dr, dg, db);
+                // Use the alpha channel of the cache key to encode the blend mode so that
+                // an additive+tinted paint is cached separately from a normal+tinted one.
+                int key = Color.argb(effectiveBlend, dr, dg, db);
                 Paint cached = tintPaintCache.get(key);
                 if (cached != null) return cached;
                 Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
                 p.setColorFilter(new PorterDuffColorFilter(Color.rgb(dr, dg, db), PorterDuff.Mode.MULTIPLY));
+                if (effectiveBlend == 1)
+                    p.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.ADD));
+                tintPaintCache.put(key, p);
+                return p;
+            }
+            // "white_lava" sprites are intentionally white — the game renders them with additive
+            // blending over an orange base layer. Tint them orange here so they read correctly.
+            String spriteLower = entity.spriteFile.toLowerCase();
+            String nameLower = entity.entityName.toLowerCase();
+            if (spriteLower.contains("white_lava") || (nameLower.contains("lava") && spriteLower.startsWith("white_"))) {
+                int key = Color.argb(2, 255, 100, 0); // unique cache key for lava tint
+                Paint cached = tintPaintCache.get(key);
+                if (cached != null) return cached;
+                Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+                p.setColorFilter(new PorterDuffColorFilter(Color.rgb(255, 100, 0), PorterDuff.Mode.MULTIPLY));
+                tintPaintCache.put(key, p);
+                return p;
+            }
+            // "magic-shield" sprites are greyscale — tint to match the particle color the game uses.
+            // nature_shield uses Color0 r=2.8, g=4, b=1.6 → green-gold; must be checked before
+            // the generic magic-shield branch which would tint it golden yellow instead.
+            if (nameLower.contains("nature") && spriteLower.startsWith("magic-shield")) {
+                int key = Color.argb(3, 100, 220, 60); // unique cache key for nature shield tint
+                Paint cached = tintPaintCache.get(key);
+                if (cached != null) return cached;
+                Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+                p.setColorFilter(new PorterDuffColorFilter(Color.rgb(100, 220, 60), PorterDuff.Mode.MULTIPLY));
+                tintPaintCache.put(key, p);
+                return p;
+            }
+            // Standard magic-shield: Color0 r=3.6, g=3.2, b=1.4 → golden yellow.
+            if (spriteLower.startsWith("magic-shield")) {
+                int key = Color.argb(4, 255, 200, 50); // unique cache key for shield tint
+                Paint cached = tintPaintCache.get(key);
+                if (cached != null) return cached;
+                Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+                p.setColorFilter(new PorterDuffColorFilter(Color.rgb(255, 200, 50), PorterDuff.Mode.MULTIPLY));
                 tintPaintCache.put(key, p);
                 return p;
             }
@@ -883,7 +1021,8 @@ public class LevelRenderView extends View {
     /** Sprites that have a white background baked in and need it stripped. */
     private boolean needsWhiteStripped(String sheetKey) {
         String k = sheetKey.toLowerCase();
-        return k.contains("blood_decal") || k.contains("sewer_slime");
+        return k.contains("blood_decal") || k.contains("sewer_slime")
+                || k.contains("sewer_puzzle_answer");
     }
 
     /**
@@ -921,6 +1060,37 @@ public class LevelRenderView extends View {
      * Prefers a TextureAtlas XML for exact source coordinates; falls back to
      * SpriteCut-based uniform grid slicing.
      */
+    /**
+     * Looks up the actual item drawable for the given item display name and returns
+     * a cached Bitmap, or null if the item is not found in ItemData.
+     */
+    private Bitmap loadItemBitmap(String itemName) {
+        String key = itemName.toLowerCase(Locale.ROOT);
+        if (itemBitmapCache.containsKey(key)) return itemBitmapCache.get(key);
+
+        if (itemSpriteMap == null) {
+            itemSpriteMap = ItemData.buildItemSpriteMap(getContext());
+        }
+        Integer resId = itemSpriteMap.get(key);
+        if (resId == null) {
+            // Check explicit overrides first (e.g. "Iron Key" → key_0.png)
+            String overrideName = ITEM_ASSET_OVERRIDES.get(key);
+            String assetName = overrideName != null
+                    ? overrideName
+                    : itemName.toLowerCase(Locale.ROOT).replace(" ", "_") + ".png";
+            try (InputStream is = getContext().getAssets().open("entities/" + assetName)) {
+                Bitmap bmp = BitmapFactory.decodeStream(is);
+                itemBitmapCache.put(key, bmp);
+                return bmp;
+            } catch (Exception ignored) {}
+            itemBitmapCache.put(key, null);
+            return null;
+        }
+        Bitmap bmp = BitmapFactory.decodeResource(getContext().getResources(), resId);
+        itemBitmapCache.put(key, bmp);
+        return bmp;
+    }
+
     private Bitmap loadSpriteFrame(String spriteName, int frameIndex, int spriteCutX, int spriteCutY) {
         if (spriteName == null || spriteName.trim().isEmpty()) return null;
 
@@ -1152,7 +1322,7 @@ public class LevelRenderView extends View {
             float hw = Math.max(e.scaleX * BASE_TILE / 2f, LevelEntity.HIT_RADIUS);
             float hh = Math.max(e.scaleY * BASE_TILE / 2f, LevelEntity.HIT_RADIUS);
             float lx = worldX - e.x;
-            float ly = worldY - e.y;
+            float ly = worldY - computeRenderY(e);
             if (lx >= -hw && lx <= hw && ly >= -hh && ly <= hh) {
                 hits.add(e);
             }

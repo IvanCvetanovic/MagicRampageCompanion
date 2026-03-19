@@ -937,6 +937,7 @@
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Атака морозом</string>
     <string name="frost_resistance">Сопротивление морозу</string>
+    <string name="frost_immune">Иммунитет к морозу</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">В память о:</string>
@@ -1673,6 +1674,7 @@
     <string name="watch_ad">Смотреть рекламу</string>
     <string name="maybe_later">Может быть позже</string>
     <string name="no_secret_areas">Секретных зон на этом уровне не найдено.</string>
+    <string name="no_secret_area_available">В этом подземелье нет секретной зоны.</string>
     <string name="select_secret_area">Выбрать секретную зону</string>
     <string name="moved_to_secret_area">Перемещено к секретной зоне %d</string>
     <string name="secret_area_item">Секретная зона %d</string>

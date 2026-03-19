@@ -23,10 +23,17 @@ import xyz.magicrampagecompanion.data.models.Weapon;
 public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageViewHolder> {
     private final List<T> itemList;
     private final OnItemClickListener<T> itemClickListener;
+    private final OnItemLongClickListener<T> longClickListener;
 
     public ImageAdapter(List<T> itemList, OnItemClickListener<T> itemClickListener) {
+        this(itemList, itemClickListener, null);
+    }
+
+    public ImageAdapter(List<T> itemList, OnItemClickListener<T> itemClickListener,
+                        OnItemLongClickListener<T> longClickListener) {
         this.itemList = itemList;
         this.itemClickListener = itemClickListener;
+        this.longClickListener = longClickListener;
         setHasStableIds(false);
     }
 
@@ -78,6 +85,14 @@ public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageV
         }
 
         holder.imageView.setOnClickListener(v -> itemClickListener.onItemClick(v, position));
+        if (longClickListener != null) {
+            holder.imageView.setOnLongClickListener(v -> {
+                longClickListener.onItemLongClick(v, position);
+                return true;
+            });
+        } else {
+            holder.imageView.setOnLongClickListener(null);
+        }
     }
 
     @Override
@@ -99,6 +114,11 @@ public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageV
     // Interface for item click events
     public interface OnItemClickListener<T> {
         void onItemClick(View view, int position);
+    }
+
+    // Interface for item long-press events
+    public interface OnItemLongClickListener<T> {
+        void onItemLongClick(View view, int position);
     }
 
     @SuppressLint("NotifyDataSetChanged")

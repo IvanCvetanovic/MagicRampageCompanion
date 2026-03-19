@@ -937,6 +937,7 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Ataque de Gelo</string>
     <string name="frost_resistance">Resistência a Gelo</string>
+    <string name="frost_immune">Imune ao Gelo</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">Em memória de:</string>
@@ -1671,6 +1672,7 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="watch_ad">Assistir anúncio</string>
     <string name="maybe_later">Talvez depois</string>
     <string name="no_secret_areas">Nenhuma área secreta encontrada neste nível.</string>
+    <string name="no_secret_area_available">Esta dungeon não tem área secreta.</string>
     <string name="select_secret_area">Selecionar área secreta</string>
     <string name="moved_to_secret_area">Movido para a área secreta %d</string>
     <string name="secret_area_item">Área secreta %d</string>

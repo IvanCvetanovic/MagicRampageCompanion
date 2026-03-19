@@ -25,6 +25,10 @@ public class LevelParser {
     // Global mapping for heads/hairs from .enml files
     private static final Map<String, String> headMap = new HashMap<>();
 
+    // Armor set name (lowercase) -> character sprite filename, built lazily from .character files
+    private static final Map<String, String> armorSetSpriteMap = new HashMap<>();
+    private static boolean armorSetSpriteMapLoaded = false;
+
     // Reason codes for why an entity ended up with no sprite
     private static final int REASON_INLINE_SPRITE   = 0; // <Sprite> found inline in .esc
     private static final int REASON_ENT_SPRITE      = 1; // sprite resolved from .ent file
@@ -45,6 +49,9 @@ public class LevelParser {
             Map<String, String> strings = loadStrings(ctx, stringsPathForLevel(assetPath));
 
             Level level = new Level();
+            // Store the file name (e.g. "dungeon43.1.esc") so the renderer can apply per-level tweaks.
+            int slash = assetPath.lastIndexOf('/');
+            level.name = slash >= 0 ? assetPath.substring(slash + 1) : assetPath;
             SceneProperties props = level.sceneProperties;
 
             LevelEntity current = null;
@@ -96,6 +103,11 @@ public class LevelParser {
 
                                     String frame = parser.getAttributeValue(null, "spriteFrame");
                                     if (frame != null) current.spriteFrame = safeParseInt(frame, 0);
+
+                                    String fx = parser.getAttributeValue(null, "flipX");
+                                    if ("1".equals(fx)) current.flipX = true;
+                                    String fy = parser.getAttributeValue(null, "flipY");
+                                    if ("1".equals(fy)) current.flipY = true;
                                 } else {
                                     // If there's no id, we don't treat it as a real entity
                                     current = null;
@@ -264,6 +276,8 @@ public class LevelParser {
                 } else if ("Entity".equals(tag)) {
                     String bm = p.getAttributeValue(null, "blendMode");
                     if (bm != null) entity.blendMode = safeParseInt(bm, 0);
+                    String pi = p.getAttributeValue(null, "parallaxIntensity");
+                    if (pi != null) entity.parallaxIntensity = parseFloat(pi, entity.parallaxIntensity);
                 } else if ("Sprite".equals(tag) && !insideParticles) {
                     String sprite = p.nextText();
                     if (sprite != null && !sprite.trim().isEmpty()) {
@@ -305,26 +319,26 @@ public class LevelParser {
         if (!baseName.endsWith(".character")) baseName += ".character";
 
         try (InputStream is = ctx.getAssets().open("entities/" + baseName)) {
-            parseCharacterInternal(entity, is);
+            parseCharacterInternal(ctx, entity, is);
             Log.d(TAG, "Parsed .character file: " + baseName + " -> Body: " + entity.spriteFile + ", Armor: " + entity.armorSprite + ", Hair: " + entity.hairSprite + ", Weapon: " + entity.weaponSprite + " (off=" + entity.weaponOffsetX + "," + entity.weaponOffsetY + " angle=" + entity.weaponAngle + ")");
             return;
         } catch (Exception ignored) {}
 
         String fullPath = fileName.endsWith(".character") ? fileName : fileName + ".character";
         try (InputStream is = ctx.getAssets().open(fullPath)) {
-            parseCharacterInternal(entity, is);
+            parseCharacterInternal(ctx, entity, is);
             return;
         } catch (Exception ignored) {}
 
         try (InputStream is = ctx.getAssets().open("entities/" + fullPath)) {
-            parseCharacterInternal(entity, is);
+            parseCharacterInternal(ctx, entity, is);
             return;
         } catch (Exception ignored) {}
 
         Log.w(TAG, "CHARACTER FILE MISSING: " + fileName);
     }
 
-    private static void parseCharacterInternal(LevelEntity entity, InputStream is) throws Exception {
+    private static void parseCharacterInternal(Context ctx, LevelEntity entity, InputStream is) throws Exception {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
             String line;
             String currentBlock = "";
@@ -341,9 +355,9 @@ public class LevelParser {
                     blockVars.clear();
                     continue;
                 }
-                
+
                 if (line.equals("}")) {
-                    processCharacterBlock(entity, currentBlock, blockVars);
+                    processCharacterBlock(ctx, entity, currentBlock, blockVars);
                     currentBlock = "";
                     blockVars.clear();
                     continue;
@@ -362,12 +376,24 @@ public class LevelParser {
         }
     }
 
-    private static void processCharacterBlock(LevelEntity entity, String blockName, Map<String, String> vars) {
+    private static void processCharacterBlock(Context ctx, LevelEntity entity, String blockName, Map<String, String> vars) {
         if ("character".equals(blockName) || blockName.isEmpty()) {
             if (vars.containsKey("bodysprite")) {
                 entity.spriteFile = vars.get("bodysprite");
+                // Default SpriteCut for humanoid characters; overridden below if bodyEntity provides one.
                 entity.spriteCutX = 4;
                 entity.spriteCutY = 2;
+                // Read the actual SpriteCut from the body entity file so non-standard
+                // sprite sheets (e.g. spider: 4x1 instead of 4x2) render correctly.
+                String bodyEntity = vars.get("bodyentity");
+                if (ctx != null && bodyEntity != null && !bodyEntity.isEmpty()) {
+                    String savedSprite = entity.spriteFile;
+                    parseEntFile(ctx, entity, bodyEntity);
+                    entity.spriteFile = savedSprite; // restore; we only wanted SpriteCut
+                }
+            }
+            if (vars.containsKey("scale")) {
+                entity.characterScale = parseFloat(vars.get("scale"), 1.0f);
             }
             if (vars.containsKey("bodycolor")) {
                 try { entity.bodyColor = Long.parseLong(vars.get("bodycolor")); } catch (Exception ignored) {}
@@ -378,6 +404,7 @@ public class LevelParser {
         } else if (blockName.startsWith("equippeditem")) {
             String type = vars.get("type");
             String sprite = vars.get("sprite");
+            String reference = vars.get("reference");
             if (sprite != null && !"none".equalsIgnoreCase(sprite)) {
                 if ("weapon".equalsIgnoreCase(type)) {
                     entity.weaponSprite = sprite;
@@ -387,8 +414,83 @@ public class LevelParser {
                 } else if ("armor".equalsIgnoreCase(type)) {
                     entity.armorSprite = sprite;
                 }
+            } else if (reference != null && !reference.isEmpty() && ctx != null) {
+                // Resolve set reference via dynamic scan of character files
+                ensureArmorSetSpriteMap(ctx);
+                String refSprite = armorSetSpriteMap.get(reference.toLowerCase(java.util.Locale.ROOT));
+                if (refSprite != null) {
+                    entity.armorSprite = refSprite;
+                }
             }
         }
+    }
+
+    /**
+     * Lazily builds armorSetSpriteMap by scanning all .character files in assets/entities/.
+     * Also seeds a small set of hardcoded fallbacks for sets not defined in any character file.
+     */
+    private static void ensureArmorSetSpriteMap(Context ctx) {
+        if (armorSetSpriteMapLoaded) return;
+        armorSetSpriteMapLoaded = true;
+
+        // Hardcoded fallbacks for important sets not defined in any character file
+        armorSetSpriteMap.put("elite soldier set",   "armor_plate_0a.png");
+        armorSetSpriteMap.put("anti-hero's set",     "armor_cloth_special_c1.png");
+        armorSetSpriteMap.put("crow set",            "armor_cloth_3b.png");
+        armorSetSpriteMap.put("umbranian vest",      "armor_cloth_2b.png");
+        armorSetSpriteMap.put("warlock vest",        "armor_cloth_1b.png");
+        armorSetSpriteMap.put("swamp ranger suit",   "armor_leather_1a.png");
+        armorSetSpriteMap.put("penumbra suit",       "armor_cloth_Na.png");
+        armorSetSpriteMap.put("arcane mage suit",    "armor_cloth_special_a2.png");
+        armorSetSpriteMap.put("moonkeeper set",      "armor_cloth_special_d2.png");
+        armorSetSpriteMap.put("desert rogue suit",   "armor_leather_2a.png");
+        armorSetSpriteMap.put("elite obsidian set",  "armor_plate_1a.png");
+        armorSetSpriteMap.put("elite assassin",      "armor_leather_Na.png");
+        armorSetSpriteMap.put("champion set",        "armor_plate_3a.png");
+        armorSetSpriteMap.put("druid vest",          "armor_cloth_0a.png");
+        armorSetSpriteMap.put("witch dress",         "armor_cloth_4a.png");
+        armorSetSpriteMap.put("gatekeepers bionic arm", "armor_special_b1.png");
+        armorSetSpriteMap.put("nature mage vest",    "armor_cloth_0a.png");
+        armorSetSpriteMap.put("fire mage vest",      "armor_cloth_0b.png");
+        armorSetSpriteMap.put("monk's tunic",        "armor_special_a2.png");
+
+        // Dynamic scan: read all .character files and extract name→sprite for type=armor blocks
+        try {
+            String[] files = ctx.getAssets().list("entities");
+            if (files == null) return;
+            for (String fname : files) {
+                if (!fname.endsWith(".character")) continue;
+                try (java.io.InputStream is = ctx.getAssets().open("entities/" + fname);
+                     java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(is))) {
+                    String line;
+                    String currentName = null;
+                    String currentSprite = null;
+                    boolean isArmorBlock = false;
+                    boolean inBlock = false;
+                    while ((line = reader.readLine()) != null) {
+                        line = line.trim();
+                        if (line.startsWith("equippedItem")) { inBlock = true; currentName = null; currentSprite = null; isArmorBlock = false; }
+                        else if (line.equals("}")) {
+                            if (inBlock && isArmorBlock && currentName != null && currentSprite != null
+                                    && !"none".equalsIgnoreCase(currentSprite) && !"faceless.png".equalsIgnoreCase(currentSprite)) {
+                                armorSetSpriteMap.putIfAbsent(currentName.toLowerCase(java.util.Locale.ROOT), currentSprite);
+                            }
+                            inBlock = false;
+                        } else if (inBlock) {
+                            if (line.startsWith("name")) {
+                                int eq = line.indexOf('=');
+                                if (eq >= 0) currentName = line.substring(eq + 1).trim().replaceAll(";$", "");
+                            } else if (line.startsWith("sprite")) {
+                                int eq = line.indexOf('=');
+                                if (eq >= 0) currentSprite = line.substring(eq + 1).trim().replaceAll(";$", "");
+                            } else if (line.contains("type") && line.contains("armor")) {
+                                isArmorBlock = true;
+                            }
+                        }
+                    }
+                } catch (Exception ignored) {}
+            }
+        } catch (Exception ignored) {}
     }
 
     /**

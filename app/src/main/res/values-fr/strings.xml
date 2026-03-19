@@ -936,6 +936,7 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Attaque de Givre</string>
     <string name="frost_resistance">Résistance au Givre</string>
+    <string name="frost_immune">Immunité au Givre</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">En mémoire de :</string>
@@ -1671,6 +1672,7 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="watch_ad">Regarder la pub</string>
     <string name="maybe_later">Peut-être plus tard</string>
     <string name="no_secret_areas">Aucune zone secrète trouvée dans ce niveau.</string>
+    <string name="no_secret_area_available">Ce donjon n\'a pas de zone secrète.</string>
     <string name="select_secret_area">Sélectionner une zone secrète</string>
     <string name="moved_to_secret_area">Déplacé vers la zone secrète %d</string>
     <string name="secret_area_item">Zone secrète %d</string>

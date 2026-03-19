@@ -937,6 +937,7 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Ataque de Escarcha</string>
     <string name="frost_resistance">Resistencia a la Escarcha</string>
+    <string name="frost_immune">Inmune a la Escarcha</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">En memoria de:</string>
@@ -1672,6 +1673,7 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="watch_ad">Ver anuncio</string>
     <string name="maybe_later">Quizás luego</string>
     <string name="no_secret_areas">No se encontraron áreas secretas en este nivel.</string>
+    <string name="no_secret_area_available">Esta mazmorra no tiene área secreta.</string>
     <string name="select_secret_area">Seleccionar área secreta</string>
     <string name="moved_to_secret_area">Movido al área secreta %d</string>
     <string name="secret_area_item">Área secreta %d</string>

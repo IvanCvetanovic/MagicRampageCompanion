@@ -2,7 +2,10 @@ package xyz.magicrampagecompanion.data.models;
 
 import android.content.Context;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.enums.ClassNames;
@@ -57,9 +60,9 @@ public class ItemData {
     public static int elixirOfDuplicationSpeedBonus    = 5;
     public static int monstersJuiceDamageBonus         = 60;
     public static int monstersJuiceArmorBonus          = -20;
-    public static int pepperBrewArmorBonus              = 25;
+    public static int pepperBrewArmorBonus              = 23;
     public static int starlightSupertonicDamageBonus   = 70;
-    public static int tonicOfInvulnerabilityArmorBonus = 25;
+    public static int tonicOfInvulnerabilityArmorBonus = 23;
 
 
     public static void init(Context context) {
@@ -266,7 +269,7 @@ public class ItemData {
         spearList.add(new Weapon(str(context, R.string.last_survivors_spear), WeaponTypes.SPEAR, Elements.NEUTRAL, 61, 280, 15, 20, 2, 2, R.drawable.spear_last_survivors_spear, 750, 3, false, true, false, false, 663000, 341000, 0, 0, 73666, 147333, List.of(str(context, R.string.chapter_five_random_drop), str(context, R.string.survival_mode_5))));
         spearList.add(new Weapon(str(context, R.string.osun), WeaponTypes.SPEAR, Elements.WATER, 64, 294, 15, 20, 5, 4, R.drawable.spear_osun, 750, 4, false, true, false, false, 150000, 77000, 0, 0, 16666, 33333, List.of(str(context, R.string.pvp_golden_purple_chest))));
         spearList.add(new Weapon(str(context, R.string.azatoth), WeaponTypes.SPEAR, Elements.DARKNESS, 67, 308, 15, 30, 5, 3, R.drawable.spear_azatoth, 750, 4, false, true, false, false, 150000, 77000, 0, 0, 16666, 33333, List.of(str(context, R.string.pvp_golden_purple_chest))));
-        spearList.add(new Weapon(str(context, R.string.spider_spear), WeaponTypes.SPEAR, Elements.EARTH, 68, 312, 15, 25, 3, 12, R.drawable.spear_spider_spear, 650, 4, false, true, true, false, 0, 0, 2000, 1200, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        spearList.add(new Weapon(str(context, R.string.spider_spear), WeaponTypes.SPEAR, Elements.EARTH, 68, 312, 15, 20, 1, 13, R.drawable.spear_spider_spear, 650, 4, false, true, true, false, 0, 0, 2000, 1200, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         spearList.add(new Weapon(str(context, R.string.wicked_skewer), WeaponTypes.SPEAR, Elements.FIRE, 72, 331, 15, 0, 5, 3, R.drawable.spear_wicked_skewer, 450, 3, false, true, false, false, 0, 0, 3000, 1801, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         spearList.add(new Weapon(str(context, R.string.ruby_queens_spear), WeaponTypes.SPEAR, Elements.FIRE, 74, 340, 15, 0, 5, 3, R.drawable.spear_ruby_queens_spear, 650, 4, false, true, false, false, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         spearList.add(new Weapon(str(context, R.string.vindictive_piercer), WeaponTypes.SPEAR, Elements.AIR, 80, 368, 15, 0, 6, 2, R.drawable.spear_vindictive_piercer, 650, 5, false, true, false, false, 0, 0, 3600, 2160, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
@@ -422,7 +425,7 @@ public class ItemData {
         ringList.add(new Ring(str(context, R.string.sea_wave_ring), Elements.WATER, 0, 0, 5, 3, 70, 60, 70, 0, 0, 70, 0, R.drawable.ring_sea_wave_ring, 440000, 226000, 0, 0, 48888, 97777, List.of(str(context, R.string.shop))));
         ringList.add(new Ring(str(context, R.string.dragon_fang_ring), Elements.NEUTRAL, 0, 0, 4, 4, 60, 70, 0, 0, 70, 70, 0, R.drawable.ring_dragon_fang_ring, 335000, 172000, 0, 0, 37222, 74444, List.of(str(context, R.string.shop))));
         ringList.add(new Ring(str(context, R.string.blue_ring), Elements.NEUTRAL, 0, 0, 4, 2, 60, 0, 70, 70, 0, 0, 70, R.drawable.ring_blue_ring, 316000, 162000, 0, 0, 35111, 70222, List.of(str(context, R.string.shop))));
-        ringList.add(new Ring(str(context, R.string.nightshade), Elements.NEUTRAL, 0, 0, 7, 9, 220, 0, 0, 0, 0, 0, 0, R.drawable.ring_nightshade, 0, 0, 4500, 2700, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
+        ringList.add(new Ring(str(context, R.string.nightshade), Elements.NEUTRAL, 0, -20, 4, 9, 200, 0, 0, 0, 0, 0, 0, R.drawable.ring_nightshade, 0, 0, 4500, 2700, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         ringList.add(new Ring(str(context, R.string.falcon_ring), Elements.AIR, 5, 0, 8, 3, 80, 100, 0, 100, 0, 100, 0, R.drawable.ring_falcon_ring, 1540000, 792000, 0, 0, 171111, 342222, List.of(str(context, R.string.shop), str(context, R.string.weekly_dungeon_golden_chest))));
         ringList.add(new Ring(str(context, R.string.cursed_amethyst_ring), Elements.DARKNESS, 5, -40, 4, 3, 120, 0, 140, 0, 0, 0, 0, R.drawable.ring_cursed_amethyst_ring, 0, 0, 4000, 2400, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
         ringList.add(new Ring(str(context, R.string.bunny_ring), Elements.NEUTRAL, 5, 0, 0, 10, 70, 0, 70, 60, 0, 0, 0, R.drawable.ring_bunny_ring, 0, 0, 3500, 2100, 27777, 55555, List.of(str(context, R.string.weekly_dungeon_golden_chest))));
@@ -1109,6 +1112,14 @@ public class ItemData {
         return null;
     }
 
+    public static Armor getArmorByName(Context ctx, String name) {
+        if (armorList.isEmpty()) init(ctx);
+        for (Armor a : armorList) {
+            if (a.getName().equalsIgnoreCase(name)) return a;
+        }
+        return null;
+    }
+
     public static Ring getRingById(int id) {
         for (Ring r : ringList) {
             if (r.getId() == id) return r;
@@ -1138,6 +1149,34 @@ public class ItemData {
             if (c.getId() == id) return c;
         }
         return null;
+    }
+
+    /**
+     * Builds a map from lowercase item display name to drawable resource ID,
+     * covering all weapons, armors, rings, and elixirs.
+     * Ensures ItemData is initialized before building.
+     */
+    public static Map<String, Integer> buildItemSpriteMap(Context ctx) {
+        if (swordList.isEmpty() && staffList.isEmpty() && armorList.isEmpty()) {
+            init(ctx);
+        }
+        Map<String, Integer> map = new HashMap<>();
+        for (Weapon w : swordList)  putItem(map, w.getName(), w.getImageResId());
+        for (Weapon w : staffList)  putItem(map, w.getName(), w.getImageResId());
+        for (Weapon w : daggerList) putItem(map, w.getName(), w.getImageResId());
+        for (Weapon w : spearList)  putItem(map, w.getName(), w.getImageResId());
+        for (Weapon w : axeList)    putItem(map, w.getName(), w.getImageResId());
+        for (Weapon w : hammerList) putItem(map, w.getName(), w.getImageResId());
+        for (Armor  a : armorList)  putItem(map, a.getName(), a.getImageResId());
+        for (Ring   r : ringList)   putItem(map, r.getName(), r.getImageResId());
+        for (Elixir e : elixirList) putItem(map, e.getName(), e.getImageResId());
+        return map;
+    }
+
+    private static void putItem(Map<String, Integer> map, String name, int resId) {
+        if (name != null && !name.isEmpty() && resId != 0) {
+            map.put(name.toLowerCase(Locale.ROOT), resId);
+        }
     }
 
 }

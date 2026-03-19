@@ -937,6 +937,7 @@
     <string name="fourty_kills">40</string>
     <string name="frost_attack">氷結攻撃</string>
     <string name="frost_resistance">氷結耐性</string>
+    <string name="frost_immune">氷結免疫</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">追悼：</string>
@@ -1671,6 +1672,7 @@
     <string name="watch_ad">広告を見る</string>
     <string name="maybe_later">後で</string>
     <string name="no_secret_areas">このレベルには秘密エリアが見つかりませんでした。</string>
+    <string name="no_secret_area_available">このダンジョンには秘密エリアがありません。</string>
     <string name="select_secret_area">秘密エリアを選択</string>
     <string name="moved_to_secret_area">秘密エリア%dに移動しました</string>
     <string name="secret_area_item">秘密エリア %d</string>

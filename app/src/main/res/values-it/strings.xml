@@ -938,6 +938,7 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Attacco di Gelo</string>
     <string name="frost_resistance">Resistenza al Gelo</string>
+    <string name="frost_immune">Immune al Gelo</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">In memoria di:</string>
@@ -1673,6 +1674,7 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="watch_ad">Guarda annuncio</string>
     <string name="maybe_later">Forse dopo</string>
     <string name="no_secret_areas">Nessuna area segreta trovata in questo livello.</string>
+    <string name="no_secret_area_available">Questo dungeon non ha un\'area segreta.</string>
     <string name="select_secret_area">Seleziona area segreta</string>
     <string name="moved_to_secret_area">Spostato all\'area segreta %d</string>
     <string name="secret_area_item">Area segreta %d</string>

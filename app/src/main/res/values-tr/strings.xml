@@ -935,6 +935,7 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Buz Saldırısı</string>
     <string name="frost_resistance">Buz Direnci</string>
+    <string name="frost_immune">Buz Bağışıklığı</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">Anısına:</string>
@@ -1670,6 +1671,7 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="watch_ad">Reklam izle</string>
     <string name="maybe_later">Belki daha sonra</string>
     <string name="no_secret_areas">Bu seviyede gizli alan bulunamadı.</string>
+    <string name="no_secret_area_available">Bu zindanın gizli bir alanı yok.</string>
     <string name="select_secret_area">Gizli alan seç</string>
     <string name="moved_to_secret_area">Gizli alan %d\'e taşındı</string>
     <string name="secret_area_item">Gizli alan %d</string>

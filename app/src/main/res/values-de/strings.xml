@@ -937,6 +937,7 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="fourty_kills">40</string>
     <string name="frost_attack">Frostangriff</string>
     <string name="frost_resistance">Frostresistenz</string>
+    <string name="frost_immune">Frostimmun</string>
     <string name="hundred_fifty_kills">150</string>
     <string name="hundred_kills">100</string>
     <string name="in_memory_of">In Gedenken an:</string>
@@ -1672,6 +1673,7 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="watch_ad">Werbung ansehen</string>
     <string name="maybe_later">Vielleicht später</string>
     <string name="no_secret_areas">Keine Geheimgebiete in diesem Level gefunden.</string>
+    <string name="no_secret_area_available">Dieser Dungeon hat kein Geheimgebiet.</string>
     <string name="select_secret_area">Geheimgebiet auswählen</string>
     <string name="moved_to_secret_area">Zu Geheimgebiet %d bewegt</string>
     <string name="secret_area_item">Geheimgebiet %d</string>

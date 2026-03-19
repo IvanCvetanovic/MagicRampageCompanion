@@ -7,6 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import java.util.Locale;
+import androidx.appcompat.app.AlertDialog;
+import xyz.magicrampagecompanion.enums.Elements;
+import xyz.magicrampagecompanion.enums.WeaponTypes;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -248,7 +252,7 @@ public class ItemSelection extends AppCompatActivity {
             Object selected = filtered.get(position);
             playSfx(currentPickSoundId);
             returnResult(currentReturnKey, selected);
-        });
+        }, (view, position) -> showItemStatsPopup(filtered.get(position)));
         recyclerView.setAdapter(adapter);
     }
 
@@ -372,6 +376,118 @@ public class ItemSelection extends AppCompatActivity {
         if (loaded) {
             soundPool.play(soundId, 0.25f, 0.25f, 1, 0, 1.0f);
         }
+    }
+
+    // --- Long-press stats popup ---
+    private void showItemStatsPopup(Object item) {
+        String title;
+        StringBuilder sb = new StringBuilder();
+
+        if (item instanceof Weapon) {
+            Weapon w = (Weapon) item;
+            title = w.getName();
+            sb.append(getWeaponTypeString(w.getType()));
+            if (w.getElement() != Elements.NEUTRAL) {
+                sb.append("  •  ").append(getElementString(w.getElement()));
+            }
+            sb.append("\n\n");
+            sb.append(getString(R.string.damage_in_calculation)).append(w.getMinDamage()).append(" – ").append(w.getMaxDamage());
+            if (w.getSpeed() != 0)      sb.append("\n").append(getString(R.string.speed_in_calculation)).append(sign(w.getSpeed())).append("%");
+            if (w.getJump() != 0)       sb.append("\n").append(getString(R.string.jump_impulse_in_calculation)).append(sign(w.getJump())).append("%");
+            if (w.getArmorBonus() != 0) sb.append("\n").append(getString(R.string.armor_bonus)).append(sign((int) w.getArmorBonus())).append("%");
+            sb.append("\n").append(getString(R.string.attack_speed)).append(w.getAttackCooldown()).append("ms");
+            if (w.getPierceCount() > 0) sb.append("\n").append(getString(R.string.pierce_count)).append(w.getPierceCount());
+            if (w.isEnablePierceAreaDamage())   sb.append("\n").append(getString(R.string.pierce_area_damage));
+            if (w.isPersistAgainstProjectile()) sb.append("\n").append(getString(R.string.projectile_persistence));
+            if (w.isPoisonous()) sb.append("\n").append(getString(R.string.poisonous_attack));
+            if (w.isFrost())     sb.append("\n").append(getString(R.string.frost_attack));
+
+        } else if (item instanceof Armor) {
+            Armor a = (Armor) item;
+            title = a.getName();
+            if (a.getElement() != Elements.NEUTRAL) sb.append(getElementString(a.getElement()));
+            if (a.isFrostImmune()) {
+                if (sb.length() > 0) sb.append("  •  ");
+                sb.append(getString(R.string.frost_immune));
+            }
+            if (sb.length() > 0) sb.append("\n\n");
+            if (a.getMinArmor() > 0 || a.getMaxArmor() > 0) {
+                sb.append(getString(R.string.armor_in_calculation)).append(a.getMinArmor()).append(" – ").append(a.getMaxArmor()).append("\n");
+            }
+            appendBonus(sb, R.string.speed_in_calculation,   a.getSpeed());
+            appendBonus(sb, R.string.jump_impulse_in_calculation, a.getJump());
+            appendBonus(sb, R.string.magic_bonus,  (int) a.getMagic());
+            appendBonus(sb, R.string.sword_bonus,  (int) a.getSword());
+            appendBonus(sb, R.string.staff_bonus,  (int) a.getStaff());
+            appendBonus(sb, R.string.dagger_bonus, (int) a.getDagger());
+            appendBonus(sb, R.string.axe_bonus,    (int) a.getAxe());
+            appendBonus(sb, R.string.hammer_bonus, (int) a.getHammer());
+            appendBonus(sb, R.string.spear_bonus,  (int) a.getSpear());
+
+        } else if (item instanceof Ring) {
+            Ring r = (Ring) item;
+            title = r.getName();
+            if (r.getElement() != Elements.NEUTRAL) sb.append(getElementString(r.getElement())).append("\n\n");
+            if (r.getArmor() != 0)      sb.append(getString(R.string.armor_in_calculation)).append(sign(r.getArmor())).append("\n");
+            if (r.getArmorBonus() != 0) sb.append(getString(R.string.armor_bonus)).append(sign((int) r.getArmorBonus())).append("%\n");
+            appendBonus(sb, R.string.speed_in_calculation,   r.getSpeed());
+            appendBonus(sb, R.string.jump_impulse_in_calculation, r.getJump());
+            appendBonus(sb, R.string.magic_bonus,  (int) r.getMagic());
+            appendBonus(sb, R.string.sword_bonus,  (int) r.getSword());
+            appendBonus(sb, R.string.staff_bonus,  (int) r.getStaff());
+            appendBonus(sb, R.string.dagger_bonus, (int) r.getDagger());
+            appendBonus(sb, R.string.axe_bonus,    (int) r.getAxe());
+            appendBonus(sb, R.string.hammer_bonus, (int) r.getHammer());
+            appendBonus(sb, R.string.spear_bonus,  (int) r.getSpear());
+
+        } else {
+            return; // CharacterClass / Elixir — no stats popup
+        }
+
+        // Trim trailing newline for a clean look
+        String message = sb.toString().trim();
+        new AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(R.string.close, null)
+                .show();
+    }
+
+    private String getWeaponTypeString(WeaponTypes type) {
+        switch (type) {
+            case SWORD:  return getString(R.string.weapon_type_sword);
+            case STAFF:  return getString(R.string.weapon_type_staff);
+            case DAGGER: return getString(R.string.weapon_type_dagger);
+            case AXE:    return getString(R.string.weapon_type_axe);
+            case HAMMER: return getString(R.string.weapon_type_hammer);
+            case SPEAR:  return getString(R.string.weapon_type_spear);
+            default:     return capitalize(type.name());
+        }
+    }
+
+    private String getElementString(Elements element) {
+        switch (element) {
+            case FIRE:     return getString(R.string.element_fire);
+            case WATER:    return getString(R.string.element_water);
+            case DARKNESS: return getString(R.string.element_darkness);
+            case LIGHT:    return getString(R.string.element_light);
+            case EARTH:    return getString(R.string.element_earth);
+            case AIR:      return getString(R.string.element_air);
+            default:       return capitalize(element.name());
+        }
+    }
+
+    private String capitalize(String s) {
+        if (s == null || s.isEmpty()) return s;
+        return s.substring(0, 1).toUpperCase(Locale.ROOT) + s.substring(1).toLowerCase(Locale.ROOT);
+    }
+
+    private String sign(int n) {
+        return n >= 0 ? "+" + n : String.valueOf(n);
+    }
+
+    private void appendBonus(StringBuilder sb, int resId, int value) {
+        if (value != 0) sb.append(getString(resId)).append(sign(value)).append("%\n");
     }
 
     // --- Returning the selected item to caller ---
