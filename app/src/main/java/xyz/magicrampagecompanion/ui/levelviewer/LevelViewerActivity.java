@@ -31,6 +31,7 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import java.util.ArrayList;
 import java.util.List;
 
+import xyz.magicrampagecompanion.BuildConfig;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.level.Level;
 import xyz.magicrampagecompanion.level.LevelParser;
@@ -41,8 +42,7 @@ public class LevelViewerActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "LevelViewerPrefs";
     private static final String UNLOCK_PREFIX = "unlocked_secrets_";
     
-    // Testing Rewarded Ad ID
-    private static final String AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917";
+    private static final String AD_UNIT_ID = BuildConfig.realAPIKeyEquipmentTester;
 
     private RewardedAd rewardedAd;
     private LevelRenderView renderView;
@@ -172,12 +172,17 @@ public class LevelViewerActivity extends AppCompatActivity {
     }
 
     private void showAdConfirmationDialog() {
-        new AlertDialog.Builder(this)
+        AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.unlock_secret_areas_title)
                 .setMessage(R.string.unlock_secret_areas_message)
-                .setPositiveButton(R.string.watch_ad, (dialog, which) -> showAdOrLoad())
+                .setPositiveButton(R.string.watch_ad, (d, which) -> showAdOrLoad())
                 .setNegativeButton(R.string.maybe_later, null)
-                .show();
+                .create();
+        dialog.show();
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                .setTextColor(getColor(R.color.dialog_ok));
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+                .setTextColor(getColor(R.color.dialog_cancel));
     }
 
     private void showSecretAreasList() {
