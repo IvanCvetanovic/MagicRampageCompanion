@@ -949,21 +949,23 @@ public class LevelRenderView extends View {
             // nature_shield uses Color0 r=2.8, g=4, b=1.6 → green-gold; must be checked before
             // the generic magic-shield branch which would tint it golden yellow instead.
             if (nameLower.contains("nature") && spriteLower.startsWith("magic-shield")) {
-                int key = Color.argb(3, 100, 220, 60); // unique cache key for nature shield tint
+                int key = Color.argb(3, 100, 220, 60);
                 Paint cached = tintPaintCache.get(key);
                 if (cached != null) return cached;
                 Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
                 p.setColorFilter(new PorterDuffColorFilter(Color.rgb(100, 220, 60), PorterDuff.Mode.MULTIPLY));
+                p.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.ADD));
                 tintPaintCache.put(key, p);
                 return p;
             }
             // Standard magic-shield: Color0 r=3.6, g=3.2, b=1.4 → golden yellow.
             if (spriteLower.startsWith("magic-shield")) {
-                int key = Color.argb(4, 255, 200, 50); // unique cache key for shield tint
+                int key = Color.argb(4, 255, 200, 50);
                 Paint cached = tintPaintCache.get(key);
                 if (cached != null) return cached;
                 Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
                 p.setColorFilter(new PorterDuffColorFilter(Color.rgb(255, 200, 50), PorterDuff.Mode.MULTIPLY));
+                p.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.ADD));
                 tintPaintCache.put(key, p);
                 return p;
             }
