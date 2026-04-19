@@ -47,7 +47,9 @@ public class SavedSetsAdapter extends RecyclerView.Adapter<SavedSetsAdapter.VH> 
 
     @Override
     public void onBindViewHolder(@NonNull VH h, int position) {
+        if (position < 0 || position >= names.size()) return;
         String name = names.get(position);
+        if (name == null) return;
         h.tv.setText(name);
         h.itemView.setOnClickListener(v -> onRowClick.onClick(name));
         h.trash.setOnClickListener(v -> onDeleteClick.onDelete(name));

@@ -81,7 +81,7 @@
     <string name="skill_description_23">Otorga un salto adicional en el aire y mejora las capacidades de los ataques aéreos.</string>
     <string name="skill_description_24">Aumenta la armadura en un 25 \%</string>
     <string name="skill_description_25">Aumenta el poder de ataque pasivo con martillo en un 60 \%.</string>
-    <string name="skill_description_26">Aumenta el poder de ataque pasivo con hacha en un 50 \%.</string>
+    <string name="skill_description_26">Aumenta el poder de ataque pasivo con hacha en un 48\%.</string>
     <string name="skill_description_27">Las pociones curan 2 veces más.</string>
     <string name="skill_description_28">Aumenta el número máximo de corazones.</string>
     <string name="skill_description_29">Protección pasiva contra los pinchos.</string>
@@ -1589,6 +1589,32 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="skin_warlock19">Máscara de bromista demoníaco</string>
     <string name="skin_warrior19">Casco de valquiria</string>
     <string name="skin_witchdoctor19">Máscara de hechicero búho</string>
+    <string name="skin_black_mage20">Shadow Rider</string>
+    <string name="skin_black_mage21">Hechicero Ancestral</string>
+    <string name="skin_druid20">Wild Rider</string>
+    <string name="skin_druid21">Chamán Celeste</string>
+    <string name="skin_elite_warrior20">Steel Striker</string>
+    <string name="skin_elite_warrior21">Campeón del Sol</string>
+    <string name="skin_high_mage20">Arcane Cop</string>
+    <string name="skin_high_mage21">Oráculo Celeste</string>
+    <string name="skin_mage20">Blaze Striker</string>
+    <string name="skin_mage21">Heraldo del Fuego</string>
+    <string name="skin_paladin20">Justice Ranger</string>
+    <string name="skin_paladin21">Guardián del Horizonte</string>
+    <string name="skin_priest20">Sacred Sentinel</string>
+    <string name="skin_priest21">Sacerdote del Sol</string>
+    <string name="skin_ranger20">Cyber Ranger</string>
+    <string name="skin_ranger21">Cazador Celeste</string>
+    <string name="skin_rogue20">Phantom Striker</string>
+    <string name="skin_rogue21">Cazador del Crepúsculo</string>
+    <string name="skin_thief20">Hornet Rider</string>
+    <string name="skin_thief21">Corredor de las Dunas</string>
+    <string name="skin_warlock20">Hex Knight</string>
+    <string name="skin_warlock21">Oráculo de la Calavera</string>
+    <string name="skin_warrior20">Iron Striker</string>
+    <string name="skin_warrior21">Vanguardia Roja</string>
+    <string name="skin_witchdoctor20">Spirit Rider</string>
+    <string name="skin_witchdoctor21">Susurrador de Huesos</string>
 
     <string name="search_hint">Buscar un elemento…</string>
     <string name="all">Todos</string>
@@ -1679,4 +1705,6 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="secret_area_item">Área secreta %d</string>
     <string name="close">Cerrar</string>
     <string name="secrets_revealed">¡Áreas secretas reveladas permanentemente para este nivel!</string>
+    <string name="bunny_spear">Lanza de Conejo</string>
+    <string name="steelblow_shuriken">Shuriken de Acero Soplado</string>
 </resources>

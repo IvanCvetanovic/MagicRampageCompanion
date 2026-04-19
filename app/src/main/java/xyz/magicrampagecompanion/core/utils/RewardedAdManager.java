@@ -7,19 +7,18 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import xyz.magicrampagecompanion.BuildConfig;
+import xyz.magicrampagecompanion.ui.main.MainActivity;
 
 public class RewardedAdManager {
 
     private static final String TAG = "RewardedAdManager";
 
-    // For now, always use test ad unit
     private final String adUnitId = BuildConfig.realAPIKeyEquipmentTester;
 
     private RewardedAd rewardedAd;
@@ -31,7 +30,7 @@ public class RewardedAdManager {
         }
         isLoading = true;
 
-        AdRequest adRequest = new AdRequest.Builder().build();
+        com.google.android.gms.ads.AdRequest adRequest = MainActivity.buildAdRequest(context);
         RewardedAd.load(context, adUnitId, adRequest, new RewardedAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull RewardedAd ad) {
@@ -60,12 +59,6 @@ public class RewardedAdManager {
             return;
         }
 
-        rewardedAd.show(activity, rewardItem -> {
-            if (callback != null) {
-                callback.onUserEarnedReward(rewardItem);
-            }
-        });
-
         rewardedAd.setFullScreenContentCallback(new com.google.android.gms.ads.FullScreenContentCallback() {
             @Override
             public void onAdDismissedFullScreenContent() {
@@ -86,6 +79,12 @@ public class RewardedAdManager {
             @Override
             public void onAdShowedFullScreenContent() {
                 Log.d(TAG, "Ad showed fullscreen.");
+            }
+        });
+
+        rewardedAd.show(activity, rewardItem -> {
+            if (callback != null) {
+                callback.onUserEarnedReward(rewardItem);
             }
         });
     }

@@ -13,8 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.LifecycleEventObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.mlkit.common.model.DownloadConditions;
@@ -135,9 +134,8 @@ public class News extends AppCompatActivity {
                     newsRecyclerView.setVisibility(View.VISIBLE);
                 });
 
-        getLifecycle().addObserver(new LifecycleObserver() {
-            @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-            void onDestroy() { modelManager.close(); }
+        getLifecycle().addObserver((LifecycleEventObserver) (source, event) -> {
+            if (event == Lifecycle.Event.ON_DESTROY) modelManager.close();
         });
     }
 
@@ -160,7 +158,7 @@ public class News extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        executor.shutdown();
+        executor.shutdownNow();
     }
 
     @Override

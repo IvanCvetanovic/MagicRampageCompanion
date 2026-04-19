@@ -13,8 +13,8 @@ import com.google.mlkit.nl.translate.TranslateLanguage;
 import com.google.mlkit.nl.translate.Translation;
 import com.google.mlkit.nl.translate.Translator;
 import com.google.mlkit.nl.translate.TranslatorOptions;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import xyz.magicrampagecompanion.data.network.GistApi;
 import xyz.magicrampagecompanion.R;
@@ -23,7 +23,7 @@ public class NewsAdapter extends ListAdapter<GistApi.GistNews, NewsAdapter.NewsV
 
     private boolean isTranslationReady = false;
     private String targetLanguage = TranslateLanguage.ENGLISH;
-    private static final Map<String, String> translationCache = new HashMap<>();
+    private static final Map<String, String> translationCache = new ConcurrentHashMap<>();
     private static final String TAG = "NewsAdapter";
 
     public NewsAdapter() {

@@ -20,9 +20,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.OnUserEarnedRewardListener;
 import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
@@ -33,6 +31,7 @@ import java.util.List;
 
 import xyz.magicrampagecompanion.BuildConfig;
 import xyz.magicrampagecompanion.R;
+import xyz.magicrampagecompanion.ui.main.MainActivity;
 import xyz.magicrampagecompanion.level.Level;
 import xyz.magicrampagecompanion.level.LevelParser;
 
@@ -42,7 +41,7 @@ public class LevelViewerActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "LevelViewerPrefs";
     private static final String UNLOCK_PREFIX = "unlocked_secrets_";
     
-    private static final String AD_UNIT_ID = BuildConfig.realAPIKeyEquipmentTester;
+    private static final String AD_UNIT_ID = BuildConfig.realAPIKeyLevelViewer;
 
     private RewardedAd rewardedAd;
     private LevelRenderView renderView;
@@ -68,11 +67,7 @@ public class LevelViewerActivity extends AppCompatActivity {
             return;
         }
 
-        // Initialize Mobile Ads SDK
-        MobileAds.initialize(this, initializationStatus -> {
-            Log.d(TAG, "AdMob Initialized");
-            loadRewardedAd();
-        });
+        loadRewardedAd();
 
         // --- Top bar: insets, title, back button ---
         LinearLayout topBar = findViewById(R.id.levelTopBar);
@@ -220,8 +215,7 @@ public class LevelViewerActivity extends AppCompatActivity {
         if (isLoadingAd || rewardedAd != null) return;
 
         isLoadingAd = true;
-        AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(this, AD_UNIT_ID, adRequest, new RewardedAdLoadCallback() {
+        RewardedAd.load(this, AD_UNIT_ID, MainActivity.buildAdRequest(this), new RewardedAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 Log.w(TAG, "Ad failed to load: " + loadAdError.getMessage());

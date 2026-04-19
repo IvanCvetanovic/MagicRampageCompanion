@@ -41,12 +41,12 @@ public class GistApi {
             conn.setRequestMethod("GET");
 
             if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                String line;
-                while ((line = in.readLine()) != null) {
-                    result.append(line);
+                try (BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    String line;
+                    while ((line = in.readLine()) != null) {
+                        result.append(line);
+                    }
                 }
-                in.close();
                 return parseCommentsJson(result.toString());
             }
         } catch (Exception e) {

@@ -81,7 +81,7 @@
     <string name="skill_description_23">Дає додатковий стрибок у повітрі та підсилює повітряні атаки.</string>
     <string name="skill_description_24">Підвищує броню на 25\%</string>
     <string name="skill_description_25">Підвищує пасивну атаку молота на 60\%.</string>
-    <string name="skill_description_26">Підвищує пасивну атаку сокири на 50\%.</string>
+    <string name="skill_description_26">Підвищує пасивну атаку сокири на 48\%.</string>
     <string name="skill_description_27">Зілля відновлюють здоров\'я в 2-кратному розмірі.</string>
     <string name="skill_description_28">Підвищує максимальний запас сердець.</string>
     <string name="skill_description_29">Дає пасивний захист від шипів.</string>
@@ -1587,6 +1587,32 @@
     <string name="skin_warlock19">Маска демона-шута</string>
     <string name="skin_warrior19">Шолом валькірії</string>
     <string name="skin_witchdoctor19">Маска лікаря-сови</string>
+    <string name="skin_black_mage20">Shadow Rider</string>
+    <string name="skin_black_mage21">Прадавній чаклун</string>
+    <string name="skin_druid20">Wild Rider</string>
+    <string name="skin_druid21">Небесний шаман</string>
+    <string name="skin_elite_warrior20">Steel Striker</string>
+    <string name="skin_elite_warrior21">Чемпіон Сонця</string>
+    <string name="skin_high_mage20">Arcane Cop</string>
+    <string name="skin_high_mage21">Небесний оракул</string>
+    <string name="skin_mage20">Blaze Striker</string>
+    <string name="skin_mage21">Вісник вогню</string>
+    <string name="skin_paladin20">Justice Ranger</string>
+    <string name="skin_paladin21">Вартовий горизонту</string>
+    <string name="skin_priest20">Sacred Sentinel</string>
+    <string name="skin_priest21">Жрець Сонця</string>
+    <string name="skin_ranger20">Cyber Ranger</string>
+    <string name="skin_ranger21">Небесний мисливець</string>
+    <string name="skin_rogue20">Phantom Striker</string>
+    <string name="skin_rogue21">Мисливець сутінків</string>
+    <string name="skin_thief20">Hornet Rider</string>
+    <string name="skin_thief21">Бігун дюн</string>
+    <string name="skin_warlock20">Hex Knight</string>
+    <string name="skin_warlock21">Оракул черепа</string>
+    <string name="skin_warrior20">Iron Striker</string>
+    <string name="skin_warrior21">Червоний авангард</string>
+    <string name="skin_witchdoctor20">Spirit Rider</string>
+    <string name="skin_witchdoctor21">Той, хто шепоче кісткам</string>
 
     <string name="search_hint">Знайти предмет…</string>
     <string name="all">Усі</string>
@@ -1677,4 +1703,6 @@
     <string name="secret_area_item">Секретна зона %d</string>
     <string name="close">Закрити</string>
     <string name="secrets_revealed">Секретні зони на цьому рівні назавжди відкриті!</string>
+    <string name="bunny_spear">Спис кролика</string>
+    <string name="steelblow_shuriken">Бронебійний сюрікен</string>
 </resources>

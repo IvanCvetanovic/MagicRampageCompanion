@@ -81,7 +81,7 @@
     <string name="skill_description_23">空中ジャンプが1回追加され、空中攻撃能力が強化される</string>
     <string name="skill_description_24">防御力が25\%上昇する</string>
     <string name="skill_description_25">ハンマーの攻撃力が60\%上昇する</string>
-    <string name="skill_description_26">斧の攻撃力が50\%上昇する</string>
+    <string name="skill_description_26">斧の攻撃力が48\%上昇する</string>
     <string name="skill_description_27">回復薬の回復量が2倍になる</string>
     <string name="skill_description_28">ハートの最大数が増える</string>
     <string name="skill_description_29">トゲからダメージを受けなくなる</string>
@@ -1588,6 +1588,32 @@
     <string name="skin_warlock19">デーモンジョーカー</string>
     <string name="skin_warrior19">ヴァルキュリアヘルム</string>
     <string name="skin_witchdoctor19">オウルドクターマスク</string>
+    <string name="skin_black_mage20">シャドウライダー</string>
+    <string name="skin_black_mage21">祖霊の魔術師</string>
+    <string name="skin_druid20">ワイルドライダー</string>
+    <string name="skin_druid21">天空のシャーマン</string>
+    <string name="skin_elite_warrior20">スティールストライカー</string>
+    <string name="skin_elite_warrior21">太陽の勇士</string>
+    <string name="skin_high_mage20">アーケインコップ</string>
+    <string name="skin_high_mage21">天空の神託者</string>
+    <string name="skin_mage20">ブレイズストライカー</string>
+    <string name="skin_mage21">炎の使者</string>
+    <string name="skin_paladin20">ジャスティスレンジャー</string>
+    <string name="skin_paladin21">地平の守護者</string>
+    <string name="skin_priest20">セイクリッドセンチネル</string>
+    <string name="skin_priest21">太陽の司祭</string>
+    <string name="skin_ranger20">サイバーレンジャー</string>
+    <string name="skin_ranger21">天空の狩人</string>
+    <string name="skin_rogue20">ファントムストライカー</string>
+    <string name="skin_rogue21">黄昏の狩人</string>
+    <string name="skin_thief20">ホーネットライダー</string>
+    <string name="skin_thief21">砂丘の走者</string>
+    <string name="skin_warlock20">ヘックスナイト</string>
+    <string name="skin_warlock21">骸骨の神託者</string>
+    <string name="skin_warrior20">アイアンストライカー</string>
+    <string name="skin_warrior21">紅の前衛</string>
+    <string name="skin_witchdoctor20">スピリットライダー</string>
+    <string name="skin_witchdoctor21">骨を囁く者</string>
 
     <string name="search_hint">アイテムを検索…</string>
     <string name="all">すべて</string>
@@ -1678,4 +1704,6 @@
     <string name="secret_area_item">秘密エリア %d</string>
     <string name="close">閉じる</string>
     <string name="secrets_revealed">このレベルの秘密エリアが永続的に公開されました！</string>
+    <string name="bunny_spear">バニースピア</string>
+    <string name="steelblow_shuriken">硬鋼の手裏剣</string>
 </resources>

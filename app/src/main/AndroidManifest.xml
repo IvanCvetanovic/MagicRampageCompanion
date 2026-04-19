@@ -327,7 +327,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".ui.items.ItemDetail" />
+        <activity android:name=".ui.items.ItemDetail" android:exported="false" />
         <activity
             android:name=".ui.dungeons.Dungeon1"
             android:exported="false"

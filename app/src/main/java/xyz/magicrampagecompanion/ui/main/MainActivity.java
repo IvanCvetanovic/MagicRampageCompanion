@@ -90,15 +90,17 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton btnAdPreferences = findViewById(R.id.btnAdPreferences);
         btnAdPreferences.setOnClickListener(v -> {
-            // This opens Google's official Privacy Options UI
-            UserMessagingPlatform.showPrivacyOptionsForm(
-                    this,
-                    formError -> {
-                        if (formError != null) {
-                            Toast.makeText(this, "Privacy options unavailable: " + formError.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
+            if (consentInformation != null
+                    && consentInformation.getPrivacyOptionsRequirementStatus()
+                       == ConsentInformation.PrivacyOptionsRequirementStatus.REQUIRED) {
+                UserMessagingPlatform.showPrivacyOptionsForm(this, formError -> {
+                    if (formError != null) {
+                        Toast.makeText(this, "Privacy options unavailable: " + formError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-            );
+                });
+            } else {
+                Toast.makeText(this, "Ad consent is not required in your region.", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // --- News Button ---
@@ -173,12 +175,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // ---------------- Ads SDK + UMP ----------------
-        // 1) Initialize the Mobile Ads SDK
-        MobileAds.initialize(this, initializationStatus -> {
-            // Optionally inspect adapters here
-        });
-
-        // 2) Request/update consent info and show the consent form if required
+        // Request/update consent info, show form if required, then initialize MobileAds.
         requestConsentAndMaybeShowForm();
     }
 
@@ -223,10 +220,12 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-    // After UMP has settled, decide if we can request ads now.
+    // After UMP has settled, initialize the Ads SDK and start loading ads.
     private void onConsentFlowFinished() {
-        boolean canRequest = consentInformation != null && consentInformation.canRequestAds();
-        Log.d(TAG, "Consent flow finished. canRequestAds = " + canRequest);
+        Log.d(TAG, "Consent flow finished. canRequestAds = "
+                + (consentInformation != null && consentInformation.canRequestAds()));
+        MobileAds.initialize(this, initializationStatus ->
+                ((MyApplication) getApplication()).initializeAds());
     }
 
     // ---------- Privacy & Ads dialog (no extra XML) ----------

@@ -95,7 +95,10 @@ public class EquipmentSetAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         notifyItemRangeChanged(position, data.size() - position + 1); // + footer
     }
 
-    public EquipmentSet getItem(int position) { return data.get(position); }
+    public EquipmentSet getItem(int position) {
+        if (position < 0 || position >= data.size()) return null;
+        return data.get(position);
+    }
 
     @NonNull
     @Override

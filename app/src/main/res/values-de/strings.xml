@@ -81,7 +81,7 @@
     <string name="skill_description_23">Gewährt einen zusätzlichen Luftsprung und verbessert deine Luftkampffähigkeiten.</string>
     <string name="skill_description_24">Erhöht Rüstung um 25\%</string>
     <string name="skill_description_25">Erhöht die Angriffskraft des Hammers um 60\%.</string>
-    <string name="skill_description_26">Erhöht die Angriffskraft der Axt um 50\%.</string>
+    <string name="skill_description_26">Erhöht die Angriffskraft der Axt um 48\%.</string>
     <string name="skill_description_27">Tränke heilen 2 mal mehr.</string>
     <string name="skill_description_28">Erhöht die maximale Anzahl von Herzen.</string>
     <string name="skill_description_29">Passiver Schutz gegen Stacheln.</string>
@@ -1589,6 +1589,32 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="skin_warlock19">Dämonische Joker-Maske</string>
     <string name="skin_warrior19">Walkürenhelm</string>
     <string name="skin_witchdoctor19">Eulenarzt-Maske</string>
+    <string name="skin_black_mage20">Shadow Rider</string>
+    <string name="skin_black_mage21">Ahnenhexer</string>
+    <string name="skin_druid20">Wild Rider</string>
+    <string name="skin_druid21">Himmelschamane</string>
+    <string name="skin_elite_warrior20">Steel Striker</string>
+    <string name="skin_elite_warrior21">Sonnenchampion</string>
+    <string name="skin_high_mage20">Arcane Cop</string>
+    <string name="skin_high_mage21">Himmelsorakel</string>
+    <string name="skin_mage20">Blaze Striker</string>
+    <string name="skin_mage21">Herold des Feuers</string>
+    <string name="skin_paladin20">Justice Ranger</string>
+    <string name="skin_paladin21">Hüter des Horizonts</string>
+    <string name="skin_priest20">Sacred Sentinel</string>
+    <string name="skin_priest21">Sonnenpriester</string>
+    <string name="skin_ranger20">Cyber Ranger</string>
+    <string name="skin_ranger21">Himmelsjäger</string>
+    <string name="skin_rogue20">Phantom Striker</string>
+    <string name="skin_rogue21">Dämmerungsjäger</string>
+    <string name="skin_thief20">Hornet Rider</string>
+    <string name="skin_thief21">Dünenläufer</string>
+    <string name="skin_warlock20">Hex Knight</string>
+    <string name="skin_warlock21">Orakel des Schädels</string>
+    <string name="skin_warrior20">Iron Striker</string>
+    <string name="skin_warrior21">Rote Vorhut</string>
+    <string name="skin_witchdoctor20">Spirit Rider</string>
+    <string name="skin_witchdoctor21">Knochensprecher</string>
 
     <string name="search_hint">Ein Element suchen…</string>
     <string name="all">Alle</string>
@@ -1679,4 +1705,6 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="secret_area_item">Geheimgebiet %d</string>
     <string name="close">Schließen</string>
     <string name="secrets_revealed">Geheimgebiete für dieses Level dauerhaft enthüllt!</string>
+    <string name="bunny_spear">Hasenspeer</string>
+    <string name="steelblow_shuriken">Stahlstoß-Shuriken</string>
 </resources>

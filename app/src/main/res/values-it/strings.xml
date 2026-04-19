@@ -81,7 +81,7 @@
     <string name="skill_description_23">Garantisce un salto extra a mezz\'aria e aumenta le potenzialità d\'attacco aereo.</string>
     <string name="skill_description_24">Potenzia l\'armatura di un 25\%</string>
     <string name="skill_description_25">Potenzia il potere d\'attacco del martello passivo di un 60\%.</string>
-    <string name="skill_description_26">Potenzia il potere d\'attacco dell\'ascia passiva di un 50\%.</string>
+    <string name="skill_description_26">Potenzia il potere d\'attacco dell\'ascia passiva di un 48\%.</string>
     <string name="skill_description_27">Le pozioni curano 2 volte in più.</string>
     <string name="skill_description_28">Aumenta il numero massimo di cuori.</string>
     <string name="skill_description_29">Protezione passiva contro gli spuntoni.</string>
@@ -1590,6 +1590,32 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="skin_warlock19">Maschera da burlone demoniaco</string>
     <string name="skin_warrior19">Elmo della valchiria</string>
     <string name="skin_witchdoctor19">Maschera del dottor gufo</string>
+    <string name="skin_black_mage20">Cavaliere dell\'Ombra</string>
+    <string name="skin_black_mage21">Stregone Ancestrale</string>
+    <string name="skin_druid20">Cavaliere Selvaggio</string>
+    <string name="skin_druid21">Sciamano Celeste</string>
+    <string name="skin_elite_warrior20">Striker d\'Acciaio</string>
+    <string name="skin_elite_warrior21">Campione del Sole</string>
+    <string name="skin_high_mage20">Agente Arcano</string>
+    <string name="skin_high_mage21">Oracolo Celeste</string>
+    <string name="skin_mage20">Striker di Fiamma</string>
+    <string name="skin_mage21">Araldo del Fuoco</string>
+    <string name="skin_paladin20">Ranger della Giustizia</string>
+    <string name="skin_paladin21">Guardiano dell\'Orizzonte</string>
+    <string name="skin_priest20">Sentinella Sacra</string>
+    <string name="skin_priest21">Sacerdote del Sole</string>
+    <string name="skin_ranger20">Ranger Cibernetico</string>
+    <string name="skin_ranger21">Cacciatore Celeste</string>
+    <string name="skin_rogue20">Striker Fantasma</string>
+    <string name="skin_rogue21">Cacciatore del Crepuscolo</string>
+    <string name="skin_thief20">Cavaliere Calabrone</string>
+    <string name="skin_thief21">Corridore delle Dune</string>
+    <string name="skin_warlock20">Cavaliere Hex</string>
+    <string name="skin_warlock21">Oracolo del Teschio</string>
+    <string name="skin_warrior20">Striker di Ferro</string>
+    <string name="skin_warrior21">Avanguardia Rossa</string>
+    <string name="skin_witchdoctor20">Cavaliere dello Spirito</string>
+    <string name="skin_witchdoctor21">Sussurratore di Ossa</string>
 
     <string name="search_hint">Cerca un oggetto…</string>
     <string name="all">Tutti</string>
@@ -1680,4 +1706,6 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="secret_area_item">Area segreta %d</string>
     <string name="close">Chiudi</string>
     <string name="secrets_revealed">Aree segrete rivelate permanentemente per questo livello!</string>
+    <string name="bunny_spear">Lancia del coniglietto</string>
+    <string name="steelblow_shuriken">Shuriken colpo d\'acciaio</string>
 </resources>

@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -125,20 +126,23 @@ public class ItemSyncer {
 
                 Log.i(TAG, "JSON-only items (not in app): " + missingCount);
 
+                List<Runnable> mutations = new ArrayList<>();
                 int updatedWeapons = 0;
-                updatedWeapons += syncWeapons(map, ItemData.swordList);
-                updatedWeapons += syncWeapons(map, ItemData.daggerList);
-                updatedWeapons += syncWeapons(map, ItemData.axeList);
-                updatedWeapons += syncWeapons(map, ItemData.spearList);
-                updatedWeapons += syncWeapons(map, ItemData.hammerList);
-                updatedWeapons += syncWeapons(map, ItemData.staffList);
+                updatedWeapons += syncWeapons(map, ItemData.swordList, mutations);
+                updatedWeapons += syncWeapons(map, ItemData.daggerList, mutations);
+                updatedWeapons += syncWeapons(map, ItemData.axeList, mutations);
+                updatedWeapons += syncWeapons(map, ItemData.spearList, mutations);
+                updatedWeapons += syncWeapons(map, ItemData.hammerList, mutations);
+                updatedWeapons += syncWeapons(map, ItemData.staffList, mutations);
 
-                int updatedArmors = syncArmors(map, ItemData.armorList);
-                int updatedRings  = syncRings(map, ItemData.ringList);
+                int updatedArmors = syncArmors(map, ItemData.armorList, mutations);
+                int updatedRings  = syncRings(map, ItemData.ringList, mutations);
 
                 final int uw = updatedWeapons, ua = updatedArmors, ur = updatedRings;
-                new Handler(Looper.getMainLooper()).post(() ->
-                        Log.i(TAG, "Item sync done. weapons=" + uw + ", armors=" + ua + ", rings=" + ur));
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    for (Runnable r : mutations) r.run();
+                    Log.i(TAG, "Item sync done. weapons=" + uw + ", armors=" + ua + ", rings=" + ur);
+                });
             } catch (Exception e) {
                 Log.e(TAG, "Item sync failed", e);
             }
@@ -148,7 +152,7 @@ public class ItemSyncer {
     // ===================
     // Weapons full update
     // ===================
-    private static int syncWeapons(HashMap<String, JsonItem> map, List<Weapon> list) {
+    private static int syncWeapons(HashMap<String, JsonItem> map, List<Weapon> list, List<Runnable> mutations) {
         int updated = 0;
         for (int i = 0; i < list.size(); i++) {
             Weapon old = list.get(i);
@@ -258,7 +262,8 @@ public class ItemSyncer {
             logDiff(old.getName(), "baseFreemiumSellPrice", old.getBaseFreemiumSellPrice(), newSF);
             logDiff(old.getName(), "basePremiumSellPrice",  old.getBasePremiumSellPrice(),  newSP);
 
-            list.set(i, updatedW);
+            final int finalI = i;
+            mutations.add(() -> list.set(finalI, updatedW));
             updated++;
         }
         return updated;
@@ -266,7 +271,7 @@ public class ItemSyncer {
     // ==================
     // Armors full update
     // ==================
-    private static int syncArmors(HashMap<String, JsonItem> map, List<Armor> list) {
+    private static int syncArmors(HashMap<String, JsonItem> map, List<Armor> list, List<Runnable> mutations) {
         int updated = 0;
         for (int i = 0; i < list.size(); i++) {
             Armor old = list.get(i);
@@ -379,7 +384,8 @@ public class ItemSyncer {
             logDiff(old.getName(), "baseFreemiumSellPrice", old.getBaseFreemiumSellPrice(), newSF);
             logDiff(old.getName(), "basePremiumSellPrice",  old.getBasePremiumSellPrice(),  newSP);
 
-            list.set(i, updatedA);
+            final int finalI = i;
+            mutations.add(() -> list.set(finalI, updatedA));
             updated++;
         }
         return updated;
@@ -388,7 +394,7 @@ public class ItemSyncer {
     // ================
     // Rings full update
     // ================
-    private static int syncRings(HashMap<String, JsonItem> map, List<Ring> list) {
+    private static int syncRings(HashMap<String, JsonItem> map, List<Ring> list, List<Runnable> mutations) {
         int updated = 0;
         for (int i = 0; i < list.size(); i++) {
             Ring old = list.get(i);
@@ -492,7 +498,8 @@ public class ItemSyncer {
             logDiff(old.getName(), "baseFreemiumSellPrice", old.getBaseFreemiumSellPrice(), newSF);
             logDiff(old.getName(), "basePremiumSellPrice",  old.getBasePremiumSellPrice(),  newSP);
 
-            list.set(i, updatedR);
+            final int finalI = i;
+            mutations.add(() -> list.set(finalI, updatedR));
             updated++;
         }
         return updated;

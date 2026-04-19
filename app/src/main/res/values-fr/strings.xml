@@ -81,7 +81,7 @@
     <string name="skill_description_23">Octroie un saut supplémentaire dans les airs et améliore les attaques aériennes.</string>
     <string name="skill_description_24">Augmente l\'armure de 25 \%</string>
     <string name="skill_description_25">Augmente la puissance d\'attaque passive des marteaux de 60 \%.</string>
-    <string name="skill_description_26">Augmente la puissance d\'attaque passive des haches de 50 \%.</string>
+    <string name="skill_description_26">Augmente la puissance d\'attaque passive des haches de 48\%.</string>
     <string name="skill_description_27">Les potions sont 2 fois plus efficaces.</string>
     <string name="skill_description_28">Augmente le nombre maximum de coeurs.</string>
     <string name="skill_description_29">Protection passive contre les piques.</string>
@@ -1588,6 +1588,32 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="skin_warlock19">Masque du Joker démoniaque</string>
     <string name="skin_warrior19">Casque de Valkyrie</string>
     <string name="skin_witchdoctor19">Masque du Docteur Hibou</string>
+    <string name="skin_black_mage20">Shadow Rider</string>
+    <string name="skin_black_mage21">Sorcier Ancestral</string>
+    <string name="skin_druid20">Sauvage Rider</string>
+    <string name="skin_druid21">Chaman Céleste</string>
+    <string name="skin_elite_warrior20">Steel Striker</string>
+    <string name="skin_elite_warrior21">Champion du Soleil</string>
+    <string name="skin_high_mage20">Arcane Cop</string>
+    <string name="skin_high_mage21">Oracle Céleste</string>
+    <string name="skin_mage20">Blaze Striker</string>
+    <string name="skin_mage21">Héraut du Feu</string>
+    <string name="skin_paladin20">Ranger de la Justice</string>
+    <string name="skin_paladin21">Gardien de l\'Horizon</string>
+    <string name="skin_priest20">Sacred Sentinel</string>
+    <string name="skin_priest21">Prêtre du Soleil</string>
+    <string name="skin_ranger20">Cyber Ranger</string>
+    <string name="skin_ranger21">Chasseur Céleste</string>
+    <string name="skin_rogue20">Phantom Striker</string>
+    <string name="skin_rogue21">Chasseur du Crépuscule</string>
+    <string name="skin_thief20">Hornet Rider</string>
+    <string name="skin_thief21">Coureur des Dunes</string>
+    <string name="skin_warlock20">Chevalier Hex</string>
+    <string name="skin_warlock21">Oracle du Crâne</string>
+    <string name="skin_warrior20">Iron Striker</string>
+    <string name="skin_warrior21">Avant-garde Rouge</string>
+    <string name="skin_witchdoctor20">Spirit Rider</string>
+    <string name="skin_witchdoctor21">Murmureur d\'Os</string>
 
     <string name="search_hint">Rechercher un objet…</string>
     <string name="all">Tout</string>
@@ -1678,4 +1704,6 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="secret_area_item">Zone secrète %d</string>
     <string name="close">Fermer</string>
     <string name="secrets_revealed">Zones secrètes révélées définitivement pour ce niveau!</string>
+    <string name="bunny_spear">Lance du lapin</string>
+    <string name="steelblow_shuriken">Shuriken de métal</string>
 </resources>

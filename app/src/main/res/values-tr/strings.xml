@@ -81,7 +81,7 @@
     <string name="skill_description_23">Havada fazladan bir zıplama sağlar ve hava saldırı yeteneklerini geliştirir.</string>
     <string name="skill_description_24">Zırh gücünü \%25 arttırır</string>
     <string name="skill_description_25">Pasif çekiç saldırı gücünü \% 60 artırır.</string>
-    <string name="skill_description_26">Pasif balta saldırı gücünü \% 50 artırır</string>
+    <string name="skill_description_26">Pasif balta saldırı gücünü \% 48 artırır</string>
     <string name="skill_description_27">İksirler 2 kat daha fazla iyileştirir…</string>
     <string name="skill_description_28">Maksimum kalp sayısını artırır.</string>
     <string name="skill_description_29">Kazıklara karşı pasif koruma sağlar.</string>
@@ -1587,6 +1587,32 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="skin_warlock19">Şeytani Şakacı şapkası</string>
     <string name="skin_warrior19">Valkür Kaskı</string>
     <string name="skin_witchdoctor19">Baykuş Doktor Maskesi</string>
+    <string name="skin_black_mage20">Shadow Rider</string>
+    <string name="skin_black_mage21">Atasal Büyücü</string>
+    <string name="skin_druid20">Wild Rider</string>
+    <string name="skin_druid21">Göksel Şaman</string>
+    <string name="skin_elite_warrior20">Steel Striker</string>
+    <string name="skin_elite_warrior21">Güneş Şampiyonu</string>
+    <string name="skin_high_mage20">Arcane Cop</string>
+    <string name="skin_high_mage21">Göksel Kahin</string>
+    <string name="skin_mage20">Blaze Striker</string>
+    <string name="skin_mage21">Ateş Habercisi</string>
+    <string name="skin_paladin20">Justice Ranger</string>
+    <string name="skin_paladin21">Ufuk Muhafızı</string>
+    <string name="skin_priest20">Sacred Sentinel</string>
+    <string name="skin_priest21">Güneş Rahibi</string>
+    <string name="skin_ranger20">Cyber Ranger</string>
+    <string name="skin_ranger21">Göksel Avcı</string>
+    <string name="skin_rogue20">Phantom Striker</string>
+    <string name="skin_rogue21">Alacakaranlık Avcısı</string>
+    <string name="skin_thief20">Hornet Rider</string>
+    <string name="skin_thief21">Kum Tepesi Koşucusu</string>
+    <string name="skin_warlock20">Hex Knight</string>
+    <string name="skin_warlock21">Kafatası Kahini</string>
+    <string name="skin_warrior20">Iron Striker</string>
+    <string name="skin_warrior21">Kızıl Öncü</string>
+    <string name="skin_witchdoctor20">Spirit Rider</string>
+    <string name="skin_witchdoctor21">Kemik Fısıldayan</string>
 
     <string name="search_hint">Bir öğe ara…</string>
     <string name="all">Tümü</string>
@@ -1677,4 +1703,6 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="secret_area_item">Gizli alan %d</string>
     <string name="close">Kapat</string>
     <string name="secrets_revealed">Bu seviyedeki gizli alanlar kalıcı olarak açıklandı!</string>
+    <string name="bunny_spear">Tavşan Mızrağı</string>
+    <string name="steelblow_shuriken">Çeliknefes Shuriken</string>
 </resources>

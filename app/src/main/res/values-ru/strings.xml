@@ -81,7 +81,7 @@
     <string name="skill_description_23">Дает дополнительный прыжок в воздухе и усиливает воздушные атаки.</string>
     <string name="skill_description_24">Повышает броню на 25\%</string>
     <string name="skill_description_25">Повышает пассивную атаку молота на 60\%.</string>
-    <string name="skill_description_26">Повышает пассивную атаку топора на 50\%.</string>
+    <string name="skill_description_26">Повышает пассивную атаку топора на 48\%.</string>
     <string name="skill_description_27">Зелья восстанавливают здоровье в 2-кратном размере.</string>
     <string name="skill_description_28">Повышает максимальный запас сердец.</string>
     <string name="skill_description_29">Даёт пассивную защиту от шипов.</string>
@@ -1589,6 +1589,32 @@
     <string name="skin_warlock19">Маска демона-шута</string>
     <string name="skin_warrior19">Шлем валькирии</string>
     <string name="skin_witchdoctor19">Маска доктора-совы</string>
+    <string name="skin_black_mage20">Shadow Rider</string>
+    <string name="skin_black_mage21">Древний колдун</string>
+    <string name="skin_druid20">Wild Rider</string>
+    <string name="skin_druid21">Небесный шаман</string>
+    <string name="skin_elite_warrior20">Steel Striker</string>
+    <string name="skin_elite_warrior21">Чемпион Солнца</string>
+    <string name="skin_high_mage20">Arcane Cop</string>
+    <string name="skin_high_mage21">Небесный оракул</string>
+    <string name="skin_mage20">Blaze Striker</string>
+    <string name="skin_mage21">Вестник огня</string>
+    <string name="skin_paladin20">Justice Ranger</string>
+    <string name="skin_paladin21">Страж горизонта</string>
+    <string name="skin_priest20">Sacred Sentinel</string>
+    <string name="skin_priest21">Жрец Солнца</string>
+    <string name="skin_ranger20">Cyber Ranger</string>
+    <string name="skin_ranger21">Небесный охотник</string>
+    <string name="skin_rogue20">Phantom Striker</string>
+    <string name="skin_rogue21">Охотник сумерек</string>
+    <string name="skin_thief20">Hornet Rider</string>
+    <string name="skin_thief21">Бегущий по дюнам</string>
+    <string name="skin_warlock20">Hex Knight</string>
+    <string name="skin_warlock21">Оракул черепа</string>
+    <string name="skin_warrior20">Iron Striker</string>
+    <string name="skin_warrior21">Алая авангардия</string>
+    <string name="skin_witchdoctor20">Spirit Rider</string>
+    <string name="skin_witchdoctor21">Шепчущий кости</string>
 
     <string name="search_hint">Найти предмет…</string>
     <string name="all">Все</string>
@@ -1680,4 +1706,6 @@
     <string name="secret_area_item">Секретная зона %d</string>
     <string name="close">Закрыть</string>
     <string name="secrets_revealed">Секретные зоны на этом уровне навсегда открыты!</string>
+    <string name="bunny_spear">Кроличье Копьё</string>
+    <string name="steelblow_shuriken">Бронебойный сюрикен</string>
 </resources>

@@ -576,7 +576,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
 
     <string name="skill_description_24">Boosts armor by 25\%.</string>
     <string name="skill_description_25">Boosts passive hammer attack power by 60\%.</string>
-    <string name="skill_description_26">Boosts passive axe attack power by 50\%.</string>
+    <string name="skill_description_26">Boosts passive axe attack power by 48\%.</string>
     <string name="skill_description_27">Potions heal 2 times more.</string>
     <string name="skill_description_28">Increases the maximum number of hearts.</string>
     <string name="skill_description_29">Passive protection against spikes.</string>
@@ -1850,6 +1850,32 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="skin_warlock19">Hellbound Hexer</string>
     <string name="skin_warrior19">Titanic Crown Breaker</string>
     <string name="skin_witchdoctor19">Spirit Vessel</string>
+    <string name="skin_black_mage20">Shadow Rider</string>
+    <string name="skin_black_mage21">Ancestral Hexer</string>
+    <string name="skin_druid20">Wild Rider</string>
+    <string name="skin_druid21">Sky Shaman</string>
+    <string name="skin_elite_warrior20">Steel Striker</string>
+    <string name="skin_elite_warrior21">Sun Champion</string>
+    <string name="skin_high_mage20">Arcane Cop</string>
+    <string name="skin_high_mage21">Sky Oracle</string>
+    <string name="skin_mage20">Blaze Striker</string>
+    <string name="skin_mage21">Flame Shaman</string>
+    <string name="skin_paladin20">Justice Ranger</string>
+    <string name="skin_paladin21">Horizon Guardian</string>
+    <string name="skin_priest20">Sacred Sentinel</string>
+    <string name="skin_priest21">Sun Priest</string>
+    <string name="skin_ranger20">Cyber Ranger</string>
+    <string name="skin_ranger21">Sky Tracker</string>
+    <string name="skin_rogue20">Phantom Striker</string>
+    <string name="skin_rogue21">Dusk Stalker</string>
+    <string name="skin_thief20">Hornet Rider</string>
+    <string name="skin_thief21">Dune Runner</string>
+    <string name="skin_warlock20">Hex Knight</string>
+    <string name="skin_warlock21">Skull Oracle</string>
+    <string name="skin_warrior20">Iron Striker</string>
+    <string name="skin_warrior21">Red Vanguard</string>
+    <string name="skin_witchdoctor20">Spirit Rider</string>
+    <string name="skin_witchdoctor21">Bone Whisperer</string>
 
     <string name="suffix_colored">(Colored)</string>
 
@@ -1908,4 +1934,6 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="black_shuriken">Black Shuriken</string>
     <string name="scorpion_fang">Scorpion Fang</string>
     <string name="oasis_blade">Oasis Blade</string>
+    <string name="bunny_spear">Bunny Spear</string>
+    <string name="steelblow_shuriken">Steelblow Shuriken</string>
 </resources>

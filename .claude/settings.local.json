@@ -15,7 +15,12 @@
       "Bash(for f in /mnt/c/Users/PrOfSeS/Desktop/MagicRampageCompanion/app/src/main/assets/levels/*.esc)",
       "Bash(do)",
       "Read(//c/Users/PrOfSeS/Desktop/MagicRampageCompanion/**)",
-      "Bash(for f in /c/Users/PrOfSeS/Desktop/MagicRampageCompanion/app/src/main/assets/levels/*.esc)"
+      "Bash(for f in /c/Users/PrOfSeS/Desktop/MagicRampageCompanion/app/src/main/assets/levels/*.esc)",
+      "PowerShell(Get-ChildItem \"D:\\\\SteamLibrary\\\\steamapps\\\\common\\\\Magic Rampage\\\\entities\\\\\" | Where-Object { $_.Name -match \"skin\" } | Select-Object -ExpandProperty Name | Sort-Object)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\PrOfSeS\\\\Desktop\\\\MagicRampageCompanion\\\\app\\\\src\\\\main\\\\res\\\\drawable\\\\\" | Where-Object { $_.Name -match \"^skin_\" } | Select-Object -ExpandProperty Name | Sort-Object)",
+      "PowerShell(Select-String -Path \"D:\\\\SteamLibrary\\\\steamapps\\\\common\\\\Magic Rampage\\\\lang\\\\en\\\\xml\\\\mr-base\\\\strings.xml\" -Pattern \"skin\" | Select-Object -First 60 | ForEach-Object { $_.Line.Trim\\(\\) })",
+      "PowerShell(Select-String *)",
+      "PowerShell(Get-Content \"D:\\\\SteamLibrary\\\\steamapps\\\\common\\\\Magic Rampage\\\\lang\\\\en\\\\skin-names.strings\" | Select-String -Pattern \"20|21\" | ForEach-Object { $_.Line })"
     ]
   }
 }

@@ -7,19 +7,14 @@ import android.os.Bundle;
 import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.ProcessLifecycleOwner;
 import androidx.multidex.MultiDexApplication; // Import the correct Application class
 
 import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.appopen.AppOpenAd;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.firebase.FirebaseApp;
 
 import java.util.Date;
@@ -27,7 +22,7 @@ import java.util.Date;
 import xyz.magicrampagecompanion.BuildConfig;
 
 // Change "Application" to "MultiDexApplication" to enable Multidex
-public class MyApplication extends MultiDexApplication implements Application.ActivityLifecycleCallbacks, LifecycleObserver {
+public class MyApplication extends MultiDexApplication implements Application.ActivityLifecycleCallbacks {
 
     private AppOpenAdManager appOpenAdManager;
     private Activity currentActivity;
@@ -37,18 +32,19 @@ public class MyApplication extends MultiDexApplication implements Application.Ac
     public void onCreate() {
         super.onCreate();
         this.registerActivityLifecycleCallbacks(this);
-        MobileAds.initialize(
-                this,
-                new OnInitializationCompleteListener() {
-                    @Override
-                    public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        ProcessLifecycleOwner.get().getLifecycle().addObserver(
+                (LifecycleEventObserver) (source, event) -> {
+                    if (event == Lifecycle.Event.ON_START) onMoveToForeground();
                 });
-        ProcessLifecycleOwner.get().getLifecycle().addObserver(this);
         appOpenAdManager = new AppOpenAdManager();
         FirebaseApp.initializeApp(this);
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    /** Called by MainActivity after MobileAds.initialize() completes and consent is resolved. */
+    public void initializeAds() {
+        appOpenAdManager.loadAd(this);
+    }
+
     protected void onMoveToForeground() {
         // Show the ad (if available) when the app moves to foreground.
         appOpenAdManager.showAdIfAvailable(currentActivity);
@@ -96,9 +92,8 @@ public class MyApplication extends MultiDexApplication implements Application.Ac
             }
 
             isLoadingAd = true;
-            AdRequest request = new AdRequest.Builder().build();
             AppOpenAd.load(
-                    context, AD_UNIT_ID, request,
+                    context, AD_UNIT_ID, MainActivity.buildAdRequest(context),
                     new AppOpenAd.AppOpenAdLoadCallback() {
                         @Override
                         public void onAdLoaded(@NonNull AppOpenAd ad) {
