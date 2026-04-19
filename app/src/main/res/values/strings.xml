@@ -574,7 +574,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="skill_description_22">All thrown projectiles travel 15\% faster.</string>
     <string name="skill_description_23">Grants an extra mid-air jump and enhances aerial attack capabilities.</string>
 
-    <string name="skill_description_24">Boosts armor by 25\%.</string>
+    <string name="skill_description_24">Boosts armor by 16\\%.</string>
     <string name="skill_description_25">Boosts passive hammer attack power by 60\%.</string>
     <string name="skill_description_26">Boosts passive axe attack power by 48\%.</string>
     <string name="skill_description_27">Potions heal 2 times more.</string>

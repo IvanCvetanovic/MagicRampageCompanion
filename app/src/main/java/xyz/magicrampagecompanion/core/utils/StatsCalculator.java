@@ -184,8 +184,8 @@ public final class StatsCalculator {
                 Log.d(TAG, "  * class armor bonus x" + mult + " -> " + armorVal);
             }
             if (skillsSafe(skills, 24)) {
-                armorVal *= 1.18;
-                Log.d(TAG, "  * skill[24] armor x1.18 -> " + armorVal);
+                armorVal *= 1.16;
+                Log.d(TAG, "  * skill[24] armor x1.16 -> " + armorVal);
             }
 
             // Elixir multiplier
