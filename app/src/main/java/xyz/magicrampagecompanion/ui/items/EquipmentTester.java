@@ -14,14 +14,17 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.Html;
 import android.text.InputType;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -404,103 +407,78 @@ public class EquipmentTester extends AppCompatActivity {
         tintDialogButtons(d);
     }
 
-    @SuppressLint({"StringFormatInvalid", "SetTextI18n"})
+    private static final int COLOR_STAT_DMG    = 0xFFEF6C00;
+    private static final int COLOR_STAT_ARMOR  = 0xFF42A5F5;
+    private static final int COLOR_STAT_SPEED  = 0xFF26C6DA;
+    private static final int COLOR_STAT_JUMP   = 0xFF26C6DA;
+    private static final int COLOR_STAT_ATK    = 0xFFFFD54F;
+    private static final int COLOR_STAT_PIERCE = 0xFFCE93D8;
+    private static final int COLOR_BOOL_ON     = 0xFF66BB6A;
+    private static final int COLOR_BOOL_OFF    = 0x80FFFFFF;
+
+    @SuppressLint("SetTextI18n")
     private void showStatsDialog(EquipmentSet set) {
         SetStats stats = StatsCalculator.compute(set);
         View content = getLayoutInflater().inflate(R.layout.dialog_set_stats, null);
+        LinearLayout root = content.findViewById(R.id.statsRoot);
 
-        // --- base/bonus pieces ---
         int baseDamage = (set.weapon != null) ? set.weapon.getMaxDamage() : 0;
         int bonusDamage = stats.damage - baseDamage;
 
-        // --- ARMOR base calculation (matches StatsCalculator) ---
         int baseArmor;
         if (set.armor != null) {
             int aUpgradesTotal  = Math.max(set.armor.getUpgrades(), 1);
             int aUpgradesChosen = Math.min(Math.max(set.armorUpgrades, 0), aUpgradesTotal);
-
             double baseArmorRaw = set.armor.getMinArmor()
                     + ((set.armor.getMaxArmor() - set.armor.getMinArmor()) / (double) aUpgradesTotal) * aUpgradesChosen;
-
             baseArmor = (int) Math.ceil(baseArmorRaw);
         } else {
             baseArmor = 0;
         }
         int bonusArmor = stats.armor - baseArmor;
 
-        String dmgLabel    = getString(R.string.damage_in_calculation);
-        String armorLabel  = getString(R.string.armor_in_calculation);
-        String speedLabel  = getString(R.string.speed_in_calculation);
-        String jumpLabel   = getString(R.string.jump_impulse_in_calculation);
-        String atkLabel    = getString(R.string.attack_speed);
-        String pierceLabel = getString(R.string.pierce_count);
+        int iconPx = dp(20);
 
-        int iconPx = (int) (getResources().getDisplayMetrics().density * 20);
+        // ── Stats section ─────────────────────────────────────────────────────────
+        addDialogSectionHeader(root, getString(R.string.section_stats));
+        LinearLayout statsCard = addDialogCard(root);
 
-        TextView tvDamage = content.findViewById(R.id.tvDamage);
-        String dmgText;
-        if (bonusDamage > 0) {
-            dmgText = dmgLabel + baseDamage +
-                    " <font color='#8cfdfc'>+" + bonusDamage + "</font>" + " = (" + stats.damage + ")";
-        } else {
-            dmgText = dmgLabel + baseDamage;
-        }
-        tvDamage.setText(Html.fromHtml(dmgText, Html.FROM_HTML_MODE_LEGACY));
+        String dmgVal = bonusDamage > 0
+                ? baseDamage + " +" + bonusDamage + " = " + stats.damage
+                : String.valueOf(stats.damage);
+        String armorVal = bonusArmor > 0
+                ? baseArmor + " +" + bonusArmor + " = " + stats.armor
+                : bonusArmor < 0
+                ? baseArmor + " -" + Math.abs(bonusArmor) + " = " + stats.armor
+                : String.valueOf(stats.armor);
+        addDialogPairRow(statsCard,
+                getString(R.string.damage_in_calculation), dmgVal,    COLOR_STAT_DMG,
+                getString(R.string.armor_in_calculation),  armorVal,  COLOR_STAT_ARMOR);
+        addDialogPairRow(statsCard,
+                getString(R.string.speed_in_calculation),       stats.speedPct + "%",  COLOR_STAT_SPEED,
+                getString(R.string.jump_impulse_in_calculation), stats.jumpPct + "%",  COLOR_STAT_JUMP);
+        addDialogRow(statsCard,
+                getString(R.string.attack_speed),
+                starsSpan(stats.attackSpeedStars, iconPx), COLOR_STAT_ATK);
+        addDialogRow(statsCard,
+                getString(R.string.pierce_count),
+                String.valueOf(stats.pierce), COLOR_STAT_PIERCE);
 
-        TextView tvArmor = content.findViewById(R.id.tvArmor);
-        String armorText;
-        if (bonusArmor > 0) {
-            armorText = armorLabel + baseArmor +
-                    " <font color='#8cfdfc'>+" + bonusArmor + "</font>" + " = (" + stats.armor + ")";
-        } else if (bonusArmor < 0) {
-            armorText = armorLabel + baseArmor +
-                    " <font color='#ff4c4c'>-" + Math.abs(bonusArmor) + "</font>" + " = (" + stats.armor + ")";
-        } else {
-            armorText = armorLabel + baseArmor;
-        }
-        tvArmor.setText(Html.fromHtml(armorText, Html.FROM_HTML_MODE_LEGACY));
-
-        TextView tvAttackSpeed = content.findViewById(R.id.tvAttackSpeed);
-        tvAttackSpeed.setText(starsLine(atkLabel, stats.attackSpeedStars, iconPx),
-                TextView.BufferType.SPANNABLE);
-
-        TextView tvSpeed = content.findViewById(R.id.tvSpeed);
-        tvSpeed.setText(speedLabel + stats.speedPct + "%");
-
-        TextView tvJump = content.findViewById(R.id.tvJump);
-        tvJump.setText(jumpLabel + stats.jumpPct + "%");
-
-        TextView tvPierce = content.findViewById(R.id.tvPierce);
-        tvPierce.setText(pierceLabel + stats.pierce);
+        // ── Properties section ────────────────────────────────────────────────────
+        addDialogSectionHeader(root, getString(R.string.section_properties));
+        LinearLayout propCard = addDialogCard(root);
 
         boolean pierceArea  = (set.weapon != null && set.weapon.isEnablePierceAreaDamage());
         boolean projPersist = stats.projPersist;
         boolean poisonous   = stats.poisonAttack;
         boolean frostAtk    = stats.frostAttack;
 
-        TextView tvPierceArea = content.findViewById(R.id.tvPierceAreaDamage);
-        tvPierceArea.setText(
-                checkLine(getString(R.string.pierce_area_damage), pierceArea, iconPx),
-                TextView.BufferType.SPANNABLE
-        );
-
-        TextView tvProjectile = content.findViewById(R.id.tvProjectilePersistence);
-        tvProjectile.setText(
-                checkLine(getString(R.string.projectile_persistence), projPersist, iconPx),
-                TextView.BufferType.SPANNABLE
-        );
-
-        TextView tvPoison = content.findViewById(R.id.tvPoisonousAttack);
-        tvPoison.setText(
-                checkLine(getString(R.string.poisonous_attack), poisonous, iconPx),
-                TextView.BufferType.SPANNABLE
-        );
-
-        TextView tvFrost = content.findViewById(R.id.tvFrostAttack);
-        tvFrost.setText(
-                checkLine(getString(R.string.frost_attack), frostAtk, iconPx),
-                TextView.BufferType.SPANNABLE
-        );
+        addDialogBoolPairRow(propCard,
+                getString(R.string.pierce_area_damage),        pierceArea,  iconPx,
+                getString(R.string.projectile_persistence),    projPersist, iconPx);
+        addDialogBoolPairRow(propCard,
+                getString(R.string.poisonous_attack), poisonous, iconPx,
+                getString(R.string.frost_attack),     frostAtk,  iconPx);
 
         Log.d("STATS_UI", "baseArmor=" + baseArmor + " finalArmor=" + stats.armor + " bonusArmor=" + bonusArmor);
 
@@ -513,17 +491,94 @@ public class EquipmentTester extends AppCompatActivity {
         tintDialogButtons(dlg);
     }
 
-    private CharSequence starsLine(String label, int starCount, int iconPx) {
-        android.text.SpannableStringBuilder ssb = new android.text.SpannableStringBuilder();
-        ssb.append(label);
+    // ── Dialog layout helpers ─────────────────────────────────────────────────────
 
+    private void addDialogSectionHeader(LinearLayout parent, String title) {
+        TextView tv = new TextView(this);
+        tv.setText(title.toUpperCase());
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11f);
+        tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+        tv.setLetterSpacing(0.08f);
+        tv.setTextColor(ContextCompat.getColor(this, R.color.color_text_hint));
+        tv.setPadding(dp(4), dp(10), dp(4), dp(4));
+        parent.addView(tv);
+    }
+
+    private LinearLayout addDialogCard(LinearLayout parent) {
+        LinearLayout card = new LinearLayout(this);
+        card.setOrientation(LinearLayout.VERTICAL);
+        card.setBackgroundResource(R.drawable.table_card_bg);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        lp.bottomMargin = dp(6);
+        card.setLayoutParams(lp);
+        parent.addView(card);
+        return card;
+    }
+
+    private void addDialogPairRow(LinearLayout card,
+                                  String label1, CharSequence val1, int color1,
+                                  String label2, CharSequence val2, int color2) {
+        if (card.getChildCount() > 0) addDialogDivider(card);
+        View row = getLayoutInflater().inflate(R.layout.item_detail_stat_pair, card, false);
+        TextView lL = row.findViewById(R.id.labelLeft);
+        TextView vL = row.findViewById(R.id.valueLeft);
+        TextView lR = row.findViewById(R.id.labelRight);
+        TextView vR = row.findViewById(R.id.valueRight);
+        lL.setText(label1); vL.setText(val1); vL.setTextColor(color1);
+        lR.setText(label2); vR.setText(val2); vR.setTextColor(color2);
+        card.addView(row);
+    }
+
+    private void addDialogRow(LinearLayout card, String label, CharSequence value, int color) {
+        if (card.getChildCount() > 0) addDialogDivider(card);
+        View row = getLayoutInflater().inflate(R.layout.item_detail_stat_row, card, false);
+        TextView statLabel = row.findViewById(R.id.statLabel);
+        TextView statValue = row.findViewById(R.id.statValue);
+        statLabel.setText(label);
+        statValue.setText(value);
+        statValue.setTextColor(color);
+        card.addView(row);
+    }
+
+    private void addDialogBoolPairRow(LinearLayout card,
+                                      String label1, boolean val1, int iconPx1,
+                                      String label2, boolean val2, int iconPx2) {
+        if (card.getChildCount() > 0) addDialogDivider(card);
+        View row = getLayoutInflater().inflate(R.layout.item_detail_stat_pair, card, false);
+        TextView lL = row.findViewById(R.id.labelLeft);
+        TextView vL = row.findViewById(R.id.valueLeft);
+        TextView lR = row.findViewById(R.id.labelRight);
+        TextView vR = row.findViewById(R.id.valueRight);
+        lL.setText(label1);
+        vL.setText(checkIcon(val1, iconPx1), TextView.BufferType.SPANNABLE);
+        vL.setTextColor(val1 ? COLOR_BOOL_ON : COLOR_BOOL_OFF);
+        lR.setText(label2);
+        vR.setText(checkIcon(val2, iconPx2), TextView.BufferType.SPANNABLE);
+        vR.setTextColor(val2 ? COLOR_BOOL_ON : COLOR_BOOL_OFF);
+        card.addView(row);
+    }
+
+    private void addDialogDivider(LinearLayout card) {
+        View divider = new View(this);
+        divider.setBackgroundColor(0x20FFFFFF);
+        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, 1);
+        p.setMarginStart(dp(14));
+        p.setMarginEnd(dp(14));
+        divider.setLayoutParams(p);
+        card.addView(divider);
+    }
+
+    private CharSequence starsSpan(int starCount, int iconPx) {
+        android.text.SpannableStringBuilder ssb = new android.text.SpannableStringBuilder();
         android.graphics.drawable.Drawable star = ContextCompat.getDrawable(this, R.drawable.star);
         if (star != null) {
             star.setBounds(0, 0, iconPx, iconPx);
             for (int i = 0; i < starCount; i++) {
                 int start = ssb.length();
                 ssb.append(" ");
-                ssb.setSpan(new android.text.style.ImageSpan(star, android.text.style.ImageSpan.ALIGN_BASELINE),
+                ssb.setSpan(new CenteredImageSpan(star),
                         start, start + 1, android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
         } else {
@@ -532,22 +587,39 @@ public class EquipmentTester extends AppCompatActivity {
         return ssb;
     }
 
-    private CharSequence checkLine(String label, boolean checked, int iconPx) {
+    private CharSequence checkIcon(boolean checked, int iconPx) {
         android.text.SpannableStringBuilder ssb = new android.text.SpannableStringBuilder();
-        ssb.append(label).append(": ");
-
         int iconRes = checked ? R.drawable.icon_check : R.drawable.icon_uncheck;
         android.graphics.drawable.Drawable icon = ContextCompat.getDrawable(this, iconRes);
         if (icon != null) {
             icon.setBounds(0, 0, iconPx, iconPx);
-            int start = ssb.length();
             ssb.append(" ");
-            ssb.setSpan(new android.text.style.ImageSpan(icon, android.text.style.ImageSpan.ALIGN_BASELINE),
-                    start, start + 1, android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            ssb.setSpan(new CenteredImageSpan(icon),
+                    0, 1, android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         } else {
             ssb.append(checked ? "✓" : "✗");
         }
         return ssb;
+    }
+
+    private static class CenteredImageSpan extends android.text.style.ImageSpan {
+        CenteredImageSpan(android.graphics.drawable.Drawable d) {
+            super(d);
+        }
+
+        @Override
+        public void draw(Canvas canvas, CharSequence text, int start, int end,
+                         float x, int top, int y, int bottom, Paint paint) {
+            android.graphics.drawable.Drawable d = getDrawable();
+            canvas.save();
+            canvas.translate(x, top + (bottom - top) / 2f - d.getBounds().height() / 2f);
+            d.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    private int dp(int value) {
+        return Math.round(getResources().getDisplayMetrics().density * value);
     }
 
     @SuppressLint("StringFormatInvalid")

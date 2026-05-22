@@ -19,5 +19,17 @@
 
     <!-- Alerts -->
     <color name="dialog_ok">#27AE60</color>
-    <color name="dialog_cancel">#E74C3C</color>   <!-- red -->
+    <color name="dialog_cancel">#E74C3C</color>
+
+    <!-- Survival table -->
+    <color name="table_header_bg">#66FFFFFF</color>
+    <color name="table_row_even_bg">#1AFFFFFF</color>
+    <color name="table_row_odd_bg">#00000000</color>
+
+    <!-- Semantic UI colors -->
+    <color name="color_text_primary">#FFFFFFFF</color>
+    <color name="color_text_hint">#99FFFFFF</color>
+    <color name="color_overlay_dark">#BB000000</color>
+    <color name="color_shadow_ambient">#00FFFFFF</color>
+    <color name="color_shadow_spot">#1E0D0D</color>
 </resources>

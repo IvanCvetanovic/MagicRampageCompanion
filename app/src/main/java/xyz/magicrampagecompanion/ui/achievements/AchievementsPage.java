@@ -11,6 +11,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -29,6 +30,7 @@ public class AchievementsPage extends AppCompatActivity {
 
     private List<Achievement> achievements;
     private AchievementsAdapter adapter;
+    private TextView emptyStateText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class AchievementsPage extends AppCompatActivity {
         View root = findViewById(R.id.main);
         RecyclerView recyclerView = findViewById(R.id.achievementsRecyclerView);
         EditText searchEdit = findViewById(R.id.searchEdit);
+        emptyStateText = findViewById(R.id.emptyStateText);
 
         applySystemInsets(root, searchEdit, recyclerView);
 
@@ -61,6 +64,9 @@ public class AchievementsPage extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 adapter.filter(s.toString());
+                boolean empty = adapter.getItemCount() == 0;
+                recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
+                emptyStateText.setVisibility(empty ? View.VISIBLE : View.GONE);
             }
 
             @Override

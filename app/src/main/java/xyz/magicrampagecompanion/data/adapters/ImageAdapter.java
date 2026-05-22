@@ -1,6 +1,7 @@
 package xyz.magicrampagecompanion.data.adapters;
 
 import android.annotation.SuppressLint;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import xyz.magicrampagecompanion.data.models.Elixir;
 import xyz.magicrampagecompanion.data.models.Enemy;
 import xyz.magicrampagecompanion.data.models.Ring;
 import xyz.magicrampagecompanion.data.models.Weapon;
+import xyz.magicrampagecompanion.enums.Elements;
 
 public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageViewHolder> {
     private final List<T> itemList;
@@ -41,27 +43,54 @@ public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageV
     @Override
     public ImageAdapter<T>.ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_image, parent, false);
+
+        // Pre-attach an oval GradientDrawable to the dot so onBindViewHolder can
+        // just call setColor() without allocating a new drawable each bind.
+        View dot = view.findViewById(R.id.elementDot);
+        GradientDrawable dotBg = new GradientDrawable();
+        dotBg.setShape(GradientDrawable.OVAL);
+        dot.setBackground(dotBg);
+
         return new ImageViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ImageAdapter<T>.ImageViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull ImageAdapter<T>.ImageViewHolder holder,
+                                 @SuppressLint("RecyclerView") int position) {
         T item = itemList.get(position);
 
-        if (item instanceof Armor) {
+        // Reset dot for every bind — only weapons show it
+        holder.elementDot.setVisibility(View.GONE);
+
+        if (item instanceof Weapon) {
+            Weapon weapon = (Weapon) item;
+            holder.imageView.setImageResource(weapon.getImageResId());
+            holder.itemName.setText(weapon.getName());
+            int dotColor = elementColor(weapon.getElement());
+            if (dotColor != 0) {
+                ((GradientDrawable) holder.elementDot.getBackground()).setColor(dotColor);
+                holder.elementDot.setVisibility(View.VISIBLE);
+            }
+
+        } else if (item instanceof Armor) {
             Armor armor = (Armor) item;
             holder.imageView.setImageResource(armor.getImageResId());
             holder.itemName.setText(armor.getName());
+            int armorDot = elementColor(armor.getElement());
+            if (armorDot != 0) {
+                ((GradientDrawable) holder.elementDot.getBackground()).setColor(armorDot);
+                holder.elementDot.setVisibility(View.VISIBLE);
+            }
 
         } else if (item instanceof Ring) {
             Ring ring = (Ring) item;
             holder.imageView.setImageResource(ring.getImageResId());
             holder.itemName.setText(ring.getName());
-
-        } else if (item instanceof Weapon) {
-            Weapon weapon = (Weapon) item;
-            holder.imageView.setImageResource(weapon.getImageResId());
-            holder.itemName.setText(weapon.getName());
+            int ringDot = elementColor(ring.getElement());
+            if (ringDot != 0) {
+                ((GradientDrawable) holder.elementDot.getBackground()).setColor(ringDot);
+                holder.elementDot.setVisibility(View.VISIBLE);
+            }
 
         } else if (item instanceof CharacterClass) {
             CharacterClass characterClass = (CharacterClass) item;
@@ -73,25 +102,25 @@ public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageV
             holder.imageView.setImageResource(enemy.getImageResId());
             holder.itemName.setText(enemy.getName());
 
-        } else if (item instanceof Elixir) { // <-- ADDED: Elixir support
+        } else if (item instanceof Elixir) {
             Elixir elixir = (Elixir) item;
             holder.imageView.setImageResource(elixir.getImageResId());
             holder.itemName.setText(elixir.getName());
 
         } else {
-            // Fallback: clear
             holder.imageView.setImageDrawable(null);
             holder.itemName.setText("");
         }
 
-        holder.imageView.setOnClickListener(v -> itemClickListener.onItemClick(v, position));
+        // Whole card is the click target, not just the image
+        holder.itemView.setOnClickListener(v -> itemClickListener.onItemClick(v, position));
         if (longClickListener != null) {
-            holder.imageView.setOnLongClickListener(v -> {
+            holder.itemView.setOnLongClickListener(v -> {
                 longClickListener.onItemLongClick(v, position);
                 return true;
             });
         } else {
-            holder.imageView.setOnLongClickListener(null);
+            holder.itemView.setOnLongClickListener(null);
         }
     }
 
@@ -100,23 +129,36 @@ public class ImageAdapter<T> extends RecyclerView.Adapter<ImageAdapter<T>.ImageV
         return itemList != null ? itemList.size() : 0;
     }
 
-    public class ImageViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView itemName;
-
-        public ImageViewHolder(View itemView) {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.imageView);
-            itemName  = itemView.findViewById(R.id.itemName);
+    // Returns the display color for a weapon element, or 0 for NEUTRAL (no dot).
+    private static int elementColor(Elements element) {
+        switch (element) {
+            case FIRE:     return 0xFFEF6C00;
+            case WATER:    return 0xFF42A5F5;
+            case EARTH:    return 0xFF66BB6A;
+            case AIR:      return 0xFF80DEEA;
+            case LIGHT:    return 0xFFFFD54F;
+            case DARKNESS: return 0xFFAB47BC;
+            default:       return 0;
         }
     }
 
-    // Interface for item click events
+    public class ImageViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+        TextView itemName;
+        View elementDot;
+
+        public ImageViewHolder(View itemView) {
+            super(itemView);
+            imageView  = itemView.findViewById(R.id.imageView);
+            itemName   = itemView.findViewById(R.id.itemName);
+            elementDot = itemView.findViewById(R.id.elementDot);
+        }
+    }
+
     public interface OnItemClickListener<T> {
         void onItemClick(View view, int position);
     }
 
-    // Interface for item long-press events
     public interface OnItemLongClickListener<T> {
         void onItemLongClick(View view, int position);
     }

@@ -168,12 +168,6 @@ public class MainActivity extends AppCompatActivity {
             playSound();
         });
 
-        // Long-press About to open the Privacy & Ads dialog (no new XML needed)
-        aboutButton.setOnLongClickListener(v -> {
-            showPrivacyAndAdsDialog();
-            return true;
-        });
-
         // ---------------- Ads SDK + UMP ----------------
         // Request/update consent info, show form if required, then initialize MobileAds.
         requestConsentAndMaybeShowForm();

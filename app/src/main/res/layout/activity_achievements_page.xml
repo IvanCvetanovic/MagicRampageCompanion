@@ -19,13 +19,14 @@
         android:layout_marginTop="12dp"
         android:hint="@string/search_hint"
         android:importantForAutofill="no"
-        android:inputType="text"
         android:singleLine="true"
         android:background="@drawable/search_field_bg"
         android:paddingStart="14dp"
         android:paddingEnd="14dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#99FFFFFF"
+        android:textColor="@color/color_text_primary"
+        android:textColorHint="@color/color_text_hint"
+        android:inputType="textNoSuggestions"
+        android:imeOptions="actionSearch"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -42,5 +43,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/achievement_item" />
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/emptyStateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/empty_no_results"
+        android:textColor="@color/color_text_primary"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/searchEdit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

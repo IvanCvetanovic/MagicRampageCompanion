@@ -67,6 +67,7 @@ public class LevelRenderView extends View {
     
     // Store the base scale used to fit the level to screen
     private float minFitScale = 1f;
+    private float initialZoomMultiplier = 10.0f;
 
     // Visibility toggles
     private boolean showLogicEntities = false;
@@ -222,6 +223,10 @@ public class LevelRenderView extends View {
         return showLogicEntities;
     }
 
+    public void setInitialZoomMultiplier(float multiplier) {
+        initialZoomMultiplier = multiplier;
+    }
+
     public void setSecretsUnlocked(boolean unlocked) {
         this.secretsUnlocked = unlocked;
         invalidate();
@@ -351,7 +356,7 @@ public class LevelRenderView extends View {
         float fitScaleX = getWidth() / levelW;
         float fitScaleY = getHeight() / levelH;
         minFitScale = Math.min(fitScaleX, fitScaleY);
-        scale = minFitScale * 10.0f; // Significantly zoomed in initially
+        scale = minFitScale * initialZoomMultiplier;
 
         float levelCenterX = (minX + maxX) / 2f;
         float levelCenterY = (minY + maxY) / 2f;
@@ -460,6 +465,7 @@ public class LevelRenderView extends View {
 
         // Purely runtime/cinematic entities that have no meaningful visual in the level viewer.
         if ("curtain_properties".equalsIgnoreCase(entity.entityName)) return;
+        if ("character_spawn_list".equalsIgnoreCase(entity.entityName)) return;
 
         // dungeon43.1.esc: gradient_bg overlays appear out-of-place due to extreme z values.
         if (level != null && "dungeon43.1.esc".equals(level.name)

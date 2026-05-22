@@ -1,0 +1,1422 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <SceneProperties lightIntensity="3" parallaxIntensity="1.5">
+        <Ambient r="0.444" g="0.366" b="0.69" />
+        <ZAxisDirection x="0" y="0" />
+    </SceneProperties>
+    <EntitiesInScene>
+        <Entity id="7800" spriteFrame="0">
+            <EntityName>castle_chain_2.ent</EntityName>
+            <Position x="478" y="-5" z="-48" angle="0" />
+            <Entity>
+                <FileName>castle_chain_2.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="21517" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="280" y="-180" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24990" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="464" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="21518" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="1000" y="-180" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24984" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="928" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24987" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="720" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24994" spriteFrame="0">
+            <EntityName>character_spawn_list</EntityName>
+            <Position x="896" y="-144" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>autoWaypointsStride</Name>
+                        <Value>128</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoWaypointsTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>4500</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>npcs/lists/survival0-a.list</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>playerTeam</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>stride</Name>
+                        <Value>4000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>tolerance</Name>
+                        <Value>256</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>type</Name>
+                        <Value>default</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waypoints</Name>
+                        <Value>A</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25217" spriteFrame="0">
+            <EntityName>reverse_one_sided_platform.ent</EntityName>
+            <Position x="896" y="-32" z="0" angle="0" />
+            <Entity>
+                <FileName>reverse_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25142" spriteFrame="0">
+            <EntityName>character_spawn_list</EntityName>
+            <Position x="1410" y="-144" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>autoWaypointsStride</Name>
+                        <Value>100</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoWaypointsTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>70000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>npcs/lists/survival0-b.list</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>playerTeam</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>stride</Name>
+                        <Value>7000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>tolerance</Name>
+                        <Value>256</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>type</Name>
+                        <Value>default</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waypoints</Name>
+                        <Value>auto</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25141" spriteFrame="0">
+            <EntityName>character_spawn_list</EntityName>
+            <Position x="1024" y="-144" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>autoWaypointsStride</Name>
+                        <Value>100</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoWaypointsTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>50000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>npcs/lists/survival0-b.list</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>playerTeam</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>stride</Name>
+                        <Value>7000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>tolerance</Name>
+                        <Value>256</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>type</Name>
+                        <Value>default</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waypoints</Name>
+                        <Value>auto</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="7802" spriteFrame="0">
+            <EntityName>castle_chain_2.ent</EntityName>
+            <Position x="1093" y="-9" z="-34" angle="0" />
+            <Entity>
+                <FileName>castle_chain_2.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24985" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1200" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24986" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1456" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25218" spriteFrame="0">
+            <EntityName>reverse_one_sided_platform.ent</EntityName>
+            <Position x="1152" y="-32" z="0" angle="0" />
+            <Entity>
+                <FileName>reverse_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25219" spriteFrame="0">
+            <EntityName>reverse_one_sided_platform.ent</EntityName>
+            <Position x="1408" y="-32" z="0" angle="0" />
+            <Entity>
+                <FileName>reverse_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25222" spriteFrame="0">
+            <EntityName>reverse_one_sided_platform.ent</EntityName>
+            <Position x="1920" y="-32" z="0" angle="0" />
+            <Entity>
+                <FileName>reverse_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="7797" spriteFrame="0">
+            <EntityName>blue_light_2.ent</EntityName>
+            <Position x="1656" y="-68" z="-30" angle="0" />
+            <Entity>
+                <FileName>blue_light_2.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="21519" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="1720" y="-180" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24988" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1680" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24989" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1936" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24995" spriteFrame="0">
+            <EntityName>character_spawn_list</EntityName>
+            <Position x="1580" y="-144" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>autoWaypointsStride</Name>
+                        <Value>128</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoWaypointsTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>4000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>npcs/lists/survival0-c.list</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>playerTeam</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>stride</Name>
+                        <Value>4000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>tolerance</Name>
+                        <Value>256</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>type</Name>
+                        <Value>default</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waypoints</Name>
+                        <Value>B</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25220" spriteFrame="0">
+            <EntityName>reverse_one_sided_platform.ent</EntityName>
+            <Position x="1664" y="-32" z="0" angle="0" />
+            <Entity>
+                <FileName>reverse_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="21520" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="2440" y="-180" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24991" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="2160" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24992" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="2400" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24993" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="2624" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="10462" spriteFrame="0">
+            <EntityName>blue_light_2.ent</EntityName>
+            <Position x="-494" y="-32" z="-52" angle="0" />
+            <Entity>
+                <FileName>blue_light_2.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="7628" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="-440" y="-180" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="1247" spriteFrame="0">
+            <EntityName>camMin</EntityName>
+            <Position x="194" y="0" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="21939" spriteFrame="0">
+            <EntityName>castle_bg_arch_b.ent</EntityName>
+            <Position x="280" y="360" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_arch_b.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11753" spriteFrame="0">
+            <EntityName>blood_decal_1.ent</EntityName>
+            <Position x="663" y="458" z="0.2" angle="-180" />
+            <Entity>
+                <FileName>blood_decal_1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="21940" spriteFrame="0">
+            <EntityName>castle_bg_arch_b.ent</EntityName>
+            <Position x="1000" y="360" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_arch_b.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="7795" spriteFrame="0">
+            <EntityName>fire_light.ent</EntityName>
+            <Position x="640" y="192" z="-77" angle="0" />
+            <Entity>
+                <FileName>fire_light.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="7799" spriteFrame="0">
+            <EntityName>castle_chain_3.ent</EntityName>
+            <Position x="522" y="69" z="-24" angle="0" />
+            <Entity>
+                <FileName>castle_chain_3.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25599" spriteFrame="0">
+            <EntityName>volumetric_orange_fog_s.ent</EntityName>
+            <Position x="746" y="159" z="-29" angle="0" />
+            <Entity>
+                <FileName>volumetric_orange_fog_s.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25607" spriteFrame="0">
+            <EntityName>fireflies_torch_dungeon0.ent</EntityName>
+            <Position x="735" y="154" z="-44" angle="0" />
+            <Entity>
+                <FileName>fireflies_torch_dungeon0.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25608" spriteFrame="0">
+            <EntityName>fireflies_torch_dungeon0.ent</EntityName>
+            <Position x="565" y="154" z="-74" angle="0" />
+            <Entity>
+                <FileName>fireflies_torch_dungeon0.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25605" spriteFrame="0">
+            <EntityName>volumetric_fog_blue_ambient.ent</EntityName>
+            <Position x="1525" y="34" z="14" angle="65" />
+            <Entity>
+                <FileName>volumetric_fog_blue_ambient.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25425" spriteFrame="0" shadowZ="0">
+            <EntityName>play_music</EntityName>
+            <Position x="1303" y="308" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="1" shadowScale="0" shadowLengthScale="1" shadowOpacity="1" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>music.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>loop</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>name</Name>
+                        <Value>allOrNothing</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25075" spriteFrame="0">
+            <EntityName>light_beam_dark_ambient</EntityName>
+            <Position x="1500" y="92" z="20" angle="-15" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" parallaxIntensity="3.2" static="1" blendMode="1">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="3" y="2" />
+                <Sprite>light_beam.png</Sprite>
+                <Normal>reverse_nm.png</Normal>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="20167" spriteFrame="0">
+            <EntityName>fire_cannon</EntityName>
+            <Position x="1216" y="2" z="-2" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="1">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <PivotAdjust x="0" y="-60" />
+                <Sprite>fire_cannon.png</Sprite>
+                <Particles>
+                    <ParticleSystem particles="14" allAtOnce="0" alphaMode="0" repeat="0" animationMode="1" lifeTime="500" randomLifeTime="350" angleDir="0" randAngle="3" size="32" randomizeSize="0" growth="5.5" minSize="0" maxSize="102" angleStart="0" randAngleStart="360">
+                        <Bitmap>Explosion1spritesheet-pow2.png</Bitmap>
+                        <Gravity x="0" y="-0.6" />
+                        <Direction x="0" y="16.4" />
+                        <RandomizeDir x="1.5" y="0.2" />
+                        <SpriteCut x="8" y="6" />
+                        <StartPoint x="0" y="0" z="-2" />
+                        <RandStartPoint x="0" y="0" />
+                        <Color0 r="1" g="1" b="1" a="1" />
+                        <Color1 r="1" g="1" b="1" a="1" />
+                        <Luminance r="1" g="1" b="1" />
+                    </ParticleSystem>
+                </Particles>
+                <Collision>
+                    <Position x="0" y="128" z="0" />
+                    <Size x="48" y="141" z="10" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>fireOnProximity</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>fireTime</Name>
+                        <Value>3000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>startTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="15390" spriteFrame="0">
+            <EntityName>blood_decal_1.ent</EntityName>
+            <Position x="1376" y="288" z="0.1" angle="-90" />
+            <Entity>
+                <FileName>blood_decal_1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24684" spriteFrame="0">
+            <EntityName>chain_no_light_small.ent</EntityName>
+            <Position x="1408" y="86" z="1" angle="0" />
+            <Entity>
+                <FileName>chain_no_light_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="15075" spriteFrame="0">
+            <EntityName>chain_no_light_small.ent</EntityName>
+            <Position x="1024" y="86" z="1" angle="0" />
+            <Entity>
+                <FileName>chain_no_light_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24996" spriteFrame="0">
+            <EntityName>spawn0</EntityName>
+            <Position x="1216" y="480" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25074" spriteFrame="0">
+            <EntityName>spikes.ent</EntityName>
+            <Position x="1408" y="336" z="0" angle="180" />
+            <Entity>
+                <FileName>spikes.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25137" spriteFrame="0">
+            <EntityName>dungeon_block_06.ent</EntityName>
+            <Position x="1408" y="288" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_06.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25138" spriteFrame="0">
+            <EntityName>dungeon_block_06.ent</EntityName>
+            <Position x="1024" y="288" z="0" angle="180" />
+            <Entity>
+                <FileName>dungeon_block_06.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25297" spriteFrame="0">
+            <EntityName>prize_placement</EntityName>
+            <Position x="1216" y="320" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_items_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>none</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25508" spriteFrame="0">
+            <EntityName>camera_lock</EntityName>
+            <Position x="1216" y="384" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="2" y="2" />
+                <Sprite>film.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25509" spriteFrame="0">
+            <EntityName>camera_lock</EntityName>
+            <Position x="1216" y="448" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="2" y="2" />
+                <Sprite>film.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25603" spriteFrame="0">
+            <EntityName>fireflies_blue_ambient_large_dungeon0.ent</EntityName>
+            <Position x="1477" y="156" z="28" angle="0" />
+            <Entity>
+                <FileName>fireflies_blue_ambient_large_dungeon0.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25606" spriteFrame="0">
+            <EntityName>fireflies_large_dungeon0.ent</EntityName>
+            <Position x="1572" y="249" z="-18" angle="0" />
+            <Entity>
+                <FileName>fireflies_large_dungeon0.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="7638" spriteFrame="0">
+            <EntityName>castle_bg_wall.ent</EntityName>
+            <Position x="1720" y="360" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_wall.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25221" spriteFrame="0">
+            <EntityName>fire_spitter.ent</EntityName>
+            <Position x="1776" y="108" z="0" angle="0" />
+            <Entity>
+                <FileName>fire_spitter.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>cooldown</Name>
+                        <Value>6000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontCull</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>flipped</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="9311" spriteFrame="0">
+            <EntityName>castle_chain_3.ent</EntityName>
+            <Position x="2077" y="30" z="-32" angle="0" />
+            <Entity>
+                <FileName>castle_chain_3.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="7796" spriteFrame="0">
+            <EntityName>dungeon_column.ent</EntityName>
+            <Position x="2068" y="370" z="-50" angle="0" />
+            <Entity>
+                <FileName>dungeon_column.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="21941" spriteFrame="0">
+            <EntityName>castle_bg_arch_b.ent</EntityName>
+            <Position x="2440" y="360" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_arch_b.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3720" spriteFrame="0">
+            <EntityName>castle_bg_wall.ent</EntityName>
+            <Position x="-440" y="360" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_wall.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="7794" spriteFrame="0">
+            <EntityName>dungeon_column.ent</EntityName>
+            <Position x="-372" y="340" z="-50" angle="0" />
+            <Entity>
+                <FileName>dungeon_column.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="7607" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="280" y="900" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="24983" spriteFrame="0">
+            <EntityName>dungeon_block_02.ent</EntityName>
+            <Position x="832" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_02.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="7608" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="1000" y="900" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25136" spriteFrame="1">
+            <EntityName>waypointA1</EntityName>
+            <Position x="806" y="544" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25205" spriteFrame="0">
+            <EntityName>dungeon_block_05.ent</EntityName>
+            <Position x="640" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_05.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25224" spriteFrame="0">
+            <EntityName>survival0_fire_spitter</EntityName>
+            <Position x="658" y="534" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" parallaxIntensity="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <SpriteCut x="2" y="1" />
+                <Sprite>dungeon_stone_heads_0.png</Sprite>
+                <Particles>
+                    <ParticleSystem particles="5" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" lifeTime="500" randomLifeTime="100" angleDir="3" randAngle="1" size="192" randomizeSize="0" growth="-7" minSize="0" maxSize="1000" angleStart="0" randAngleStart="360">
+                        <Bitmap>explosion_particle.png</Bitmap>
+                        <Gravity x="0" y="0" />
+                        <Direction x="0" y="0" />
+                        <RandomizeDir x="0" y="0" />
+                        <SpriteCut x="1" y="1" />
+                        <StartPoint x="-48" y="32" z="0" />
+                        <RandStartPoint x="0" y="0" />
+                        <Color0 r="0" g="0" b="0" a="1" />
+                        <Color1 r="1" g="1" b="1" a="0" />
+                        <Luminance r="1" g="1" b="1" />
+                    </ParticleSystem>
+                </Particles>
+                <Light active="1" static="1" castShadows="0" range="1" haloBrightness="1" haloSize="294">
+                    <Position x="-48" y="32" z="1" />
+                    <Color r="1" g="0.6" b="0.4" />
+                    <HaloBitmap>sparkle_entity.png</HaloBitmap>
+                </Light>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="166" y="215" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>cooldown</Name>
+                        <Value>12500</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontCull</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>flipped</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="8796" spriteFrame="0">
+            <EntityName>dungeon_block_05.ent</EntityName>
+            <Position x="1408" y="704" z="0" angle="270" />
+            <Entity>
+                <FileName>dungeon_block_05.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="8797" spriteFrame="0">
+            <EntityName>red_light.ent</EntityName>
+            <Position x="1277" y="847" z="-70" angle="0" />
+            <Entity>
+                <FileName>red_light.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24686" spriteFrame="0">
+            <EntityName>dungeon_bridge.ent</EntityName>
+            <Position x="1216" y="616" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_bridge.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="24680" spriteFrame="0">
+            <EntityName>dungeon_block_02.ent</EntityName>
+            <Position x="1216" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_02.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="20171" spriteFrame="0">
+            <EntityName>dungeon_block_05.ent</EntityName>
+            <Position x="1024" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_05.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25133" spriteFrame="0">
+            <EntityName>waypointB0</EntityName>
+            <Position x="1312" y="544" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25135" spriteFrame="0">
+            <EntityName>waypointA0</EntityName>
+            <Position x="1120" y="544" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25574" spriteFrame="0">
+            <EntityName>fighter0</EntityName>
+            <Position x="1024" y="512" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25575" spriteFrame="0">
+            <EntityName>fighter1</EntityName>
+            <Position x="1408" y="512" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25598" spriteFrame="0">
+            <EntityName>volumetric_fog_xl.ent</EntityName>
+            <Position x="1392" y="630" z="-0.01" angle="0" />
+            <Entity>
+                <FileName>volumetric_fog_xl.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11744" spriteFrame="0">
+            <EntityName>blood_decal_0.ent</EntityName>
+            <Position x="1822" y="622" z="0.2" angle="0" />
+            <Entity>
+                <FileName>blood_decal_0.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="8795" spriteFrame="0">
+            <EntityName>dungeon_block_02.ent</EntityName>
+            <Position x="1600" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_02.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="7609" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="1720" y="900" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25134" spriteFrame="1">
+            <EntityName>waypointB1</EntityName>
+            <Position x="1618" y="544" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25206" spriteFrame="0">
+            <EntityName>dungeon_block_05.ent</EntityName>
+            <Position x="1792" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_05.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="25504" spriteFrame="0">
+            <EntityName>dungeon_block_00.ent</EntityName>
+            <Position x="1792" y="576" z="0" angle="0" />
+            <Entity>
+                <FileName>dungeon_block_00.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="1249" spriteFrame="0">
+            <EntityName>camMax</EntityName>
+            <Position x="2240" y="720" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="7610" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="2440" y="900" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25214" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="3272" y="850" z="0" angle="55" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25216" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="-759" y="927" z="0" angle="-35" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="21524" spriteFrame="0">
+            <EntityName>blue_light_2.ent</EntityName>
+            <Position x="-505" y="844" z="-52" angle="0" />
+            <Entity>
+                <FileName>blue_light_2.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="7606" spriteFrame="0">
+            <EntityName>castle_bg_small.ent</EntityName>
+            <Position x="-440" y="900" z="-80" angle="0" />
+            <Entity>
+                <FileName>castle_bg_small.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25208" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="256" y="1088" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25209" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="768" y="1088" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25210" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="1280" y="1088" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25211" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="1792" y="1088" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25212" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="2304" y="1088" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25213" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="2816" y="1088" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3979" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="4935" y="1369" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="25215" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="-256" y="1088" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+    </EntitiesInScene>
+</Ethanon>

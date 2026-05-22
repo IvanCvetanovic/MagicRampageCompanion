@@ -22,7 +22,7 @@
             android:shadowColor="@color/black"
             android:shadowRadius="10"
             android:text="@string/survival_dungeon_5"
-            android:textColor="@android:color/white"
+            android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:padding="16dp"
+            android:background="@drawable/table_card_bg"
+            android:padding="8dp"
+            android:stretchColumns="*"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleTextView">
@@ -44,7 +46,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#CCCCCC">
+                android:background="@color/table_header_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -52,7 +54,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/kills"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
@@ -61,14 +63,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/rewards"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF">
+                android:background="@color/table_row_even_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -76,7 +78,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/ten_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -84,14 +86,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/rune_of_wind"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EEEEEE">
+                android:background="@color/table_row_odd_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -99,7 +101,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/twenty_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -107,14 +109,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/green_rune"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF">
+                android:background="@color/table_row_even_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -122,7 +124,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/thirty_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -130,14 +132,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/burning_rune"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EEEEEE">
+                android:background="@color/table_row_odd_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -145,7 +147,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/fourty_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -153,14 +155,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/shiny_rune"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF">
+                android:background="@color/table_row_even_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -168,7 +170,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/fifty_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -176,14 +178,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/epic_fire_staff"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EEEEEE">
+                android:background="@color/table_row_odd_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -191,7 +193,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/sixty_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -199,14 +201,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/purple_rune"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF">
+                android:background="@color/table_row_even_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -214,7 +216,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/seventy_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -222,14 +224,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/monks_tunic"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EEEEEE">
+                android:background="@color/table_row_odd_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -237,7 +239,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/eighty_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -245,14 +247,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/dragon_vest"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF">
+                android:background="@color/table_row_even_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -260,7 +262,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/hundred_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -268,14 +270,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/sword_of_light"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EEEEEE">
+                android:background="@color/table_row_odd_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -283,7 +285,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/hundred_fifty_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -291,14 +293,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/crow_set"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF">
+                android:background="@color/table_row_even_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -306,7 +308,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/two_hundred_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -314,14 +316,14 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/throat_cutter"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EEEEEE">
+                android:background="@color/table_row_odd_bg">
 
                 <TextView
                     android:layout_width="0dp"
@@ -329,7 +331,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/three_hundred_kills"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -337,7 +339,7 @@
                     android:layout_weight="1"
                     android:padding="8dp"
                     android:text="@string/last_survivors_spear"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/yellow"
                     android:textStyle="bold" />
             </TableRow>
 
@@ -347,11 +349,10 @@
             android:id="@+id/tutorialTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
             android:shadowColor="@color/black"
             android:shadowRadius="10"
             android:text="@string/survival_tutorial"
-            android:textColor="@android:color/white"
+            android:textColor="@color/white"
             android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -361,16 +362,17 @@
         <ImageView
             android:id="@+id/imageView8"
             android:layout_width="0dp"
-            android:layout_height="210dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tutorialTitleTextView"
-            app:srcCompat="@drawable/survival5_tutorial"
-            tools:ignore="ContentDescription" />
+            app:srcCompat="@drawable/survival5_tutorial" />
 
         <TextView
             android:id="@+id/TipsandTricksText"

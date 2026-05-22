@@ -1,49 +1,63 @@
-<LinearLayout
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_margin="8dp">
+    android:layout_margin="4dp"
+    android:background="@drawable/table_card_bg"
+    android:padding="6dp">
 
-    <!-- Image Container (Overlapping Images) -->
+    <!-- Square frame: width fills column, height locked to width via 1:1 ratio -->
     <FrameLayout
-        android:layout_width="100dp"
-        android:layout_height="100dp">
+        android:id="@+id/imageFrame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/item_frame"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Background Image -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/item_frame"
-            tools:ignore="ContentDescription" />
-
-        <!-- Foreground Image -->
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:layout_gravity="center"
             tools:ignore="ContentDescription" />
+
     </FrameLayout>
 
-    <!-- Item Name Text -->
+    <!-- Element / type indicator dot — top-right corner of the image frame -->
+    <View
+        android:id="@+id/elementDot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/imageFrame"
+        app:layout_constraintEnd_toEndOf="@id/imageFrame" />
+
     <TextView
         android:id="@+id/itemName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:shadowRadius="3"
+        android:ellipsize="end"
+        android:maxLines="2"
         android:shadowColor="@color/black"
-        android:layout_gravity="center"
-        android:text="" />
-</LinearLayout>
+        android:shadowRadius="3"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageFrame" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

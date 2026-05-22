@@ -17,10 +17,19 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.graphics.drawable.Drawable;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.ImageSpan;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.core.content.ContextCompat;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -57,6 +66,7 @@ public class ItemSelection extends AppCompatActivity {
     private RecyclerView recyclerView;
     private HorizontalScrollView buttonsScrollView;
     private EditText searchEdit;
+    private TextView emptyStateText;
 
     // --- Data for current list ---
     private List<?> currentFullList = new ArrayList<>();
@@ -83,6 +93,7 @@ public class ItemSelection extends AppCompatActivity {
 
         buttonsScrollView = findViewById(R.id.buttonsScrollView);
         searchEdit = findViewById(R.id.searchEdit);
+        emptyStateText = findViewById(R.id.emptyStateText);
 
         // Weapon tabs ONLY (no Armor/Rings buttons here!)
         Button buttonAll     = findViewById(R.id.button0); // ALL
@@ -254,6 +265,10 @@ public class ItemSelection extends AppCompatActivity {
             returnResult(currentReturnKey, selected);
         }, (view, position) -> showItemStatsPopup(filtered.get(position)));
         recyclerView.setAdapter(adapter);
+
+        boolean empty = filtered.isEmpty();
+        recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
+        emptyStateText.setVisibility(empty ? View.VISIBLE : View.GONE);
     }
 
     // Extract human-readable label for search
@@ -381,76 +396,197 @@ public class ItemSelection extends AppCompatActivity {
     // --- Long-press stats popup ---
     private void showItemStatsPopup(Object item) {
         String title;
-        StringBuilder sb = new StringBuilder();
+        SpannableStringBuilder ssb = new SpannableStringBuilder();
+        int imageResId = 0;
 
         if (item instanceof Weapon) {
             Weapon w = (Weapon) item;
             title = w.getName();
-            sb.append(getWeaponTypeString(w.getType()));
-            if (w.getElement() != Elements.NEUTRAL) {
-                sb.append("  •  ").append(getElementString(w.getElement()));
-            }
-            sb.append("\n\n");
-            sb.append(getString(R.string.damage_in_calculation)).append(w.getMinDamage()).append(" – ").append(w.getMaxDamage());
-            if (w.getSpeed() != 0)      sb.append("\n").append(getString(R.string.speed_in_calculation)).append(sign(w.getSpeed())).append("%");
-            if (w.getJump() != 0)       sb.append("\n").append(getString(R.string.jump_impulse_in_calculation)).append(sign(w.getJump())).append("%");
-            if (w.getArmorBonus() != 0) sb.append("\n").append(getString(R.string.armor_bonus)).append(sign((int) w.getArmorBonus())).append("%");
-            sb.append("\n").append(getString(R.string.attack_speed)).append(w.getAttackCooldown()).append("ms");
-            if (w.getPierceCount() > 0) sb.append("\n").append(getString(R.string.pierce_count)).append(w.getPierceCount());
-            if (w.isEnablePierceAreaDamage())   sb.append("\n").append(getString(R.string.pierce_area_damage));
-            if (w.isPersistAgainstProjectile()) sb.append("\n").append(getString(R.string.projectile_persistence));
-            if (w.isPoisonous()) sb.append("\n").append(getString(R.string.poisonous_attack));
-            if (w.isFrost())     sb.append("\n").append(getString(R.string.frost_attack));
-
+            imageResId = w.getImageResId();
+            buildWeaponStats(ssb, w);
         } else if (item instanceof Armor) {
             Armor a = (Armor) item;
             title = a.getName();
-            if (a.getElement() != Elements.NEUTRAL) sb.append(getElementString(a.getElement()));
-            if (a.isFrostImmune()) {
-                if (sb.length() > 0) sb.append("  •  ");
-                sb.append(getString(R.string.frost_immune));
-            }
-            if (sb.length() > 0) sb.append("\n\n");
-            if (a.getMinArmor() > 0 || a.getMaxArmor() > 0) {
-                sb.append(getString(R.string.armor_in_calculation)).append(a.getMinArmor()).append(" – ").append(a.getMaxArmor()).append("\n");
-            }
-            appendBonus(sb, R.string.speed_in_calculation,   a.getSpeed());
-            appendBonus(sb, R.string.jump_impulse_in_calculation, a.getJump());
-            appendBonus(sb, R.string.magic_bonus,  (int) a.getMagic());
-            appendBonus(sb, R.string.sword_bonus,  (int) a.getSword());
-            appendBonus(sb, R.string.staff_bonus,  (int) a.getStaff());
-            appendBonus(sb, R.string.dagger_bonus, (int) a.getDagger());
-            appendBonus(sb, R.string.axe_bonus,    (int) a.getAxe());
-            appendBonus(sb, R.string.hammer_bonus, (int) a.getHammer());
-            appendBonus(sb, R.string.spear_bonus,  (int) a.getSpear());
-
+            imageResId = a.getImageResId();
+            buildArmorStats(ssb, a);
         } else if (item instanceof Ring) {
             Ring r = (Ring) item;
             title = r.getName();
-            if (r.getElement() != Elements.NEUTRAL) sb.append(getElementString(r.getElement())).append("\n\n");
-            if (r.getArmor() != 0)      sb.append(getString(R.string.armor_in_calculation)).append(sign(r.getArmor())).append("\n");
-            if (r.getArmorBonus() != 0) sb.append(getString(R.string.armor_bonus)).append(sign((int) r.getArmorBonus())).append("%\n");
-            appendBonus(sb, R.string.speed_in_calculation,   r.getSpeed());
-            appendBonus(sb, R.string.jump_impulse_in_calculation, r.getJump());
-            appendBonus(sb, R.string.magic_bonus,  (int) r.getMagic());
-            appendBonus(sb, R.string.sword_bonus,  (int) r.getSword());
-            appendBonus(sb, R.string.staff_bonus,  (int) r.getStaff());
-            appendBonus(sb, R.string.dagger_bonus, (int) r.getDagger());
-            appendBonus(sb, R.string.axe_bonus,    (int) r.getAxe());
-            appendBonus(sb, R.string.hammer_bonus, (int) r.getHammer());
-            appendBonus(sb, R.string.spear_bonus,  (int) r.getSpear());
-
+            imageResId = r.getImageResId();
+            buildRingStats(ssb, r);
         } else {
             return; // CharacterClass / Elixir — no stats popup
         }
 
-        // Trim trailing newline for a clean look
-        String message = sb.toString().trim();
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_item_stats, null);
+        ImageView imageView = dialogView.findViewById(R.id.dialogItemImage);
+        TextView statsText = dialogView.findViewById(R.id.dialogItemStats);
+
+        if (imageResId != 0) imageView.setImageResource(imageResId);
+        statsText.setText(ssb);
+
         new AlertDialog.Builder(this)
                 .setTitle(title)
-                .setMessage(message)
+                .setView(dialogView)
                 .setPositiveButton(R.string.close, null)
                 .show();
+    }
+
+    private void buildWeaponStats(SpannableStringBuilder ssb, Weapon w) {
+        ssb.append(getString(R.string.type)).append(getWeaponTypeString(w.getType())).append("\n");
+
+        Elements element = w.getElement();
+        ssb.append(getString(R.string.element));
+        String elementName = getElementString(element);
+        if (element != Elements.NEUTRAL) {
+            ssb.append(elementName, new ForegroundColorSpan(getElementColor(element)), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            ssb.append(elementName);
+        }
+        ssb.append("\n");
+
+        ssb.append(getString(R.string.damage_in_calculation))
+                .append(String.valueOf(w.getMinDamage())).append(" – ").append(String.valueOf(w.getMaxDamage())).append("\n");
+        ssb.append(getString(R.string.upgrades)).append(" ").append(String.valueOf(w.getUpgrades())).append("\n");
+
+        if (w.getArmorBonus() != 0)
+            ssb.append(getString(R.string.armor_bonus)).append(sign((int) w.getArmorBonus())).append("%\n");
+        if (w.getSpeed() != 0)
+            ssb.append(getString(R.string.speed_in_calculation)).append(sign(w.getSpeed())).append("%\n");
+        if (w.getJump() != 0)
+            ssb.append(getString(R.string.jump_impulse_in_calculation)).append(sign(w.getJump())).append("%\n");
+
+        appendAttackSpeedStars(ssb, w.getAttackCooldown());
+
+        if (w.getPierceCount() > 0)
+            ssb.append(getString(R.string.pierce_count)).append(String.valueOf(w.getPierceCount())).append("\n");
+
+        appendBooleanStat(ssb, getString(R.string.pierce_area_damage),    w.isEnablePierceAreaDamage());
+        appendBooleanStat(ssb, getString(R.string.projectile_persistence), w.isPersistAgainstProjectile());
+        appendBooleanStat(ssb, getString(R.string.poisonous_attack),       w.isPoisonous());
+        appendBooleanStat(ssb, getString(R.string.frost_attack),           w.isFrost());
+
+        appendObtainability(ssb, w.getObtainability());
+    }
+
+    private void buildArmorStats(SpannableStringBuilder ssb, Armor a) {
+        Elements element = a.getElement();
+        ssb.append(getString(R.string.element));
+        String elementName = getElementString(element);
+        if (element != Elements.NEUTRAL) {
+            ssb.append(elementName, new ForegroundColorSpan(getElementColor(element)), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            ssb.append(elementName);
+        }
+        ssb.append("\n");
+
+        ssb.append(getString(R.string.armor_in_calculation))
+                .append(String.valueOf(a.getMinArmor())).append(" – ").append(String.valueOf(a.getMaxArmor())).append("\n");
+        ssb.append(getString(R.string.upgrades)).append(" ").append(String.valueOf(a.getUpgrades())).append("\n");
+
+        appendBonusSsb(ssb, R.string.speed_in_calculation,        a.getSpeed());
+        appendBonusSsb(ssb, R.string.jump_impulse_in_calculation, a.getJump());
+        appendBonusSsb(ssb, R.string.magic_bonus,                 (int) a.getMagic());
+        appendBonusSsb(ssb, R.string.sword_bonus,                 (int) a.getSword());
+        appendBonusSsb(ssb, R.string.staff_bonus,                 (int) a.getStaff());
+        appendBonusSsb(ssb, R.string.dagger_bonus,                (int) a.getDagger());
+        appendBonusSsb(ssb, R.string.axe_bonus,                   (int) a.getAxe());
+        appendBonusSsb(ssb, R.string.hammer_bonus,                (int) a.getHammer());
+        appendBonusSsb(ssb, R.string.spear_bonus,                 (int) a.getSpear());
+
+        appendBooleanStat(ssb, getString(R.string.frost_resistance), a.isFrostImmune());
+
+        appendObtainability(ssb, a.getObtainability());
+    }
+
+    private void buildRingStats(SpannableStringBuilder ssb, Ring r) {
+        Elements element = r.getElement();
+        ssb.append(getString(R.string.element));
+        String elementName = getElementString(element);
+        if (element != Elements.NEUTRAL) {
+            ssb.append(elementName, new ForegroundColorSpan(getElementColor(element)), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            ssb.append(elementName);
+        }
+        ssb.append("\n");
+
+        if (r.getArmor() != 0)
+            ssb.append(getString(R.string.armor_in_calculation)).append(sign(r.getArmor())).append("\n");
+        if (r.getArmorBonus() != 0)
+            ssb.append(getString(R.string.armor_bonus)).append(sign((int) r.getArmorBonus())).append("%\n");
+
+        appendBonusSsb(ssb, R.string.speed_in_calculation,        r.getSpeed());
+        appendBonusSsb(ssb, R.string.jump_impulse_in_calculation, r.getJump());
+        appendBonusSsb(ssb, R.string.magic_bonus,                 (int) r.getMagic());
+        appendBonusSsb(ssb, R.string.sword_bonus,                 (int) r.getSword());
+        appendBonusSsb(ssb, R.string.staff_bonus,                 (int) r.getStaff());
+        appendBonusSsb(ssb, R.string.dagger_bonus,                (int) r.getDagger());
+        appendBonusSsb(ssb, R.string.axe_bonus,                   (int) r.getAxe());
+        appendBonusSsb(ssb, R.string.hammer_bonus,                (int) r.getHammer());
+        appendBonusSsb(ssb, R.string.spear_bonus,                 (int) r.getSpear());
+
+        appendObtainability(ssb, r.getObtainability());
+    }
+
+    private void appendAttackSpeedStars(SpannableStringBuilder ssb, int cooldownMs) {
+        int starCount;
+        if (cooldownMs <= 300)      starCount = 5;
+        else if (cooldownMs <= 450) starCount = 4;
+        else if (cooldownMs <= 650) starCount = 3;
+        else if (cooldownMs <= 750) starCount = 2;
+        else                        starCount = 1;
+
+        ssb.append(getString(R.string.attack_speed));
+        Drawable star = ContextCompat.getDrawable(this, R.drawable.star);
+        if (star != null) {
+            star.setBounds(0, 0, 80, 80);
+            for (int i = 0; i < starCount; i++) {
+                int start = ssb.length();
+                ssb.append(" ");
+                ssb.setSpan(new ImageSpan(star, ImageSpan.ALIGN_BASELINE), start, ssb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
+        } else {
+            ssb.append(String.valueOf(starCount)).append("★");
+        }
+        ssb.append("\n");
+    }
+
+    private void appendBooleanStat(SpannableStringBuilder ssb, String label, boolean value) {
+        ssb.append(label).append(" ");
+        Drawable icon = ContextCompat.getDrawable(this, value ? R.drawable.icon_check : R.drawable.icon_uncheck);
+        if (icon != null) {
+            icon.setBounds(0, 0, 80, 80);
+            int start = ssb.length();
+            ssb.append(" ");
+            ssb.setSpan(new ImageSpan(icon, ImageSpan.ALIGN_BASELINE), start, ssb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            ssb.append(value ? "✓" : "✗");
+        }
+        ssb.append("\n");
+    }
+
+    private void appendBonusSsb(SpannableStringBuilder ssb, int resId, int value) {
+        if (value != 0) ssb.append(getString(resId)).append(sign(value)).append("%\n");
+    }
+
+    private void appendObtainability(SpannableStringBuilder ssb, List<String> list) {
+        if (list == null || list.isEmpty()) return;
+        ssb.append("\n").append(getString(R.string.obtainability)).append("\n");
+        for (String entry : list) {
+            ssb.append("• ").append(entry).append("\n");
+        }
+    }
+
+    private int getElementColor(Elements element) {
+        switch (element) {
+            case WATER:    return ContextCompat.getColor(this, R.color.water_element_color);
+            case EARTH:    return ContextCompat.getColor(this, R.color.earth_element_color);
+            case FIRE:     return ContextCompat.getColor(this, R.color.fire_element_color);
+            case DARKNESS: return ContextCompat.getColor(this, R.color.darkness_element_color);
+            case LIGHT:    return ContextCompat.getColor(this, R.color.light_element_color);
+            case AIR:      return ContextCompat.getColor(this, R.color.air_element_color);
+            default:       return ContextCompat.getColor(this, R.color.white);
+        }
     }
 
     private String getWeaponTypeString(WeaponTypes type) {
@@ -473,7 +609,7 @@ public class ItemSelection extends AppCompatActivity {
             case LIGHT:    return getString(R.string.element_light);
             case EARTH:    return getString(R.string.element_earth);
             case AIR:      return getString(R.string.element_air);
-            default:       return capitalize(element.name());
+            default:       return getString(R.string.element_neutral);
         }
     }
 
@@ -484,10 +620,6 @@ public class ItemSelection extends AppCompatActivity {
 
     private String sign(int n) {
         return n >= 0 ? "+" + n : String.valueOf(n);
-    }
-
-    private void appendBonus(StringBuilder sb, int resId, int value) {
-        if (value != 0) sb.append(getString(resId)).append(sign(value)).append("%\n");
     }
 
     // --- Returning the selected item to caller ---

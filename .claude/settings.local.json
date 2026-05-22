@@ -20,7 +20,16 @@
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\PrOfSeS\\\\Desktop\\\\MagicRampageCompanion\\\\app\\\\src\\\\main\\\\res\\\\drawable\\\\\" | Where-Object { $_.Name -match \"^skin_\" } | Select-Object -ExpandProperty Name | Sort-Object)",
       "PowerShell(Select-String -Path \"D:\\\\SteamLibrary\\\\steamapps\\\\common\\\\Magic Rampage\\\\lang\\\\en\\\\xml\\\\mr-base\\\\strings.xml\" -Pattern \"skin\" | Select-Object -First 60 | ForEach-Object { $_.Line.Trim\\(\\) })",
       "PowerShell(Select-String *)",
-      "PowerShell(Get-Content \"D:\\\\SteamLibrary\\\\steamapps\\\\common\\\\Magic Rampage\\\\lang\\\\en\\\\skin-names.strings\" | Select-String -Pattern \"20|21\" | ForEach-Object { $_.Line })"
+      "PowerShell(Get-Content \"D:\\\\SteamLibrary\\\\steamapps\\\\common\\\\Magic Rampage\\\\lang\\\\en\\\\skin-names.strings\" | Select-String -Pattern \"20|21\" | ForEach-Object { $_.Line })",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\PrOfSeS\\\\Desktop\\\\MagicRampageCompanion\" -Force | Select-Object -Property Name, @{Name=\"Type\"; Expression={if \\($_.PSIsContainer\\) {\"DIR\"} else {\"FILE\"}}} | Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\PrOfSeS\\\\Desktop\\\\MagicRampageCompanion\" -Recurse -Directory | Where-Object {$_.Name -in @\\(\"res\", \"layout\", \"drawable\", \"values\", \"src\"\\)} | Select-Object -ExpandProperty FullName | Sort-Object)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\PrOfSeS\\\\Desktop\\\\MagicRampageCompanion\\\\app\\\\src\\\\main\" -Recurse -Directory | Where-Object {$_.Name -eq \"java\" -or $_.Name -eq \"kotlin\"} | Select-Object -ExpandProperty FullName)",
+      "PowerShell(Head *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\PrOfSeS\\\\Desktop\\\\MagicRampageCompanion\\\\app\\\\src\\\\main\\\\java\" -Recurse -File | Where-Object {$_.Name -match \"Activity|Fragment\"} | Select-Object -ExpandProperty FullName)",
+      "Bash(Find /c \"class.*Activity\\\\|class.*Fragment\" \"C:\\\\Users\\\\PrOfSeS\\\\Desktop\\\\MagicRampageCompanion\\\\app\\\\src\\\\main\\\\java\" -type f -name \"*.java\")",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\PrOfSeS\\\\Desktop\\\\MagicRampageCompanion\\\\app\\\\src\\\\main\\\\assets\\\\levels\" -File | Where-Object { $_.Name -notmatch '^dungeon' } | Select-Object -ExpandProperty Name | Sort-Object)",
+      "Bash(echo '=== __TRACKED_VAR__ ===')",
+      "Bash(tail -4 C:/Users/PrOfSeS/Desktop/MagicRampageCompanion/app/src/main/res/values-__TRACKED_VAR__/strings.xml)"
     ]
   }
 }

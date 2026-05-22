@@ -23,6 +23,22 @@
             android:layout_height="match_parent"
             android:background="@drawable/ach_card_grey" />
 
+        <!-- Coming Soon badge -->
+        <TextView
+            android:id="@+id/comingSoonBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="10dp"
+            android:background="@drawable/badge_coming_soon_bg"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
+            android:text="@string/coming_soon"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
         <!-- Content -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +53,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="16dp"
                 android:gravity="center"
-                android:textColor="@android:color/white"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:text="1" />
@@ -53,7 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:text="Achievement Title" />
@@ -63,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     tools:text="Achievement Description goes here." />
 
@@ -71,7 +87,7 @@
                     android:id="@+id/rewardsTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     tools:text="Rewards: 100 XP" />
             </LinearLayout>

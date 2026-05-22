@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.Editable;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
+import android.widget.TextView;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -34,12 +37,64 @@ import xyz.magicrampagecompanion.core.utils.LocaleHelper;
 public class Items extends AppCompatActivity {
     public static final String EXTRA_ITEM = "xyz.magicrampagecompanion.EXTRA_ITEM";
 
+    private SoundPool soundPool;
+    private int clickSfxId = 0;
+    private boolean clickSfxLoaded = false;
+
     private RecyclerView recyclerView;
     private HorizontalScrollView tabs;
     private EditText searchEdit;
+    private TextView emptyStateText;
 
     private Button button0, button1, button2, button3, button4, button5, button6, button7, button8;
     private List<?> currentFullList = new ArrayList<>();
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseSoundPool();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        releaseSoundPool();
+    }
+
+    private void initSoundPoolIfNeeded() {
+        if (soundPool != null) return;
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(6)
+                .setAudioAttributes(new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_GAME)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build())
+                .build();
+        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
+            if (status == 0 && sampleId == clickSfxId) clickSfxLoaded = true;
+        });
+        clickSfxId = soundPool.load(this, R.raw.click, 1);
+    }
+
+    private void releaseSoundPool() {
+        if (soundPool != null) {
+            soundPool.release();
+            soundPool = null;
+            clickSfxLoaded = false;
+            clickSfxId = 0;
+        }
+    }
+
+    private void playSound() {
+        if (soundPool != null && clickSfxLoaded)
+            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +111,7 @@ public class Items extends AppCompatActivity {
 
         tabs = findViewById(R.id.buttonsScrollView);
         searchEdit = findViewById(R.id.searchEdit);
+        emptyStateText = findViewById(R.id.emptyStateText);
 
         // Tabs
         button0 = findViewById(R.id.button0);
@@ -85,15 +141,15 @@ public class Items extends AppCompatActivity {
         allWeapons.addAll(ItemData.hammerList);
 
         // Tab click logic
-        button0.setOnClickListener(v -> setActiveTab(button0, allWeapons));
-        button1.setOnClickListener(v -> setActiveTab(button1, ItemData.armorList));
-        button2.setOnClickListener(v -> setActiveTab(button2, ItemData.ringList));
-        button3.setOnClickListener(v -> setActiveTab(button3, ItemData.swordList));
-        button4.setOnClickListener(v -> setActiveTab(button4, ItemData.staffList));
-        button5.setOnClickListener(v -> setActiveTab(button5, ItemData.daggerList));
-        button6.setOnClickListener(v -> setActiveTab(button6, ItemData.axeList));
-        button7.setOnClickListener(v -> setActiveTab(button7, ItemData.spearList));
-        button8.setOnClickListener(v -> setActiveTab(button8, ItemData.hammerList));
+        button0.setOnClickListener(v -> { playSound(); setActiveTab(button0, allWeapons); });
+        button1.setOnClickListener(v -> { playSound(); setActiveTab(button1, ItemData.armorList); });
+        button2.setOnClickListener(v -> { playSound(); setActiveTab(button2, ItemData.ringList); });
+        button3.setOnClickListener(v -> { playSound(); setActiveTab(button3, ItemData.swordList); });
+        button4.setOnClickListener(v -> { playSound(); setActiveTab(button4, ItemData.staffList); });
+        button5.setOnClickListener(v -> { playSound(); setActiveTab(button5, ItemData.daggerList); });
+        button6.setOnClickListener(v -> { playSound(); setActiveTab(button6, ItemData.axeList); });
+        button7.setOnClickListener(v -> { playSound(); setActiveTab(button7, ItemData.spearList); });
+        button8.setOnClickListener(v -> { playSound(); setActiveTab(button8, ItemData.hammerList); });
 
         // Default: ALL
         setActiveTab(button0, allWeapons);
@@ -124,12 +180,17 @@ public class Items extends AppCompatActivity {
         }
 
         ImageAdapter adapter = new ImageAdapter(filtered, (view, pos) -> {
+            playSound();
             Object selected = filtered.get(pos);
             Intent intent = new Intent(Items.this, ItemDetail.class);
             intent.putExtra(EXTRA_ITEM, (Parcelable) selected);
             startActivity(intent);
         });
         recyclerView.setAdapter(adapter);
+
+        boolean empty = filtered.isEmpty();
+        recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
+        emptyStateText.setVisibility(empty ? View.VISIBLE : View.GONE);
     }
 
     /** Gets item name */

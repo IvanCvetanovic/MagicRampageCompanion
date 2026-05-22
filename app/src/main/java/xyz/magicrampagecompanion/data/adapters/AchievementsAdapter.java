@@ -1,6 +1,7 @@
 package xyz.magicrampagecompanion.data.adapters;
 
 import android.annotation.SuppressLint;
+import android.view.View;
 import android.graphics.drawable.Drawable;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -81,6 +82,11 @@ public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapte
         holder.achievementNameTextView.setText(achievement.getName());
         holder.achievementDescriptionTextView.setText(achievement.getDescription());
 
+        // --- Coming Soon badge ---
+        holder.comingSoonBadge.setVisibility(
+                achievement.getCategory() == Achievement.AchievementCategory.NOT_RELEASED
+                        ? View.VISIBLE : View.GONE);
+
         // --- Background per category (uses the shadowed/beveled drawable) ---
         switch (achievement.getCategory()) {
             case RAMPAGE:
@@ -151,11 +157,12 @@ public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapte
 
     public static class AchievementViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
-        View cardBg; // background layer we tint/swap
+        View cardBg;
         TextView achievementNumberTextView;
         TextView achievementNameTextView;
         TextView achievementDescriptionTextView;
         TextView rewardsTextView;
+        TextView comingSoonBadge;
 
         public AchievementViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -165,6 +172,7 @@ public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapte
             achievementNameTextView = itemView.findViewById(R.id.achievementNameTextView);
             achievementDescriptionTextView = itemView.findViewById(R.id.achievementDescriptionTextView);
             rewardsTextView = itemView.findViewById(R.id.rewardsTextView);
+            comingSoonBadge = itemView.findViewById(R.id.comingSoonBadge);
         }
     }
 }

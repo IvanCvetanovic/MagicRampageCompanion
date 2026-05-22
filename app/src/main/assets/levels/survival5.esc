@@ -1,0 +1,1888 @@
+<?xml version="1.0" ?>
+<Ethanon>
+    <SceneProperties lightIntensity="2.5" parallaxIntensity="3">
+        <Ambient r="0.913" g="0.705" b="0.227" />
+        <ZAxisDirection x="0" y="0" />
+    </SceneProperties>
+    <EntitiesInScene>
+        <Entity id="11787" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="-4352" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11786" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="-3840" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11775" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="-3328" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11785" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="-3328" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11774" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="-2816" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11784" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="-2816" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11773" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="-2304" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11783" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="-2304" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11745" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="-1792" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11237" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="-1792" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11744" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="-1280" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11236" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="-1280" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11743" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="-768" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11235" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="-768" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12669" spriteFrame="0">
+            <EntityName>character_spawn_list</EntityName>
+            <Position x="218" y="-100" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>autoWaypointsStride</Name>
+                        <Value>128</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoWaypointsTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>200000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>npcs/lists/shaman.list</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>playerTeam</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>stride</Name>
+                        <Value>30000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>tolerance</Name>
+                        <Value>256</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>type</Name>
+                        <Value>default</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waypoints</Name>
+                        <Value>D</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12329" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="96" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12330" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="384" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12569" spriteFrame="0">
+            <EntityName>character_spawn_list</EntityName>
+            <Position x="858" y="-90" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>autoWaypointsStride</Name>
+                        <Value>128</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoWaypointsTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>60000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>npcs/lists/tornados.list</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>playerTeam</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>stride</Name>
+                        <Value>22000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>tolerance</Name>
+                        <Value>256</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>type</Name>
+                        <Value>default</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waypoints</Name>
+                        <Value>C</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="621" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="672" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12564" spriteFrame="0">
+            <EntityName>character_spawn_list</EntityName>
+            <Position x="544" y="-68" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>autoWaypointsStride</Name>
+                        <Value>128</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoWaypointsTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>7000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>npcs/lists/bats.list</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>playerTeam</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>stride</Name>
+                        <Value>7000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>tolerance</Name>
+                        <Value>256</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>type</Name>
+                        <Value>default</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waypoints</Name>
+                        <Value>A</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11727" spriteFrame="0">
+            <EntityName>chapter4_cloud.ent</EntityName>
+            <Position x="1240" y="-78" z="-92" angle="0" />
+            <Entity>
+                <FileName>chapter4_cloud.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="623" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1488" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="622" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1088" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12672" spriteFrame="0">
+            <EntityName>character_spawn_list</EntityName>
+            <Position x="1917" y="-86" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>autoWaypointsStride</Name>
+                        <Value>128</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoWaypointsTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>180000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>npcs/lists/shaman.list</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>playerTeam</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>stride</Name>
+                        <Value>30000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>tolerance</Name>
+                        <Value>256</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>type</Name>
+                        <Value>default</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waypoints</Name>
+                        <Value>E</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12565" spriteFrame="0">
+            <EntityName>character_spawn_list</EntityName>
+            <Position x="1646" y="-72" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="0" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>autoWaypointsStride</Name>
+                        <Value>128</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoWaypointsTime</Name>
+                        <Value>1000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>delay</Name>
+                        <Value>10000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>dropSpecificItem</Name>
+                        <Value>none</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>npcs/lists/bats.list</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>playerTeam</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>stride</Name>
+                        <Value>7000</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>float</Type>
+                        <Name>tolerance</Name>
+                        <Value>256</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>type</Name>
+                        <Value>default</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>waypoints</Name>
+                        <Value>B</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12187" spriteFrame="0">
+            <EntityName>gold_loot</EntityName>
+            <Position x="1749" y="-452" z="0" angle="0" />
+            <Entity shape="3" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Sprite>diamond_0.png</Sprite>
+                <Particles>
+                    <ParticleSystem particles="5" allAtOnce="0" alphaMode="1" repeat="0" animationMode="1" boundingSphere="76.8" lifeTime="2150" randomLifeTime="1000" angleDir="1.4" randAngle="0" size="26.4" randomizeSize="12" growth="-0.24" minSize="0" maxSize="1200" angleStart="0" randAngleStart="360">
+                        <Bitmap>sparkles.png</Bitmap>
+                        <Gravity x="0" y="0" />
+                        <Direction x="0" y="0" />
+                        <RandomizeDir x="0" y="0" />
+                        <SpriteCut x="1" y="1" />
+                        <StartPoint x="0" y="-8" z="0" />
+                        <RandStartPoint x="38.4" y="33.6" />
+                        <Color0 r="1" g="1" b="1" a="1" />
+                        <Color1 r="0" g="0" b="0" a="0" />
+                        <Luminance r="1" g="1" b="1" />
+                    </ParticleSystem>
+                </Particles>
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="42" y="50" z="1" />
+                    <Polygon>
+                        <![CDATA[v0{x=-0.5;y=-1;} v1{x=0.5;y=-1;} v2{x=1;y=-0.2;} v3{x=0;y=1;} v4{x=-1;y=-0.2;} ]]>
+</Polygon>
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>diamond</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>gold</Name>
+                        <Value>400</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>originalName</Name>
+                        <Value>diamond_0.ent</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>premiumEffect</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="624" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1904" y="-16" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="625" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="2352" y="-96" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11742" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="-256" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11234" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="-256" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12670" spriteFrame="1">
+            <EntityName>waypointD1</EntityName>
+            <Position x="112" y="426" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="10804" spriteFrame="0">
+            <EntityName>camMin</EntityName>
+            <Position x="0" y="0" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11726" spriteFrame="0">
+            <EntityName>chapter4_cloud.ent</EntityName>
+            <Position x="205" y="364" z="-136" angle="0" />
+            <Entity>
+                <FileName>chapter4_cloud.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="10970" spriteFrame="0">
+            <EntityName>chapter4_cloud.ent</EntityName>
+            <Position x="363" y="108" z="-158" angle="0" />
+            <Entity>
+                <FileName>chapter4_cloud.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12399" spriteFrame="0">
+            <EntityName>grass_red_3.ent</EntityName>
+            <Position x="399" y="510" z="2" angle="0" />
+            <Entity>
+                <FileName>grass_red_3.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12400" spriteFrame="0">
+            <EntityName>grass_red_1.ent</EntityName>
+            <Position x="60" y="504" z="2" angle="0" />
+            <Entity>
+                <FileName>grass_red_1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12671" spriteFrame="0">
+            <EntityName>waypointD0</EntityName>
+            <Position x="424" y="430" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="10803" spriteFrame="0">
+            <EntityName>spawn0</EntityName>
+            <Position x="974" y="494" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12407" spriteFrame="0">
+            <EntityName>ethereal_yellow_spark_rain.ent</EntityName>
+            <Position x="901" y="331" z="54" angle="0" />
+            <Entity>
+                <FileName>ethereal_yellow_spark_rain.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11799" spriteFrame="0">
+            <EntityName>chapter4_flying_boulder_water.ent</EntityName>
+            <Position x="618" y="117" z="-72" angle="0" />
+            <Entity>
+                <FileName>chapter4_flying_boulder_water.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="8198" spriteFrame="0">
+            <EntityName>sky_add</EntityName>
+            <Position x="642" y="397" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="2" y="2" />
+                <Sprite>film.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>entityName</Name>
+                        <Value>sky_space.ent</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11798" spriteFrame="0">
+            <EntityName>chapter4_flying_boulder_0.ent</EntityName>
+            <Position x="716" y="358" z="-74" angle="0" />
+            <Entity>
+                <FileName>chapter4_flying_boulder_0.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12566" spriteFrame="0">
+            <EntityName>waypointA</EntityName>
+            <Position x="672" y="224" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12383" spriteFrame="0">
+            <EntityName>prize_placement</EntityName>
+            <Position x="1088" y="98" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <SpriteCut x="4" y="2" />
+                <Scale x="4" y="4" />
+                <Sprite>mario_items_sheet.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>fileName</Name>
+                        <Value>none</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12492" spriteFrame="0">
+            <EntityName>chapter4_moon_b.ent</EntityName>
+            <Position x="1490" y="292" z="-212" angle="0" />
+            <Entity>
+                <FileName>chapter4_moon_b.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontRotate</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12567" spriteFrame="0">
+            <EntityName>waypointB</EntityName>
+            <Position x="1485" y="273" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12568" spriteFrame="0">
+            <EntityName>nature_shield.ent</EntityName>
+            <Position x="1088" y="316" z="0" angle="-90" />
+            <Entity>
+                <FileName>nature_shield.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12777" spriteFrame="0">
+            <EntityName>camera_lock</EntityName>
+            <Position x="1090" y="448" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="1" g="1" b="1" a="0" />
+                <Scale x="2" y="2" />
+                <Sprite>film.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12673" spriteFrame="1">
+            <EntityName>waypointE1</EntityName>
+            <Position x="1742" y="428" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12402" spriteFrame="0" flipX="1">
+            <EntityName>chapter4_block_gray_cover_2.ent</EntityName>
+            <Position x="1920" y="480" z="0" angle="0" />
+            <Entity>
+                <FileName>chapter4_block_gray_cover_2.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11800" spriteFrame="0">
+            <EntityName>chapter4_flying_boulder_3.ent</EntityName>
+            <Position x="1540" y="165" z="-112" angle="0" />
+            <Entity>
+                <FileName>chapter4_flying_boulder_3.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12674" spriteFrame="0">
+            <EntityName>waypointE0</EntityName>
+            <Position x="2090" y="422" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11725" spriteFrame="0">
+            <EntityName>chapter4_cloud.ent</EntityName>
+            <Position x="2193" y="96" z="78" angle="0" />
+            <Entity>
+                <FileName>chapter4_cloud.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11741" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="256" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11233" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="256" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12420" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="320" y="926" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="1" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="16" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="2" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="400" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11801" spriteFrame="0">
+            <EntityName>chapter4_flying_boulder_4.ent</EntityName>
+            <Position x="206" y="602" z="-170" angle="0" />
+            <Entity>
+                <FileName>chapter4_flying_boulder_4.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12391" spriteFrame="0">
+            <EntityName>sewer_water.ent</EntityName>
+            <Position x="448" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12393" spriteFrame="0">
+            <EntityName>chapter4_block_gray_edge_big_1.ent</EntityName>
+            <Position x="384" y="640" z="0.001" angle="0" />
+            <Entity>
+                <FileName>chapter4_block_gray_edge_big_1.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12396" spriteFrame="0">
+            <EntityName>chapter4_block_gray_edge_big_0.ent</EntityName>
+            <Position x="128" y="640" z="0" angle="0" />
+            <Entity>
+                <FileName>chapter4_block_gray_edge_big_0.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12397" spriteFrame="0">
+            <EntityName>chapter4_rock_background.ent</EntityName>
+            <Position x="172" y="574" z="-24" angle="0" />
+            <Entity>
+                <FileName>chapter4_rock_background.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12401" spriteFrame="0">
+            <EntityName>chapter4_decor_roots_1.ent</EntityName>
+            <Position x="191" y="523" z="2" angle="-45" />
+            <Entity>
+                <FileName>chapter4_decor_roots_1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12405" spriteFrame="0">
+            <EntityName>sewer_water_b.ent</EntityName>
+            <Position x="320" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water_b.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12410" spriteFrame="0">
+            <EntityName>invisible_one_sided_platform.ent</EntityName>
+            <Position x="384" y="528" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12411" spriteFrame="0">
+            <EntityName>invisible_one_sided_platform.ent</EntityName>
+            <Position x="128" y="528" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12384" spriteFrame="0">
+            <EntityName>sewer_water.ent</EntityName>
+            <Position x="832" y="705" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11731" spriteFrame="0">
+            <EntityName>invisible_one_sided_platform.ent</EntityName>
+            <Position x="896" y="654" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12409" spriteFrame="0">
+            <EntityName>sewer_water_waves.ent</EntityName>
+            <Position x="592" y="646" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water_waves.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="4" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="768" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11728" spriteFrame="0">
+            <EntityName>chapter4_block_edge_big_0.ent</EntityName>
+            <Position x="896" y="768" z="0.001" angle="0" />
+            <Entity>
+                <FileName>chapter4_block_edge_big_0.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11736" spriteFrame="0">
+            <EntityName>grass_green_1.ent</EntityName>
+            <Position x="823" y="639" z="2" angle="0" />
+            <Entity>
+                <FileName>grass_green_1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12385" spriteFrame="0">
+            <EntityName>sewer_water.ent</EntityName>
+            <Position x="704" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12386" spriteFrame="0">
+            <EntityName>sewer_water.ent</EntityName>
+            <Position x="576" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12490" spriteFrame="0">
+            <EntityName>chapter4_rock_background.ent</EntityName>
+            <Position x="551" y="697" z="-16" angle="10" />
+            <Entity>
+                <FileName>chapter4_rock_background.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12570" spriteFrame="1">
+            <EntityName>waypointC1</EntityName>
+            <Position x="832" y="544" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12387" spriteFrame="0">
+            <EntityName>sewer_water.ent</EntityName>
+            <Position x="1344" y="705" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11732" spriteFrame="0">
+            <EntityName>invisible_one_sided_platform.ent</EntityName>
+            <Position x="1280" y="654" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12491" spriteFrame="0" flipX="1">
+            <EntityName>chapter4_rock_background.ent</EntityName>
+            <Position x="1513" y="661" z="-22" angle="-15" />
+            <Entity>
+                <FileName>chapter4_rock_background.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="6" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1520" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="3" spriteFrame="0">
+            <EntityName>_marker.ent</EntityName>
+            <Position x="1080" y="736" z="0" angle="0" />
+            <Entity>
+                <FileName>_marker.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11729" spriteFrame="0">
+            <EntityName>chapter4_block_edge_big_1.ent</EntityName>
+            <Position x="1280" y="768" z="0.001" angle="0" />
+            <Entity>
+                <FileName>chapter4_block_edge_big_1.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11730" spriteFrame="0" flipX="1">
+            <EntityName>chapter4_block_1.ent</EntityName>
+            <Position x="1088" y="768" z="0" angle="90" />
+            <Entity>
+                <FileName>chapter4_block_1.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11733" spriteFrame="0">
+            <EntityName>chapter4_block_cover_2.ent</EntityName>
+            <Position x="1024" y="608" z="0" angle="0" />
+            <Entity>
+                <FileName>chapter4_block_cover_2.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11734" spriteFrame="0">
+            <EntityName>chapter4_block_cover_1.ent</EntityName>
+            <Position x="1344" y="608" z="0" angle="0" />
+            <Entity>
+                <FileName>chapter4_block_cover_1.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11735" spriteFrame="0">
+            <EntityName>grass_green_2.ent</EntityName>
+            <Position x="1389" y="636" z="2" angle="0" />
+            <Entity>
+                <FileName>grass_green_2.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11737" spriteFrame="0">
+            <EntityName>chapter4_decor_roots_2.ent</EntityName>
+            <Position x="1150" y="731" z="2" angle="20" />
+            <Entity>
+                <FileName>chapter4_decor_roots_2.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11803" spriteFrame="0">
+            <EntityName>chapter4_flying_boulder_4.ent</EntityName>
+            <Position x="1388" y="712" z="-140" angle="0" />
+            <Entity>
+                <FileName>chapter4_flying_boulder_4.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12388" spriteFrame="0">
+            <EntityName>sewer_water.ent</EntityName>
+            <Position x="1472" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12493" spriteFrame="0">
+            <EntityName>chapter4_flying_boulder_1.ent</EntityName>
+            <Position x="1034" y="593" z="-142" angle="0" />
+            <Entity>
+                <FileName>chapter4_flying_boulder_1.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12571" spriteFrame="2">
+            <EntityName>waypointC0</EntityName>
+            <Position x="1344" y="544" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <EmissiveColor r="0.2" g="0.2" b="0.2" a="0" />
+                <SpriteCut x="8" y="1" />
+                <Sprite>waypoint_flag.png</Sprite>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>autoHide</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>dontDelete</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>forceNext</Name>
+                        <Value>1</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>holdTime</Name>
+                        <Value>2000</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12414" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="1856" y="904" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12408" spriteFrame="0">
+            <EntityName>sewer_water_waves.ent</EntityName>
+            <Position x="1598" y="646" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water_waves.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11802" spriteFrame="0">
+            <EntityName>chapter4_flying_boulder_4.ent</EntityName>
+            <Position x="2044" y="537" z="-162" angle="0" />
+            <Entity>
+                <FileName>chapter4_flying_boulder_4.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12389" spriteFrame="0">
+            <EntityName>sewer_water.ent</EntityName>
+            <Position x="1600" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12392" spriteFrame="0">
+            <EntityName>sewer_water.ent</EntityName>
+            <Position x="1728" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12394" spriteFrame="0">
+            <EntityName>chapter4_block_gray_edge_big_0.ent</EntityName>
+            <Position x="1792" y="640" z="0.001" angle="0" />
+            <Entity>
+                <FileName>chapter4_block_gray_edge_big_0.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12403" spriteFrame="0">
+            <EntityName>sewer_water_b.ent</EntityName>
+            <Position x="1856" y="704" z="0" angle="0" />
+            <Entity>
+                <FileName>sewer_water_b.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByFeet</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12406" spriteFrame="0">
+            <EntityName>chapter4_rock_background.ent</EntityName>
+            <Position x="2043" y="571" z="-18" angle="0" />
+            <Entity>
+                <FileName>chapter4_rock_background.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12412" spriteFrame="0">
+            <EntityName>invisible_one_sided_platform.ent</EntityName>
+            <Position x="1792" y="528" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12422" spriteFrame="0">
+            <EntityName>chapter4_decor_roots_3.ent</EntityName>
+            <Position x="1952" y="607" z="2" angle="15" />
+            <Entity>
+                <FileName>chapter4_decor_roots_3.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12423" spriteFrame="0" flipX="1">
+            <EntityName>grass_red_2.ent</EntityName>
+            <Position x="1813" y="631" z="2" angle="0" />
+            <Entity>
+                <FileName>grass_red_2.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="5" spriteFrame="0">
+            <EntityName>camMax</EntityName>
+            <Position x="2160" y="720" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>seekBgMax</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11740" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="768" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12395" spriteFrame="0">
+            <EntityName>chapter4_block_gray_edge_big_1.ent</EntityName>
+            <Position x="2048" y="640" z="0" angle="0" />
+            <Entity>
+                <FileName>chapter4_block_gray_edge_big_1.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>allowDecals</Name>
+                        <Value>0</Value>
+                    </Variable>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>material</Name>
+                        <Value>stone</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12413" spriteFrame="0">
+            <EntityName>invisible_one_sided_platform.ent</EntityName>
+            <Position x="2048" y="528" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_one_sided_platform.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="10907" spriteFrame="0">
+            <EntityName>bgMax</EntityName>
+            <Position x="30968" y="720" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="11232" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="768" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12421" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="320" y="1438" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12417" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="960" y="1024" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12416" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="1216" y="1024" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12415" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="1856" y="1416" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11739" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="2240" y="1280" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11738" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="-64" y="1280" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11750" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="0" y="1600" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+        <Entity id="12483" spriteFrame="0">
+            <EntityName>instant_death</EntityName>
+            <Position x="512" y="1600" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="512" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>sfx</Name>
+                        <Value>soundfx/jfo_aqua_lung_04.mp3</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12418" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="960" y="1536" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12419" spriteFrame="0">
+            <EntityName>invisible_wall.ent</EntityName>
+            <Position x="1216" y="1536" z="0" angle="0" />
+            <Entity>
+                <FileName>invisible_wall.ent</FileName>
+                <CustomData>
+                    <Variable>
+                        <Type>uint</Type>
+                        <Name>shouldBeIgnoredByProjectile</Name>
+                        <Value>1</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12484" spriteFrame="0">
+            <EntityName>instant_death</EntityName>
+            <Position x="1024" y="1600" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="512" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>sfx</Name>
+                        <Value>soundfx/jfo_aqua_lung_04.mp3</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="12485" spriteFrame="0">
+            <EntityName>instant_death</EntityName>
+            <Position x="1536" y="1600" z="0" angle="0" />
+            <Entity shape="1" sensor="0" bullet="0" fixedRotation="0" friction="1" density="1" restitution="0" gravityScale="1" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <Collision>
+                    <Position x="0" y="0" z="0" />
+                    <Size x="512" y="128" z="1" />
+                </Collision>
+                <CustomData>
+                    <Variable>
+                        <Type>string</Type>
+                        <Name>sfx</Name>
+                        <Value>soundfx/jfo_aqua_lung_04.mp3</Value>
+                    </Variable>
+                </CustomData>
+            </Entity>
+        </Entity>
+        <Entity id="11746" spriteFrame="0">
+            <EntityName>instant_death.ent</EntityName>
+            <Position x="2048" y="1600" z="0" angle="0" />
+            <Entity>
+                <FileName>instant_death.ent</FileName>
+                <CustomData />
+            </Entity>
+        </Entity>
+    </EntitiesInScene>
+</Ethanon>

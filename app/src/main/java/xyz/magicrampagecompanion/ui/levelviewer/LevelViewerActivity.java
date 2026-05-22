@@ -2,6 +2,8 @@ package xyz.magicrampagecompanion.ui.levelviewer;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 
 import xyz.magicrampagecompanion.core.utils.LocaleHelper;
 import android.graphics.Color;
@@ -43,6 +45,10 @@ public class LevelViewerActivity extends AppCompatActivity {
     
     private static final String AD_UNIT_ID = BuildConfig.realAPIKeyLevelViewer;
 
+    private SoundPool soundPool;
+    private int clickSfxId = 0;
+    private boolean clickSfxLoaded = false;
+
     private RewardedAd rewardedAd;
     private LevelRenderView renderView;
     private ImageButton btnShowSecrets;
@@ -53,6 +59,53 @@ public class LevelViewerActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(LocaleHelper.applyLocale(newBase));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseSoundPool();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        releaseSoundPool();
+    }
+
+    private void initSoundPoolIfNeeded() {
+        if (soundPool != null) return;
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(6)
+                .setAudioAttributes(new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_GAME)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build())
+                .build();
+        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
+            if (status == 0 && sampleId == clickSfxId) clickSfxLoaded = true;
+        });
+        clickSfxId = soundPool.load(this, R.raw.click, 1);
+    }
+
+    private void releaseSoundPool() {
+        if (soundPool != null) {
+            soundPool.release();
+            soundPool = null;
+            clickSfxLoaded = false;
+            clickSfxId = 0;
+        }
+    }
+
+    private void playSound() {
+        if (soundPool != null && clickSfxLoaded)
+            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
     }
 
     @Override
@@ -94,7 +147,7 @@ public class LevelViewerActivity extends AppCompatActivity {
         title.setText(titleResId != 0 ? getString(titleResId) : levelFile.replace(".esc", ""));
 
         ImageButton btnBack = findViewById(R.id.btnLevelBack);
-        btnBack.setOnClickListener(v -> finish());
+        btnBack.setOnClickListener(v -> { playSound(); finish(); });
 
         renderView = findViewById(R.id.levelRenderView);
 
@@ -107,6 +160,7 @@ public class LevelViewerActivity extends AppCompatActivity {
         ImageButton btnToggleLogic = findViewById(R.id.btnToggleLogic);
         btnToggleLogic.setAlpha(0.4f); // starts hidden
         btnToggleLogic.setOnClickListener(v -> {
+            playSound();
             boolean current = renderView.isShowingLogicEntities();
             renderView.setShowLogicEntities(!current);
             btnToggleLogic.setAlpha(renderView.isShowingLogicEntities() ? 1.0f : 0.4f);
@@ -121,6 +175,7 @@ public class LevelViewerActivity extends AppCompatActivity {
         }
         
         btnShowSecrets.setOnClickListener(v -> {
+            playSound();
             if (renderView.isSecretsUnlocked()) {
                 showSecretAreasList();
             } else if (!hasSecretAreas()) {
@@ -133,6 +188,9 @@ public class LevelViewerActivity extends AppCompatActivity {
         // --- Parse and display level ---
         try {
             currentLevel = LevelParser.parse(this, "levels/" + levelFile);
+            if (!levelFile.matches("dungeon\\d+.*\\.esc")) {
+                renderView.setInitialZoomMultiplier(4.0f);
+            }
             renderView.setLevel(currentLevel);
         } catch (Exception e) {
             e.printStackTrace();

@@ -960,6 +960,17 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="survival_mode">☠️ Survival Mode ☠️</string>
     <string name="test_equipment">🛡️ Test Equipment 🛡️</string>
     <string name="level_viewer">🗺️ Level Viewer 🗺️</string>
+    <string name="level_tab_story">Story</string>
+    <string name="level_tab_others">Others</string>
+    <string name="survival0">Survival 1</string>
+    <string name="survival1">Survival 2</string>
+    <string name="survival2">Survival 3</string>
+    <string name="survival3">Survival 4</string>
+    <string name="survival4">Survival 5</string>
+    <string name="survival5">Survival 6</string>
+    <string name="combatzone0">Combat Zone 1</string>
+    <string name="combatzone1">Combat Zone 2</string>
+    <string name="combatzone2">Combat Zone 3</string>
 
     <!-- Level Viewer -->
     <string name="utility_markers_visible">Utility markers: Visible</string>
@@ -1928,6 +1939,12 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="survival_mode_6">Survival Mode 6</string>
     <string name="for_content_makers">For Content Makers</string>
     <string name="obtainability">Obtainability: </string>
+    <string name="section_stats">Stats</string>
+    <string name="section_attack">Attack</string>
+    <string name="section_bonuses">Bonuses</string>
+    <string name="section_economy">Economy</string>
+    <string name="section_behaviour">Behaviour</string>
+    <string name="section_properties">Properties</string>
     <string name="loading_translation">Translating…</string>
     <string name="all_seeing_hammer">All Seeing Hammer</string>
     <string name="staff_shooting_star_staff">Shooting Star Staff</string>
@@ -1936,4 +1953,28 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="oasis_blade">Oasis Blade</string>
     <string name="bunny_spear">Bunny Spear</string>
     <string name="steelblow_shuriken">Steelblow Shuriken</string>
+
+    <!-- Content descriptions (accessibility) -->
+    <string name="cd_ad_preferences">Ad Preferences</string>
+    <string name="cd_chapter_1">Chapter 1</string>
+    <string name="cd_chapter_2">Chapter 2</string>
+    <string name="cd_chapter_3">Chapter 3</string>
+    <string name="cd_chapter_4">Chapter 4</string>
+    <string name="cd_chapter_5">Chapter 5</string>
+    <string name="cd_facebook">Facebook</string>
+    <string name="cd_instagram">Instagram</string>
+    <string name="cd_twitter">Twitter / X</string>
+    <string name="cd_discord">Discord</string>
+    <string name="cd_item_image">Item image</string>
+    <string name="cd_enemy_image">Enemy image</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_show_secrets">Show Secret Areas</string>
+    <string name="cd_toggle_logic">Toggle Logic Entities</string>
+
+    <!-- Empty states -->
+    <string name="empty_no_results">No results found</string>
+    <string name="empty_no_enemies">No enemies to display</string>
+    <string name="empty_no_levels">No levels available</string>
+    <string name="arcane_rod_staff">Arcane Rod Staff</string>
+    <string name="coming_soon">Coming Soon</string>
 </resources>

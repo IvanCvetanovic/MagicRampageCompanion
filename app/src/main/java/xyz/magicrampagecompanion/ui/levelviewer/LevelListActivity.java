@@ -2,10 +2,13 @@ package xyz.magicrampagecompanion.ui.levelviewer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,7 +30,17 @@ import xyz.magicrampagecompanion.R;
 
 public class LevelListActivity extends AppCompatActivity {
 
-    private final List<String> levelFiles = new ArrayList<>();
+    private final List<String> storyFiles  = new ArrayList<>();
+    private final List<String> otherFiles  = new ArrayList<>();
+    private List<String> activeList        = new ArrayList<>();
+
+    private RecyclerView recyclerView;
+    private TextView emptyStateText;
+    private Button tabStory, tabOthers;
+
+    private SoundPool soundPool;
+    private int clickSfxId = 0;
+    private boolean clickSfxLoaded = false;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -35,28 +48,105 @@ public class LevelListActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseSoundPool();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        releaseSoundPool();
+    }
+
+    private void initSoundPoolIfNeeded() {
+        if (soundPool != null) return;
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(6)
+                .setAudioAttributes(new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_GAME)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build())
+                .build();
+        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
+            if (status == 0 && sampleId == clickSfxId) clickSfxLoaded = true;
+        });
+        clickSfxId = soundPool.load(this, R.raw.click, 1);
+    }
+
+    private void releaseSoundPool() {
+        if (soundPool != null) {
+            soundPool.release();
+            soundPool = null;
+            clickSfxLoaded = false;
+            clickSfxId = 0;
+        }
+    }
+
+    private void playSound() {
+        if (soundPool != null && clickSfxLoaded)
+            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_list);
 
-        // ---- APPLY SYSTEM INSETS (FIX) ----
-        View root = findViewById(R.id.levelRecyclerView);
+        recyclerView   = findViewById(R.id.levelRecyclerView);
+        emptyStateText = findViewById(R.id.emptyStateText);
+        tabStory       = findViewById(R.id.tabStory);
+        tabOthers      = findViewById(R.id.tabOthers);
+
+        // Apply system insets: status bar to tab bar top, nav bar to recycler bottom
+        View root    = findViewById(R.id.levelListRoot);
+        View tabBar  = findViewById(R.id.tabBar);
+        final int baseTabT = tabBar.getPaddingTop();
+        final int baseTabL = tabBar.getPaddingLeft();
+        final int baseTabR = tabBar.getPaddingRight();
+        final int baseTabB = tabBar.getPaddingBottom();
+        final int baseRvB  = recyclerView.getPaddingBottom();
+        final int baseRvL  = recyclerView.getPaddingLeft();
+        final int baseRvT  = recyclerView.getPaddingTop();
+        final int baseRvR  = recyclerView.getPaddingRight();
+
         ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
             Insets sysBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(
-                    v.getPaddingLeft(),
-                    sysBars.top,
-                    v.getPaddingRight(),
-                    sysBars.bottom
-            );
+            tabBar.setPadding(baseTabL, baseTabT + sysBars.top, baseTabR, baseTabB);
+            recyclerView.setPadding(baseRvL, baseRvT, baseRvR, baseRvB + sysBars.bottom);
             return WindowInsetsCompat.CONSUMED;
         });
+        ViewCompat.requestApplyInsets(root);
 
-        RecyclerView recyclerView = findViewById(R.id.levelRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
         loadLevelFiles();
+
+        tabStory.setOnClickListener(v -> { playSound(); setActiveTab(true); });
+        tabOthers.setOnClickListener(v -> { playSound(); setActiveTab(false); });
+
+        // Default to Story tab
+        setActiveTab(true);
+    }
+
+    private void setActiveTab(boolean story) {
+        tabStory.setSelected(story);
+        tabOthers.setSelected(!story);
+        activeList = story ? storyFiles : otherFiles;
+        showList(activeList);
+    }
+
+    private void showList(List<String> files) {
+        boolean empty = files.isEmpty();
+        recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
+        emptyStateText.setVisibility(empty ? View.VISIBLE : View.GONE);
 
         recyclerView.setAdapter(new RecyclerView.Adapter<LevelViewHolder>() {
             @NonNull
@@ -69,13 +159,11 @@ public class LevelListActivity extends AppCompatActivity {
 
             @Override
             public void onBindViewHolder(@NonNull LevelViewHolder holder, int position) {
-                holder.bind(levelFiles.get(position));
+                holder.bind(files.get(position));
             }
 
             @Override
-            public int getItemCount() {
-                return levelFiles.size();
-            }
+            public int getItemCount() { return files.size(); }
         });
     }
 
@@ -85,8 +173,11 @@ public class LevelListActivity extends AppCompatActivity {
             if (files != null) {
                 Arrays.sort(files, LevelListActivity::compareNatural);
                 for (String f : files) {
-                    if (f.endsWith(".esc")) {
-                        levelFiles.add(f);
+                    if (!f.endsWith(".esc")) continue;
+                    if (f.matches("dungeon\\d+.*\\.esc")) {
+                        storyFiles.add(f);
+                    } else {
+                        otherFiles.add(f);
                     }
                 }
             }
@@ -128,12 +219,10 @@ public class LevelListActivity extends AppCompatActivity {
                 int pos = getAdapterPosition();
                 if (pos == RecyclerView.NO_POSITION) return;
 
-                String file = levelFiles.get(pos);
+                playSound();
 
-                Intent intent = new Intent(
-                        LevelListActivity.this,
-                        LevelViewerActivity.class
-                );
+                String file = activeList.get(pos);
+                Intent intent = new Intent(LevelListActivity.this, LevelViewerActivity.class);
                 intent.putExtra("levelFile", file);
                 startActivity(intent);
             });
@@ -144,7 +233,7 @@ public class LevelListActivity extends AppCompatActivity {
                     .matcher(fileName.replace(".esc", ""));
             String key = m.find()
                     ? m.replaceFirst("dungeon_" + (Integer.parseInt(m.group(1)) + 1)).replace(".", "_")
-                    : fileName.replace(".esc", "");
+                    : fileName.replace(".esc", "").replace("-", "_").replace(".", "_").toLowerCase();
             int resId = getResources().getIdentifier(key, "string", getPackageName());
             name.setText(resId != 0 ? getString(resId) : fileName.replace(".esc", ""));
         }

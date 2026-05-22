@@ -83,15 +83,14 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/button_facebook"
                 android:onClick="openFacebook"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/cd_facebook"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/buttonInstagram"
                 app:layout_constraintHorizontal_chainStyle="spread"
-                android:layout_marginEnd="8dp"
-                tools:ignore="ContentDescription,HardcodedText" />
+                android:layout_marginEnd="8dp" />
 
             <!-- Instagram -->
             <ImageButton
@@ -102,15 +101,14 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/button_instagram"
                 android:onClick="openInstagram"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/cd_instagram"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/buttonFacebook"
                 app:layout_constraintEnd_toStartOf="@id/buttonTwitter"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                tools:ignore="ContentDescription,HardcodedText" />
+                android:layout_marginEnd="8dp" />
 
             <!-- Twitter/X -->
             <ImageButton
@@ -121,15 +119,14 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/button_twitter"
                 android:onClick="openTwitter"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/cd_twitter"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/buttonInstagram"
                 app:layout_constraintEnd_toStartOf="@id/buttonDiscord"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                tools:ignore="ContentDescription,HardcodedText" />
+                android:layout_marginEnd="8dp" />
 
             <!-- Discord -->
             <ImageButton
@@ -140,14 +137,13 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/button_discord"
                 android:onClick="openDiscordInvite"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/cd_discord"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/buttonTwitter"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="8dp"
-                tools:ignore="ContentDescription,HardcodedText" />
+                android:layout_marginStart="8dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- —————————————— Special Thanks —————————————— -->

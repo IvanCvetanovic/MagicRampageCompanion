@@ -8,6 +8,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -15,8 +17,10 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -34,7 +38,7 @@ public class ItemDetail extends AppCompatActivity {
 
     private ImageView itemImage;
     private TextView itemName;
-    private TextView itemDescription;
+    private LinearLayout statsContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +46,6 @@ public class ItemDetail extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_item_detail);
 
-        // --- Edge-to-edge padding fix ---
         final View root = findViewById(R.id.detail_root);
         final int baseL = root.getPaddingLeft();
         final int baseT = root.getPaddingTop();
@@ -56,265 +59,292 @@ public class ItemDetail extends AppCompatActivity {
         });
         ViewCompat.requestApplyInsets(root);
 
-        // --- UI refs ---
-        itemImage       = findViewById(R.id.itemImage);
-        itemName        = findViewById(R.id.itemName);
-        itemDescription = findViewById(R.id.itemDescription);
+        itemImage      = findViewById(R.id.itemImage);
+        itemName       = findViewById(R.id.itemName);
+        statsContainer = findViewById(R.id.statsContainer);
 
-        // --- Fill with data ---
         Parcelable parcel = getIntent().getParcelableExtra(EXTRA_ITEM);
         if (parcel instanceof Weapon) {
             Weapon w = (Weapon) parcel;
             itemImage.setImageResource(w.getImageResId());
             itemName.setText(w.getName());
-            itemDescription.setText(buildWeaponDesc(w));
-
+            populateWeaponStats(w);
         } else if (parcel instanceof Armor) {
             Armor a = (Armor) parcel;
             itemImage.setImageResource(a.getImageResId());
             itemName.setText(a.getName());
-            itemDescription.setText(buildArmorDesc(a));
-
+            populateArmorStats(a);
         } else if (parcel instanceof Ring) {
             Ring r = (Ring) parcel;
             itemImage.setImageResource(r.getImageResId());
             itemName.setText(r.getName());
-            itemDescription.setText(buildRingDesc(r));
+            populateRingStats(r);
         }
     }
 
-    private int getElementColor(Elements element) {
-        Context context = this;
-        switch (element) {
-            case WATER:    return ContextCompat.getColor(context, R.color.water_element_color);
-            case EARTH:    return ContextCompat.getColor(context, R.color.earth_element_color);
-            case FIRE:     return ContextCompat.getColor(context, R.color.fire_element_color);
-            case DARKNESS: return ContextCompat.getColor(context, R.color.darkness_element_color);
-            case LIGHT:    return ContextCompat.getColor(context, R.color.light_element_color);
-            case AIR:      return ContextCompat.getColor(context, R.color.air_element_color);
-            case NEUTRAL:
-            default:       return ContextCompat.getColor(context, R.color.white);
+    // ── Section builders ─────────────────────────────────────────────────────────
+
+    private void populateWeaponStats(Weapon w) {
+        // STATS
+        LinearLayout statsCard = addSection(getString(R.string.section_stats));
+        addPairRow(statsCard,
+                getString(R.string.type),                  getLocalizedWeaponType(w.getType()),
+                getString(R.string.element),               buildElementSpan(w.getElement()));
+        addPairRow(statsCard,
+                getString(R.string.damage_in_calculation), w.getMinDamage() + " – " + w.getMaxDamage(),
+                getString(R.string.upgrades),              String.valueOf(w.getUpgrades()));
+
+        // ATTACK
+        LinearLayout attackCard = addSection(getString(R.string.section_attack));
+        addPairRow(attackCard,
+                getString(R.string.attack_speed),          buildStarsSpan(w.getAttackCooldown()),
+                getString(R.string.pierce_count),          String.valueOf(w.getPierceCount()));
+        addPairRow(attackCard,
+                getString(R.string.pierce_area_damage),    buildBooleanSpan(w.isEnablePierceAreaDamage()),
+                getString(R.string.projectile_persistence),buildBooleanSpan(w.isPersistAgainstProjectile()));
+        addPairRow(attackCard,
+                getString(R.string.poisonous_attack),      buildBooleanSpan(w.isPoisonous()),
+                getString(R.string.frost_attack),          buildBooleanSpan(w.isFrost()));
+
+        // BONUSES (always shown)
+        LinearLayout bonusCard = addSection(getString(R.string.section_bonuses));
+        addPairRow(bonusCard,
+                getString(R.string.jump_impulse_in_calculation),  sign(w.getJump()) + "%",
+                getString(R.string.speed_in_calculation),         sign(w.getSpeed()) + "%");
+        addRow(bonusCard,
+                getString(R.string.armor_bonus),                  sign((int) w.getArmorBonus()) + "%");
+
+        // ECONOMY
+        addEconomySection(
+                w.getFreemiumGoldPrice(), w.getPremiumGoldPrice(),
+                w.getFreemiumCoinPrice(), w.getPremiumCoinPrice(),
+                w.getBaseFreemiumSellPrice(), w.getBasePremiumSellPrice(),
+                w.getObtainability());
+    }
+
+    private void populateArmorStats(Armor a) {
+        // STATS
+        LinearLayout statsCard = addSection(getString(R.string.section_stats));
+        addPairRow(statsCard,
+                getString(R.string.element),              buildElementSpan(a.getElement()),
+                getString(R.string.frost_resistance),     buildBooleanSpan(a.isFrostImmune()));
+        addPairRow(statsCard,
+                getString(R.string.armor_in_calculation), a.getMinArmor() + " – " + a.getMaxArmor(),
+                getString(R.string.upgrades),             String.valueOf(a.getUpgrades()));
+
+        // BONUSES (always shown)
+        LinearLayout bonusCard = addSection(getString(R.string.section_bonuses));
+        addPairRow(bonusCard,
+                getString(R.string.speed_in_calculation),        sign(a.getSpeed()) + "%",
+                getString(R.string.jump_impulse_in_calculation), sign(a.getJump()) + "%");
+        addPairRow(bonusCard,
+                getString(R.string.magic_bonus),   sign((int) a.getMagic()) + "%",
+                getString(R.string.sword_bonus),   sign((int) a.getSword()) + "%");
+        addPairRow(bonusCard,
+                getString(R.string.staff_bonus),   sign((int) a.getStaff()) + "%",
+                getString(R.string.dagger_bonus),  sign((int) a.getDagger()) + "%");
+        addPairRow(bonusCard,
+                getString(R.string.axe_bonus),     sign((int) a.getAxe()) + "%",
+                getString(R.string.hammer_bonus),  sign((int) a.getHammer()) + "%");
+        addRow(bonusCard,
+                getString(R.string.spear_bonus),   sign((int) a.getSpear()) + "%");
+
+        // ECONOMY
+        addEconomySection(
+                a.getFreemiumGoldPrice(), a.getPremiumGoldPrice(),
+                a.getFreemiumCoinPrice(), a.getPremiumCoinPrice(),
+                a.getBaseFreemiumSellPrice(), a.getBasePremiumSellPrice(),
+                a.getObtainability());
+    }
+
+    private void populateRingStats(Ring r) {
+        // STATS
+        LinearLayout statsCard = addSection(getString(R.string.section_stats));
+        addRow(statsCard, getString(R.string.element), buildElementSpan(r.getElement()));
+
+        // BONUSES (always shown)
+        LinearLayout bonusCard = addSection(getString(R.string.section_bonuses));
+        addPairRow(bonusCard,
+                getString(R.string.armor_in_calculation), sign(r.getArmor()),
+                getString(R.string.armor_bonus),          sign((int) r.getArmorBonus()) + "%");
+        addPairRow(bonusCard,
+                getString(R.string.speed_in_calculation),        sign(r.getSpeed()) + "%",
+                getString(R.string.jump_impulse_in_calculation), sign(r.getJump()) + "%");
+        addPairRow(bonusCard,
+                getString(R.string.magic_bonus),   sign((int) r.getMagic()) + "%",
+                getString(R.string.sword_bonus),   sign((int) r.getSword()) + "%");
+        addPairRow(bonusCard,
+                getString(R.string.staff_bonus),   sign((int) r.getStaff()) + "%",
+                getString(R.string.dagger_bonus),  sign((int) r.getDagger()) + "%");
+        addPairRow(bonusCard,
+                getString(R.string.axe_bonus),     sign((int) r.getAxe()) + "%",
+                getString(R.string.hammer_bonus),  sign((int) r.getHammer()) + "%");
+        addRow(bonusCard,
+                getString(R.string.spear_bonus),   sign((int) r.getSpear()) + "%");
+
+        // ECONOMY
+        addEconomySection(
+                r.getFreemiumGoldPrice(), r.getPremiumGoldPrice(),
+                r.getFreemiumCoinPrice(), r.getPremiumCoinPrice(),
+                r.getBaseFreemiumSellPrice(), r.getBasePremiumSellPrice(),
+                r.getObtainability());
+    }
+
+    private void addEconomySection(int fg, int pg, int fc, int pc, int sf, int sp,
+                                   List<String> obtainability) {
+        boolean hasGold  = fg > 0 || pg > 0;
+        boolean hasCoins = fc > 0 || pc > 0;
+        boolean hasSell  = sf > 0 || sp > 0;
+        boolean hasObtainability = obtainability != null && !obtainability.isEmpty();
+        if (!hasGold && !hasCoins && !hasSell && !hasObtainability) return;
+
+        LinearLayout card = addSection(getString(R.string.section_economy));
+        if (hasGold)  addPairRow(card,
+                getString(R.string.price_freemium_gold),  String.valueOf(fg),
+                getString(R.string.price_premium_gold),   String.valueOf(pg));
+        if (hasCoins) addPairRow(card,
+                getString(R.string.price_freemium_token), String.valueOf(fc),
+                getString(R.string.price_premium_token),  String.valueOf(pc));
+        if (hasSell)  addPairRow(card,
+                getString(R.string.price_freemium_sell),  String.valueOf(sf),
+                getString(R.string.price_premium_sell),   String.valueOf(sp));
+
+        if (hasObtainability) {
+            addRow(card, getString(R.string.obtainability), "");
+            for (String entry : obtainability) addTextRow(card, "• " + entry);
         }
     }
 
-    private void appendBooleanStatus(SpannableStringBuilder ssb, String label, boolean isChecked) {
-        ssb.append(label).append(" ");
+    // ── View helpers ──────────────────────────────────────────────────────────────
 
-        int iconResId = isChecked ? R.drawable.icon_check : R.drawable.icon_uncheck;
-        Drawable iconDrawable = ContextCompat.getDrawable(this, iconResId);
+    private LinearLayout addSection(String title) {
+        TextView header = (TextView) getLayoutInflater().inflate(
+                R.layout.item_detail_section_header, statsContainer, false);
+        header.setText(title);
+        statsContainer.addView(header);
 
-        if (iconDrawable != null) {
-            int iconSize = 80;
-            iconDrawable.setBounds(0, 0, iconSize, iconSize);
-            int start = ssb.length();
-            ssb.append(" ");
-            int end = ssb.length();
-            ImageSpan span = new ImageSpan(iconDrawable, ImageSpan.ALIGN_BASELINE);
-            ssb.setSpan(span, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        } else {
-            ssb.append(isChecked ? "(✓)" : "(✗)");
-        }
-
-        ssb.append("\n");
+        LinearLayout card = new LinearLayout(this);
+        card.setOrientation(LinearLayout.VERTICAL);
+        card.setBackgroundResource(R.drawable.table_card_bg);
+        card.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT));
+        statsContainer.addView(card);
+        return card;
     }
 
-    private void appendObtainability(SpannableStringBuilder ssb, List<String> list) {
-        if (list == null || list.isEmpty()) return;
-
-        ssb.append(getString(R.string.obtainability)).append("\n");
-
-        for (String entry : list) {
-            ssb.append("• ").append(entry).append("\n");
-        }
+    private void addRow(LinearLayout card, String label, CharSequence value) {
+        if (card.getChildCount() > 0) addDivider(card);
+        View row = getLayoutInflater().inflate(R.layout.item_detail_stat_row, card, false);
+        ((TextView) row.findViewById(R.id.statLabel)).setText(label);
+        ((TextView) row.findViewById(R.id.statValue)).setText(value);
+        card.addView(row);
     }
 
-
-    private void appendIfNonZeroInt(SpannableStringBuilder ssb, int labelResId, int value) {
-        if (value != 0) {
-            ssb.append(getString(labelResId)).append(String.valueOf(value)).append("\n");
-        }
+    private void addPairRow(LinearLayout card,
+                            String label1, CharSequence val1,
+                            String label2, CharSequence val2) {
+        if (card.getChildCount() > 0) addDivider(card);
+        View row = getLayoutInflater().inflate(R.layout.item_detail_stat_pair, card, false);
+        ((TextView) row.findViewById(R.id.labelLeft)).setText(label1);
+        ((TextView) row.findViewById(R.id.valueLeft)).setText(val1);
+        ((TextView) row.findViewById(R.id.labelRight)).setText(label2);
+        ((TextView) row.findViewById(R.id.valueRight)).setText(val2);
+        card.addView(row);
     }
 
-    private void appendIfNonZeroPercent(SpannableStringBuilder ssb, int labelResId, int percentValue) {
-        if (percentValue != 0) {
-            ssb.append(getString(labelResId)).append(String.valueOf(percentValue)).append("%\n");
-        }
+    private void addTextRow(LinearLayout card, String text) {
+        TextView tv = new TextView(this);
+        tv.setTextColor(ContextCompat.getColor(this, R.color.color_text_primary));
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        tv.setPadding(dp(14), dp(8), dp(14), dp(8));
+        tv.setText(text);
+        card.addView(tv);
     }
 
-    private void appendPrices(SpannableStringBuilder ssb,
-                              int fg, int pg, int fc, int pc, int sf, int sp) {
-        appendIfNonZeroInt(ssb, R.string.price_freemium_gold, fg);
-        appendIfNonZeroInt(ssb, R.string.price_premium_gold,  pg);
-        appendIfNonZeroInt(ssb, R.string.price_freemium_token, fc);
-        appendIfNonZeroInt(ssb, R.string.price_premium_token,  pc);
-        appendIfNonZeroInt(ssb, R.string.price_freemium_sell,  sf);
-        appendIfNonZeroInt(ssb, R.string.price_premium_sell,   sp);
+    private void addDivider(LinearLayout card) {
+        View divider = new View(this);
+        divider.setBackgroundColor(0x20FFFFFF);
+        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, 1);
+        p.setMarginStart(dp(14));
+        p.setMarginEnd(dp(14));
+        divider.setLayoutParams(p);
+        card.addView(divider);
     }
 
-    private CharSequence buildWeaponDesc(Weapon w) {
-        SpannableStringBuilder ssb = new SpannableStringBuilder();
-        Elements element = w.getElement();
+    // ── Span builders ─────────────────────────────────────────────────────────────
 
-        ssb.append(getString(R.string.type))
-                .append(getLocalizedWeaponType(w.getType()))
-                .append("\n");
+    private CharSequence buildElementSpan(Elements element) {
+        String name = getLocalizedElementName(element);
+        if (element == Elements.NEUTRAL) return name;
+        SpannableStringBuilder ssb = new SpannableStringBuilder(name);
+        ssb.setSpan(new ForegroundColorSpan(getElementColor(element)),
+                0, name.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return ssb;
+    }
 
-        ssb.append(getString(R.string.element));
-        int color = getElementColor(element);
-        String localizedElementName = getLocalizedElementName(element);
-        if (element != Elements.NEUTRAL) {
-            ssb.append(localizedElementName, new ForegroundColorSpan(color), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        } else {
-            ssb.append(localizedElementName);
-        }
-        ssb.append("\n");
-
-        ssb.append(getString(R.string.damage_in_calculation))
-                .append(String.valueOf(w.getMinDamage())).append("-").append(String.valueOf(w.getMaxDamage())).append("\n")
-                .append(getString(R.string.upgrades)).append(String.valueOf(w.getUpgrades())).append("\n");
-
-        appendIfNonZeroPercent(ssb, R.string.armor_bonus, (int) w.getArmorBonus());
-        appendIfNonZeroPercent(ssb, R.string.speed,       w.getSpeed());
-        appendIfNonZeroPercent(ssb, R.string.jump_impulse, w.getJump());
-
-        ssb.append(getString(R.string.attack_speed));
-        double currentAttackSpeed = w.getAttackCooldown();
+    private SpannableStringBuilder buildStarsSpan(int cooldownMs) {
         int starCount;
-        if (currentAttackSpeed <= 300)      starCount = 5;
-        else if (currentAttackSpeed <= 450) starCount = 4;
-        else if (currentAttackSpeed <= 650) starCount = 3;
-        else if (currentAttackSpeed <= 750) starCount = 2;
-        else                                starCount = 1;
+        if (cooldownMs <= 300)      starCount = 5;
+        else if (cooldownMs <= 450) starCount = 4;
+        else if (cooldownMs <= 650) starCount = 3;
+        else if (cooldownMs <= 750) starCount = 2;
+        else                        starCount = 1;
 
-        Drawable starDrawable = ContextCompat.getDrawable(this, R.drawable.star);
-        if (starDrawable != null) {
-            int desiredWidth = 80;
-            int desiredHeight = 80;
-            starDrawable.setBounds(0, 0, desiredWidth, desiredHeight);
+        SpannableStringBuilder ssb = new SpannableStringBuilder();
+        Drawable star = ContextCompat.getDrawable(this, R.drawable.star);
+        if (star != null) {
+            int size = dp(18);
+            star.setBounds(0, 0, size, size);
             for (int i = 0; i < starCount; i++) {
                 int start = ssb.length();
                 ssb.append(" ");
-                int end = ssb.length();
-                ImageSpan span = new ImageSpan(starDrawable, ImageSpan.ALIGN_BASELINE);
-                ssb.setSpan(span, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                ssb.setSpan(new CenteredImageSpan(star),
+                        start, ssb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
         } else {
-            ssb.append("(").append(String.valueOf(starCount)).append(" stars)");
+            for (int i = 0; i < starCount; i++) ssb.append("★");
         }
-        ssb.append("\n");
-
-        appendIfNonZeroInt(ssb, R.string.pierce_count, w.getPierceCount());
-
-        appendBooleanStatus(ssb, getString(R.string.pierce_area_damage), w.isEnablePierceAreaDamage());
-        appendBooleanStatus(ssb, getString(R.string.projectile_persistence), w.isPersistAgainstProjectile());
-        appendBooleanStatus(ssb, getString(R.string.poisonous_attack), w.isPoisonous());
-        appendBooleanStatus(ssb, getString(R.string.frost_attack), w.isFrost());
-
-        appendPrices(
-                ssb,
-                w.getFreemiumGoldPrice(),
-                w.getPremiumGoldPrice(),
-                w.getFreemiumCoinPrice(),
-                w.getPremiumCoinPrice(),
-                w.getBaseFreemiumSellPrice(),
-                w.getBasePremiumSellPrice()
-        );
-
-        appendObtainability(ssb, w.getObtainability());
-
         return ssb;
     }
 
-    private CharSequence buildArmorDesc(Armor a) {
+    private SpannableStringBuilder buildBooleanSpan(boolean value) {
         SpannableStringBuilder ssb = new SpannableStringBuilder();
-        Elements element = a.getElement();
-
-        ssb.append(getString(R.string.element));
-        int color = getElementColor(element);
-        String localizedElementName = getLocalizedElementName(element);
-        if (element != Elements.NEUTRAL) {
-            ssb.append(localizedElementName, new ForegroundColorSpan(color), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        Drawable icon = ContextCompat.getDrawable(this,
+                value ? R.drawable.icon_check : R.drawable.icon_uncheck);
+        if (icon != null) {
+            int size = dp(18);
+            icon.setBounds(0, 0, size, size);
+            ssb.append(" ");
+            ssb.setSpan(new CenteredImageSpan(icon),
+                    0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         } else {
-            ssb.append(localizedElementName);
+            ssb.append(value ? "✓" : "✗");
         }
-        ssb.append("\n");
-
-        ssb.append(getString(R.string.armor_in_calculation))
-                .append(String.valueOf(a.getMinArmor())).append("-").append(String.valueOf(a.getMaxArmor())).append("\n")
-                .append(getString(R.string.upgrades)).append(String.valueOf(a.getUpgrades())).append("\n");
-
-        appendIfNonZeroPercent(ssb, R.string.speed,        a.getSpeed());
-        appendIfNonZeroPercent(ssb, R.string.jump_impulse, a.getJump());
-        appendIfNonZeroPercent(ssb, R.string.magic_bonus,  (int) a.getMagic());
-        appendIfNonZeroPercent(ssb, R.string.sword_bonus,  (int) a.getSword());
-        appendIfNonZeroPercent(ssb, R.string.staff_bonus,  (int) a.getStaff());
-        appendIfNonZeroPercent(ssb, R.string.dagger_bonus, (int) a.getDagger());
-        appendIfNonZeroPercent(ssb, R.string.axe_bonus,    (int) a.getAxe());
-        appendIfNonZeroPercent(ssb, R.string.hammer_bonus, (int) a.getHammer());
-        appendIfNonZeroPercent(ssb, R.string.spear_bonus,  (int) a.getSpear());
-
-        appendBooleanStatus(ssb, getString(R.string.frost_resistance), a.isFrostImmune());
-
-        appendPrices(
-                ssb,
-                a.getFreemiumGoldPrice(),
-                a.getPremiumGoldPrice(),
-                a.getFreemiumCoinPrice(),
-                a.getPremiumCoinPrice(),
-                a.getBaseFreemiumSellPrice(),
-                a.getBasePremiumSellPrice()
-        );
-
-        appendObtainability(ssb, a.getObtainability());
-
         return ssb;
     }
 
-    private CharSequence buildRingDesc(Ring r) {
-        SpannableStringBuilder ssb = new SpannableStringBuilder();
-        Elements element = r.getElement();
+    // ── Misc helpers ──────────────────────────────────────────────────────────────
 
-        ssb.append(getString(R.string.element));
-        int color = getElementColor(element);
-        String localizedElementName = getLocalizedElementName(element);
-        if (element != Elements.NEUTRAL) {
-            ssb.append(localizedElementName, new ForegroundColorSpan(color), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        } else {
-            ssb.append(localizedElementName);
-        }
-        ssb.append("\n");
-
-        ssb.append(getString(R.string.armor_in_calculation)).append(String.valueOf(r.getArmor())).append("\n");
-
-        appendIfNonZeroPercent(ssb, R.string.armor_bonus, (int) r.getArmorBonus());
-        appendIfNonZeroPercent(ssb, R.string.speed,       r.getSpeed());
-        appendIfNonZeroPercent(ssb, R.string.jump_impulse, r.getJump());
-        appendIfNonZeroPercent(ssb, R.string.magic_bonus,  (int) r.getMagic());
-        appendIfNonZeroPercent(ssb, R.string.sword_bonus,  (int) r.getSword());
-        appendIfNonZeroPercent(ssb, R.string.staff_bonus,  (int) r.getStaff());
-        appendIfNonZeroPercent(ssb, R.string.dagger_bonus, (int) r.getDagger());
-        appendIfNonZeroPercent(ssb, R.string.axe_bonus,    (int) r.getAxe());
-        appendIfNonZeroPercent(ssb, R.string.hammer_bonus, (int) r.getHammer());
-        appendIfNonZeroPercent(ssb, R.string.spear_bonus,  (int) r.getSpear());
-
-        appendPrices(
-                ssb,
-                r.getFreemiumGoldPrice(),
-                r.getPremiumGoldPrice(),
-                r.getFreemiumCoinPrice(),
-                r.getPremiumCoinPrice(),
-                r.getBaseFreemiumSellPrice(),
-                r.getBasePremiumSellPrice()
-        );
-
-        appendObtainability(ssb, r.getObtainability());
-
-        return ssb;
+    private int dp(int value) {
+        return Math.round(getResources().getDisplayMetrics().density * value);
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
+    private String sign(int n) {
+        return n > 0 ? "+" + n : String.valueOf(n);
+    }
+
+    private int getElementColor(Elements element) {
+        switch (element) {
+            case WATER:    return ContextCompat.getColor(this, R.color.water_element_color);
+            case EARTH:    return ContextCompat.getColor(this, R.color.earth_element_color);
+            case FIRE:     return ContextCompat.getColor(this, R.color.fire_element_color);
+            case DARKNESS: return ContextCompat.getColor(this, R.color.darkness_element_color);
+            case LIGHT:    return ContextCompat.getColor(this, R.color.light_element_color);
+            case AIR:      return ContextCompat.getColor(this, R.color.air_element_color);
+            default:       return ContextCompat.getColor(this, R.color.white);
+        }
     }
 
     private String getLocalizedElementName(Elements element) {
@@ -338,6 +368,41 @@ public class ItemDetail extends AppCompatActivity {
             case HAMMER: return getString(R.string.weapon_type_hammer);
             case SPEAR:  return getString(R.string.weapon_type_spear);
             default:     return "";
+        }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
+    }
+
+    private static final class CenteredImageSpan extends ImageSpan {
+        CenteredImageSpan(Drawable d) { super(d); }
+
+        @Override
+        public int getSize(Paint paint, CharSequence text, int start, int end,
+                           Paint.FontMetricsInt fm) {
+            Drawable d = getDrawable();
+            if (fm != null) {
+                Paint.FontMetricsInt pfm = paint.getFontMetricsInt();
+                int center = (pfm.ascent + pfm.descent) / 2;
+                int half = d.getBounds().height() / 2;
+                fm.ascent = center - half;
+                fm.descent = center + half;
+                fm.top = fm.ascent;
+                fm.bottom = fm.descent;
+            }
+            return d.getBounds().right;
+        }
+
+        @Override
+        public void draw(Canvas canvas, CharSequence text, int start, int end,
+                         float x, int top, int y, int bottom, Paint paint) {
+            canvas.save();
+            Drawable d = getDrawable();
+            canvas.translate(x, (top + bottom - d.getBounds().height()) / 2f);
+            d.draw(canvas);
+            canvas.restore();
         }
     }
 }

@@ -14,15 +14,17 @@
         android:id="@+id/contentRoot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:outlineAmbientShadowColor="#FFFFFF"
-        android:outlineSpotShadowColor="#1E0D0D"
+        android:outlineAmbientShadowColor="@color/color_shadow_ambient"
+        android:outlineSpotShadowColor="@color/color_shadow_spot"
         android:paddingBottom="24dp">
 
         <!-- Game Logo -->
         <ImageView
             android:id="@+id/GameLogo"
             android:layout_width="match_parent"
-            android:layout_height="212dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="212dp"
             android:layout_marginTop="12dp"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -56,7 +58,7 @@
             android:scaleType="fitXY"
             android:adjustViewBounds="true"
             android:src="@drawable/ad_preferences_button"
-            android:contentDescription="TODO"
+            android:contentDescription="@string/cd_ad_preferences"
             app:layout_constraintTop_toBottomOf="@id/btnLanguage"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="10dp"
@@ -68,8 +70,10 @@
         <!-- Buttons -->
         <Button
             android:id="@+id/NewsButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
@@ -83,8 +87,10 @@
 
         <Button
             android:id="@+id/ChapterSelectionButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
@@ -98,12 +104,14 @@
 
         <Button
             android:id="@+id/SurvivalModeSelectionButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:text="@string/survival_mode"
             app:layout_constraintTop_toBottomOf="@id/ChapterSelectionButton"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,8 +121,10 @@
 
         <Button
             android:id="@+id/EquipmentTesterButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
@@ -128,8 +138,10 @@
 
         <Button
             android:id="@+id/LevelViewerButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
@@ -143,8 +155,10 @@
 
         <Button
             android:id="@+id/AchievementButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
@@ -158,8 +172,10 @@
 
         <Button
             android:id="@+id/ItemsButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
@@ -173,8 +189,10 @@
 
         <Button
             android:id="@+id/EnemiesButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
@@ -188,8 +206,10 @@
 
         <Button
             android:id="@+id/SkinsButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"
@@ -203,8 +223,10 @@
 
         <Button
             android:id="@+id/AboutButton"
-            android:layout_width="320dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:shadowColor="@color/black"
             android:shadowRadius="30"

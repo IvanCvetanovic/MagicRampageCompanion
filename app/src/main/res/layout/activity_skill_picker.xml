@@ -451,7 +451,7 @@
                     android:layout_width="40dp"
                     android:layout_height="66dp"
                     android:layout_gravity="center_vertical"
-                    android:contentDescription="TODO"
+                    android:importantForAccessibility="no"
                     app:srcCompat="@drawable/root1"
                     tools:ignore="ContentDescription,HardcodedText" />
 
@@ -516,7 +516,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         android:scaleType="centerInside"
                         android:src="@drawable/emoji_checkmark"
                         android:visibility="gone"
@@ -554,7 +554,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         android:scaleType="centerInside"
                         android:src="@drawable/emoji_checkmark"
                         android:visibility="gone"
@@ -985,7 +985,7 @@
                     android:layout_width="40dp"
                     android:layout_height="66dp"
                     android:layout_gravity="center_vertical"
-                    android:contentDescription="TODO"
+                    android:importantForAccessibility="no"
                     tools:ignore="ContentDescription,HardcodedText"
                     app:srcCompat="@drawable/root1" />
 
@@ -999,7 +999,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         tools:ignore="ContentDescription,HardcodedText"
                         app:srcCompat="@drawable/skill_arcane_discipline" />
                     <TextView
@@ -1026,7 +1026,7 @@
                     android:layout_width="40dp"
                     android:layout_height="66dp"
                     android:layout_gravity="center_vertical"
-                    android:contentDescription="TODO"
+                    android:importantForAccessibility="no"
                     app:srcCompat="@drawable/root2"
                     tools:ignore="ContentDescription,HardcodedText" />
 
@@ -1040,7 +1040,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         tools:ignore="ContentDescription,HardcodedText"
                         app:srcCompat="@drawable/skill_swift_cast" />
                     <TextView
@@ -1067,7 +1067,7 @@
                     android:layout_width="40dp"
                     android:layout_height="66dp"
                     android:layout_gravity="center_vertical"
-                    android:contentDescription="TODO"
+                    android:importantForAccessibility="no"
                     app:srcCompat="@drawable/root3"
                     tools:ignore="ContentDescription,HardcodedText" />
 
@@ -1081,7 +1081,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         tools:ignore="ContentDescription,HardcodedText"
                         app:srcCompat="@drawable/skill_airborne_dancer" />
                     <TextView
@@ -1098,7 +1098,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         tools:ignore="ContentDescription,HardcodedText"
                         android:scaleType="centerInside"
                         android:src="@drawable/emoji_checkmark"
@@ -1528,7 +1528,7 @@
                     android:layout_width="40dp"
                     android:layout_height="66dp"
                     android:layout_gravity="center_vertical"
-                    android:contentDescription="TODO"
+                    android:importantForAccessibility="no"
                     app:srcCompat="@drawable/root1"
                     tools:ignore="ContentDescription,HardcodedText" />
 
@@ -1542,7 +1542,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         app:srcCompat="@drawable/skill_seismic_reach"
                         tools:ignore="ContentDescription,HardcodedText"/>
                     <TextView
@@ -1559,7 +1559,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         android:scaleType="centerInside"
                         tools:ignore="ContentDescription,HardcodedText"
                         android:src="@drawable/emoji_checkmark"
@@ -1570,7 +1570,7 @@
                     android:layout_width="40dp"
                     android:layout_height="66dp"
                     android:layout_gravity="center_vertical"
-                    android:contentDescription="TODO"
+                    android:importantForAccessibility="no"
                     tools:ignore="ContentDescription,HardcodedText"
                     app:srcCompat="@drawable/root2" />
 
@@ -1584,7 +1584,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         tools:ignore="ContentDescription,HardcodedText"
                         app:srcCompat="@drawable/skill_titans_push" />
                     <TextView
@@ -1601,7 +1601,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         android:scaleType="centerInside"
                         android:src="@drawable/emoji_checkmark"
                         tools:ignore="ContentDescription,HardcodedText"
@@ -1612,7 +1612,7 @@
                     android:layout_width="40dp"
                     android:layout_height="66dp"
                     android:layout_gravity="center_vertical"
-                    android:contentDescription="TODO"
+                    android:importantForAccessibility="no"
                     app:srcCompat="@drawable/root3"
                     tools:ignore="ContentDescription,HardcodedText"/>
 
@@ -1626,7 +1626,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="TODO"
+                        android:importantForAccessibility="no"
                         tools:ignore="ContentDescription,HardcodedText"
                         app:srcCompat="@drawable/skill_shockwave_force" />
                     <TextView
@@ -1644,7 +1644,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="top|end"
-                        android:contentDescription="TODO" android:scaleType="centerInside"
+                        android:importantForAccessibility="no" android:scaleType="centerInside"
                         android:src="@drawable/emoji_checkmark"
                         android:visibility="gone"
                         tools:ignore="ContentDescription,HardcodedText"/>
