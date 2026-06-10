@@ -1,18 +1,15 @@
 package xyz.magicrampagecompanion.ui.items;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.RawRes;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import java.util.Locale;
 import androidx.appcompat.app.AlertDialog;
 import xyz.magicrampagecompanion.enums.Elements;
 import xyz.magicrampagecompanion.enums.WeaponTypes;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -46,21 +43,9 @@ import xyz.magicrampagecompanion.data.models.CharacterClass;
 import xyz.magicrampagecompanion.data.models.Elixir;
 import xyz.magicrampagecompanion.data.models.Ring;
 import xyz.magicrampagecompanion.data.models.Weapon;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class ItemSelection extends AppCompatActivity {
-
-    // --- Audio ---
-    private SoundPool soundPool;
-    private int sfxClickId = 0;      // top tab click
-    private int sfxBagId = 0;        // armor/ring/class pick
-    private int sfxWeaponId = 0;     // weapon pick
-    private int sfxPotionId = 0;     // elixir pick
-
-    private boolean sfxClickLoaded = false;
-    private boolean sfxBagLoaded = false;
-    private boolean sfxWeaponLoaded = false;
-    private boolean sfxPotionLoaded = false;
+public class ItemSelection extends BaseActivity {
 
     // --- UI ---
     private RecyclerView recyclerView;
@@ -71,7 +56,7 @@ public class ItemSelection extends AppCompatActivity {
     // --- Data for current list ---
     private List<?> currentFullList = new ArrayList<>();
     private String currentReturnKey = "";  // "selectedWeapon", "selectedArmor", etc.
-    private int currentPickSoundId = 0;
+    @RawRes private int currentPickSoundRes = 0;
 
     // --- Weapon tab highlighting ---
     private Button currentSelectedTab = null;
@@ -82,8 +67,6 @@ public class ItemSelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_item_selection);
-
-        initSoundPoolIfNeeded();
 
         recyclerView = findViewById(R.id.recyclerView1);
         recyclerView.setHasFixedSize(true);
@@ -128,32 +111,32 @@ public class ItemSelection extends AppCompatActivity {
         if (buttonAll != null) {
             buttonAll.setOnClickListener(v -> {
                 selectTab((Button) v);
-                showList(getAllWeapons(), "selectedWeapon", sfxWeaponId);
+                showList(getAllWeapons(), "selectedWeapon", R.raw.projectile_heavy_blade_withdraw);
             });
         }
         buttonSwords.setOnClickListener(v -> {
             selectTab((Button) v);
-            showList(ItemData.swordList, "selectedWeapon", sfxWeaponId);
+            showList(ItemData.swordList, "selectedWeapon", R.raw.projectile_heavy_blade_withdraw);
         });
         buttonStaffs.setOnClickListener(v -> {
             selectTab((Button) v);
-            showList(ItemData.staffList, "selectedWeapon", sfxWeaponId);
+            showList(ItemData.staffList, "selectedWeapon", R.raw.projectile_heavy_blade_withdraw);
         });
         buttonDaggers.setOnClickListener(v -> {
             selectTab((Button) v);
-            showList(ItemData.daggerList, "selectedWeapon", sfxWeaponId);
+            showList(ItemData.daggerList, "selectedWeapon", R.raw.projectile_heavy_blade_withdraw);
         });
         buttonAxes.setOnClickListener(v -> {
             selectTab((Button) v);
-            showList(ItemData.axeList, "selectedWeapon", sfxWeaponId);
+            showList(ItemData.axeList, "selectedWeapon", R.raw.projectile_heavy_blade_withdraw);
         });
         buttonSpears.setOnClickListener(v -> {
             selectTab((Button) v);
-            showList(ItemData.spearList, "selectedWeapon", sfxWeaponId);
+            showList(ItemData.spearList, "selectedWeapon", R.raw.projectile_heavy_blade_withdraw);
         });
         buttonHammers.setOnClickListener(v -> {
             selectTab((Button) v);
-            showList(ItemData.hammerList, "selectedWeapon", sfxWeaponId);
+            showList(ItemData.hammerList, "selectedWeapon", R.raw.projectile_heavy_blade_withdraw);
         });
 
         // --- Initial load depending on entry point ---
@@ -161,32 +144,32 @@ public class ItemSelection extends AppCompatActivity {
             Log.d("ItemSelection", "Armor picker");
             buttonsScrollView.setVisibility(View.GONE);
             selectTab(null); // clear any prior selection state
-            showList(ItemData.armorList, "selectedArmor", sfxBagId);
+            showList(ItemData.armorList, "selectedArmor", R.raw.bag);
 
         } else if (buttonId == 2) { // Ring picker (no weapon tabs)
             Log.d("ItemSelection", "Ring picker");
             buttonsScrollView.setVisibility(View.GONE);
             selectTab(null);
-            showList(ItemData.ringList, "selectedRing", sfxBagId);
+            showList(ItemData.ringList, "selectedRing", R.raw.bag);
 
         } else if (buttonId == 3) { // Weapon picker (show tabs, default to ALL)
             Log.d("ItemSelection", "Weapon picker");
             buttonsScrollView.setVisibility(View.VISIBLE);
             selectTab(buttonAll);
-            showList(getAllWeapons(), "selectedWeapon", sfxWeaponId);
+            showList(getAllWeapons(), "selectedWeapon", R.raw.projectile_heavy_blade_withdraw);
             buttonsScrollView.post(() -> buttonsScrollView.smoothScrollTo(0, 0));
 
         } else if (buttonId == 4) { // Class picker (no weapon tabs)
             Log.d("ItemSelection", "Class picker");
             buttonsScrollView.setVisibility(View.GONE);
             selectTab(null);
-            showList(ItemData.classList, "selectedClass", sfxBagId);
+            showList(ItemData.classList, "selectedClass", R.raw.bag);
 
         } else if (buttonId == 6) { // Elixir picker (no weapon tabs)
             Log.d("ItemSelection", "Elixir picker");
             buttonsScrollView.setVisibility(View.GONE);
             selectTab(null);
-            showList(ItemData.elixirList, "selectedElixir", sfxPotionId);
+            showList(ItemData.elixirList, "selectedElixir", R.raw.potion);
 
         } else {
             // Fallback: hide tabs, empty list
@@ -215,32 +198,27 @@ public class ItemSelection extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        // Defer init so first frame draws before audio setup
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
+    protected void initSfx() {
+        super.initSfx();
+        // Pick sounds vary by item category
+        sfx.init(this, R.raw.bag, R.raw.projectile_heavy_blade_withdraw, R.raw.potion);
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        // keep SoundPool alive during transition so click is audible
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releaseSoundPool();
+    protected boolean releaseSfxOnStop() {
+        // Keep the pool alive during the closing transition so the pick sound
+        // is audible; BaseActivity releases it in onDestroy.
+        return false;
     }
 
     // --- Show list & re-apply current search ---
-    private void showList(List<?> list, String returnKey, int soundId) {
+    private void showList(List<?> list, String returnKey, @RawRes int pickSoundRes) {
         // Only play click if we're actually switching tabs in the weapons view
-        if (buttonsScrollView.getVisibility() == View.VISIBLE) playTopTabClick();
+        if (buttonsScrollView.getVisibility() == View.VISIBLE) playClick();
 
         currentFullList = (list != null) ? list : new ArrayList<>();
         currentReturnKey = returnKey;
-        currentPickSoundId = soundId;
+        currentPickSoundRes = pickSoundRes;
 
         applyFilter(searchEdit.getText() != null ? searchEdit.getText().toString() : "");
         ViewCompat.requestApplyInsets(findViewById(R.id.main));
@@ -261,7 +239,7 @@ public class ItemSelection extends AppCompatActivity {
 
         ImageAdapter adapter = new ImageAdapter(filtered, (view, position) -> {
             Object selected = filtered.get(position);
-            playSfx(currentPickSoundId);
+            if (currentPickSoundRes != 0) sfx.play(currentPickSoundRes);
             returnResult(currentReturnKey, selected);
         }, (view, position) -> showItemStatsPopup(filtered.get(position)));
         recyclerView.setAdapter(adapter);
@@ -339,58 +317,6 @@ public class ItemSelection extends AppCompatActivity {
         });
 
         ViewCompat.requestApplyInsets(root);
-    }
-
-    // --- Audio ---
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status != 0) return;
-            if (sampleId == sfxClickId)  sfxClickLoaded  = true;
-            if (sampleId == sfxBagId)    sfxBagLoaded    = true;
-            if (sampleId == sfxWeaponId) sfxWeaponLoaded = true;
-            if (sampleId == sfxPotionId) sfxPotionLoaded = true;
-        });
-
-        // Preload the SFX you use in this screen
-        sfxClickId  = soundPool.load(this, R.raw.click, 1);
-        sfxBagId    = soundPool.load(this, R.raw.bag, 1);
-        sfxWeaponId = soundPool.load(this, R.raw.projectile_heavy_blade_withdraw, 1);
-        sfxPotionId = soundPool.load(this, R.raw.potion, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            sfxClickLoaded = sfxBagLoaded = sfxWeaponLoaded = sfxPotionLoaded = false;
-            sfxClickId = sfxBagId = sfxWeaponId = sfxPotionId = 0;
-        }
-    }
-
-    private void playTopTabClick() {
-        playSfx(sfxClickId);
-    }
-
-    private void playSfx(int soundId) {
-        if (soundPool == null || soundId == 0) return;
-        boolean loaded =
-                (soundId == sfxClickId  && sfxClickLoaded) ||
-                        (soundId == sfxBagId    && sfxBagLoaded)   ||
-                        (soundId == sfxWeaponId && sfxWeaponLoaded)||
-                        (soundId == sfxPotionId && sfxPotionLoaded);
-        if (loaded) {
-            soundPool.play(soundId, 0.25f, 0.25f, 1, 0, 1.0f);
-        }
     }
 
     // --- Long-press stats popup ---
@@ -642,8 +568,4 @@ public class ItemSelection extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
-    }
 }

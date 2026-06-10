@@ -19,10 +19,27 @@ public class RewardedAdManager {
 
     private static final String TAG = "RewardedAdManager";
 
-    private final String adUnitId = BuildConfig.realAPIKeyEquipmentTester;
+    private final String adUnitId;
 
     private RewardedAd rewardedAd;
     private boolean isLoading = false;
+
+    private RewardedAdManager(String adUnitId) {
+        this.adUnitId = adUnitId;
+    }
+
+    // Debug builds must never request production ads (AdMob policy).
+    public static RewardedAdManager forEquipmentTester() {
+        return new RewardedAdManager(BuildConfig.DEBUG
+                ? BuildConfig.testAPIKeyEquipmentTester
+                : BuildConfig.realAPIKeyEquipmentTester);
+    }
+
+    public static RewardedAdManager forLevelViewer() {
+        return new RewardedAdManager(BuildConfig.DEBUG
+                ? BuildConfig.testAPIKeyLevelViewer
+                : BuildConfig.realAPIKeyLevelViewer);
+    }
 
     public void loadAd(Context context) {
         if (isLoading || rewardedAd != null) {

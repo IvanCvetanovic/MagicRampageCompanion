@@ -1,28 +1,17 @@
 package xyz.magicrampagecompanion.ui.survival;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.content.Intent;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 
+import androidx.activity.EdgeToEdge;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import xyz.magicrampagecompanion.R;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class SurvivalModeSelection extends AppCompatActivity {
-
-    private SoundPool soundPool;
-    private int clickSfxId = 0;
-    private boolean clickSfxLoaded = false;
+public class SurvivalModeSelection extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,96 +20,24 @@ public class SurvivalModeSelection extends AppCompatActivity {
         setContentView(R.layout.activity_survival_mode_selection);
 
         // ---- Apply system bar insets (status bar / camera cutout / nav bar) ----
-        // If your XML has dedicated containers, give them these IDs:
-        //   - R.id.survivalScroll (ScrollView or Recycler)
-        //   - R.id.survivalContentRoot (the topmost inner container)
-        // If they don't exist, this helper safely falls back to the root view.
         View scroll = findViewById(R.id.survivalScroll);
         View content = findViewById(R.id.survivalContentRoot);
         applySystemInsets(scroll, content);
 
-        ImageButton survivalButton1 = findViewById(R.id.SurvivalButton1);
-        survivalButton1.setOnClickListener(v -> { openSurvivalDungeon1(); playSound(); });
-
-        ImageButton survivalButton2 = findViewById(R.id.SurvivalButton2);
-        survivalButton2.setOnClickListener(v -> { openSurvivalDungeon2(); playSound(); });
-
-        ImageButton survivalButton3 = findViewById(R.id.SurvivalButton3);
-        survivalButton3.setOnClickListener(v -> { openSurvivalDungeon3(); playSound(); });
-
-        ImageButton survivalButton4 = findViewById(R.id.SurvivalButton4);
-        survivalButton4.setOnClickListener(v -> { openSurvivalDungeon4(); playSound(); });
-
-        ImageButton survivalButton5 = findViewById(R.id.SurvivalButton5);
-        survivalButton5.setOnClickListener(v -> { openSurvivalDungeon5(); playSound(); });
-
-        ImageButton survivalButton6 = findViewById(R.id.SurvivalButton6);
-        survivalButton6.setOnClickListener(v -> { openSurvivalDungeon6(); playSound(); });
+        bindDungeonButton(R.id.SurvivalButton1, R.layout.activity_survival_dungeon1);
+        bindDungeonButton(R.id.SurvivalButton2, R.layout.activity_survival_dungeon2);
+        bindDungeonButton(R.id.SurvivalButton3, R.layout.activity_survival_dungeon3);
+        bindDungeonButton(R.id.SurvivalButton4, R.layout.activity_survival_dungeon4);
+        bindDungeonButton(R.id.SurvivalButton5, R.layout.activity_survival_dungeon5);
+        bindDungeonButton(R.id.SurvivalButton6, R.layout.activity_survival_dungeon6);
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        // Defer init so the first frame can draw before audio setup
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
+    protected int clickSoundRes() {
+        return R.raw.button;
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseSoundPool();
-    }
-
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status == 0 && sampleId == clickSfxId) {
-                clickSfxLoaded = true;
-            }
-        });
-
-        // Use your short click sound resource
-        clickSfxId = soundPool.load(this, R.raw.button, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            clickSfxLoaded = false;
-            clickSfxId = 0;
-        }
-    }
-
-    private void playSound() {
-        if (soundPool != null && clickSfxLoaded) {
-            // Volume 25% on both channels; no loop; normal rate
-            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
-        }
-    }
-
-    public void openSurvivalDungeon1() { startActivity(new Intent(this, SurvivalDungeon1.class)); }
-    public void openSurvivalDungeon2() { startActivity(new Intent(this, SurvivalDungeon2.class)); }
-    public void openSurvivalDungeon3() { startActivity(new Intent(this, SurvivalDungeon3.class)); }
-    public void openSurvivalDungeon4() { startActivity(new Intent(this, SurvivalDungeon4.class)); }
-    public void openSurvivalDungeon5() { startActivity(new Intent(this, SurvivalDungeon5.class)); }
-    public void openSurvivalDungeon6() { startActivity(new Intent(this, SurvivalDungeon6.class)); }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
-    }
-
-    // ---- Edge-to-edge helper (mirrors your MainActivity, with safe fallbacks) ----
+    // ---- Edge-to-edge helper (mirrors MainActivity, with safe fallbacks) ----
     private void applySystemInsets(View scrollViewOrNull, View contentRootOrNull) {
         // Fallbacks if IDs aren’t present
         final View root = findViewById(android.R.id.content);

@@ -2,6 +2,7 @@ package xyz.magicrampagecompanion.core.utils;
 import android.util.Log;
 
 import xyz.magicrampagecompanion.data.models.EquipmentSet;
+import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.data.models.SetStats;
 import xyz.magicrampagecompanion.data.models.Armor;
 import xyz.magicrampagecompanion.data.models.CharacterClass;
@@ -127,13 +128,14 @@ public final class StatsCalculator {
                 }
             }
 
-            // Skill tree bonuses by weapon type
-            if (weapon.getType().equals(WeaponTypes.SWORD)  && skillsSafe(skills, 1))  dmg *= 1.15;
-            if (weapon.getType().equals(WeaponTypes.DAGGER) && skillsSafe(skills, 2))  dmg *= 1.20;
-            if (weapon.getType().equals(WeaponTypes.STAFF)  && skillsSafe(skills, 13)) dmg *= 1.20;
-            if (weapon.getType().equals(WeaponTypes.SPEAR)  && skillsSafe(skills, 14)) dmg *= 1.40;
-            if (weapon.getType().equals(WeaponTypes.HAMMER) && skillsSafe(skills, 25)) dmg *= 1.60;
-            if (weapon.getType().equals(WeaponTypes.AXE)    && skillsSafe(skills, 26)) dmg *= 1.50;
+            // Skill tree bonuses by weapon type (kept in ItemData so LiveStatsSyncer
+            // can update them remotely)
+            if (weapon.getType().equals(WeaponTypes.SWORD)  && skillsSafe(skills, 1))  dmg *= 1 + ItemData.SkillTreeSwordBonus  / 100.0;
+            if (weapon.getType().equals(WeaponTypes.DAGGER) && skillsSafe(skills, 2))  dmg *= 1 + ItemData.SkillTreeDaggerBonus / 100.0;
+            if (weapon.getType().equals(WeaponTypes.STAFF)  && skillsSafe(skills, 13)) dmg *= 1 + ItemData.SkillTreeStaffBonus  / 100.0;
+            if (weapon.getType().equals(WeaponTypes.SPEAR)  && skillsSafe(skills, 14)) dmg *= 1 + ItemData.SkillTreeSpearBonus  / 100.0;
+            if (weapon.getType().equals(WeaponTypes.HAMMER) && skillsSafe(skills, 25)) dmg *= 1 + ItemData.SkillTreeHammerBonus / 100.0;
+            if (weapon.getType().equals(WeaponTypes.AXE)    && skillsSafe(skills, 26)) dmg *= 1 + ItemData.SkillTreeAxeBonus    / 100.0;
 
             // Element synergies
             if (weaponEl == armorEl && weaponEl != Elements.NEUTRAL) dmg *= 1.25;
@@ -248,7 +250,7 @@ public final class StatsCalculator {
 
         double speedPct = (aSpd * wSpd * rSpd) * 100 - 100;
         if (clazz != null) speedPct += clazz.getSpeedBonus();
-        if (skillsSafe(skills, 0)) speedPct += 4;
+        if (skillsSafe(skills, 0)) speedPct += ItemData.SkillTreeSpeedBonus;
         speedPct = (int) (Math.round(speedPct * fx.speedMult) * fx.speedAddPct);
         out.speedPct = (int) speedPct;
 
@@ -258,7 +260,7 @@ public final class StatsCalculator {
         double cJump = (clazz  != null ? clazz.getJumpImpulseBonus() : 0) / 100.0 + 1;
 
         double jump = aJump * rJump * wJump * cJump;
-        if (skillsSafe(skills, 12)) jump += 0.03;
+        if (skillsSafe(skills, 12)) jump += ItemData.SkillTreeJumpBonus / 100.0;
         jump = Math.floor(jump * 100.0) / 100.0;
         jump = jump * 100 - 100;
         jump = Math.round(jump * fx.jumpMult) + fx.jumpAddPct;

@@ -1743,4 +1743,13 @@
     <string name="section_behaviour">Поведінка</string>
     <string name="section_properties">Властивості</string>
     <string name="coming_soon">Незабаром</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="privacy_options_unavailable">Налаштування конфіденційності недоступні: %1$s</string>
+    <string name="ad_consent_not_required">Згода на рекламу не потрібна у вашому регіоні.</string>
+    <string name="no_skill_points_left">У вас не залишилося очок навичок</string>
+    <string name="not_enough_skill_points">Недостатньо очок навичок, щоб розблокувати всі попередні навички.</string>
+    <string name="no_level_file_provided">Файл рівня не вказано</string>
+    <string name="failed_to_load_level">Не вдалося завантажити рівень: %1$s</string>
+    <string name="translation_model_failed">Не вдалося завантажити модель перекладу.</string>
 </resources>

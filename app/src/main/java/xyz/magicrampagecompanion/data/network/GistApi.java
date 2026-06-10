@@ -1,5 +1,7 @@
 package xyz.magicrampagecompanion.data.network;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -12,6 +14,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class GistApi {
+
+    private static final String TAG = "GistApi";
 
     // Represents a single news item
     public static class GistNews {
@@ -39,6 +43,8 @@ public class GistApi {
             URL url = new URL(apiUrl);
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
+            conn.setConnectTimeout(10000);
+            conn.setReadTimeout(15000);
 
             if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 try (BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
@@ -49,8 +55,9 @@ public class GistApi {
                 }
                 return parseCommentsJson(result.toString());
             }
+            Log.w(TAG, "HTTP " + conn.getResponseCode() + " fetching gist comments");
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAG, "Failed to fetch news", e);
         } finally {
             if (conn != null) conn.disconnect();
         }
@@ -72,7 +79,7 @@ public class GistApi {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAG, "Failed to parse news JSON", e);
             return null;
         }
         Collections.reverse(newsList); // Show newest first

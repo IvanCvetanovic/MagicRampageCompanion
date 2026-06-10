@@ -1,7 +1,6 @@
 package xyz.magicrampagecompanion.ui.achievements;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,9 +23,9 @@ import java.util.List;
 import xyz.magicrampagecompanion.data.models.Achievement;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.data.adapters.AchievementsAdapter;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class AchievementsPage extends AppCompatActivity {
+public class AchievementsPage extends BaseActivity {
 
     private List<Achievement> achievements;
     private AchievementsAdapter adapter;
@@ -196,11 +195,6 @@ public class AchievementsPage extends AppCompatActivity {
         for (int i = 0; i < achievements.size(); i++) {
             achievements.get(i).setOriginalIndex(i + 1);
         }
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 
     private void applySystemInsets(View root, EditText search, RecyclerView rv) {

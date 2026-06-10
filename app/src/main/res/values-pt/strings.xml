@@ -1744,4 +1744,13 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="section_behaviour">Comportamento</string>
     <string name="section_properties">Propriedades</string>
     <string name="coming_soon">Em breve</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="privacy_options_unavailable">Opções de privacidade indisponíveis: %1$s</string>
+    <string name="ad_consent_not_required">O consentimento de anúncios não é necessário na sua região.</string>
+    <string name="no_skill_points_left">Você não tem mais pontos de habilidade</string>
+    <string name="not_enough_skill_points">Pontos de habilidade insuficientes para desbloquear todas as habilidades anteriores.</string>
+    <string name="no_level_file_provided">Nenhum arquivo de nível fornecido</string>
+    <string name="failed_to_load_level">Falha ao carregar o nível: %1$s</string>
+    <string name="translation_model_failed">Falha ao baixar o modelo de tradução.</string>
 </resources>

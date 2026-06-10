@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Level names are resolved at runtime via Resources.getIdentifier()
+    (LevelListActivity / LevelViewerActivity), so the resource shrinker
+    must not strip "unused" strings.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@string/*" />

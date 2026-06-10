@@ -1977,4 +1977,14 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="empty_no_levels">No levels available</string>
     <string name="arcane_rod_staff">Arcane Rod Staff</string>
     <string name="coming_soon">Coming Soon</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="app_label" translatable="false">MR: Companion</string>
+    <string name="privacy_options_unavailable">Privacy options unavailable: %1$s</string>
+    <string name="ad_consent_not_required">Ad consent is not required in your region.</string>
+    <string name="no_skill_points_left">You have no skill points left</string>
+    <string name="not_enough_skill_points">Not enough skill points to unlock all previous skills.</string>
+    <string name="no_level_file_provided">No level file provided</string>
+    <string name="failed_to_load_level">Failed to load level: %1$s</string>
+    <string name="translation_model_failed">Failed to download translation model.</string>
 </resources>

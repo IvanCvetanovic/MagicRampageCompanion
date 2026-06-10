@@ -2,15 +2,12 @@ package xyz.magicrampagecompanion.ui.main;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -29,6 +26,7 @@ import com.google.android.ump.UserMessagingPlatform;
 
 import xyz.magicrampagecompanion.core.utils.LocaleHelper;
 import xyz.magicrampagecompanion.ui.achievements.AchievementsPage;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 import xyz.magicrampagecompanion.ui.enemies.Enemies;
 import xyz.magicrampagecompanion.ui.items.EquipmentTester;
 import xyz.magicrampagecompanion.data.models.ItemData;
@@ -41,30 +39,19 @@ import xyz.magicrampagecompanion.ui.chapters.ChapterSelection;
 import xyz.magicrampagecompanion.data.storage.ItemSyncer;
 import xyz.magicrampagecompanion.data.storage.LiveStatsSyncer;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     // ---------------- App prefs ----------------
-    private static final String SKILL_PREFERENCES = "SkillState";
-    private static final String APP_PREFERENCES   = "AppPrefs";
+    private static final String APP_PREFERENCES = "AppPrefs";
 
     // ---------------- Ads prefs (manual toggle) ----------------
     // Users can force non-personalized ads even if UMP would allow personalized.
     private static final String ADS_PREFERENCES = "AdsPrefs";
     private static final String KEY_PERSONALIZED = "ads_personalized"; // default true
 
-    // ---------------- Audio ----------------
-    private SoundPool soundPool;
-    private int clickSfxId = 0;
-    private boolean clickSfxLoaded = false;
-
     // ---------------- UMP ----------------
     private ConsentInformation consentInformation;
 
     private static final String TAG = "ConsentDebug";
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,8 +69,6 @@ public class MainActivity extends AppCompatActivity {
         View content = findViewById(R.id.contentRoot);
         applySystemInsets(scroll, content);
 
-        resetSkills();
-
         // --- Language Button ---
         ImageButton btnLanguage = findViewById(R.id.btnLanguage);
         btnLanguage.setOnClickListener(v -> showLanguageDialog());
@@ -95,82 +80,40 @@ public class MainActivity extends AppCompatActivity {
                        == ConsentInformation.PrivacyOptionsRequirementStatus.REQUIRED) {
                 UserMessagingPlatform.showPrivacyOptionsForm(this, formError -> {
                     if (formError != null) {
-                        Toast.makeText(this, "Privacy options unavailable: " + formError.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this,
+                                getString(R.string.privacy_options_unavailable, formError.getMessage()),
+                                Toast.LENGTH_SHORT).show();
                     }
                 });
             } else {
-                Toast.makeText(this, "Ad consent is not required in your region.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.ad_consent_not_required, Toast.LENGTH_SHORT).show();
             }
         });
 
-        // --- News Button ---
-        Button newsButton = findViewById(R.id.NewsButton);
-        newsButton.setOnClickListener(v -> {
-            openNews();
-            playSound();
-        });
-
-        // --- Existing buttons ---
-        Button chapterSelectionButton = findViewById(R.id.ChapterSelectionButton);
-        chapterSelectionButton.setOnClickListener(v -> {
-            openChapterSelection();
-            playSound();
-        });
-
-        Button survivalModeSelectionButton = findViewById(R.id.SurvivalModeSelectionButton);
-        survivalModeSelectionButton.setOnClickListener(v -> {
-            openSurvivalModeSelection();
-            playSound();
-        });
-
-        Button equipmentTesterButton = findViewById(R.id.EquipmentTesterButton);
-        equipmentTesterButton.setOnClickListener(v -> {
-            openEquipmentTester();
-            playSound();
-        });
-
-        Button levelViewerButton = findViewById(R.id.LevelViewerButton);
-        levelViewerButton.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, LevelListActivity.class));
-            playSound();
-        });
-
-
-        Button achievementsButton = findViewById(R.id.AchievementButton);
-        achievementsButton.setOnClickListener(v -> {
-            openAchievementsSection();
-            playSound();
-        });
-
-        Button itemsButton = findViewById(R.id.ItemsButton);
-        itemsButton.setOnClickListener(v -> {
-            openItemSelection();
-            playSound();
-        });
-
-        Button enemiesButton = findViewById(R.id.EnemiesButton);
-        enemiesButton.setOnClickListener(v -> {
-            openEnemies();
-            playSound();
-        });
-
-        Button skinsButton = findViewById(R.id.SkinsButton);
-        if (skinsButton != null) {
-            skinsButton.setOnClickListener(v -> {
-                openSkins();
-                playSound();
-            });
-        }
-
-        Button aboutButton = findViewById(R.id.AboutButton);
-        aboutButton.setOnClickListener(v -> {
-            openAboutSection();
-            playSound();
-        });
+        // --- Navigation buttons ---
+        bindNavigationButton(R.id.NewsButton, News.class);
+        bindNavigationButton(R.id.ChapterSelectionButton, ChapterSelection.class);
+        bindNavigationButton(R.id.SurvivalModeSelectionButton, SurvivalModeSelection.class);
+        bindNavigationButton(R.id.EquipmentTesterButton, EquipmentTester.class);
+        bindNavigationButton(R.id.LevelViewerButton, LevelListActivity.class);
+        bindNavigationButton(R.id.AchievementButton, AchievementsPage.class);
+        bindNavigationButton(R.id.ItemsButton, Items.class);
+        bindNavigationButton(R.id.EnemiesButton, Enemies.class);
+        bindNavigationButton(R.id.SkinsButton, Skins.class);
+        bindNavigationButton(R.id.AboutButton, About.class);
 
         // ---------------- Ads SDK + UMP ----------------
         // Request/update consent info, show form if required, then initialize MobileAds.
         requestConsentAndMaybeShowForm();
+    }
+
+    private void bindNavigationButton(int buttonId, Class<?> target) {
+        Button button = findViewById(buttonId);
+        if (button == null) return;
+        button.setOnClickListener(v -> {
+            startActivity(new Intent(this, target));
+            playClick();
+        });
     }
 
     // Request consent info on every app start and show form if required.
@@ -222,46 +165,6 @@ public class MainActivity extends AppCompatActivity {
                 ((MyApplication) getApplication()).initializeAds());
     }
 
-    // ---------- Privacy & Ads dialog (no extra XML) ----------
-    private void showPrivacyAndAdsDialog() {
-        Log.d(TAG, "Opening Privacy Options form...");
-        final SharedPreferences prefs = getSharedPreferences(ADS_PREFERENCES, MODE_PRIVATE);
-        final boolean currentPersonalized = prefs.getBoolean(KEY_PERSONALIZED, true);
-
-        final boolean[] temp = new boolean[]{ currentPersonalized }; // single checkbox state
-
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.app_name) + " – Privacy & Ads")
-                // One checkbox row: "Personalized ads"
-                .setMultiChoiceItems(new CharSequence[]{"Personalized ads"}, new boolean[]{ currentPersonalized },
-                        (d, which, isChecked) -> temp[0] = isChecked)
-                // Opens UMP's official Privacy Options screen (only works when required/available).
-                .setNeutralButton("Privacy options…", (d, w) -> {
-                    if (consentInformation != null &&
-                            consentInformation.getPrivacyOptionsRequirementStatus()
-                                    == ConsentInformation.PrivacyOptionsRequirementStatus.REQUIRED) {
-                        UserMessagingPlatform.showPrivacyOptionsForm(
-                                this,
-                                formError -> {
-                                    // Returned after user closes the form (formError may be null/has info).
-                                }
-                        );
-                    } else {
-                        Toast.makeText(this, "Privacy options not required/available on this device.", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .setNegativeButton(android.R.string.cancel, null)
-                .setPositiveButton(android.R.string.ok, (d, w) -> {
-                    prefs.edit().putBoolean(KEY_PERSONALIZED, temp[0]).apply();
-                    Toast.makeText(this,
-                            temp[0] ? "Personalized ads enabled" : "Personalized ads disabled",
-                            Toast.LENGTH_SHORT).show();
-                })
-                .create();
-
-        dialog.show();
-    }
-
     public static AdRequest buildAdRequest(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(ADS_PREFERENCES, MODE_PRIVATE);
         boolean wantsPersonalized = prefs.getBoolean(KEY_PERSONALIZED, true);
@@ -275,51 +178,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return builder.build();
-    }
-
-    // ---------------- Existing code below ----------------
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        // Defer init so the first frame can draw before audio setup
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseSoundPool();
-    }
-
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status == 0 && sampleId == clickSfxId) {
-                clickSfxLoaded = true;
-            }
-        });
-
-        // Load click sound
-        clickSfxId = soundPool.load(this, R.raw.click, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            clickSfxLoaded = false;
-            clickSfxId = 0;
-        }
     }
 
     private void showLanguageDialog() {
@@ -347,32 +205,6 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
-    }
-
-    private void resetSkills() {
-        SharedPreferences preferences = getSharedPreferences(SKILL_PREFERENCES, MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        for (int i = 0; i < 27; i++) {
-            editor.putBoolean("skillsPicked_" + i, false);
-        }
-        editor.apply();
-    }
-
-    // --- Navigation methods ---
-    public void openNews() { startActivity(new Intent(this, News.class)); }
-    public void openChapterSelection() { startActivity(new Intent(this, ChapterSelection.class)); }
-    public void openSurvivalModeSelection() { startActivity(new Intent(this, SurvivalModeSelection.class)); }
-    public void openEquipmentTester() { startActivity(new Intent(this, EquipmentTester.class)); }
-    public void openAboutSection() { startActivity(new Intent(this, About.class)); }
-    public void openAchievementsSection() { startActivity(new Intent(this, AchievementsPage.class)); }
-    public void openItemSelection() { startActivity(new Intent(this, Items.class)); }
-    public void openEnemies() { startActivity(new Intent(this, Enemies.class)); }
-    public void openSkins() { startActivity(new Intent(this, Skins.class)); } // NEW
-
-    private void playSound() {
-        if (soundPool != null && clickSfxLoaded) {
-            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
-        }
     }
 
     // ---- Edge-to-edge helper (status+nav bar insets) ----
@@ -407,11 +239,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ViewCompat.requestApplyInsets(findViewById(android.R.id.content));
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releaseSoundPool();
     }
 }

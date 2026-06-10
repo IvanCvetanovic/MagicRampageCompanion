@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.ProcessLifecycleOwner;
-import androidx.multidex.MultiDexApplication; // Import the correct Application class
 
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.FullScreenContentCallback;
@@ -21,8 +20,8 @@ import java.util.Date;
 
 import xyz.magicrampagecompanion.BuildConfig;
 
-// Change "Application" to "MultiDexApplication" to enable Multidex
-public class MyApplication extends MultiDexApplication implements Application.ActivityLifecycleCallbacks {
+// minSdk 28 uses native multidex, so a plain Application is enough.
+public class MyApplication extends Application implements Application.ActivityLifecycleCallbacks {
 
     private AppOpenAdManager appOpenAdManager;
     private Activity currentActivity;
@@ -47,7 +46,9 @@ public class MyApplication extends MultiDexApplication implements Application.Ac
 
     protected void onMoveToForeground() {
         // Show the ad (if available) when the app moves to foreground.
-        appOpenAdManager.showAdIfAvailable(currentActivity);
+        if (currentActivity != null) {
+            appOpenAdManager.showAdIfAvailable(currentActivity);
+        }
     }
 
     @Override
@@ -73,12 +74,18 @@ public class MyApplication extends MultiDexApplication implements Application.Ac
     public void onActivitySaveInstanceState(@NonNull Activity activity, @NonNull Bundle outState) {}
 
     @Override
-    public void onActivityDestroyed(@NonNull Activity activity) {}
+    public void onActivityDestroyed(@NonNull Activity activity) {
+        if (currentActivity == activity) {
+            currentActivity = null;
+        }
+    }
 
 
     private class AppOpenAdManager {
         private static final String LOG_TAG = "AppOpenAdManager";
-        private static final String AD_UNIT_ID = BuildConfig.realAPIKey;
+        // Debug builds must never request production ads (AdMob policy).
+        private static final String AD_UNIT_ID =
+                BuildConfig.DEBUG ? BuildConfig.testAPIKey : BuildConfig.realAPIKey;
 
         private AppOpenAd appOpenAd = null;
         private boolean isLoadingAd = false;

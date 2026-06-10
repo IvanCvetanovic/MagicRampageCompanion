@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import xyz.magicrampagecompanion.data.models.ItemData;
@@ -29,6 +30,8 @@ import xyz.magicrampagecompanion.enums.Elements;
 public class ItemSyncer {
     private static final String TAG = "ItemSyncer";
 
+    private static final ExecutorService EXEC = Executors.newSingleThreadExecutor();
+
     private static final HashSet<String> IGNORE_JSON_NAMES = new HashSet<String>() {{
         add("clockwork soldier");
         add("nutcracker guard");
@@ -40,7 +43,7 @@ public class ItemSyncer {
             "https://gist.githubusercontent.com/andresan87/5670c559e5a930129aa03dfce7827306/raw/items.json";
 
     public static void run(Context context) {
-        Executors.newSingleThreadExecutor().execute(() -> {
+        EXEC.execute(() -> {
             try {
                 HttpURLConnection conn = (HttpURLConnection) new URL(JSON_URL).openConnection();
                 conn.setRequestMethod("GET");
@@ -74,57 +77,7 @@ public class ItemSyncer {
                     }
                 }
 
-                // ===== CHECK: JSON items not present locally =====
-                HashSet<String> localNames = new HashSet<>();
-
-                collectNames(localNames, ItemData.swordList);
-                collectNames(localNames, ItemData.daggerList);
-                collectNames(localNames, ItemData.axeList);
-                collectNames(localNames, ItemData.spearList);
-                collectNames(localNames, ItemData.hammerList);
-                collectNames(localNames, ItemData.staffList);
-                collectNames(localNames, ItemData.armorList);
-                collectNames(localNames, ItemData.ringList);
-
-                int missingCount = 0;
-
-                for (int i = 0; i < arr.length(); i++) {
-                    JSONObject o = arr.getJSONObject(i);
-
-                    // 🔹 Ignore supply type items
-                    String type = optStr(o, "type");
-                    if (type != null && type.equalsIgnoreCase("supply")) {
-                        continue;
-                    }
-
-                    String name   = optStr(o, "name");
-                    String nameEn = optStr(o, "name_en");
-
-                    String nameLower   = name != null ? safeLower(name) : null;
-                    String nameEnLower = nameEn != null ? safeLower(nameEn) : null;
-
-                    if ((nameLower != null && IGNORE_JSON_NAMES.contains(nameLower)) ||
-                            (nameEnLower != null && IGNORE_JSON_NAMES.contains(nameEnLower))) {
-                        continue;
-                    }
-
-                    boolean exists = false;
-
-                    if (name != null && localNames.contains(safeLower(name))) {
-                        exists = true;
-                    }
-
-                    if (!exists && nameEn != null && localNames.contains(safeLower(nameEn))) {
-                        exists = true;
-                    }
-
-                    if (!exists) {
-                        Log.w(TAG, "JSON item not found locally: name=" + name + " | name_en=" + nameEn);
-                        missingCount++;
-                    }
-                }
-
-                Log.i(TAG, "JSON-only items (not in app): " + missingCount);
+                logJsonOnlyItems(arr);
 
                 List<Runnable> mutations = new ArrayList<>();
                 int updatedWeapons = 0;
@@ -149,6 +102,88 @@ public class ItemSyncer {
         });
     }
 
+    // ===== CHECK: JSON items not present locally =====
+    private static void logJsonOnlyItems(JSONArray arr) throws Exception {
+        HashSet<String> localNames = new HashSet<>();
+
+        collectNames(localNames, ItemData.swordList);
+        collectNames(localNames, ItemData.daggerList);
+        collectNames(localNames, ItemData.axeList);
+        collectNames(localNames, ItemData.spearList);
+        collectNames(localNames, ItemData.hammerList);
+        collectNames(localNames, ItemData.staffList);
+        collectNames(localNames, ItemData.armorList);
+        collectNames(localNames, ItemData.ringList);
+
+        int missingCount = 0;
+
+        for (int i = 0; i < arr.length(); i++) {
+            JSONObject o = arr.getJSONObject(i);
+
+            // Ignore supply type items
+            String type = optStr(o, "type");
+            if (type != null && type.equalsIgnoreCase("supply")) {
+                continue;
+            }
+
+            String name   = optStr(o, "name");
+            String nameEn = optStr(o, "name_en");
+
+            String nameLower   = name != null ? safeLower(name) : null;
+            String nameEnLower = nameEn != null ? safeLower(nameEn) : null;
+
+            if ((nameLower != null && IGNORE_JSON_NAMES.contains(nameLower)) ||
+                    (nameEnLower != null && IGNORE_JSON_NAMES.contains(nameEnLower))) {
+                continue;
+            }
+
+            boolean exists = (name != null && localNames.contains(safeLower(name)))
+                    || (nameEn != null && localNames.contains(safeLower(nameEn)));
+
+            if (!exists) {
+                Log.w(TAG, "JSON item not found locally: name=" + name + " | name_en=" + nameEn);
+                missingCount++;
+            }
+        }
+
+        Log.i(TAG, "JSON-only items (not in app): " + missingCount);
+    }
+
+    /** The six price fields shared by weapons, armors, and rings. */
+    private static final class Prices {
+        final int newFG, newPG, newFC, newPC, newSF, newSP;
+        private final int oldFG, oldPG, oldFC, oldPC, oldSF, oldSP;
+
+        Prices(JsonItem ji, int oldFG, int oldPG, int oldFC, int oldPC, int oldSF, int oldSP) {
+            this.oldFG = oldFG;
+            this.oldPG = oldPG;
+            this.oldFC = oldFC;
+            this.oldPC = oldPC;
+            this.oldSF = oldSF;
+            this.oldSP = oldSP;
+            newFG = ji.freemiumGoldPrice     != null ? ji.freemiumGoldPrice     : oldFG;
+            newPG = ji.premiumGoldPrice      != null ? ji.premiumGoldPrice      : oldPG;
+            newFC = ji.freemiumCoinPrice     != null ? ji.freemiumCoinPrice     : oldFC;
+            newPC = ji.premiumCoinPrice      != null ? ji.premiumCoinPrice      : oldPC;
+            newSF = ji.baseFreemiumSellPrice != null ? ji.baseFreemiumSellPrice : oldSF;
+            newSP = ji.basePremiumSellPrice  != null ? ji.basePremiumSellPrice  : oldSP;
+        }
+
+        boolean unchanged() {
+            return newFG == oldFG && newPG == oldPG && newFC == oldFC
+                    && newPC == oldPC && newSF == oldSF && newSP == oldSP;
+        }
+
+        void logDiffs(String itemName) {
+            logDiff(itemName, "freemiumGoldPrice", oldFG, newFG);
+            logDiff(itemName, "premiumGoldPrice",  oldPG, newPG);
+            logDiff(itemName, "freemiumCoinPrice", oldFC, newFC);
+            logDiff(itemName, "premiumCoinPrice",  oldPC, newPC);
+            logDiff(itemName, "baseFreemiumSellPrice", oldSF, newSF);
+            logDiff(itemName, "basePremiumSellPrice",  oldSP, newSP);
+        }
+    }
+
     // ===================
     // Weapons full update
     // ===================
@@ -162,12 +197,10 @@ public class ItemSyncer {
                 continue;
             }
 
-            int newFG = (ji.freemiumGoldPrice     != null) ? ji.freemiumGoldPrice     : old.getFreemiumGoldPrice();
-            int newPG = (ji.premiumGoldPrice      != null) ? ji.premiumGoldPrice      : old.getPremiumGoldPrice();
-            int newFC = (ji.freemiumCoinPrice     != null) ? ji.freemiumCoinPrice     : old.getFreemiumCoinPrice();
-            int newPC = (ji.premiumCoinPrice      != null) ? ji.premiumCoinPrice      : old.getPremiumCoinPrice();
-            int newSF = (ji.baseFreemiumSellPrice != null) ? ji.baseFreemiumSellPrice : old.getBaseFreemiumSellPrice();
-            int newSP = (ji.basePremiumSellPrice  != null) ? ji.basePremiumSellPrice  : old.getBasePremiumSellPrice();
+            Prices prices = new Prices(ji,
+                    old.getFreemiumGoldPrice(), old.getPremiumGoldPrice(),
+                    old.getFreemiumCoinPrice(), old.getPremiumCoinPrice(),
+                    old.getBaseFreemiumSellPrice(), old.getBasePremiumSellPrice());
 
             Elements element   = mapElement(ji.element, old.getElement());
             int upgrades       = protectUpgrade(old.getUpgrades(), ji.maxLevelAllowed);
@@ -198,13 +231,8 @@ public class ItemSyncer {
                             frost == old.isFrost() &&
                             speedPct == old.getSpeed() &&
                             jumpPct == old.getJump() &&
-                            (int)armorBonus == (int)old.getArmorBonus()
-                            && newFG == old.getFreemiumGoldPrice()
-                            && newPG == old.getPremiumGoldPrice()
-                            && newFC == old.getFreemiumCoinPrice()
-                            && newPC == old.getPremiumCoinPrice()
-                            && newSF == old.getBaseFreemiumSellPrice()
-                            && newSP == old.getBasePremiumSellPrice();;
+                            (int) armorBonus == (int) old.getArmorBonus() &&
+                            prices.unchanged();
 
             if (same) continue;
 
@@ -225,21 +253,14 @@ public class ItemSyncer {
                     projPers,
                     poisonous,
                     frost,
-                    newFG,
-                    newPG,
-                    newFC,
-                    newPC,
-                    newSF,
-                    newSP,
+                    prices.newFG,
+                    prices.newPG,
+                    prices.newFC,
+                    prices.newPC,
+                    prices.newSF,
+                    prices.newSP,
                     old.getObtainability()
             );
-
-            updatedW.setFreemiumGoldPrice(newFG);
-            updatedW.setPremiumGoldPrice(newPG);
-            updatedW.setFreemiumCoinPrice(newFC);
-            updatedW.setPremiumCoinPrice(newPC);
-            updatedW.setBaseFreemiumSellPrice(newSF);
-            updatedW.setBasePremiumSellPrice(newSP);
 
             Log.i(TAG, "Updated weapon: " + old.getName());
             logDiff(old.getName(), "element", old.getElement(), element);
@@ -255,12 +276,7 @@ public class ItemSyncer {
             logDiff(old.getName(), "speed", old.getSpeed(), speedPct);
             logDiff(old.getName(), "jump", old.getJump(), jumpPct);
             logDiff(old.getName(), "armorBonus", old.getArmorBonus(), armorBonus);
-            logDiff(old.getName(), "freemiumGoldPrice", old.getFreemiumGoldPrice(), newFG);
-            logDiff(old.getName(), "premiumGoldPrice",  old.getPremiumGoldPrice(),  newPG);
-            logDiff(old.getName(), "freemiumCoinPrice", old.getFreemiumCoinPrice(), newFC);
-            logDiff(old.getName(), "premiumCoinPrice",  old.getPremiumCoinPrice(),  newPC);
-            logDiff(old.getName(), "baseFreemiumSellPrice", old.getBaseFreemiumSellPrice(), newSF);
-            logDiff(old.getName(), "basePremiumSellPrice",  old.getBasePremiumSellPrice(),  newSP);
+            prices.logDiffs(old.getName());
 
             final int finalI = i;
             mutations.add(() -> list.set(finalI, updatedW));
@@ -268,6 +284,7 @@ public class ItemSyncer {
         }
         return updated;
     }
+
     // ==================
     // Armors full update
     // ==================
@@ -281,12 +298,10 @@ public class ItemSyncer {
                 continue;
             }
 
-            int newFG = (ji.freemiumGoldPrice     != null) ? ji.freemiumGoldPrice     : old.getFreemiumGoldPrice();
-            int newPG = (ji.premiumGoldPrice      != null) ? ji.premiumGoldPrice      : old.getPremiumGoldPrice();
-            int newFC = (ji.freemiumCoinPrice     != null) ? ji.freemiumCoinPrice     : old.getFreemiumCoinPrice();
-            int newPC = (ji.premiumCoinPrice      != null) ? ji.premiumCoinPrice      : old.getPremiumCoinPrice();
-            int newSF = (ji.baseFreemiumSellPrice != null) ? ji.baseFreemiumSellPrice : old.getBaseFreemiumSellPrice();
-            int newSP = (ji.basePremiumSellPrice  != null) ? ji.basePremiumSellPrice  : old.getBasePremiumSellPrice();
+            Prices prices = new Prices(ji,
+                    old.getFreemiumGoldPrice(), old.getPremiumGoldPrice(),
+                    old.getFreemiumCoinPrice(), old.getPremiumCoinPrice(),
+                    old.getBaseFreemiumSellPrice(), old.getBasePremiumSellPrice());
 
             Elements element   = mapElement(ji.element, old.getElement());
             boolean frostImm   = ji.frost != null ? ji.frost : old.isFrostImmune();
@@ -297,13 +312,13 @@ public class ItemSyncer {
 
             int speedPct       = pctInt(ji.speedBoost, old.getSpeed());
             int jumpPct        = pctInt(ji.jumpBoost,  old.getJump());
-            int magicPct       = pctInt(ji.magicBoost, (int)old.getMagic());
-            int swordPct       = pctInt(ji.swordBoost, (int)old.getSword());
-            int staffPct       = pctInt(ji.staffBoost, (int)old.getStaff());
-            int daggerPct      = pctInt(ji.daggerBoost,(int)old.getDagger());
-            int axePct         = pctInt(ji.axeBoost,   (int)old.getAxe());
-            int hammerPct      = pctInt(ji.hammerBoost,(int)old.getHammer());
-            int spearPct       = pctInt(ji.spearBoost, (int)old.getSpear());
+            int magicPct       = pctInt(ji.magicBoost, (int) old.getMagic());
+            int swordPct       = pctInt(ji.swordBoost, (int) old.getSword());
+            int staffPct       = pctInt(ji.staffBoost, (int) old.getStaff());
+            int daggerPct      = pctInt(ji.daggerBoost,(int) old.getDagger());
+            int axePct         = pctInt(ji.axeBoost,   (int) old.getAxe());
+            int hammerPct      = pctInt(ji.hammerBoost,(int) old.getHammer());
+            int spearPct       = pctInt(ji.spearBoost, (int) old.getSpear());
 
             boolean same =
                     element == old.getElement() &&
@@ -313,19 +328,14 @@ public class ItemSyncer {
                             maxArmor == old.getMaxArmor() &&
                             speedPct == old.getSpeed() &&
                             jumpPct == old.getJump() &&
-                            magicPct == (int)old.getMagic() &&
-                            swordPct == (int)old.getSword() &&
-                            staffPct == (int)old.getStaff() &&
-                            daggerPct == (int)old.getDagger() &&
-                            axePct == (int)old.getAxe() &&
-                            hammerPct == (int)old.getHammer() &&
-                            spearPct == (int)old.getSpear()
-                            && newFG == old.getFreemiumGoldPrice()
-                            && newPG == old.getPremiumGoldPrice()
-                            && newFC == old.getFreemiumCoinPrice()
-                            && newPC == old.getPremiumCoinPrice()
-                            && newSF == old.getBaseFreemiumSellPrice()
-                            && newSP == old.getBasePremiumSellPrice();
+                            magicPct == (int) old.getMagic() &&
+                            swordPct == (int) old.getSword() &&
+                            staffPct == (int) old.getStaff() &&
+                            daggerPct == (int) old.getDagger() &&
+                            axePct == (int) old.getAxe() &&
+                            hammerPct == (int) old.getHammer() &&
+                            spearPct == (int) old.getSpear() &&
+                            prices.unchanged();
 
             if (same) continue;
 
@@ -346,21 +356,14 @@ public class ItemSyncer {
                     hammerPct,
                     spearPct,
                     old.getImageResId(),
-                    newFG,
-                    newPG,
-                    newFC,
-                    newPC,
-                    newSF,
-                    newSP,
+                    prices.newFG,
+                    prices.newPG,
+                    prices.newFC,
+                    prices.newPC,
+                    prices.newSF,
+                    prices.newSP,
                     old.getObtainability()
             );
-
-            updatedA.setFreemiumGoldPrice(newFG);
-            updatedA.setPremiumGoldPrice(newPG);
-            updatedA.setFreemiumCoinPrice(newFC);
-            updatedA.setPremiumCoinPrice(newPC);
-            updatedA.setBaseFreemiumSellPrice(newSF);
-            updatedA.setBasePremiumSellPrice(newSP);
 
             Log.i(TAG, "Updated armor: " + old.getName());
             logDiff(old.getName(), "element", old.getElement(), element);
@@ -370,19 +373,14 @@ public class ItemSyncer {
             logDiff(old.getName(), "maxArmor", old.getMaxArmor(), maxArmor);
             logDiff(old.getName(), "speed", old.getSpeed(), speedPct);
             logDiff(old.getName(), "jump", old.getJump(), jumpPct);
-            logDiff(old.getName(), "magic", (int)old.getMagic(), magicPct);
-            logDiff(old.getName(), "sword", (int)old.getSword(), swordPct);
-            logDiff(old.getName(), "staff", (int)old.getStaff(), staffPct);
-            logDiff(old.getName(), "dagger", (int)old.getDagger(), daggerPct);
-            logDiff(old.getName(), "axe", (int)old.getAxe(), axePct);
-            logDiff(old.getName(), "hammer", (int)old.getHammer(), hammerPct);
-            logDiff(old.getName(), "spear", (int)old.getSpear(), spearPct);
-            logDiff(old.getName(), "freemiumGoldPrice", old.getFreemiumGoldPrice(), newFG);
-            logDiff(old.getName(), "premiumGoldPrice",  old.getPremiumGoldPrice(),  newPG);
-            logDiff(old.getName(), "freemiumCoinPrice", old.getFreemiumCoinPrice(), newFC);
-            logDiff(old.getName(), "premiumCoinPrice",  old.getPremiumCoinPrice(),  newPC);
-            logDiff(old.getName(), "baseFreemiumSellPrice", old.getBaseFreemiumSellPrice(), newSF);
-            logDiff(old.getName(), "basePremiumSellPrice",  old.getBasePremiumSellPrice(),  newSP);
+            logDiff(old.getName(), "magic", (int) old.getMagic(), magicPct);
+            logDiff(old.getName(), "sword", (int) old.getSword(), swordPct);
+            logDiff(old.getName(), "staff", (int) old.getStaff(), staffPct);
+            logDiff(old.getName(), "dagger", (int) old.getDagger(), daggerPct);
+            logDiff(old.getName(), "axe", (int) old.getAxe(), axePct);
+            logDiff(old.getName(), "hammer", (int) old.getHammer(), hammerPct);
+            logDiff(old.getName(), "spear", (int) old.getSpear(), spearPct);
+            prices.logDiffs(old.getName());
 
             final int finalI = i;
             mutations.add(() -> list.set(finalI, updatedA));
@@ -404,25 +402,23 @@ public class ItemSyncer {
                 continue;
             }
 
-            int newFG = (ji.freemiumGoldPrice     != null) ? ji.freemiumGoldPrice     : old.getFreemiumGoldPrice();
-            int newPG = (ji.premiumGoldPrice      != null) ? ji.premiumGoldPrice      : old.getPremiumGoldPrice();
-            int newFC = (ji.freemiumCoinPrice     != null) ? ji.freemiumCoinPrice     : old.getFreemiumCoinPrice();
-            int newPC = (ji.premiumCoinPrice      != null) ? ji.premiumCoinPrice      : old.getPremiumCoinPrice();
-            int newSF = (ji.baseFreemiumSellPrice != null) ? ji.baseFreemiumSellPrice : old.getBaseFreemiumSellPrice();
-            int newSP = (ji.basePremiumSellPrice  != null) ? ji.basePremiumSellPrice  : old.getBasePremiumSellPrice();
+            Prices prices = new Prices(ji,
+                    old.getFreemiumGoldPrice(), old.getPremiumGoldPrice(),
+                    old.getFreemiumCoinPrice(), old.getPremiumCoinPrice(),
+                    old.getBaseFreemiumSellPrice(), old.getBasePremiumSellPrice());
 
             Elements element   = mapElement(ji.element, old.getElement());
 
             int armor          = ji.armor != null ? ji.armor : old.getArmor();
             int speedPct       = pctInt(ji.speedBoost, old.getSpeed());
             int jumpPct        = pctInt(ji.jumpBoost,  old.getJump());
-            int magicPct       = pctInt(ji.magicBoost, (int)old.getMagic());
-            int swordPct       = pctInt(ji.swordBoost, (int)old.getSword());
-            int staffPct       = pctInt(ji.staffBoost, (int)old.getStaff());
-            int daggerPct      = pctInt(ji.daggerBoost,(int)old.getDagger());
-            int axePct         = pctInt(ji.axeBoost,   (int)old.getAxe());
-            int hammerPct      = pctInt(ji.hammerBoost,(int)old.getHammer());
-            int spearPct       = pctInt(ji.spearBoost, (int)old.getSpear());
+            int magicPct       = pctInt(ji.magicBoost, (int) old.getMagic());
+            int swordPct       = pctInt(ji.swordBoost, (int) old.getSword());
+            int staffPct       = pctInt(ji.staffBoost, (int) old.getStaff());
+            int daggerPct      = pctInt(ji.daggerBoost,(int) old.getDagger());
+            int axePct         = pctInt(ji.axeBoost,   (int) old.getAxe());
+            int hammerPct      = pctInt(ji.hammerBoost,(int) old.getHammer());
+            int spearPct       = pctInt(ji.spearBoost, (int) old.getSpear());
             double armorBonus  = pctDouble(ji.armorBoost, old.getArmorBonus());
 
             boolean same =
@@ -430,20 +426,15 @@ public class ItemSyncer {
                             armor == old.getArmor() &&
                             speedPct == old.getSpeed() &&
                             jumpPct == old.getJump() &&
-                            magicPct == (int)old.getMagic() &&
-                            swordPct == (int)old.getSword() &&
-                            staffPct == (int)old.getStaff() &&
-                            daggerPct == (int)old.getDagger() &&
-                            axePct == (int)old.getAxe() &&
-                            hammerPct == (int)old.getHammer() &&
-                            spearPct == (int)old.getSpear() &&
-                            (int)armorBonus == (int)old.getArmorBonus()
-                            && newFG == old.getFreemiumGoldPrice()
-                            && newPG == old.getPremiumGoldPrice()
-                            && newFC == old.getFreemiumCoinPrice()
-                            && newPC == old.getPremiumCoinPrice()
-                            && newSF == old.getBaseFreemiumSellPrice()
-                            && newSP == old.getBasePremiumSellPrice();
+                            magicPct == (int) old.getMagic() &&
+                            swordPct == (int) old.getSword() &&
+                            staffPct == (int) old.getStaff() &&
+                            daggerPct == (int) old.getDagger() &&
+                            axePct == (int) old.getAxe() &&
+                            hammerPct == (int) old.getHammer() &&
+                            spearPct == (int) old.getSpear() &&
+                            (int) armorBonus == (int) old.getArmorBonus() &&
+                            prices.unchanged();
 
             if (same) continue;
 
@@ -462,21 +453,14 @@ public class ItemSyncer {
                     hammerPct,
                     spearPct,
                     old.getImageResId(),
-                    newFG,
-                    newPG,
-                    newFC,
-                    newPC,
-                    newSF,
-                    newSP,
+                    prices.newFG,
+                    prices.newPG,
+                    prices.newFC,
+                    prices.newPC,
+                    prices.newSF,
+                    prices.newSP,
                     old.getObtainability()
             );
-
-            updatedR.setFreemiumGoldPrice(newFG);
-            updatedR.setPremiumGoldPrice(newPG);
-            updatedR.setFreemiumCoinPrice(newFC);
-            updatedR.setPremiumCoinPrice(newPC);
-            updatedR.setBaseFreemiumSellPrice(newSF);
-            updatedR.setBasePremiumSellPrice(newSP);
 
             Log.i(TAG, "Updated ring: " + old.getName());
             logDiff(old.getName(), "element", old.getElement(), element);
@@ -484,19 +468,14 @@ public class ItemSyncer {
             logDiff(old.getName(), "armorBonus", old.getArmorBonus(), armorBonus);
             logDiff(old.getName(), "speed", old.getSpeed(), speedPct);
             logDiff(old.getName(), "jump", old.getJump(), jumpPct);
-            logDiff(old.getName(), "magic", (int)old.getMagic(), magicPct);
-            logDiff(old.getName(), "sword", (int)old.getSword(), swordPct);
-            logDiff(old.getName(), "staff", (int)old.getStaff(), staffPct);
-            logDiff(old.getName(), "dagger", (int)old.getDagger(), daggerPct);
-            logDiff(old.getName(), "axe", (int)old.getAxe(), axePct);
-            logDiff(old.getName(), "hammer", (int)old.getHammer(), hammerPct);
-            logDiff(old.getName(), "spear", (int)old.getSpear(), spearPct);
-            logDiff(old.getName(), "freemiumGoldPrice", old.getFreemiumGoldPrice(), newFG);
-            logDiff(old.getName(), "premiumGoldPrice",  old.getPremiumGoldPrice(),  newPG);
-            logDiff(old.getName(), "freemiumCoinPrice", old.getFreemiumCoinPrice(), newFC);
-            logDiff(old.getName(), "premiumCoinPrice",  old.getPremiumCoinPrice(),  newPC);
-            logDiff(old.getName(), "baseFreemiumSellPrice", old.getBaseFreemiumSellPrice(), newSF);
-            logDiff(old.getName(), "basePremiumSellPrice",  old.getBasePremiumSellPrice(),  newSP);
+            logDiff(old.getName(), "magic", (int) old.getMagic(), magicPct);
+            logDiff(old.getName(), "sword", (int) old.getSword(), swordPct);
+            logDiff(old.getName(), "staff", (int) old.getStaff(), staffPct);
+            logDiff(old.getName(), "dagger", (int) old.getDagger(), daggerPct);
+            logDiff(old.getName(), "axe", (int) old.getAxe(), axePct);
+            logDiff(old.getName(), "hammer", (int) old.getHammer(), hammerPct);
+            logDiff(old.getName(), "spear", (int) old.getSpear(), spearPct);
+            prices.logDiffs(old.getName());
 
             final int finalI = i;
             mutations.add(() -> list.set(finalI, updatedR));
@@ -528,7 +507,7 @@ public class ItemSyncer {
 
     private static int pctInt(Double mult, int fallback) {
         if (mult == null) return fallback;
-        return (int)Math.round((mult - 1.0) * 100.0);
+        return (int) Math.round((mult - 1.0) * 100.0);
     }
 
     private static double pctDouble(Double mult, double fallback) {
@@ -568,7 +547,6 @@ public class ItemSyncer {
         ji.hammerBoost = optDouble(o, "hammerBoost");
         ji.spearBoost  = optDouble(o, "spearBoost");
 
-        // 💰 New price fields
         ji.freemiumGoldPrice     = optInt(o, "freemiumGoldPrice");
         ji.premiumGoldPrice      = optInt(o, "premiumGoldPrice");
         ji.freemiumCoinPrice     = optInt(o, "freemiumCoinPrice");
@@ -592,10 +570,7 @@ public class ItemSyncer {
     }
 
     private static void logDiff(String itemName, String field, Object oldVal, Object newVal) {
-        if (oldVal == null && newVal == null) return;
-        if (oldVal != null && oldVal.equals(newVal)) return;
-        if (newVal != null && newVal.equals(oldVal)) return;
-
+        if (oldVal == null ? newVal == null : oldVal.equals(newVal)) return;
         Log.i(TAG, "  " + itemName + " | " + field + ": " + oldVal + " → " + newVal);
     }
 

@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,9 +33,9 @@ import androidx.core.view.WindowInsetsCompat;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.data.adapters.NewsAdapter;
 import xyz.magicrampagecompanion.data.network.GistApi;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class News extends AppCompatActivity {
+public class News extends BaseActivity {
 
     private RecyclerView newsRecyclerView;
     private NewsAdapter newsAdapter;
@@ -114,6 +113,7 @@ public class News extends AppCompatActivity {
 
         modelManager.downloadModelIfNeeded(conditions)
                 .addOnSuccessListener(v -> {
+                    if (isFinishing() || isDestroyed()) return;
                     Log.d("NewsActivity", "Model for " + targetLang + " ready.");
                     newsAdapter.setTranslationReady(true, targetLang);
                     newsAdapter.notifyDataSetChanged();
@@ -124,8 +124,9 @@ public class News extends AppCompatActivity {
                     newsRecyclerView.setVisibility(View.VISIBLE);
                 })
                 .addOnFailureListener(e -> {
+                    if (isFinishing() || isDestroyed()) return;
                     Toast.makeText(this,
-                            "Failed to download translation model.",
+                            R.string.translation_model_failed,
                             Toast.LENGTH_LONG).show();
 
                     // Show English version as fallback
@@ -145,6 +146,7 @@ public class News extends AppCompatActivity {
                     GistApi.fetchNewsFromComments(GIST_ID);
 
             handler.post(() -> {
+                if (isFinishing() || isDestroyed()) return;
                 if (newsList != null && !newsList.isEmpty()) {
                     emptyStateTextView.setVisibility(View.GONE);
                     newsAdapter.submitList(newsList);
@@ -161,8 +163,4 @@ public class News extends AppCompatActivity {
         executor.shutdownNow();
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
-    }
 }

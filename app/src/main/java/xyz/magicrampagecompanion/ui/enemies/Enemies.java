@@ -1,7 +1,6 @@
 package xyz.magicrampagecompanion.ui.enemies;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -9,8 +8,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
@@ -21,63 +18,13 @@ import java.util.List;
 import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.data.adapters.ImageAdapter;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class Enemies extends AppCompatActivity {
+public class Enemies extends BaseActivity {
     public static final String EXTRA_ENEMY = "xyz.magicrampagecompanion.EXTRA_ENEMY";
 
     private RecyclerView recyclerView;
     private TextView emptyStateText;
-
-    private SoundPool soundPool;
-    private int clickSfxId = 0;
-    private boolean clickSfxLoaded = false;
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseSoundPool();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releaseSoundPool();
-    }
-
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status == 0 && sampleId == clickSfxId) clickSfxLoaded = true;
-        });
-        clickSfxId = soundPool.load(this, R.raw.click, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            clickSfxLoaded = false;
-            clickSfxId = 0;
-        }
-    }
-
-    private void playSound() {
-        if (soundPool != null && clickSfxLoaded)
-            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +59,7 @@ public class Enemies extends AppCompatActivity {
 
     private <T extends Parcelable> void loadEnemies(List<T> items) {
         ImageAdapter<T> adapter = new ImageAdapter<>(items, (view, position) -> {
-            playSound();
+            playClick();
             T selected = items.get(position);
             Intent intent = new Intent(Enemies.this, EnemyDetail.class);
             intent.putExtra(EXTRA_ENEMY, selected);

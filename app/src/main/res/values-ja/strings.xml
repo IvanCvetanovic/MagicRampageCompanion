@@ -1744,4 +1744,13 @@
     <string name="section_behaviour">行動</string>
     <string name="section_properties">プロパティ</string>
     <string name="coming_soon">近日公開</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="privacy_options_unavailable">プライバシーオプションを利用できません: %1$s</string>
+    <string name="ad_consent_not_required">お住まいの地域では広告の同意は必要ありません。</string>
+    <string name="no_skill_points_left">スキルポイントが残っていません</string>
+    <string name="not_enough_skill_points">前のスキルをすべて解放するにはスキルポイントが足りません。</string>
+    <string name="no_level_file_provided">レベルファイルが指定されていません</string>
+    <string name="failed_to_load_level">レベルの読み込みに失敗しました: %1$s</string>
+    <string name="translation_model_failed">翻訳モデルのダウンロードに失敗しました。</string>
 </resources>

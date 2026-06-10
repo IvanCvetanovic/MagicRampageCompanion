@@ -12,35 +12,44 @@ android {
         applicationId "xyz.magicrampagecompanion"
         minSdk 28
         targetSdk 37
-        versionCode 54
-        versionName "1.3.0"
+        versionCode 56
+        versionName "1.3.1"
 
         buildFeatures {
             buildConfig = true
         }
 
-        multiDexEnabled true
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        // Ad unit IDs come from local.properties; a missing file or key must not
+        // break the build. Test keys fall back to Google's sample ad units.
         Properties properties = new Properties()
-        properties.load(project.rootProject.file("local.properties").newDataInputStream())
-        buildConfigField "String", "realAPIKey", "\"${properties.getProperty("realAPIKey")}\""
-        buildConfigField "String", "testAPIKey", "\"${properties.getProperty("testAPIKey")}\""
-        buildConfigField "String", "realAPIKeyEquipmentTester", "\"${properties.getProperty("realAPIKeyEquipmentTester")}\""
-        buildConfigField "String", "testAPIKeyEquipmentTester", "\"${properties.getProperty("testAPIKeyEquipmentTester")}\""
-        buildConfigField "String", "realAPIKeyLevelViewer", "\"${properties.getProperty("realAPIKeyLevelViewer")}\""
+        def localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            localPropertiesFile.withInputStream { properties.load(it) }
+        }
+        def adKey = { String name, String fallback = "" ->
+            def value = properties.getProperty(name)
+            (value == null || value.trim().isEmpty()) ? fallback : value.trim()
+        }
+        buildConfigField "String", "realAPIKey", "\"${adKey("realAPIKey")}\""
+        buildConfigField "String", "testAPIKey", "\"${adKey("testAPIKey", "ca-app-pub-3940256099942544/9257395921")}\""
+        buildConfigField "String", "realAPIKeyEquipmentTester", "\"${adKey("realAPIKeyEquipmentTester")}\""
+        buildConfigField "String", "testAPIKeyEquipmentTester", "\"${adKey("testAPIKeyEquipmentTester", "ca-app-pub-3940256099942544/5224354917")}\""
+        buildConfigField "String", "realAPIKeyLevelViewer", "\"${adKey("realAPIKeyLevelViewer")}\""
+        buildConfigField "String", "testAPIKeyLevelViewer", "\"${adKey("testAPIKeyLevelViewer", "ca-app-pub-3940256099942544/5224354917")}\""
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     lint {
         enable 'Deprecation'
@@ -62,18 +71,15 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics:20.0.6'
     implementation 'com.google.firebase:firebase-analytics:23.2.0'
     implementation 'androidx.activity:activity:1.13.0'
+    implementation 'com.google.android.gms:play-services-ads:25.3.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.10.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.10.0'
+    implementation 'com.google.mlkit:translate:17.0.3'
+    implementation 'androidx.core:core-ktx:1.19.0'
+    implementation 'com.google.android.ump:user-messaging-platform:4.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
-    implementation 'com.google.android.gms:play-services-ads:25.3.0'
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-runtime:2.10.0"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.10.0"
-    implementation 'com.google.mlkit:translate:17.0.3'
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.10.0"
-    implementation 'androidx.core:core-ktx:1.18.0'
-    implementation 'androidx.multidex:multidex:2.0.1'
-    implementation "com.google.android.ump:user-messaging-platform:4.0.0"
 }
 java {
     toolchain {

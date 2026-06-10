@@ -3,10 +3,7 @@ package xyz.magicrampagecompanion.ui.items;
 import androidx.activity.EdgeToEdge;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -28,9 +24,9 @@ import java.util.Arrays;
 import java.util.function.Function;
 
 import xyz.magicrampagecompanion.R;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class SkillPicker extends AppCompatActivity {
+public class SkillPicker extends BaseActivity {
 
     private static final int TOTAL_POINTS = 25;
     private static final int LANE_SIZE    = 12; // 3 lanes of 12 = 36
@@ -38,10 +34,6 @@ public class SkillPicker extends AppCompatActivity {
     private int skillPointsLeft = TOTAL_POINTS;
     private TextView skillPointsTextView;
     private final boolean[] skillsPicked = new boolean[36];
-
-    private SoundPool soundPool;
-    private int clickSfxId = 0;
-    private boolean clickSfxLoaded = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -100,7 +92,7 @@ public class SkillPicker extends AppCompatActivity {
         selectSkillsButton.setOnClickListener(v -> {
             setResult(RESULT_OK);
             finish();
-            playSound();
+            playClick();
         });
 
         // Click handlers — enforce lane order and support multi-fill selection
@@ -146,7 +138,7 @@ public class SkillPicker extends AppCompatActivity {
         Button btnDeselectAllSkills = findViewById(R.id.btnDeselectAllSkills);
         btnDeselectAllSkills.setOnClickListener(view -> {
             deselectAllSkills();
-            playSound();
+            playClick();
         });
 
         // Restore saved state
@@ -185,20 +177,20 @@ public class SkillPicker extends AppCompatActivity {
                 deselectSkillsAfter(skillIndex);
                 recalcPointsFromSelection();
                 updatePersistAndUI();
-                playSound();
+                playClick();
                 return;
             }
 
             // Selecting: if previous is already OK, just pick this one (if points left)
             if (canPickSkill(skillIndex)) {
                 if (skillPointsLeft <= 0) {
-                    Toast.makeText(this, "You have no skill points left", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.no_skill_points_left, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 setPicked(skillIndex, true);
                 skillPointsLeft--;
                 updatePersistAndUI();
-                playSound();
+                playClick();
                 return;
             }
 
@@ -211,7 +203,7 @@ public class SkillPicker extends AppCompatActivity {
             if (needed == 0) return; // nothing to do (shouldn't happen)
 
             if (skillPointsLeft < needed) {
-                Toast.makeText(this, "Not enough skill points to unlock all previous skills.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.not_enough_skill_points, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -222,7 +214,7 @@ public class SkillPicker extends AppCompatActivity {
                 }
             }
             updatePersistAndUI();
-            playSound();
+            playClick();
         });
     }
 
@@ -430,60 +422,4 @@ public class SkillPicker extends AppCompatActivity {
         editor.apply();
     }
 
-    // Sound
-    @Override
-    protected void onStart() {
-        super.onStart();
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseSoundPool();
-    }
-
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status == 0 && sampleId == clickSfxId) clickSfxLoaded = true;
-        });
-
-        clickSfxId = soundPool.load(this, R.raw.click, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            clickSfxLoaded = false;
-            clickSfxId = 0;
-        }
-    }
-
-    private void playSound() {
-        if (soundPool != null && clickSfxLoaded) {
-            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releaseSoundPool();
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
-    }
 }

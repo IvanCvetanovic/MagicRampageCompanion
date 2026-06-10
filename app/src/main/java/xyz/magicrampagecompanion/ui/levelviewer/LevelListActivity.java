@@ -1,10 +1,8 @@
 package xyz.magicrampagecompanion.ui.levelviewer;
 
-import android.content.Context;
 import android.content.Intent;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -27,8 +23,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import xyz.magicrampagecompanion.R;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class LevelListActivity extends AppCompatActivity {
+public class LevelListActivity extends BaseActivity {
+
+    private static final String TAG = "LevelListActivity";
 
     private final List<String> storyFiles  = new ArrayList<>();
     private final List<String> otherFiles  = new ArrayList<>();
@@ -37,62 +36,6 @@ public class LevelListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView emptyStateText;
     private Button tabStory, tabOthers;
-
-    private SoundPool soundPool;
-    private int clickSfxId = 0;
-    private boolean clickSfxLoaded = false;
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseSoundPool();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releaseSoundPool();
-    }
-
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status == 0 && sampleId == clickSfxId) clickSfxLoaded = true;
-        });
-        clickSfxId = soundPool.load(this, R.raw.click, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            clickSfxLoaded = false;
-            clickSfxId = 0;
-        }
-    }
-
-    private void playSound() {
-        if (soundPool != null && clickSfxLoaded)
-            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,8 +72,8 @@ public class LevelListActivity extends AppCompatActivity {
 
         loadLevelFiles();
 
-        tabStory.setOnClickListener(v -> { playSound(); setActiveTab(true); });
-        tabOthers.setOnClickListener(v -> { playSound(); setActiveTab(false); });
+        tabStory.setOnClickListener(v -> { playClick(); setActiveTab(true); });
+        tabOthers.setOnClickListener(v -> { playClick(); setActiveTab(false); });
 
         // Default to Story tab
         setActiveTab(true);
@@ -182,7 +125,7 @@ public class LevelListActivity extends AppCompatActivity {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e(TAG, "Failed to list level assets", e);
         }
     }
 
@@ -219,7 +162,7 @@ public class LevelListActivity extends AppCompatActivity {
                 int pos = getAdapterPosition();
                 if (pos == RecyclerView.NO_POSITION) return;
 
-                playSound();
+                playClick();
 
                 String file = activeList.get(pos);
                 Intent intent = new Intent(LevelListActivity.this, LevelViewerActivity.class);

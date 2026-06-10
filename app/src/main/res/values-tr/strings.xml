@@ -1743,4 +1743,13 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="section_behaviour">Davranış</string>
     <string name="section_properties">Özellikler</string>
     <string name="coming_soon">Yakında</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="privacy_options_unavailable">Gizlilik seçenekleri kullanılamıyor: %1$s</string>
+    <string name="ad_consent_not_required">Bölgenizde reklam izni gerekli değildir.</string>
+    <string name="no_skill_points_left">Hiç yetenek puanınız kalmadı</string>
+    <string name="not_enough_skill_points">Önceki tüm yetenekleri açmak için yeterli yetenek puanı yok.</string>
+    <string name="no_level_file_provided">Seviye dosyası belirtilmedi</string>
+    <string name="failed_to_load_level">Seviye yüklenemedi: %1$s</string>
+    <string name="translation_model_failed">Çeviri modeli indirilemedi.</string>
 </resources>

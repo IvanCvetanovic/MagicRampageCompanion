@@ -1,7 +1,6 @@
 package xyz.magicrampagecompanion.ui.items;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -31,9 +30,9 @@ import xyz.magicrampagecompanion.data.models.Ring;
 import xyz.magicrampagecompanion.data.models.Weapon;
 import xyz.magicrampagecompanion.enums.Elements;
 import xyz.magicrampagecompanion.enums.WeaponTypes;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class ItemDetail extends AppCompatActivity {
+public class ItemDetail extends BaseActivity {
     public static final String EXTRA_ITEM = "xyz.magicrampagecompanion.EXTRA_ITEM";
 
     private ImageView itemImage;
@@ -371,10 +370,6 @@ public class ItemDetail extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
-    }
 
     private static final class CenteredImageSpan extends ImageSpan {
         CenteredImageSpan(Drawable d) { super(d); }

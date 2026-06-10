@@ -12,10 +12,13 @@
 #   public *;
 #}
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Preserve line numbers so Crashlytics stack traces stay readable.
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Strip verbose/debug logging from release builds (StatsCalculator alone logs
+# ~20 lines per recalculation).
+-assumenosideeffects class android.util.Log {
+    public static int v(...);
+    public static int d(...);
+}

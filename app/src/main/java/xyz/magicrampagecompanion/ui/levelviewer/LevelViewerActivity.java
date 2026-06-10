@@ -2,111 +2,42 @@ package xyz.magicrampagecompanion.ui.levelviewer;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
-
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.OnUserEarnedRewardListener;
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
-import com.google.android.gms.ads.rewarded.RewardedAd;
-import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import xyz.magicrampagecompanion.BuildConfig;
 import xyz.magicrampagecompanion.R;
-import xyz.magicrampagecompanion.ui.main.MainActivity;
+import xyz.magicrampagecompanion.core.utils.RewardedAdManager;
 import xyz.magicrampagecompanion.level.Level;
 import xyz.magicrampagecompanion.level.LevelParser;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class LevelViewerActivity extends AppCompatActivity {
+public class LevelViewerActivity extends BaseActivity {
 
     private static final String TAG = "LevelViewerActivity";
     private static final String PREFS_NAME = "LevelViewerPrefs";
     private static final String UNLOCK_PREFIX = "unlocked_secrets_";
-    
-    private static final String AD_UNIT_ID = BuildConfig.realAPIKeyLevelViewer;
 
-    private SoundPool soundPool;
-    private int clickSfxId = 0;
-    private boolean clickSfxLoaded = false;
-
-    private RewardedAd rewardedAd;
+    private final RewardedAdManager rewardedAdManager = RewardedAdManager.forLevelViewer();
     private LevelRenderView renderView;
     private ImageButton btnShowSecrets;
-    private boolean isLoadingAd = false;
     private Level currentLevel;
     private String levelFile;
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseSoundPool();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releaseSoundPool();
-    }
-
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status == 0 && sampleId == clickSfxId) clickSfxLoaded = true;
-        });
-        clickSfxId = soundPool.load(this, R.raw.click, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            clickSfxLoaded = false;
-            clickSfxId = 0;
-        }
-    }
-
-    private void playSound() {
-        if (soundPool != null && clickSfxLoaded)
-            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,12 +46,12 @@ public class LevelViewerActivity extends AppCompatActivity {
 
         levelFile = getIntent().getStringExtra("levelFile");
         if (levelFile == null) {
-            Toast.makeText(this, "No level file provided", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_level_file_provided, Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
 
-        loadRewardedAd();
+        rewardedAdManager.loadAd(this);
 
         // --- Top bar: insets, title, back button ---
         LinearLayout topBar = findViewById(R.id.levelTopBar);
@@ -147,7 +78,7 @@ public class LevelViewerActivity extends AppCompatActivity {
         title.setText(titleResId != 0 ? getString(titleResId) : levelFile.replace(".esc", ""));
 
         ImageButton btnBack = findViewById(R.id.btnLevelBack);
-        btnBack.setOnClickListener(v -> { playSound(); finish(); });
+        btnBack.setOnClickListener(v -> { playClick(); finish(); });
 
         renderView = findViewById(R.id.levelRenderView);
 
@@ -160,7 +91,7 @@ public class LevelViewerActivity extends AppCompatActivity {
         ImageButton btnToggleLogic = findViewById(R.id.btnToggleLogic);
         btnToggleLogic.setAlpha(0.4f); // starts hidden
         btnToggleLogic.setOnClickListener(v -> {
-            playSound();
+            playClick();
             boolean current = renderView.isShowingLogicEntities();
             renderView.setShowLogicEntities(!current);
             btnToggleLogic.setAlpha(renderView.isShowingLogicEntities() ? 1.0f : 0.4f);
@@ -173,9 +104,9 @@ public class LevelViewerActivity extends AppCompatActivity {
         if (renderView.isSecretsUnlocked()) {
             btnShowSecrets.setColorFilter(Color.YELLOW);
         }
-        
+
         btnShowSecrets.setOnClickListener(v -> {
-            playSound();
+            playClick();
             if (renderView.isSecretsUnlocked()) {
                 showSecretAreasList();
             } else if (!hasSecretAreas()) {
@@ -193,8 +124,8 @@ public class LevelViewerActivity extends AppCompatActivity {
             }
             renderView.setLevel(currentLevel);
         } catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(this, "Failed to load level: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Log.e(TAG, "Failed to load level " + levelFile, e);
+            Toast.makeText(this, getString(R.string.failed_to_load_level, e.getMessage()), Toast.LENGTH_LONG).show();
             finish();
         }
     }
@@ -269,40 +200,29 @@ public class LevelViewerActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void loadRewardedAd() {
-        if (isLoadingAd || rewardedAd != null) return;
-
-        isLoadingAd = true;
-        RewardedAd.load(this, AD_UNIT_ID, MainActivity.buildAdRequest(this), new RewardedAdLoadCallback() {
-            @Override
-            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                Log.w(TAG, "Ad failed to load: " + loadAdError.getMessage());
-                rewardedAd = null;
-                isLoadingAd = false;
-            }
-
-            @Override
-            public void onAdLoaded(@NonNull RewardedAd ad) {
-                Log.d(TAG, "Ad was loaded.");
-                rewardedAd = ad;
-                isLoadingAd = false;
-            }
-        });
-    }
-
     private void showAdOrLoad() {
-        if (rewardedAd != null) {
-            rewardedAd.show(this, rewardItem -> {
-                saveLevelUnlock(levelFile);
-                renderView.setSecretsUnlocked(true);
-                btnShowSecrets.setColorFilter(Color.YELLOW);
-                Toast.makeText(this, R.string.secrets_revealed, Toast.LENGTH_LONG).show();
-                rewardedAd = null; // Reset for next use
-                loadRewardedAd(); // Pre-load next
+        if (rewardedAdManager.isReady()) {
+            rewardedAdManager.show(this, new RewardedAdManager.RewardCallback() {
+                @Override
+                public void onUserEarnedReward(RewardItem rewardItem) {
+                    saveLevelUnlock(levelFile);
+                    renderView.setSecretsUnlocked(true);
+                    btnShowSecrets.setColorFilter(Color.YELLOW);
+                    Toast.makeText(LevelViewerActivity.this, R.string.secrets_revealed, Toast.LENGTH_LONG).show();
+                }
+
+                @Override public void onAdClosed() {}
+
+                @Override
+                public void onAdFailed(AdError error) {
+                    Log.w(TAG, "Rewarded ad failed to show: " + error.getMessage());
+                }
+
+                @Override public void onAdNotReady() {}
             });
         } else {
             Toast.makeText(this, R.string.ad_still_loading, Toast.LENGTH_SHORT).show();
-            loadRewardedAd();
+            rewardedAdManager.loadAd(this);
         }
     }
 }

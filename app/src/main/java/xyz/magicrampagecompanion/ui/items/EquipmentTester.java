@@ -2,7 +2,6 @@ package xyz.magicrampagecompanion.ui.items;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -11,14 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -52,23 +48,11 @@ import xyz.magicrampagecompanion.data.models.Ring;
 import xyz.magicrampagecompanion.data.models.Weapon;
 import xyz.magicrampagecompanion.data.storage.SaveLoadManager;
 import xyz.magicrampagecompanion.enums.Elements;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class EquipmentTester extends AppCompatActivity {
+public class EquipmentTester extends BaseActivity {
 
     private EquipmentSetAdapter adapter;
-
-    // Sounds
-    private SoundPool soundPool;
-    private int sfxClickId = 0;      // generic UI click
-    private int sfxBagId = 0;        // (kept loaded, but not used anymore for actions)
-    private int sfxWeaponId = 0;     // weapon-ish action
-    private int sfxPotionId = 0;     // elixir confirm
-
-    private boolean sfxClickLoaded = false;
-    private boolean sfxBagLoaded = false;
-    private boolean sfxWeaponLoaded = false;
-    private boolean sfxPotionLoaded = false;
 
     private RewardedAdManager rewardedAdManager;
 
@@ -92,13 +76,13 @@ public class EquipmentTester extends AppCompatActivity {
         rv.setHasFixedSize(true);
 
         adapter = new EquipmentSetAdapter(new EquipmentSetAdapter.Listener() {
-            @Override public void onPickArmor(int position)  { playSfx(sfxClickId); pendingPosition = position; openItemSelection(1); }
-            @Override public void onPickRing(int position)   { playSfx(sfxClickId); pendingPosition = position; openItemSelection(2); }
-            @Override public void onPickWeapon(int position) { playSfx(sfxClickId); pendingPosition = position; openItemSelection(3); }
-            @Override public void onPickClass(int position)  { playSfx(sfxClickId); pendingPosition = position; openItemSelection(4); }
-            @Override public void onPickSkills(int position) { playSfx(sfxClickId); pendingPosition = position; openSkillPicker(); }
+            @Override public void onPickArmor(int position)  { playClick(); pendingPosition = position; openItemSelection(1); }
+            @Override public void onPickRing(int position)   { playClick(); pendingPosition = position; openItemSelection(2); }
+            @Override public void onPickWeapon(int position) { playClick(); pendingPosition = position; openItemSelection(3); }
+            @Override public void onPickClass(int position)  { playClick(); pendingPosition = position; openItemSelection(4); }
+            @Override public void onPickSkills(int position) { playClick(); pendingPosition = position; openSkillPicker(); }
             @Override public void onRemoveSet(int position) {
-                playSfx(sfxClickId);
+                playClick();
                 adapter.removeAt(position);
 
                 if (pendingPosition == position) {
@@ -107,36 +91,36 @@ public class EquipmentTester extends AppCompatActivity {
             }
 
             @Override public void onSaveSet(int position) {
-                playSfx(sfxClickId);
+                playClick();
                 EquipmentSet set = adapter.getItem(position);
                 promptAndSaveSingleSet(set);
             }
 
             @Override
             public void onShowStats(int position) {
-                playSfx(sfxClickId);
+                playClick();
                 EquipmentSet set = adapter.getItem(position);
                 showStatsDialog(set);
             }
 
-            @Override public void onPickArmorElement(int position)  { playSfx(sfxClickId); handleElementPick(position, Slot.ARMOR); }
-            @Override public void onPickWeaponElement(int position) { playSfx(sfxClickId); handleElementPick(position, Slot.WEAPON); }
-            @Override public void onPickRingElement(int position)   { playSfx(sfxClickId); handleElementPick(position, Slot.RING); }
+            @Override public void onPickArmorElement(int position)  { playClick(); handleElementPick(position, Slot.ARMOR); }
+            @Override public void onPickWeaponElement(int position) { playClick(); handleElementPick(position, Slot.WEAPON); }
+            @Override public void onPickRingElement(int position)   { playClick(); handleElementPick(position, Slot.RING); }
 
             @Override public void onPickDrink(int position) {
-                playSfx(sfxClickId);
+                playClick();
                 pendingPosition = position;
                 openItemSelection(6);
             }
 
             // FOOTER: Load / Add / Recommend
             @Override public void onFooterLoadTapped() {
-                playSfx(sfxClickId);
+                playClick();
                 showLoadDialogWithDelete();
             }
 
             @Override public void onFooterAddTapped(boolean atLimit) {
-                playSfx(sfxClickId);
+                playClick();
                 if (atLimit) {
                     Toast.makeText(EquipmentTester.this, R.string.max_sets_reached, Toast.LENGTH_SHORT).show();
                 }
@@ -144,7 +128,7 @@ public class EquipmentTester extends AppCompatActivity {
 
             @Override
             public void onFooterRecommendTapped() {
-                playSfx(sfxClickId);
+                playClick();
 
                 if (rewardedAdManager != null && rewardedAdManager.isReady()) {
                     rewardedAdManager.show(EquipmentTester.this, new RewardedAdManager.RewardCallback() {
@@ -284,19 +268,19 @@ public class EquipmentTester extends AppCompatActivity {
                     EquipmentSet loaded = SaveLoadManager.loadSetByName(this, name);
                     if (loaded != null) {
                         appendLoadedSet(loaded, name);
-                        playSfx(sfxClickId);
+                        playClick();
                         if (dlgHolder[0] != null) dlgHolder[0].dismiss();
                     } else {
                         Toast.makeText(this, R.string.load_failed, Toast.LENGTH_SHORT).show();
                     }
                 },
                 name -> {
-                    playSfx(sfxClickId);
+                    playClick();
                     @SuppressLint({"StringFormatInvalid", "LocalSuppress"}) AlertDialog confirm = new AlertDialog.Builder(this)
                             .setMessage(getString(R.string.delete_question, name))
-                            .setNegativeButton(android.R.string.cancel, (d,w) -> playSfx(sfxClickId))
+                            .setNegativeButton(android.R.string.cancel, (d,w) -> playClick())
                             .setPositiveButton(R.string.delete, (d,w) -> {
-                                playSfx(sfxClickId);
+                                playClick();
                                 SaveLoadManager.deleteNamed(this, name);
                                 if (holder[0] != null) {
                                     holder[0].removeName(name);
@@ -316,7 +300,7 @@ public class EquipmentTester extends AppCompatActivity {
         AlertDialog dlg = new AlertDialog.Builder(this)
                 .setTitle(R.string.load_set_title)
                 .setView(content)
-                .setNegativeButton(android.R.string.cancel, (d,w) -> playSfx(sfxClickId))
+                .setNegativeButton(android.R.string.cancel, (d,w) -> playClick())
                 .create();
         dlgHolder[0] = dlg;
         dlg.show();
@@ -336,7 +320,7 @@ public class EquipmentTester extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.select_element)
                 .setItems(labels, (dialog, which) -> {
-                    playSfx(sfxClickId);
+                    playClick();
                     Elements picked = Elements.NEUTRAL;
                     switch (which) {
                         case 0: picked = Elements.WATER; break;
@@ -359,7 +343,7 @@ public class EquipmentTester extends AppCompatActivity {
 
         adapter.notifyItemChanged(position);
         requestRecalc();
-        playSfx(sfxClickId);
+        playClick();
     }
     // ---- END ELEMENT PICKER ----
 
@@ -378,9 +362,9 @@ public class EquipmentTester extends AppCompatActivity {
         AlertDialog d = new AlertDialog.Builder(this)
                 .setTitle(R.string.save_set_title)
                 .setView(container)
-                .setNegativeButton(android.R.string.cancel, (dlg, w) -> playSfx(sfxClickId))
+                .setNegativeButton(android.R.string.cancel, (dlg, w) -> playClick())
                 .setPositiveButton(android.R.string.ok, (dlg, w) -> {
-                    playSfx(sfxClickId);
+                    playClick();
                     String name = input.getText().toString().trim();
                     if (name.isEmpty()) {
                         Toast.makeText(this, R.string.set_name_empty, Toast.LENGTH_SHORT).show();
@@ -389,9 +373,9 @@ public class EquipmentTester extends AppCompatActivity {
                     if (SaveLoadManager.exists(this, name)) {
                         AlertDialog ow = new AlertDialog.Builder(this)
                                 .setMessage(getString(R.string.overwrite_question, name))
-                                .setNegativeButton(android.R.string.cancel, (d2, w2) -> playSfx(sfxClickId))
+                                .setNegativeButton(android.R.string.cancel, (d2, w2) -> playClick())
                                 .setPositiveButton(R.string.overwrite, (d2, w2) -> {
-                                    playSfx(sfxClickId);
+                                    playClick();
                                     SaveLoadManager.saveSetNamed(this, name, set);
                                     Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show();
                                 })
@@ -485,7 +469,7 @@ public class EquipmentTester extends AppCompatActivity {
         AlertDialog dlg = new AlertDialog.Builder(this)
                 .setTitle(R.string.set_stats_title)
                 .setView(content)
-                .setPositiveButton(android.R.string.ok, (d, w) -> playSfx(sfxClickId))
+                .setPositiveButton(android.R.string.ok, (d, w) -> playClick())
                 .show();
 
         tintDialogButtons(dlg);
@@ -709,7 +693,7 @@ public class EquipmentTester extends AppCompatActivity {
                 if (skillsPicked != null) {
                     set.skills = skillsPicked.clone();
                 }
-                playSfx(sfxClickId);
+                playClick();
                 break;
             }
 
@@ -741,71 +725,10 @@ public class EquipmentTester extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
         if (rewardedAdManager == null) {
-            rewardedAdManager = new RewardedAdManager();
+            rewardedAdManager = RewardedAdManager.forEquipmentTester();
         }
         rewardedAdManager.loadAd(this);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseSoundPool();
-    }
-
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status != 0) return;
-            if (sampleId == sfxClickId)  sfxClickLoaded  = true;
-            if (sampleId == sfxBagId)    sfxBagLoaded    = true;
-            if (sampleId == sfxWeaponId) sfxWeaponLoaded = true;
-            if (sampleId == sfxPotionId) sfxPotionLoaded = true;
-        });
-
-        sfxClickId   = soundPool.load(this, R.raw.click, 1);
-        sfxBagId     = soundPool.load(this, R.raw.bag, 1);
-        sfxWeaponId  = soundPool.load(this, R.raw.projectile_heavy_blade_withdraw, 1);
-        sfxPotionId  = soundPool.load(this, R.raw.potion, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            sfxClickLoaded = false;
-            sfxBagLoaded = false;
-            sfxWeaponLoaded = false;
-            sfxPotionLoaded = false;
-            sfxClickId = sfxBagId = sfxWeaponId = sfxPotionId = 0;
-        }
-    }
-
-    private void playSfx(int soundId) {
-        if (soundPool == null || soundId == 0) return;
-        boolean loaded =
-                (soundId == sfxClickId   && sfxClickLoaded) ||
-                        (soundId == sfxBagId     && sfxBagLoaded)   ||
-                        (soundId == sfxWeaponId  && sfxWeaponLoaded)||
-                        (soundId == sfxPotionId  && sfxPotionLoaded);
-        if (loaded) {
-            soundPool.play(soundId, 0.25f, 0.25f, 1, 0, 1.0f);
-        }
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 
     private void tintDialogButtons(AlertDialog d) {

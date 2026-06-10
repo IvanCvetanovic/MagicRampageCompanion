@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import xyz.magicrampagecompanion.data.models.EquipmentSet;
 import xyz.magicrampagecompanion.data.models.ItemData;
@@ -18,6 +19,7 @@ import xyz.magicrampagecompanion.data.models.Elixir;
 import xyz.magicrampagecompanion.data.models.Ring;
 import xyz.magicrampagecompanion.data.models.Weapon;
 import xyz.magicrampagecompanion.enums.Elements;
+import xyz.magicrampagecompanion.enums.WeaponTypes;
 
 public final class SaveLoadManager {
     private static final String PREFS = "EquipmentSaves";
@@ -109,6 +111,15 @@ public final class SaveLoadManager {
             o.putOpt("weaponName", s.weapon!= null ? s.weapon.getName(): null);
             o.putOpt("className",  s.characterClass != null ? s.characterClass.getName(ctx) : null);
 
+            // Names are localized, so they stop matching after a language switch.
+            // Store list positions too as a locale-independent fallback.
+            o.put("armorIdx", armorIndex(s.armor));
+            o.put("ringIdx",  ringIndex(s.ring));
+            o.put("weaponIdx", weaponIndex(s.weapon));
+            o.putOpt("weaponType", s.weapon != null ? s.weapon.getType().name() : null);
+            o.put("classIdx",  classIndex(ctx, s.characterClass));
+            o.put("elixirIdx", elixirIndex(s.elixir));
+
             o.put("armorUp",  s.armorUpgrades);
             o.put("weaponUp", s.weaponUpgrades);
 
@@ -151,6 +162,16 @@ public final class SaveLoadManager {
             for (CharacterClass c : ItemData.classList) if (className.equals(c.getName(ctx))) { s.characterClass = c; break; }
         }
 
+        // Name lookups fail when the set was saved under a different language;
+        // fall back to the stored list positions.
+        if (s.armor == null)  s.armor = itemAt(ItemData.armorList, o.optInt("armorIdx", -1));
+        if (s.ring == null)   s.ring  = itemAt(ItemData.ringList,  o.optInt("ringIdx",  -1));
+        if (s.weapon == null) {
+            List<Weapon> typeList = weaponListFor(o.optString("weaponType", null));
+            if (typeList != null) s.weapon = itemAt(typeList, o.optInt("weaponIdx", -1));
+        }
+        if (s.characterClass == null) s.characterClass = itemAt(ItemData.classList, o.optInt("classIdx", -1));
+
         s.armorUpgrades  = o.optInt("armorUp",  0);
         s.weaponUpgrades = o.optInt("weaponUp", 0);
 
@@ -169,6 +190,7 @@ public final class SaveLoadManager {
         if (!TextUtils.isEmpty(elixirName) && ItemData.elixirList != null) {
             for (Elixir e : ItemData.elixirList) if (elixirName.equals(e.getName())) { s.elixir = e; break; }
         }
+        if (s.elixir == null) s.elixir = itemAt(ItemData.elixirList, o.optInt("elixirIdx", -1));
 
         return s;
     }
@@ -176,5 +198,73 @@ public final class SaveLoadManager {
     private static Elements parseEl(String name) {
         try { return Elements.valueOf(name); }
         catch (Exception ignore) { return Elements.NEUTRAL; }
+    }
+
+    // ---------- locale-independent index helpers ----------
+    private static <T> T itemAt(List<T> list, int idx) {
+        return (list != null && idx >= 0 && idx < list.size()) ? list.get(idx) : null;
+    }
+
+    private static List<Weapon> weaponListFor(String typeName) {
+        if (typeName == null) return null;
+        WeaponTypes type;
+        try { type = WeaponTypes.valueOf(typeName); }
+        catch (IllegalArgumentException e) { return null; }
+        switch (type) {
+            case SWORD:  return ItemData.swordList;
+            case DAGGER: return ItemData.daggerList;
+            case STAFF:  return ItemData.staffList;
+            case AXE:    return ItemData.axeList;
+            case SPEAR:  return ItemData.spearList;
+            case HAMMER: return ItemData.hammerList;
+            default:     return null;
+        }
+    }
+
+    private static int armorIndex(Armor a) {
+        if (a == null) return -1;
+        int i = ItemData.armorList.indexOf(a);
+        if (i >= 0) return i;
+        for (int j = 0; j < ItemData.armorList.size(); j++)
+            if (a.getName().equals(ItemData.armorList.get(j).getName())) return j;
+        return -1;
+    }
+
+    private static int ringIndex(Ring r) {
+        if (r == null) return -1;
+        int i = ItemData.ringList.indexOf(r);
+        if (i >= 0) return i;
+        for (int j = 0; j < ItemData.ringList.size(); j++)
+            if (r.getName().equals(ItemData.ringList.get(j).getName())) return j;
+        return -1;
+    }
+
+    private static int weaponIndex(Weapon w) {
+        if (w == null) return -1;
+        List<Weapon> list = weaponListFor(w.getType().name());
+        if (list == null) return -1;
+        int i = list.indexOf(w);
+        if (i >= 0) return i;
+        for (int j = 0; j < list.size(); j++)
+            if (w.getName().equals(list.get(j).getName())) return j;
+        return -1;
+    }
+
+    private static int classIndex(Context ctx, CharacterClass c) {
+        if (c == null) return -1;
+        int i = ItemData.classList.indexOf(c);
+        if (i >= 0) return i;
+        for (int j = 0; j < ItemData.classList.size(); j++)
+            if (c.getName(ctx).equals(ItemData.classList.get(j).getName(ctx))) return j;
+        return -1;
+    }
+
+    private static int elixirIndex(Elixir e) {
+        if (e == null) return -1;
+        int i = ItemData.elixirList.indexOf(e);
+        if (i >= 0) return i;
+        for (int j = 0; j < ItemData.elixirList.size(); j++)
+            if (e.getName().equals(ItemData.elixirList.get(j).getName())) return j;
+        return -1;
     }
 }

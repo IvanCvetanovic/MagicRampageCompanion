@@ -1745,4 +1745,13 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="section_behaviour">Verhalten</string>
     <string name="section_properties">Eigenschaften</string>
     <string name="coming_soon">Demnächst</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="privacy_options_unavailable">Datenschutzoptionen nicht verfügbar: %1$s</string>
+    <string name="ad_consent_not_required">Eine Werbe-Einwilligung ist in deiner Region nicht erforderlich.</string>
+    <string name="no_skill_points_left">Du hast keine Fähigkeitspunkte mehr</string>
+    <string name="not_enough_skill_points">Nicht genug Fähigkeitspunkte, um alle vorherigen Fähigkeiten freizuschalten.</string>
+    <string name="no_level_file_provided">Keine Level-Datei angegeben</string>
+    <string name="failed_to_load_level">Level konnte nicht geladen werden: %1$s</string>
+    <string name="translation_model_failed">Übersetzungsmodell konnte nicht heruntergeladen werden.</string>
 </resources>

@@ -1746,4 +1746,13 @@
     <string name="section_behaviour">Поведение</string>
     <string name="section_properties">Свойства</string>
     <string name="coming_soon">Скоро</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="privacy_options_unavailable">Настройки конфиденциальности недоступны: %1$s</string>
+    <string name="ad_consent_not_required">Согласие на рекламу не требуется в вашем регионе.</string>
+    <string name="no_skill_points_left">У вас не осталось очков навыков</string>
+    <string name="not_enough_skill_points">Недостаточно очков навыков, чтобы разблокировать все предыдущие навыки.</string>
+    <string name="no_level_file_provided">Файл уровня не указан</string>
+    <string name="failed_to_load_level">Не удалось загрузить уровень: %1$s</string>
+    <string name="translation_model_failed">Не удалось скачать модель перевода.</string>
 </resources>

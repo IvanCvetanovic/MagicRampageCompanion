@@ -1746,4 +1746,13 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="section_behaviour">Comportamento</string>
     <string name="section_properties">Proprietà</string>
     <string name="coming_soon">Prossimamente</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="privacy_options_unavailable">Opzioni sulla privacy non disponibili: %1$s</string>
+    <string name="ad_consent_not_required">Il consenso agli annunci non è richiesto nella tua regione.</string>
+    <string name="no_skill_points_left">Non hai più punti abilità</string>
+    <string name="not_enough_skill_points">Punti abilità insufficienti per sbloccare tutte le abilità precedenti.</string>
+    <string name="no_level_file_provided">Nessun file di livello fornito</string>
+    <string name="failed_to_load_level">Impossibile caricare il livello: %1$s</string>
+    <string name="translation_model_failed">Impossibile scaricare il modello di traduzione.</string>
 </resources>

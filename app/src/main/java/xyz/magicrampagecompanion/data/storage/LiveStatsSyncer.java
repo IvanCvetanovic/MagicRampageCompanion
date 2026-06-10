@@ -295,18 +295,4 @@ public final class LiveStatsSyncer {
     private static int toInt(String s) {
         return (int) Math.round(Double.parseDouble(s));
     }
-
-    /** Multiplier → percent, e.g., "1.25" → 25; "0.6" → -40 */
-    private static int toPercentFromMultiplier(String s) {
-        double m = Double.parseDouble(s);
-        int pct = (int) Math.round((m - 1.0) * 100.0);
-        return pct;
-    }
-
-    /** For “NERF” semantics where 1.05 should produce -5 (you store negatives for nerfs) */
-    private static int toPercentNegFromMultiplier(String s) {
-        double m = Double.parseDouble(s);
-        int pct = (int) Math.round((1.0 - m) * 100.0);
-        return pct;
-    }
 }

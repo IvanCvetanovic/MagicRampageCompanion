@@ -1744,4 +1744,13 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="section_behaviour">Comportement</string>
     <string name="section_properties">Propriétés</string>
     <string name="coming_soon">Bientôt</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="privacy_options_unavailable">Options de confidentialité indisponibles : %1$s</string>
+    <string name="ad_consent_not_required">Le consentement aux publicités n\'est pas requis dans votre région.</string>
+    <string name="no_skill_points_left">Vous n\'avez plus de points de compétence</string>
+    <string name="not_enough_skill_points">Pas assez de points de compétence pour débloquer toutes les compétences précédentes.</string>
+    <string name="no_level_file_provided">Aucun fichier de niveau fourni</string>
+    <string name="failed_to_load_level">Échec du chargement du niveau : %1$s</string>
+    <string name="translation_model_failed">Échec du téléchargement du modèle de traduction.</string>
 </resources>

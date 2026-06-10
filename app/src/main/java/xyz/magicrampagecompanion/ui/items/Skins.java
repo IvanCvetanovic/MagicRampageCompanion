@@ -2,8 +2,6 @@ package xyz.magicrampagecompanion.ui.items;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -24,7 +22,6 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -41,13 +38,9 @@ import java.util.regex.Pattern;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.data.models.SkinItem;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class Skins extends AppCompatActivity {
-
-    private SoundPool soundPool;
-    private int clickSfxId = 0;
-    private boolean clickSfxLoaded = false;
+public class Skins extends BaseActivity {
 
     private RecyclerView rvSections;
 
@@ -60,53 +53,6 @@ public class Skins extends AppCompatActivity {
     private static final int CAPTION_PAD_BOTTOM_DP = 6;
     private static final int CARD_BOTTOM_MARGIN_DP = 2;
     private static final int CARD_BOTTOM_PADDING_DP = 6;
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseSoundPool();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releaseSoundPool();
-    }
-
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status == 0 && sampleId == clickSfxId) clickSfxLoaded = true;
-        });
-        clickSfxId = soundPool.load(this, R.raw.click, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            clickSfxLoaded = false;
-            clickSfxId = 0;
-        }
-    }
-
-    private void playSound() {
-        if (soundPool != null && clickSfxLoaded)
-            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -248,7 +194,7 @@ public class Skins extends AppCompatActivity {
             Section section = data.get(position);
             // Show skin count alongside class name
             holder.title.setText(section.title + "  (" + section.items.size() + ")");
-            holder.horizontal.setAdapter(new ImageAdapter(section.items, Skins.this::playSound));
+            holder.horizontal.setAdapter(new ImageAdapter(section.items, Skins.this::playClick));
         }
 
         @Override
@@ -527,10 +473,5 @@ public class Skins extends AppCompatActivity {
 
     private static int dpStatic(ViewGroup parent, int dp) {
         return Math.round(dp * parent.getResources().getDisplayMetrics().density);
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 }

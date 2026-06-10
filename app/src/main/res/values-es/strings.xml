@@ -1745,4 +1745,13 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="section_behaviour">Comportamiento</string>
     <string name="section_properties">Propiedades</string>
     <string name="coming_soon">Próximamente</string>
+
+    <!-- Previously hardcoded UI strings -->
+    <string name="privacy_options_unavailable">Opciones de privacidad no disponibles: %1$s</string>
+    <string name="ad_consent_not_required">El consentimiento de anuncios no es necesario en tu región.</string>
+    <string name="no_skill_points_left">No te quedan puntos de habilidad</string>
+    <string name="not_enough_skill_points">No hay suficientes puntos de habilidad para desbloquear todas las habilidades anteriores.</string>
+    <string name="no_level_file_provided">No se proporcionó ningún archivo de nivel</string>
+    <string name="failed_to_load_level">Error al cargar el nivel: %1$s</string>
+    <string name="translation_model_failed">Error al descargar el modelo de traducción.</string>
 </resources>

@@ -1,75 +1,21 @@
 package xyz.magicrampagecompanion.ui.main;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
+
 import xyz.magicrampagecompanion.R;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class About extends AppCompatActivity {
-
-    private SoundPool soundPool;
-    private int clickSfxId = 0;
-    private boolean clickSfxLoaded = false;
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        getWindow().getDecorView().post(this::initSoundPoolIfNeeded);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        releaseSoundPool();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releaseSoundPool();
-    }
-
-    private void initSoundPoolIfNeeded() {
-        if (soundPool != null) return;
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_GAME)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build())
-                .build();
-        soundPool.setOnLoadCompleteListener((sp, sampleId, status) -> {
-            if (status == 0 && sampleId == clickSfxId) clickSfxLoaded = true;
-        });
-        clickSfxId = soundPool.load(this, R.raw.click, 1);
-    }
-
-    private void releaseSoundPool() {
-        if (soundPool != null) {
-            soundPool.release();
-            soundPool = null;
-            clickSfxLoaded = false;
-            clickSfxId = 0;
-        }
-    }
-
-    private void playSound() {
-        if (soundPool != null && clickSfxLoaded)
-            soundPool.play(clickSfxId, 0.25f, 0.25f, 1, 0, 1.0f);
-    }
+public class About extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,9 +53,9 @@ public class About extends AppCompatActivity {
         }
     }
 
-    // ---------- Social onClick handlers ----------
+    // ---------- Social onClick handlers (referenced from XML) ----------
     public void openFacebook(View view) {
-        playSound();
+        playClick();
         // Facebook group
         openUrlWithFallback(
                 "https://www.facebook.com/groups/magicrampage",
@@ -119,7 +65,7 @@ public class About extends AppCompatActivity {
     }
 
     public void openInstagram(View view) {
-        playSound();
+        playClick();
         openUrlWithFallback(
                 "https://www.instagram.com/ivan_cvetanovich/",
                 "com.instagram.android",
@@ -128,7 +74,7 @@ public class About extends AppCompatActivity {
     }
 
     public void openTwitter(View view) {
-        playSound();
+        playClick();
         // X/Twitter
         openUrlWithFallback(
                 "https://x.com/PrOfS3S",
@@ -138,16 +84,11 @@ public class About extends AppCompatActivity {
     }
 
     public void openDiscordInvite(View view) {
-        playSound();
+        playClick();
         openUrlWithFallback(
                 "https://discord.gg/HcGA9x5erx",
                 "com.discord",
                 "Discord invite"
         );
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
     }
 }

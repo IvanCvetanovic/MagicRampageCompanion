@@ -1,7 +1,6 @@
 package xyz.magicrampagecompanion.ui.enemies;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -17,9 +16,9 @@ import android.widget.TextView;
 
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.data.models.Enemy;
-import xyz.magicrampagecompanion.core.utils.LocaleHelper;
+import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
-public class EnemyDetail extends AppCompatActivity {
+public class EnemyDetail extends BaseActivity {
     public static final String EXTRA_ENEMY = "xyz.magicrampagecompanion.EXTRA_ENEMY";
 
     private static final int COLOR_HEALTH  = 0xFF4CAF50;
@@ -174,8 +173,4 @@ public class EnemyDetail extends AppCompatActivity {
         return Math.round(getResources().getDisplayMetrics().density * value);
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocaleHelper.applyLocale(newBase));
-    }
 }
