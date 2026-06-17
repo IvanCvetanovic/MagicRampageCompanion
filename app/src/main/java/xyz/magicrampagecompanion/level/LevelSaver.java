@@ -42,6 +42,16 @@ public class LevelSaver {
      * @param dest       file to write the reconciled .esc to
      */
     public static void save(InputStream sourceEsc, Level level, File dest) throws Exception {
+        File parent = dest.getParentFile();
+        if (parent != null) parent.mkdirs();
+        try (OutputStream os = new FileOutputStream(dest)) {
+            save(sourceEsc, level, os);
+        }
+    }
+
+    /** Same reconcile as {@link #save(InputStream, Level, File)} but writes to an arbitrary stream
+     *  (e.g. a Storage Access Framework document the user picked for export). */
+    public static void save(InputStream sourceEsc, Level level, OutputStream out) throws Exception {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
         Document doc = db.parse(sourceEsc);
@@ -99,11 +109,7 @@ public class LevelSaver {
         Transformer t = tf.newTransformer();
         t.setOutputProperty(OutputKeys.INDENT, "yes");
         t.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
-        File parent = dest.getParentFile();
-        if (parent != null) parent.mkdirs();
-        try (OutputStream os = new FileOutputStream(dest)) {
-            t.transform(new DOMSource(doc), new StreamResult(os));
-        }
+        t.transform(new DOMSource(doc), new StreamResult(out));
     }
 
     /** Updates Position (x/y/z/angle), flip flags, and an existing inner Scale. Never inserts Scale

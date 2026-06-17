@@ -3,6 +3,7 @@ package xyz.magicrampagecompanion.ui.levelviewer;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,6 +18,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -29,6 +32,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -70,6 +74,11 @@ public class LevelViewerActivity extends BaseActivity {
     private EntityFloatGetter pendingGetter;
     private EntityFloatSetter pendingSetter;
     private float pendingBefore = Float.NaN;
+
+    // SAF export: user picks a destination (Downloads/Documents/...) — no storage permission needed.
+    private final ActivityResultLauncher<String> exportLauncher =
+            registerForActivityResult(new ActivityResultContracts.CreateDocument("application/octet-stream"),
+                    uri -> { if (uri != null) writeExport(uri); });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -425,8 +434,13 @@ public class LevelViewerActivity extends BaseActivity {
                 .setTitle(R.string.save_dialog_title)
                 .setView(input)
                 .setPositiveButton(R.string.save, (d, w) -> doSave(input.getText().toString().trim()))
+                .setNeutralButton(R.string.export, (d, w) -> startExport(input.getText().toString().trim()))
                 .setNegativeButton(R.string.cancel, null)
                 .show();
+    }
+
+    private InputStream openSource() throws IOException {
+        return (levelPath != null) ? new FileInputStream(levelPath) : getAssets().open("levels/" + levelFile);
     }
 
     private String defaultSaveName() {
@@ -440,14 +454,33 @@ public class LevelViewerActivity extends BaseActivity {
         if (name == null || name.isEmpty()) name = defaultSaveName();
         if (!name.endsWith(".esc")) name += ".esc";
         File dest = new File(new File(getFilesDir(), "userlevels"), name);
-        try (InputStream src = (levelPath != null)
-                ? new FileInputStream(levelPath)
-                : getAssets().open("levels/" + levelFile)) {
+        try (InputStream src = openSource()) {
             LevelSaver.save(src, currentLevel, dest);
             Toast.makeText(this, getString(R.string.save_success, name), Toast.LENGTH_LONG).show();
         } catch (Exception e) {
             Log.e(TAG, "Save failed", e);
             Toast.makeText(this, getString(R.string.save_failed, String.valueOf(e.getMessage())), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    /** Launches the system file picker so the user chooses where to save the .esc (e.g. Downloads),
+     *  then writes it there. From there the user transfers it to the PC's Magic Rampage/scenes/. */
+    private void startExport(String name) {
+        if (name == null || name.isEmpty()) name = defaultSaveName();
+        if (!name.endsWith(".esc")) name += ".esc";
+        exportLauncher.launch(name);
+    }
+
+    private void writeExport(Uri uri) {
+        if (currentLevel == null) return;
+        try (InputStream src = openSource();
+             OutputStream out = getContentResolver().openOutputStream(uri)) {
+            if (out == null) throw new IOException("Could not open the chosen destination");
+            LevelSaver.save(src, currentLevel, out);
+            Toast.makeText(this, R.string.export_success, Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Log.e(TAG, "Export failed", e);
+            Toast.makeText(this, getString(R.string.export_failed, String.valueOf(e.getMessage())), Toast.LENGTH_LONG).show();
         }
     }
 
