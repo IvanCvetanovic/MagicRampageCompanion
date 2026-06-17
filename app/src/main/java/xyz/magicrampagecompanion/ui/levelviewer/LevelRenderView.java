@@ -1419,6 +1419,7 @@ public class LevelRenderView extends View {
         }
         lastSelectTapX = screenX;
         lastSelectTapY = screenY;
+        notifySelectionChanged();
         invalidate();
     }
 
@@ -1462,6 +1463,21 @@ public class LevelRenderView extends View {
     /** The entity currently selected in EDIT mode, or null. */
     public LevelEntity getSelectedEntity() {
         return selectedEntity;
+    }
+
+    /** Notified when the EDIT-mode selection changes (so the UI can show/update an inspector). */
+    public interface OnSelectionChangedListener {
+        void onSelectionChanged(LevelEntity selected);
+    }
+
+    private OnSelectionChangedListener selectionListener;
+
+    public void setOnSelectionChangedListener(OnSelectionChangedListener l) {
+        this.selectionListener = l;
+    }
+
+    private void notifySelectionChanged() {
+        if (selectionListener != null) selectionListener.onSelectionChanged(selectedEntity);
     }
 
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {

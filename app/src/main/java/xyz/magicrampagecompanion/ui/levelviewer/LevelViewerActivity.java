@@ -4,8 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -39,6 +43,15 @@ public class LevelViewerActivity extends BaseActivity {
     private ImageButton btnShowSecrets;
     private Level currentLevel;
     private String levelFile;
+
+    // Editor property inspector (Phase 2)
+    private LinearLayout editorBottomPanel;
+    private View editorInspector;
+    private TextView inspectorHeader;
+    private TextView inspectorMeta;
+    private EditText etX, etY, etZ, etScaleX, etScaleY, etAngle;
+    private CheckBox cbFlipX, cbFlipY;
+    private boolean suppressWatchers = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +113,22 @@ public class LevelViewerActivity extends BaseActivity {
             Toast.makeText(this, statusRes, Toast.LENGTH_SHORT).show();
         });
 
-        // --- Toggle Edit Mode Button (Phase 0: mode state + overlay visibility only) ---
-        LinearLayout editorToolbar = findViewById(R.id.editorToolbar);
+        // --- Edit Mode toggle + property inspector ---
+        editorBottomPanel = findViewById(R.id.editorBottomPanel);
+        editorInspector   = findViewById(R.id.editorInspector);
+        inspectorHeader   = findViewById(R.id.inspectorHeader);
+        inspectorMeta     = findViewById(R.id.inspectorMeta);
+        etX = findViewById(R.id.inspectorX);
+        etY = findViewById(R.id.inspectorY);
+        etZ = findViewById(R.id.inspectorZ);
+        etScaleX = findViewById(R.id.inspectorScaleX);
+        etScaleY = findViewById(R.id.inspectorScaleY);
+        etAngle  = findViewById(R.id.inspectorAngle);
+        cbFlipX  = findViewById(R.id.inspectorFlipX);
+        cbFlipY  = findViewById(R.id.inspectorFlipY);
+        setupInspectorBindings();
+        renderView.setOnSelectionChangedListener(this::populateInspector);
+
         ImageButton btnToggleEdit = findViewById(R.id.btnToggleEdit);
         btnToggleEdit.setAlpha(0.4f); // starts in VIEW mode
         btnToggleEdit.setOnClickListener(v -> {
@@ -109,7 +136,8 @@ public class LevelViewerActivity extends BaseActivity {
             boolean enable = !renderView.isEditMode();
             renderView.setEditMode(enable);
             btnToggleEdit.setAlpha(enable ? 1.0f : 0.4f);
-            editorToolbar.setVisibility(enable ? View.VISIBLE : View.GONE);
+            editorBottomPanel.setVisibility(enable ? View.VISIBLE : View.GONE);
+            if (enable) populateInspector(renderView.getSelectedEntity());
             Toast.makeText(this, enable ? R.string.edit_mode_on : R.string.edit_mode_off,
                     Toast.LENGTH_SHORT).show();
         });
@@ -144,6 +172,75 @@ public class LevelViewerActivity extends BaseActivity {
             finish();
         }
     }
+
+    private void setupInspectorBindings() {
+        bindFloatField(etX, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.x = v; });
+        bindFloatField(etY, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.y = v; });
+        bindFloatField(etZ, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.z = v; });
+        bindFloatField(etScaleX, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.scaleX = v; });
+        bindFloatField(etScaleY, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.scaleY = v; });
+        bindFloatField(etAngle, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.angle = v; });
+        cbFlipX.setOnCheckedChangeListener((b, checked) -> {
+            if (suppressWatchers) return;
+            LevelEntity e = renderView.getSelectedEntity();
+            if (e != null) { e.flipX = checked; renderView.invalidate(); }
+        });
+        cbFlipY.setOnCheckedChangeListener((b, checked) -> {
+            if (suppressWatchers) return;
+            LevelEntity e = renderView.getSelectedEntity();
+            if (e != null) { e.flipY = checked; renderView.invalidate(); }
+        });
+    }
+
+    private void bindFloatField(EditText et, FloatApplier applier) {
+        et.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
+            @Override public void onTextChanged(CharSequence s, int a, int b, int c) {}
+            @Override public void afterTextChanged(Editable s) {
+                if (suppressWatchers || renderView.getSelectedEntity() == null) return;
+                try {
+                    applier.apply(Float.parseFloat(s.toString().trim()));
+                    renderView.invalidate();
+                } catch (NumberFormatException ignored) {
+                    // Partial input (e.g. "-" or empty) — wait for a valid number.
+                }
+            }
+        });
+    }
+
+    private void populateInspector(LevelEntity e) {
+        suppressWatchers = true;
+        if (e == null) {
+            editorInspector.setVisibility(View.GONE);
+        } else {
+            editorInspector.setVisibility(View.VISIBLE);
+            String name = (e.entityName == null || e.entityName.isEmpty()) ? ("id " + e.id) : e.entityName;
+            String sprite = (e.spriteFile == null || e.spriteFile.isEmpty())
+                    ? getString(R.string.inspector_no_sprite) : e.spriteFile;
+            inspectorHeader.setText(name + "  •  " + sprite);
+            String meta = getString(R.string.inspector_blend, e.blendMode);
+            if (e.customData != null && !e.customData.isEmpty()) {
+                meta += "  •  {" + android.text.TextUtils.join(", ", e.customData.keySet()) + "}";
+            }
+            inspectorMeta.setText(meta);
+            etX.setText(fmt(e.x));
+            etY.setText(fmt(e.y));
+            etZ.setText(fmt(e.z));
+            etScaleX.setText(fmt(e.scaleX));
+            etScaleY.setText(fmt(e.scaleY));
+            etAngle.setText(fmt(e.angle));
+            cbFlipX.setChecked(e.flipX);
+            cbFlipY.setChecked(e.flipY);
+        }
+        suppressWatchers = false;
+    }
+
+    private static String fmt(float v) {
+        if (!Float.isInfinite(v) && v == Math.rint(v)) return String.valueOf((long) v);
+        return String.valueOf(v);
+    }
+
+    private interface FloatApplier { void apply(float v); }
 
     private boolean isLevelUnlocked(String fileName) {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);

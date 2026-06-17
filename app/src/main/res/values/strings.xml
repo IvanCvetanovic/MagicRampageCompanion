@@ -1973,6 +1973,16 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="cd_toggle_edit">Toggle Edit Mode</string>
     <string name="edit_mode_on">Edit mode: On</string>
     <string name="edit_mode_off">Edit mode: Off</string>
+    <string name="inspector_x">X</string>
+    <string name="inspector_y">Y</string>
+    <string name="inspector_z">Z</string>
+    <string name="inspector_scale_x">Scale X</string>
+    <string name="inspector_scale_y">Scale Y</string>
+    <string name="inspector_angle">Angle</string>
+    <string name="inspector_flip_x">Flip X</string>
+    <string name="inspector_flip_y">Flip Y</string>
+    <string name="inspector_no_sprite">(no sprite)</string>
+    <string name="inspector_blend">Blend %1$d</string>
 
     <!-- Empty states -->
     <string name="empty_no_results">No results found</string>
