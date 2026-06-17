@@ -38,20 +38,30 @@ public class LevelParser {
     private static final int REASON_NO_FILENAME     = 5; // entity had no <FileName> and no inline sprite
 
     public static Level parse(Context ctx, String assetPath) throws Exception {
+        int slash = assetPath.lastIndexOf('/');
+        String name = slash >= 0 ? assetPath.substring(slash + 1) : assetPath;
+        try (InputStream is = ctx.getAssets().open(assetPath)) {
+            return parse(ctx, is, name);
+        }
+    }
+
+    /**
+     * Parses a level from an arbitrary stream (e.g. a user-saved .esc in app storage).
+     * {@code name} is the file name (no path) used for {@code level.name} and localized-string lookup.
+     */
+    public static Level parse(Context ctx, InputStream is, String name) throws Exception {
         // Ensure head mappings are loaded
         if (headMap.isEmpty()) {
             loadEnmlMapping(ctx, "entities/npc-head.enml");
         }
 
-        try (InputStream is = ctx.getAssets().open(assetPath)) {
-
+        {
             // Load localized strings for this level (best-effort; empty map if missing)
-            Map<String, String> strings = loadStrings(ctx, stringsPathForLevel(assetPath));
+            Map<String, String> strings = loadStrings(ctx, stringsPathForLevel(name));
 
             Level level = new Level();
             // Store the file name (e.g. "dungeon43.1.esc") so the renderer can apply per-level tweaks.
-            int slash = assetPath.lastIndexOf('/');
-            level.name = slash >= 0 ? assetPath.substring(slash + 1) : assetPath;
+            level.name = name;
             SceneProperties props = level.sceneProperties;
 
             LevelEntity current = null;
@@ -215,7 +225,7 @@ public class LevelParser {
             }
 
             // ── Parse summary ──────────────────────────────────────────────
-            Log.d(TAG, "=== PARSE SUMMARY for " + assetPath + " ===");
+            Log.d(TAG, "=== PARSE SUMMARY for " + name + " ===");
             Log.d(TAG, "  Total entities parsed : " + level.entities.size());
             Log.d(TAG, "  [OK] Inline sprite    : " + reasonCounts[REASON_INLINE_SPRITE]
                     + " — " + reasonSamples.get(REASON_INLINE_SPRITE));

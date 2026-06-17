@@ -17,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,11 +32,13 @@ public class LevelListActivity extends BaseActivity {
 
     private final List<String> storyFiles  = new ArrayList<>();
     private final List<String> otherFiles  = new ArrayList<>();
+    private final List<String> myPaths     = new ArrayList<>(); // absolute paths of saved levels
     private List<String> activeList        = new ArrayList<>();
+    private int activeTab = 0; // 0 = story, 1 = others, 2 = my levels
 
     private RecyclerView recyclerView;
     private TextView emptyStateText;
-    private Button tabStory, tabOthers;
+    private Button tabStory, tabOthers, tabMine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class LevelListActivity extends BaseActivity {
         emptyStateText = findViewById(R.id.emptyStateText);
         tabStory       = findViewById(R.id.tabStory);
         tabOthers      = findViewById(R.id.tabOthers);
+        tabMine        = findViewById(R.id.tabMine);
 
         // Apply system insets: status bar to tab bar top, nav bar to recycler bottom
         View root    = findViewById(R.id.levelListRoot);
@@ -71,18 +75,23 @@ public class LevelListActivity extends BaseActivity {
         recyclerView.setHasFixedSize(true);
 
         loadLevelFiles();
+        loadMyLevels();
 
-        tabStory.setOnClickListener(v -> { playClick(); setActiveTab(true); });
-        tabOthers.setOnClickListener(v -> { playClick(); setActiveTab(false); });
+        tabStory.setOnClickListener(v -> { playClick(); setActiveTab(0); });
+        tabOthers.setOnClickListener(v -> { playClick(); setActiveTab(1); });
+        tabMine.setOnClickListener(v -> { playClick(); setActiveTab(2); });
 
         // Default to Story tab
-        setActiveTab(true);
+        setActiveTab(0);
     }
 
-    private void setActiveTab(boolean story) {
-        tabStory.setSelected(story);
-        tabOthers.setSelected(!story);
-        activeList = story ? storyFiles : otherFiles;
+    private void setActiveTab(int tab) {
+        activeTab = tab;
+        tabStory.setSelected(tab == 0);
+        tabOthers.setSelected(tab == 1);
+        tabMine.setSelected(tab == 2);
+        activeList = (tab == 0) ? storyFiles : (tab == 1) ? otherFiles : myPaths;
+        emptyStateText.setText(tab == 2 ? R.string.empty_no_my_levels : R.string.empty_no_levels);
         showList(activeList);
     }
 
@@ -129,6 +138,23 @@ public class LevelListActivity extends BaseActivity {
         }
     }
 
+    private void loadMyLevels() {
+        myPaths.clear();
+        File dir = new File(getFilesDir(), "userlevels");
+        File[] files = dir.listFiles((d, n) -> n.endsWith(".esc"));
+        if (files != null) {
+            Arrays.sort(files, (a, b) -> compareNatural(a.getName(), b.getName()));
+            for (File f : files) myPaths.add(f.getAbsolutePath());
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadMyLevels(); // pick up levels saved since we last looked
+        if (activeTab == 2) showList(activeList);
+    }
+
     private static int compareNatural(String a, String b) {
         int ia = 0, ib = 0;
         while (ia < a.length() && ib < b.length()) {
@@ -164,14 +190,19 @@ public class LevelListActivity extends BaseActivity {
 
                 playClick();
 
-                String file = activeList.get(pos);
+                String entry = activeList.get(pos);
                 Intent intent = new Intent(LevelListActivity.this, LevelViewerActivity.class);
-                intent.putExtra("levelFile", file);
+                if (activeTab == 2) intent.putExtra("levelPath", entry);
+                else intent.putExtra("levelFile", entry);
                 startActivity(intent);
             });
         }
 
         void bind(String fileName) {
+            if (activeTab == 2) { // My Levels: arbitrary saved file names — show as-is
+                name.setText(new File(fileName).getName().replaceAll("\\.esc$", ""));
+                return;
+            }
             java.util.regex.Matcher m = java.util.regex.Pattern.compile("dungeon(\\d+)")
                     .matcher(fileName.replace(".esc", ""));
             String key = m.find()

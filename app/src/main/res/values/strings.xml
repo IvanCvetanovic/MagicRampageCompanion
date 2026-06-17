@@ -962,6 +962,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="level_viewer">🗺️ Level Viewer 🗺️</string>
     <string name="level_tab_story">Story</string>
     <string name="level_tab_others">Others</string>
+    <string name="level_tab_mine">My Levels</string>
     <string name="survival0">Survival 1</string>
     <string name="survival1">Survival 2</string>
     <string name="survival2">Survival 3</string>
@@ -2005,6 +2006,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="empty_no_results">No results found</string>
     <string name="empty_no_enemies">No enemies to display</string>
     <string name="empty_no_levels">No levels available</string>
+    <string name="empty_no_my_levels">No saved levels yet — edit a level and tap Save.</string>
     <string name="arcane_rod_staff">Arcane Rod Staff</string>
     <string name="coming_soon">Coming Soon</string>
 

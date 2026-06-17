@@ -26,6 +26,7 @@ import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -50,7 +51,9 @@ public class LevelViewerActivity extends BaseActivity {
     private LevelRenderView renderView;
     private ImageButton btnShowSecrets;
     private Level currentLevel;
-    private String levelFile;
+    private String levelFile;   // asset name (null when opened from storage)
+    private String levelPath;   // absolute storage path (null when opened from assets)
+    private String levelKey;    // file basename for title / secrets / zoom checks (both sources)
 
     // Editor property inspector (Phase 2)
     private LinearLayout editorBottomPanel;
@@ -74,11 +77,13 @@ public class LevelViewerActivity extends BaseActivity {
         setContentView(R.layout.activity_level_viewer);
 
         levelFile = getIntent().getStringExtra("levelFile");
-        if (levelFile == null) {
+        levelPath = getIntent().getStringExtra("levelPath");
+        if (levelFile == null && levelPath == null) {
             Toast.makeText(this, R.string.no_level_file_provided, Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
+        levelKey = (levelPath != null) ? new File(levelPath).getName() : levelFile;
 
         rewardedAdManager.loadAd(this);
 
@@ -107,12 +112,12 @@ public class LevelViewerActivity extends BaseActivity {
 
         TextView title = findViewById(R.id.levelViewerTitle);
         java.util.regex.Matcher titleMatcher = java.util.regex.Pattern.compile("dungeon(\\d+)")
-                .matcher(levelFile.replace(".esc", ""));
+                .matcher(levelKey.replace(".esc", ""));
         String titleKey = titleMatcher.find()
                 ? titleMatcher.replaceFirst("dungeon_" + (Integer.parseInt(titleMatcher.group(1)) + 1)).replace(".", "_")
-                : levelFile.replace(".esc", "");
+                : levelKey.replace(".esc", "");
         int titleResId = getResources().getIdentifier(titleKey, "string", getPackageName());
-        title.setText(titleResId != 0 ? getString(titleResId) : levelFile.replace(".esc", ""));
+        title.setText(titleResId != 0 ? getString(titleResId) : levelKey.replace(".esc", ""));
 
         ImageButton btnBack = findViewById(R.id.btnLevelBack);
         btnBack.setOnClickListener(v -> { playClick(); finish(); });
@@ -120,7 +125,7 @@ public class LevelViewerActivity extends BaseActivity {
         renderView = findViewById(R.id.levelRenderView);
 
         // Check if this level is already unlocked
-        if (isLevelUnlocked(levelFile)) {
+        if (isLevelUnlocked(levelKey)) {
             renderView.setSecretsUnlocked(true);
         }
 
@@ -215,13 +220,19 @@ public class LevelViewerActivity extends BaseActivity {
 
         // --- Parse and display level ---
         try {
-            currentLevel = LevelParser.parse(this, "levels/" + levelFile);
-            if (!levelFile.matches("dungeon\\d+.*\\.esc")) {
+            if (levelPath != null) {
+                try (InputStream is = new FileInputStream(levelPath)) {
+                    currentLevel = LevelParser.parse(this, is, levelKey);
+                }
+            } else {
+                currentLevel = LevelParser.parse(this, "levels/" + levelFile);
+            }
+            if (!levelKey.matches("dungeon\\d+.*\\.esc")) {
                 renderView.setInitialZoomMultiplier(4.0f);
             }
             renderView.setLevel(currentLevel);
         } catch (Exception e) {
-            Log.e(TAG, "Failed to load level " + levelFile, e);
+            Log.e(TAG, "Failed to load level " + levelKey, e);
             Toast.makeText(this, getString(R.string.failed_to_load_level, e.getMessage()), Toast.LENGTH_LONG).show();
             finish();
         }
@@ -419,8 +430,9 @@ public class LevelViewerActivity extends BaseActivity {
     }
 
     private String defaultSaveName() {
-        String base = (levelFile != null ? levelFile : "level").replaceAll("\\.esc$", "");
-        return base + "_edited";
+        String base = (levelKey != null ? levelKey : "level").replaceAll("\\.esc$", "");
+        // Stock level → suggest an "_edited" copy; an already-saved My Level → overwrite same name.
+        return (levelPath != null) ? base : base + "_edited";
     }
 
     private void doSave(String name) {
@@ -428,7 +440,9 @@ public class LevelViewerActivity extends BaseActivity {
         if (name == null || name.isEmpty()) name = defaultSaveName();
         if (!name.endsWith(".esc")) name += ".esc";
         File dest = new File(new File(getFilesDir(), "userlevels"), name);
-        try (InputStream src = getAssets().open("levels/" + levelFile)) {
+        try (InputStream src = (levelPath != null)
+                ? new FileInputStream(levelPath)
+                : getAssets().open("levels/" + levelFile)) {
             LevelSaver.save(src, currentLevel, dest);
             Toast.makeText(this, getString(R.string.save_success, name), Toast.LENGTH_LONG).show();
         } catch (Exception e) {
@@ -512,7 +526,7 @@ public class LevelViewerActivity extends BaseActivity {
             rewardedAdManager.show(this, new RewardedAdManager.RewardCallback() {
                 @Override
                 public void onUserEarnedReward(RewardItem rewardItem) {
-                    saveLevelUnlock(levelFile);
+                    saveLevelUnlock(levelKey);
                     renderView.setSecretsUnlocked(true);
                     btnShowSecrets.setColorFilter(Color.YELLOW);
                     Toast.makeText(LevelViewerActivity.this, R.string.secrets_revealed, Toast.LENGTH_LONG).show();
