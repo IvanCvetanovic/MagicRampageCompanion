@@ -62,6 +62,15 @@
             android:src="@drawable/edit_icon"
             android:contentDescription="@string/cd_toggle_edit" />
 
+        <ImageButton
+            android:id="@+id/btnToggleSnap"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_grid_snap"
+            android:contentDescription="@string/cd_toggle_snap"
+            android:visibility="gone" />
+
     </LinearLayout>
 
     <!-- Editor bottom panel: property inspector (when an entity is selected) + tool row.

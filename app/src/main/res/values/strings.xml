@@ -1983,6 +1983,9 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="inspector_flip_y">Flip Y</string>
     <string name="inspector_no_sprite">(no sprite)</string>
     <string name="inspector_blend">Blend %1$d</string>
+    <string name="cd_toggle_snap">Toggle Grid Snap</string>
+    <string name="snap_on">Grid snap: On</string>
+    <string name="snap_off">Grid snap: Off</string>
 
     <!-- Empty states -->
     <string name="empty_no_results">No results found</string>

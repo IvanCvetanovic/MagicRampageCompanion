@@ -80,6 +80,17 @@ public class LevelRenderView extends View {
     private LevelEntity selectedEntity = null;
     private float lastSelectTapX = Float.NaN, lastSelectTapY = Float.NaN;
 
+    // Editor move tool (Phase 3): drag-to-move state + grid snapping.
+    private boolean snapToGrid = true;
+    private boolean dragCandidate = false;    // DOWN landed on the selection; may become a move
+    private boolean isDraggingEntity = false; // movement passed the tap threshold
+    private float grabOffX, grabOffYr;        // offset from the entity's rendered center at grab time
+    private float moveOldX, moveOldY;         // pre-drag position, for the undo command
+
+    // Editor undo/redo command stacks (Phase 3 seeds them; Phase 5 wires the buttons).
+    private final java.util.ArrayDeque<EditCommand> undoStack = new java.util.ArrayDeque<>();
+    private final java.util.ArrayDeque<EditCommand> redoStack = new java.util.ArrayDeque<>();
+
     // Level world bounds (computed once per level)
     private float minX, minY, maxX, maxY;
     private boolean boundsReady = false;
@@ -1303,11 +1314,29 @@ public class LevelRenderView extends View {
                 lastTouchY = focusY;
                 tapStartX  = focusX;
                 tapStartY  = focusY;
-                isPanning = true;
+                dragCandidate = false;
+                isDraggingEntity = false;
+                // EDIT mode: if the touch lands on the selected entity, this drag moves it (not pans).
+                if (editMode && selectedEntity != null && pointerCount == 1) {
+                    float wx = (focusX - offsetX) / scale;
+                    float wy = (focusY - offsetY) / scale;
+                    if (hitSelected(wx, wy)) {
+                        dragCandidate = true;
+                        grabOffX = wx - selectedEntity.x;
+                        grabOffYr = wy - computeRenderY(selectedEntity);
+                        moveOldX = selectedEntity.x;
+                        moveOldY = selectedEntity.y;
+                    }
+                }
+                isPanning = !dragCandidate;
                 break;
 
             case MotionEvent.ACTION_POINTER_DOWN:
             case MotionEvent.ACTION_POINTER_UP:
+                // A second finger means pinch/pan — stop dragging the entity (committing any move).
+                if (isDraggingEntity) finalizeEntityDrag();
+                dragCandidate = false;
+                isDraggingEntity = false;
                 // Update lastTouch to the focal point of the fingers that WILL remain
                 // on screen. This prevents the jump when transitioning between 2 and 1 fingers.
                 lastTouchX = focusX;
@@ -1315,6 +1344,16 @@ public class LevelRenderView extends View {
                 break;
 
             case MotionEvent.ACTION_MOVE:
+                if (dragCandidate && pointerCount == 1 && selectedEntity != null) {
+                    if (!isDraggingEntity) {
+                        float mdx = focusX - tapStartX, mdy = focusY - tapStartY;
+                        if (mdx * mdx + mdy * mdy > TAP_SLOP_PX * TAP_SLOP_PX) isDraggingEntity = true;
+                    }
+                    if (isDraggingEntity) {
+                        dragSelectedEntityTo(focusX, focusY);
+                        break;
+                    }
+                }
                 if (isPanning) {
                     offsetX += focusX - lastTouchX;
                     offsetY += focusY - lastTouchY;
@@ -1326,6 +1365,14 @@ public class LevelRenderView extends View {
 
             case MotionEvent.ACTION_UP:
                 isPanning = false;
+                if (isDraggingEntity) {
+                    finalizeEntityDrag();
+                    dragCandidate = false;
+                    isDraggingEntity = false;
+                    performClick();
+                    break;
+                }
+                dragCandidate = false;
                 float dx = focusX - tapStartX;
                 float dy = focusY - tapStartY;
                 if (!scaleDetector.isInProgress()
@@ -1337,6 +1384,8 @@ public class LevelRenderView extends View {
 
             case MotionEvent.ACTION_CANCEL:
                 isPanning = false;
+                dragCandidate = false;
+                isDraggingEntity = false;
                 break;
         }
 
@@ -1478,6 +1527,96 @@ public class LevelRenderView extends View {
 
     private void notifySelectionChanged() {
         if (selectionListener != null) selectionListener.onSelectionChanged(selectedEntity);
+    }
+
+    // ── Move tool (Phase 3) ────────────────────────────────────────────────
+
+    public void setSnapToGrid(boolean snap) { this.snapToGrid = snap; }
+    public boolean isSnapToGrid() { return snapToGrid; }
+
+    /** True if (worldX,worldY) falls within the selected entity's on-screen footprint. */
+    private boolean hitSelected(float worldX, float worldY) {
+        if (selectedEntity == null) return false;
+        float[] half = getSelectionHalfExtents(selectedEntity);
+        float lx = worldX - selectedEntity.x;
+        float ly = worldY - computeRenderY(selectedEntity);
+        return Math.abs(lx) <= half[0] && Math.abs(ly) <= half[1];
+    }
+
+    /** The y-offset the renderer applies for depth/parallax: renderY = storedY - parallaxOffsetY. */
+    private float parallaxOffsetY(LevelEntity e) {
+        if (level == null || level.sceneProperties == null) return 0f;
+        return e.z * level.sceneProperties.parallaxIntensity * e.parallaxIntensity;
+    }
+
+    /** Moves the selected entity so the grabbed point follows the finger; inverts computeRenderY for stored Y. */
+    private void dragSelectedEntityTo(float screenX, float screenY) {
+        if (selectedEntity == null) return;
+        float wx = (screenX - offsetX) / scale;
+        float wy = (screenY - offsetY) / scale;
+        float rawX = wx - grabOffX;                                            // new rendered-center X
+        float rawStoredY = (wy - grabOffYr) + parallaxOffsetY(selectedEntity); // rendered-center Y -> stored Y
+        if (snapToGrid) {
+            selectedEntity.x = Math.round(rawX / BASE_TILE) * BASE_TILE;
+            selectedEntity.y = Math.round(rawStoredY / BASE_TILE) * BASE_TILE;
+        } else {
+            selectedEntity.x = rawX;
+            selectedEntity.y = rawStoredY;
+        }
+        invalidate();
+    }
+
+    /** Records the completed move as an undoable command and refreshes the inspector. */
+    private void finalizeEntityDrag() {
+        if (selectedEntity != null && (selectedEntity.x != moveOldX || selectedEntity.y != moveOldY)) {
+            pushCommand(new MoveCommand(selectedEntity, moveOldX, moveOldY, selectedEntity.x, selectedEntity.y));
+        }
+        notifySelectionChanged();
+        invalidate();
+    }
+
+    // ── Command layer (Phase 3 seed; Phase 5 wires undo/redo buttons) ───────
+
+    public interface EditCommand {
+        void undo();
+        void redo();
+    }
+
+    public void pushCommand(EditCommand c) {
+        undoStack.push(c);
+        redoStack.clear();
+    }
+
+    public boolean canUndo() { return !undoStack.isEmpty(); }
+    public boolean canRedo() { return !redoStack.isEmpty(); }
+
+    public void undo() {
+        if (undoStack.isEmpty()) return;
+        EditCommand c = undoStack.pop();
+        c.undo();
+        redoStack.push(c);
+        notifySelectionChanged();
+        invalidate();
+    }
+
+    public void redo() {
+        if (redoStack.isEmpty()) return;
+        EditCommand c = redoStack.pop();
+        c.redo();
+        undoStack.push(c);
+        notifySelectionChanged();
+        invalidate();
+    }
+
+    /** Moves an entity between two stored positions. */
+    private static final class MoveCommand implements EditCommand {
+        private final LevelEntity entity;
+        private final float oldX, oldY, newX, newY;
+        MoveCommand(LevelEntity e, float oldX, float oldY, float newX, float newY) {
+            this.entity = e; this.oldX = oldX; this.oldY = oldY; this.newX = newX; this.newY = newY;
+        }
+        @Override public void undo() { entity.x = oldX; entity.y = oldY; }
+        @Override public void redo() { entity.x = newX; entity.y = newY; }
     }
 
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {

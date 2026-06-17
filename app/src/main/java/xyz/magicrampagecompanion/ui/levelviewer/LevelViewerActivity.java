@@ -129,6 +129,16 @@ public class LevelViewerActivity extends BaseActivity {
         setupInspectorBindings();
         renderView.setOnSelectionChangedListener(this::populateInspector);
 
+        ImageButton btnToggleSnap = findViewById(R.id.btnToggleSnap);
+        btnToggleSnap.setAlpha(renderView.isSnapToGrid() ? 1.0f : 0.4f);
+        btnToggleSnap.setOnClickListener(v -> {
+            playClick();
+            boolean snap = !renderView.isSnapToGrid();
+            renderView.setSnapToGrid(snap);
+            btnToggleSnap.setAlpha(snap ? 1.0f : 0.4f);
+            Toast.makeText(this, snap ? R.string.snap_on : R.string.snap_off, Toast.LENGTH_SHORT).show();
+        });
+
         ImageButton btnToggleEdit = findViewById(R.id.btnToggleEdit);
         btnToggleEdit.setAlpha(0.4f); // starts in VIEW mode
         btnToggleEdit.setOnClickListener(v -> {
@@ -137,6 +147,7 @@ public class LevelViewerActivity extends BaseActivity {
             renderView.setEditMode(enable);
             btnToggleEdit.setAlpha(enable ? 1.0f : 0.4f);
             editorBottomPanel.setVisibility(enable ? View.VISIBLE : View.GONE);
+            btnToggleSnap.setVisibility(enable ? View.VISIBLE : View.GONE);
             if (enable) populateInspector(renderView.getSelectedEntity());
             Toast.makeText(this, enable ? R.string.edit_mode_on : R.string.edit_mode_off,
                     Toast.LENGTH_SHORT).show();
