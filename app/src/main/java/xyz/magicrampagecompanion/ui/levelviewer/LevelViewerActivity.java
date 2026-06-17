@@ -8,10 +8,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +25,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
 
+import java.io.IOException;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import xyz.magicrampagecompanion.R;
@@ -52,6 +57,8 @@ public class LevelViewerActivity extends BaseActivity {
     private EditText etX, etY, etZ, etScaleX, etScaleY, etAngle;
     private CheckBox cbFlipX, cbFlipY;
     private boolean suppressWatchers = false;
+    private ImageButton btnAddEntity, btnDuplicateEntity, btnDeleteEntity;
+    private List<String> entFiles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +86,14 @@ public class LevelViewerActivity extends BaseActivity {
             v.getLayoutParams().height = (int) (56 * getResources().getDisplayMetrics().density)
                     + sysBars.top;
             v.requestLayout();
+            // Keep the editor's bottom panel/toolbar clear of the system nav bar.
+            if (editorBottomPanel != null) {
+                editorBottomPanel.setPadding(
+                        editorBottomPanel.getPaddingLeft(),
+                        editorBottomPanel.getPaddingTop(),
+                        editorBottomPanel.getPaddingRight(),
+                        sysBars.bottom);
+            }
             return WindowInsetsCompat.CONSUMED;
         });
 
@@ -152,6 +167,15 @@ public class LevelViewerActivity extends BaseActivity {
             Toast.makeText(this, enable ? R.string.edit_mode_on : R.string.edit_mode_off,
                     Toast.LENGTH_SHORT).show();
         });
+
+        // --- Editor toolbar actions (Phase 4) ---
+        btnAddEntity = findViewById(R.id.btnAddEntity);
+        btnDuplicateEntity = findViewById(R.id.btnDuplicateEntity);
+        btnDeleteEntity = findViewById(R.id.btnDeleteEntity);
+        btnAddEntity.setOnClickListener(v -> { playClick(); showPaletteDialog(); });
+        btnDuplicateEntity.setOnClickListener(v -> { playClick(); renderView.duplicateSelected(); });
+        btnDeleteEntity.setOnClickListener(v -> { playClick(); confirmDeleteSelected(); });
+        updateEditActionButtons(renderView.getSelectedEntity());
 
         // --- Show Secrets Button (Ad-locked + Navigation) ---
         btnShowSecrets = findViewById(R.id.btnShowSecrets);
@@ -243,6 +267,7 @@ public class LevelViewerActivity extends BaseActivity {
             cbFlipX.setChecked(e.flipX);
             cbFlipY.setChecked(e.flipY);
         }
+        updateEditActionButtons(e);
         suppressWatchers = false;
     }
 
@@ -252,6 +277,65 @@ public class LevelViewerActivity extends BaseActivity {
     }
 
     private interface FloatApplier { void apply(float v); }
+
+    private void updateEditActionButtons(LevelEntity e) {
+        boolean has = e != null;
+        if (btnDuplicateEntity != null) { btnDuplicateEntity.setEnabled(has); btnDuplicateEntity.setAlpha(has ? 1f : 0.4f); }
+        if (btnDeleteEntity != null) { btnDeleteEntity.setEnabled(has); btnDeleteEntity.setAlpha(has ? 1f : 0.4f); }
+    }
+
+    private void confirmDeleteSelected() {
+        if (renderView.getSelectedEntity() == null) return;
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.confirm_delete_entity)
+                .setPositiveButton(R.string.delete, (d, w) -> renderView.deleteSelected())
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private void showPaletteDialog() {
+        if (entFiles == null) entFiles = loadEntFileList();
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_entity_palette, null);
+        EditText search = dialogView.findViewById(R.id.paletteSearch);
+        ListView list = dialogView.findViewById(R.id.paletteList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, new ArrayList<>(entFiles));
+        list.setAdapter(adapter);
+
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.palette_title)
+                .setView(dialogView)
+                .setNegativeButton(R.string.close, null)
+                .create();
+
+        search.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
+            @Override public void onTextChanged(CharSequence s, int a, int b, int c) { adapter.getFilter().filter(s); }
+            @Override public void afterTextChanged(Editable s) {}
+        });
+
+        list.setOnItemClickListener((parent, v, position, id) -> {
+            String name = adapter.getItem(position);
+            dialog.dismiss();
+            if (name != null) renderView.addEntityFromEnt(name);
+        });
+
+        dialog.show();
+    }
+
+    private List<String> loadEntFileList() {
+        List<String> out = new ArrayList<>();
+        try {
+            String[] files = getAssets().list("entities");
+            if (files != null) {
+                for (String f : files) if (f.endsWith(".ent")) out.add(f);
+                Collections.sort(out);
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to list .ent assets", e);
+        }
+        return out;
+    }
 
     private boolean isLevelUnlocked(String fileName) {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);

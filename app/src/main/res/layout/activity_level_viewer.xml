@@ -238,13 +238,43 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Tool button row (empty for now; future phases add buttons). Doubles as nav-bar spacer. -->
+        <!-- Tool button row. Doubles as nav-bar spacer (padded for insets in the activity). -->
         <LinearLayout
             android:id="@+id/editorToolbar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:orientation="horizontal"
-            android:gravity="center_vertical" />
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <ImageButton
+                android:id="@+id/btnAddEntity"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_add"
+                android:contentDescription="@string/cd_add_entity" />
+
+            <ImageButton
+                android:id="@+id/btnDuplicateEntity"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_duplicate"
+                android:contentDescription="@string/cd_duplicate_entity" />
+
+            <ImageButton
+                android:id="@+id/btnDeleteEntity"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_delete"
+                android:contentDescription="@string/cd_delete_entity" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

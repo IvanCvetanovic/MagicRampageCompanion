@@ -1619,6 +1619,98 @@ public class LevelRenderView extends View {
         @Override public void redo() { entity.x = newX; entity.y = newY; }
     }
 
+    // ── Add / delete / duplicate (Phase 4) ─────────────────────────────────
+
+    /** Rebuilds the z-sorted render list from level.entities (call after structural edits). */
+    private void rebuildSorted() {
+        sortedEntities.clear();
+        if (level != null && level.entities != null) {
+            sortedEntities.addAll(level.entities);
+            sortedEntities.sort((a, b) -> Float.compare(a.z, b.z));
+        }
+    }
+
+    private int nextEntityId() {
+        int max = 0;
+        if (level != null && level.entities != null) {
+            for (LevelEntity e : level.entities) max = Math.max(max, e.id);
+        }
+        return max + 1;
+    }
+
+    /** Adds a new FileName-referenced entity (from a bundled .ent) at the current screen center. */
+    public void addEntityFromEnt(String entFileName) {
+        if (level == null || entFileName == null || entFileName.isEmpty()) return;
+        LevelEntity e = new LevelEntity();
+        e.id = nextEntityId();
+        e.entityName = entFileName;            // matches the .esc convention (EntityName = the .ent file)
+        LevelParser.parseEntFile(getContext(), e, entFileName); // resolve sprite/scale/cut so it renders
+        float cx = (getWidth() / 2f - offsetX) / scale;
+        float cy = (getHeight() / 2f - offsetY) / scale;        // new entities default z=0 → renderY = y
+        if (snapToGrid) {
+            cx = Math.round(cx / BASE_TILE) * BASE_TILE;
+            cy = Math.round(cy / BASE_TILE) * BASE_TILE;
+        }
+        e.x = cx;
+        e.y = cy;
+        StructuralCommand cmd = new StructuralCommand(e, level.entities.size(), true);
+        cmd.redo();
+        pushCommand(cmd);
+        selectedEntity = e;
+        notifySelectionChanged();
+        invalidate();
+    }
+
+    /** Duplicates the selected entity (full copy, fresh id, offset one tile) and selects the copy. */
+    public void duplicateSelected() {
+        if (selectedEntity == null || level == null) return;
+        LevelEntity copy = selectedEntity.copy();
+        copy.id = nextEntityId();
+        copy.x += BASE_TILE;
+        StructuralCommand cmd = new StructuralCommand(copy, level.entities.size(), true);
+        cmd.redo();
+        pushCommand(cmd);
+        selectedEntity = copy;
+        notifySelectionChanged();
+        invalidate();
+    }
+
+    /** Deletes the selected entity (undoable). */
+    public void deleteSelected() {
+        if (selectedEntity == null || level == null) return;
+        int idx = level.entities.indexOf(selectedEntity);
+        if (idx < 0) return;
+        StructuralCommand cmd = new StructuralCommand(selectedEntity, idx, false);
+        cmd.redo(); // performs the removal
+        pushCommand(cmd);
+        selectedEntity = null;
+        notifySelectionChanged();
+        invalidate();
+    }
+
+    /** Adds or removes an entity at a stored index (undoable). */
+    private final class StructuralCommand implements EditCommand {
+        private final LevelEntity entity;
+        private final int index;
+        private final boolean isAdd; // true: redo adds / undo removes; false: redo removes / undo adds
+        StructuralCommand(LevelEntity e, int index, boolean isAdd) {
+            this.entity = e; this.index = index; this.isAdd = isAdd;
+        }
+        @Override public void redo() { if (isAdd) insert(); else remove(); }
+        @Override public void undo() { if (isAdd) remove(); else insert(); }
+        private void insert() {
+            if (level == null || level.entities == null) return;
+            int i = Math.max(0, Math.min(index, level.entities.size()));
+            level.entities.add(i, entity);
+            rebuildSorted();
+        }
+        private void remove() {
+            if (level == null || level.entities == null) return;
+            level.entities.remove(entity);
+            rebuildSorted();
+        }
+    }
+
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
         @Override
         public boolean onScale(ScaleGestureDetector detector) {

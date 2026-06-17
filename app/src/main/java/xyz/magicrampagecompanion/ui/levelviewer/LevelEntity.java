@@ -80,4 +80,27 @@ public class LevelEntity {
         float dy = worldY - y;
         return dx * dx + dy * dy <= HIT_RADIUS * HIT_RADIUS;
     }
+
+    /** Deep copy of this entity (fresh CustomData map) — used by the editor's duplicate action. */
+    public LevelEntity copy() {
+        LevelEntity c = new LevelEntity();
+        c.id = id; c.spriteFrame = spriteFrame; c.blendMode = blendMode;
+        c.entityName = entityName; c.spriteFile = spriteFile;
+        c.x = x; c.y = y; c.z = z; c.angle = angle;
+        c.scaleX = scaleX; c.scaleY = scaleY;
+        c.flipX = flipX; c.flipY = flipY;
+        c.parallaxIntensity = parallaxIntensity;
+        c.spriteCutX = spriteCutX; c.spriteCutY = spriteCutY;
+        c.lightHaloSize = lightHaloSize;
+        c.lightColorR = lightColorR; c.lightColorG = lightColorG; c.lightColorB = lightColorB;
+        c.diffuseColorR = diffuseColorR; c.diffuseColorG = diffuseColorG; c.diffuseColorB = diffuseColorB;
+        c.customData = new HashMap<>(customData);
+        c.isNPCResolved = isNPCResolved;
+        c.characterScale = characterScale;
+        c.bodyColor = bodyColor;
+        c.hairSprite = hairSprite; c.armorSprite = armorSprite; c.weaponSprite = weaponSprite;
+        c.weaponOffsetX = weaponOffsetX; c.weaponOffsetY = weaponOffsetY; c.weaponAngle = weaponAngle;
+        c.displayText = displayText;
+        return c;
+    }
 }
