@@ -76,6 +76,10 @@ public class LevelRenderView extends View {
     // Editor mode (Phase 0: state only — VIEW behaves exactly as before; tools added in later phases)
     private boolean editMode = false;
 
+    // Editor selection (Phase 1): currently selected entity + last tap location for stacked-cycle.
+    private LevelEntity selectedEntity = null;
+    private float lastSelectTapX = Float.NaN, lastSelectTapY = Float.NaN;
+
     // Level world bounds (computed once per level)
     private float minX, minY, maxX, maxY;
     private boolean boundsReady = false;
@@ -143,6 +147,8 @@ public class LevelRenderView extends View {
     private Paint textPaint;
     private Paint additivePaint;
     private Paint invertColorsPaint;
+    private Paint selectionPaint;
+    private Paint selectionFillPaint;
     private final RectF scratchRect = new RectF();
 
     public LevelRenderView(Context context) {
@@ -187,6 +193,14 @@ public class LevelRenderView extends View {
                 0.299f, 0.587f, 0.114f, 0,   0    // A = luma of source
         })));
 
+        selectionPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        selectionPaint.setStyle(Paint.Style.STROKE);
+        selectionPaint.setColor(Color.rgb(0, 220, 255));
+
+        selectionFillPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        selectionFillPaint.setStyle(Paint.Style.FILL);
+        selectionFillPaint.setColor(Color.argb(40, 0, 220, 255));
+
         scaleDetector = new ScaleGestureDetector(context, new ScaleListener());
         setClickable(true);
     }
@@ -197,6 +211,7 @@ public class LevelRenderView extends View {
         atlasCache.clear();
         tintPaintCache.clear();
         sortedEntities.clear();
+        selectedEntity = null;
         loggedMissingSprites.clear();
         spriteSummaryLogged = false;
         boundsReady = false;
@@ -425,6 +440,11 @@ public class LevelRenderView extends View {
 
         for (LevelEntity entity : sortedEntities) {
             drawEntity(canvas, entity);
+        }
+
+        // Editor selection highlight (EDIT mode only) — drawn in world space, same transform as entities.
+        if (editMode && selectedEntity != null) {
+            drawSelectionHighlight(canvas, selectedEntity);
         }
 
         canvas.restore();
@@ -1348,6 +1368,12 @@ public class LevelRenderView extends View {
             }
         }
 
+        // EDIT mode: tap selects (cycling through stacked entities); empty space deselects.
+        if (editMode) {
+            handleEditSelection(hits, screenX, screenY);
+            return;
+        }
+
         if (hits.isEmpty()) {
             Log.d(TAG, "TAP (world " + (int) worldX + ", " + (int) worldY + ") — no entity");
             return;
@@ -1371,6 +1397,71 @@ public class LevelRenderView extends View {
                     + "  frame=" + e.spriteFrame);
         }
         Log.d(TAG, "=== END TAP ===");
+    }
+
+    /** EDIT-mode tap: select top entity; repeated near-taps cycle through a stack; empty space deselects. */
+    private void handleEditSelection(List<LevelEntity> hits, float screenX, float screenY) {
+        if (hits.isEmpty()) {
+            selectedEntity = null;
+        } else {
+            // Highest z (drawn on top) first.
+            hits.sort((a, b) -> Float.compare(b.z, a.z));
+            boolean nearLast = !Float.isNaN(lastSelectTapX)
+                    && Math.abs(screenX - lastSelectTapX) <= TAP_SLOP_PX
+                    && Math.abs(screenY - lastSelectTapY) <= TAP_SLOP_PX;
+            if (nearLast && selectedEntity != null && hits.contains(selectedEntity)) {
+                // Cycle to the next entity in the stack so buried items are reachable.
+                int idx = hits.indexOf(selectedEntity);
+                selectedEntity = hits.get((idx + 1) % hits.size());
+            } else {
+                selectedEntity = hits.get(0);
+            }
+        }
+        lastSelectTapX = screenX;
+        lastSelectTapY = screenY;
+        invalidate();
+    }
+
+    /** World-space half-extents of an entity's on-screen footprint (true sprite size when available). */
+    private float[] getSelectionHalfExtents(LevelEntity e) {
+        if (!e.spriteFile.isEmpty()) {
+            Bitmap frame = loadSpriteFrame(e.spriteFile, e.spriteFrame, e.spriteCutX, e.spriteCutY);
+            if (frame != null) {
+                float hw, hh;
+                if (e.lightHaloSize > 0f && isPureHaloSprite(e.spriteFile)) {
+                    float u = e.lightHaloSize / Math.max(frame.getWidth(), frame.getHeight());
+                    hw = frame.getWidth() * u / 2f;
+                    hh = frame.getHeight() * u / 2f;
+                } else {
+                    hw = frame.getWidth() * Math.abs(e.scaleX) / 2f;
+                    hh = frame.getHeight() * Math.abs(e.scaleY) / 2f;
+                }
+                return new float[]{ Math.max(hw, 8f), Math.max(hh, 8f) };
+            }
+        }
+        // Spriteless / unresolved: fall back to the same box the hit-test uses.
+        float hw = Math.max(Math.abs(e.scaleX) * BASE_TILE / 2f, LevelEntity.HIT_RADIUS);
+        float hh = Math.max(Math.abs(e.scaleY) * BASE_TILE / 2f, LevelEntity.HIT_RADIUS);
+        return new float[]{hw, hh};
+    }
+
+    /** Draws the selection box around an entity, centered on its rendered position. */
+    private void drawSelectionHighlight(Canvas canvas, LevelEntity e) {
+        float[] half = getSelectionHalfExtents(e);
+        float hw = half[0], hh = half[1];
+        canvas.save();
+        canvas.translate(e.x, computeRenderY(e));
+        if (e.angle != 0f) canvas.rotate(-e.angle); // match sprite orientation (Ethanon CCW vs Android CW)
+        scratchRect.set(-hw, -hh, hw, hh);
+        canvas.drawRect(scratchRect, selectionFillPaint);
+        selectionPaint.setStrokeWidth(2f / scale); // ~2px on screen regardless of zoom
+        canvas.drawRect(scratchRect, selectionPaint);
+        canvas.restore();
+    }
+
+    /** The entity currently selected in EDIT mode, or null. */
+    public LevelEntity getSelectedEntity() {
+        return selectedEntity;
     }
 
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
