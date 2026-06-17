@@ -274,6 +274,28 @@
                 android:src="@drawable/ic_delete"
                 android:contentDescription="@string/cd_delete_entity" />
 
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnUndo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_undo"
+                android:contentDescription="@string/cd_undo" />
+
+            <ImageButton
+                android:id="@+id/btnRedo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_redo"
+                android:contentDescription="@string/cd_redo" />
+
         </LinearLayout>
 
     </LinearLayout>

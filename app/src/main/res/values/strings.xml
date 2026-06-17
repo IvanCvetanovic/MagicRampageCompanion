@@ -1993,6 +1993,8 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="palette_search_hint">Search entities…</string>
     <string name="confirm_delete_entity">Delete this entity?</string>
     <string name="cancel">Cancel</string>
+    <string name="cd_undo">Undo</string>
+    <string name="cd_redo">Redo</string>
 
     <!-- Empty states -->
     <string name="empty_no_results">No results found</string>

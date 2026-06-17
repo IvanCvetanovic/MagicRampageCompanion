@@ -1582,9 +1582,25 @@ public class LevelRenderView extends View {
         void redo();
     }
 
+    /** Notified whenever the undo/redo stacks change (so the UI can update button state). */
+    public interface OnHistoryChangedListener {
+        void onHistoryChanged();
+    }
+
+    private OnHistoryChangedListener historyListener;
+
+    public void setOnHistoryChangedListener(OnHistoryChangedListener l) {
+        this.historyListener = l;
+    }
+
+    private void notifyHistoryChanged() {
+        if (historyListener != null) historyListener.onHistoryChanged();
+    }
+
     public void pushCommand(EditCommand c) {
         undoStack.push(c);
         redoStack.clear();
+        notifyHistoryChanged();
     }
 
     public boolean canUndo() { return !undoStack.isEmpty(); }
@@ -1595,6 +1611,7 @@ public class LevelRenderView extends View {
         EditCommand c = undoStack.pop();
         c.undo();
         redoStack.push(c);
+        notifyHistoryChanged();
         notifySelectionChanged();
         invalidate();
     }
@@ -1604,6 +1621,7 @@ public class LevelRenderView extends View {
         EditCommand c = redoStack.pop();
         c.redo();
         undoStack.push(c);
+        notifyHistoryChanged();
         notifySelectionChanged();
         invalidate();
     }

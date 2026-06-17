@@ -57,8 +57,13 @@ public class LevelViewerActivity extends BaseActivity {
     private EditText etX, etY, etZ, etScaleX, etScaleY, etAngle;
     private CheckBox cbFlipX, cbFlipY;
     private boolean suppressWatchers = false;
-    private ImageButton btnAddEntity, btnDuplicateEntity, btnDeleteEntity;
+    private ImageButton btnAddEntity, btnDuplicateEntity, btnDeleteEntity, btnUndo, btnRedo;
     private List<String> entFiles;
+    // Pending inspector numeric edit (captured on focus, committed as one undoable command on blur)
+    private LevelEntity pendingEntity;
+    private EntityFloatGetter pendingGetter;
+    private EntityFloatSetter pendingSetter;
+    private float pendingBefore = Float.NaN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,6 +182,13 @@ public class LevelViewerActivity extends BaseActivity {
         btnDeleteEntity.setOnClickListener(v -> { playClick(); confirmDeleteSelected(); });
         updateEditActionButtons(renderView.getSelectedEntity());
 
+        btnUndo = findViewById(R.id.btnUndo);
+        btnRedo = findViewById(R.id.btnRedo);
+        btnUndo.setOnClickListener(v -> { playClick(); renderView.undo(); });
+        btnRedo.setOnClickListener(v -> { playClick(); renderView.redo(); });
+        renderView.setOnHistoryChangedListener(this::updateUndoRedoButtons);
+        updateUndoRedoButtons();
+
         // --- Show Secrets Button (Ad-locked + Navigation) ---
         btnShowSecrets = findViewById(R.id.btnShowSecrets);
         if (renderView.isSecretsUnlocked()) {
@@ -209,38 +221,81 @@ public class LevelViewerActivity extends BaseActivity {
     }
 
     private void setupInspectorBindings() {
-        bindFloatField(etX, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.x = v; });
-        bindFloatField(etY, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.y = v; });
-        bindFloatField(etZ, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.z = v; });
-        bindFloatField(etScaleX, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.scaleX = v; });
-        bindFloatField(etScaleY, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.scaleY = v; });
-        bindFloatField(etAngle, v -> { LevelEntity e = renderView.getSelectedEntity(); if (e != null) e.angle = v; });
-        cbFlipX.setOnCheckedChangeListener((b, checked) -> {
-            if (suppressWatchers) return;
-            LevelEntity e = renderView.getSelectedEntity();
-            if (e != null) { e.flipX = checked; renderView.invalidate(); }
-        });
-        cbFlipY.setOnCheckedChangeListener((b, checked) -> {
-            if (suppressWatchers) return;
-            LevelEntity e = renderView.getSelectedEntity();
-            if (e != null) { e.flipY = checked; renderView.invalidate(); }
+        bindFloatField(etX, e -> e.x, (e, v) -> e.x = v);
+        bindFloatField(etY, e -> e.y, (e, v) -> e.y = v);
+        bindFloatField(etZ, e -> e.z, (e, v) -> e.z = v);
+        bindFloatField(etScaleX, e -> e.scaleX, (e, v) -> e.scaleX = v);
+        bindFloatField(etScaleY, e -> e.scaleY, (e, v) -> e.scaleY = v);
+        bindFloatField(etAngle, e -> e.angle, (e, v) -> e.angle = v);
+        cbFlipX.setOnCheckedChangeListener((b, checked) -> onFlipChanged(true, checked));
+        cbFlipY.setOnCheckedChangeListener((b, checked) -> onFlipChanged(false, checked));
+    }
+
+    /** Applies a flip toggle live and records it as an undoable command. */
+    private void onFlipChanged(boolean isX, boolean checked) {
+        if (suppressWatchers) return;
+        LevelEntity e = renderView.getSelectedEntity();
+        if (e == null) return;
+        boolean before = isX ? e.flipX : e.flipY;
+        if (before == checked) return;
+        if (isX) e.flipX = checked; else e.flipY = checked;
+        renderView.invalidate();
+        final LevelEntity ent = e;
+        renderView.pushCommand(new LevelRenderView.EditCommand() {
+            @Override public void undo() { if (isX) ent.flipX = before; else ent.flipY = before; }
+            @Override public void redo() { if (isX) ent.flipX = checked; else ent.flipY = checked; }
         });
     }
 
-    private void bindFloatField(EditText et, FloatApplier applier) {
+    private void bindFloatField(EditText et, EntityFloatGetter getter, EntityFloatSetter setter) {
+        // Live apply while typing (re-renders immediately).
         et.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
             @Override public void onTextChanged(CharSequence s, int a, int b, int c) {}
             @Override public void afterTextChanged(Editable s) {
-                if (suppressWatchers || renderView.getSelectedEntity() == null) return;
+                if (suppressWatchers) return;
+                LevelEntity e = renderView.getSelectedEntity();
+                if (e == null) return;
                 try {
-                    applier.apply(Float.parseFloat(s.toString().trim()));
+                    setter.set(e, Float.parseFloat(s.toString().trim()));
                     renderView.invalidate();
                 } catch (NumberFormatException ignored) {
                     // Partial input (e.g. "-" or empty) — wait for a valid number.
                 }
             }
         });
+        // Capture before/after across a focus session → one undoable command per edit.
+        et.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                commitPendingPropertyEdit();
+                pendingEntity = renderView.getSelectedEntity();
+                pendingGetter = getter;
+                pendingSetter = setter;
+                pendingBefore = (pendingEntity != null) ? getter.get(pendingEntity) : Float.NaN;
+            } else {
+                commitPendingPropertyEdit();
+            }
+        });
+    }
+
+    /** Pushes an undoable command if the focused field's value changed; clears the pending slot. */
+    private void commitPendingPropertyEdit() {
+        if (pendingEntity != null && pendingSetter != null && !Float.isNaN(pendingBefore)) {
+            float after = pendingGetter.get(pendingEntity);
+            if (after != pendingBefore) {
+                final LevelEntity e = pendingEntity;
+                final EntityFloatSetter s = pendingSetter;
+                final float b = pendingBefore, a = after;
+                renderView.pushCommand(new LevelRenderView.EditCommand() {
+                    @Override public void undo() { s.set(e, b); }
+                    @Override public void redo() { s.set(e, a); }
+                });
+            }
+        }
+        pendingEntity = null;
+        pendingGetter = null;
+        pendingSetter = null;
+        pendingBefore = Float.NaN;
     }
 
     private void populateInspector(LevelEntity e) {
@@ -276,12 +331,18 @@ public class LevelViewerActivity extends BaseActivity {
         return String.valueOf(v);
     }
 
-    private interface FloatApplier { void apply(float v); }
+    private interface EntityFloatGetter { float get(LevelEntity e); }
+    private interface EntityFloatSetter { void set(LevelEntity e, float v); }
 
     private void updateEditActionButtons(LevelEntity e) {
         boolean has = e != null;
         if (btnDuplicateEntity != null) { btnDuplicateEntity.setEnabled(has); btnDuplicateEntity.setAlpha(has ? 1f : 0.4f); }
         if (btnDeleteEntity != null) { btnDeleteEntity.setEnabled(has); btnDeleteEntity.setAlpha(has ? 1f : 0.4f); }
+    }
+
+    private void updateUndoRedoButtons() {
+        if (btnUndo != null) { boolean u = renderView.canUndo(); btnUndo.setEnabled(u); btnUndo.setAlpha(u ? 1f : 0.4f); }
+        if (btnRedo != null) { boolean r = renderView.canRedo(); btnRedo.setEnabled(r); btnRedo.setAlpha(r ? 1f : 0.4f); }
     }
 
     private void confirmDeleteSelected() {
