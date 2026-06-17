@@ -336,10 +336,14 @@ public class LevelViewerActivity extends BaseActivity {
                     ? getString(R.string.inspector_no_sprite) : e.spriteFile;
             inspectorHeader.setText(name + "  •  " + sprite);
             String meta = getString(R.string.inspector_blend, e.blendMode);
-            if (e.customData != null && !e.customData.isEmpty()) {
-                meta += "  •  {" + android.text.TextUtils.join(", ", e.customData.keySet()) + "}";
+            boolean hasData = e.customData != null && !e.customData.isEmpty();
+            if (hasData) {
+                meta += "  •  {" + android.text.TextUtils.join(", ", e.customData.keySet()) + "}  ✎";
             }
             inspectorMeta.setText(meta);
+            inspectorMeta.setClickable(hasData);
+            if (hasData) inspectorMeta.setOnClickListener(v -> showCustomDataDialog(e));
+            else inspectorMeta.setOnClickListener(null);
             etX.setText(fmt(e.x));
             etY.setText(fmt(e.y));
             etZ.setText(fmt(e.z));
@@ -370,6 +374,46 @@ public class LevelViewerActivity extends BaseActivity {
     private void updateUndoRedoButtons() {
         if (btnUndo != null) { boolean u = renderView.canUndo(); btnUndo.setEnabled(u); btnUndo.setAlpha(u ? 1f : 0.4f); }
         if (btnRedo != null) { boolean r = renderView.canRedo(); btnRedo.setEnabled(r); btnRedo.setAlpha(r ? 1f : 0.4f); }
+    }
+
+    /** Edits the selected entity's CustomData values (existing keys only) — the data that drives
+     *  gameplay (enemy lists, hp, text, drop chances, ...). Persisted on save via customDataEdited. */
+    private void showCustomDataDialog(LevelEntity e) {
+        if (e.customData == null || e.customData.isEmpty()) return;
+        List<String> keys = new ArrayList<>(e.customData.keySet());
+        Collections.sort(keys);
+        LinearLayout container = new LinearLayout(this);
+        container.setOrientation(LinearLayout.VERTICAL);
+        int pad = (int) (16 * getResources().getDisplayMetrics().density);
+        container.setPadding(pad, pad / 2, pad, 0);
+        List<EditText> fields = new ArrayList<>();
+        for (String k : keys) {
+            TextView label = new TextView(this);
+            label.setText(k);
+            label.setTextColor(getColor(R.color.color_text_primary));
+            label.setTextSize(12f);
+            container.addView(label);
+            EditText field = new EditText(this);
+            field.setText(e.customData.get(k));
+            container.addView(field);
+            fields.add(field);
+        }
+        android.widget.ScrollView scroll = new android.widget.ScrollView(this);
+        scroll.addView(container);
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.customdata_dialog_title)
+                .setView(scroll)
+                .setPositiveButton(R.string.save, (d, w) -> {
+                    for (int i = 0; i < keys.size(); i++) {
+                        e.customData.put(keys.get(i), fields.get(i).getText().toString());
+                    }
+                    e.customDataEdited = true;
+                    if (e.customData.containsKey("text")) e.displayText = e.customData.get("text");
+                    renderView.invalidate();
+                    populateInspector(renderView.getSelectedEntity());
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
     }
 
     private void confirmDeleteSelected() {

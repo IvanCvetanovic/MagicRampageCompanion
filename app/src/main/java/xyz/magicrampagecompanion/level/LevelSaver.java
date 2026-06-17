@@ -136,6 +136,25 @@ public class LevelSaver {
             }
             // No <Scale> present (e.g. FileName-referenced entity): scale lives in the .ent.
             // v1 leaves it alone rather than inserting a node of uncertain engine support.
+
+            // Update CustomData <Value>s the user edited (matched by <Name>); gated to keep no-op saves clean.
+            if (e.customDataEdited) {
+                Element cd = firstChildElement(inner, "CustomData");
+                if (cd != null) {
+                    NodeList vars = cd.getChildNodes();
+                    for (int i = 0; i < vars.getLength(); i++) {
+                        Node vn = vars.item(i);
+                        if (vn.getNodeType() != Node.ELEMENT_NODE || !"Variable".equals(vn.getNodeName())) continue;
+                        Element var = (Element) vn;
+                        Element nameEl = firstChildElement(var, "Name");
+                        Element valEl = firstChildElement(var, "Value");
+                        if (nameEl != null && valEl != null) {
+                            String key = nameEl.getTextContent().trim();
+                            if (e.customData.containsKey(key)) valEl.setTextContent(e.customData.get(key));
+                        }
+                    }
+                }
+            }
         }
     }
 

@@ -81,6 +81,8 @@ public class LevelEntity {
     // True once the user edits this entity's scale in the inspector. Gates writing <Scale> on save:
     // the renderer mutates scaleX/scaleY for resolved NPC spawns, so we must NOT persist that drift.
     public boolean scaleEdited = false;
+    // True once the user edits this entity's CustomData. Gates writing <Value> changes on save.
+    public boolean customDataEdited = false;
 
     public static final float HIT_RADIUS = 20f;
 

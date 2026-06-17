@@ -2004,6 +2004,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="export">Export…</string>
     <string name="export_success">Exported. Transfer the .esc to your PC\'s Magic Rampage/scenes/ folder.</string>
     <string name="export_failed">Export failed: %1$s</string>
+    <string name="customdata_dialog_title">Edit Custom Data</string>
 
     <!-- Empty states -->
     <string name="empty_no_results">No results found</string>
