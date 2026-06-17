@@ -54,6 +54,26 @@
             android:src="@android:drawable/ic_menu_view"
             android:contentDescription="@string/cd_toggle_logic" />
 
+        <ImageButton
+            android:id="@+id/btnToggleEdit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/edit_icon"
+            android:contentDescription="@string/cd_toggle_edit" />
+
     </LinearLayout>
+
+    <!-- Editor toolbar: empty container for now (Phase 0); shown only in EDIT mode.
+         Future phases add tool buttons here. -->
+    <LinearLayout
+        android:id="@+id/editorToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/color_overlay_dark"
+        android:visibility="gone" />
 
 </FrameLayout>

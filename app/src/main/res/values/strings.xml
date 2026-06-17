@@ -1970,6 +1970,9 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="cd_back">Back</string>
     <string name="cd_show_secrets">Show Secret Areas</string>
     <string name="cd_toggle_logic">Toggle Logic Entities</string>
+    <string name="cd_toggle_edit">Toggle Edit Mode</string>
+    <string name="edit_mode_on">Edit mode: On</string>
+    <string name="edit_mode_off">Edit mode: Off</string>
 
     <!-- Empty states -->
     <string name="empty_no_results">No results found</string>

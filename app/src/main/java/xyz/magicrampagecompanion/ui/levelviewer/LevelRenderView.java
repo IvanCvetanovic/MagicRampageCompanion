@@ -73,6 +73,9 @@ public class LevelRenderView extends View {
     private boolean showLogicEntities = false;
     private boolean secretsUnlocked = false;
 
+    // Editor mode (Phase 0: state only — VIEW behaves exactly as before; tools added in later phases)
+    private boolean editMode = false;
+
     // Level world bounds (computed once per level)
     private float minX, minY, maxX, maxY;
     private boolean boundsReady = false;
@@ -221,6 +224,15 @@ public class LevelRenderView extends View {
 
     public boolean isShowingLogicEntities() {
         return showLogicEntities;
+    }
+
+    public void setEditMode(boolean enabled) {
+        this.editMode = enabled;
+        invalidate();
+    }
+
+    public boolean isEditMode() {
+        return editMode;
     }
 
     public void setInitialZoomMultiplier(float multiplier) {

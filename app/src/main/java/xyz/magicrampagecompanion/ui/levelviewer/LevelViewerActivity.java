@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -97,6 +98,20 @@ public class LevelViewerActivity extends BaseActivity {
             btnToggleLogic.setAlpha(renderView.isShowingLogicEntities() ? 1.0f : 0.4f);
             int statusRes = renderView.isShowingLogicEntities() ? R.string.utility_markers_visible : R.string.utility_markers_hidden;
             Toast.makeText(this, statusRes, Toast.LENGTH_SHORT).show();
+        });
+
+        // --- Toggle Edit Mode Button (Phase 0: mode state + overlay visibility only) ---
+        LinearLayout editorToolbar = findViewById(R.id.editorToolbar);
+        ImageButton btnToggleEdit = findViewById(R.id.btnToggleEdit);
+        btnToggleEdit.setAlpha(0.4f); // starts in VIEW mode
+        btnToggleEdit.setOnClickListener(v -> {
+            playClick();
+            boolean enable = !renderView.isEditMode();
+            renderView.setEditMode(enable);
+            btnToggleEdit.setAlpha(enable ? 1.0f : 0.4f);
+            editorToolbar.setVisibility(enable ? View.VISIBLE : View.GONE);
+            Toast.makeText(this, enable ? R.string.edit_mode_on : R.string.edit_mode_off,
+                    Toast.LENGTH_SHORT).show();
         });
 
         // --- Show Secrets Button (Ad-locked + Navigation) ---
