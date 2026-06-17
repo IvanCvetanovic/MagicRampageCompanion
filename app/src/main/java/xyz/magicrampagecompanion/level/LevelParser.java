@@ -201,6 +201,7 @@ public class LevelParser {
                                     samples.add(label);
                                 }
 
+                                current.editOrdinal = level.entities.size();
                                 level.entities.add(current);
                                 current = null;
                             }

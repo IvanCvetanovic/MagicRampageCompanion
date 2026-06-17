@@ -25,7 +25,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,6 +37,7 @@ import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.core.utils.RewardedAdManager;
 import xyz.magicrampagecompanion.level.Level;
 import xyz.magicrampagecompanion.level.LevelParser;
+import xyz.magicrampagecompanion.level.LevelSaver;
 import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
 public class LevelViewerActivity extends BaseActivity {
@@ -159,6 +162,9 @@ public class LevelViewerActivity extends BaseActivity {
             Toast.makeText(this, snap ? R.string.snap_on : R.string.snap_off, Toast.LENGTH_SHORT).show();
         });
 
+        ImageButton btnSave = findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(v -> { playClick(); showSaveDialog(); });
+
         ImageButton btnToggleEdit = findViewById(R.id.btnToggleEdit);
         btnToggleEdit.setAlpha(0.4f); // starts in VIEW mode
         btnToggleEdit.setOnClickListener(v -> {
@@ -168,6 +174,7 @@ public class LevelViewerActivity extends BaseActivity {
             btnToggleEdit.setAlpha(enable ? 1.0f : 0.4f);
             editorBottomPanel.setVisibility(enable ? View.VISIBLE : View.GONE);
             btnToggleSnap.setVisibility(enable ? View.VISIBLE : View.GONE);
+            btnSave.setVisibility(enable ? View.VISIBLE : View.GONE);
             if (enable) populateInspector(renderView.getSelectedEntity());
             Toast.makeText(this, enable ? R.string.edit_mode_on : R.string.edit_mode_off,
                     Toast.LENGTH_SHORT).show();
@@ -224,8 +231,8 @@ public class LevelViewerActivity extends BaseActivity {
         bindFloatField(etX, e -> e.x, (e, v) -> e.x = v);
         bindFloatField(etY, e -> e.y, (e, v) -> e.y = v);
         bindFloatField(etZ, e -> e.z, (e, v) -> e.z = v);
-        bindFloatField(etScaleX, e -> e.scaleX, (e, v) -> e.scaleX = v);
-        bindFloatField(etScaleY, e -> e.scaleY, (e, v) -> e.scaleY = v);
+        bindFloatField(etScaleX, e -> e.scaleX, (e, v) -> { e.scaleX = v; e.scaleEdited = true; });
+        bindFloatField(etScaleY, e -> e.scaleY, (e, v) -> { e.scaleY = v; e.scaleEdited = true; });
         bindFloatField(etAngle, e -> e.angle, (e, v) -> e.angle = v);
         cbFlipX.setOnCheckedChangeListener((b, checked) -> onFlipChanged(true, checked));
         cbFlipY.setOnCheckedChangeListener((b, checked) -> onFlipChanged(false, checked));
@@ -396,6 +403,38 @@ public class LevelViewerActivity extends BaseActivity {
             Log.e(TAG, "Failed to list .ent assets", e);
         }
         return out;
+    }
+
+    private void showSaveDialog() {
+        if (currentLevel == null) return;
+        final EditText input = new EditText(this);
+        input.setText(defaultSaveName());
+        input.setSelection(input.getText().length());
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.save_dialog_title)
+                .setView(input)
+                .setPositiveButton(R.string.save, (d, w) -> doSave(input.getText().toString().trim()))
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private String defaultSaveName() {
+        String base = (levelFile != null ? levelFile : "level").replaceAll("\\.esc$", "");
+        return base + "_edited";
+    }
+
+    private void doSave(String name) {
+        if (currentLevel == null) return;
+        if (name == null || name.isEmpty()) name = defaultSaveName();
+        if (!name.endsWith(".esc")) name += ".esc";
+        File dest = new File(new File(getFilesDir(), "userlevels"), name);
+        try (InputStream src = getAssets().open("levels/" + levelFile)) {
+            LevelSaver.save(src, currentLevel, dest);
+            Toast.makeText(this, getString(R.string.save_success, name), Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Log.e(TAG, "Save failed", e);
+            Toast.makeText(this, getString(R.string.save_failed, String.valueOf(e.getMessage())), Toast.LENGTH_LONG).show();
+        }
     }
 
     private boolean isLevelUnlocked(String fileName) {

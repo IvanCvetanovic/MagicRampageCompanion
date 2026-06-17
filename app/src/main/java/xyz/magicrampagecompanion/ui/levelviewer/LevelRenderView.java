@@ -1684,6 +1684,7 @@ public class LevelRenderView extends View {
         if (selectedEntity == null || level == null) return;
         LevelEntity copy = selectedEntity.copy();
         copy.id = nextEntityId();
+        copy.sourceOrdinal = (selectedEntity.editOrdinal >= 0) ? selectedEntity.editOrdinal : selectedEntity.sourceOrdinal;
         copy.x += BASE_TILE;
         StructuralCommand cmd = new StructuralCommand(copy, level.entities.size(), true);
         cmd.redo();

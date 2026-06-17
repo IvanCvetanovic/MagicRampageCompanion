@@ -73,6 +73,15 @@ public class LevelEntity {
     // Empty means this is not a text entity.
     public String displayText = "";
 
+    // Editor bookkeeping (NOT parsed from / written to the file directly): document-order ordinal
+    // among the level's ORIGINAL entities (-1 = added during editing). For duplicates, sourceOrdinal
+    // is the ordinal of the entity it was copied from, so the saver can clone the right source node.
+    public int editOrdinal = -1;
+    public int sourceOrdinal = -1;
+    // True once the user edits this entity's scale in the inspector. Gates writing <Scale> on save:
+    // the renderer mutates scaleX/scaleY for resolved NPC spawns, so we must NOT persist that drift.
+    public boolean scaleEdited = false;
+
     public static final float HIT_RADIUS = 20f;
 
     public boolean hitTest(float worldX, float worldY) {
