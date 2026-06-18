@@ -24,6 +24,7 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -1834,6 +1835,49 @@ public class LevelRenderView extends View {
         selectedEntity = e;
         notifySelectionChanged();
         invalidate();
+    }
+
+    /** Places an inline "spawner" template — a harvested raw &lt;Entity&gt; block — at screen center and
+     *  selects it. The block is parsed for rendering (sprite/scale/CustomData) and also carried on the
+     *  entity (sourceBlockXml) so the saver writes it back verbatim. Used for inline-defined entities
+     *  (spawners, buttons, invisible collision...) that have no .ent to FileName-reference. */
+    public void addSpawnerTemplate(String rawBlockXml) {
+        if (level == null || rawBlockXml == null || rawBlockXml.isEmpty()) return;
+        LevelEntity e = parseTemplateEntity(rawBlockXml);
+        if (e == null) return;
+        e.id = nextEntityId();
+        e.editOrdinal = -1;          // new entity, not a surviving original
+        e.sourceOrdinal = -1;
+        e.sourceBlockXml = rawBlockXml;
+        float cx = (getWidth() / 2f - offsetX) / scale;
+        float cy = (getHeight() / 2f - offsetY) / scale;
+        if (snapToGrid) {
+            cx = Math.round(cx / BASE_TILE) * BASE_TILE;
+            cy = Math.round(cy / BASE_TILE) * BASE_TILE;
+        }
+        e.x = cx;
+        e.y = cy;
+        StructuralCommand cmd = new StructuralCommand(e, level.entities.size(), true);
+        cmd.redo();
+        pushCommand(cmd);
+        selectedEntity = e;
+        notifySelectionChanged();
+        invalidate();
+    }
+
+    /** Parses a single harvested &lt;Entity&gt; block (wrapped in a minimal scene envelope) into a
+     *  render-ready entity via the normal level parser. Returns null if it can't be parsed. */
+    private LevelEntity parseTemplateEntity(String rawBlockXml) {
+        String wrapped = "<Ethanon><EntitiesInScene>" + rawBlockXml + "</EntitiesInScene></Ethanon>";
+        try (InputStream is = new ByteArrayInputStream(wrapped.getBytes(java.nio.charset.StandardCharsets.UTF_8))) {
+            Level tmp = LevelParser.parse(getContext(), is, "template");
+            if (tmp != null && tmp.entities != null && !tmp.entities.isEmpty()) {
+                return tmp.entities.get(0);
+            }
+        } catch (Exception ex) {
+            Log.e(TAG, "Failed to parse spawner template", ex);
+        }
+        return null;
     }
 
     /** Duplicates the selected entity (full copy, fresh id, offset one tile) and selects the copy. */

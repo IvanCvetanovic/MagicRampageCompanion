@@ -44,7 +44,9 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -438,6 +440,7 @@ public class LevelViewerActivity extends BaseActivity {
 
     private void showPaletteDialog() {
         if (entFiles == null) entFiles = loadEntFileList();
+        if (spawnerTemplates == null) spawnerTemplates = loadSpawnerTemplates();
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_entity_palette, null);
         EditText search = dialogView.findViewById(R.id.paletteSearch);
         ListView list = dialogView.findViewById(R.id.paletteList);
@@ -445,7 +448,10 @@ public class LevelViewerActivity extends BaseActivity {
         if (thumbExecutor == null || thumbExecutor.isShutdown()) {
             thumbExecutor = Executors.newFixedThreadPool(3);
         }
-        PaletteAdapter adapter = new PaletteAdapter(new ArrayList<>(entFiles));
+        // Inline-template entities (spawners / buttons / invisible collision) first, then FileName .ent files.
+        List<String> items = new ArrayList<>(spawnerTemplates.keySet());
+        items.addAll(entFiles);
+        PaletteAdapter adapter = new PaletteAdapter(items);
         list.setAdapter(adapter);
 
         AlertDialog dialog = new AlertDialog.Builder(this)
@@ -463,7 +469,10 @@ public class LevelViewerActivity extends BaseActivity {
         list.setOnItemClickListener((parent, v, position, id) -> {
             String name = adapter.getItem(position);
             dialog.dismiss();
-            if (name != null) renderView.addEntityFromEnt(name);
+            if (name == null) return;
+            String template = spawnerTemplates.get(name);
+            if (template != null) renderView.addSpawnerTemplate(template);
+            else renderView.addEntityFromEnt(name);
         });
 
         dialog.setOnDismissListener(d -> shutdownThumbExecutor());
@@ -508,7 +517,7 @@ public class LevelViewerActivity extends BaseActivity {
                 thumb.setImageBitmap(cached);
             } else {
                 thumb.setImageDrawable(null);
-                if (file != null && !thumbMisses.contains(file)) loadThumbAsync(file, thumb);
+                if (file != null && !file.startsWith(TEMPLATE_MARK) && !thumbMisses.contains(file)) loadThumbAsync(file, thumb);
             }
             return row;
         }
@@ -581,6 +590,39 @@ public class LevelViewerActivity extends BaseActivity {
         if (entFile == null) return "";
         String n = entFile.endsWith(".ent") ? entFile.substring(0, entFile.length() - 4) : entFile;
         return n.replace('_', ' ');
+    }
+
+    // ── Inline "spawner" templates (harvested real blocks bundled under assets/spawner_templates) ──
+    private static final String TEMPLATE_MARK = "★ ";   // prefixes template labels in the palette list
+    private Map<String, String> spawnerTemplates;       // palette label → raw <Entity> block XML
+
+    /** Loads the bundled inline-entity templates: label = "★ <name>", value = the raw <Entity> XML. */
+    private Map<String, String> loadSpawnerTemplates() {
+        Map<String, String> out = new LinkedHashMap<>();
+        try {
+            String[] files = getAssets().list("spawner_templates");
+            if (files != null) {
+                java.util.Arrays.sort(files);
+                for (String f : files) {
+                    if (!f.endsWith(".xml")) continue;
+                    String label = TEMPLATE_MARK + f.substring(0, f.length() - 4);
+                    try (InputStream is = getAssets().open("spawner_templates/" + f)) {
+                        out.put(label, readAll(is));
+                    }
+                }
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to load spawner templates", e);
+        }
+        return out;
+    }
+
+    private static String readAll(InputStream is) throws IOException {
+        java.io.ByteArrayOutputStream bos = new java.io.ByteArrayOutputStream();
+        byte[] buf = new byte[4096];
+        int n;
+        while ((n = is.read(buf)) != -1) bos.write(buf, 0, n);
+        return new String(bos.toByteArray(), java.nio.charset.StandardCharsets.UTF_8);
     }
 
     private List<String> loadEntFileList() {

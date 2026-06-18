@@ -84,6 +84,12 @@ public class LevelEntity {
     // True once the user edits this entity's CustomData. Gates writing <Value> changes on save.
     public boolean customDataEdited = false;
 
+    // Raw outer-<Entity> XML for an inline "spawner" template placed from the palette (null otherwise).
+    // The saver writes this block verbatim (only swapping id + position) so inline-defined entities —
+    // which have no .ent to FileName-reference — round-trip faithfully. Carried by copy() so a
+    // duplicate of a placed spawner stays faithful too.
+    public String sourceBlockXml = null;
+
     public static final float HIT_RADIUS = 20f;
 
     public boolean hitTest(float worldX, float worldY) {
@@ -112,6 +118,7 @@ public class LevelEntity {
         c.hairSprite = hairSprite; c.armorSprite = armorSprite; c.weaponSprite = weaponSprite;
         c.weaponOffsetX = weaponOffsetX; c.weaponOffsetY = weaponOffsetY; c.weaponAngle = weaponAngle;
         c.displayText = displayText;
+        c.sourceBlockXml = sourceBlockXml;
         return c;
     }
 }

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +22,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
 import xyz.magicrampagecompanion.ui.levelviewer.LevelEntity;
 
@@ -158,7 +160,17 @@ public class LevelSaver {
         }
     }
 
-    private static Element buildNewNode(Document doc, LevelEntity e, List<Element> sourceNodes) {
+    private static Element buildNewNode(Document doc, LevelEntity e, List<Element> sourceNodes) throws Exception {
+        // Inline "spawner" template placed from the palette → write its harvested block verbatim,
+        // swapping only the id and the patched Position/flip. Save fidelity never depends on the
+        // lossy parser. This branch is gated on sourceBlockXml (null for every other flow), so it
+        // is inert for no-op saves, normal edits, FileName palette adds, and duplicates.
+        if (e.sourceBlockXml != null && !e.sourceBlockXml.isEmpty()) {
+            Element block = parseBlock(doc, e.sourceBlockXml);
+            block.setAttribute("id", String.valueOf(e.id));
+            patchNode(block, e);
+            return block;
+        }
         // Duplicate of an existing original → clone its real, complete DOM node (faithful copy).
         if (e.sourceOrdinal >= 0 && e.sourceOrdinal < sourceNodes.size()) {
             Element clone = (Element) sourceNodes.get(e.sourceOrdinal).cloneNode(true);
@@ -191,6 +203,13 @@ public class LevelSaver {
         inner.appendChild(doc.createElement("CustomData"));
         outer.appendChild(inner);
         return outer;
+    }
+
+    /** Parses a standalone <Entity> block string and imports it into {@code doc} (does not attach it). */
+    private static Element parseBlock(Document doc, String xml) throws Exception {
+        DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+        Document frag = db.parse(new InputSource(new StringReader(xml)));
+        return (Element) doc.importNode(frag.getDocumentElement(), true);
     }
 
     private static void setFlag(Element node, String attr, boolean on) {
