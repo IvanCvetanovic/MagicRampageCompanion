@@ -2007,6 +2007,13 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="export_failed">Export failed: %1$s</string>
     <string name="customdata_dialog_title">Edit Custom Data</string>
 
+    <!-- Pre-save validation warnings (editor) -->
+    <string name="validate_title">Before you save</string>
+    <string name="validate_intro">This level has issues that may stop it from loading in Magic Rampage:</string>
+    <string name="validate_no_spawn">No player spawn (spawn0) — the player has nowhere to start.</string>
+    <string name="validate_empty_level">The level is empty — it has no entities.</string>
+    <string name="validate_save_anyway">Save anyway</string>
+
     <!-- Empty states -->
     <string name="empty_no_results">No results found</string>
     <string name="empty_no_enemies">No enemies to display</string>

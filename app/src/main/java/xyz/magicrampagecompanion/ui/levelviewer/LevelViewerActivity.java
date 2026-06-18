@@ -177,7 +177,7 @@ public class LevelViewerActivity extends BaseActivity {
         });
 
         ImageButton btnSave = findViewById(R.id.btnSave);
-        btnSave.setOnClickListener(v -> { playClick(); showSaveDialog(); });
+        btnSave.setOnClickListener(v -> { playClick(); attemptSave(); });
 
         ImageButton btnToggleEdit = findViewById(R.id.btnToggleEdit);
         btnToggleEdit.setAlpha(0.4f); // starts in VIEW mode
@@ -467,6 +467,49 @@ public class LevelViewerActivity extends BaseActivity {
             Log.e(TAG, "Failed to list .ent assets", e);
         }
         return out;
+    }
+
+    /** Runs pre-save sanity checks and gates the save dialog on the result. Warnings are advisory —
+     *  the user can still "Save anyway" (a work-in-progress save is legitimate). Save and Export both
+     *  funnel through {@link #showSaveDialog()}, so this single hook covers both. */
+    private void attemptSave() {
+        List<String> warnings = validateLevel();
+        if (warnings.isEmpty()) {
+            showSaveDialog();
+            return;
+        }
+        StringBuilder msg = new StringBuilder(getString(R.string.validate_intro));
+        for (String w : warnings) msg.append("\n\n•  ").append(w);
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.validate_title)
+                .setMessage(msg.toString())
+                .setPositiveButton(R.string.validate_save_anyway, (d, w) -> showSaveDialog())
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    /** Pre-save sanity checks for a hand-edited level. Returns human-readable warnings (empty = clean).
+     *  Magic Rampage needs a player spawn ("spawn0") to start a scene, and an empty scene is almost
+     *  always an accident. We deliberately do NOT flag duplicate ids (stock levels reuse ids and the
+     *  game tolerates it — saves reconcile by document order, not id) nor out-of-bounds placement
+     *  (a scene has no declared bounds in the model). */
+    private List<String> validateLevel() {
+        List<String> warnings = new ArrayList<>();
+        if (currentLevel == null) return warnings;
+
+        List<LevelEntity> entities = currentLevel.entities;
+        if (entities == null || entities.isEmpty()) {
+            warnings.add(getString(R.string.validate_empty_level));
+            return warnings; // nothing else is meaningful on an empty scene
+        }
+
+        boolean hasSpawn = false;
+        for (LevelEntity e : entities) {
+            if (e != null && "spawn0".equals(e.entityName)) { hasSpawn = true; break; }
+        }
+        if (!hasSpawn) warnings.add(getString(R.string.validate_no_spawn));
+
+        return warnings;
     }
 
     private void showSaveDialog() {
