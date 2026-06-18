@@ -72,6 +72,15 @@
             android:visibility="gone" />
 
         <ImageButton
+            android:id="@+id/btnMarquee"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_crop"
+            android:contentDescription="@string/cd_marquee"
+            android:visibility="gone" />
+
+        <ImageButton
             android:id="@+id/btnEntityList"
             android:layout_width="48dp"
             android:layout_height="48dp"

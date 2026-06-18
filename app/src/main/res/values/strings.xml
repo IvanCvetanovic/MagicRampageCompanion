@@ -1996,6 +1996,11 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="cd_entity_list">Find Entity</string>
     <string name="entity_browser_title">Find Entity</string>
     <string name="entity_browser_empty">This level has no entities.</string>
+    <string name="cd_marquee">Marquee Select</string>
+    <string name="marquee_on">Marquee select: On — drag a box to select</string>
+    <string name="marquee_off">Marquee select: Off</string>
+    <string name="entities_selected">%1$d entities selected</string>
+    <string name="confirm_delete_group">Delete %1$d entities?</string>
     <string name="confirm_delete_entity">Delete this entity?</string>
     <string name="cancel">Cancel</string>
     <string name="cd_undo">Undo</string>

@@ -455,11 +455,23 @@ public class LevelRenderView extends View {
         }
 
         // Editor selection highlight (EDIT mode only) — drawn in world space, same transform as entities.
-        if (editMode && selectedEntity != null) {
-            drawSelectionHighlight(canvas, selectedEntity);
+        if (editMode) {
+            if (selectedEntity != null) {
+                drawSelectionHighlight(canvas, selectedEntity, true);
+            } else {
+                for (LevelEntity e : multiSelection) drawSelectionHighlight(canvas, e, false);
+            }
         }
 
         canvas.restore();
+
+        // Marquee selection box (screen space, after the world transform is restored).
+        if (marqueeing) {
+            float l = Math.min(marqueeStartX, marqueeCurX), r = Math.max(marqueeStartX, marqueeCurX);
+            float t = Math.min(marqueeStartY, marqueeCurY), b = Math.max(marqueeStartY, marqueeCurY);
+            canvas.drawRect(l, t, r, b, marqueeFillPaint);
+            canvas.drawRect(l, t, r, b, marqueePaint);
+        }
 
         // One-shot summary after the first full draw (all sheets attempted)
         if (!spriteSummaryLogged) {
@@ -1318,22 +1330,36 @@ public class LevelRenderView extends View {
                 dragCandidate = false;
                 isDraggingEntity = false;
                 activeHandle = Gesture.NONE;
-                // EDIT mode priority: rotate/scale handle > move-on-body > pan.
-                if (editMode && selectedEntity != null && pointerCount == 1) {
+                groupDragCandidate = false;
+                isDraggingGroup = false;
+                marqueeing = false;
+                if (editMode && pointerCount == 1) {
                     float wx = (focusX - offsetX) / scale;
                     float wy = (focusY - offsetY) / scale;
-                    activeHandle = hitHandle(wx, wy);
-                    if (activeHandle != Gesture.NONE) {
-                        beginHandleGesture(wx, wy);
-                    } else if (hitSelected(wx, wy)) {
-                        dragCandidate = true;
-                        grabOffX = wx - selectedEntity.x;
-                        grabOffYr = wy - computeRenderY(selectedEntity);
-                        moveOldX = selectedEntity.x;
-                        moveOldY = selectedEntity.y;
+                    if (marqueeMode) {
+                        // Marquee select: drag a box (suppresses pan/move/handle).
+                        marqueeing = true;
+                        marqueeStartX = marqueeCurX = focusX;
+                        marqueeStartY = marqueeCurY = focusY;
+                    } else if (multiSelection.size() > 1 && hitsAnySelected(wx, wy)) {
+                        // Group move: dragging any selected entity moves them all.
+                        groupDragCandidate = true;
+                        beginGroupMove(wx, wy);
+                    } else if (selectedEntity != null) {
+                        // Single-select: rotate/scale handle > move-on-body (unchanged behavior).
+                        activeHandle = hitHandle(wx, wy);
+                        if (activeHandle != Gesture.NONE) {
+                            beginHandleGesture(wx, wy);
+                        } else if (hitSelected(wx, wy)) {
+                            dragCandidate = true;
+                            grabOffX = wx - selectedEntity.x;
+                            grabOffYr = wy - computeRenderY(selectedEntity);
+                            moveOldX = selectedEntity.x;
+                            moveOldY = selectedEntity.y;
+                        }
                     }
                 }
-                isPanning = !dragCandidate && activeHandle == Gesture.NONE;
+                isPanning = !dragCandidate && !groupDragCandidate && !marqueeing && activeHandle == Gesture.NONE;
                 break;
 
             case MotionEvent.ACTION_POINTER_DOWN:
@@ -1341,6 +1367,10 @@ public class LevelRenderView extends View {
                 // A second finger means pinch/pan — stop dragging/handle-editing (committing any change).
                 if (isDraggingEntity) finalizeEntityDrag();
                 if (activeHandle != Gesture.NONE) { finalizeHandleGesture(); activeHandle = Gesture.NONE; }
+                if (isDraggingGroup) finalizeGroupMove();
+                marqueeing = false;
+                groupDragCandidate = false;
+                isDraggingGroup = false;
                 dragCandidate = false;
                 isDraggingEntity = false;
                 // Update lastTouch to the focal point of the fingers that WILL remain
@@ -1350,6 +1380,18 @@ public class LevelRenderView extends View {
                 break;
 
             case MotionEvent.ACTION_MOVE:
+                if (marqueeing && pointerCount == 1) {
+                    marqueeCurX = focusX; marqueeCurY = focusY;
+                    invalidate();
+                    break;
+                }
+                if (groupDragCandidate && pointerCount == 1) {
+                    if (!isDraggingGroup) {
+                        float gmdx = focusX - tapStartX, gmdy = focusY - tapStartY;
+                        if (gmdx * gmdx + gmdy * gmdy > TAP_SLOP_PX * TAP_SLOP_PX) isDraggingGroup = true;
+                    }
+                    if (isDraggingGroup) { dragGroupTo(focusX, focusY); break; }
+                }
                 if (activeHandle != Gesture.NONE && pointerCount == 1 && selectedEntity != null) {
                     updateHandleGesture((focusX - offsetX) / scale, (focusY - offsetY) / scale);
                     break;
@@ -1375,6 +1417,20 @@ public class LevelRenderView extends View {
 
             case MotionEvent.ACTION_UP:
                 isPanning = false;
+                if (marqueeing) {
+                    finalizeMarquee();
+                    marqueeing = false;
+                    performClick();
+                    break;
+                }
+                if (isDraggingGroup) {
+                    finalizeGroupMove();
+                    groupDragCandidate = false;
+                    isDraggingGroup = false;
+                    performClick();
+                    break;
+                }
+                groupDragCandidate = false;
                 if (activeHandle != Gesture.NONE) {
                     finalizeHandleGesture();
                     activeHandle = Gesture.NONE;
@@ -1402,6 +1458,9 @@ public class LevelRenderView extends View {
                 isPanning = false;
                 dragCandidate = false;
                 isDraggingEntity = false;
+                marqueeing = false;
+                groupDragCandidate = false;
+                isDraggingGroup = false;
                 if (activeHandle != Gesture.NONE) { cancelHandleGesture(); activeHandle = Gesture.NONE; }
                 break;
         }
@@ -1467,6 +1526,7 @@ public class LevelRenderView extends View {
 
     /** EDIT-mode tap: select top entity; repeated near-taps cycle through a stack; empty space deselects. */
     private void handleEditSelection(List<LevelEntity> hits, float screenX, float screenY) {
+        multiSelection.clear();   // a single tap (not a marquee) drops any group selection
         if (hits.isEmpty()) {
             selectedEntity = null;
         } else {
@@ -1513,7 +1573,7 @@ public class LevelRenderView extends View {
     }
 
     /** Draws the selection box around an entity, centered on its rendered position. */
-    private void drawSelectionHighlight(Canvas canvas, LevelEntity e) {
+    private void drawSelectionHighlight(Canvas canvas, LevelEntity e, boolean drawHandles) {
         float[] half = getSelectionHalfExtents(e);
         float hw = half[0], hh = half[1];
         canvas.save();
@@ -1524,9 +1584,9 @@ public class LevelRenderView extends View {
         selectionPaint.setStrokeWidth(2f / scale); // ~2px on screen regardless of zoom
         canvas.drawRect(scratchRect, selectionPaint);
 
-        // Handles (EDIT only): rotate above top-center, scale at the bottom-right corner.
-        // Drawn in the box's local frame so they track its rotation; constant on-screen size.
-        if (editMode) {
+        // Handles: rotate above top-center, scale at the bottom-right corner. Shown for a single
+        // selection only (drawHandles); group selections get a plain box. Constant on-screen size.
+        if (drawHandles) {
             float r = HANDLE_RADIUS_PX / scale;
             float rotY = -hh - (ROTATE_GAP_PX / scale);
             canvas.drawLine(0, -hh, 0, rotY, selectionPaint);
@@ -1554,6 +1614,7 @@ public class LevelRenderView extends View {
      *  jump to an entity that's hard to find/tap among hundreds). Keeps the current zoom. */
     public void selectAndCenter(LevelEntity e) {
         if (e == null) return;
+        multiSelection.clear();
         selectedEntity = e;
         offsetX = getWidth() / 2f - e.x * scale;
         offsetY = getHeight() / 2f - computeRenderY(e) * scale;
@@ -1811,6 +1872,128 @@ public class LevelRenderView extends View {
         @Override public void redo() { e.angle = newA; e.scaleX = newSX; e.scaleY = newSY; e.scaleEdited = newEdited; }
     }
 
+    // ── Multi-select: marquee + group move/delete ───────────────────────────
+    // Inert by default: when marqueeMode is off and the selection is 0 or 1, none of the branches
+    // below fire and the single-select/move/pan/handle paths run exactly as before.
+    private boolean marqueeMode = false;
+    private final List<LevelEntity> multiSelection = new ArrayList<>();  // holds entities only when >1 selected
+    private boolean marqueeing = false;
+    private float marqueeStartX, marqueeStartY, marqueeCurX, marqueeCurY; // screen coords
+    private boolean groupDragCandidate = false, isDraggingGroup = false;
+    private float groupGrabWX, groupGrabWY;          // world coords tracked during a group drag
+    private float groupTotalDx, groupTotalDy;        // accumulated stored-space delta (for the undo command)
+
+    private final Paint marqueePaint = makeMarqueePaint(false);
+    private final Paint marqueeFillPaint = makeMarqueePaint(true);
+    private static Paint makeMarqueePaint(boolean fill) {
+        Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+        if (fill) { p.setStyle(Paint.Style.FILL); p.setColor(0x3040C4FF); }
+        else { p.setStyle(Paint.Style.STROKE); p.setStrokeWidth(3f); p.setColor(0xFF40C4FF); }
+        return p;
+    }
+
+    public void setMarqueeMode(boolean on) { marqueeMode = on; if (!on) marqueeing = false; invalidate(); }
+    public boolean isMarqueeMode() { return marqueeMode; }
+    public int getMultiSelectionCount() { return multiSelection.size(); }
+    public boolean hasMultiSelection() { return multiSelection.size() > 1; }
+
+    public interface OnMultiSelectionChangedListener { void onMultiSelectionChanged(int count); }
+    private OnMultiSelectionChangedListener multiListener;
+    public void setOnMultiSelectionChangedListener(OnMultiSelectionChangedListener l) { multiListener = l; }
+    private void notifyMultiSelection() { if (multiListener != null) multiListener.onMultiSelectionChanged(multiSelection.size()); }
+
+    /** True if (worldX,worldY) lands on any group-selected entity's footprint (rendered position). */
+    private boolean hitsAnySelected(float worldX, float worldY) {
+        for (LevelEntity e : multiSelection) {
+            float[] half = getSelectionHalfExtents(e);
+            if (Math.abs(worldX - e.x) <= half[0] && Math.abs(worldY - computeRenderY(e)) <= half[1]) return true;
+        }
+        return false;
+    }
+
+    /** On marquee release, selects every entity whose RENDERED center lies inside the box. Uses
+     *  computeRenderY (not raw e.y) so depth/parallax entities are picked where they actually appear. */
+    private void finalizeMarquee() {
+        float left = Math.min(marqueeStartX, marqueeCurX), right = Math.max(marqueeStartX, marqueeCurX);
+        float top  = Math.min(marqueeStartY, marqueeCurY), bottom = Math.max(marqueeStartY, marqueeCurY);
+        List<LevelEntity> picked = new ArrayList<>();
+        for (LevelEntity e : getEntities()) {
+            float sx = e.x * scale + offsetX;
+            float sy = computeRenderY(e) * scale + offsetY;   // rendered position, not raw e.y
+            if (sx >= left && sx <= right && sy >= top && sy <= bottom) picked.add(e);
+        }
+        multiSelection.clear();
+        if (picked.size() == 1) {
+            selectedEntity = picked.get(0);                   // exactly one → behave like a normal single-select
+        } else {
+            selectedEntity = null;
+            multiSelection.addAll(picked);                    // 0 (cleared) or >1 (group)
+        }
+        notifySelectionChanged();
+        notifyMultiSelection();
+        invalidate();
+    }
+
+    private void beginGroupMove(float worldX, float worldY) {
+        groupGrabWX = worldX; groupGrabWY = worldY;
+        groupTotalDx = 0f; groupTotalDy = 0f;
+    }
+
+    /** Shifts the whole group by the (grid-snapped) delta from the grab point. A uniform stored Δ is a
+     *  uniform rendered Δ, so relative layout (incl. depth) is preserved. */
+    private void dragGroupTo(float screenX, float screenY) {
+        float wx = (screenX - offsetX) / scale, wy = (screenY - offsetY) / scale;
+        float dx = wx - groupGrabWX, dy = wy - groupGrabWY;
+        if (snapToGrid) {
+            dx = Math.round(dx / BASE_TILE) * BASE_TILE;
+            dy = Math.round(dy / BASE_TILE) * BASE_TILE;
+        }
+        if (dx != 0f || dy != 0f) {
+            for (LevelEntity e : multiSelection) { e.x += dx; e.y += dy; }
+            groupGrabWX += dx; groupGrabWY += dy;
+            groupTotalDx += dx; groupTotalDy += dy;
+            invalidate();
+        }
+    }
+
+    private void finalizeGroupMove() {
+        if ((groupTotalDx != 0f || groupTotalDy != 0f) && !multiSelection.isEmpty()) {
+            pushCommand(new GroupMoveCommand(new ArrayList<>(multiSelection), groupTotalDx, groupTotalDy));
+        }
+        invalidate();
+    }
+
+    /** Deletes all group-selected entities as one undoable command. */
+    public void deleteSelectedGroup() {
+        if (multiSelection.isEmpty() || level == null) return;
+        GroupDeleteCommand cmd = new GroupDeleteCommand(new ArrayList<>(multiSelection));
+        cmd.redo();
+        pushCommand(cmd);
+        multiSelection.clear();
+        selectedEntity = null;
+        notifySelectionChanged();
+        notifyMultiSelection();
+        invalidate();
+    }
+
+    private static final class GroupMoveCommand implements EditCommand {
+        private final List<LevelEntity> ents; private final float dx, dy;
+        GroupMoveCommand(List<LevelEntity> ents, float dx, float dy) { this.ents = ents; this.dx = dx; this.dy = dy; }
+        @Override public void undo() { for (LevelEntity e : ents) { e.x -= dx; e.y -= dy; } }
+        @Override public void redo() { for (LevelEntity e : ents) { e.x += dx; e.y += dy; } }
+    }
+
+    /** Removes/re-adds a set of entities. Survivors reconcile by editOrdinal, so re-add order is irrelevant. */
+    private final class GroupDeleteCommand implements EditCommand {
+        private final List<LevelEntity> ents;
+        GroupDeleteCommand(List<LevelEntity> ents) { this.ents = ents; }
+        @Override public void redo() { for (LevelEntity e : ents) level.entities.remove(e); rebuildSorted(); }
+        @Override public void undo() {
+            for (LevelEntity e : ents) if (!level.entities.contains(e)) level.entities.add(e);
+            rebuildSorted();
+        }
+    }
+
     // ── Add / delete / duplicate (Phase 4) ─────────────────────────────────
 
     /** Rebuilds the z-sorted render list from level.entities (call after structural edits). */
@@ -1848,6 +2031,7 @@ public class LevelRenderView extends View {
         StructuralCommand cmd = new StructuralCommand(e, level.entities.size(), true);
         cmd.redo();
         pushCommand(cmd);
+        multiSelection.clear();
         selectedEntity = e;
         notifySelectionChanged();
         invalidate();
@@ -1876,6 +2060,7 @@ public class LevelRenderView extends View {
         StructuralCommand cmd = new StructuralCommand(e, level.entities.size(), true);
         cmd.redo();
         pushCommand(cmd);
+        multiSelection.clear();
         selectedEntity = e;
         notifySelectionChanged();
         invalidate();

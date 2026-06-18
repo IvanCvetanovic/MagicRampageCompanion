@@ -195,6 +195,20 @@ public class LevelViewerActivity extends BaseActivity {
         ImageButton btnEntityList = findViewById(R.id.btnEntityList);
         btnEntityList.setOnClickListener(v -> { playClick(); showEntityBrowser(); });
 
+        ImageButton btnMarquee = findViewById(R.id.btnMarquee);
+        btnMarquee.setAlpha(0.4f);
+        btnMarquee.setOnClickListener(v -> {
+            playClick();
+            boolean on = !renderView.isMarqueeMode();
+            renderView.setMarqueeMode(on);
+            btnMarquee.setAlpha(on ? 1.0f : 0.4f);
+            Toast.makeText(this, on ? R.string.marquee_on : R.string.marquee_off, Toast.LENGTH_SHORT).show();
+        });
+
+        renderView.setOnMultiSelectionChangedListener(count -> {
+            if (count > 1) Toast.makeText(this, getString(R.string.entities_selected, count), Toast.LENGTH_SHORT).show();
+        });
+
         ImageButton btnToggleEdit = findViewById(R.id.btnToggleEdit);
         btnToggleEdit.setAlpha(0.4f); // starts in VIEW mode
         btnToggleEdit.setOnClickListener(v -> {
@@ -206,6 +220,8 @@ public class LevelViewerActivity extends BaseActivity {
             btnToggleSnap.setVisibility(enable ? View.VISIBLE : View.GONE);
             btnSave.setVisibility(enable ? View.VISIBLE : View.GONE);
             btnEntityList.setVisibility(enable ? View.VISIBLE : View.GONE);
+            btnMarquee.setVisibility(enable ? View.VISIBLE : View.GONE);
+            if (!enable) { renderView.setMarqueeMode(false); btnMarquee.setAlpha(0.4f); }
             if (enable) populateInspector(renderView.getSelectedEntity());
             Toast.makeText(this, enable ? R.string.edit_mode_on : R.string.edit_mode_off,
                     Toast.LENGTH_SHORT).show();
@@ -383,9 +399,12 @@ public class LevelViewerActivity extends BaseActivity {
     private interface EntityFloatSetter { void set(LevelEntity e, float v); }
 
     private void updateEditActionButtons(LevelEntity e) {
-        boolean has = e != null;
-        if (btnDuplicateEntity != null) { btnDuplicateEntity.setEnabled(has); btnDuplicateEntity.setAlpha(has ? 1f : 0.4f); }
-        if (btnDeleteEntity != null) { btnDeleteEntity.setEnabled(has); btnDeleteEntity.setAlpha(has ? 1f : 0.4f); }
+        boolean single = e != null;
+        boolean group = renderView.hasMultiSelection();
+        boolean dup = single;            // duplicate stays single-only in v1
+        boolean del = single || group;   // delete also works on a group selection
+        if (btnDuplicateEntity != null) { btnDuplicateEntity.setEnabled(dup); btnDuplicateEntity.setAlpha(dup ? 1f : 0.4f); }
+        if (btnDeleteEntity != null) { btnDeleteEntity.setEnabled(del); btnDeleteEntity.setAlpha(del ? 1f : 0.4f); }
     }
 
     private void updateUndoRedoButtons() {
@@ -434,6 +453,15 @@ public class LevelViewerActivity extends BaseActivity {
     }
 
     private void confirmDeleteSelected() {
+        if (renderView.hasMultiSelection()) {
+            int count = renderView.getMultiSelectionCount();
+            new AlertDialog.Builder(this)
+                    .setMessage(getString(R.string.confirm_delete_group, count))
+                    .setPositiveButton(R.string.delete, (d, w) -> renderView.deleteSelectedGroup())
+                    .setNegativeButton(R.string.cancel, null)
+                    .show();
+            return;
+        }
         if (renderView.getSelectedEntity() == null) return;
         new AlertDialog.Builder(this)
                 .setMessage(R.string.confirm_delete_entity)
