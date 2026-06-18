@@ -192,6 +192,9 @@ public class LevelViewerActivity extends BaseActivity {
         ImageButton btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(v -> { playClick(); attemptSave(); });
 
+        ImageButton btnEntityList = findViewById(R.id.btnEntityList);
+        btnEntityList.setOnClickListener(v -> { playClick(); showEntityBrowser(); });
+
         ImageButton btnToggleEdit = findViewById(R.id.btnToggleEdit);
         btnToggleEdit.setAlpha(0.4f); // starts in VIEW mode
         btnToggleEdit.setOnClickListener(v -> {
@@ -202,6 +205,7 @@ public class LevelViewerActivity extends BaseActivity {
             editorBottomPanel.setVisibility(enable ? View.VISIBLE : View.GONE);
             btnToggleSnap.setVisibility(enable ? View.VISIBLE : View.GONE);
             btnSave.setVisibility(enable ? View.VISIBLE : View.GONE);
+            btnEntityList.setVisibility(enable ? View.VISIBLE : View.GONE);
             if (enable) populateInspector(renderView.getSelectedEntity());
             Toast.makeText(this, enable ? R.string.edit_mode_on : R.string.edit_mode_off,
                     Toast.LENGTH_SHORT).show();
@@ -637,6 +641,57 @@ public class LevelViewerActivity extends BaseActivity {
             Log.e(TAG, "Failed to list .ent assets", e);
         }
         return out;
+    }
+
+    // ── Entity browser: searchable list of every entity in the level → select + center on it ──
+    /** Opens a searchable list of all entities in the level. Tapping one selects it and pans the view
+     *  to center it — far easier than hunting for a specific entity by tap among hundreds. */
+    private void showEntityBrowser() {
+        List<LevelEntity> entities = renderView.getEntities();
+        if (entities.isEmpty()) {
+            Toast.makeText(this, R.string.entity_browser_empty, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_entity_palette, null);
+        EditText search = dialogView.findViewById(R.id.paletteSearch);
+        ListView list = dialogView.findViewById(R.id.paletteList);
+
+        List<EntityRef> refs = new ArrayList<>();
+        for (LevelEntity e : entities) refs.add(new EntityRef(e));
+        ArrayAdapter<EntityRef> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, refs);
+        list.setAdapter(adapter);
+
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.entity_browser_title)
+                .setView(dialogView)
+                .setNegativeButton(R.string.close, null)
+                .create();
+
+        search.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
+            @Override public void onTextChanged(CharSequence s, int a, int b, int c) { adapter.getFilter().filter(s); }
+            @Override public void afterTextChanged(Editable s) {}
+        });
+
+        list.setOnItemClickListener((parent, v, position, id) -> {
+            EntityRef ref = adapter.getItem(position);
+            dialog.dismiss();
+            if (ref != null) renderView.selectAndCenter(ref.entity);
+        });
+
+        dialog.show();
+    }
+
+    /** Wraps a level entity with a searchable label (name · id · position) for the browser list. */
+    private static final class EntityRef {
+        final LevelEntity entity;
+        private final String label;
+        EntityRef(LevelEntity e) {
+            this.entity = e;
+            String name = (e.entityName == null || e.entityName.isEmpty()) ? ("id " + e.id) : e.entityName;
+            this.label = name + "   ·   id " + e.id + "   @ " + (int) e.x + ", " + (int) e.y;
+        }
+        @Override public String toString() { return label; }
     }
 
     /** Runs pre-save sanity checks and gates the save dialog on the result. Warnings are advisory —

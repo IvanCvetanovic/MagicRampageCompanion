@@ -1545,6 +1545,22 @@ public class LevelRenderView extends View {
         return selectedEntity;
     }
 
+    /** The level's entities (read-only use by the entity browser), or an empty list if none loaded. */
+    public List<LevelEntity> getEntities() {
+        return (level != null && level.entities != null) ? level.entities : java.util.Collections.emptyList();
+    }
+
+    /** Selects an entity and pans the view so it is centered on screen (used by the entity browser to
+     *  jump to an entity that's hard to find/tap among hundreds). Keeps the current zoom. */
+    public void selectAndCenter(LevelEntity e) {
+        if (e == null) return;
+        selectedEntity = e;
+        offsetX = getWidth() / 2f - e.x * scale;
+        offsetY = getHeight() / 2f - computeRenderY(e) * scale;
+        notifySelectionChanged();
+        invalidate();
+    }
+
     /** Notified when the EDIT-mode selection changes (so the UI can show/update an inspector). */
     public interface OnSelectionChangedListener {
         void onSelectionChanged(LevelEntity selected);

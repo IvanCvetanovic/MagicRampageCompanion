@@ -72,6 +72,15 @@
             android:visibility="gone" />
 
         <ImageButton
+            android:id="@+id/btnEntityList"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_agenda"
+            android:contentDescription="@string/cd_entity_list"
+            android:visibility="gone" />
+
+        <ImageButton
             android:id="@+id/btnSave"
             android:layout_width="48dp"
             android:layout_height="48dp"
