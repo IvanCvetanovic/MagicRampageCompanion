@@ -2014,6 +2014,13 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="export_success">Exported. Transfer the .esc to your PC\'s Magic Rampage/scenes/ folder.</string>
     <string name="export_failed">Export failed: %1$s</string>
     <string name="customdata_dialog_title">Edit Custom Data</string>
+    <string name="cd_add_field">Add field</string>
+    <string name="cd_remove_field">Remove field</string>
+    <string name="cd_field_name">Name</string>
+    <string name="cd_field_value">Value</string>
+    <string name="cd_field_name_empty">Enter a field name</string>
+    <string name="cd_field_exists">A field with that name already exists</string>
+    <string name="add">Add</string>
 
     <!-- Pre-save validation warnings (editor) -->
     <string name="validate_title">Before you save</string>

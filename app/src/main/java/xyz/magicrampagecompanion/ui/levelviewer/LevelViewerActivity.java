@@ -412,41 +412,158 @@ public class LevelViewerActivity extends BaseActivity {
         if (btnRedo != null) { boolean r = renderView.canRedo(); btnRedo.setEnabled(r); btnRedo.setAlpha(r ? 1f : 0.4f); }
     }
 
-    /** Edits the selected entity's CustomData values (existing keys only) — the data that drives
-     *  gameplay (enemy lists, hp, text, drop chances, ...). Persisted on save via customDataEdited. */
+    /** Holds a CustomData editor row: its key, the value field, and the row view (for removal). */
+    private static final class CdRow {
+        final String key; final EditText field; final View view;
+        CdRow(String key, EditText field, View view) { this.key = key; this.field = field; this.view = view; }
+    }
+
+    /** Edits the selected entity's CustomData — the data that drives gameplay (enemy lists, hp, text,
+     *  drop chances, ...). Values are editable; fields can be removed (✕) or added (with an engine type).
+     *  Persisted on save via customDataEdited and undoable via a single command. */
     private void showCustomDataDialog(LevelEntity e) {
-        if (e.customData == null || e.customData.isEmpty()) return;
-        List<String> keys = new ArrayList<>(e.customData.keySet());
-        Collections.sort(keys);
+        if (e.customData == null) return;
+
+        // Snapshot BEFORE for undo.
+        final Map<String, String> beforeData = new LinkedHashMap<>(e.customData);
+        final Map<String, String> beforeTypes = new LinkedHashMap<>(e.customDataTypes);
+        final boolean beforeEdited = e.customDataEdited;
+        final String beforeText = e.displayText;
+
+        final int pad = (int) (16 * getResources().getDisplayMetrics().density);
+        final List<CdRow> rows = new ArrayList<>();
+        final Map<String, String> newTypes = new LinkedHashMap<>();   // types for keys added in this session
+
         LinearLayout container = new LinearLayout(this);
         container.setOrientation(LinearLayout.VERTICAL);
-        int pad = (int) (16 * getResources().getDisplayMetrics().density);
         container.setPadding(pad, pad / 2, pad, 0);
-        List<EditText> fields = new ArrayList<>();
-        for (String k : keys) {
-            TextView label = new TextView(this);
-            label.setText(k);
-            label.setTextColor(getColor(R.color.color_text_primary));
-            label.setTextSize(12f);
-            container.addView(label);
-            EditText field = new EditText(this);
-            field.setText(e.customData.get(k));
-            container.addView(field);
-            fields.add(field);
-        }
+
+        final LinearLayout rowsArea = new LinearLayout(this);
+        rowsArea.setOrientation(LinearLayout.VERTICAL);
+        container.addView(rowsArea);
+
+        List<String> keys = new ArrayList<>(e.customData.keySet());
+        Collections.sort(keys);
+        for (String k : keys) addCustomDataRow(rowsArea, rows, k, e.customData.get(k));
+
+        android.widget.Button addBtn = new android.widget.Button(this);
+        addBtn.setText(R.string.cd_add_field);
+        addBtn.setOnClickListener(v -> { playClick(); showAddFieldDialog(rowsArea, rows, newTypes); });
+        container.addView(addBtn);
+
         android.widget.ScrollView scroll = new android.widget.ScrollView(this);
         scroll.addView(container);
         new AlertDialog.Builder(this)
                 .setTitle(R.string.customdata_dialog_title)
                 .setView(scroll)
                 .setPositiveButton(R.string.save, (d, w) -> {
-                    for (int i = 0; i < keys.size(); i++) {
-                        e.customData.put(keys.get(i), fields.get(i).getText().toString());
-                    }
+                    Map<String, String> after = new LinkedHashMap<>();
+                    for (CdRow r : rows) after.put(r.key, r.field.getText().toString());
+                    e.customData.clear();
+                    e.customData.putAll(after);
+                    e.customDataTypes.putAll(newTypes);
+                    e.customDataTypes.keySet().retainAll(e.customData.keySet());   // drop types for removed keys
                     e.customDataEdited = true;
-                    if (e.customData.containsKey("text")) e.displayText = e.customData.get("text");
+                    e.displayText = e.customData.containsKey("text") ? e.customData.get("text") : "";
+
+                    final Map<String, String> afterData = new LinkedHashMap<>(e.customData);
+                    final Map<String, String> afterTypes = new LinkedHashMap<>(e.customDataTypes);
+                    final String afterText = e.displayText;
+                    if (!afterData.equals(beforeData) || !afterTypes.equals(beforeTypes)) {
+                        renderView.pushCommand(new LevelRenderView.EditCommand() {
+                            @Override public void undo() {
+                                e.customData.clear(); e.customData.putAll(beforeData);
+                                e.customDataTypes.clear(); e.customDataTypes.putAll(beforeTypes);
+                                e.customDataEdited = beforeEdited; e.displayText = beforeText;
+                            }
+                            @Override public void redo() {
+                                e.customData.clear(); e.customData.putAll(afterData);
+                                e.customDataTypes.clear(); e.customDataTypes.putAll(afterTypes);
+                                e.customDataEdited = true; e.displayText = afterText;
+                            }
+                        });
+                    }
                     renderView.invalidate();
                     populateInspector(renderView.getSelectedEntity());
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    /** Adds one CustomData editor row (key label + value field + ✕ remove) to the dialog. */
+    private void addCustomDataRow(LinearLayout rowsArea, List<CdRow> rows, String key, String value) {
+        LinearLayout block = new LinearLayout(this);
+        block.setOrientation(LinearLayout.VERTICAL);
+
+        TextView label = new TextView(this);
+        label.setText(key);
+        label.setTextColor(getColor(R.color.color_text_primary));
+        label.setTextSize(12f);
+        block.addView(label);
+
+        LinearLayout line = new LinearLayout(this);
+        line.setOrientation(LinearLayout.HORIZONTAL);
+        line.setGravity(android.view.Gravity.CENTER_VERTICAL);
+
+        EditText field = new EditText(this);
+        field.setText(value);
+        field.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
+        line.addView(field);
+
+        android.widget.ImageButton remove = new android.widget.ImageButton(this);
+        remove.setImageResource(android.R.drawable.ic_menu_delete);
+        remove.setBackgroundResource(0);
+        remove.setContentDescription(getString(R.string.cd_remove_field));
+        line.addView(remove);
+
+        block.addView(line);
+        rowsArea.addView(block);
+
+        CdRow row = new CdRow(key, field, block);
+        rows.add(row);
+        remove.setOnClickListener(v -> { playClick(); rows.remove(row); rowsArea.removeView(block); });
+    }
+
+    /** Sub-dialog to add a new CustomData field: name + engine type + value. */
+    private void showAddFieldDialog(LinearLayout rowsArea, List<CdRow> rows, Map<String, String> newTypes) {
+        final int pad = (int) (16 * getResources().getDisplayMetrics().density);
+        LinearLayout c = new LinearLayout(this);
+        c.setOrientation(LinearLayout.VERTICAL);
+        c.setPadding(pad, pad / 2, pad, 0);
+
+        EditText nameF = new EditText(this);
+        nameF.setHint(R.string.cd_field_name);
+        nameF.setInputType(android.text.InputType.TYPE_CLASS_TEXT);
+        c.addView(nameF);
+
+        android.widget.RadioGroup types = new android.widget.RadioGroup(this);
+        types.setOrientation(android.widget.RadioGroup.HORIZONTAL);
+        String[] typeOpts = {"string", "int", "uint", "float"};
+        for (int i = 0; i < typeOpts.length; i++) {
+            android.widget.RadioButton rb = new android.widget.RadioButton(this);
+            rb.setId(i + 1);
+            rb.setText(typeOpts[i]);
+            types.addView(rb);
+        }
+        types.check(1);
+        c.addView(types);
+
+        EditText valF = new EditText(this);
+        valF.setHint(R.string.cd_field_value);
+        c.addView(valF);
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.cd_add_field)
+                .setView(c)
+                .setPositiveButton(R.string.add, (d, w) -> {
+                    String name = nameF.getText().toString().trim();
+                    if (name.isEmpty()) { Toast.makeText(this, R.string.cd_field_name_empty, Toast.LENGTH_SHORT).show(); return; }
+                    for (CdRow r : rows) if (r.key.equals(name)) { Toast.makeText(this, R.string.cd_field_exists, Toast.LENGTH_SHORT).show(); return; }
+                    String type = "string";
+                    android.widget.RadioButton checked = types.findViewById(types.getCheckedRadioButtonId());
+                    if (checked != null) type = checked.getText().toString();
+                    newTypes.put(name, type);
+                    addCustomDataRow(rowsArea, rows, name, valF.getText().toString());
                 })
                 .setNegativeButton(R.string.cancel, null)
                 .show();

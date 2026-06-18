@@ -51,6 +51,11 @@ public class LevelEntity {
     // Custom Data storage for generic variables.
     public Map<String, String> customData = new HashMap<>();
 
+    // Engine <Type> for CustomData keys the user ADDS in the editor (string/int/uint/float). Existing
+    // keys keep their type in the source DOM; this only carries types for newly-added keys so the saver
+    // can write a complete <Variable> for them. Empty/missing → "string".
+    public Map<String, String> customDataTypes = new HashMap<>();
+
     // Runtime resolution helper
     public boolean isNPCResolved = false;
 
@@ -112,6 +117,7 @@ public class LevelEntity {
         c.lightColorR = lightColorR; c.lightColorG = lightColorG; c.lightColorB = lightColorB;
         c.diffuseColorR = diffuseColorR; c.diffuseColorG = diffuseColorG; c.diffuseColorB = diffuseColorB;
         c.customData = new HashMap<>(customData);
+        c.customDataTypes = new HashMap<>(customDataTypes);
         c.isNPCResolved = isNPCResolved;
         c.characterScale = characterScale;
         c.bodyColor = bodyColor;

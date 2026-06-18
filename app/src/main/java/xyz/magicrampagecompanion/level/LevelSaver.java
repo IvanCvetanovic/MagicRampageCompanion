@@ -7,8 +7,10 @@ import java.io.OutputStream;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -139,21 +141,45 @@ public class LevelSaver {
             // No <Scale> present (e.g. FileName-referenced entity): scale lives in the .ent.
             // v1 leaves it alone rather than inserting a node of uncertain engine support.
 
-            // Update CustomData <Value>s the user edited (matched by <Name>); gated to keep no-op saves clean.
+            // Sync CustomData to the in-memory map (gated to keep no-op / value-only saves clean):
+            // update existing <Value>s, remove <Variable>s the user deleted, append ones they added.
             if (e.customDataEdited) {
                 Element cd = firstChildElement(inner, "CustomData");
                 if (cd != null) {
+                    Set<String> domNames = new HashSet<>();
+                    List<Element> toRemove = new ArrayList<>();
                     NodeList vars = cd.getChildNodes();
                     for (int i = 0; i < vars.getLength(); i++) {
                         Node vn = vars.item(i);
                         if (vn.getNodeType() != Node.ELEMENT_NODE || !"Variable".equals(vn.getNodeName())) continue;
                         Element var = (Element) vn;
                         Element nameEl = firstChildElement(var, "Name");
-                        Element valEl = firstChildElement(var, "Value");
-                        if (nameEl != null && valEl != null) {
-                            String key = nameEl.getTextContent().trim();
-                            if (e.customData.containsKey(key)) valEl.setTextContent(e.customData.get(key));
+                        if (nameEl == null) continue;
+                        String key = nameEl.getTextContent().trim();
+                        domNames.add(key);
+                        if (e.customData.containsKey(key)) {
+                            Element valEl = firstChildElement(var, "Value");
+                            if (valEl != null) valEl.setTextContent(e.customData.get(key));
+                        } else {
+                            toRemove.add(var);   // key deleted in the editor
                         }
+                    }
+                    for (Element var : toRemove) cd.removeChild(var);
+                    // Keys in the map but not the DOM = newly added → append a complete <Variable>.
+                    Document doc = cd.getOwnerDocument();
+                    for (Map.Entry<String, String> en : e.customData.entrySet()) {
+                        if (domNames.contains(en.getKey())) continue;
+                        // Only insert keys the user explicitly ADDED in the editor. e.customData also holds
+                        // keys resolved from a FileName .ent (not in the inline DOM); those must NOT be
+                        // inlined here or a FileName-referenced entity would balloon with duplicated data.
+                        if (!e.customDataTypes.containsKey(en.getKey())) continue;
+                        String type = e.customDataTypes.get(en.getKey());
+                        if (type == null || type.isEmpty()) type = "string";
+                        Element var = doc.createElement("Variable");
+                        Element t = doc.createElement("Type"); t.setTextContent(type); var.appendChild(t);
+                        Element n = doc.createElement("Name"); n.setTextContent(en.getKey()); var.appendChild(n);
+                        Element v = doc.createElement("Value"); v.setTextContent(en.getValue()); var.appendChild(v);
+                        cd.appendChild(var);
                     }
                 }
             }
