@@ -1316,11 +1316,15 @@ public class LevelRenderView extends View {
                 tapStartY  = focusY;
                 dragCandidate = false;
                 isDraggingEntity = false;
-                // EDIT mode: if the touch lands on the selected entity, this drag moves it (not pans).
+                activeHandle = Gesture.NONE;
+                // EDIT mode priority: rotate/scale handle > move-on-body > pan.
                 if (editMode && selectedEntity != null && pointerCount == 1) {
                     float wx = (focusX - offsetX) / scale;
                     float wy = (focusY - offsetY) / scale;
-                    if (hitSelected(wx, wy)) {
+                    activeHandle = hitHandle(wx, wy);
+                    if (activeHandle != Gesture.NONE) {
+                        beginHandleGesture(wx, wy);
+                    } else if (hitSelected(wx, wy)) {
                         dragCandidate = true;
                         grabOffX = wx - selectedEntity.x;
                         grabOffYr = wy - computeRenderY(selectedEntity);
@@ -1328,13 +1332,14 @@ public class LevelRenderView extends View {
                         moveOldY = selectedEntity.y;
                     }
                 }
-                isPanning = !dragCandidate;
+                isPanning = !dragCandidate && activeHandle == Gesture.NONE;
                 break;
 
             case MotionEvent.ACTION_POINTER_DOWN:
             case MotionEvent.ACTION_POINTER_UP:
-                // A second finger means pinch/pan — stop dragging the entity (committing any move).
+                // A second finger means pinch/pan — stop dragging/handle-editing (committing any change).
                 if (isDraggingEntity) finalizeEntityDrag();
+                if (activeHandle != Gesture.NONE) { finalizeHandleGesture(); activeHandle = Gesture.NONE; }
                 dragCandidate = false;
                 isDraggingEntity = false;
                 // Update lastTouch to the focal point of the fingers that WILL remain
@@ -1344,6 +1349,10 @@ public class LevelRenderView extends View {
                 break;
 
             case MotionEvent.ACTION_MOVE:
+                if (activeHandle != Gesture.NONE && pointerCount == 1 && selectedEntity != null) {
+                    updateHandleGesture((focusX - offsetX) / scale, (focusY - offsetY) / scale);
+                    break;
+                }
                 if (dragCandidate && pointerCount == 1 && selectedEntity != null) {
                     if (!isDraggingEntity) {
                         float mdx = focusX - tapStartX, mdy = focusY - tapStartY;
@@ -1365,6 +1374,12 @@ public class LevelRenderView extends View {
 
             case MotionEvent.ACTION_UP:
                 isPanning = false;
+                if (activeHandle != Gesture.NONE) {
+                    finalizeHandleGesture();
+                    activeHandle = Gesture.NONE;
+                    performClick();
+                    break;
+                }
                 if (isDraggingEntity) {
                     finalizeEntityDrag();
                     dragCandidate = false;
@@ -1386,6 +1401,7 @@ public class LevelRenderView extends View {
                 isPanning = false;
                 dragCandidate = false;
                 isDraggingEntity = false;
+                if (activeHandle != Gesture.NONE) { cancelHandleGesture(); activeHandle = Gesture.NONE; }
                 break;
         }
 
@@ -1506,6 +1522,20 @@ public class LevelRenderView extends View {
         canvas.drawRect(scratchRect, selectionFillPaint);
         selectionPaint.setStrokeWidth(2f / scale); // ~2px on screen regardless of zoom
         canvas.drawRect(scratchRect, selectionPaint);
+
+        // Handles (EDIT only): rotate above top-center, scale at the bottom-right corner.
+        // Drawn in the box's local frame so they track its rotation; constant on-screen size.
+        if (editMode) {
+            float r = HANDLE_RADIUS_PX / scale;
+            float rotY = -hh - (ROTATE_GAP_PX / scale);
+            canvas.drawLine(0, -hh, 0, rotY, selectionPaint);
+            canvas.drawCircle(0, rotY, r, handleFillPaint);
+            canvas.drawCircle(0, rotY, r, selectionPaint);
+            scratchRect.set(hw - r, hh - r, hw + r, hh + r);
+            canvas.drawRect(scratchRect, handleFillPaint);
+            canvas.drawRect(scratchRect, selectionPaint);
+        }
+
         canvas.restore();
     }
 
@@ -1635,6 +1665,133 @@ public class LevelRenderView extends View {
         }
         @Override public void undo() { entity.x = oldX; entity.y = oldY; }
         @Override public void redo() { entity.x = newX; entity.y = newY; }
+    }
+
+    // ── On-canvas rotate/scale handles ──────────────────────────────────────
+    private static final float HANDLE_RADIUS_PX = 13f;   // drawn handle radius (screen px)
+    private static final float HANDLE_TOUCH_PX  = 34f;   // touch hit radius (screen px)
+    private static final float ROTATE_GAP_PX    = 26f;   // gap above the box to the rotate handle (screen px)
+    private static final float ROTATE_SIGN      = -1f;   // maps screen drag → Ethanon angle (verified on device)
+
+    private enum Gesture { NONE, ROTATE, SCALE }
+    private Gesture activeHandle = Gesture.NONE;
+    private float gStartPointerAngle, gStartEntityAngle;   // rotate refs, captured at DOWN
+    private float gStartDist, gStartScaleX, gStartScaleY;  // scale refs, captured at DOWN
+    private float hOldAngle, hOldScaleX, hOldScaleY;       // command "before" snapshot
+    private boolean hOldScaleEdited;
+
+    private final Paint handleFillPaint = makeHandleFillPaint();
+    private static Paint makeHandleFillPaint() {
+        Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+        p.setColor(0xFFFFFFFF);
+        p.setStyle(Paint.Style.FILL);
+        return p;
+    }
+
+    /** Maps a point in the selection's local (rotated) frame to world coords. */
+    private float[] handleWorld(LevelEntity e, float lx, float ly) {
+        double rad = Math.toRadians(-e.angle);             // drawSelectionHighlight uses canvas.rotate(-angle)
+        float cos = (float) Math.cos(rad), sin = (float) Math.sin(rad);
+        return new float[]{ e.x + lx * cos - ly * sin, computeRenderY(e) + lx * sin + ly * cos };
+    }
+
+    /** World positions of the selection's two handles: [rotX,rotY, sclX,sclY]. */
+    private float[] handlePositions(LevelEntity e) {
+        float[] half = getSelectionHalfExtents(e);
+        float gap = ROTATE_GAP_PX / scale;
+        float[] rot = handleWorld(e, 0, -half[1] - gap);
+        float[] scl = handleWorld(e, half[0], half[1]);
+        return new float[]{ rot[0], rot[1], scl[0], scl[1] };
+    }
+
+    /** Returns which handle (if any) a world point grabs. */
+    private Gesture hitHandle(float wx, float wy) {
+        if (selectedEntity == null) return Gesture.NONE;
+        float[] h = handlePositions(selectedEntity);
+        float r = HANDLE_TOUCH_PX / scale, r2 = r * r;
+        if (dist2(wx, wy, h[0], h[1]) <= r2) return Gesture.ROTATE;
+        if (dist2(wx, wy, h[2], h[3]) <= r2) return Gesture.SCALE;
+        return Gesture.NONE;
+    }
+
+    private static float dist2(float ax, float ay, float bx, float by) {
+        float dx = ax - bx, dy = ay - by;
+        return dx * dx + dy * dy;
+    }
+
+    /** Captures the gesture's starting references (called once at ACTION_DOWN). */
+    private void beginHandleGesture(float wx, float wy) {
+        LevelEntity e = selectedEntity;
+        if (e == null) return;
+        hOldAngle = e.angle; hOldScaleX = e.scaleX; hOldScaleY = e.scaleY; hOldScaleEdited = e.scaleEdited;
+        float cx = e.x, cy = computeRenderY(e);
+        if (activeHandle == Gesture.ROTATE) {
+            gStartEntityAngle = e.angle;
+            gStartPointerAngle = (float) Math.atan2(wy - cy, wx - cx);
+        } else if (activeHandle == Gesture.SCALE) {
+            gStartDist = (float) Math.max(1.0, Math.hypot(wx - cx, wy - cy));
+            gStartScaleX = e.scaleX; gStartScaleY = e.scaleY;
+        }
+    }
+
+    /** Applies the live rotate/scale as the finger moves. Position (e.x/e.y) is left untouched. */
+    private void updateHandleGesture(float wx, float wy) {
+        LevelEntity e = selectedEntity;
+        if (e == null) return;
+        float cx = e.x, cy = computeRenderY(e);
+        if (activeHandle == Gesture.ROTATE) {
+            float cur = (float) Math.atan2(wy - cy, wx - cx);
+            float deltaDeg = (float) Math.toDegrees(cur - gStartPointerAngle);
+            e.angle = gStartEntityAngle + ROTATE_SIGN * deltaDeg;
+        } else if (activeHandle == Gesture.SCALE) {
+            float factor = (float) Math.hypot(wx - cx, wy - cy) / gStartDist;
+            e.scaleX = clampScaleMagnitude(gStartScaleX * factor);
+            e.scaleY = clampScaleMagnitude(gStartScaleY * factor);
+            e.scaleEdited = true;
+        }
+        invalidate();
+    }
+
+    private static float clampScaleMagnitude(float s) {
+        float sign = (s < 0f) ? -1f : 1f;
+        float a = Math.abs(s);
+        if (a < 0.05f) a = 0.05f;
+        return sign * a;
+    }
+
+    /** Commits the completed gesture as one undoable command and refreshes the inspector. */
+    private void finalizeHandleGesture() {
+        LevelEntity e = selectedEntity;
+        if (e == null) return;
+        if (e.angle != hOldAngle || e.scaleX != hOldScaleX || e.scaleY != hOldScaleY) {
+            pushCommand(new RotateScaleCommand(e, hOldAngle, hOldScaleX, hOldScaleY, hOldScaleEdited,
+                    e.angle, e.scaleX, e.scaleY, e.scaleEdited));
+        }
+        notifySelectionChanged();
+        invalidate();
+    }
+
+    /** Reverts an in-progress gesture (e.g. on ACTION_CANCEL) without recording a command. */
+    private void cancelHandleGesture() {
+        LevelEntity e = selectedEntity;
+        if (e == null) return;
+        e.angle = hOldAngle; e.scaleX = hOldScaleX; e.scaleY = hOldScaleY; e.scaleEdited = hOldScaleEdited;
+        invalidate();
+    }
+
+    /** Rotate + uniform-scale of an entity, captured before/after a handle gesture. */
+    private static final class RotateScaleCommand implements EditCommand {
+        private final LevelEntity e;
+        private final float oldA, oldSX, oldSY; private final boolean oldEdited;
+        private final float newA, newSX, newSY; private final boolean newEdited;
+        RotateScaleCommand(LevelEntity e, float oldA, float oldSX, float oldSY, boolean oldEdited,
+                           float newA, float newSX, float newSY, boolean newEdited) {
+            this.e = e;
+            this.oldA = oldA; this.oldSX = oldSX; this.oldSY = oldSY; this.oldEdited = oldEdited;
+            this.newA = newA; this.newSX = newSX; this.newSY = newSY; this.newEdited = newEdited;
+        }
+        @Override public void undo() { e.angle = oldA; e.scaleX = oldSX; e.scaleY = oldSY; e.scaleEdited = oldEdited; }
+        @Override public void redo() { e.angle = newA; e.scaleX = newSX; e.scaleY = newSY; e.scaleEdited = newEdited; }
     }
 
     // ── Add / delete / duplicate (Phase 4) ─────────────────────────────────
