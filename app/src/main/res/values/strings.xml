@@ -1638,6 +1638,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="sovereigns_ruby_sword">Sovereigns Ruby Sword</string>
     <string name="app_name">Magic Rampage: Companion</string>
     <string name="search_hint">Search an item…</string>
+    <string name="search_enemy_hint">Search an enemy…</string>
     <string name="all">All</string>
     <string name="skins">👺 Skins 👺</string>
 

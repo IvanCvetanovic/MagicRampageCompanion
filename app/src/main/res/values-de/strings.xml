@@ -1628,6 +1628,7 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="skin_witchdoctor21">Knochensprecher</string>
 
     <string name="search_hint">Ein Element suchen…</string>
+    <string name="search_enemy_hint">Einen Gegner suchen…</string>
     <string name="all">Alle</string>
     <string name="skins">👺 Skins 👺</string>
 

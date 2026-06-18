@@ -1628,6 +1628,7 @@
     <string name="skin_witchdoctor21">Шепчущий кости</string>
 
     <string name="search_hint">Найти предмет…</string>
+    <string name="search_enemy_hint">Найти врага…</string>
     <string name="all">Все</string>
     <string name="skins">👺 Скины 👺</string>
 

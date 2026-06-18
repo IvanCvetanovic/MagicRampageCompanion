@@ -9,12 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import xyz.magicrampagecompanion.data.models.Enemy;
 import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.data.adapters.ImageAdapter;
@@ -24,7 +28,11 @@ public class Enemies extends BaseActivity {
     public static final String EXTRA_ENEMY = "xyz.magicrampagecompanion.EXTRA_ENEMY";
 
     private RecyclerView recyclerView;
+    private EditText searchEdit;
     private TextView emptyStateText;
+
+    // Full, unfiltered enemy list (populated upstream by ItemData.init in MainActivity).
+    private List<Enemy> fullList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,22 +60,38 @@ public class Enemies extends BaseActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         recyclerView.setClipToPadding(false);
 
+        searchEdit = findViewById(R.id.searchEdit);
         emptyStateText = findViewById(R.id.emptyStateText);
 
-        loadEnemies(ItemData.enemyList);
+        searchEdit.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override public void afterTextChanged(Editable s) { applyFilter(s.toString()); }
+        });
+
+        fullList = ItemData.enemyList != null ? ItemData.enemyList : new ArrayList<>();
+        applyFilter("");
     }
 
-    private <T extends Parcelable> void loadEnemies(List<T> items) {
-        ImageAdapter<T> adapter = new ImageAdapter<>(items, (view, position) -> {
+    /** Filters the enemy grid by name and refreshes the empty-state. */
+    private void applyFilter(String query) {
+        String q = query == null ? "" : query.trim().toLowerCase();
+        List<Enemy> filtered = new ArrayList<>();
+        for (Enemy e : fullList) {
+            String name = e.getName() != null ? e.getName().toLowerCase() : "";
+            if (q.isEmpty() || name.contains(q)) filtered.add(e);
+        }
+
+        ImageAdapter<Enemy> adapter = new ImageAdapter<>(filtered, (view, position) -> {
             playClick();
-            T selected = items.get(position);
+            Enemy selected = filtered.get(position);
             Intent intent = new Intent(Enemies.this, EnemyDetail.class);
             intent.putExtra(EXTRA_ENEMY, selected);
             startActivity(intent);
         });
         recyclerView.setAdapter(adapter);
 
-        boolean empty = items == null || items.isEmpty();
+        boolean empty = filtered.isEmpty();
         recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
         emptyStateText.setVisibility(empty ? View.VISIBLE : View.GONE);
     }

@@ -1626,6 +1626,7 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="skin_witchdoctor21">Kemik Fısıldayan</string>
 
     <string name="search_hint">Bir öğe ara…</string>
+    <string name="search_enemy_hint">Bir düşman ara…</string>
     <string name="all">Tümü</string>
     <string name="skins">👺 Kostümler 👺</string>
 

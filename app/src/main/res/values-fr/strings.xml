@@ -1627,6 +1627,7 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="skin_witchdoctor21">Murmureur d\'Os</string>
 
     <string name="search_hint">Rechercher un objet…</string>
+    <string name="search_enemy_hint">Rechercher un ennemi…</string>
     <string name="all">Tout</string>
     <string name="skins">👺 Skins 👺</string>
 

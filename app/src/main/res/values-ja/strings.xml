@@ -1627,6 +1627,7 @@
     <string name="skin_witchdoctor21">骨を囁く者</string>
 
     <string name="search_hint">アイテムを検索…</string>
+    <string name="search_enemy_hint">敵を検索…</string>
     <string name="all">すべて</string>
     <string name="skins">👺 スキン 👺</string>
 
