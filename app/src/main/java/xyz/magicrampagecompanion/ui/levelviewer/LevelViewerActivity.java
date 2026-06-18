@@ -17,6 +17,13 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.LruCache;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -36,7 +43,11 @@ import java.io.OutputStream;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.core.utils.RewardedAdManager;
@@ -430,8 +441,11 @@ public class LevelViewerActivity extends BaseActivity {
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_entity_palette, null);
         EditText search = dialogView.findViewById(R.id.paletteSearch);
         ListView list = dialogView.findViewById(R.id.paletteList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, new ArrayList<>(entFiles));
+
+        if (thumbExecutor == null || thumbExecutor.isShutdown()) {
+            thumbExecutor = Executors.newFixedThreadPool(3);
+        }
+        PaletteAdapter adapter = new PaletteAdapter(new ArrayList<>(entFiles));
         list.setAdapter(adapter);
 
         AlertDialog dialog = new AlertDialog.Builder(this)
@@ -452,7 +466,121 @@ public class LevelViewerActivity extends BaseActivity {
             if (name != null) renderView.addEntityFromEnt(name);
         });
 
+        dialog.setOnDismissListener(d -> shutdownThumbExecutor());
         dialog.show();
+    }
+
+    // ── Palette thumbnails ──────────────────────────────────────────────────────
+    private static final int THUMB_TARGET_PX = 120;
+    // Resolved sprite previews for the Add-entity palette, bounded by an LruCache (~8 MB).
+    private final LruCache<String, Bitmap> thumbCache =
+            new LruCache<String, Bitmap>(8 * 1024 * 1024) {
+                @Override protected int sizeOf(String key, Bitmap value) { return value.getByteCount(); }
+            };
+    // .ent files that resolve to no sprite — remembered so we don't keep re-decoding them.
+    private final Set<String> thumbMisses = Collections.synchronizedSet(new HashSet<>());
+    private ExecutorService thumbExecutor;
+    private final Handler thumbHandler = new Handler(Looper.getMainLooper());
+
+    private void shutdownThumbExecutor() {
+        if (thumbExecutor != null) { thumbExecutor.shutdownNow(); thumbExecutor = null; }
+    }
+
+    /** ListView adapter for the Add-entity palette: each row shows the entity's sprite thumbnail
+     *  (resolved + cached off the UI thread) plus its name. Extends ArrayAdapter so the search
+     *  field's built-in filtering keeps working on the .ent filenames. */
+    private final class PaletteAdapter extends ArrayAdapter<String> {
+        PaletteAdapter(List<String> data) { super(LevelViewerActivity.this, 0, data); }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View row = (convertView != null) ? convertView
+                    : getLayoutInflater().inflate(R.layout.item_palette_entry, parent, false);
+            ImageView thumb = row.findViewById(R.id.paletteItemThumb);
+            TextView label = row.findViewById(R.id.paletteItemName);
+
+            String file = getItem(position);
+            label.setText(displayName(file));
+            thumb.setTag(file);
+
+            Bitmap cached = (file != null) ? thumbCache.get(file) : null;
+            if (cached != null) {
+                thumb.setImageBitmap(cached);
+            } else {
+                thumb.setImageDrawable(null);
+                if (file != null && !thumbMisses.contains(file)) loadThumbAsync(file, thumb);
+            }
+            return row;
+        }
+    }
+
+    private void loadThumbAsync(final String file, final ImageView target) {
+        final ExecutorService exec = thumbExecutor;
+        if (exec == null || exec.isShutdown()) return;
+        exec.execute(() -> {
+            Bitmap bmp = null;
+            try { bmp = resolveThumbnail(file); } catch (Exception ignored) {}
+            if (bmp == null) { thumbMisses.add(file); return; }
+            final Bitmap result = bmp;
+            thumbCache.put(file, result);
+            thumbHandler.post(() -> { if (file.equals(target.getTag())) target.setImageBitmap(result); });
+        });
+    }
+
+    /** Resolves a bundled .ent file to a small sprite thumbnail. Self-contained — it does NOT touch
+     *  the render view's sprite cache, so it is safe to run off the UI thread: parse the .ent for its
+     *  sprite, decode that PNG downsampled, and crop frame 0 from any uniform sprite sheet. Returns
+     *  null when the .ent has no direct sprite (e.g. composed NPCs resolved at the level layer). */
+    private Bitmap resolveThumbnail(String entFileName) {
+        LevelEntity tmp = new LevelEntity();
+        tmp.entityName = entFileName;
+        LevelParser.parseEntFile(this, tmp, entFileName);
+
+        String sprite = (tmp.spriteFile == null) ? "" : tmp.spriteFile.trim();
+        if (sprite.isEmpty()) return null;
+        if (!sprite.endsWith(".png")) sprite += ".png";
+        String assetPath = "entities/" + sprite;
+
+        // Bounds pass → pick a downsample that keeps one frame near THUMB_TARGET_PX.
+        BitmapFactory.Options bounds = new BitmapFactory.Options();
+        bounds.inJustDecodeBounds = true;
+        try (InputStream is = getAssets().open(assetPath)) {
+            BitmapFactory.decodeStream(is, null, bounds);
+        } catch (IOException e) { return null; }
+        if (bounds.outWidth <= 0 || bounds.outHeight <= 0) return null;
+
+        int cols = (tmp.spriteCutX > 0) ? tmp.spriteCutX : 1;
+        int rows = (tmp.spriteCutY > 0) ? tmp.spriteCutY : 1;
+        int frameW = Math.max(1, bounds.outWidth / cols);
+        int frameH = Math.max(1, bounds.outHeight / rows);
+
+        int sample = 1;
+        int maxFrame = Math.max(frameW, frameH);
+        while (maxFrame / (sample * 2) >= THUMB_TARGET_PX) sample *= 2;
+
+        BitmapFactory.Options opts = new BitmapFactory.Options();
+        opts.inSampleSize = sample;
+        Bitmap full;
+        try (InputStream is = getAssets().open(assetPath)) {
+            full = BitmapFactory.decodeStream(is, null, opts);
+        } catch (IOException e) { return null; }
+        if (full == null) return null;
+
+        if (cols <= 1 && rows <= 1) return full;
+
+        int fw = Math.max(1, full.getWidth() / cols);
+        int fh = Math.max(1, full.getHeight() / rows);
+        if (fw >= full.getWidth() && fh >= full.getHeight()) return full;
+        Bitmap frame = Bitmap.createBitmap(full, 0, 0, fw, fh);
+        if (frame != full) full.recycle();
+        return frame;
+    }
+
+    /** Human-readable palette label: drop the .ent extension and turn underscores into spaces. */
+    private String displayName(String entFile) {
+        if (entFile == null) return "";
+        String n = entFile.endsWith(".ent") ? entFile.substring(0, entFile.length() - 4) : entFile;
+        return n.replace('_', ' ');
     }
 
     private List<String> loadEntFileList() {

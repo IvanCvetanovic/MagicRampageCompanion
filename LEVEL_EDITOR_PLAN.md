@@ -4,9 +4,9 @@
 > This file is the source of truth across sessions. Tick the boxes as work lands:
 > `- [ ]` = to be completed, `- [x]` = completed.
 
-**Status:** Phases 0–8 COMPLETE + pre-save **validation warnings** shipped (no-spawn / empty-level; warn-but-allow). Full editor verified on emulator: select / inspect / move(+snap) / add / duplicate / delete / undo-redo, Save→"My Levels"→reopen, Export (SAF) to Downloads, CustomData value editing, and validation. Saves are surgical (no-op = 0 diffs; each edit = exactly its change). Remaining Phase 8 extras (spawner-template palette, palette thumbnails, on-canvas handles) deferred as optional.
-**Next action:** Optional Phase 8 extras (spawner-template palette, palette thumbnails, on-canvas rotate/scale handles), or a new direction — the editor is functionally complete and game-faithful.
-**Last updated:** 2026-06-18 (validation warnings added)
+**Status:** Phases 0–8 COMPLETE + pre-save **validation warnings** + **palette thumbnails** shipped. Full editor verified on emulator: select / inspect / move(+snap) / add(+sprite-preview palette) / duplicate / delete / undo-redo, Save→"My Levels"→reopen, Export (SAF) to Downloads, CustomData value editing, and validation. Saves are surgical (no-op = 0 diffs; each edit = exactly its change). Remaining Phase 8 extras (spawner-template palette, on-canvas rotate/scale handles) deferred as optional.
+**Next action:** Optional Phase 8 extras (spawner-template palette, on-canvas rotate/scale handles), or a new direction — the editor is functionally complete and game-faithful.
+**Last updated:** 2026-06-18 (palette thumbnails added)
 
 ---
 
@@ -146,7 +146,7 @@ game by replacing a stock scene file with one of the same exact name (PC: drop i
 - [x] **CustomData editing** in the inspector — tap the meta line (✎) → edit existing key values; persisted via a `customDataEdited`-gated DOM `<Value>` patch. Verified: one edit = exactly one `<Value>` change; no-op stays 0-diff.
 - [ ] Inline-defined entities (spawners) palette via "copy real block" templates. *(deferred — larger)*
 - [x] **Validation warnings** before Save/Export — a *warn-but-allow* dialog ("Save anyway" / Cancel) gates `showSaveDialog` (covers both Save and Export, which funnel through it). Checks shipped: **no player spawn** (`spawn0`) and **empty level**. `spawn0` is the universal player-start invariant — all 74 stock levels contain it, and the parser surfaces it as a top-level `entityName` (verified on the parse path + on emulator: a stock level saves with NO warning = no false positive). **Deliberately NOT checked** (would be false positives): *duplicate ids* — stock levels reuse ids (dungeon16/35/42/43.1) and the game tolerates it; saves reconcile by document order, and the editor assigns `maxId+1` so it never introduces collisions. *Out-of-bounds* — the scene model (`SceneProperties`) has no declared bounds. Strings are English-only, matching the editor's existing string convention. Touches: `LevelViewerActivity.java` (`attemptSave`/`validateLevel`), `strings.xml`.
-- [ ] Palette thumbnails. *(deferred — needs async sprite resolution + caching)*
+- [x] **Palette thumbnails** — the Add-entity palette shows each entity's sprite preview. A self-contained loader (does NOT touch the render view's `spriteCache`, so it's safe off the UI thread) parses the `.ent` for its `<Sprite>`, decodes that PNG downsampled (`inSampleSize`), and crops frame 0 from any uniform sheet; results are cached in an 8 MB `LruCache` and loaded on a small thread pool with `setTag`-based recycling safety. Spriteless helper entities (markers/lines) show blank. Verified on emulator: `crate 0–3`, `number`, etc. render real sprites. Touches: `LevelViewerActivity.java` (`PaletteAdapter`/`resolveThumbnail`), `item_palette_entry.xml`.
 - [ ] On-canvas rotate/scale handles (vs inspector-only). *(deferred — larger)*
 - Note: CustomData edits aren't on the undo stack (dialog has Cancel); only existing keys' values are editable (no add/remove/type change). Soft keyboard can overlap the dialog's buttons — scroll if needed.
 
