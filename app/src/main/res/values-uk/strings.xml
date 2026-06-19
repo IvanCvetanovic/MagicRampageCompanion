@@ -1813,4 +1813,6 @@
     <string name="validate_title">Перед збереженням</string>
     <!-- News -->
     <string name="news_refresh_failed">Не вдалося оновити. Показано збережені новини.</string>
+    <string name="all_seeing_staff">Всевидючий посох</string>
+    <string name="dawnfang">Ікло Світанку</string>
 </resources>

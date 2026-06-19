@@ -1815,4 +1815,6 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="validate_title">Bevor du speicherst</string>
     <!-- News -->
     <string name="news_refresh_failed">Aktualisierung fehlgeschlagen. Gespeicherte News werden angezeigt.</string>
+    <string name="all_seeing_staff">Allsehender Stab</string>
+    <string name="dawnfang">Dämmerzahn</string>
 </resources>

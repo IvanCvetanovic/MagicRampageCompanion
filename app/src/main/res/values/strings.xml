@@ -2047,4 +2047,6 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="no_level_file_provided">No level file provided</string>
     <string name="failed_to_load_level">Failed to load level: %1$s</string>
     <string name="translation_model_failed">Failed to download translation model.</string>
+    <string name="all_seeing_staff">All Seeing Staff</string>
+    <string name="dawnfang">Dawnfang</string>
 </resources>

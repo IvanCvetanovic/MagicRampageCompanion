@@ -1815,4 +1815,6 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="validate_title">Antes de guardar</string>
     <!-- News -->
     <string name="news_refresh_failed">No se pudo actualizar. Mostrando noticias guardadas.</string>
+    <string name="all_seeing_staff">Bastón Que Todo Lo Ve</string>
+    <string name="dawnfang">Colmillo del Alba</string>
 </resources>

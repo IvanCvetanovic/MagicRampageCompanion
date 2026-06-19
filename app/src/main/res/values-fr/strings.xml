@@ -1814,4 +1814,6 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="validate_title">Avant d\'enregistrer</string>
     <!-- News -->
     <string name="news_refresh_failed">Impossible d\'actualiser. Affichage des actualités enregistrées.</string>
+    <string name="all_seeing_staff">Bâton omniscient</string>
+    <string name="dawnfang">Croc de l’Aube</string>
 </resources>

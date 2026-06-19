@@ -1816,4 +1816,6 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="validate_title">Prima di salvare</string>
     <!-- News -->
     <string name="news_refresh_failed">Impossibile aggiornare. Vengono mostrate le notizie salvate.</string>
+    <string name="all_seeing_staff">Bastone che tutto vede</string>
+    <string name="dawnfang">Zanna dell’Alba</string>
 </resources>

@@ -1816,4 +1816,6 @@
     <string name="validate_title">Перед сохранением</string>
     <!-- News -->
     <string name="news_refresh_failed">Не удалось обновить. Показаны сохранённые новости.</string>
+    <string name="all_seeing_staff">Всевидящий посох</string>
+    <string name="dawnfang">Клык Рассвета</string>
 </resources>

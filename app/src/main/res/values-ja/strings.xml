@@ -1814,4 +1814,6 @@
     <string name="validate_title">保存する前に</string>
     <!-- News -->
     <string name="news_refresh_failed">更新できませんでした。保存済みのニュースを表示しています。</string>
+    <string name="all_seeing_staff">達眼の杖</string>
+    <string name="dawnfang">暁の牙</string>
 </resources>

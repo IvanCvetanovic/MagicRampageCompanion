@@ -1814,4 +1814,6 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="validate_title">Antes de salvar</string>
     <!-- News -->
     <string name="news_refresh_failed">Não foi possível atualizar. Exibindo notícias salvas.</string>
+    <string name="all_seeing_staff">Cajado que Tudo Vê</string>
+    <string name="dawnfang">Presa da Aurora</string>
 </resources>

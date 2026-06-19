@@ -1813,4 +1813,6 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="validate_title">Kaydetmeden önce</string>
     <!-- News -->
     <string name="news_refresh_failed">Yenilenemedi. Kayıtlı haberler gösteriliyor.</string>
+    <string name="all_seeing_staff">Her şeyi gören Asa</string>
+    <string name="dawnfang">Şafak Dişi</string>
 </resources>
