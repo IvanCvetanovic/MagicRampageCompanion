@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.mlkit.common.model.DownloadConditions;
 import com.google.mlkit.nl.translate.TranslateLanguage;
@@ -33,15 +34,20 @@ import androidx.core.view.WindowInsetsCompat;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.data.adapters.NewsAdapter;
 import xyz.magicrampagecompanion.data.network.GistApi;
+import xyz.magicrampagecompanion.data.storage.NewsCache;
 import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
 public class News extends BaseActivity {
 
     private RecyclerView newsRecyclerView;
+    private SwipeRefreshLayout swipeRefresh;
     private NewsAdapter newsAdapter;
     private TextView emptyStateTextView;
     private TextView translationLoadingText;
     private ProgressBar loadingSpinner;
+
+    /** Synchronous "is there content on screen" flag (submitList is async). */
+    private boolean hasContent = false;
 
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final Handler handler = new Handler(Looper.getMainLooper());
@@ -66,16 +72,26 @@ public class News extends BaseActivity {
         translationLoadingText = findViewById(R.id.loadingTranslationText);
         loadingSpinner = findViewById(R.id.loadingSpinner);
         newsRecyclerView = findViewById(R.id.newsRecyclerView);
+        swipeRefresh = findViewById(R.id.swipeRefresh);
 
         newsAdapter = new NewsAdapter();
         newsRecyclerView.setAdapter(newsAdapter);
+        swipeRefresh.setOnRefreshListener(() -> loadNews(true));
 
         // Initial state
-        newsRecyclerView.setVisibility(View.GONE);
+        swipeRefresh.setVisibility(View.GONE);
         translationLoadingText.setVisibility(View.GONE);
         loadingSpinner.setVisibility(View.GONE);
 
-        loadNews();
+        // Show cached news instantly (also covers an offline launch).
+        List<GistApi.GistNews> cached = NewsCache.load(this);
+        if (cached != null && !cached.isEmpty()) {
+            hasContent = true;
+            emptyStateTextView.setVisibility(View.GONE);
+            newsAdapter.submitList(cached);
+        }
+
+        loadNews(false);
         prepareTranslationModel();
     }
 
@@ -92,14 +108,14 @@ public class News extends BaseActivity {
         // English → no translation needed
         if (TranslateLanguage.ENGLISH.equals(targetLang)) {
             newsAdapter.setTranslationReady(true, targetLang);
-            newsRecyclerView.setVisibility(View.VISIBLE);
+            swipeRefresh.setVisibility(View.VISIBLE);
             return;
         }
 
         // NOT English → show UI indicators
         translationLoadingText.setVisibility(View.VISIBLE);
         loadingSpinner.setVisibility(View.VISIBLE);
-        newsRecyclerView.setVisibility(View.GONE);
+        swipeRefresh.setVisibility(View.GONE);
 
         TranslatorOptions options = new TranslatorOptions.Builder()
                 .setSourceLanguage(TranslateLanguage.ENGLISH)
@@ -121,7 +137,7 @@ public class News extends BaseActivity {
                     // Hide loading UI
                     translationLoadingText.setVisibility(View.GONE);
                     loadingSpinner.setVisibility(View.GONE);
-                    newsRecyclerView.setVisibility(View.VISIBLE);
+                    swipeRefresh.setVisibility(View.VISIBLE);
                 })
                 .addOnFailureListener(e -> {
                     if (isFinishing() || isDestroyed()) return;
@@ -132,7 +148,7 @@ public class News extends BaseActivity {
                     // Show English version as fallback
                     translationLoadingText.setVisibility(View.GONE);
                     loadingSpinner.setVisibility(View.GONE);
-                    newsRecyclerView.setVisibility(View.VISIBLE);
+                    swipeRefresh.setVisibility(View.VISIBLE);
                 });
 
         getLifecycle().addObserver((LifecycleEventObserver) (source, event) -> {
@@ -140,18 +156,25 @@ public class News extends BaseActivity {
         });
     }
 
-    private void loadNews() {
+    private void loadNews(boolean userInitiated) {
         executor.execute(() -> {
             final List<GistApi.GistNews> newsList =
                     GistApi.fetchNewsFromComments(GIST_ID);
 
             handler.post(() -> {
                 if (isFinishing() || isDestroyed()) return;
+                swipeRefresh.setRefreshing(false);
                 if (newsList != null && !newsList.isEmpty()) {
+                    hasContent = true;
+                    NewsCache.save(News.this, newsList);
                     emptyStateTextView.setVisibility(View.GONE);
                     newsAdapter.submitList(newsList);
-                } else {
+                } else if (!hasContent) {
+                    // Network failed and there is nothing cached to fall back on.
                     emptyStateTextView.setVisibility(View.VISIBLE);
+                } else if (userInitiated) {
+                    // Manual refresh failed, but cached content is still on screen.
+                    Toast.makeText(News.this, R.string.news_refresh_failed, Toast.LENGTH_SHORT).show();
                 }
             });
         });

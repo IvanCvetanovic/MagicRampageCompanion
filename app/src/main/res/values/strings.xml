@@ -1568,6 +1568,7 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="stone_thrower">Stone Thrower</string>
     <string name="knife_thrower">Knife Thrower</string>
     <string name="failed_to_load_news">Failed to load news.\n Please check your connection.</string>
+    <string name="news_refresh_failed">Couldn\'t refresh. Showing saved news.</string>
 
     <string name="open_with">Open with</string>
     <string name="no_app_to_open_link_copied">No app found to open the link. The invite URL was copied to your clipboard.</string>

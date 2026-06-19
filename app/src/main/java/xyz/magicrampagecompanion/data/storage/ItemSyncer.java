@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import xyz.magicrampagecompanion.BuildConfig;
 import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.data.models.JsonItem;
 import xyz.magicrampagecompanion.data.models.Armor;
@@ -29,6 +30,11 @@ import xyz.magicrampagecompanion.enums.Elements;
 
 public class ItemSyncer {
     private static final String TAG = "ItemSyncer";
+
+    // Verbose sync diagnostics; compiled out of release builds. Genuine failures
+    // still use Log.e directly so they remain visible in production/Crashlytics.
+    private static void i(String msg) { if (BuildConfig.DEBUG) Log.i(TAG, msg); }
+    private static void w(String msg) { if (BuildConfig.DEBUG) Log.w(TAG, msg); }
 
     private static final ExecutorService EXEC = Executors.newSingleThreadExecutor();
 
@@ -94,7 +100,7 @@ public class ItemSyncer {
                 final int uw = updatedWeapons, ua = updatedArmors, ur = updatedRings;
                 new Handler(Looper.getMainLooper()).post(() -> {
                     for (Runnable r : mutations) r.run();
-                    Log.i(TAG, "Item sync done. weapons=" + uw + ", armors=" + ua + ", rings=" + ur);
+                    i("Item sync done. weapons=" + uw + ", armors=" + ua + ", rings=" + ur);
                 });
             } catch (Exception e) {
                 Log.e(TAG, "Item sync failed", e);
@@ -141,12 +147,12 @@ public class ItemSyncer {
                     || (nameEn != null && localNames.contains(safeLower(nameEn)));
 
             if (!exists) {
-                Log.w(TAG, "JSON item not found locally: name=" + name + " | name_en=" + nameEn);
+                w("JSON item not found locally: name=" + name + " | name_en=" + nameEn);
                 missingCount++;
             }
         }
 
-        Log.i(TAG, "JSON-only items (not in app): " + missingCount);
+        i("JSON-only items (not in app): " + missingCount);
     }
 
     /** The six price fields shared by weapons, armors, and rings. */
@@ -193,7 +199,7 @@ public class ItemSyncer {
             Weapon old = list.get(i);
             JsonItem ji = map.get(safeLower(old.getName()));
             if (ji == null) {
-                Log.w(TAG, "No JSON match for weapon: " + old.getName());
+                w("No JSON match for weapon: " + old.getName());
                 continue;
             }
 
@@ -262,7 +268,7 @@ public class ItemSyncer {
                     old.getObtainability()
             );
 
-            Log.i(TAG, "Updated weapon: " + old.getName());
+            i("Updated weapon: " + old.getName());
             logDiff(old.getName(), "element", old.getElement(), element);
             logDiff(old.getName(), "upgrades", old.getUpgrades(), upgrades);
             logDiff(old.getName(), "minDamage", old.getMinDamage(), minDamage);
@@ -294,7 +300,7 @@ public class ItemSyncer {
             Armor old = list.get(i);
             JsonItem ji = map.get(safeLower(old.getName()));
             if (ji == null) {
-                Log.w(TAG, "No JSON match for armor: " + old.getName());
+                w("No JSON match for armor: " + old.getName());
                 continue;
             }
 
@@ -365,7 +371,7 @@ public class ItemSyncer {
                     old.getObtainability()
             );
 
-            Log.i(TAG, "Updated armor: " + old.getName());
+            i("Updated armor: " + old.getName());
             logDiff(old.getName(), "element", old.getElement(), element);
             logDiff(old.getName(), "frostImmune", old.isFrostImmune(), frostImm);
             logDiff(old.getName(), "upgrades", old.getUpgrades(), upgrades);
@@ -398,7 +404,7 @@ public class ItemSyncer {
             Ring old = list.get(i);
             JsonItem ji = map.get(safeLower(old.getName()));
             if (ji == null) {
-                Log.w(TAG, "No JSON match for ring: " + old.getName());
+                w("No JSON match for ring: " + old.getName());
                 continue;
             }
 
@@ -462,7 +468,7 @@ public class ItemSyncer {
                     old.getObtainability()
             );
 
-            Log.i(TAG, "Updated ring: " + old.getName());
+            i("Updated ring: " + old.getName());
             logDiff(old.getName(), "element", old.getElement(), element);
             logDiff(old.getName(), "armor", old.getArmor(), armor);
             logDiff(old.getName(), "armorBonus", old.getArmorBonus(), armorBonus);
@@ -571,13 +577,13 @@ public class ItemSyncer {
 
     private static void logDiff(String itemName, String field, Object oldVal, Object newVal) {
         if (oldVal == null ? newVal == null : oldVal.equals(newVal)) return;
-        Log.i(TAG, "  " + itemName + " | " + field + ": " + oldVal + " → " + newVal);
+        i("  " + itemName + " | " + field + ": " + oldVal + " → " + newVal);
     }
 
     private static int protectUpgrade(int oldUpgrades, Integer jsonMaxLevelAllowed) {
         if (jsonMaxLevelAllowed == null) return oldUpgrades;
         if (oldUpgrades >= 1 && jsonMaxLevelAllowed < 1) {
-            Log.i(TAG, "  [protect] kept upgrades at 1 (JSON had " + jsonMaxLevelAllowed + ")");
+            i("  [protect] kept upgrades at 1 (JSON had " + jsonMaxLevelAllowed + ")");
             return 1;
         }
         return jsonMaxLevelAllowed;

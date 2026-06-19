@@ -1,6 +1,7 @@
 package xyz.magicrampagecompanion.core.utils;
 import android.util.Log;
 
+import xyz.magicrampagecompanion.BuildConfig;
 import xyz.magicrampagecompanion.data.models.EquipmentSet;
 import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.data.models.SetStats;
@@ -15,6 +16,11 @@ import xyz.magicrampagecompanion.enums.WeaponTypes;
 public final class StatsCalculator {
     private StatsCalculator() {}
     private static final String TAG = "StatsCalculator";
+
+    /** Verbose armor-calc tracing; compiled out of release builds. */
+    private static void d(String msg) {
+        if (BuildConfig.DEBUG) Log.d(TAG, msg);
+    }
 
     // --- Elixir knobs (same as yours) ---
     private static final class ElixirEffects {
@@ -157,8 +163,8 @@ public final class StatsCalculator {
             double armorVal = armor.getMinArmor()
                     + ((armor.getMaxArmor() - armor.getMinArmor()) / (double) aUpgradesTotal) * aUpgradesChosen;
 
-            Log.d(TAG, "Armor calc (WITH armor):");
-            Log.d(TAG, "  base from upgrades = " + armorVal
+            d("Armor calc (WITH armor):");
+            d("  base from upgrades = " + armorVal
                     + " (min=" + armor.getMinArmor()
                     + ", max=" + armor.getMaxArmor()
                     + ", chosen=" + aUpgradesChosen + "/" + aUpgradesTotal + ")");
@@ -166,70 +172,70 @@ public final class StatsCalculator {
             // Add ring’s flat armor
             if (ring != null) {
                 armorVal += ring.getArmor();
-                Log.d(TAG, "  + ring flat armor (" + ring.getArmor() + ") -> " + armorVal);
+                d("  + ring flat armor (" + ring.getArmor() + ") -> " + armorVal);
             }
 
             // Multipliers
             if (ring != null) {
                 double mult = 1 + ring.getArmorBonus() / 100.0;
                 armorVal *= mult;
-                Log.d(TAG, "  * ring armor bonus x" + mult + " -> " + armorVal);
+                d("  * ring armor bonus x" + mult + " -> " + armorVal);
             }
             if (weapon != null) {
                 double mult = 1 + weapon.getArmorBonus() / 100.0;
                 armorVal *= mult;
-                Log.d(TAG, "  * weapon armor bonus x" + mult + " -> " + armorVal);
+                d("  * weapon armor bonus x" + mult + " -> " + armorVal);
             }
             if (clazz != null) {
                 double mult = 1 + clazz.getArmorBonus() / 100.0;
                 armorVal *= mult;
-                Log.d(TAG, "  * class armor bonus x" + mult + " -> " + armorVal);
+                d("  * class armor bonus x" + mult + " -> " + armorVal);
             }
             if (skillsSafe(skills, 24)) {
                 armorVal *= 1.16;
-                Log.d(TAG, "  * skill[24] armor x1.16 -> " + armorVal);
+                d("  * skill[24] armor x1.16 -> " + armorVal);
             }
 
             // Elixir multiplier
             armorVal *= fx.armorMult;
-            Log.d(TAG, "  * elixir armor x" + fx.armorMult + " -> " + armorVal);
+            d("  * elixir armor x" + fx.armorMult + " -> " + armorVal);
 
             armorOut = (int) Math.ceil(armorVal);
-            Log.d(TAG, "  = rounded armor -> " + armorOut);
+            d("  = rounded armor -> " + armorOut);
         } else {
-            Log.d(TAG, "Armor calc (NO armor piece):");
+            d("Armor calc (NO armor piece):");
             double armorVal = 0.0;
-            Log.d(TAG, "  start = " + armorVal);
+            d("  start = " + armorVal);
 
             if (ring != null) {
                 armorVal += ring.getArmor();
-                Log.d(TAG, "  + ring flat armor (" + ring.getArmor() + ") -> " + armorVal);
+                d("  + ring flat armor (" + ring.getArmor() + ") -> " + armorVal);
             }
             if (ring != null) {
                 double mult = 1 + ring.getArmorBonus() / 100.0;
                 armorVal *= mult;
-                Log.d(TAG, "  * ring armor bonus x" + mult + " -> " + armorVal);
+                d("  * ring armor bonus x" + mult + " -> " + armorVal);
             }
             if (weapon != null) {
                 double mult = 1 + weapon.getArmorBonus() / 100.0;
                 armorVal *= mult;
-                Log.d(TAG, "  * weapon armor bonus x" + mult + " -> " + armorVal);
+                d("  * weapon armor bonus x" + mult + " -> " + armorVal);
             }
             if (clazz != null) {
                 double mult = 1 + clazz.getArmorBonus() / 100.0;
                 armorVal *= mult;
-                Log.d(TAG, "  * class armor bonus x" + mult + " -> " + armorVal);
+                d("  * class armor bonus x" + mult + " -> " + armorVal);
             }
             if (skillsSafe(skills, 18)) { // keeping your original index here
                 armorVal *= 1.25;
-                Log.d(TAG, "  * skill[18] armor x1.25 -> " + armorVal);
+                d("  * skill[18] armor x1.25 -> " + armorVal);
             }
 
             armorVal *= fx.armorMult;
-            Log.d(TAG, "  * elixir armor x" + fx.armorMult + " -> " + armorVal);
+            d("  * elixir armor x" + fx.armorMult + " -> " + armorVal);
 
             armorOut = (int) Math.round(armorVal);
-            Log.d(TAG, "  = rounded armor -> " + armorOut);
+            d("  = rounded armor -> " + armorOut);
         }
         out.armor = armorOut;
 

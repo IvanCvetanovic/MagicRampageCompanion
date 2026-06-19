@@ -11,11 +11,20 @@ import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import xyz.magicrampagecompanion.BuildConfig;
 import xyz.magicrampagecompanion.data.models.ItemData;
 
 public final class LiveStatsSyncer {
     private LiveStatsSyncer() {}
     private static final String TAG = "LiveStatsSyncer";
+
+    // Verbose sync diagnostics; compiled out of release builds. Genuine failures
+    // still use Log.e directly so they remain visible in production/Crashlytics.
+    private static void d(String msg) { if (BuildConfig.DEBUG) Log.d(TAG, msg); }
+    private static void v(String msg) { if (BuildConfig.DEBUG) Log.v(TAG, msg); }
+    private static void i(String msg) { if (BuildConfig.DEBUG) Log.i(TAG, msg); }
+    private static void w(String msg) { if (BuildConfig.DEBUG) Log.w(TAG, msg); }
+    private static void w(String msg, Throwable t) { if (BuildConfig.DEBUG) Log.w(TAG, msg, t); }
 
     private static final String URL_STRING = "https://api.dkgamedev.com/api/?tag=read&key=live_stats_V2";
     private static final String PREFS_NAME = "live_stats_cache";
@@ -32,7 +41,7 @@ public final class LiveStatsSyncer {
             String enml = null;
             boolean fromNetwork = false;
 
-            Log.i(TAG, "==== Live stats sync begin ====");
+            i("==== Live stats sync begin ====");
 
             // 1) Try network
             try {
@@ -42,12 +51,12 @@ public final class LiveStatsSyncer {
                     enml = fetched;
                     String ver = extractVersion(fetched);
                     cacheSave(app, enml, ver);
-                    Log.i(TAG, "Network fetch OK. version=" + (ver == null ? "?" : ver));
+                    i("Network fetch OK. version=" + (ver == null ? "?" : ver));
                 } else {
-                    Log.w(TAG, "Network fetch returned empty body.");
+                    w("Network fetch returned empty body.");
                 }
             } catch (Exception e) {
-                Log.w(TAG, "Network fetch failed (will try cache).", e);
+                w("Network fetch failed (will try cache).", e);
             }
 
             // 2) Fallback to cache
@@ -57,11 +66,11 @@ public final class LiveStatsSyncer {
                 String ver = sp.getString(KEY_VER, "");
                 enml = sp.getString(KEY_ENML, null);
                 if (enml != null) {
-                    Log.i(TAG, "Using cached stats. version=" + (ver == null || ver.isEmpty() ? "?" : ver)
+                    i("Using cached stats. version=" + (ver == null || ver.isEmpty() ? "?" : ver)
                             + " cachedAt=" + (ts == 0L ? "?" : ts));
                 } else {
-                    Log.w(TAG, "No cached stats available. Keeping defaults.");
-                    Log.i(TAG, "==== Live stats sync end (no data) ====");
+                    w("No cached stats available. Keeping defaults.");
+                    i("==== Live stats sync end (no data) ====");
                     return;
                 }
             }
@@ -71,15 +80,15 @@ public final class LiveStatsSyncer {
 
             long t1 = System.currentTimeMillis();
             String ver = extractVersion(enml);
-            Log.i(TAG, "Live stats applied. version=" + (ver == null ? "?" : ver)
+            i("Live stats applied. version=" + (ver == null ? "?" : ver)
                     + " source=" + (fromNetwork ? "network" : "cache")
                     + " timeMs=" + (t1 - t0));
-            Log.i(TAG, "Summary: parsed=" + rc.parsedPairs
+            i("Summary: parsed=" + rc.parsedPairs
                     + " changed=" + rc.changed
                     + " unchanged=" + rc.unchanged
                     + " unmapped=" + rc.unmapped
                     + " errors=" + rc.errors);
-            Log.i(TAG, "==== Live stats sync end ====");
+            i("==== Live stats sync end ====");
         });
     }
 
@@ -96,7 +105,7 @@ public final class LiveStatsSyncer {
 
             int code = conn.getResponseCode();
             if (code != 200) {
-                Log.w(TAG, "HTTP " + code + " for live stats.");
+                w("HTTP " + code + " for live stats.");
                 return null;
             }
             BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -105,10 +114,10 @@ public final class LiveStatsSyncer {
             br.close();
 
             long t1 = System.currentTimeMillis();
-            Log.d(TAG, "fetchRemote OK in " + (t1 - t0) + "ms, bytes=" + sb.length());
+            d("fetchRemote OK in " + (t1 - t0) + "ms, bytes=" + sb.length());
             return sb.toString();
         } catch (Exception e) {
-            Log.w(TAG, "fetchRemote error", e);
+            w("fetchRemote error", e);
             return null;
         } finally {
             if (conn != null) conn.disconnect();
@@ -123,7 +132,7 @@ public final class LiveStatsSyncer {
                 .putString(KEY_VER, version == null ? "" : version)
                 .putLong(KEY_TS, System.currentTimeMillis())
                 .apply();
-        Log.d(TAG, "Cache saved. version=" + (version == null ? "?" : version));
+        d("Cache saved. version=" + (version == null ? "?" : version));
     }
 
     // --------- Parse & Apply ---------
@@ -269,7 +278,7 @@ public final class LiveStatsSyncer {
 
                 default:
                     // Unmapped key – useful for discovery (set to DEBUG to avoid noise)
-                    Log.d(TAG, "Unmapped: " + key + " = " + value);
+                    d("Unmapped: " + key + " = " + value);
                     return ApplyOutcome.UNMAPPED;
             }
         } catch (Exception e) {
@@ -282,11 +291,11 @@ public final class LiveStatsSyncer {
     private interface IntSetter { void set(int v); }
     private static ApplyOutcome setIntWithLog(String label, int oldVal, int newVal, IntSetter setter) {
         if (oldVal == newVal) {
-            Log.v(TAG, label + " unchanged (" + oldVal + ")");
+            v(label + " unchanged (" + oldVal + ")");
             return ApplyOutcome.UNCHANGED;
         } else {
             setter.set(newVal);
-            Log.i(TAG, label + " " + oldVal + " -> " + newVal);
+            i(label + " " + oldVal + " -> " + newVal);
             return ApplyOutcome.CHANGED;
         }
     }

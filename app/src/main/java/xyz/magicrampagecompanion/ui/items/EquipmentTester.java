@@ -16,8 +16,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.text.InputType;
 import android.util.Log;
 import android.util.TypedValue;
@@ -55,15 +53,6 @@ public class EquipmentTester extends BaseActivity {
     private EquipmentSetAdapter adapter;
 
     private RewardedAdManager rewardedAdManager;
-
-    private final Handler ui = new Handler(Looper.getMainLooper());
-    private Runnable pendingCalc;
-
-    private void requestRecalc() {
-        if (pendingCalc != null) ui.removeCallbacks(pendingCalc);
-        pendingCalc = this::calculateStats;
-        ui.postDelayed(pendingCalc, 16);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -342,7 +331,6 @@ public class EquipmentTester extends BaseActivity {
         else                          set.ringElement   = picked;
 
         adapter.notifyItemChanged(position);
-        requestRecalc();
         playClick();
     }
     // ---- END ELEMENT PICKER ----
@@ -463,8 +451,6 @@ public class EquipmentTester extends BaseActivity {
         addDialogBoolPairRow(propCard,
                 getString(R.string.poisonous_attack), poisonous, iconPx,
                 getString(R.string.frost_attack),     frostAtk,  iconPx);
-
-        Log.d("STATS_UI", "baseArmor=" + baseArmor + " finalArmor=" + stats.armor + " bonusArmor=" + bonusArmor);
 
         AlertDialog dlg = new AlertDialog.Builder(this)
                 .setTitle(R.string.set_stats_title)
@@ -615,7 +601,6 @@ public class EquipmentTester extends BaseActivity {
         }
         items.add(loaded);
         adapter.notifyItemInserted(items.size() - 1);
-        requestRecalc();
         Toast.makeText(this, getString(R.string.loaded_named, name), Toast.LENGTH_SHORT).show();
     }
 
@@ -625,11 +610,9 @@ public class EquipmentTester extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (pendingPosition == RecyclerView.NO_POSITION) {
-            Log.d("SKILLS", "onActivityResult: pendingPosition invalid, ignoring.");
             return;
         }
         if (resultCode != RESULT_OK) {
-            Log.d("SKILLS", "onActivityResult: result not OK, code=" + resultCode);
             pendingPosition = RecyclerView.NO_POSITION;
             return;
         }
@@ -644,7 +627,6 @@ public class EquipmentTester extends BaseActivity {
         }
 
         EquipmentSet set = items.get(pendingPosition);
-        Log.d("SKILLS", "onActivityResult: requestCode=" + requestCode + ", pos=" + pendingPosition);
 
         switch (requestCode) {
             case 1: { // ARMOR
@@ -705,7 +687,6 @@ public class EquipmentTester extends BaseActivity {
         }
 
         adapter.notifyItemChanged(pendingPosition);
-        requestRecalc();
         pendingPosition = RecyclerView.NO_POSITION;
     }
 
@@ -716,10 +697,6 @@ public class EquipmentTester extends BaseActivity {
             picked[i] = preferences.getBoolean("skill_" + i, false);
         }
         return picked;
-    }
-
-    private void calculateStats() {
-        // recompute shared stats panel if you have one
     }
 
     @Override
