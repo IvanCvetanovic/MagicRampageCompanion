@@ -102,6 +102,9 @@ public class CharacterListActivity extends BaseActivity {
         tabAll.setSelected(tab == 0);
         tabMine.setSelected(tab == 1);
         emptyStateText.setText(tab == 1 ? R.string.empty_no_my_characters : R.string.empty_no_characters);
+        // Start each tab with a fresh search so a leftover query can't make a tab look empty.
+        if (searchBox.length() > 0) searchBox.setText("");
+        query = "";
         applyFilter();
     }
 

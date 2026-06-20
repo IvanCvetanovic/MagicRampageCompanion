@@ -4,9 +4,10 @@
 > This file is the source of truth across sessions. Tick the boxes as work lands:
 > `- [ ]` = to be completed, `- [x]` = completed.
 
-**Status:** PLANNING (no code yet). Architecture decided, deploy path **verified game-loadable**.
-**Next action:** Start **Phase 0 — `CharacterDocument` core** (byte-exact round-trip + `cmp` no-op gate over all bundled `.character`). Build nothing else until P0's byte-identity gate is green.
-**Last updated:** 2026-06-20 (plan created; navigation = two-card "Editor" hub, renamed from Level Viewer)
+**Status:** Phases 0–6 COMPLETE + emulator-verified. The character editor is functional: Editor hub → Characters → browse/search (257) + My Characters → open → edit values / add / remove fields → validate (warn-but-allow) → save to My Characters → reopen → SAF export. Deploy path **verified game-loadable**.
+**Next action:** Optional later phases — **P7** (sprite preview reusing the level renderer's character compositing) and **P8** (use My Characters in the Level Editor spawner). Otherwise feature-complete.
+**Last updated:** 2026-06-20 (P0–P6 implemented + tested on emulator)
+**QA pass (2026-06-20, emulator):** `CharacterDocument` round-trips **byte-identical** across all 257 bundled files (unit test) + setValue/add/remove unit tests. On device: no-op save = **`cmp` byte-identical** (1011 B); a value edit = **exactly** that one line (`jumpImpulse 31→35`, tabs/CRLF preserved); add-field inserts a tab-indented line before `EOF____`; remove-field works; validation warns on empty name; My Characters reopen round-trips; SAF export = byte-identical to the in-app save. Logcat/crash-buffer clean throughout.
 
 ---
 
