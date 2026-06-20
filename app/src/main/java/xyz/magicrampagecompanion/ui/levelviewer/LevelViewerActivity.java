@@ -495,24 +495,24 @@ public class LevelViewerActivity extends BaseActivity {
         LinearLayout block = new LinearLayout(this);
         block.setOrientation(LinearLayout.VERTICAL);
 
+        EditText field = new EditText(this);
+        field.setText(value);
+        field.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
+
         TextView label = new TextView(this);
         label.setText(key);
         label.setTextColor(getColor(R.color.color_text_primary));
         label.setTextSize(12f);
-        block.addView(label);
 
-        LinearLayout line = new LinearLayout(this);
-        line.setOrientation(LinearLayout.HORIZONTAL);
-        line.setGravity(android.view.Gravity.CENTER_VERTICAL);
-
-        EditText field = new EditText(this);
-        field.setText(value);
-        field.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
-        line.addView(field);
-
-        // P8: a spawner's "mobs" list references characters by path — let the user insert one of
-        // their saved (My Characters) files without hand-typing the npcs/<category>/ path.
+        // P8: a spawner's "mobs" list references characters by path. Put a "+ char" button on the
+        // LABEL row (not beside the value) so it stays reachable even though the mobs value EditText
+        // is huge — it inserts a My Characters reference without hand-typing the npcs/<category>/ path.
         if ("mobs".equalsIgnoreCase(key)) {
+            LinearLayout labelRow = new LinearLayout(this);
+            labelRow.setOrientation(LinearLayout.HORIZONTAL);
+            labelRow.setGravity(android.view.Gravity.CENTER_VERTICAL);
+            label.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
+            labelRow.addView(label);
             android.widget.Button addChar = new android.widget.Button(this);
             addChar.setText(R.string.cd_add_my_character);
             addChar.setTextSize(11f);
@@ -521,8 +521,16 @@ public class LevelViewerActivity extends BaseActivity {
             int hp = (int) (8 * getResources().getDisplayMetrics().density);
             addChar.setPadding(hp, 0, hp, 0);
             addChar.setOnClickListener(v -> { playClick(); pickMyCharacterInto(field); });
-            line.addView(addChar);
+            labelRow.addView(addChar);
+            block.addView(labelRow);
+        } else {
+            block.addView(label);
         }
+
+        LinearLayout line = new LinearLayout(this);
+        line.setOrientation(LinearLayout.HORIZONTAL);
+        line.setGravity(android.view.Gravity.CENTER_VERTICAL);
+        line.addView(field);
 
         android.widget.ImageButton remove = new android.widget.ImageButton(this);
         remove.setImageResource(android.R.drawable.ic_menu_delete);
