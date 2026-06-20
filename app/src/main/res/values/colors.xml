@@ -32,4 +32,6 @@
     <color name="color_overlay_dark">#BB000000</color>
     <color name="color_shadow_ambient">#00FFFFFF</color>
     <color name="color_shadow_spot">#1E0D0D</color>
+    <color name="hub_levels_accent">#5B8DEF</color>
+    <color name="hub_characters_accent">#E0534F</color>
 </resources>

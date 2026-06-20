@@ -1,8 +1,11 @@
 package xyz.magicrampagecompanion.ui.editor;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -14,9 +17,9 @@ import xyz.magicrampagecompanion.ui.common.BaseActivity;
 import xyz.magicrampagecompanion.ui.levelviewer.LevelListActivity;
 
 /**
- * Landing screen for the renamed "Editor" menu entry: a two-card chooser that routes to the
- * existing Level tools or the new Character tools. View vs. edit stays a mode <i>inside</i> each
- * tool (the level viewer's pencil toggle; the character form), so it is not gated here.
+ * Landing screen for the "Editor" menu entry: two large image cards (Levels / Characters), each a
+ * composited in-game scene built by {@link HubSceneBuilder} (dungeon backdrop + glow + characters),
+ * with a gradient scrim and a bold overlaid title. View vs. edit stays a mode inside each tool.
  */
 public class EditorHubActivity extends BaseActivity {
 
@@ -43,5 +46,29 @@ public class EditorHubActivity extends BaseActivity {
             playClick();
             startActivity(new Intent(this, CharacterListActivity.class));
         });
+
+        loadCardArt();
+    }
+
+    /** Build the two card scenes off the UI thread and set them crisp (no blur). */
+    private void loadCardArt() {
+        final ImageView levelsImg = findViewById(R.id.editorLevelsImage);
+        final ImageView charsImg = findViewById(R.id.editorCharactersImage);
+        new Thread(() -> {
+            final Bitmap levels = HubSceneBuilder.buildLevelsScene(this);
+            final Bitmap chars = HubSceneBuilder.buildCharactersScene(this);
+            runOnUiThread(() -> {
+                if (isFinishing() || isDestroyed()) return;
+                setCrisp(levelsImg, levels);
+                setCrisp(charsImg, chars);
+            });
+        }).start();
+    }
+
+    private void setCrisp(ImageView view, Bitmap bmp) {
+        if (bmp == null) return;
+        BitmapDrawable d = new BitmapDrawable(getResources(), bmp);
+        d.setFilterBitmap(false); // crisp nearest-neighbour when the scene is scaled to fill
+        view.setImageDrawable(d);
     }
 }
