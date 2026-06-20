@@ -33,7 +33,7 @@ import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.ui.items.Items;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.ui.items.Skins;
-import xyz.magicrampagecompanion.ui.levelviewer.LevelListActivity;
+import xyz.magicrampagecompanion.ui.editor.EditorHubActivity;
 import xyz.magicrampagecompanion.ui.survival.SurvivalModeSelection;
 import xyz.magicrampagecompanion.ui.chapters.ChapterSelection;
 import xyz.magicrampagecompanion.data.storage.ItemSyncer;
@@ -95,7 +95,7 @@ public class MainActivity extends BaseActivity {
         bindNavigationButton(R.id.ChapterSelectionButton, ChapterSelection.class);
         bindNavigationButton(R.id.SurvivalModeSelectionButton, SurvivalModeSelection.class);
         bindNavigationButton(R.id.EquipmentTesterButton, EquipmentTester.class);
-        bindNavigationButton(R.id.LevelViewerButton, LevelListActivity.class);
+        bindNavigationButton(R.id.LevelViewerButton, EditorHubActivity.class);
         bindNavigationButton(R.id.AchievementButton, AchievementsPage.class);
         bindNavigationButton(R.id.ItemsButton, Items.class);
         bindNavigationButton(R.id.EnemiesButton, Enemies.class);

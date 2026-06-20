@@ -963,6 +963,19 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="level_tab_story">Story</string>
     <string name="level_tab_others">Others</string>
     <string name="level_tab_mine">My Levels</string>
+
+    <!-- Editor hub + Character editor (English-only, matching the editor convention) -->
+    <string name="editor_button">🛠️ Editor 🛠️</string>
+    <string name="editor_hub_title">Editor</string>
+    <string name="editor_levels">🗺️ Levels</string>
+    <string name="editor_characters">👾 Characters</string>
+    <string name="char_tab_all">All</string>
+    <string name="char_tab_mine">My Characters</string>
+    <string name="character_search_hint">Search characters…</string>
+    <string name="empty_no_characters">No characters available</string>
+    <string name="empty_no_my_characters">No saved characters yet — edit one and tap Save.</string>
+    <string name="character_open_failed">Could not open character file</string>
+
     <string name="survival0">Survival 1</string>
     <string name="survival1">Survival 2</string>
     <string name="survival2">Survival 3</string>
