@@ -4,9 +4,9 @@
 > This file is the source of truth across sessions. Tick the boxes as work lands:
 > `- [ ]` = to be completed, `- [x]` = completed.
 
-**Status:** Phases 0–6 COMPLETE + emulator-verified. The character editor is functional: Editor hub → Characters → browse/search (257) + My Characters → open → edit values / add / remove fields → validate (warn-but-allow) → save to My Characters → reopen → SAF export. Deploy path **verified game-loadable**.
-**Next action:** Optional later phases — **P7** (sprite preview reusing the level renderer's character compositing) and **P8** (use My Characters in the Level Editor spawner). Otherwise feature-complete.
-**Last updated:** 2026-06-20 (P0–P6 implemented + tested on emulator)
+**Status:** Phases 0–8 implemented. P0–P6 emulator-verified. **P7** (sprite preview: atlas-aware body+armor+hair composite, body tinted) and **P8** (insert My Characters into a Level Editor spawner's `mobs` list, "+ char" button) are built + pushed, **pending on-device (phone) verification** (emulator retired at user's request). Deploy path **verified game-loadable**.
+**Next action:** On a physical phone, verify P7 (visual — character preview renders) and P8 (semantic-diff — `mobs` edit round-trips via the existing `customDataEdited`→`patchNode` path, confirmed in code). Then feature-complete.
+**Last updated:** 2026-06-20 (P7 + P8 implemented + pushed; phone verification pending)
 **QA pass (2026-06-20, emulator):** `CharacterDocument` round-trips **byte-identical** across all 257 bundled files (unit test) + setValue/add/remove unit tests. On device: no-op save = **`cmp` byte-identical** (1011 B); a value edit = **exactly** that one line (`jumpImpulse 31→35`, tabs/CRLF preserved); add-field inserts a tab-indented line before `EOF____`; remove-field works; validation warns on empty name; My Characters reopen round-trips; SAF export = byte-identical to the in-app save. Logcat/crash-buffer clean throughout.
 
 ---
