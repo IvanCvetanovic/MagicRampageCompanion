@@ -979,6 +979,8 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="character_save_title">Save character as</string>
     <string name="character_saved">Saved %1$s</string>
     <string name="character_save_failed">Save failed</string>
+    <string name="character_export">Export…</string>
+    <string name="character_export_success">Exported. Drop it into the game\'s npcs/&lt;category&gt;/ folder (enemies, allies, bosses or fighters) to override that character.</string>
 
     <string name="survival0">Survival 1</string>
     <string name="survival1">Survival 2</string>

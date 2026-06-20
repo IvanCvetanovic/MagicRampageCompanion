@@ -1,5 +1,6 @@
 package xyz.magicrampagecompanion.ui.character;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
@@ -12,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -21,6 +24,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.character.CharacterDocument;
@@ -43,6 +47,10 @@ public class CharacterEditorActivity extends BaseActivity {
     private TextView titleView;
     private LinearLayout container;
     private CharacterDocument doc;
+
+    private final ActivityResultLauncher<String> exportLauncher =
+            registerForActivityResult(new ActivityResultContracts.CreateDocument("application/octet-stream"),
+                    uri -> { if (uri != null) writeExport(uri); });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +126,7 @@ public class CharacterEditorActivity extends BaseActivity {
                     if (name.isEmpty()) name = defaultSaveName();
                     save(name);
                 })
+                .setNeutralButton(R.string.character_export, (d, w) -> startExport(input.getText().toString().trim()))
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
     }
@@ -141,6 +150,23 @@ public class CharacterEditorActivity extends BaseActivity {
             Toast.makeText(this, getString(R.string.character_saved, out.getName()), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(this, R.string.character_save_failed, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /** Launch the system file picker to export the .character to a user-accessible location. */
+    private void startExport(String name) {
+        if (name == null || name.isEmpty()) name = defaultSaveName();
+        if (!name.endsWith(".character")) name += ".character";
+        exportLauncher.launch(name);
+    }
+
+    private void writeExport(Uri uri) {
+        try (OutputStream out = getContentResolver().openOutputStream(uri)) {
+            if (out == null) throw new Exception("Could not open the chosen destination");
+            out.write(doc.toBytes());
+            Toast.makeText(this, R.string.character_export_success, Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(this, R.string.character_save_failed, Toast.LENGTH_LONG).show();
         }
     }
 
