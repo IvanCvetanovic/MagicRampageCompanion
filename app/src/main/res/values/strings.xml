@@ -981,6 +981,16 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="character_save_failed">Save failed</string>
     <string name="character_export">Export…</string>
     <string name="character_export_success">Exported. Drop it into the game\'s npcs/&lt;category&gt;/ folder (enemies, allies, bosses or fighters) to override that character.</string>
+    <string name="character_add_field">+ Add field</string>
+    <string name="character_add_field_title">Add field</string>
+    <string name="character_field_name_hint">Name</string>
+    <string name="character_field_value_hint">Value</string>
+    <string name="char_validation_title">Before you save</string>
+    <string name="char_validation_intro">This character has issues that may stop it from loading in Magic Rampage:</string>
+    <string name="char_validation_continue">Save anyway</string>
+    <string name="char_validation_no_block">No character block found.</string>
+    <string name="char_validation_no_name">The character has no name.</string>
+    <string name="char_validation_no_eof">Missing the EOF____ end marker.</string>
 
     <string name="survival0">Survival 1</string>
     <string name="survival1">Survival 2</string>

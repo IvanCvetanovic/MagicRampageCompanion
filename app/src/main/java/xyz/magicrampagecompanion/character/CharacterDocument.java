@@ -48,11 +48,13 @@ public final class CharacterDocument {
     public static final class Block {
         public final String name;
         public final List<Field> fields = new ArrayList<>();
+        int openBraceLine = -1, closeBraceLine = -1;
         Block(String name) { this.name = name; }
     }
 
     private final List<Line> lines = new ArrayList<>();
     private final List<Block> blocks = new ArrayList<>();
+    private boolean dirty = false;
 
     private CharacterDocument() {}
 
@@ -89,6 +91,7 @@ public final class CharacterDocument {
 
     /** Best-effort structural index (blocks + fields). Does not affect byte round-trip. */
     private void index() {
+        blocks.clear();
         Block current = null;
         String pendingName = null;
         for (int idx = 0; idx < lines.size(); idx++) {
@@ -97,16 +100,26 @@ public final class CharacterDocument {
             if (t.isEmpty() || t.startsWith("//")) continue;
 
             if (t.equals("{")) {
-                if (pendingName != null) { current = new Block(pendingName); blocks.add(current); pendingName = null; }
+                if (pendingName != null) {
+                    current = new Block(pendingName);
+                    current.openBraceLine = idx;
+                    blocks.add(current);
+                    pendingName = null;
+                }
                 continue;
             }
             if (t.endsWith("{")) { // defensive: inline "name {" (not used by stock files)
                 current = new Block(t.substring(0, t.length() - 1).trim());
+                current.openBraceLine = idx;
                 blocks.add(current);
                 pendingName = null;
                 continue;
             }
-            if (t.equals("}")) { current = null; continue; }
+            if (t.equals("}")) {
+                if (current != null) current.closeBraceLine = idx;
+                current = null;
+                continue;
+            }
 
             int eq = ln.content.indexOf('=');
             if (eq >= 0 && current != null) {
@@ -160,11 +173,51 @@ public final class CharacterDocument {
         ln.content = s.substring(0, ln.valueStart) + newValue + s.substring(ln.valueEnd);
         ln.valueEnd = ln.valueStart + newValue.length();
         ln.edited = true;
+        dirty = true;
     }
 
-    /** True if any line was edited since parsing (drives "unsaved changes" UI). */
-    public boolean isDirty() {
-        for (Line ln : lines) if (ln.edited) return true;
+    /** Remove one physical line (e.g. a field the user deleted) and re-index. */
+    public void removeLine(int lineIndex) {
+        if (lineIndex < 0 || lineIndex >= lines.size()) return;
+        lines.remove(lineIndex);
+        dirty = true;
+        index();
+    }
+
+    /** Insert a {@code key = value;} field just before a block's closing brace, matching its indent. */
+    public void addField(Block block, String key, String value) {
+        if (block == null || block.closeBraceLine < 0 || block.closeBraceLine > lines.size()) return;
+        String indent = detectIndent(block);
+        String term = lines.get(block.closeBraceLine).terminator;
+        if (term.isEmpty()) term = "\r\n";
+        Line nl = new Line(indent + key + " = " + value + ";", term);
+        nl.edited = true;
+        lines.add(block.closeBraceLine, nl);
+        dirty = true;
+        index();
+    }
+
+    private String detectIndent(Block block) {
+        if (!block.fields.isEmpty()) {
+            String c = lines.get(block.fields.get(0).lineIndex).content;
+            int i = 0;
+            while (i < c.length() && (c.charAt(i) == ' ' || c.charAt(i) == '\t')) i++;
+            return c.substring(0, i);
+        }
+        return "\t";
+    }
+
+    /** True if anything was edited since parsing (drives "unsaved changes" UI). */
+    public boolean isDirty() { return dirty; }
+
+    public boolean hasBlock(String name) {
+        for (Block b : blocks) if (b.name.equalsIgnoreCase(name)) return true;
+        return false;
+    }
+
+    /** True if the file still carries the engine's required {@code EOF____} terminator line. */
+    public boolean hasEofMarker() {
+        for (Line ln : lines) if (ln.content.trim().equals("EOF____")) return true;
         return false;
     }
 

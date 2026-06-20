@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +26,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.character.CharacterDocument;
@@ -32,10 +35,10 @@ import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
 /**
  * Character editor: renders a {@code .character} file as an editable per-block key/value form
- * backed by {@link CharacterDocument}, and saves an edited copy to
- * {@code filesDir/usercharacters/<name>.character}. Because {@code CharacterDocument} keeps the
- * whole file verbatim and patches only edited value spans, a no-op save is byte-identical and an
- * edit changes exactly its value — no source re-read is needed (unlike the level saver).
+ * backed by {@link CharacterDocument}, supports adding/removing fields, validates (warn-but-allow)
+ * before saving, and saves/exports the result. Because {@code CharacterDocument} keeps the whole
+ * file verbatim and patches only edited value spans, a no-op save is byte-identical and an edit
+ * changes exactly its value — no source re-read is needed (unlike the level saver).
  */
 public class CharacterEditorActivity extends BaseActivity {
 
@@ -70,7 +73,7 @@ public class CharacterEditorActivity extends BaseActivity {
         titleView = findViewById(R.id.characterEditorTitle);
         container = findViewById(R.id.characterFormContainer);
         Button saveButton = findViewById(R.id.characterSaveButton);
-        saveButton.setOnClickListener(v -> { playClick(); showSaveDialog(); });
+        saveButton.setOnClickListener(v -> { playClick(); attemptSave(); });
 
         characterFile = getIntent().getStringExtra("characterFile");
         characterPath = getIntent().getStringExtra("characterPath");
@@ -103,10 +106,34 @@ public class CharacterEditorActivity extends BaseActivity {
             for (CharacterDocument.Field f : block.fields) {
                 addFieldRow(f.lineIndex, f.key, doc.value(f.lineIndex));
             }
+            addAddFieldButton(block);
         }
     }
 
-    // ── save ─────────────────────────────────────────────────────────────────────────────────
+    // ── validation + save ────────────────────────────────────────────────────────────────────────
+
+    private void attemptSave() {
+        List<String> issues = validate();
+        if (issues.isEmpty()) { showSaveDialog(); return; }
+        StringBuilder sb = new StringBuilder(getString(R.string.char_validation_intro));
+        for (String i : issues) sb.append("\n•  ").append(i);
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.char_validation_title)
+                .setMessage(sb.toString())
+                .setPositiveButton(R.string.char_validation_continue, (d, w) -> showSaveDialog())
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
+    }
+
+    /** Warn-but-allow checks (a work-in-progress save is legitimate). */
+    private List<String> validate() {
+        List<String> issues = new ArrayList<>();
+        if (!doc.hasBlock("character")) issues.add(getString(R.string.char_validation_no_block));
+        String name = doc.firstValue("character", "name");
+        if (name == null || name.trim().isEmpty()) issues.add(getString(R.string.char_validation_no_name));
+        if (!doc.hasEofMarker()) issues.add(getString(R.string.char_validation_no_eof));
+        return issues;
+    }
 
     private void showSaveDialog() {
         final EditText input = new EditText(this);
@@ -114,13 +141,9 @@ public class CharacterEditorActivity extends BaseActivity {
         input.setText(defaultSaveName());
         input.setSelectAllOnFocus(true);
 
-        int pad = dp(20);
-        FrameLayoutPad wrap = new FrameLayoutPad(this, pad);
-        wrap.addView(input);
-
         new AlertDialog.Builder(this)
                 .setTitle(R.string.character_save_title)
-                .setView(wrap)
+                .setView(pad(input))
                 .setPositiveButton(R.string.character_save, (d, w) -> {
                     String name = input.getText().toString().trim();
                     if (name.isEmpty()) name = defaultSaveName();
@@ -144,8 +167,7 @@ public class CharacterEditorActivity extends BaseActivity {
             try (FileOutputStream fos = new FileOutputStream(out)) {
                 fos.write(doc.toBytes());
             }
-            // Subsequent saves overwrite this copy by default.
-            characterPath = out.getAbsolutePath();
+            characterPath = out.getAbsolutePath(); // subsequent saves overwrite this copy
             characterFile = null;
             Toast.makeText(this, getString(R.string.character_saved, out.getName()), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
@@ -188,11 +210,16 @@ public class CharacterEditorActivity extends BaseActivity {
 
     private void addFieldRow(final int lineIndex, String key, String value) {
         LinearLayout row = new LinearLayout(this);
-        row.setOrientation(LinearLayout.VERTICAL);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setGravity(Gravity.CENTER_VERTICAL);
         LinearLayout.LayoutParams rlp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         rlp.bottomMargin = dp(8);
         row.setLayoutParams(rlp);
+
+        LinearLayout col = new LinearLayout(this);
+        col.setOrientation(LinearLayout.VERTICAL);
+        col.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
 
         TextView keyView = new TextView(this);
         keyView.setText(key);
@@ -207,14 +234,74 @@ public class CharacterEditorActivity extends BaseActivity {
         valueView.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
             @Override public void onTextChanged(CharSequence s, int a, int b, int c) {}
-            @Override public void afterTextChanged(Editable s) {
-                doc.setValue(lineIndex, s.toString());
-            }
+            @Override public void afterTextChanged(Editable s) { doc.setValue(lineIndex, s.toString()); }
         });
 
-        row.addView(keyView);
-        row.addView(valueView);
+        col.addView(keyView);
+        col.addView(valueView);
+
+        Button remove = new Button(this);
+        remove.setText("✕");
+        remove.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f);
+        remove.setMinWidth(0);
+        remove.setMinimumWidth(0);
+        remove.setPadding(dp(8), 0, dp(8), 0);
+        LinearLayout.LayoutParams blp = new LinearLayout.LayoutParams(dp(48), dp(48));
+        blp.setMarginStart(dp(4));
+        remove.setLayoutParams(blp);
+        remove.setOnClickListener(v -> { playClick(); doc.removeLine(lineIndex); render(); });
+
+        row.addView(col);
+        row.addView(remove);
         container.addView(row);
+    }
+
+    private void addAddFieldButton(final CharacterDocument.Block block) {
+        Button add = new Button(this);
+        add.setText(R.string.character_add_field);
+        add.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12f);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        lp.topMargin = dp(4);
+        add.setLayoutParams(lp);
+        add.setOnClickListener(v -> { playClick(); showAddFieldDialog(block); });
+        container.addView(add);
+    }
+
+    private void showAddFieldDialog(final CharacterDocument.Block block) {
+        final EditText keyInput = new EditText(this);
+        keyInput.setHint(R.string.character_field_name_hint);
+        keyInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        final EditText valueInput = new EditText(this);
+        valueInput.setHint(R.string.character_field_value_hint);
+        valueInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+
+        LinearLayout box = new LinearLayout(this);
+        box.setOrientation(LinearLayout.VERTICAL);
+        int p = dp(20);
+        box.setPadding(p, p / 2, p, 0);
+        box.addView(keyInput);
+        box.addView(valueInput);
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.character_add_field_title)
+                .setView(box)
+                .setPositiveButton(android.R.string.ok, (d, w) -> {
+                    String key = keyInput.getText().toString().trim();
+                    if (key.isEmpty()) return;
+                    doc.addField(block, key, valueInput.getText().toString().trim());
+                    render();
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
+    }
+
+    private LinearLayout pad(View child) {
+        LinearLayout box = new LinearLayout(this);
+        int p = dp(20);
+        box.setPadding(p, p / 2, p, 0);
+        box.addView(child);
+        return box;
     }
 
     private String stem() {
@@ -230,10 +317,5 @@ public class CharacterEditorActivity extends BaseActivity {
 
     private int dp(int value) {
         return Math.round(getResources().getDisplayMetrics().density * value);
-    }
-
-    /** Tiny padded FrameLayout so the dialog EditText isn't flush against the edges. */
-    private static final class FrameLayoutPad extends android.widget.FrameLayout {
-        FrameLayoutPad(android.content.Context c, int pad) { super(c); setPadding(pad, pad / 2, pad, 0); }
     }
 }

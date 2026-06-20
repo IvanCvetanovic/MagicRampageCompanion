@@ -75,4 +75,32 @@ public class CharacterDocumentTest {
         String after = new String(out, java.nio.charset.StandardCharsets.ISO_8859_1);
         assertEquals(before.replaceFirst("speed = 6;", "speed = 9;"), after);
     }
+
+    @Test
+    public void addAndRemoveFieldRoundTrip() throws Exception {
+        byte[] raw = Files.readAllBytes(new File(entitiesDir(), "skeleton.character").toPath());
+        CharacterDocument d = CharacterDocument.parse(raw);
+
+        CharacterDocument.Block character = null;
+        for (CharacterDocument.Block b : d.blocks()) if (b.name.equalsIgnoreCase("character")) character = b;
+        assertNotNull(character);
+
+        d.addField(character, "qaKey", "42");
+        CharacterDocument re = CharacterDocument.parse(d.toBytes());
+        assertEquals("42", re.firstValue("character", "qaKey"));
+        assertTrue(re.hasEofMarker());
+        assertEquals("Skeleton", re.firstValue("character", "name")); // untouched
+
+        // remove the field we just added
+        int qaLine = -1;
+        for (CharacterDocument.Block b : re.blocks())
+            if (b.name.equalsIgnoreCase("character"))
+                for (CharacterDocument.Field f : b.fields)
+                    if (f.key.equalsIgnoreCase("qaKey")) qaLine = f.lineIndex;
+        assertTrue(qaLine >= 0);
+        re.removeLine(qaLine);
+        CharacterDocument re2 = CharacterDocument.parse(re.toBytes());
+        assertEquals(null, re2.firstValue("character", "qaKey"));
+        assertEquals("Skeleton", re2.firstValue("character", "name"));
+    }
 }
