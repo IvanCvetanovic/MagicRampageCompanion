@@ -1,5 +1,6 @@
 package xyz.magicrampagecompanion.ui.character;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,6 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +23,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -31,7 +34,10 @@ import java.util.List;
 
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.character.CharacterDocument;
+import xyz.magicrampagecompanion.character.CharacterSpriteCompositor;
+import xyz.magicrampagecompanion.level.LevelParser;
 import xyz.magicrampagecompanion.ui.common.BaseActivity;
+import xyz.magicrampagecompanion.ui.levelviewer.LevelEntity;
 
 /**
  * Character editor: renders a {@code .character} file as an editable per-block key/value form
@@ -50,6 +56,7 @@ public class CharacterEditorActivity extends BaseActivity {
 
     private TextView titleView;
     private LinearLayout container;
+    private ImageView previewView;
     private CharacterDocument doc;
 
     private final ActivityResultLauncher<String> exportLauncher =
@@ -73,6 +80,8 @@ public class CharacterEditorActivity extends BaseActivity {
 
         titleView = findViewById(R.id.characterEditorTitle);
         container = findViewById(R.id.characterFormContainer);
+        previewView = findViewById(R.id.characterPreview);
+        previewView.setOnClickListener(v -> buildPreview()); // refresh after sprite/colour edits
         Button saveButton = findViewById(R.id.characterSaveButton);
         saveButton.setOnClickListener(v -> { playClick(); attemptSave(); });
 
@@ -85,6 +94,22 @@ public class CharacterEditorActivity extends BaseActivity {
         }
         originalStem = stem(); // captured before any save mutates characterFile/characterPath
         render();
+        buildPreview();
+    }
+
+    /** Composite a character sprite preview off the UI thread. Built once on open; tap to refresh. */
+    private void buildPreview() {
+        final byte[] bytes = doc.toBytes();
+        new Thread(() -> {
+            LevelEntity e = new LevelEntity();
+            LevelParser.parseCharacterStream(this, e, new ByteArrayInputStream(bytes));
+            final Bitmap bmp = CharacterSpriteCompositor.compose(this, e);
+            runOnUiThread(() -> {
+                if (isFinishing() || isDestroyed()) return;
+                if (bmp != null) previewView.setImageBitmap(bmp);
+                else previewView.setImageDrawable(null);
+            });
+        }).start();
     }
 
     private boolean load() {

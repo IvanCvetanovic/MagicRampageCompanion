@@ -38,13 +38,26 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/characterPreview"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/character_preview_desc"
+        app:layout_constraintTop_toBottomOf="@id/characterEditorBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ScrollView
         android:id="@+id/characterScroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="12dp"
         android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/characterEditorBar"
+        app:layout_constraintTop_toBottomOf="@id/characterPreview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">

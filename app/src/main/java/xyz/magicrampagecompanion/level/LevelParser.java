@@ -349,6 +349,15 @@ public class LevelParser {
         Log.w(TAG, "CHARACTER FILE MISSING: " + fileName);
     }
 
+    /**
+     * Populate {@code entity}'s sprite fields (body/armor/hair/weapon, bodyColor, SpriteCut, weapon
+     * offsets) from a {@code .character} byte stream — works for storage files the asset-based
+     * {@link #parseCharacterFile} can't reach. Used by the Character editor's sprite preview.
+     */
+    public static void parseCharacterStream(Context ctx, LevelEntity entity, InputStream is) {
+        try { parseCharacterInternal(ctx, entity, is); } catch (Exception ignored) {}
+    }
+
     private static void parseCharacterInternal(Context ctx, LevelEntity entity, InputStream is) throws Exception {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
             String line;
