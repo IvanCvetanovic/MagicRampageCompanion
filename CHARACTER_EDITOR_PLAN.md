@@ -4,9 +4,10 @@
 > This file is the source of truth across sessions. Tick the boxes as work lands:
 > `- [ ]` = to be completed, `- [x]` = completed.
 
-**Status:** Phases 0–8 implemented. P0–P6 emulator-verified. **P7** (sprite preview: atlas-aware body+armor+hair composite, body tinted) and **P8** (insert My Characters into a Level Editor spawner's `mobs` list, "+ char" button) are built + pushed, **pending on-device (phone) verification** (emulator retired at user's request). Deploy path **verified game-loadable**.
-**Next action:** On a physical phone, verify P7 (visual — character preview renders) and P8 (semantic-diff — `mobs` edit round-trips via the existing `customDataEdited`→`patchNode` path, confirmed in code). Then feature-complete.
-**Last updated:** 2026-06-20 (P7 + P8 implemented + pushed; phone verification pending)
+**Status:** Phases 0–8 COMPLETE. P0–P6 emulator-verified; **P7 + P8 phone-verified** (Pixel 9 Pro XL). The character editor is feature-complete. Deploy path **verified game-loadable**.
+**Next action:** Feature-complete. Optional future polish only — weapon layer in the preview; capping the giant `mobs` EditText height for usability.
+**Last updated:** 2026-06-20 (P7 + P8 phone-verified — feature complete)
+**Phone QA (2026-06-20, Pixel 9 Pro XL):** **P7** — preview renders the body+armor+hair composite (verified ape-skeleton, rat-fire-mage), logcat clean. **P8** — found+fixed a layout bug (the "+ char" button was unreachable behind the screen-filling `mobs` EditText → moved it onto the label row), then verified: inserting a My Character appends `npcs/enemies/<name>.character,default` to a spawner's `mobs` and persists on save — semantic-diff vs `combatZone0` = exactly that one spawner's `mobs` change, 438→438 entities, 0 collateral diffs.
 **QA pass (2026-06-20, emulator):** `CharacterDocument` round-trips **byte-identical** across all 257 bundled files (unit test) + setValue/add/remove unit tests. On device: no-op save = **`cmp` byte-identical** (1011 B); a value edit = **exactly** that one line (`jumpImpulse 31→35`, tabs/CRLF preserved); add-field inserts a tab-indented line before `EOF____`; remove-field works; validation warns on empty name; My Characters reopen round-trips; SAF export = byte-identical to the in-app save. Logcat/crash-buffer clean throughout.
 
 ---
