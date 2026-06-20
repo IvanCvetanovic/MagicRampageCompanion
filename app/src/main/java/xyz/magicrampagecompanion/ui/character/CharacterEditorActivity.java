@@ -1,19 +1,25 @@
 package xyz.magicrampagecompanion.ui.character;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 
 import xyz.magicrampagecompanion.R;
@@ -21,12 +27,15 @@ import xyz.magicrampagecompanion.character.CharacterDocument;
 import xyz.magicrampagecompanion.ui.common.BaseActivity;
 
 /**
- * Character editor screen. This phase renders a bundled or saved {@code .character} file
- * read-only (title + each block's fields), built on {@link CharacterDocument}. Editing + save
- * arrive in a later phase. Opened with a {@code characterFile} (asset) or {@code characterPath}
- * (storage) extra, mirroring the level tools.
+ * Character editor: renders a {@code .character} file as an editable per-block key/value form
+ * backed by {@link CharacterDocument}, and saves an edited copy to
+ * {@code filesDir/usercharacters/<name>.character}. Because {@code CharacterDocument} keeps the
+ * whole file verbatim and patches only edited value spans, a no-op save is byte-identical and an
+ * edit changes exactly its value — no source re-read is needed (unlike the level saver).
  */
 public class CharacterEditorActivity extends BaseActivity {
+
+    private static final String DIR = "usercharacters";
 
     private String characterFile; // asset filename, null when opened from storage
     private String characterPath; // absolute storage path, null when opened from assets
@@ -52,16 +61,12 @@ public class CharacterEditorActivity extends BaseActivity {
 
         titleView = findViewById(R.id.characterEditorTitle);
         container = findViewById(R.id.characterFormContainer);
+        Button saveButton = findViewById(R.id.characterSaveButton);
+        saveButton.setOnClickListener(v -> { playClick(); showSaveDialog(); });
 
         characterFile = getIntent().getStringExtra("characterFile");
         characterPath = getIntent().getStringExtra("characterPath");
-        if (characterFile == null && characterPath == null) {
-            Toast.makeText(this, R.string.character_open_failed, Toast.LENGTH_SHORT).show();
-            finish();
-            return;
-        }
-
-        if (!load()) {
+        if ((characterFile == null && characterPath == null) || !load()) {
             Toast.makeText(this, R.string.character_open_failed, Toast.LENGTH_SHORT).show();
             finish();
             return;
@@ -88,22 +93,58 @@ public class CharacterEditorActivity extends BaseActivity {
         for (CharacterDocument.Block block : doc.blocks()) {
             addSectionHeader(prettyBlock(block.name));
             for (CharacterDocument.Field f : block.fields) {
-                addFieldRow(f.key, doc.value(f.lineIndex));
+                addFieldRow(f.lineIndex, f.key, doc.value(f.lineIndex));
             }
         }
     }
 
-    private String stem() {
-        String n = characterPath != null ? new File(characterPath).getName() : characterFile;
-        return n == null ? "" : n.replaceAll("\\.character$", "");
+    // ── save ─────────────────────────────────────────────────────────────────────────────────
+
+    private void showSaveDialog() {
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        input.setText(defaultSaveName());
+        input.setSelectAllOnFocus(true);
+
+        int pad = dp(20);
+        FrameLayoutPad wrap = new FrameLayoutPad(this, pad);
+        wrap.addView(input);
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.character_save_title)
+                .setView(wrap)
+                .setPositiveButton(R.string.character_save, (d, w) -> {
+                    String name = input.getText().toString().trim();
+                    if (name.isEmpty()) name = defaultSaveName();
+                    save(name);
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 
-    private static String prettyBlock(String raw) {
-        if (raw == null || raw.isEmpty()) return "Character";
-        // "equippedItem0" -> "Equipped Item 0"
-        String s = raw.replaceAll("([a-z])([A-Z])", "$1 $2").replaceAll("([A-Za-z])(\\d)", "$1 $2");
-        return Character.toUpperCase(s.charAt(0)) + s.substring(1);
+    private String defaultSaveName() {
+        // Re-saving a My Characters file keeps its name; a bundled file becomes a "_edited" copy.
+        return characterPath != null ? stem() : stem() + "_edited";
     }
+
+    private void save(String name) {
+        try {
+            File dir = new File(getFilesDir(), DIR);
+            if (!dir.exists() && !dir.mkdirs()) throw new Exception("mkdir failed");
+            File out = new File(dir, name.replaceAll("\\.character$", "") + ".character");
+            try (FileOutputStream fos = new FileOutputStream(out)) {
+                fos.write(doc.toBytes());
+            }
+            // Subsequent saves overwrite this copy by default.
+            characterPath = out.getAbsolutePath();
+            characterFile = null;
+            Toast.makeText(this, getString(R.string.character_saved, out.getName()), Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, R.string.character_save_failed, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // ── form building ──────────────────────────────────────────────────────────────────────────
 
     private void addSectionHeader(String text) {
         TextView tv = new TextView(this);
@@ -119,12 +160,12 @@ public class CharacterEditorActivity extends BaseActivity {
         container.addView(tv);
     }
 
-    private void addFieldRow(String key, String value) {
+    private void addFieldRow(final int lineIndex, String key, String value) {
         LinearLayout row = new LinearLayout(this);
         row.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams rlp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        rlp.bottomMargin = dp(6);
+        rlp.bottomMargin = dp(8);
         row.setLayoutParams(rlp);
 
         TextView keyView = new TextView(this);
@@ -132,17 +173,41 @@ public class CharacterEditorActivity extends BaseActivity {
         keyView.setTextColor(0xFFB0B0B0);
         keyView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12f);
 
-        TextView valueView = new TextView(this);
+        final EditText valueView = new EditText(this);
         valueView.setText(value);
         valueView.setTextColor(0xFFFFFFFF);
         valueView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f);
+        valueView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        valueView.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
+            @Override public void onTextChanged(CharSequence s, int a, int b, int c) {}
+            @Override public void afterTextChanged(Editable s) {
+                doc.setValue(lineIndex, s.toString());
+            }
+        });
 
         row.addView(keyView);
         row.addView(valueView);
         container.addView(row);
     }
 
+    private String stem() {
+        String n = characterPath != null ? new File(characterPath).getName() : characterFile;
+        return n == null ? "character" : n.replaceAll("\\.character$", "");
+    }
+
+    private static String prettyBlock(String raw) {
+        if (raw == null || raw.isEmpty()) return "Character";
+        String s = raw.replaceAll("([a-z])([A-Z])", "$1 $2").replaceAll("([A-Za-z])(\\d)", "$1 $2");
+        return Character.toUpperCase(s.charAt(0)) + s.substring(1);
+    }
+
     private int dp(int value) {
         return Math.round(getResources().getDisplayMetrics().density * value);
+    }
+
+    /** Tiny padded FrameLayout so the dialog EditText isn't flush against the edges. */
+    private static final class FrameLayoutPad extends android.widget.FrameLayout {
+        FrameLayoutPad(android.content.Context c, int pad) { super(c); setPadding(pad, pad / 2, pad, 0); }
     }
 }

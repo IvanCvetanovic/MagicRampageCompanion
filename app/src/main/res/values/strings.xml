@@ -975,6 +975,10 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="empty_no_characters">No characters available</string>
     <string name="empty_no_my_characters">No saved characters yet — edit one and tap Save.</string>
     <string name="character_open_failed">Could not open character file</string>
+    <string name="character_save">Save</string>
+    <string name="character_save_title">Save character as</string>
+    <string name="character_saved">Saved %1$s</string>
+    <string name="character_save_failed">Save failed</string>
 
     <string name="survival0">Survival 1</string>
     <string name="survival1">Survival 2</string>
