@@ -2051,6 +2051,10 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="cd_field_value">Value</string>
     <string name="cd_field_name_empty">Enter a field name</string>
     <string name="cd_field_exists">A field with that name already exists</string>
+    <string name="cd_add_my_character">+ char</string>
+    <string name="cd_pick_my_character">Insert My Character</string>
+    <string name="cd_no_my_characters">No saved characters yet — make one in the Editor → Characters.</string>
+    <string name="cd_my_character_added">Added %1$s — also export it to the game\'s npcs/enemies/ (or edit the path for allies/bosses/fighters).</string>
     <string name="add">Add</string>
 
     <!-- Pre-save validation warnings (editor) -->

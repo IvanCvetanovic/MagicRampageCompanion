@@ -510,6 +510,20 @@ public class LevelViewerActivity extends BaseActivity {
         field.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
         line.addView(field);
 
+        // P8: a spawner's "mobs" list references characters by path — let the user insert one of
+        // their saved (My Characters) files without hand-typing the npcs/<category>/ path.
+        if ("mobs".equalsIgnoreCase(key)) {
+            android.widget.Button addChar = new android.widget.Button(this);
+            addChar.setText(R.string.cd_add_my_character);
+            addChar.setTextSize(11f);
+            addChar.setMinWidth(0);
+            addChar.setMinimumWidth(0);
+            int hp = (int) (8 * getResources().getDisplayMetrics().density);
+            addChar.setPadding(hp, 0, hp, 0);
+            addChar.setOnClickListener(v -> { playClick(); pickMyCharacterInto(field); });
+            line.addView(addChar);
+        }
+
         android.widget.ImageButton remove = new android.widget.ImageButton(this);
         remove.setImageResource(android.R.drawable.ic_menu_delete);
         remove.setBackgroundResource(0);
@@ -522,6 +536,31 @@ public class LevelViewerActivity extends BaseActivity {
         CdRow row = new CdRow(key, field, block);
         rows.add(row);
         remove.setOnClickListener(v -> { playClick(); rows.remove(row); rowsArea.removeView(block); });
+    }
+
+    /** P8: pick a saved (My Characters) file and append its reference to a spawner's mobs list. */
+    private void pickMyCharacterInto(EditText field) {
+        File dir = new File(getFilesDir(), "usercharacters");
+        File[] files = dir.listFiles((d, n) -> n.endsWith(".character"));
+        if (files == null || files.length == 0) {
+            Toast.makeText(this, R.string.cd_no_my_characters, Toast.LENGTH_LONG).show();
+            return;
+        }
+        java.util.Arrays.sort(files, (a, b) -> a.getName().compareToIgnoreCase(b.getName()));
+        final String[] names = new String[files.length];
+        for (int i = 0; i < files.length; i++) names[i] = files[i].getName().replaceAll("\\.character$", "");
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.cd_pick_my_character)
+                .setItems(names, (d, which) -> {
+                    // Spawner mobs default to enemies; the path stays editable for ally/boss/fighter.
+                    String ref = "npcs/enemies/" + names[which] + ".character,default";
+                    String cur = field.getText().toString().trim();
+                    String next = cur.isEmpty() ? ref : (cur.endsWith(";") ? cur + ref : cur + ";" + ref);
+                    field.setText(next);
+                    Toast.makeText(this, getString(R.string.cd_my_character_added, names[which]), Toast.LENGTH_LONG).show();
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 
     /** Sub-dialog to add a new CustomData field: name + engine type + value. */
