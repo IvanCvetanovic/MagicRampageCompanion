@@ -46,6 +46,7 @@ public class CharacterEditorActivity extends BaseActivity {
 
     private String characterFile; // asset filename, null when opened from storage
     private String characterPath; // absolute storage path, null when opened from assets
+    private String originalStem;  // the name as first opened, before any save — the in-game override key
 
     private TextView titleView;
     private LinearLayout container;
@@ -82,6 +83,7 @@ public class CharacterEditorActivity extends BaseActivity {
             finish();
             return;
         }
+        originalStem = stem(); // captured before any save mutates characterFile/characterPath
         render();
     }
 
@@ -149,7 +151,12 @@ public class CharacterEditorActivity extends BaseActivity {
                     if (name.isEmpty()) name = defaultSaveName();
                     save(name);
                 })
-                .setNeutralButton(R.string.character_export, (d, w) -> startExport(input.getText().toString().trim()))
+                .setNeutralButton(R.string.character_export, (d, w) -> {
+                    String typed = input.getText().toString().trim();
+                    // If the Save default was left untouched, export under the ORIGINAL filename —
+                    // that name is the in-game override key. A customized name is honoured as-is.
+                    startExport(typed.equals(defaultSaveName()) ? exportDefaultName() : typed);
+                })
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
     }
@@ -157,6 +164,11 @@ public class CharacterEditorActivity extends BaseActivity {
     private String defaultSaveName() {
         // Re-saving a My Characters file keeps its name; a bundled file becomes a "_edited" copy.
         return characterPath != null ? stem() : stem() + "_edited";
+    }
+
+    /** Export defaults to the originally-opened name — the filename the game reads to override. */
+    private String exportDefaultName() {
+        return originalStem != null ? originalStem : stem();
     }
 
     private void save(String name) {
