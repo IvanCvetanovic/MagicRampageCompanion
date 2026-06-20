@@ -34,4 +34,14 @@
     <color name="color_shadow_spot">#1E0D0D</color>
     <color name="hub_levels_accent">#5B8DEF</color>
     <color name="hub_characters_accent">#E0534F</color>
+    <color name="menu_accent_news">#5B8DEF</color>
+    <color name="menu_accent_dungeons">#D9A441</color>
+    <color name="menu_accent_survival">#C0414A</color>
+    <color name="menu_accent_equipment">#7FB0C9</color>
+    <color name="menu_accent_editor">#9B6DE0</color>
+    <color name="menu_accent_achievements">#F2C14E</color>
+    <color name="menu_accent_items">#5FB87A</color>
+    <color name="menu_accent_enemies">#E0534F</color>
+    <color name="menu_accent_skins">#E07AB8</color>
+    <color name="menu_accent_about">#8893A6</color>
 </resources>

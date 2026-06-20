@@ -6,11 +6,14 @@ import androidx.appcompat.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.core.graphics.Insets;
@@ -34,6 +37,7 @@ import xyz.magicrampagecompanion.ui.items.Items;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.ui.items.Skins;
 import xyz.magicrampagecompanion.ui.editor.EditorHubActivity;
+import xyz.magicrampagecompanion.ui.editor.MenuBannerBuilder;
 import xyz.magicrampagecompanion.ui.survival.SurvivalModeSelection;
 import xyz.magicrampagecompanion.ui.chapters.ChapterSelection;
 import xyz.magicrampagecompanion.data.storage.ItemSyncer;
@@ -102,18 +106,56 @@ public class MainActivity extends BaseActivity {
         bindNavigationButton(R.id.SkinsButton, Skins.class);
         bindNavigationButton(R.id.AboutButton, About.class);
 
+        styleMenuBanners();
+
         // ---------------- Ads SDK + UMP ----------------
         // Request/update consent info, show form if required, then initialize MobileAds.
         requestConsentAndMaybeShowForm();
     }
 
     private void bindNavigationButton(int buttonId, Class<?> target) {
-        Button button = findViewById(buttonId);
+        View button = findViewById(buttonId); // may be a Button or a MaterialCardView banner
         if (button == null) return;
         button.setOnClickListener(v -> {
             startActivity(new Intent(this, target));
             playClick();
         });
+    }
+
+    /** Paint the in-game art into the redesigned menu banners (off the UI thread, crisp). */
+    private void styleMenuBanners() {
+        final int[] imgIds = {
+                R.id.NewsImage, R.id.ChapterSelectionImage, R.id.SurvivalModeImage, R.id.EquipmentTesterImage,
+                R.id.LevelViewerImage, R.id.AchievementImage, R.id.ItemsImage, R.id.EnemiesImage,
+                R.id.SkinsImage, R.id.AboutImage
+        };
+        final String[] art = {
+                "png:kings_room_banner.png", "png:chapter4-dungeon-portal.png", "png:skull_entity.png", "png:axe_0.png",
+                "char:armored-skeleton.character", "png:covil-kings-crown.png", "png:diamond_0.png", "char:vampire.character",
+                "char:rat-fire-mage.character", "png:spellbook_1.png"
+        };
+        final int[] accents = {
+                getColor(R.color.menu_accent_news), getColor(R.color.menu_accent_dungeons),
+                getColor(R.color.menu_accent_survival), getColor(R.color.menu_accent_equipment),
+                getColor(R.color.menu_accent_editor), getColor(R.color.menu_accent_achievements),
+                getColor(R.color.menu_accent_items), getColor(R.color.menu_accent_enemies),
+                getColor(R.color.menu_accent_skins), getColor(R.color.menu_accent_about)
+        };
+        new Thread(() -> {
+            final Bitmap[] bmps = new Bitmap[imgIds.length];
+            for (int i = 0; i < imgIds.length; i++) bmps[i] = MenuBannerBuilder.build(this, art[i], accents[i]);
+            runOnUiThread(() -> {
+                if (isFinishing() || isDestroyed()) return;
+                for (int i = 0; i < imgIds.length; i++) {
+                    ImageView iv = findViewById(imgIds[i]);
+                    if (iv != null && bmps[i] != null) {
+                        BitmapDrawable d = new BitmapDrawable(getResources(), bmps[i]);
+                        d.setFilterBitmap(false);
+                        iv.setImageDrawable(d);
+                    }
+                }
+            });
+        }).start();
     }
 
     // Request consent info on every app start and show form if required.

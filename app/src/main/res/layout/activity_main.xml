@@ -67,176 +67,166 @@
             android:shadowRadius="30"
             tools:ignore="ContentDescription,HardcodedText" />
 
-        <!-- Buttons -->
-        <Button
+        <!-- Menu banners (styled with in-game art in MainActivity.styleMenuBanners) -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/NewsButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/news"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_news" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_news"
             app:layout_constraintTop_toBottomOf="@id/GameLogo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/NewsImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/news" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/news" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/ChapterSelectionButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/dungeons"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_dungeons" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_dungeons"
             app:layout_constraintTop_toBottomOf="@id/NewsButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/ChapterSelectionImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/dungeons" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/dungeons" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/SurvivalModeSelectionButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/survival_mode"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_survival" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_survival"
             app:layout_constraintTop_toBottomOf="@id/ChapterSelectionButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/SurvivalModeImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/survival_mode" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/survival_mode" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/EquipmentTesterButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/test_equipment"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_equipment" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_equipment"
             app:layout_constraintTop_toBottomOf="@id/SurvivalModeSelectionButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/EquipmentTesterImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/test_equipment" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/test_equipment" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/LevelViewerButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/editor_button"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_editor" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_editor"
             app:layout_constraintTop_toBottomOf="@id/EquipmentTesterButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/LevelViewerImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/editor_button" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/editor_button" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/AchievementButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/achievements"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_achievements" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_achievements"
             app:layout_constraintTop_toBottomOf="@id/LevelViewerButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/AchievementImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/achievements" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/achievements" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/ItemsButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/items"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_items" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_items"
             app:layout_constraintTop_toBottomOf="@id/AchievementButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/ItemsImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/items" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/items" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/EnemiesButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/enemies"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_enemies" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_enemies"
             app:layout_constraintTop_toBottomOf="@id/ItemsButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/EnemiesImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/enemies" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/enemies" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/SkinsButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/skins"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_skins" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_skins"
             app:layout_constraintTop_toBottomOf="@id/EnemiesButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/SkinsImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/skins" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/skins" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/AboutButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="24dp"
-            android:shadowColor="@color/black"
-            android:shadowRadius="30"
-            android:textSize="16sp"
-            android:text="@string/about"
+            android:layout_width="0dp" android:layout_height="70dp"
+            android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginTop="24dp"
+            android:clickable="true" android:focusable="true"
+            app:cardCornerRadius="14dp" app:cardBackgroundColor="#0D1320"
+            app:strokeColor="@color/menu_accent_about" app:strokeWidth="2dp" app:rippleColor="@color/menu_accent_about"
             app:layout_constraintTop_toBottomOf="@id/SkinsButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageView android:id="@+id/AboutImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@string/about" />
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/banner_scrim" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start|center_vertical" android:paddingStart="24dp" android:text="@string/about" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="6" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
