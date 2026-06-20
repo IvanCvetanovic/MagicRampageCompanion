@@ -355,6 +355,9 @@ public class LevelParser {
      * {@link #parseCharacterFile} can't reach. Used by the Character editor's sprite preview.
      */
     public static void parseCharacterStream(Context ctx, LevelEntity entity, InputStream is) {
+        // Heads/faces are a separate layer resolved via headMap (e.g. rat0 -> character_rat_head_0.png).
+        // The level path loads this in parse(); ensure it's loaded here too or composited faces vanish.
+        if (ctx != null && headMap.isEmpty()) loadEnmlMapping(ctx, "entities/npc-head.enml");
         try { parseCharacterInternal(ctx, entity, is); } catch (Exception ignored) {}
     }
 
