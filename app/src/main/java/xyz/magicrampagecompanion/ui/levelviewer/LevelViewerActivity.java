@@ -37,6 +37,7 @@ import com.google.android.gms.ads.rewarded.RewardItem;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -52,6 +53,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import xyz.magicrampagecompanion.R;
+import xyz.magicrampagecompanion.character.CharacterDocument;
 import xyz.magicrampagecompanion.core.utils.RewardedAdManager;
 import xyz.magicrampagecompanion.level.Level;
 import xyz.magicrampagecompanion.level.LevelParser;
@@ -75,6 +77,8 @@ public class LevelViewerActivity extends BaseActivity {
     // Editor property inspector (Phase 2)
     private LinearLayout editorBottomPanel;
     private View editorInspector;
+    private View btnEditEnemy;
+    private View btnEditGold;
     private TextView inspectorHeader;
     private TextView inspectorMeta;
     private EditText etX, etY, etZ, etScaleX, etScaleY, etAngle;
@@ -168,6 +172,10 @@ public class LevelViewerActivity extends BaseActivity {
         editorInspector   = findViewById(R.id.editorInspector);
         inspectorHeader   = findViewById(R.id.inspectorHeader);
         inspectorMeta     = findViewById(R.id.inspectorMeta);
+        btnEditEnemy      = findViewById(R.id.btnEditEnemy);
+        btnEditEnemy.setOnClickListener(v -> { playClick(); showEnemyEditDialog(renderView.getSelectedEntity()); });
+        btnEditGold       = findViewById(R.id.btnEditGold);
+        btnEditGold.setOnClickListener(v -> { playClick(); showGoldDialog(renderView.getSelectedEntity()); });
         etX = findViewById(R.id.inspectorX);
         etY = findViewById(R.id.inspectorY);
         etZ = findViewById(R.id.inspectorZ);
@@ -186,7 +194,6 @@ public class LevelViewerActivity extends BaseActivity {
             boolean snap = !renderView.isSnapToGrid();
             renderView.setSnapToGrid(snap);
             btnToggleSnap.setAlpha(snap ? 1.0f : 0.4f);
-            Toast.makeText(this, snap ? R.string.snap_on : R.string.snap_off, Toast.LENGTH_SHORT).show();
         });
 
         ImageButton btnSave = findViewById(R.id.btnSave);
@@ -202,7 +209,6 @@ public class LevelViewerActivity extends BaseActivity {
             boolean on = !renderView.isMarqueeMode();
             renderView.setMarqueeMode(on);
             btnMarquee.setAlpha(on ? 1.0f : 0.4f);
-            Toast.makeText(this, on ? R.string.marquee_on : R.string.marquee_off, Toast.LENGTH_SHORT).show();
         });
 
         renderView.setOnMultiSelectionChangedListener(count -> {
@@ -223,8 +229,6 @@ public class LevelViewerActivity extends BaseActivity {
             btnMarquee.setVisibility(enable ? View.VISIBLE : View.GONE);
             if (!enable) { renderView.setMarqueeMode(false); btnMarquee.setAlpha(0.4f); }
             if (enable) populateInspector(renderView.getSelectedEntity());
-            Toast.makeText(this, enable ? R.string.edit_mode_on : R.string.edit_mode_off,
-                    Toast.LENGTH_SHORT).show();
         });
 
         // --- Editor toolbar actions (Phase 4) ---
@@ -385,6 +389,13 @@ public class LevelViewerActivity extends BaseActivity {
             etAngle.setText(fmt(e.angle));
             cbFlipX.setChecked(e.flipX);
             cbFlipY.setChecked(e.flipY);
+            btnEditEnemy.setVisibility(isCharacterEntity(e) ? View.VISIBLE : View.GONE);
+            boolean isGold = isGoldEntity(e);
+            btnEditGold.setVisibility(isGold ? View.VISIBLE : View.GONE);
+            if (isGold) {
+                String g = e.customData != null ? e.customData.get("gold") : null;
+                ((TextView) btnEditGold).setText(getString(R.string.cd_gold_label, g == null ? "—" : g));
+            }
         }
         updateEditActionButtons(e);
         suppressWatchers = false;
@@ -410,6 +421,221 @@ public class LevelViewerActivity extends BaseActivity {
     private void updateUndoRedoButtons() {
         if (btnUndo != null) { boolean u = renderView.canUndo(); btnUndo.setEnabled(u); btnUndo.setAlpha(u ? 1f : 0.4f); }
         if (btnRedo != null) { boolean r = renderView.canRedo(); btnRedo.setEnabled(r); btnRedo.setAlpha(r ? 1f : 0.4f); }
+    }
+
+    // ── Edit Enemy: fast Health / Attack / Size on an individually-placed character ───────────────
+
+    /** True if this entity resolves a .character (an individually-placed enemy/ally we can remix). */
+    private boolean isCharacterEntity(LevelEntity e) {
+        return charRefKey(e) != null;
+    }
+
+    /** The customData key ("fileName"/"type") whose value points at a .character, or null. */
+    private String charRefKey(LevelEntity e) {
+        if (e == null || e.customData == null) return null;
+        for (String k : new String[]{"fileName", "type"}) {
+            String v = e.customData.get(k);
+            if (v == null) continue;
+            String p = v.contains(",") ? v.substring(0, v.indexOf(",")) : v;
+            if (p.trim().endsWith(".character")) return k;
+        }
+        return null;
+    }
+
+    /** Load a character doc: a My-Characters copy if one exists, else the bundled asset. */
+    private CharacterDocument loadCharacterDoc(String baseName) {
+        File userFile = new File(new File(getFilesDir(), "usercharacters"), baseName);
+        try {
+            if (userFile.exists()) {
+                try (InputStream is = new FileInputStream(userFile)) { return CharacterDocument.parse(is); }
+            }
+            try (InputStream is = getAssets().open("entities/" + baseName)) { return CharacterDocument.parse(is); }
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+
+    /** The equipped weapon block: {blockName, currentDamage}, or null if unarmed. */
+    private String[] findWeaponBlock(CharacterDocument doc) {
+        for (CharacterDocument.Block b : doc.blocks()) {
+            if (!b.name.toLowerCase().startsWith("equippeditem")) continue;
+            String type = null, dmg = null;
+            for (CharacterDocument.Field f : b.fields) {
+                if (f.key.equalsIgnoreCase("type")) type = doc.value(f.lineIndex);
+                else if (f.key.equalsIgnoreCase("damage")) dmg = doc.value(f.lineIndex);
+            }
+            if ("weapon".equalsIgnoreCase(type)) return new String[]{b.name, dmg == null ? "" : dmg};
+        }
+        return null;
+    }
+
+    private void showEnemyEditDialog(final LevelEntity e) {
+        final String key = charRefKey(e);
+        if (key == null) return;
+        final String ref = e.customData.get(key);
+        final String pathOnly = ref.contains(",") ? ref.substring(0, ref.indexOf(",")) : ref;
+        final String suffix = ref.contains(",") ? ref.substring(ref.indexOf(",")) : "";
+        String bn = pathOnly.contains("/") ? pathOnly.substring(pathOnly.lastIndexOf("/") + 1) : pathOnly;
+        if (!bn.endsWith(".character")) bn += ".character";
+        final String baseName = bn;
+        final String category = pathOnly.contains("/") ? pathOnly.substring(0, pathOnly.lastIndexOf("/")) : "npcs/enemies";
+
+        final CharacterDocument doc = loadCharacterDoc(baseName);
+        if (doc == null) { Toast.makeText(this, R.string.enemy_edit_failed, Toast.LENGTH_SHORT).show(); return; }
+        final String[] weapon = findWeaponBlock(doc);
+
+        int pad = (int) (16 * getResources().getDisplayMetrics().density);
+        LinearLayout box = new LinearLayout(this);
+        box.setOrientation(LinearLayout.VERTICAL);
+        box.setPadding(pad, pad / 2, pad, 0);
+        final EditText hp = labeledNumber(box, getString(R.string.enemy_health), doc.firstValue("character", "resistance"));
+        final EditText atk = labeledNumber(box, getString(R.string.enemy_attack), weapon != null ? weapon[1] : "");
+        if (weapon == null) { atk.setEnabled(false); atk.setHint(R.string.enemy_no_weapon); }
+        final CheckBox friendly = new CheckBox(this);
+        friendly.setText(R.string.npc_friendly);
+        friendly.setTextColor(getColor(R.color.color_text_primary));
+        friendly.setChecked("1".equals(e.customData.get("playerTeam")));
+        LinearLayout.LayoutParams flp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        flp.topMargin = (int) (8 * getResources().getDisplayMetrics().density);
+        friendly.setLayoutParams(flp);
+        box.addView(friendly);
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.enemy_edit_title)
+                .setView(box)
+                .setPositiveButton(R.string.character_save, (d, w) -> applyEnemyEdit(e, key, suffix, baseName, category,
+                        doc, weapon, hp.getText().toString().trim(), atk.getText().toString().trim(), friendly.isChecked()))
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private EditText labeledNumber(LinearLayout box, String label, String value) {
+        TextView t = new TextView(this);
+        t.setText(label);
+        t.setTextColor(getColor(R.color.color_text_primary));
+        t.setTextSize(12f);
+        box.addView(t);
+        EditText f = new EditText(this);
+        f.setText(value == null ? "" : value);
+        f.setInputType(android.text.InputType.TYPE_CLASS_NUMBER | android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        box.addView(f);
+        return f;
+    }
+
+    private void applyEnemyEdit(final LevelEntity e, String key, String suffix, String baseName, String category,
+                                CharacterDocument doc, String[] weapon, String hp, String atk, boolean friendly) {
+        final Map<String, String> beforeData = new LinkedHashMap<>(e.customData);
+        final Map<String, String> beforeTypes = new LinkedHashMap<>(e.customDataTypes);
+        final boolean beforeEdited = e.customDataEdited;
+
+        if (!hp.isEmpty()) doc.setOrAdd("character", "resistance", hp);
+        if (weapon != null && !atk.isEmpty()) doc.setOrAdd(weapon[0], "damage", atk);
+
+        File dir = new File(getFilesDir(), "usercharacters");
+        if (!dir.exists()) dir.mkdirs();
+        boolean alreadyCustom = new File(dir, baseName).exists();
+        String stem = baseName.replaceAll("\\.character$", "");
+        String customStem = alreadyCustom ? stem : (stem + "-e" + e.id);
+        File out = new File(dir, customStem + ".character");
+        try (FileOutputStream fos = new FileOutputStream(out)) {
+            fos.write(doc.toBytes());
+        } catch (Exception ex) {
+            Toast.makeText(this, R.string.enemy_edit_failed, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Point this level's spawn at the custom file (keep the original behaviour suffix).
+        e.customData.put(key, category + "/" + customStem + ".character" + suffix);
+        // Friend/foe: playerTeam 1 = friendly/ally, 0 = enemy.
+        e.customData.put("playerTeam", friendly ? "1" : "0");
+        e.customDataTypes.put("playerTeam", "int"); // ensure it's written if the entity lacked it inline
+        e.customDataEdited = true;
+
+        final Map<String, String> afterData = new LinkedHashMap<>(e.customData);
+        final Map<String, String> afterTypes = new LinkedHashMap<>(e.customDataTypes);
+        renderView.pushCommand(new LevelRenderView.EditCommand() {
+            @Override public void undo() {
+                e.customData.clear(); e.customData.putAll(beforeData);
+                e.customDataTypes.clear(); e.customDataTypes.putAll(beforeTypes);
+                e.customDataEdited = beforeEdited;
+                renderView.invalidate(); populateInspector(e);
+            }
+            @Override public void redo() {
+                e.customData.clear(); e.customData.putAll(afterData);
+                e.customDataTypes.clear(); e.customDataTypes.putAll(afterTypes);
+                e.customDataEdited = true;
+                renderView.invalidate(); populateInspector(e);
+            }
+        });
+        renderView.invalidate();
+        populateInspector(e);
+    }
+
+    private static float parseFloatSafe(String s, float def) {
+        try { return Float.parseFloat(s.trim()); } catch (Exception ex) { return def; }
+    }
+
+    // ── Gold reward: set how much gold a coin / gold pickup gives ──────────────────────────────────
+
+    /** True if this entity is a gold pickup (a coin / gold_loot — carries or should carry a `gold` value). */
+    private boolean isGoldEntity(LevelEntity e) {
+        if (e == null) return false;
+        if (e.customData != null && e.customData.containsKey("gold")) return true;
+        String n = e.entityName == null ? "" : e.entityName.toLowerCase();
+        if (n.contains("coin") || n.contains("gold_loot")) return true;
+        String s = e.spriteFile == null ? "" : e.spriteFile.toLowerCase();
+        return s.contains("coin") || s.contains("diamond");
+    }
+
+    private void showGoldDialog(final LevelEntity e) {
+        if (e == null) return;
+        String cur = e.customData != null ? e.customData.get("gold") : null;
+        final EditText input = new EditText(this);
+        input.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+        input.setText(cur == null ? "" : cur);
+        input.setHint(R.string.gold_amount);
+        input.setSelectAllOnFocus(true);
+        int pad = (int) (20 * getResources().getDisplayMetrics().density);
+        LinearLayout box = new LinearLayout(this);
+        box.setPadding(pad, pad / 2, pad, 0);
+        box.addView(input);
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.gold_dialog_title)
+                .setView(box)
+                .setPositiveButton(android.R.string.ok, (d, w) -> applyGoldEdit(e, input.getText().toString().trim()))
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private void applyGoldEdit(final LevelEntity e, String value) {
+        if (value.isEmpty()) return;
+        final Map<String, String> beforeData = new LinkedHashMap<>(e.customData);
+        final Map<String, String> beforeTypes = new LinkedHashMap<>(e.customDataTypes);
+        final boolean beforeEdited = e.customDataEdited;
+
+        e.customData.put("gold", value);
+        e.customDataTypes.put("gold", "int"); // ensure it's written whether it was inline or .ent-resolved
+        e.customDataEdited = true;
+
+        final Map<String, String> afterData = new LinkedHashMap<>(e.customData);
+        final Map<String, String> afterTypes = new LinkedHashMap<>(e.customDataTypes);
+        renderView.pushCommand(new LevelRenderView.EditCommand() {
+            @Override public void undo() {
+                e.customData.clear(); e.customData.putAll(beforeData);
+                e.customDataTypes.clear(); e.customDataTypes.putAll(beforeTypes);
+                e.customDataEdited = beforeEdited;
+                renderView.invalidate(); populateInspector(e);
+            }
+            @Override public void redo() {
+                e.customData.clear(); e.customData.putAll(afterData);
+                e.customDataTypes.clear(); e.customDataTypes.putAll(afterTypes);
+                e.customDataEdited = true;
+                renderView.invalidate(); populateInspector(e);
+            }
+        });
+        renderView.invalidate();
+        populateInspector(e);
     }
 
     /** Holds a CustomData editor row: its key, the value field, and the row view (for removal). */

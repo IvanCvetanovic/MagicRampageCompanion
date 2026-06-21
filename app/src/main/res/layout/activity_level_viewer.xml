@@ -59,7 +59,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/edit_icon"
+            android:src="@drawable/ic_edit"
             android:contentDescription="@string/cd_toggle_edit" />
 
         <ImageButton
@@ -143,6 +143,46 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:paddingBottom="6dp" />
+
+            <Button
+                android:id="@+id/btnEditEnemy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:text="@string/cd_edit_enemy"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/menu_accent_editor"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnEditGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:text="@string/cd_set_gold"
+                android:textColor="#000000"
+                android:backgroundTint="@color/menu_accent_achievements"
+                android:visibility="gone" />
 
             <!-- Row: X / Y / Z -->
             <LinearLayout

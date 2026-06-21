@@ -197,6 +197,22 @@ public final class CharacterDocument {
         index();
     }
 
+    /**
+     * Set {@code key}'s value in the first block named {@code blockName}; if that block has no such
+     * field yet, insert it (via {@link #addField}). Used by the visual editor so picking e.g. a body
+     * also writes {@code bodyEntity} on a character that didn't previously have that line.
+     */
+    public void setOrAdd(String blockName, String key, String value) {
+        for (Block b : blocks) {
+            if (!b.name.equalsIgnoreCase(blockName)) continue;
+            for (Field f : b.fields) {
+                if (f.key.equalsIgnoreCase(key)) { setValue(f.lineIndex, value); return; }
+            }
+            addField(b, key, value);
+            return;
+        }
+    }
+
     private String detectIndent(Block block) {
         if (!block.fields.isEmpty()) {
             String c = lines.get(block.fields.get(0).lineIndex).content;

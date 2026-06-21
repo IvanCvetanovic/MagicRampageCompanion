@@ -27,6 +27,7 @@ import com.google.android.ump.ConsentInformation;
 import com.google.android.ump.ConsentRequestParameters;
 import com.google.android.ump.UserMessagingPlatform;
 
+import xyz.magicrampagecompanion.core.utils.ArtCache;
 import xyz.magicrampagecompanion.core.utils.LocaleHelper;
 import xyz.magicrampagecompanion.ui.achievements.AchievementsPage;
 import xyz.magicrampagecompanion.ui.common.BaseActivity;
@@ -36,7 +37,7 @@ import xyz.magicrampagecompanion.data.models.ItemData;
 import xyz.magicrampagecompanion.ui.items.Items;
 import xyz.magicrampagecompanion.R;
 import xyz.magicrampagecompanion.ui.items.Skins;
-import xyz.magicrampagecompanion.ui.editor.EditorHubActivity;
+import xyz.magicrampagecompanion.ui.levelviewer.LevelListActivity;
 import xyz.magicrampagecompanion.ui.editor.MenuBannerBuilder;
 import xyz.magicrampagecompanion.ui.survival.SurvivalModeSelection;
 import xyz.magicrampagecompanion.ui.chapters.ChapterSelection;
@@ -99,7 +100,7 @@ public class MainActivity extends BaseActivity {
         bindNavigationButton(R.id.ChapterSelectionButton, ChapterSelection.class);
         bindNavigationButton(R.id.SurvivalModeSelectionButton, SurvivalModeSelection.class);
         bindNavigationButton(R.id.EquipmentTesterButton, EquipmentTester.class);
-        bindNavigationButton(R.id.LevelViewerButton, EditorHubActivity.class);
+        bindNavigationButton(R.id.LevelViewerButton, LevelListActivity.class);
         bindNavigationButton(R.id.AchievementButton, AchievementsPage.class);
         bindNavigationButton(R.id.ItemsButton, Items.class);
         bindNavigationButton(R.id.EnemiesButton, Enemies.class);
@@ -122,7 +123,11 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    /** Paint the in-game art into the redesigned menu banners (off the UI thread, crisp). */
+    /**
+     * Paint the in-game art into the redesigned menu banners. Cached renders ({@link ArtCache}) are set
+     * synchronously here, so they are present on the very first frame (no pop-in); only an uncached
+     * banner is built off the UI thread and faded in, then cached for next time.
+     */
     private void styleMenuBanners() {
         final int[] imgIds = {
                 R.id.NewsImage, R.id.ChapterSelectionImage, R.id.SurvivalModeImage, R.id.EquipmentTesterImage,
@@ -141,21 +146,43 @@ public class MainActivity extends BaseActivity {
                 getColor(R.color.menu_accent_items), getColor(R.color.menu_accent_enemies),
                 getColor(R.color.menu_accent_skins), getColor(R.color.menu_accent_about)
         };
+        final boolean[] pending = new boolean[imgIds.length];
+        // Cached art → set now (on the first frame). Uncached ones get built below.
+        for (int i = 0; i < imgIds.length; i++) {
+            Bitmap cached = ArtCache.loadCached(this, bannerKey(art[i], accents[i]));
+            if (cached != null) setBanner(imgIds[i], cached, false);
+            else pending[i] = true;
+        }
+        // First run only: build the uncached banners off the UI thread, fade them in, and cache them.
         new Thread(() -> {
-            final Bitmap[] bmps = new Bitmap[imgIds.length];
-            for (int i = 0; i < imgIds.length; i++) bmps[i] = MenuBannerBuilder.build(this, art[i], accents[i]);
-            runOnUiThread(() -> {
-                if (isFinishing() || isDestroyed()) return;
-                for (int i = 0; i < imgIds.length; i++) {
-                    ImageView iv = findViewById(imgIds[i]);
-                    if (iv != null && bmps[i] != null) {
-                        BitmapDrawable d = new BitmapDrawable(getResources(), bmps[i]);
-                        d.setFilterBitmap(false);
-                        iv.setImageDrawable(d);
-                    }
-                }
-            });
+            for (int i = 0; i < imgIds.length; i++) {
+                if (!pending[i]) continue;
+                final int idx = i;
+                final Bitmap b = ArtCache.loadOrBuild(this, bannerKey(art[idx], accents[idx]),
+                        () -> MenuBannerBuilder.build(this, art[idx], accents[idx]));
+                runOnUiThread(() -> {
+                    if (!isFinishing() && !isDestroyed()) setBanner(imgIds[idx], b, true);
+                });
+            }
         }).start();
+    }
+
+    /** Set a banner bitmap crisply; optionally fade it in (for freshly built, uncached art). */
+    private void setBanner(int imgId, Bitmap bmp, boolean fadeIn) {
+        ImageView iv = findViewById(imgId);
+        if (iv == null || bmp == null) return;
+        BitmapDrawable d = new BitmapDrawable(getResources(), bmp);
+        d.setFilterBitmap(false);
+        iv.setImageDrawable(d);
+        if (fadeIn) {
+            iv.setAlpha(0f);
+            iv.animate().alpha(1f).setDuration(220).start();
+        }
+    }
+
+    /** Cache key for a banner: its art spec + accent (the W/H/darken are fixed in MenuBannerBuilder). */
+    private static String bannerKey(String artSpec, int accent) {
+        return "banner_" + artSpec + "_" + Integer.toHexString(accent);
     }
 
     // Request consent info on every app start and show form if required.

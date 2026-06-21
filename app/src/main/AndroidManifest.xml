@@ -59,15 +59,6 @@
             android:name=".ui.levelviewer.LevelViewerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.editor.EditorHubActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.character.CharacterListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.character.CharacterEditorActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.main.About"
             android:exported="false" />
         <activity

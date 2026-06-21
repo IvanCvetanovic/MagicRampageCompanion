@@ -450,6 +450,8 @@ public class LevelRenderView extends View {
         canvas.translate(offsetX, offsetY);
         canvas.scale(scale, scale);
 
+        if (editMode && snapToGrid) drawGrid(canvas);
+
         for (LevelEntity entity : sortedEntities) {
             drawEntity(canvas, entity);
         }
@@ -1639,7 +1641,20 @@ public class LevelRenderView extends View {
 
     // ── Move tool (Phase 3) ────────────────────────────────────────────────
 
-    public void setSnapToGrid(boolean snap) { this.snapToGrid = snap; }
+    /** Faint 64-unit world grid, drawn under the entities in EDIT mode when snap is on. */
+    private void drawGrid(Canvas canvas) {
+        if (BASE_TILE * scale < 6f) return; // too zoomed out — the grid would just be noise
+        gridPaint.setColor(0x33FFFFFF);
+        gridPaint.setStrokeWidth(0f); // hairline: 1px regardless of the canvas scale
+        float left = -offsetX / scale, top = -offsetY / scale;
+        float right = (getWidth() - offsetX) / scale, bottom = (getHeight() - offsetY) / scale;
+        float startX = (float) Math.floor(left / BASE_TILE) * BASE_TILE;
+        float startY = (float) Math.floor(top / BASE_TILE) * BASE_TILE;
+        for (float x = startX; x <= right; x += BASE_TILE) canvas.drawLine(x, top, x, bottom, gridPaint);
+        for (float y = startY; y <= bottom; y += BASE_TILE) canvas.drawLine(left, y, right, y, gridPaint);
+    }
+
+    public void setSnapToGrid(boolean snap) { this.snapToGrid = snap; invalidate(); }
     public boolean isSnapToGrid() { return snapToGrid; }
 
     /** True if (worldX,worldY) falls within the selected entity's on-screen footprint. */
@@ -1759,6 +1774,7 @@ public class LevelRenderView extends View {
     private boolean hOldScaleEdited;
 
     private final Paint handleFillPaint = makeHandleFillPaint();
+    private final Paint gridPaint = new Paint();
     private static Paint makeHandleFillPaint() {
         Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
         p.setColor(0xFFFFFFFF);
