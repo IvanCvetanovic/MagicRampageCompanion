@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- layoutDirection=ltr: the editor is a spatial map tool; keep its chrome un-mirrored under RTL (Arabic). -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr">
 
     <xyz.magicrampagecompanion.ui.levelviewer.LevelRenderView
         android:id="@+id/levelRenderView"
@@ -111,6 +113,20 @@
         android:background="@color/color_overlay_dark"
         android:visibility="gone">
 
+        <!-- Shown instead of the inspector when a marquee selects a group of entities. -->
+        <TextView
+            android:id="@+id/groupSelectionInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/color_text_primary"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium"
+            android:visibility="gone" />
+
         <!-- Property inspector for the selected entity -->
         <LinearLayout
             android:id="@+id/editorInspector"
@@ -123,15 +139,31 @@
             android:paddingBottom="8dp"
             android:visibility="gone">
 
-            <TextView
-                android:id="@+id/inspectorHeader"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/color_text_primary"
-                android:textSize="14sp"
-                android:fontFamily="sans-serif-medium"
-                android:ellipsize="end"
-                android:maxLines="1" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/inspectorHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+
+                <ImageButton
+                    android:id="@+id/btnDeselect"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    android:contentDescription="@string/cd_deselect" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/inspectorMeta"
@@ -200,10 +232,17 @@
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="@string/inspector_x" android:textColor="@color/color_text_primary"
                         android:alpha="0.6" android:textSize="11sp" />
-                    <EditText android:id="@+id/inspectorX" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
-                        android:textColor="@color/color_text_primary" android:textSize="14sp"
-                        android:minHeight="40dp" android:importantForAutofill="no" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/stepXMinus" style="@style/EditorStepper"
+                            android:text="@string/cd_decrease" android:contentDescription="@string/cd_decrease" />
+                        <EditText android:id="@+id/inspectorX" android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
+                            android:textColor="@color/color_text_primary" android:textSize="14sp" android:gravity="center"
+                            android:minHeight="40dp" android:importantForAutofill="no" />
+                        <TextView android:id="@+id/stepXPlus" style="@style/EditorStepper"
+                            android:text="@string/cd_increase" android:contentDescription="@string/cd_increase" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -215,10 +254,17 @@
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="@string/inspector_y" android:textColor="@color/color_text_primary"
                         android:alpha="0.6" android:textSize="11sp" />
-                    <EditText android:id="@+id/inspectorY" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
-                        android:textColor="@color/color_text_primary" android:textSize="14sp"
-                        android:minHeight="40dp" android:importantForAutofill="no" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/stepYMinus" style="@style/EditorStepper"
+                            android:text="@string/cd_decrease" android:contentDescription="@string/cd_decrease" />
+                        <EditText android:id="@+id/inspectorY" android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
+                            android:textColor="@color/color_text_primary" android:textSize="14sp" android:gravity="center"
+                            android:minHeight="40dp" android:importantForAutofill="no" />
+                        <TextView android:id="@+id/stepYPlus" style="@style/EditorStepper"
+                            android:text="@string/cd_increase" android:contentDescription="@string/cd_increase" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -229,10 +275,17 @@
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="@string/inspector_z" android:textColor="@color/color_text_primary"
                         android:alpha="0.6" android:textSize="11sp" />
-                    <EditText android:id="@+id/inspectorZ" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
-                        android:textColor="@color/color_text_primary" android:textSize="14sp"
-                        android:minHeight="40dp" android:importantForAutofill="no" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/stepZMinus" style="@style/EditorStepper"
+                            android:text="@string/cd_decrease" android:contentDescription="@string/cd_decrease" />
+                        <EditText android:id="@+id/inspectorZ" android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
+                            android:textColor="@color/color_text_primary" android:textSize="14sp" android:gravity="center"
+                            android:minHeight="40dp" android:importantForAutofill="no" />
+                        <TextView android:id="@+id/stepZPlus" style="@style/EditorStepper"
+                            android:text="@string/cd_increase" android:contentDescription="@string/cd_increase" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -252,10 +305,17 @@
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="@string/inspector_scale_x" android:textColor="@color/color_text_primary"
                         android:alpha="0.6" android:textSize="11sp" />
-                    <EditText android:id="@+id/inspectorScaleX" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
-                        android:textColor="@color/color_text_primary" android:textSize="14sp"
-                        android:minHeight="40dp" android:importantForAutofill="no" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/stepSXMinus" style="@style/EditorStepper"
+                            android:text="@string/cd_decrease" android:contentDescription="@string/cd_decrease" />
+                        <EditText android:id="@+id/inspectorScaleX" android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
+                            android:textColor="@color/color_text_primary" android:textSize="14sp" android:gravity="center"
+                            android:minHeight="40dp" android:importantForAutofill="no" />
+                        <TextView android:id="@+id/stepSXPlus" style="@style/EditorStepper"
+                            android:text="@string/cd_increase" android:contentDescription="@string/cd_increase" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -267,10 +327,17 @@
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="@string/inspector_scale_y" android:textColor="@color/color_text_primary"
                         android:alpha="0.6" android:textSize="11sp" />
-                    <EditText android:id="@+id/inspectorScaleY" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
-                        android:textColor="@color/color_text_primary" android:textSize="14sp"
-                        android:minHeight="40dp" android:importantForAutofill="no" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/stepSYMinus" style="@style/EditorStepper"
+                            android:text="@string/cd_decrease" android:contentDescription="@string/cd_decrease" />
+                        <EditText android:id="@+id/inspectorScaleY" android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
+                            android:textColor="@color/color_text_primary" android:textSize="14sp" android:gravity="center"
+                            android:minHeight="40dp" android:importantForAutofill="no" />
+                        <TextView android:id="@+id/stepSYPlus" style="@style/EditorStepper"
+                            android:text="@string/cd_increase" android:contentDescription="@string/cd_increase" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -281,10 +348,17 @@
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="@string/inspector_angle" android:textColor="@color/color_text_primary"
                         android:alpha="0.6" android:textSize="11sp" />
-                    <EditText android:id="@+id/inspectorAngle" android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
-                        android:textColor="@color/color_text_primary" android:textSize="14sp"
-                        android:minHeight="40dp" android:importantForAutofill="no" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/stepAngMinus" style="@style/EditorStepper"
+                            android:text="@string/cd_decrease" android:contentDescription="@string/cd_decrease" />
+                        <EditText android:id="@+id/inspectorAngle" android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:inputType="numberSigned|numberDecimal"
+                            android:textColor="@color/color_text_primary" android:textSize="14sp" android:gravity="center"
+                            android:minHeight="40dp" android:importantForAutofill="no" />
+                        <TextView android:id="@+id/stepAngPlus" style="@style/EditorStepper"
+                            android:text="@string/cd_increase" android:contentDescription="@string/cd_increase" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -314,6 +388,15 @@
             android:gravity="center_vertical"
             android:paddingStart="8dp"
             android:paddingEnd="8dp">
+
+            <ImageButton
+                android:id="@+id/btnFitScreen"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_mylocation"
+                android:contentDescription="@string/cd_fit_screen" />
 
             <ImageButton
                 android:id="@+id/btnAddEntity"

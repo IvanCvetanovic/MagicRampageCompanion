@@ -2109,4 +2109,16 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="translation_model_failed">Failed to download translation model.</string>
     <string name="all_seeing_staff">All Seeing Staff</string>
     <string name="dawnfang">Dawnfang</string>
+
+    <!-- Editor UX (English-only, matching the editor convention) -->
+    <string name="editor_title_badge">EDIT</string>
+    <string name="cd_fit_screen">Fit to screen</string>
+    <string name="cd_deselect">Deselect</string>
+    <string name="cd_decrease">−</string>
+    <string name="cd_increase">+</string>
+    <string name="discard_changes_title">Discard changes?</string>
+    <string name="discard_changes_message">You have unsaved edits. Save them, discard them, or keep editing.</string>
+    <string name="discard">Discard</string>
+    <string name="editor_help_title">Editor — quick guide</string>
+    <string name="editor_help_message">VIEW vs EDIT: tap the pencil to switch. (Long-press the pencil to see this guide again.)\n\n•  Tap an entity to select it. Tap the same spot again to cycle through stacked entities.\n•  Drag a selected entity to move it (grid-snaps when snap is on). Drag empty space to pan; pinch to zoom.\n•  A selected entity shows two handles: the circle above rotates, the corner square scales.\n•  Use −/+ next to a field for precise nudges. Tap ✎ on the meta line to edit Custom Data.\n•  Marquee: toggle the crop icon, then drag a box to select many at once.\n•  Find Entity (list icon) jumps to any entity by name — handy for invisible triggers.\n•  Fit screen re-centers the whole level. Undo/redo cover every edit.</string>
 </resources>

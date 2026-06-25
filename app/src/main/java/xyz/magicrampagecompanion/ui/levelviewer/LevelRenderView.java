@@ -215,6 +215,9 @@ public class LevelRenderView extends View {
 
         scaleDetector = new ScaleGestureDetector(context, new ScaleListener());
         setClickable(true);
+
+        // Tap slop in raw pixels = ~10dp, so a deliberate tap on a high-DPI screen isn't read as a drag.
+        tapSlopPx = 10f * context.getResources().getDisplayMetrics().density;
     }
 
     public void setLevel(Level level) {
@@ -418,6 +421,14 @@ public class LevelRenderView extends View {
         super.onSizeChanged(w, h, oldW, oldH);
         if (boundsReady && w > 0 && h > 0) {
             fitToScreen();
+        }
+    }
+
+    /** Re-centers and re-fits the whole level to the screen (editor "Fit to screen" button). */
+    public void resetView() {
+        if (boundsReady && getWidth() > 0 && getHeight() > 0) {
+            fitToScreen();
+            invalidate();
         }
     }
 
@@ -632,8 +643,9 @@ public class LevelRenderView extends View {
 
         if (entity.spriteFile.isEmpty()) {
             // No sprite — either a pure runtime FX emitter (skip silently) or a
-            // game-logic object worth showing as a placeholder overlay.
-            if (!showLogicEntities || !isLogicEntity(entity)) return;
+            // game-logic object worth showing as a placeholder overlay. In EDIT mode we always
+            // show logic placeholders so "what you can tap" matches "what you see".
+            if ((!showLogicEntities && !editMode) || !isLogicEntity(entity)) return;
             drawEntityFallback(canvas, entity);
             return;
         }
@@ -669,7 +681,7 @@ public class LevelRenderView extends View {
             Paint paint = resolvePaint(entity);
             canvas.drawBitmap(frame, m, paint);
         } else {
-            if (showLogicEntities) drawEntityFallback(canvas, entity);
+            if (showLogicEntities || editMode) drawEntityFallback(canvas, entity);
         }
     }
 
@@ -1294,8 +1306,9 @@ public class LevelRenderView extends View {
 
     // Screen position where the finger first went down (for tap detection)
     private float tapStartX, tapStartY;
-    // Max finger travel (in screen px) that still counts as a tap, not a pan
-    private static final float TAP_SLOP_PX = 12f;
+    // Max finger travel (in screen px) that still counts as a tap, not a pan.
+    // Density-scaled in init() so it isn't sub-fingertip on high-DPI screens.
+    private float tapSlopPx = 12f;
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -1390,7 +1403,7 @@ public class LevelRenderView extends View {
                 if (groupDragCandidate && pointerCount == 1) {
                     if (!isDraggingGroup) {
                         float gmdx = focusX - tapStartX, gmdy = focusY - tapStartY;
-                        if (gmdx * gmdx + gmdy * gmdy > TAP_SLOP_PX * TAP_SLOP_PX) isDraggingGroup = true;
+                        if (gmdx * gmdx + gmdy * gmdy > tapSlopPx * tapSlopPx) isDraggingGroup = true;
                     }
                     if (isDraggingGroup) { dragGroupTo(focusX, focusY); break; }
                 }
@@ -1401,7 +1414,7 @@ public class LevelRenderView extends View {
                 if (dragCandidate && pointerCount == 1 && selectedEntity != null) {
                     if (!isDraggingEntity) {
                         float mdx = focusX - tapStartX, mdy = focusY - tapStartY;
-                        if (mdx * mdx + mdy * mdy > TAP_SLOP_PX * TAP_SLOP_PX) isDraggingEntity = true;
+                        if (mdx * mdx + mdy * mdy > tapSlopPx * tapSlopPx) isDraggingEntity = true;
                     }
                     if (isDraggingEntity) {
                         dragSelectedEntityTo(focusX, focusY);
@@ -1450,7 +1463,7 @@ public class LevelRenderView extends View {
                 float dx = focusX - tapStartX;
                 float dy = focusY - tapStartY;
                 if (!scaleDetector.isInProgress()
-                        && dx * dx + dy * dy <= TAP_SLOP_PX * TAP_SLOP_PX) {
+                        && dx * dx + dy * dy <= tapSlopPx * tapSlopPx) {
                     handleTap(focusX, focusY);
                 }
                 performClick();
@@ -1535,8 +1548,8 @@ public class LevelRenderView extends View {
             // Highest z (drawn on top) first.
             hits.sort((a, b) -> Float.compare(b.z, a.z));
             boolean nearLast = !Float.isNaN(lastSelectTapX)
-                    && Math.abs(screenX - lastSelectTapX) <= TAP_SLOP_PX
-                    && Math.abs(screenY - lastSelectTapY) <= TAP_SLOP_PX;
+                    && Math.abs(screenX - lastSelectTapX) <= tapSlopPx
+                    && Math.abs(screenY - lastSelectTapY) <= tapSlopPx;
             if (nearLast && selectedEntity != null && hits.contains(selectedEntity)) {
                 // Cycle to the next entity in the stack so buried items are reachable.
                 int idx = hits.indexOf(selectedEntity);
@@ -1589,12 +1602,16 @@ public class LevelRenderView extends View {
         // Handles: rotate above top-center, scale at the bottom-right corner. Shown for a single
         // selection only (drawHandles); group selections get a plain box. Constant on-screen size.
         if (drawHandles) {
+            // Push handles out to a minimum on-screen separation so they don't collide (or sit on top
+            // of the body) for tiny/overlapping entities; the selection box itself stays true-size.
+            float ehw = Math.max(hw, MIN_HANDLE_HALF_PX / scale);
+            float ehh = Math.max(hh, MIN_HANDLE_HALF_PX / scale);
             float r = HANDLE_RADIUS_PX / scale;
-            float rotY = -hh - (ROTATE_GAP_PX / scale);
-            canvas.drawLine(0, -hh, 0, rotY, selectionPaint);
+            float rotY = -ehh - (ROTATE_GAP_PX / scale);
+            canvas.drawLine(0, -ehh, 0, rotY, selectionPaint);
             canvas.drawCircle(0, rotY, r, handleFillPaint);
             canvas.drawCircle(0, rotY, r, selectionPaint);
-            scratchRect.set(hw - r, hh - r, hw + r, hh + r);
+            scratchRect.set(ehw - r, ehh - r, ehw + r, ehh + r);
             canvas.drawRect(scratchRect, handleFillPaint);
             canvas.drawRect(scratchRect, selectionPaint);
         }
@@ -1605,6 +1622,18 @@ public class LevelRenderView extends View {
     /** The entity currently selected in EDIT mode, or null. */
     public LevelEntity getSelectedEntity() {
         return selectedEntity;
+    }
+
+    /** Clears any EDIT-mode selection (single or group) and refreshes listeners. */
+    public void clearSelection() {
+        if (selectedEntity == null && multiSelection.isEmpty()) return;
+        selectedEntity = null;
+        multiSelection.clear();
+        lastSelectTapX = Float.NaN;
+        lastSelectTapY = Float.NaN;
+        notifySelectionChanged();
+        notifyMultiSelection();
+        invalidate();
     }
 
     /** The level's entities (read-only use by the entity browser), or an empty list if none loaded. */
@@ -1764,6 +1793,7 @@ public class LevelRenderView extends View {
     private static final float HANDLE_RADIUS_PX = 13f;   // drawn handle radius (screen px)
     private static final float HANDLE_TOUCH_PX  = 34f;   // touch hit radius (screen px)
     private static final float ROTATE_GAP_PX    = 26f;   // gap above the box to the rotate handle (screen px)
+    private static final float MIN_HANDLE_HALF_PX = 26f; // min on-screen half-extent for handle placement
     private static final float ROTATE_SIGN      = -1f;   // maps screen drag → Ethanon angle (verified on device)
 
     private enum Gesture { NONE, ROTATE, SCALE }
@@ -1792,9 +1822,11 @@ public class LevelRenderView extends View {
     /** World positions of the selection's two handles: [rotX,rotY, sclX,sclY]. */
     private float[] handlePositions(LevelEntity e) {
         float[] half = getSelectionHalfExtents(e);
+        float ehw = Math.max(half[0], MIN_HANDLE_HALF_PX / scale);
+        float ehh = Math.max(half[1], MIN_HANDLE_HALF_PX / scale);
         float gap = ROTATE_GAP_PX / scale;
-        float[] rot = handleWorld(e, 0, -half[1] - gap);
-        float[] scl = handleWorld(e, half[0], half[1]);
+        float[] rot = handleWorld(e, 0, -ehh - gap);
+        float[] scl = handleWorld(e, ehw, ehh);
         return new float[]{ rot[0], rot[1], scl[0], scl[1] };
     }
 

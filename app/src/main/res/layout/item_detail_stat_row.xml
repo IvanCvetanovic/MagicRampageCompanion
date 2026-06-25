@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:textStyle="bold"
+        android:textDirection="ltr"
         android:textColor="@color/color_text_primary" />
 
 </LinearLayout>

@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enhanced_velocity">سرعة معززة</string>
+    <string name="sword_master">سورد ماستر</string>
+    <string name="dagger_specialist">خبير الخنجر</string>
+    <string name="obstinate_shot">طلقة عنيدة</string>
+    <string name="corrosive_shot">طلقة آكلة</string>
+    <string name="spherical_shield_breaker">كاسر الدرع الكروي</string>
+    <string name="voracious_shot">طلقة نهمة</string>
+    <string name="monstrous_vigour">عافية وحشية</string>
+    <string name="charge_blast">تشارج بلاست</string>
+    <string name="fearless_jump">قفزة لا تعرف الخوف</string>
+    <string name="virtuous_wizard">ساحر بارع</string>
+    <string name="throwing_legend">أسطورة الرمي</string>
+    <string name="gold_magnet">مغناطيس الذهب</string>
+    <string name="fireproof_skin">بشرة مقاومة للنار</string>
+    <string name="toxic_haze">ضباب سام</string>
+    <string name="shadow_camouflage">تمويه الظل</string>
+    <string name="magic_jump">قفزة سحرية</string>
+    <string name="dark_twin">التوأم المظلم</string>
+    <string name="unstoppable_strength">قوة لا تُوقف</string>
+    <string name="crushing_strength">قوة ساحقة</string>
+    <string name="slicing_master">سيد التقطيع</string>
+    <string name="monstrous_metabolism">استشفاء وحشي</string>
+    <string name="enhanced_vitality">حيوية معززة</string>
+    <string name="untouchable_skin">بشرة منيعة</string>
+    <string name="confident_move">حركة واثقة</string>
+    <string name="arcane_protection">حماية خفية</string>
+    <string name="thunder_wave">موجة رعدية</string>
+    <string name="final_wrath">الغضب الأخير</string>
+    <string name="rush_of_the_doomed">اندفاع الهالكين</string>
+    <string name="overcharge">شحن مفرط</string>
+    <string name="arcane_discipline">انضباط خفي</string>
+    <string name="swift_cast">تعويذة سريعة</string>
+    <string name="airborne_dancer">راقص الجو</string>
+    <string name="seismic_reach">مدى زلزالي</string>
+    <string name="titans_push">دفعة العملاق</string>
+    <string name="shockwave_force">قوة الموجة الصادمة</string>
+    <string name="damage">الضرر</string>
+    <string name="armor">الدرع</string>
+    <string name="upgrades">الترقيات:</string>
+    <string name="element_fire">نار</string>
+    <string name="element_water">ماء</string>
+    <string name="element_darkness">ظلام</string>
+    <string name="element_light">نور</string>
+    <string name="element_earth">أرض</string>
+    <string name="element_air">هواء</string>
+    <string name="element_neutral">محايد</string>
+    <string name="weapon_type_sword">سيف</string>
+    <string name="weapon_type_staff">عصا</string>
+    <string name="weapon_type_dagger">خنجر</string>
+    <string name="weapon_type_axe">فأس</string>
+    <string name="weapon_type_hammer">مطرقة</string>
+    <string name="weapon_type_spear">رمح</string>
+    <string name="skill_description_0">يزيد السرعة بنسبة 4\%.</string>
+    <string name="skill_description_1">يزيد قوة هجوم السيف السلبية بنسبة 15\%.</string>
+    <string name="skill_description_2">يزيد قوة هجوم الخنجر السلبية بنسبة 20\%.</string>
+    <string name="skill_description_3">تبقى جميع مقذوفات الأسلحة قائمة حتى عند اصطدامها بمقذوفات أخرى أثناء طيرانها.</string>
+    <string name="skill_description_4">تُفجّر مقذوفات الأسلحة الأعداء المهزومين على الفور.</string>
+    <string name="skill_description_5">تكسر مقذوفات الأسلحة دروع الأعداء الكروية على الفور.</string>
+    <string name="skill_description_6">لجميع مقذوفات الأسلحة فرصة 45\% لإلغاء مقذوفات الأعداء أثناء طيرانها.</string>
+    <string name="skill_description_7">يزيد سرعة استعادة القدرة على التحمل.</string>
+    <string name="skill_description_8">هجوم شحن يُلحق ضررًا يعادل 2.4 ضعف ضرر السلاح.</string>
+    <string name="skill_description_9">يزيد ضرر السيف والخنجر بنسبة 25\% عندما تنخفض صحتك تحت 35\%.</string>
+    <string name="skill_description_10">يزيد سرعة الحركة بنسبة 20\% عندما تنخفض صحتك تحت 35\%.</string>
+    <string name="skill_description_11">يمنح تشارج بلاست إضافية واحدة قبل فترة الانتظار.</string>
+    <string name="skill_description_12">يزيد قوة القفز بنسبة 3\%.</string>
+    <string name="skill_description_13">يزيد قوة هجوم العصا السلبية بنسبة 20\%.</string>
+    <string name="skill_description_14">يزيد قوة هجوم الرمح السلبية بنسبة 40\%.</string>
+    <string name="skill_description_15">يجذب العملات الذهبية ونقاط الخبرة التي يسقطها الأعداء.</string>
+    <string name="skill_description_16">يمنح حماية سلبية ضد اللهب والحمم.</string>
+    <string name="skill_description_17">تُلحق جميع الأسلحة ضرر سم إضافيًا.</string>
+    <string name="skill_description_18">يستغرق الأعداء العاديون وقتًا أطول لاكتشاف الجندي ذي الوجه المتسخ.</string>
+    <string name="skill_description_19">يمنح القدرة على أداء قفزة إضافية أثناء التواجد في الهواء.</string>
+    <string name="skill_description_20">يستدعي التوأم المظلم ليقاتل إلى جانب الجندي ذي الوجه المتسخ.</string>
+    <string name="skill_description_21">يقلل فترة انتظار المهارات الخارقة بنسبة 20\%.</string>
+    <string name="skill_description_22">تنتقل جميع المقذوفات المرمية أسرع بنسبة 15\%.</string>
+    <string name="skill_description_23">يمنح قفزة جوية إضافية ويعزز قدرات الهجوم الجوي.</string>
+    <string name="skill_description_24">يزيد الدرع بنسبة 16\%.</string>
+    <string name="skill_description_25">يزيد قوة هجوم المطرقة السلبية بنسبة 60\%.</string>
+    <string name="skill_description_26">يزيد قوة هجوم الفأس السلبية بنسبة 48\%.</string>
+    <string name="skill_description_27">تشفي الجرعات ضعفين أكثر.</string>
+    <string name="skill_description_28">يزيد العدد الأقصى للقلوب.</string>
+    <string name="skill_description_29">حماية سلبية ضد الأشواك.</string>
+    <string name="skill_description_30">يستطيع الجندي ذو الوجه المتسخ السير دائمًا على المنصات السحرية الخضراء.</string>
+    <string name="skill_description_31">يؤدي تفعيل القدرة الخاصة للفئة إلى إنشاء درع كروي.</string>
+    <string name="skill_description_32">يستدعي موجة من الصواعق تضرب جميع الأعداء المحيطين.</string>
+    <string name="skill_description_33">يزيد نصف قطر انفجار المقذوفات المرمية بنسبة 20\%.</string>
+    <string name="skill_description_34">يزيد قوة الارتداد لجميع الأسلحة بنسبة 40\%، مرسلًا الأعداء إلى مسافات أبعد.</string>
+    <string name="skill_description_35">يزيد إجمالي ضرر المساحة الذي تُلحقه جميع الأسلحة بنسبة 70\%.</string>
+    <string name="rogue">روغ</string>
+    <string name="thief">لص</string>
+    <string name="mage">ميج</string>
+    <string name="black_mage">بلاك ميج</string>
+    <string name="high_mage">هاي ميج</string>
+    <string name="priest">كاهن</string>
+    <string name="warlock">وورلوك</string>
+    <string name="warrior">محارب</string>
+    <string name="elite_warrior">محارب النخبة</string>
+    <string name="paladin">بالادين</string>
+    <string name="ranger">رينجر</string>
+    <string name="witchdoctor">طبيب السحر</string>
+    <string name="druid">درويد</string>
+    <string name="recruit_set">طقم المجنّد</string>
+    <string name="soldier_set">طقم الجندي</string>
+    <string name="elite_soldier_set">طقم الجندي النخبة</string>
+    <string name="ranger_set">طقم الحارس</string>
+    <string name="umbranian_vest">سترة أمبرا</string>
+    <string name="brass_set">طقم النحاس الأصفر</string>
+    <string name="elite_brass_set">طقم النحاس الأصفر النخبة</string>
+    <string name="obsidian_set">طقم الأوبسيديان</string>
+    <string name="elite_obsidian_set">طقم الأوبسيديان النخبة</string>
+    <string name="umbranian_tanker">دبابة أمبرا</string>
+    <string name="jumpman_suit">بدلة جامبمان</string>
+    <string name="improved_jumpman_suit">بدلة جامبمان المحسّنة</string>
+    <string name="tubeman_suit">بدلة تيوبمان</string>
+    <string name="twitch_suit">بدلة تْويتش</string>
+    <string name="nature_mage_vest">سترة ساحر الطبيعة</string>
+    <string name="fire_mage_vest">سترة ساحر النار</string>
+    <string name="faldangs_vest">سترة فالدانغ</string>
+    <string name="plague_fighter_suit">بدلة مقاتل الطاعون</string>
+    <string name="warlock_vest">سترة الووارلوك</string>
+    <string name="high_elf_robe">رداء الإلف الراقي</string>
+    <string name="ifrits_disciple_robe">رداء تابع العفريت</string>
+    <string name="cleric_vest">سترة الكاهن</string>
+    <string name="high_cleric_tunic">تونيكة الكاهن الأعلى</string>
+    <string name="greenmoon_vest">سترة غرين مون</string>
+    <string name="dragon_vest">سترة التنين</string>
+    <string name="special_dragon_vest">سترة التنين الخاصة</string>
+    <string name="blue_wizard_suit">بدلة الساحر الأزرق</string>
+    <string name="penumbra_suit">بدلة بينومبرا</string>
+    <string name="penumbra_suit_plus">بدلة بينومبرا+</string>
+    <string name="monks_tunic">تونيكة الراهب</string>
+    <string name="bacoon_set">طقم باكون</string>
+    <string name="bacoon_set_plus">طقم باكون+</string>
+    <string name="druid_vest">سترة الدرويد</string>
+    <string name="moonkeeper_set">طقم حارس القمر</string>
+    <string name="bankers_coat">معطف المصرفي</string>
+    <string name="deathdoctor_set">طقم طبيب الموت</string>
+    <string name="crow_set">طقم الغراب</string>
+    <string name="special_crow_set">طقم الغراب الخاص</string>
+    <string name="antiheros_set">طقم البطل المضاد</string>
+    <string name="steelblow_armor">درع الضربة الفولاذية</string>
+    <string name="steelblow_armor_plus">درع الضربة الفولاذية+</string>
+    <string name="dark_lord_set">طقم سيد الظلام</string>
+    <string name="light_spellmaster_suit">بدلة سيد التعاويذ النورانية</string>
+    <string name="liquid_assassin_suit">بدلة القاتل السائل</string>
+    <string name="light_champion_set">طقم بطل النور</string>
+    <string name="jungle_master">سيد الأدغال</string>
+    <string name="jungle_assassin_suit">بدلة قاتل الأدغال</string>
+    <string name="firestorm_armor">درع عاصفة النار</string>
+    <string name="firestorm_armor_plus">درع عاصفة النار+</string>
+    <string name="gayan_set">طقم غايان</string>
+    <string name="elite_assassin_suit">بدلة القاتل النخبة</string>
+    <string name="champion_set">طقم البطل</string>
+    <string name="spider_exoskeleton">هيكل العنكبوت الخارجي</string>
+    <string name="witch_dress">فستان الساحرة</string>
+    <string name="heros_set">طقم البطل</string>
+    <string name="swamp_ranger_suit">بدلة حارس المستنقع</string>
+    <string name="arcane_mage_suit">بدلة الساحر الخفي</string>
+    <string name="desert_rogue_suit">بدلة لص الصحراء</string>
+    <string name="iron_widow">الأرملة الحديدية</string>
+    <string name="forest_witch_suit">بدلة ساحرة الغابة</string>
+    <string name="black_witch_suit">بدلة الساحرة السوداء</string>
+    <string name="purple_witch_suit">بدلة الساحرة الأرجوانية</string>
+    <string name="fire_moonkeeper_set">طقم حارس القمر الناري</string>
+    <string name="swamp_witch_suit">بدلة ساحرة المستنقع</string>
+    <string name="green_witch_suit">بدلة الساحرة الخضراء</string>
+    <string name="bunny_suit">بدلة الأرنب</string>
+    <string name="warden_of_demons">حارس الشياطين</string>
+    <string name="tunic_of_the_relentless">تونيكة الذي لا يرحم</string>
+    <string name="wind_witch_suit">بدلة ساحرة الريح</string>
+    <string name="destroyer_of_the_corrupted">مدمّر الفاسدين</string>
+    <string name="interrogator">المحقّق</string>
+    <string name="protector_of_the_oracle">حامي العرّاف</string>
+    <string name="death_stalker">متعقّب الموت</string>
+    <string name="tunic_of_endless_justice">تونيكة العدالة الأبدية</string>
+    <string name="cataclysmic_plate">صفيحة الكارثة</string>
+    <string name="tunic_of_frozen_voices">تونيكة الأصوات المتجمدة</string>
+    <string name="tunic_of_distant_ancestors">تونيكة الأسلاف البعيدين</string>
+    <string name="vest_of_phantoms_keeper">سترة حارس الأشباح</string>
+    <string name="robe_of_imminent_fires">رداء النيران الوشيكة</string>
+    <string name="vanquisher">القاهر</string>
+    <string name="winter_witch_armor">درع ساحرة الشتاء</string>
+    <string name="easterminator">إيسترمينيتور</string>
+    <string name="vest_of_twisted_illusions">سترة الأوهام الملتوية</string>
+    <string name="time_patroller_suit">بدلة دورية الزمن</string>
+    <string name="kings_spectre_tunic">تونيكة شبح الملك</string>
+    <string name="cthulhu_set">طقم كثولو</string>
+    <string name="barrenlands_banditin">قاطعة طرق الأراضي القاحلة</string>
+    <string name="tunic_of_ending_nights">تونيكة الليالي المنتهية</string>
+    <string name="santa_claus">سانتا كلوز</string>
+    <string name="tunic_of_twisted_illusions">تونيكة الأوهام الملتوية</string>
+    <string name="vest_of_blessed_glory">سترة المجد المبارك</string>
+    <string name="barrenlands_bandit">قاطع طرق الأراضي القاحلة</string>
+    <string name="ring_of_agility">خاتم الرشاقة</string>
+    <string name="shaman_ring">خاتم الشامان</string>
+    <string name="supersonic_ring">الخاتم الأسرع من الصوت</string>
+    <string name="narya">ناريا</string>
+    <string name="spellmasters_ring">خاتم سيد التعاويذ</string>
+    <string name="warlocks_ring">خاتم الووارلوك</string>
+    <string name="nazguh_ring">خاتم النازغوه</string>
+    <string name="ring_of_protection">خاتم الحماية</string>
+    <string name="cleric_ring">خاتم الكاهن</string>
+    <string name="swordsmans_ring">خاتم المبارز</string>
+    <string name="nenya">نينيا</string>
+    <string name="dragon_eye_ring">خاتم عين التنين</string>
+    <string name="white_pearl_ring">خاتم اللؤلؤة البيضاء</string>
+    <string name="steelblow_ring">خاتم الضربة الفولاذية</string>
+    <string name="witchdoctor_ring">خاتم الساحر المعالج</string>
+    <string name="sea_wave_ring">خاتم موجة البحر</string>
+    <string name="dragon_orb_ring">خاتم كرة التنين</string>
+    <string name="ring_of_light">خاتم النور</string>
+    <string name="volcano_ring">خاتم البركان</string>
+    <string name="all_seeing_ring">خاتم البصيرة الكاملة</string>
+    <string name="verdant_ring">خاتم الخضرة</string>
+    <string name="dragon_fang_ring">خاتم ناب التنين</string>
+    <string name="blue_ring">الخاتم الأزرق</string>
+    <string name="spektator">سبيكتيتور</string>
+    <string name="cuteulhu">كيوتولهو</string>
+    <string name="cait">كيت</string>
+    <string name="bunny_ring">خاتم الأرنب</string>
+    <string name="whisper_of_fire">همسة النار</string>
+    <string name="creepy_crawler">كريبي كراولر</string>
+    <string name="whisper_of_death">همسة الموت</string>
+    <string name="vina">فينا</string>
+    <string name="falcon_ring">خاتم الصقر</string>
+    <string name="cursed_amethyst_ring">خاتم الجمشت الملعون</string>
+    <string name="ancient_warden">الحارس القديم</string>
+    <string name="vindicator_guardian">حارس البراءة</string>
+    <string name="whisper_of_light">همسة النور</string>
+    <string name="eastercreep">أرنب الفصح</string>
+    <string name="ghostwalker">سائر الأشباح</string>
+    <string name="trickytreat">تريكي تريت</string>
+    <string name="jellybunny">جيلي باني</string>
+    <string name="recruit_sword">سيف المجنّد</string>
+    <string name="steel_blade">النصل الفولاذي</string>
+    <string name="fire_sword">سيف النار</string>
+    <string name="nobel_sword">السيف النبيل</string>
+    <string name="leaf_sword">سيف الورقة</string>
+    <string name="pirate_sword">سيف القرصان</string>
+    <string name="master_sword">سيف المعلّم</string>
+    <string name="vorpal_sword">سيف فوربال</string>
+    <string name="umbranian_short_sword">سيف أمبرا القصير</string>
+    <string name="umbranian_long_sword">سيف أمبرا الطويل</string>
+    <string name="fireskull_sword">سيف جمجمة النار</string>
+    <string name="darkskull_sword">سيف جمجمة الظلام</string>
+    <string name="hammers_and_maces">المطارق والصولجانات</string>
+    <string name="nature_staff">عصا الطبيعة</string>
+    <string name="iron_dagger">خنجر حديدي</string>
+    <string name="silver_axe">فأس فضي</string>
+    <string name="obsidian_spear">رمح السبج</string>
+    <string name="insect_crusher">ساحق الحشرات</string>
+    <string name="fire_staff">عصا النار</string>
+    <string name="light_staff">عصا النور</string>
+    <string name="oxymos_staff">عصا أوكسيمو</string>
+    <string name="staff_of_darkness">عصا الظلام</string>
+    <string name="gadarasts_staff">عصا غاداراست</string>
+    <string name="epic_fire_staff">عصا النار الأسطورية</string>
+    <string name="firebane">بذرة النار</string>
+    <string name="dragonskull_staff">عصا جمجمة التنين</string>
+    <string name="dragonskull_staff_plus">عصا جمجمة التنين+</string>
+    <string name="death_scythe">منجل الموت</string>
+    <string name="death_scythe_plus">منجل الموت+</string>
+    <string name="hippie_dragon_staff">عصا تنين الهيبيز</string>
+    <string name="hippie_dragon_staff_plus">عصا تنين الهيبيز+</string>
+    <string name="dragon_orb_staff">عصا كرة التنين</string>
+    <string name="water_staff">عصا الماء</string>
+    <string name="golden_dragon_staff">عصا التنين الذهبي</string>
+    <string name="golden_dragon_staff_plus">عصا التنين الذهبي+</string>
+    <string name="dead_vulture_staff">عصا النسر الميت</string>
+    <string name="broom_staff">عصا المكنسة</string>
+    <string name="ancient_stone_staff">العصا الحجرية القديمة</string>
+    <string name="cthulhu_staff">عصا كثولهو</string>
+    <string name="toxic_staff">العصا السامة</string>
+    <string name="windbane">بذرة الريح</string>
+    <string name="legacy_of_the_oracle">إرث العرّاف</string>
+    <string name="seabane">بذرة الماء</string>
+    <string name="royal_war_staff">عصا الحرب الملكية</string>
+    <string name="staff_of_the_wicked">عصا الأشرار</string>
+    <string name="icebane">آيس باين</string>
+    <string name="spider_staff">عصا العنكبوت</string>
+    <string name="necromorphicon">نيكرومورفيكون</string>
+    <string name="the_oxymos_codex">مخطوطة أوكسيمو</string>
+    <string name="the_abyssal_scrolls">مخطوطات الأعماق</string>
+    <string name="iron_dagger_plus">خنجر حديدي+</string>
+    <string name="fire_dagger">خنجر النار</string>
+    <string name="kunai">كوناي</string>
+    <string name="steel_dagger">خنجر فولاذي</string>
+    <string name="poisoned_dagger">خنجر مسموم</string>
+    <string name="ifrits_dagger">خنجر العفريت</string>
+    <string name="dagger_of_sand">خنجر الرمل</string>
+    <string name="undines_dagger">خنجر أوندين</string>
+    <string name="dark_dagger">الخنجر المظلم</string>
+    <string name="dark_dagger_plus">الخنجر المظلم+</string>
+    <string name="light_dagger">خنجر النور</string>
+    <string name="chef_knife">سكين الطاهي</string>
+    <string name="gorgon_dagger">خنجر الغورغون</string>
+    <string name="machete">منجل ماتشيتي</string>
+    <string name="gayan">غايان</string>
+    <string name="venomous_dagger">الخنجر السام</string>
+    <string name="cthulhu_dagger">خنجر كثولهو</string>
+    <string name="dragon_tooth_dagger">خنجر ناب التنين</string>
+    <string name="dual_dragon_fang">نابا التنين المزدوجان</string>
+    <string name="blood_swiftblade">النصل السريع الدامي</string>
+    <string name="precious_dual_blade">النصل المزدوج النفيس</string>
+    <string name="precious_skewer">السفود النفيس</string>
+    <string name="ice_dagger">خنجر الجليد</string>
+    <string name="last_survivors_dagger">خنجر آخر الناجين</string>
+    <string name="survivors_double_dagger">خنجر الناجي المزدوج</string>
+    <string name="abyssal_dual_blade">النصل المزدوج السحيق</string>
+    <string name="malicious_quickblade">النصل السريع الخبيث</string>
+    <string name="gayan_shuriken">شوريكن غايان</string>
+    <string name="undines_shuriken">شوريكن أوندين</string>
+    <string name="sword_of_light">سيف النور</string>
+    <string name="sword_of_1000_lies">سيف الـ1000 كذبة</string>
+    <string name="magicsaber">السيف السحري</string>
+    <string name="air_striker">ضارب الهواء</string>
+    <string name="ice_claw">مخلب الجليد</string>
+    <string name="light_piercer">ثاقب النور</string>
+    <string name="throat_cutter">قاطع الحلق</string>
+    <string name="air_piercer">ثاقب الهواء</string>
+    <string name="cthulhu_blade">نصل كثولو</string>
+    <string name="glass_blade">النصل الزجاجي</string>
+    <string name="haunted_slicer">الشطار المسكون</string>
+    <string name="moonlit_razor">نصل ضوء القمر</string>
+    <string name="bunny_sword">سيف الأرنب</string>
+    <string name="blade_of_the_wicked">نصل الأشرار</string>
+    <string name="goldsteel">الفولاذ الذهبي</string>
+    <string name="abyssal_blade">النصل السحيق</string>
+    <string name="golden_needle">الإبرة الذهبية</string>
+    <string name="blade_of_rusted_souls">نصل الأرواح الصدئة</string>
+    <string name="bunny_claymore">سيف الأرنب العريض</string>
+    <string name="blade_of_survival">نصل البقاء</string>
+    <string name="gorgon_blade">نصل الغورغون</string>
+    <string name="volcano_sword">سيف البركان</string>
+    <string name="all_seeing_sword">السيف كلي الرؤية</string>
+    <string name="frost_heart">قلب الصقيع</string>
+    <string name="enchanted_nutcracker">كسارة الجوز المسحورة</string>
+    <string name="axe_of_fire">فأس النار</string>
+    <string name="bone_chopper">ساطور العظام</string>
+    <string name="lightning_axe">فأس البرق</string>
+    <string name="umbranian_cutter">قاطع أمبرانيا</string>
+    <string name="flaming_cutter">القاطع الملتهب</string>
+    <string name="spider_axe">فأس العنكبوت</string>
+    <string name="all_seeing_axe">الفأس كلي الرؤية</string>
+    <string name="toxic_axe">الفأس السام</string>
+    <string name="bone_axe">فأس العظام</string>
+    <string name="steel_axe">الفأس الفولاذي</string>
+    <string name="cthulhu_axe">فأس كثولو</string>
+    <string name="dawnlight">ضوء الفجر</string>
+    <string name="gorgon_axe">فأس الغورغون</string>
+    <string name="stormcaller">داعي العاصفة</string>
+    <string name="path_of_exile">درب المنفى</string>
+    <string name="fortunes_battleaxe">فأس الحظ الحربي</string>
+    <string name="axe_of_rusted_gods">فأس الآلهة الصدئة</string>
+    <string name="ice_axe">فأس الجليد</string>
+    <string name="yansahn">يانسان</string>
+    <string name="osun">أوسون</string>
+    <string name="gayan_spear">رمح غايان</string>
+    <string name="freyr">فراير</string>
+    <string name="fire_pierce">ثاقب النار</string>
+    <string name="azatoth">أزاتوث</string>
+    <string name="spider_spear">رمح العنكبوت</string>
+    <string name="cthulhu_spear">رمح كثولو</string>
+    <string name="poisoned_spear">الرمح المسموم</string>
+    <string name="vindictive_piercer">الثاقب الانتقامي</string>
+    <string name="golden_piercer">الثاقب الذهبي</string>
+    <string name="last_survivors_spear">رمح آخر الناجين</string>
+    <string name="gorgon_spear">رمح الغورغون</string>
+    <string name="wooden_hammer">المطرقة الخشبية</string>
+    <string name="warhammer">مطرقة الحرب</string>
+    <string name="spider_crusher">ساحق العنكبوت</string>
+    <string name="bionic_hammer">المطرقة الآلية</string>
+    <string name="thunder_hammer">مطرقة الرعد</string>
+    <string name="volcano_hammer">مطرقة البركان</string>
+    <string name="verdant_hammer">المطرقة الخضراء</string>
+    <string name="mojaras_hammer">مطرقة موجارا</string>
+    <string name="liquid_hammer">المطرقة السائلة</string>
+    <string name="hammer_of_light">مطرقة النور</string>
+    <string name="inquisidor">المحقق</string>
+    <string name="falcon_hammer">مطرقة الصقر</string>
+    <string name="bone_hammer">مطرقة العظام</string>
+    <string name="wit_of_ancient_power">حكمة القوة القديمة</string>
+    <string name="war_forged_smasher">الساحق المطروق للحرب</string>
+    <string name="toxic_hammer">المطرقة السامة</string>
+    <string name="wealthy_smasher">الساحق الثري</string>
+    <string name="smasher_of_decay">ساحق الاضمحلال</string>
+    <string name="silver_mace">الدبوس الفضي</string>
+    <string name="iron_mace">الدبوس الحديدي</string>
+    <string name="dark_mace">الدبوس المظلم</string>
+    <string name="club">الهراوة</string>
+    <string name="wooden_hawaiian">الهاوائية الخشبية</string>
+    <string name="toxic_mace">الدبوس السام</string>
+    <string name="wealthy_crusher">الساحق الثري</string>
+    <string name="ifrits_shuriken">شوريكن العفريت</string>
+    <string name="compendium_of_trees">موجز الأشجار</string>
+    <string name="the_testament_of_ifrit">إنجيل العفريت</string>
+    <string name="the_arachnid_codex">مخطوطة العنكبوتيات</string>
+    <string name="the_word_of_the_wind">كلمة الريح</string>
+    <string name="enlightened_hammer">المطرقة المستنيرة</string>
+    <string name="phoenix">العنقاء</string>
+    <string name="dancers_raiment">رداء الراقصة</string>
+    <string name="storm">ستورم</string>
+    <string name="tunic_of_hellish_illusions">سترة الأوهام الجهنمية</string>
+    <string name="gatekeepers_bionic_arm">الذراع الآلية لحارس البوابة</string>
+    <string name="robe_of_eternal_fire">رداء النار الأبدية</string>
+    <string name="scarlet_shadowweaver">سكارليت شادو ويفر</string>
+    <string name="unholy_storm">العاصفة الدنسة</string>
+    <string name="innkeepers_costume">زي صاحب النزل</string>
+    <string name="greenfang_ensemble">طقم النابِ الأخضر</string>
+    <string name="golden_guardian">الحارس الذهبي</string>
+    <string name="magic_cog">الترس السحري</string>
+    <string name="nightshade">نايت شيد</string>
+    <string name="pirouette_pointe">بيرويت بوانت</string>
+    <string name="windpearl_axe">فأس لؤلؤة الريح</string>
+    <string name="wicked_skewer">السفود الشرير</string>
+    <string name="ruby_queens_spear">رمح ملكة الياقوت</string>
+    <string name="onyx_queens_lance">رمح ملكة العقيق</string>
+    <string name="arachnid_sword">سيف العنكبوت</string>
+    <string name="unleashed_kraken">الكراكن المنطلق</string>
+    <string name="nightfall">حلول الظلام</string>
+    <string name="voidcaller_staff">عصا داعي الفراغ</string>
+    <string name="bunnyhop_dagger">خنجر باني هوب</string>
+    <string name="poisoned_dart">السهم المسموم</string>
+    <string name="sapphire_pawns_dagger">خنجر بيدق الياقوت الأزرق</string>
+    <string name="toxic_dual_dagger">الخنجر المزدوج السام</string>
+    <string name="all_seeing_cleaver">الساطور كلي الرؤية</string>
+    <string name="shooting_star_shuriken">شوريكن الشهاب</string>
+    <string name="tome_of_the_sands">كتاب الرمال</string>
+    <string name="vest_of_ominous_jesters">سترة المهرجين المشؤومين</string>
+    <string name="vest_of_ominous_comrades">سترة الرفاق المشؤومين</string>
+    <string name="the_daemon_codices">مخطوطات الشيطان</string>
+    <string name="path_of_exile_plus">باث أوف إكزايل+</string>
+    <string name="eggscellent_axe">فأس إيغسيلنت</string>
+    <string name="dark_lord_set_plus">طقم سيد الظلام+</string>
+    <string name="heros_set_plus">طقم البطل+</string>
+    <string name="bankers_coat_plus">معطف الصرّاف+</string>
+    <string name="tidecaller_ring">خاتم داعي المد</string>
+    <string name="the_ancient_codices">المخطوطات القديمة</string>
+    <string name="minion_vest">سترة الأتباع</string>
+    <string name="gorgons_skin">جلد الغورغون</string>
+    <string name="achievements">🏆 الإنجازات 🏆</string>
+    <string name="rune_of_wind">رونة الريح</string>
+    <string name="burning_rune">الرونة المشتعلة</string>
+    <string name="shiny_rune">الرونة اللامعة</string>
+    <string name="purple_rune">الرونة البنفسجية</string>
+    <string name="green_rune">الرونة الخضراء</string>
+    <string name="liquid_rune">الرونة السائلة</string>
+    <string name="golden_key">المفتاح الذهبي</string>
+    <string name="attack_speed">سرعة الهجوم: </string>
+    <string name="enemy_time_patroller">دورية الزمن</string>
+    <string name="enemy_armademon">أرمادمون</string>
+    <string name="enemy_armadillo">أرماديلو</string>
+    <string name="enemy_beholder">بيهولدر</string>
+    <string name="enemy_cthulhu">كثولو</string>
+    <string name="enemy_cyclops">العملاق أحادي العين</string>
+    <string name="enemy_demon_stomper">ساحق الشياطين</string>
+    <string name="enemy_fire_lord">سيد النار</string>
+    <string name="enemy_golem">غولم</string>
+    <string name="enemy_gorgon">غورغون السم</string>
+    <string name="enemy_ice_golem">غولم الجليد</string>
+    <string name="enemy_orc_fighter">مقاتل الأورك</string>
+    <string name="enemy_spidemon">سبايدمون</string>
+    <string name="enemy_tombstone_mimic">شاهد القبر المقلِّد</string>
+    <string name="enemy_vindicator">فيندِكيتر</string>
+    <string name="enemy_vulkling">فولكلينغ</string>
+    <string name="enemy_walker">ووكر</string>
+    <string name="enemy_armadimp">أرماديمب</string>
+    <string name="Armors">الدروع</string>
+    <string name="Rings">الخواتم</string>
+    <string name="about">ℹ️ حول ℹ️</string>
+    <string name="change_language">تغيير اللغة</string>
+    <string name="about_author">عن المؤلف</string>
+    <string name="armor_in_calculation">"الدرع: "</string>
+    <string name="author_description">
+    مرحباً! أنا إيفان تسفيتانوفيتش — المعروف بـ PrOfSeS في مجتمع Magic Rampage، حيث كنت عضواً نشطاً لسنوات عديدة. لقد أنشأت هذا التطبيق لأمزج بين حبي الطويل للعبة وشغفي المتنامي بهندسة البرمجيات. إذا واجهت أي أخطاء أو كانت لديك اقتراحات، فيرجى التواصل عبر Discord (انقر على الزر أدناه) أو البريد الإلكتروني (راجع معلومات المطور في صفحتي على Google Play Games). شكراً لدعمك!</string>
+    <string name="axes">الفؤوس</string>
+    <string name="choose_the_chapter">اختر الفصل!</string>
+    <string name="daggers_and_shurikens">الخناجر والشوريكن</string>
+    <string name="damage_in_calculation">"الضرر: "</string>
+    <string name="dungeon10bossfighttext">
+        نمط هجوم الزعيم بسيط جداً. فهو يهاجم أربع مرات متتالية نحو الموضع الذي تكون فيه وقت هجومه.\n\n
+        ما عليك فعله هو البقاء على الأرض وتفادي قذائفه بالتقدم قليلاً إلى الأمام.\n\n
+        بعد أن يطلق قذيفته الرابعة، يمكنك القفز إلى ارتفاعه وإلحاق الضرر به. كرّر ذلك مراراً.\n\n
+    </string>
+    <string name="dungeon10text">
+        جميع الجواهر الثلاث 💎 موجودة في الأواني الذهبية.\n\n
+        لست بحاجة بالضرورة إلى مطرقة لهذه العناكب، لأنها أكبر من العناكب السامة.\n\n
+        يمكنك استخدام المهارات الخاصة التي تبطئ الزمن إذا أردت الجري تحت الفخاخ الساقطة.\n\n
+    </string>
+    <string name="dungeon11bonustext1">
+        افتح هذه المرحلة بجمع جميع الجواهر الثلاث 💎 في الزنزانة 11.\n\n
+        الخطوة 1: حرّك الهيكل العظمي الموجود على المنصة العلوية ليبدأ بملاحقتك. يمكنك فعل ذلك بمجرد جعله يراك.\n\n
+        الخطوة 2: اهرب منه عندما يبدأ بمطاردتك.\n\n
+    </string>
+    <string name="dungeon11bonustext2">
+        الخطوة 3: اركض نحو الجدار في الجهة اليسرى وانتظر وصول الهيكل العظمي.\n\n
+        الخطوة 4: عندما يهاجمك الهيكل العظمي، اقفز على المنصة العلوية وانتظر حتى يحطم الكتلة واضغط على الزر.\n\n
+    </string>
+    <string name="dungeon11bonustext3">
+        مكافأة: اقفز فوق المنطقة التي أعلى الصندوق لجمع بعض الذهب!\n\n
+        الخطوة 5: حرّك الصندوق بحذر إلى الزر. احرص على عدم إسقاطه إلى الأسفل حيث يوجد الهيكل العظمي!\n\n
+        الخطوة 6: ادخل الغرفة بسرعة ثم عُد صعوداً إلى المنصة، حيث تفاديت قذائف الهيكل العظمي. كرّر هذا بضع مرات حتى تخرج كل العناكب من الغرفة.\n\n
+    </string>
+    <string name="dungeon11bonustext4">
+        الخطوة 7: بعد أن تستدرج جميع الأعداء إلى المنطقة اليسرى، يمكنك جمع كل الذهب في الغرفة وإنهاء الزنزانة!\n\n
+    </string>
+    <string name="dungeon11text">
+        جميع الجواهر الثلاث 💎 موجودة في الأواني الذهبية.\n\n
+        اجمع الجواهر الثلاث 💎 جميعها لفتح المستوى الإضافي.\n\n
+        إذا كنت تواجه صعوبة في تفادي القذائف، يمكنك استخدام فئة مثل المحارب أو الكاهن.\n\n
+        تحتوي المنطقة السرية الأولى على خاتم <font color="#A020F0"> نازغوه </font>، الذي يمكن استخدامه في تركيبات متعددة من العناصر.\n\n
+    </string>
+    <string name="dungeon12text">
+        الجوهرة الأولى 💎 في المنطقة السرية الثانية. والثانية في الإناء الذهبي، والثالثة أمام قاذف النار.\n\n
+        درع جامبمان مفيد جداً هنا، إذ يتيح لك القفز إلى مناطق معينة دون أن تموت أو تتعرض للضرر.\n\n
+        تحتوي المنطقة السرية الرابعة على خاتم النار <font color="#FFA500"> ناريا </font>، وهو ممتاز للساحر والساحر الأعلى.\n\n
+    </string>
+    <string name="dungeon13bonustext1">
+        افتح هذه المرحلة بجمع جميع الجواهر الثلاث 💎 في الزنزانة 13.\n\n
+        الخطوة 1: حطّم الأواني الموجودة على اليسار ثم اتبع المسار كما هو موضح في الصورة.\n\n
+        احذر القذائف النارية واستخدم درعاً أو خاتماً هوائياً لتفادي ضرر الأشواك.\n\n
+    </string>
+    <string name="dungeon13bonustext2">
+        الخطوة 2: عُد الآن لكن استخدم الطريق الموجود أسفل المنصات. مرة أخرى، احذر القذائف واستخدم درع أو خاتم الحمم.\n\n
+    </string>
+    <string name="dungeon13text">
+        جميع الجواهر الثلاث 💎 على الطريق نحو نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        يمنحك استخدام درع أو خاتم ناري الحماية من الحمم، مما يتيح لك فتح منطقتين سريتين.\n\n
+        لفتح المنطقة السرية الأولى عليك تفعيل الزر الموجود في بركة الحمم القريبة.\n\n
+        تحتوي المنطقة السرية الثانية على <font color="#00FF00"> خاتم الحماية </font>.\n\n
+    </string>
+    <string name="dungeon14text">
+        جميع الجواهر الثلاث 💎 على الطريق نحو نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        لاختراق الحاجز الأصفر والحصول على الجوهرة الأولى 💎، تحتاج إلى سلاح بعنصر النور أو سلاح يخترق الحواجز.\n\n
+        تحتوي المنطقة السرية الثانية على <font color="#FFFF00"> خاتم الكاهن </font>، وهو ممتاز لطبيب الساحرات والبالادين والكاهن.\n\n
+        أبقِ ذا دود على قيد الحياة للحصول على الإنجاز.\n\n
+    </string>
+    <string name="dungeon15text">
+        جميع الجواهر الثلاث 💎 على الطريق نحو نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        سيسهّل استخدام درع أو خاتم قائم على <font color="#00FF00"> الأرض</font> الوصول إلى المناطق السرية وإكمال الزنزانة.\n\n
+        إذا كنت تواجه صعوبة في إصابة العناكب، فاستخدم المطرقة التي حصلت عليها في الزنازين السابقة.\n\n
+    </string>
+    <string name="dungeon16text">
+        جميع الجواهر الثلاث 💎 على الطريق نحو نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        سيسهّل استخدام درع أو خاتم قائم على <font color="#00FF00"> الأرض </font> الوصول إلى المناطق السرية وإكمال الزنزانة.\n\n
+        يمكنك قتل الشبح الذي يتعذر الوصول إليه بالوقوف تحته وانتظار سقوط الصاعقة بضع مرات.\n\n
+    </string>
+    <string name="dungeon17bonustext1">
+        افتح هذه المرحلة بجمع جميع الجواهر الثلاث 💎 في الزنزانة 17.\n\n
+        الأمر الوحيد في هذه المرحلة الإضافية هو امتلاك مفاتيح كافية لفتح جميع الصناديق، وليس هناك استراتيجية محددة.\n\n
+    </string>
+    <string name="dungeon17bonustext2">
+        إذا فتحت جميع الصناديق، فهناك إسقاط مضمون لـ <font color="#FFA500"> سيف جمجمة النار </font>، وهو جيد للمحارب والرامي وغيرهم.\n\n
+        كما ستحصل على <font color="#FFFF00"> سترة فالدانغ </font>، وهي جيدة للبالادين والكاهن وطبيب الساحرات.\n\n
+    </string>
+    <string name="dungeon17text">
+        جميع الجواهر الثلاث 💎 على الطريق نحو نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        سيؤدي استخدام معدات قائمة على <font color="#A020F0"> الظلام </font> إلى جعل الشبح يهاجم عند مواجهته مباشرة.\n\n
+        استخدم خاتم سوبرسونيك أو الفئات التي تبطئ الزمن للوصول إلى المنطقة السرية الرابعة.\n\n
+    </string>
+    <string name="dungeon18text">
+        جميع الجواهر الثلاث 💎 على الطريق نحو نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        تحتوي المنطقة السرية الثانية على <font color="#ADD8E6"> خاتم المبارز </font>، وهو ممتاز جداً للسيوف.\n\n
+        احرص على الجمع بين قطعة معدات نارية وأخرى هوائية لتفادي الضرر الذي تسببه الفخاخ.\n\n
+    </string>
+    <string name="dungeon19bonustext1">
+        افتح هذه المرحلة بجمع جميع الجواهر الثلاث 💎 في الزنزانة 19.\n\n
+        هذه مرحلة بسيطة جداً. ما عليك سوى تحطيم الأواني على يسارك ثم القفز في الحمم لجمع كل العملات الإضافية 🪙.\n\n
+        بعد ذلك اقفز إلى المنصة الخضراء. هناك ستجد صندوقين، عادة ما يُسقطان رونات.\n\n
+    </string>
+    <string name="dungeon19bonustext2">
+        بعد أن تفعل ذلك يمكنك أيضاً فتح صندوق مخفي موجود في بركة الحمم الثانية.\n\n
+    </string>
+    <string name="dungeon19text">
+        جميع الجواهر الثلاث 💎 على الطريق نحو نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        الزنزانة مليئة بالأشواك والحمم. حاول استخدام المعدات المناسبة لتفادي أحد هذين الخطرين على الأقل.\n\n
+        ستموت المخلوقات التي يستدعيها المُستحضِر تلقائياً عندما تقتله.\n\n
+        إذا ذهبت إلى مؤخرة الزنزانة مع القبطان، فستفتح إنجاز \"القصة غير المروية 2\".\n\n
+    </string>
+    <string name="dungeon1text">"جميع الجواهر الثلاث 💎 موجودة في الأواني الذهبية.   توجد العديد من الجرعات في المناطق الخفية العلوية. على سبيل المثال، فوق المنطقة السرية 1 ومنطقة النهاية.   بعد لقاء القبطان، ستصادف صندوقين. حطّم الصندوق العلوي للوصول إلى المنطقة التي زرتها سابقاً.   إذا ذهبت إلى المكان الذي يبدأ فيه المشهد السينمائي، فستجد سيفاً ودرعاً جيدين في الإناءين الأبيضين.   لا يمكن الوصول إلى المنطقة السرية الثانية دون استخدام بدلة جامبمان أو القدرات الخاصة، فلا يمكنك الحصول عليها من المحاولة الأولى.       "</string>
+    <string name="dungeon20bossfighttext1">\n        لا تدع حجم هذا الزعيم يخدعك، فهزيمته سهلة جداً.\n\n
+        يبدأ أولاً بالهجوم خمس مرات متتالية، وقذائفه لها نطاق ضرر كبير وسامة. مع معظم المعدات، ستتمكن من المراوغة بمجرد التنقل من جانب إلى آخر.\n\n
+    </string>
+    <string name="dungeon20bossfighttext2">\n        بعد أن يطلق قذيفته الخامسة، ينخفض إلى الأسفل ليطلق بيضتين. واحدة على الجانب الأيسر والأخرى على الجانب الأيمن.\n\n
+        بينما يفعل ذلك، تتاح لك فرصة لإلحاق الضرر به. تأكد من أنك عندما تسقط بعد القفزة المزدوجة، تضرب البيض أيضاً مرة واحدة وتدمره.\n\n
+        هذا يضمن ألا تضطر للقلق بشأن القذائف والعناكب في الوقت نفسه.\n\n
+        بعد أن يطلق العنكبوت بيضته الثانية، سيعود إلى موضع البداية ويبدأ بإطلاق النار عليك من جديد. كرر العملية حتى تقتله.\n\n
+    </string>
+    <string name="dungeon20text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها. الـ 💎 الأخير يمكن الحصول عليه فقط بعد قتل الزعيم.\n\n
+        المستحضِر الذي تصادفه لا يمكن قتله، عليك قتل الزعيم أولاً، ثم العودة وجمع المفتاح والـ 💎 واستكشاف المنطقة السرية.\n\n
+        فيما يتعلق بالمعدات، أفضل الأطقم هي تلك التي تتميز بالرشاقة وتلحق ضرراً كبيراً.\n\n
+    </string>
+    <string name="dungeon21text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        قتل المستحضِرين سيدمر أيضاً الأتباع الذين يتحكمون بهم.\n\n
+        المنطقة السرية الأولى تحتوي على <font color="#FFFF00"> فأس البرق </font>، وهو ممتاز جداً لفئات النور في منتصف اللعبة، مثل الكاهن أو ساحر الأدغال أو الفارس المقدس.\n\n
+        هذا المستوى يفتح المزيد من العناصر في المتجر، تفقدها واستعد للزعيم القادم.\n\n
+    </string>
+    <string name="dungeon22text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        المنطقة السرية الأولى في الزاوية العلوية اليسرى مباشرة عند بدء الزنزانة. والثانية فوق المنصات شبه الخفية.\n\n
+        تأكد من امتلاك مفتاح ذهبي واحد على الأقل. ستحتاجه لفتح منطقة سرية غير رسمية، يمكن إيجادها فوق مخرج الزنزانة.\n\n
+        استخدام أسلحة ذات نطاق إصابة كبير سيساعدك في قتل العناكب المتفجرة، وإلا يمكنك الهرب منها وانتظار الانفجار.\n\n
+    </string>
+    <string name="dungeon23bonustext1">\n        افتح هذه المرحلة بجمع جميع الـ 💎 الثلاثة في الزنزانة 23.\n\n
+        أولاً، ابدأ بالانتقال من جانب من الخريطة إلى الجانب الآخر. حاول جمع أكبر قدر ممكن من الـ 🪙 والـ 💎.\n\n
+    </string>
+    <string name="dungeon23bonustext2">\n        يجب عليك أيضاً تجنب العناكب تماماً، لا تهاجمها على الإطلاق، وإذا لم تتمكن من جمع كل الـ 🪙 دفعة واحدة، فلا بأس بذلك أيضاً.\n\n
+    </string>
+    <string name="dungeon23bonustext3">\n        بمجرد وصولك إلى نهاية الخريطة، يمكنك الاستدارة والبدء بالعودة بينما تكرر هجماتك نحو اليسار.\n\n
+        بهذه الطريقة يمكنك قتل جميع العناكب وجمع الـ 🪙 المتبقية.\n\n
+        تأكد من فتح الأبواب المؤدية إلى الصناديق. هناك عنصر بانتظارك في الداخل.\n\n
+        فوق هذه الغرفة، لديك أيضاً المزيد من الـ 🪙 والمكافآت التي يمكنك التقاطها.\n\n
+    </string>
+    <string name="dungeon23text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        تأكد من الحصول على المفتاحين الفضي والذهبي معاً، ستحتاجهما للمرحلة الإضافية، التي يمكن فتحها بجمع جميع الـ 💎 الثلاثة .\n\n
+        استخدام أسلحة ذات نطاق إصابة كبير سيساعدك في قتل العناكب المتفجرة، وإلا يمكنك الهرب منها وانتظار الانفجار.\n\n
+        الهياكل العظمية التي تحمل <font color="#A020F0"> سيف جمجمة الظلام </font> تصبح منيعة عندما تراك، حاول تجنب ذلك.\n\n
+    </string>
+    <string name="dungeon24text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        للمنطقتين السريتين الأوليين، تحتاج إلى تفعيل الزر. زر المنطقة السرية الأولى مخفي بكتلة عليك تدميرها، وزر المنطقة السرية الثانية محجوب بصرياً جزئياً بالعشب.\n\n
+        المنطقة السرية الثالثة يمكن إيجادها بعد فتح الأبواب الأولى بالمفتاح الذهبي.\n\n
+        المنطقة السرية الرابعة بعد فتح الأبواب الأولى بالمفتاح الذهبي. ستكون فوق الحفرة الكبيرة التي تحتاج للنزول إليها.\n\n
+        المنطقة السرية الخامسة فوق مخرج الزنزانة.\n\n
+    </string>
+    <string name="dungeon25text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        المنطقة السرية الأولى فوق نقطة البداية مباشرة، ستحتاج إلى <font color="#ADD8E6"> بدلة جمبمان </font> للوصول إلى هناك. ضع في اعتبارك أن هناك جداراً خفياً، لا يسمح لك بالقفز مباشرة إلى المنصة. عليك التحرك قليلاً إلى اليسار والقفز من هناك. يمكنك أيضاً استخدام النافورة الحرارية القريبة لدفعك إلى الأعلى. يمكنك أيضاً استخدام الفئات التي تبطئ الزمن.\n\n
+        في هذه الزنزانة يمكنك أيضاً التحكم بوالد الرجل. يمكنك أن تأمره باتباعك أو البقاء في مكان واحد بالاقتراب منه والضغط على الزر فوقه.\n\n
+        للمنطقة السرية الثانية، ستحتاج إلى أمر والد الرجل بالوقوف على الزر، بينما تلتقط كل شيء.\n\n
+    </string>
+    <string name="dungeon26text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        المنطقة السرية الأولى فوق موضع البداية مباشرة، لكنها مرتفعة جداً. ستحتاج إلى تفعيل الفطر السحري للوصول إلى هناك.\n\n
+        المنطقة السرية الثانية على الجانب الأيمن من الحفرة الكبيرة.\n\n
+        المنطقة السرية الثالثة فوق القلعة، إلى اليمين.\n\n
+        إذا لعبت هذه الزنزانة في الساعة 4:20 أو 16:20، ستتمكن من الحصول على الإنجاز السري. فقط اجمع العملات الطائرة التي عليها الماسة في الأعلى.\n\n
+    </string>
+    <string name="dungeon27bonustext1">\n        افتح هذه المرحلة بجمع جميع الـ 💎 الثلاثة في الزنزانة 27.\n\n
+        فوق الصندوق يمكنك إيجاد مكافآت إضافية.\n\n
+        أولاً، فعّل الفطر السحري واتبع المسار المتعرج حتى النهاية. تأكد من عدم قضاء وقت طويل في المنتصف.\n\n
+    </string>
+    <string name="dungeon27bonustext2">\n        بعد ذلك، فعّل الفطر مرة أخرى، واتبع المسار المتعرج الآخر. هذا كل شيء!\n\n
+    </string>
+    <string name="dungeon27text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        تأكد من الحصول على مفتاح ذهبي واحد للمرحلة الإضافية!\n\n
+        هناك طرق عديدة لقتل النسخ. الخيار الأول هو تكرار الهجوم على المنطقة بينما تظهر النسخة. الخيار الثاني هو الذهاب إلى منطقة أعلى، والهجوم مرة واحدة ثم القفز، بحيث تصاب نسخة العدو بهجومك. الخيار الثالث هو تكرار الهجوم من مسافة بعيدة، حيث لا تحاكي النسخة الشريرة حركتك، ثم اتباع القذائف إلى موقع النسخة، بحيث تصيبه. يمكنك أيضاً محاولة تجهيز درع أضعف ثم عندما تبدأ النسخة بالظهور، غيّره إلى درع أفضل واقتله بالقوة الغاشمة.\n\n
+        للمنطقة السرية الثانية، يرجى إبقاء النسخة الشريرة الثانية حية، لأن ذلك يجعل الوصول إلى هناك أسهل بكثير بهذه الطريقة.\n\n
+        تأكد من استخدام الفطر السحري لصالحك، خاصة إذا كنت تواجه صعوبة في قتل النسخ الشريرة.\n\n
+    </string>
+    <string name="dungeon28text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        تأكد من امتلاك قطعة معدات نارية واحدة على الأقل! وإلا ستحتاج إلى الكثير من الجرعات لشفاء نفسك من الضرر.\n\n
+        فقط كرر الهجوم على المنطقة التي ستظهر فيها النسخة الشريرة، هذه أفضل طريقة لقتله في هذه الزنزانة.\n\n
+        استخدام المحارب والمحارب النخبة والكاهن فكرة جيدة جداً هنا، نظراً لوجود الكثير من القذائف.\n\n
+    </string>
+    <string name="dungeon29bonustext1">\n        افتح هذه المرحلة بجمع جميع الـ 💎 الثلاثة في الزنزانة 29.\n\n
+        تبدو هذه صعبة، لكنها تتطلب فقط استراتيجية محددة.\n\n
+        عليك تنسيق حركاتك ووضع نفسك تماماً في المنتصف بين الكرات، الموضع معلّم بصندوق أسود. يجب أن تتحرك من صندوق إلى آخر عندما تكون الكرات في الوضع الأفقي (عندما لا يمكنك رؤيتها).\n\n
+    </string>
+    <string name="dungeon29text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        المنطقة السرية الأولى تحتوي على <font color="#00FF00"> عصا غاداراست </font> والثالثة <font color="#FFA500"> سيف جمجمة النار </font>.\n\n
+        الزعيم الصغير العملاق له نمط هجوم بسيط، إذ يقفز فقط ويضرب الأرض، مسبباً انفجاراً. أفضل طريقة لقتله هي مهاجمته عندما يقفز. فقط اقفز في الوقت نفسه معه.\n    </string>
+    <string name="dungeon2text">جميع الـ 💎 الثلاثة في الأواني الذهبية.\n\n
+إذا أنقذت الرجل فسيهديك سيفاً جيداً لبداية اللعبة وستحصل أيضاً على إنجاز.\n\n
+على السقف فوق المنطقة السرية 5، يوجد خنجر سام، وهو ممتاز جداً لبداية ومنتصف اللعبة.\n\n
+    </string>
+    <string name="dungeon30bossfighttext1">\n        يمكنك استخدام القائدة كدرع، لأنها لا يمكن أن تموت على الإطلاق.\n\n
+        إذا كنت على نفس ارتفاع الزعيم (إذا كنت واقفاً على إحدى المنصات) يمكنك القفز فقط وتجنب قذائفه، وإلا، إذا كنت على الأرض، عليك الاستمرار في التحرك.\n\n
+    </string>
+    <string name="dungeon30bossfighttext2">\n        للزعيم ثلاث مراحل، وفي جميعها لديك حوالي ثلاث إلى أربع ثوانٍ لإلحاق الضرر به.\n\n
+        في المرحلة الأولى يهاجمك ببطء وبعد حوالي 8 ثوانٍ يصبح قابلاً للإصابة.\n\n
+        عندما يكون عند 50\% من الصحة، يبدأ بالهجوم بسرعة أكبر قليلاً ويبدأ البرق بالظهور.\n\n
+        عندما يكون عند 10\% من الصحة، يبدأ بالهجوم بسرعة فائقة ويظهر البرق بشكل أكثر تكراراً.\n\n
+        اعتماداً على معداتك، قد تتمكن من تجنب المرحلة الثالثة إذا ألحقت ضرراً كافياً. تأكد من الاستمرار في مهاجمته في الرأس بدلاً من الجسم، فهذا يلحق ضرراً أكبر بكثير.\n    </string>
+    <string name="dungeon30text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        لا تفقد صحتك بلا فائدة، ستحتاجها لمعركة الزعيم، إلا إذا كان لديك الكثير من الجرعات.\n    </string>
+    <string name="dungeon31bonustext1">\n        افتح هذه المرحلة بجمع جميع الـ 💎 الثلاثة في الزنزانة 31.\n\n
+        الشيء الوحيد الذي عليك الانتباه له هو ألا تموت بالسقوط في الهاوية.\n\n
+        فقط اقفز إلى الأعلى، مستوى تلو الآخر، واجمع كل الماسات والمفاتيح.\n    </string>
+    <string name="dungeon31bonustext2">\n        هناك بضعة خفافيش، لكنها لا تشكل تهديداً كبيراً لك، يمكنك قتلها بسرعة. \n\n
+    </string>
+    <string name="dungeon31text">\n        يمكن إيجاد الـ 💎 الأول إلى يمين منطقة الظهور. إنه في الزاوية العلوية اليمنى من الخريطة. الآخران يُوجدان في الطريق.\n\n
+        المنطقة السرية الرابعة يمكن فتحها بالزر الموجود إلى يسارها، خلف الجدار.\n\n
+        تأكد من استخدام أسلحة ذات نطاق إصابة كبير لقتل الخفافيش بسهولة أكبر.\n\n
+        عندما تخرج الخفافيش من البيضة، يكون لديها نافذة زمنية قصيرة تكون فيها منيعة.\n    </string>
+    <string name="dungeon32text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        في هذه الزنزانة، تتمكن من تجربة الإكسير، الذي له تأثير فريد. عندما تلتقط الإكسير الأول، ستطلق كرة نار مرتدة إضافية مع كل طلقة. مع الإكسير الثاني ستتمكن من الوقوف على المنصات الخضراء، ومع الإكسير الثالث، ستتبع طلقاتك الهدف. \n\n
+        الصندوق الأول يحتوي على <font color="#ADD8E6"> بدلة جمبمان </font>، التي تتيح لك الوصول إلى المناطق السرية الثلاث الأولى.\n\n
+        الزعيم الصغير الأخير سهل إذا أتيت مستعداً. استخدم الدرع الناري الموجود في الصناديق قبل الزعيم الصغير لزيادة ضررك والتقط الإكسير في غرفة الزعيم الصغير. بهذه الطريقة، ستحتاج إلى 4-5 طلقات لقتل ذلك العنكبوت.\n\n
+    </string>
+    <string name="dungeon33text">\n        يمكن إيجاد جميع الـ 💎 الثلاثة في الطريق، لكن الأخير يمكن الوصول إليه إذا فعّلت الزر قبل بركة الماء التي بها صندوق.\n\n
+        الأعاصير تلحق ضرراً عند اللمس، وتطلق البرق عشوائياً أو عند موتها، كما أنها تجذبك نحوها. تأكد من الحفاظ على مسافتك قبل وبعد قتلها. \n\n
+        المنطقة السرية الثانية فوق الأولى مباشرة.\n\n
+        المنطقة السرية الثالثة لا تظهر جيداً في الصورة، لكنك ستتمكن من رؤية الجسيمات الصادرة من المنصة الخضراء على شاشتك.\n\n
+    </string>
+    <string name="dungeon34text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        المنطقة السرية الأولى إلى يسار منطقة البداية مباشرة، والثالثة فوق مكان لقاء حارس القمر مباشرة. الثانية يمكن فتحها برمي السيوف على الكرة القافزة، بحيث تضغط على الزر فوقها. \n\n
+        امتلاك معدات بسرعة وقوة قفز عالية مفيد جداً في الزنزانة.\n\n
+    </string>
+    <string name="dungeon35text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        هذه أول زنزانة تُعتبر صعبة في المجتمع. \n\n
+        التنين يهاجم كل بضع ثوانٍ وتتجه كرة ناره إلى الموضع الذي كنت فيه لحظة إطلاقها. يمكنك استغلال هذه الميزة والاختباء خلف الكتل أو القفز عالياً جداً حتى لا تصيبك كرة النار.\n\n
+    </string>
+    <string name="dungeon36text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        هذه إحدى الزنزانات السابقة التي لعبتها بصفة الجندي ذي الوجه المتسخ، لذلك، المنطقة السرية الأولى هي نفسها أيضاً. \n\n
+        لديك إكسير نار إضافي، يمكنك استخدامه إذا كنت تفضل كرة النار بدلاً من الصواريخ الموجهة.\n\n
+    </string>
+    <string name="dungeon37text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        المنطقة السرية الأولى تحت موضع البداية، والثانية على الجانب الأيمن من البرج الأول، والثالثة على الجانب الأيسر من البرج الثاني. \n\n
+        الفئات مثل الحارس واللص والسارق مفيدة جداً، لأنها توفر الرشاقة اللازمة لهذه الزنزانة.\n\n
+    </string>
+    <string name="dungeon38text">\n        جميع الـ 💎 الثلاثة في الطريق إلى نهاية الزنزانة، لا يمكنك تفويتها.\n\n
+        إذا واجهت مشاكل في قتل أعدائك بسبب ضررك المنخفض، فهذا هو المكان الذي ربما يجب أن تتوقف فيه وتجمع المزيد من الذهب وتحصل على معدات أفضل. حاول الحصول على 2000 من ضرر السلاح على الأقل. \n\n
+        المنطقة السرية الأولى فوق أول شجرة تجدها في الزنزانة. فقط اقفز على الشجرة وسترى منصة صغيرة في أعلى اليسار. المنطقة السرية الثانية فوق أول عملاق قافز تقابله.\n\n
+    </string>
+    <string name="dungeon39text">\n        جميع الـ 💎 الثلاثة بعد البوابة في منتصف الخريطة. لا تدخل البوابة فوراً مع الملك. اقفز فوقها واستمر إلى اليسار.\n\n
+        المنطقة السرية الأولى يمكن الوصول إليها عبر التابع الذي يظهر إلى يسارها. عندما يبدأ التابع بالظهور، اذهب إلى أبواب المنطقة السرية واستمر في الذهاب إلى اليمين حتى يطأ التابع على الزر.\n\n
+        المنطقة السرية الثانية على الجانب الأيسر من آخر برج إلى اليسار. عليك التسلق إلى هناك من الجانب الأيسر أيضاً.\n\n
+    </string>
+    <string name="dungeon3bonus1">\n        افتح هذه المكافأة بجمع جميع الـ 💎 الثلاثة في الزنزانة 3.\n\n
+        الخطوة 1 اختيارية وستمنحك كمية صغيرة من الذهب.\n\n
+        الخطوة 2: اعثر على الزر الأحمر في السقف.\n\n
+    </string>
+    <string name="dungeon3bonus2">\n        الخطوة 3: لتفعيل الزر، يمكنك استخدام استراتيجيات مختلفة. أسهلها هو استخدام بدلة جمبمان فقط، التي ستتوفر في الزنزانات القادمة. في الصورة يمكنك رؤية أنه ممكن أيضاً بدونها، فقط اقفز على رأس الزومبي ثم اقفز قفزة مزدوجة لتفعيل الزر. تأكد من امتلاك درع يوفر لك 2\% من قوة القفز على الأقل.\n\n
+    </string>
+    <string name="dungeon3bonus3">\n        الخطوة 4: بعد تفعيل الزر، سيظهر زومبي، قف أمامه لتجعله يهاجمك ثم تجنب الهجوم. هذا سيدمر الجدار وستتمكن من الحصول على الغنائم.\n\n
+    </string>
+    <string name="dungeon3text">جميع الـ 💎 الثلاثة في الأواني الذهبية.\n\n
+اجمع جميع الـ 💎 الثلاثة لفتح المستوى الإضافي.\n\n
+لا يمكنك فتح الصندوق في المنطقة السرية الأولى من المحاولة الأولى، لأنك تحتاج مفتاحاً واحداً له ويمكنك شراؤه فقط من المتجر، الذي يُفتح بعد هذا المستوى، اعثر عليه في الزنزانات القادمة.\n\n
+يمكنك الوصول إلى المنطقة السرية 3 باستخدام صندوق واحد مع بدلة جمبمان أو صندوقين بدلاً من ذلك. في حال استخدامك استراتيجية الصندوقين، أحضر أولاً الصندوق الأيسر تحت الأيمن ثم ادفع الأيمن إلى الأعلى. بعد ذلك ادفع كليهما بحذر حتى تصل إلى الوجهة. \n\n
+فوق الإناء الذهبي الثالث، يوجد خنجر النور، وهو ممتاز جداً لبداية اللعبة.\n\n
+    </string>
+    <string name="dungeon40boss1">\n        لا توجد مناطق سرية في هذه الزنزانة، إنها معركة زعيم كبيرة واحدة.\n\n
+        معركة الزعيم تشمل قتال الساحر في شكليه العادي والوحشي. بينما هو في شكله العادي، سيهاجمك بإطلاق كرات النار، ورمي البرق من الأعلى، واستحضار أتباعه.\n\n
+        لا تحتاج إلى أي استراتيجية محددة لهزيمته، فقط تأكد من امتلاك ضرر كافٍ للتعامل معه بسرعة.\n\n
+    </string>
+    <string name="dungeon40boss2">\n        الجزء الثاني أصعب قليلاً، أساساً لأن شكله الوحشي له ثلاثة أنماط هجوم، تتغير اعتماداً على مقدار الضرر الذي ألحقته به.\n\n
+        تذكر، أصعب جزء في هذا الزعيم هو إدراك متى يوشك على تغيير نمط هجومه!\n\n
+        في المرحلة الأولى، سيأتي قريباً منك ويهاجمك تماماً مثل العملاق القافز. هذا الهجوم يسهل تجنبه. \n\n
+        في المرحلة الثانية سينزلق نحوك ثم يسبب انفجاراً ذا تأثير منطقي.\n\n
+        في المرحلة الثالثة سيقفز نحوك وعندما يصل إلى الأرض سينزلق قليلاً أيضاً. إنها أساساً مزيج من المرحلتين الأوليين.\n\n
+    </string>
+    <string name="dungeon41text">\n        💎 اثنتان مرئيتان وفي الطريق إلى نهاية الزنزانة. واحدة منهما مخفية خلف الصخرة القابلة للتدمير في غرفة الزعيم الصغير المتدحرج الثاني.\n\n
+        الصواريخ الموجهة للزعيم الطائر المشوّك تستهدف أولاً الصخور القابلة للتدمير. تأكد من عدم تدميرها في الغرفة. إذا دمرت الصخور بالفعل، يمكنك الوقوف تحت الزعيم، بحيث لا تلاحقك القذائف.\n\n
+        المنطقة السرية الخامسة يمكن فتحها بالزر الموجود إلى يمينها.\n\n
+    </string>
+    <string name="dungeon42bonustext1">\n        افتح هذه المرحلة بجمع جميع الـ 💎 الثلاثة في الزنزانة 42.\n\n
+        لفتح الأبواب المؤدية إلى غرفة الزعيم الصغير عليك تفعيل الصمامات بالترتيب الصحيح.\n\n
+        هناك الكثير من الذهب فوق الصمامات، تأكد من تفقد كل زاوية بشخصيتك!\n\n
+    </string>
+    <string name="dungeon42bonustext2">\n        يسقط الزعيم خاتماً جيداً يدعى \"الزاحف المرعب\"، يمكن استخدامه لجميع أنواع الأسلحة. \n\n
+    </string>
+    <string name="dungeon42text">\n        الـ 💎 مخفية خلف صخور قابلة للتدمير. تأكد من تدمير كل شيء للحصول عليها.\n\n
+        بخصوص اللغز: انظر إلى الحجر القريب، فهو يريك بأي ترتيب عليك حل اللغز.\n\n
+        احذر من الفئران التي ترمي قنابل السم. بعد الانفجار، تطلق سحابة سم، تستمر لبضع ثوانٍ.\n\n
+    </string>
+    <string name="dungeon43bonustext1">\n        افتح هذه المرحلة بجمع جميع الـ 💎 الثلاثة في الزنزانة 43.\n\n
+        قبل محاولة قتل زعيم الكتلة، اقتل كل الآخرين في الغرفة.\n\n
+    </string>
+    <string name="dungeon43bonustext2">\n        بعد موت كل الأتباع الآخرين، سيصبح الطريق إلى البراميل الحمراء أسهل بكثير في الوصول إليه. \n\n
+    </string>
+    <string name="dungeon43text">\n        الـ 💎 الأول بعد زعيم الكتلة الأول. الآخران من الضروري جمعهما إذا أردت جعل الغولم قابلين للإصابة.\n\n
+        لإلحاق الضرر بزعيم الكتلة، يحتاج إلى الهبوط على البراميل الحمراء. فقط قف على جانب برميل وعندما يبدأ الزعيم بالنزول، اذهب إلى الاتجاه المعاكس.\n\n
+        الزعيم في النهاية سهل الهزيمة أيضاً، إذا كان لديك ضرر كافٍ. فقط قف على إحدى الكتل على الجانب وهاجمه وهاجم بلورته من بعيد.\n\n
+    </string>
+    <string name="dungeon44bossfighttext1">تأكد من جمع <font color="#FFA500"> رداء النيران الوشيكة </font> من المنطقة السرية السادسة لتعظيم ضررك. \n\n للزعيم ثلاث هجمات رئيسية: رمح الجليد المنزلق، والجليد المتساقط، ورمي الصخور. \n\n من المفترض أن تراوغ بينما تلحق الضرر في الوقت نفسه أثناء اتباع المسار الموضح في الصورة. \n\n يجب أن يكون هجومك كالتالي: فعّل قدرتك الخاصة، ثم فعّل قدرتك الخارقة، ثم كرر الهجمات الأساسية. كرر العملية.</string>
+    <string name="dungeon44bossfighttext2"><font color="#FF0000">تحذير:</font> إذا لم تلحق ضرراً كافياً حتى ينكسر رمح الجليد المنزلق، سيبدأ الزعيم برمي الصخور عليك، وهو أمر صعب المراوغة منه إلى حد كبير. عندما يدخل الزعيم المرحلة الثانية، يتحرك رمح الجليد المنزلق بشكل أسرع، ويستهدف الجليد المتساقط موضعك الحالي، ويرمي عدة صخور.</string>
+    <string name="dungeon44text">\n        جميع الـ 💎 الثلاثة في الطريق، لكنك تحتاج في الغالب مفتاحاً ذهبياً لفتح الأبواب للحصول عليها. لا تتخطَّ أي مناطق مسبقاً.\n\n
+        المنطقة السرية الثالثة مخفية أيضاً خلف كتلة برتقالية قابلة للتدمير.\n\n
+        تأكد من زيارة المنطقة السرية السادسة، لأنها تحتوي على درع رائع سيساعدك مع الزعيم.\n\n
+        المنطقة السرية الخامسة يمكن فتحها من الأسفل إلى يسارها. إنها على السقف. تحتاج إلى استخدام الصندوق الذي يعيد توجيه هجماتك لتفعيلها.\n\n
+    </string>
+    <string name="dungeon4text">\n        جميع الـ 💎 الثلاثة في الأواني الذهبية.\n\n
+        القائدة منيعة ولا يمكن أن تموت. إذا تابعت في الزنزانة على المنصات العلوية، فستقتل كل الأعداء في الأسفل بنفسها.\n\n
+    </string>
+    <string name="dungeon5bonustext1">\n        افتح هذه المكافأة بجمع جميع الـ 💎 الثلاثة في الزنزانة 5.\n\n
+        أولاً اختر المدخل الأيسر.\n\n
+    </string>
+    <string name="dungeon5bonustext2">\n        فقط تابع صعوداً في الطريق.\n\n
+    </string>
+    <string name="dungeon5bonustext3">\n        الآن اختر الطريق الأوسط، الذي يحتوي على العنصر المذكور سابقاً - ساحق الحشرات.\n\n
+        سيساعدك هذا العنصر إذا كنت تواجه صعوبات في الفصل التالي!\n\n
+    </string>
+    <string name="dungeon5text">\n        جميع الـ 💎 الثلاثة في الأواني الذهبية.\n\n
+        تأكد من استخدام دروع عنصر الريح لتجنب ضرر الأشواك.\n\n
+        الزومبي الصلب أسهل في الهزيمة إذا قاتلته من المرتفعات.\n\n
+    </string>
+    <string name="dungeon6text">\n        جميع الـ 💎 الثلاثة في الأواني الذهبية.\n\n
+        يمكنك الآن استخدام المطرقة، التي حصلت عليها في زنزانة المكافأة السابقة للتعامل مع العناكب بسهولة أكبر.\n\n
+        المنطقة السرية الأولى تحتوي على طقم البطل، وهو جيد للسيوف والخناجر والمطارق. كما يمنحك حماية من الأشواك، مما يتيح لك لعب الزنزانة بأمان أكبر.\n\n
+    </string>
+    <string name="dungeon7bonustext1">\n        افتح هذه المكافأة بجمع جميع الـ 💎 الثلاثة في الزنزانة 7.\n\n
+        سيتعين عليك أن تكون سريعاً، لأن المنصات تُدمر بعد ثلاث ثوانٍ من قفزك عليها.\n\n
+        فقط اتبع الخط المصنوع من الـ 🪙 الذهبية.\n\n
+    </string>
+    <string name="dungeon7bonustext2">\n        بمجرد وصولك إلى الأعلى، اقفز إلى قمة المربع ثم اقفز إلى المنطقة التي بها الصندوق.\n\n
+        بعد ذلك، فقط اقفز عائداً إلى المنصة التالية وأنهِ الزنزانة.\n\n
+    </string>
+    <string name="dungeon7text">\n        💎 اثنتان في الأواني الذهبية. واحدة في المنطقة التي يمكن فتحها بالنقر على الزر.\n\n
+        تأكد من امتلاك مفتاح حديدي واحد على الأقل للمرحلة الإضافية.\n\n
+        يمكنك استخدام الصندوق في البداية لتفعيل زر المنطقة السفلية التي بها الـ 💎.\n\n
+        المنطقة السرية الثالثة يمكن الوصول إليها بالقفز فوق اللهب.\n\n
+    </string>
+    <string name="dungeon8text">\n        جميع الـ 💎 الثلاثة في الأواني الذهبية.\n\n
+        يمكنك إحضار الرجل إلى رمح النار في بداية الزنزانة لفتح إنجاز.\n\n
+        تأكد من الوقوف دائماً أمام الرجل لامتصاص كل الضرر إذا لزم الأمر. يمكنك استخدام الجرعات لكنه لا يستطيع.\n\n
+        إذا نجا الرجل، فسيعطيك فأساً جيداً.\n\n
+    </string>
+    <string name="dungeon9text">\n        جميع الـ 💎 الثلاثة في الأواني الذهبية.\n\n
+        زنزانة جيدة جداً، تدرّب تصويبك للفصل التالي. أسهل طريقة لإيصال الصندوق لتفعيل الزر هي استخدام خناجر غير دوّارة، مثل الخنجر السام، الذي وجدته في إحدى الزنزانات السابقة.\n\n
+        يُفضّل استخدام درع الهواء لتجنب ضرر الأشواك.\n\n
+        عندما تنهي الزنزانة، تأكد من تفقد العناصر الجديدة في المتجر.\n\n
+    </string>
+    <string name="dungeons">🏰 الزنزانات 🏰</string>
+    <string name="eighty_kills">80</string>
+    <string name="element_cannot_be_picked">لا يمكن اختيار عنصر لهذا الغرض!</string>
+    <string name="enemies">👻 الأعداء 👻</string>
+    <string name="enemy_air_elemental">عنصري الهواء</string>
+    <string name="enemy_alien">إيليان</string>
+    <string name="enemy_ape_demon">قرد شيطاني</string>
+    <string name="enemy_ape_junina">قرد جونينا</string>
+    <string name="enemy_ape_santa">قرد سانتا</string>
+    <string name="enemy_ape_skeleton">قرد هيكل عظمي</string>
+    <string name="enemy_armademon_easter">أرماديمون الفصح</string>
+    <string name="enemy_armored_ape">قرد مدرّع</string>
+    <string name="enemy_armored_ape_faster">قرد مدرّع أسرع</string>
+    <string name="enemy_armored_ape_faster_weaker">قرد مدرّع أسرع وأضعف</string>
+    <string name="enemy_armored_axe_skeleton">هيكل عظمي مدرّع بفأس</string>
+    <string name="enemy_armored_enraged_skeleton">هيكل عظمي مدرّع غاضب</string>
+    <string name="enemy_armored_skeleton">هيكل عظمي مدرّع</string>
+    <string name="enemy_beetle_anubis">خنفساء أنوبيس</string>
+    <string name="enemy_beetle_anubis_red">خنفساء أنوبيس حمراء</string>
+    <string name="enemy_beholder_witch">بيهولدر ساحرة</string>
+    <string name="enemy_cangaceiro">كانغاسيرو</string>
+    <string name="enemy_carcara">كاركارا</string>
+    <string name="enemy_carnival_buffoon_green_skeleton">هيكل عظمي مهرج كرنفالي أخضر</string>
+    <string name="enemy_carnival_buffoon_purple_skeleton">هيكل عظمي مهرج كرنفالي بنفسجي</string>
+    <string name="enemy_carnival_bunny_mask_skeleton">هيكل عظمي بقناع أرنب كرنفالي</string>
+    <string name="enemy_carnival_captain_mask_necromancer">مستحضر أرواح بقناع قبطان كرنفالي</string>
+    <string name="enemy_carnival_captain_mask_skeleton">هيكل عظمي بقناع قبطان كرنفالي</string>
+    <string name="enemy_carnival_pilot_mask_skeleton">هيكل عظمي بقناع طيار كرنفالي</string>
+    <string name="enemy_carnival_pumpkin_mask_skeleton">هيكل عظمي بقناع يقطين كرنفالي</string>
+    <string name="enemy_carnival_rat_buffoon_green">فأر مهرج كرنفالي أخضر</string>
+    <string name="enemy_carnival_rat_buffoon_purple">فأر مهرج كرنفالي بنفسجي</string>
+    <string name="enemy_carnival_salesman_mask_skeleton">هيكل عظمي بقناع بائع كرنفالي</string>
+    <string name="enemy_chest_demon">شيطان الصندوق</string>
+    <string name="enemy_chest_demon_gift">صندوق هدية شيطاني</string>
+    <string name="enemy_copy_cat">المقلّد</string>
+    <string name="enemy_cthulhu_imp">عفريت كثولو</string>
+    <string name="enemy_dark_ghost">شبح مظلم</string>
+    <string name="enemy_dark_skeleton">هيكل عظمي مظلم</string>
+    <string name="enemy_dark_skeleton_elite">هيكل عظمي مظلم نخبة</string>
+    <string name="enemy_dark_tanker">دبّابة مظلمة</string>
+    <string name="enemy_demon_head">رأس الشيطان</string>
+    <string name="enemy_demonic_spider">العنكبوت الشيطاني</string>
+    <string name="enemy_demonic_spider_blowing_minion">تابع العنكبوت الشيطاني النافخ</string>
+    <string name="enemy_demonic_spider_minion">تابع العنكبوت الشيطاني</string>
+    <string name="enemy_easter_demon">شيطان الفصح</string>
+    <string name="enemy_easter_skeleton">هيكل الفصح العظمي</string>
+    <string name="enemy_evil_warlock">الساحر الشرير</string>
+    <string name="enemy_evil_warlock_boss">زعيم الساحر الشرير</string>
+    <string name="enemy_final_warlock">الساحر الأخير</string>
+    <string name="enemy_fire_ape">قرد النار</string>
+    <string name="enemy_fire_bat">خفاش النار</string>
+    <string name="enemy_fire_bat_adult">خفاش النار البالغ</string>
+    <string name="enemy_fire_elemental">عنصر النار</string>
+    <string name="enemy_fire_skeleton">هيكل النار العظمي</string>
+    <string name="enemy_fire_skeleton_b">هيكل النار العظمي B</string>
+    <string name="enemy_fire_skeleton_elite">هيكل النار العظمي النخبة</string>
+    <string name="enemy_fire_skeleton_master">سيد هيكل النار العظمي</string>
+    <string name="enemy_ghost_rat">جرذ الشبح</string>
+    <string name="enemy_giant_demon_head">رأس الشيطان العملاق</string>
+    <string name="enemy_giant_spider">العنكبوت العملاق</string>
+    <string name="enemy_gigaspider">العنكبوت الجبار</string>
+    <string name="enemy_grinch">غرينش</string>
+    <string name="enemy_guard_tanker_a">حارس التانكر A</string>
+    <string name="enemy_guard_tanker_b">حارس التانكر B</string>
+    <string name="enemy_guard_tanker_elite">حارس التانكر النخبة</string>
+    <string name="enemy_harmless_tanker">التانكر غير المؤذي</string>
+    <string name="enemy_helmet_skeleton">الهيكل العظمي ذو الخوذة</string>
+    <string name="enemy_ice_necromancer">مستحضر أرواح الجليد</string>
+    <string name="enemy_ice_necromancer_wdg">مستحضر أرواح الجليد WDG</string>
+    <string name="enemy_ice_skeleton">هيكل الجليد العظمي</string>
+    <string name="enemy_ice_skeleton_elite">هيكل الجليد العظمي النخبة</string>
+    <string name="enemy_ice_skeleton_elite_wdg">هيكل الجليد العظمي النخبة WDG</string>
+    <string name="enemy_ice_skeleton_tanker">تانكر هيكل الجليد العظمي</string>
+    <string name="enemy_ice_skeleton_tanker_wdg">تانكر هيكل الجليد العظمي WDG</string>
+    <string name="enemy_ice_skeleton_wdg">هيكل الجليد العظمي WDG</string>
+    <string name="enemy_ifrits_disciple">تلميذ العفريت</string>
+    <string name="enemy_jumping_fire_skeleton">هيكل النار العظمي القافز</string>
+    <string name="enemy_jumping_fire_skeleton_elite">هيكل النار العظمي القافز النخبة</string>
+    <string name="enemy_jumping_skeleton">الهيكل العظمي القافز</string>
+    <string name="enemy_jumping_skeleton_elite">الهيكل العظمي القافز النخبة</string>
+    <string name="enemy_junina_skeleton_a">هيكل جونينا العظمي A</string>
+    <string name="enemy_junina_skeleton_b">هيكل جونينا العظمي B</string>
+    <string name="enemy_junina_skeleton_dark_shadow">هيكل جونينا العظمي الظل المظلم</string>
+    <string name="enemy_junina_skeleton_fire">هيكل جونينا الناري العظمي</string>
+    <string name="enemy_junina_skeleton_knife_guard">حارس سكين هيكل جونينا العظمي</string>
+    <string name="enemy_junina_skeleton_poison_thrower">قاذف سم هيكل جونينا العظمي</string>
+    <string name="enemy_junina_skeleton_shadow">هيكل جونينا الظلي العظمي</string>
+    <string name="enemy_kingptain_dungeon43">كينغبتين (الزنزانة 43)</string>
+    <string name="enemy_mini_slime">السلايم الصغير</string>
+    <string name="enemy_miniboss_gigaspider_critter">تابع العنكبوت الجبار الزعيم الصغير</string>
+    <string name="enemy_mummy">المومياء</string>
+    <string name="enemy_mummy_blue_cosmos">مومياء الكون الأزرق</string>
+    <string name="enemy_mummy_gold_cosmos">مومياء الكون الذهبي</string>
+    <string name="enemy_mush_vacuum">ماش فاكيوم</string>
+    <string name="enemy_mush_vacuum_wdg">ماش فاكيوم WDG</string>
+    <string name="enemy_mushroom_spitter">الفطر البصاق</string>
+    <string name="enemy_nature_skeleton">هيكل الطبيعة العظمي</string>
+    <string name="enemy_nature_skeleton_elite">هيكل الطبيعة العظمي النخبة</string>
+    <string name="enemy_priest_minion">تابع الكاهن</string>
+    <string name="enemy_pumpkin_rat_skeleton">هيكل جرذ اليقطين العظمي</string>
+    <string name="enemy_pumpkin_skeleton">هيكل اليقطين العظمي</string>
+    <string name="enemy_pumpkin_skeleton_scythe">هيكل اليقطين العظمي ذو المنجل</string>
+    <string name="enemy_pumpkin_water_skeleton">هيكل اليقطين المائي العظمي</string>
+    <string name="enemy_pumpkin_water_skeleton_scythe">هيكل اليقطين المائي العظمي ذو المنجل</string>
+    <string name="enemy_pumpkin_zombie_rat">جرذ زومبي اليقطين</string>
+    <string name="enemy_rat_black_mage">جرذ الساحر الأسود</string>
+    <string name="enemy_rat_fighter">الجرذ المقاتل</string>
+    <string name="enemy_rat_fire_mage">جرذ ساحر النار</string>
+    <string name="enemy_rat_lancer">الجرذ الرمّاح</string>
+    <string name="enemy_rat_poison_thrower">الجرذ قاذف السم</string>
+    <string name="enemy_rat_rogue">الجرذ اللص</string>
+    <string name="enemy_rat_rogue_prisoner">الجرذ اللص السجين</string>
+    <string name="enemy_rat_skeleton">هيكل الجرذ العظمي</string>
+    <string name="enemy_rat_warrior">الجرذ المحارب</string>
+    <string name="enemy_rat_water_mage">جرذ ساحر الماء</string>
+    <string name="enemy_rat_zombie_knife_guard">حارس سكين جرذ الزومبي</string>
+    <string name="enemy_rat_zombie_knife_guard_b">حارس سكين جرذ الزومبي B</string>
+    <string name="enemy_rat_zombie_knife_guard_elite">سكين جرذ الزومبي النخبة</string>
+    <string name="enemy_shaman_fire">شامان النار</string>
+    <string name="enemy_shaman_fire_elite">شامان النار النخبة</string>
+    <string name="enemy_shaman_nature">شامان الطبيعة</string>
+    <string name="enemy_shaman_nature_elite">شامان الطبيعة النخبة</string>
+    <string name="enemy_skeleton">الهيكل العظمي</string>
+    <string name="enemy_skeleton_b">الهيكل العظمي B</string>
+    <string name="enemy_slime_demon">شيطان السلايم</string>
+    <string name="enemy_snow_monster">وحش الثلج</string>
+    <string name="enemy_spidemon_higher_jump">العنكبوت الشيطاني عالي القفز</string>
+    <string name="enemy_spider">العنكبوت A</string>
+    <string name="enemy_spider_b">العنكبوت B</string>
+    <string name="enemy_spider_b_weak">العنكبوت الضعيف B</string>
+    <string name="enemy_spider_blow">العنكبوت النافخ</string>
+    <string name="enemy_spider_boss">زعيم العناكب</string>
+    <string name="enemy_spider_c">العنكبوت C</string>
+    <string name="enemy_spider_easter">عنكبوت الفصح</string>
+    <string name="enemy_spider_easter_green">عنكبوت الفصح الأخضر</string>
+    <string name="enemy_spider_easter_pink">عنكبوت الفصح الوردي</string>
+    <string name="enemy_spider_fire">عنكبوت النار</string>
+    <string name="enemy_spider_gift">عنكبوت الهدية</string>
+    <string name="enemy_spider_swamp">عنكبوت المستنقع</string>
+    <string name="enemy_swamp_monster">وحش المستنقع</string>
+    <string name="enemy_tanker_elite_matryoshka">ماتريوشكا تانكر النخبة</string>
+    <string name="enemy_tanker_helmet_matryoshka">ماتريوشكا تانكر بالخوذة</string>
+    <string name="enemy_tanker_rage_matryoshka">ماتريوشكا تانكر الغضب</string>
+    <string name="enemy_time_patroller_dungeon40">دورية الزمن (السرداب 40)</string>
+    <string name="enemy_time_patroller_dungeon41">دورية الزمن (السرداب 41)</string>
+    <string name="enemy_vampire">مصاص دماء</string>
+    <string name="enemy_vindicator_carnival">فينديكيتر الكرنفال</string>
+    <string name="enemy_warlock_final_boss">وورلوك الزعيم الأخير</string>
+    <string name="enemy_water_vampire">مصاص دماء مائي</string>
+    <string name="enemy_white_ape">القرد الأبيض</string>
+    <string name="enemy_wizard">ساحر</string>
+    <string name="enemy_xmas_doll_blond">دمية الكريسماس الشقراء</string>
+    <string name="enemy_xmas_doll_brunette">دمية الكريسماس السمراء</string>
+    <string name="enemy_xmas_duck">بطة الكريسماس</string>
+    <string name="enemy_xmas_fire_bear">دب النار للكريسماس</string>
+    <string name="enemy_xmas_fire_bear_elite">دب النار النخبة للكريسماس</string>
+    <string name="enemy_xmas_gift_vacuum">هدية الكريسماس الشفاطة</string>
+    <string name="enemy_xmas_green_bear_small">دب الكريسماس الأخضر الصغير</string>
+    <string name="enemy_xmas_jumping_green_bear">دب الكريسماس الأخضر القافز</string>
+    <string name="enemy_xmas_mimic">ميميك الكريسماس</string>
+    <string name="enemy_xmas_pink_bear">دب الكريسماس الوردي</string>
+    <string name="enemy_xmas_pink_bear_small">دب الكريسماس الوردي الصغير</string>
+    <string name="enemy_xmas_purple_bear">دب الكريسماس البنفسجي</string>
+    <string name="enemy_xmas_purple_bear_ez">دب الكريسماس البنفسجي EZ</string>
+    <string name="enemy_xmas_purple_bear_small">دب الكريسماس البنفسجي الصغير</string>
+    <string name="enemy_xmas_skeleton_blue_helmet_ice">هيكل الكريسماس الجليدي الأزرق بالخوذة</string>
+    <string name="enemy_xmas_skeleton_blue_ice">هيكل الكريسماس الجليدي الأزرق</string>
+    <string name="enemy_xmas_skeleton_blue_mage">ساحر الهيكل الأزرق للكريسماس</string>
+    <string name="enemy_xmas_skeleton_blue_tanker">تانكر الهيكل الأزرق للكريسماس</string>
+    <string name="enemy_xmas_skeleton_red_mage">ساحر الهيكل الأحمر للكريسماس</string>
+    <string name="enemy_xmas_skeleton_red_mage_elite">ساحر الهيكل الأحمر النخبة للكريسماس</string>
+    <string name="enemy_xmas_skeleton_red_warrior">محارب الهيكل الأحمر للكريسماس</string>
+    <string name="enemy_xmas_skeleton_red_warrior_elite">محارب الهيكل الأحمر النخبة للكريسماس</string>
+    <string name="enemy_zombie_chief">زعيم الزومبي</string>
+    <string name="enemy_zombie_elite_guard">حارس الزومبي النخبة</string>
+    <string name="enemy_zombie_guard">حارس الزومبي</string>
+    <string name="enemy_zombie_guard_boss">زعيم حراس الزومبي</string>
+    <string name="enemy_zombie_guard_boss_b">زعيم حراس الزومبي B</string>
+    <string name="enemy_zombie_guard_boss_c">زعيم حراس الزومبي C</string>
+    <string name="enemy_zombie_knife_guard">حارس الزومبي بالسكين</string>
+    <string name="enemy_zombie_noob_knife_guard">حارس الزومبي المبتدئ بالسكين</string>
+    <string name="enemy_zombie_rat">جرذ الزومبي</string>
+    <string name="enemy_zombie_red_guard">حارس الزومبي الأحمر</string>
+    <string name="fifty_kills">50</string>
+    <string name="fourty_kills">40</string>
+    <string name="frost_attack">هجوم صقيعي</string>
+    <string name="frost_resistance">مقاومة الصقيع</string>
+    <string name="frost_immune">مناعة ضد الصقيع</string>
+    <string name="hundred_fifty_kills">150</string>
+    <string name="hundred_kills">100</string>
+    <string name="in_memory_of">في ذكرى:</string>
+    <string name="items">📋 العناصر 📋</string>
+    <string name="jump_impulse">قوة القفز: </string>
+    <string name="jump_impulse_in_calculation">"قوة القفز: "</string>
+    <string name="kills">القتلى</string>
+    <string name="kitty_bucher">Kathleen Ann Bucher 1952 – 2022</string>
+    <string name="pierce_count">عدد الاختراقات: </string>
+    <string name="poisonous_attack">هجوم سام</string>
+    <string name="projectile_persistence">ثبات المقذوف</string>
+    <string name="reset_all">إعادة تعيين الكل</string>
+    <string name="rewards">المكافآت</string>
+    <string name="robe_of_distant_visions">رداء الرؤى البعيدة</string>
+    <string name="ruby_pawns_edge">حد بيدق الياقوت</string>
+    <string name="select_skills">اختر المهارات</string>
+    <string name="seventy_kills">70</string>
+    <string name="sixty_kills">60</string>
+    <string name="skill_description_default">لا يوجد وصف متاح.</string>
+    <string name="skill_points_left">نقاط المهارات المتبقية: </string>
+    <string name="spears">الرماح</string>
+    <string name="special_antiheros_set">طقم البطل المضاد الخاص</string>
+    <string name="special_thanks">شكر خاص:</string>
+    <string name="special_thanks_text">Andre Santee \n Bruno Pereira \n Feras Alami \n Kathleen Ann Bucher \n Roy Delos Santos Guevarra \n Simon Baron \n Dimitris.k/ thibo \n Dark Junior \n Cornelius Du Plessis \n Zoe Moreno Ayala \n Kofeman \n Matz_ofi \n Sidhanth Da RAMPAGER \n Ives</string>
+    <string name="speed">السرعة: </string>
+    <string name="speed_in_calculation">"السرعة: "</string>
+    <string name="staffs_and_grimoires">العصي وكتب السحر</string>
+    <string name="survival1_text">في هذا السرداب ستحتاج إلى سلاح لا يصيب المنصة الوسطى. سيتيح لك هذا ضرب الأعداء في الجانب الآخر وصد المقذوفات. إذا ظهرت عنكبوت أمامك، فما عليك سوى مهاجمة الحجر خلفك لقتلها بسهولة.</string>
+    <string name="survival2_text">السرداب الثاني للبقاء لا يحتاج إلى الكثير من الحركة. ابقَ في المنتصف وهاجم على الجانبين، وتحرك أحيانًا للأعلى والأسفل لقتل أعداء إضافيين وتجنب الصواعق.</string>
+    <string name="survival3_text">سيتطلب منك السرداب الثالث للبقاء استخدام سلاح يمكنه ضرب العناكب بسهولة. كما أنه يمتلك أكثر أنماط الهجوم \"تعقيدًا\" من بين جميع سراديب البقاء، ما يعني أنك ستحتاج إلى بذل جهد أكبر فيه.</string>
+    <string name="survival4_text">في هذا السرداب، احرص على استخدام سلاح بقوة اختراق منخفضة، حتى تتمكن من قتل وحش المستنقع بضربة واحدة. من السهل جدًا اتباع أنماط هجوم السرداب. بالإضافة إلى ذلك، يمكنك استخدام فئة المحارب للحصول على بعض الحماية الإضافية ضد العدو الذي يظهر على يمينك.</string>
+    <string name="survival5_text">أفضل وأسهل سرداب لجمع الذهب. احرص على استخدام سلاح ذي مساحة ضرر واسعة ومدى محدود، مثل المطارق والفؤوس، لتتمكن من البقاء في مكان واحد وقتل الأعداء من بعيد.</string>
+    <string name="survival6_text">يتطلب السرداب الأخير للبقاء جهدًا أكبر قليلًا مقارنة بالآخرين، إذ تحتاج إلى تغيير موقعك باستمرار لتجنب المقذوفات وضرب الوحدات الطائرة وتجنب الصواعق.</string>
+    <string name="survival_dungeon_1">سرداب البقاء 1</string>
+    <string name="survival_dungeon_2">سرداب البقاء 2</string>
+    <string name="survival_dungeon_3">سرداب البقاء 3</string>
+    <string name="survival_dungeon_4">سرداب البقاء 4</string>
+    <string name="survival_dungeon_5">سرداب البقاء 5</string>
+    <string name="survival_dungeon_6">سرداب البقاء 6</string>
+    <string name="survival_mode">☠️ وضع البقاء ☠️</string>
+    <string name="survival_tutorial">الدرس التعليمي</string>
+    <string name="swords">السيوف</string>
+    <string name="ten_kills">10</string>
+    <string name="test_equipment">🛡️ اختبار المعدات 🛡️</string>
+    <string name="level_viewer">🗺️ عارض المراحل 🗺️</string>
+    <string name="level_tab_story">القصة</string>
+    <string name="level_tab_others">أخرى</string>
+    <string name="survival0">البقاء 1</string>
+    <string name="survival1">البقاء 2</string>
+    <string name="survival2">البقاء 3</string>
+    <string name="survival3">البقاء 4</string>
+    <string name="survival4">البقاء 5</string>
+    <string name="survival5">البقاء 6</string>
+    <string name="combatzone0">منطقة القتال 1</string>
+    <string name="combatzone1">منطقة القتال 2</string>
+    <string name="combatzone2">منطقة القتال 3</string>
+    <string name="thirty_kills">30</string>
+    <string name="three_hundred_kills">300</string>
+    <string name="twenty_kills">20</string>
+    <string name="two_hundred_kills">200</string>
+    <string name="work_in_progress">العمل جارٍ!</string>
+    <string name="vase_breaker">محطم المزهريات</string>
+    <string name="save_that_dude">أنقذ ذلك الرجل!</string>
+    <string name="keep_that_dude_alive">أبقِ ذلك الرجل على قيد الحياة!</string>
+    <string name="armed_and_dangerous">مسلح وخطير</string>
+    <string name="head_shot">إصابة في الرأس!</string>
+    <string name="zombie_killer">قاتل الزومبي</string>
+    <string name="spider_killer">قاتل العناكب</string>
+    <string name="bone_collector">جامع العظام</string>
+    <string name="mr_macgyver">السيد ماكغايفر</string>
+    <string name="there_and_back">ذهاب وإياب مرة أخرى</string>
+    <string name="know_your_enemy">اعرف عدوك</string>
+    <string name="complete_101">أكثر من 100% مكتمل!</string>
+    <string name="complete_100">أنجزت كل شيء!</string>
+    <string name="flawless_victory">نصر مثالي!</string>
+    <string name="ecstasy_of_gold">نشوة الذهب</string>
+    <string name="demon_slayer">قاتل الشياطين</string>
+    <string name="get_in_the_ring">ادخل الحلبة</string>
+    <string name="lost_flipflop">الشبشب المفقود</string>
+    <string name="the_untold_story">القصة التي لم تُروَ</string>
+    <string name="that_dude_must_live">ذلك الرجل يجب أن يعيش!</string>
+    <string name="could_beat_gng">كان بإمكاني هزيمة غولز \'إن غوستس</string>
+    <string name="changing_in_the_air">التغيير في الهواء</string>
+    <string name="runeforge">مصهر الرونية</string>
+    <string name="ride_the_wind">امتطِ الريح</string>
+    <string name="ghostbusters">صائدو الأشباح</string>
+    <string name="why_so_curious">لماذا كل هذا الفضول؟</string>
+    <string name="loot_from_the_future">غنيمة من المستقبل</string>
+    <string name="the_untold_story_2">القصة التي لم تُروَ 2</string>
+    <string name="kill_the_spider">شيء شرير في هيئة عنكبوت</string>
+    <string name="lost_hammer">فعلتها عمداً، لكي…</string>
+    <string name="dude_still_lives">ذلك الرجل لا يزال حياً</string>
+    <string name="dudes_story">قصة ذلك الرجل</string>
+    <string name="breaker_of_chains">كاسر القيود</string>
+    <string name="saw_a_giant">رأيت عملاقاً</string>
+    <string name="witch_hunt">مطاردة الساحرات</string>
+    <string name="post_credits">ذلك المشهد بعد الشارة الختامية</string>
+    <string name="survival_50">50 قتيلاً</string>
+    <string name="survival_100">100 قتيل</string>
+    <string name="survival_200">200 قتيل</string>
+    <string name="survival_300">300 قتيل</string>
+    <string name="survival_1000">1000 قتيل؟ يا للهول!</string>
+    <string name="pimp_my_char">زيّن شخصيتي</string>
+    <string name="bag_expanded">مساحة تخزين أكبر</string>
+    <string name="may_the_magic">فليكن السحر معك</string>
+    <string name="vase_breaker_desc">حطّم مزهرية في شاشة البداية.</string>
+    <string name="armed_and_dangerous_desc">احصل على سلاحك الأول.</string>
+    <string name="save_that_dude_desc">احمِ ذلك الرجل من الهجوم في الفصل 1 المستوى 2 من الزنزانة.</string>
+    <string name="keep_that_dude_alive_desc">ساعد ذلك الرجل في الفصل 1 المستوى 8 من الزنزانة وأبقِه على قيد الحياة.</string>
+    <string name="head_shot_desc">أصب عدواً بضربة في الرأس.</string>
+    <string name="zombie_killer_desc">اقتل زومبي.</string>
+    <string name="spider_killer_desc">اقتل عنكبوتاً.</string>
+    <string name="bone_collector_desc">اهزم هيكلاً عظمياً.</string>
+    <string name="mr_macgyver_desc">ادخل المنطقة السرية في الفصل 1 المستوى الإضافي 3 من الزنزانة.</string>
+    <string name="there_and_back_desc">انبعث بعد الموت.</string>
+    <string name="know_your_enemy_desc">اقرأ كل النصائح.</string>
+    <string name="complete_101_desc">أكمل 101%. اعثر على جميع المناطق السرية في اللعبة، وأعد لعب الفصول 1 و2 و3 دون تلقي أي ضرر.</string>
+    <string name="complete_100_desc">أكمل 100% من اللعبة. اعثر على جميع المناطق السرية والألماسات.</string>
+    <string name="flawless_victory_desc">احصل على نجمة بإعادة لعب مستوى دون تلقي أي ضرر.</string>
+    <string name="ecstasy_of_gold_desc">اشترِ المزيد من الذهب لشخصيتك.</string>
+    <string name="demon_slayer_desc">اهزم الزعيم في الفصل 1.</string>
+    <string name="get_in_the_ring_desc">ادخل المنطقة السرية في الفصل 2 المستوى الإضافي 1 من الزنزانة.</string>
+    <string name="lost_flipflop_desc">اعثر على الشبشب المفقود.</string>
+    <string name="the_untold_story_desc">دع ذلك الرجل يروي لك القصة التي لم تُروَ في الفصل 2 المستوى 4 من الزنزانة.</string>
+    <string name="that_dude_must_live_desc">أبقِ ذلك الرجل على قيد الحياة حتى نهاية المستوى.</string>
+    <string name="could_beat_gng_desc">احصل على نجمة في كل المستويات الـ15 الأولى.</string>
+    <string name="changing_in_the_air_desc">اصعد إلى أعلى نقطة في الفصل 2 المستوى 6 من الزنزانة.</string>
+    <string name="runeforge_desc">طوّر عنصراً.</string>
+    <string name="ride_the_wind_desc">صِل إلى آخر صندوق في الفصل 2 المستوى 7 من الزنزانة.</string>
+    <string name="ghostbusters_desc">اهزم شبحاً في الفصل 2 المستوى 7 من الزنزانة.</string>
+    <string name="why_so_curious_desc">ادخل المنطقة المقفلة في الفصل 2 المستوى الإضافي 7 من الزنزانة.</string>
+    <string name="loot_from_the_future_desc">اعثر على واحد على الأقل من الصندوقين المخفيين في الفصل 1 المستوى 3 من الزنزانة.</string>
+    <string name="the_untold_story_2_desc">استمع إلى ما يقوله الكابتن عن البوابات والمخلوقات المجنحة العملاقة في الفصل 2 المستوى 9 من الزنزانة.</string>
+    <string name="kill_the_spider_desc">اهزم العنكبوت العملاق الذي يعيش في المستنقع.</string>
+    <string name="lost_hammer_desc">اعثر على المطرقة المفقودة.</string>
+    <string name="dude_still_lives_desc">قابل ذلك الرجل في الفصل 3 المستوى 5 من الزنزانة (إذا نجا في الفصل 2 المستوى 4 من الزنزانة).</string>
+    <string name="dudes_story_desc">استمع إلى ما يقوله ذلك الرجل في الفصل 1 المستوى 8 من الزنزانة (إذا نجا في الفصل 1 المستوى 2 من الزنزانة).</string>
+    <string name="breaker_of_chains_desc">حرّر ساحر الوحي في الفصل 3 المستوى 9 من الزنزانة.</string>
+    <string name="saw_a_giant_desc">اقتل عملاقاً.</string>
+    <string name="witch_hunt_desc">اهزم زعيم المشعوذ.</string>
+    <string name="post_credits_desc">شاهد مشهد ما بعد الشارة الختامية.</string>
+    <string name="survival_50_desc">اقتل 50 عدواً في وضع البقاء.</string>
+    <string name="survival_100_desc">اقتل 100 عدو في وضع البقاء.</string>
+    <string name="survival_200_desc">اقتل 200 عدو في وضع البقاء.</string>
+    <string name="survival_300_desc">اقتل 300 عدو في وضع البقاء.</string>
+    <string name="survival_1000_desc">اقتل 1000 عدو في وضع البقاء.</string>
+    <string name="pimp_my_char_desc">استخدم محرر الشخصيات لتغيير رأس صورتك الرمزية.</string>
+    <string name="bag_expanded_desc">اشترِ صندوق توسعة المخزون في المتجر.</string>
+    <string name="truth_out_there">الحقيقة هناك في الخارج</string>
+    <string name="truth_out_there_desc">اعبر البوابة واكتشف ما وراءها.</string>
+    <string name="may_the_magic_desc">اعثر على السيف المفقود.</string>
+    <string name="complete_102">الفصل 4 صعب جداً!</string>
+    <string name="complete_102_desc">أكمل 102% من اللعبة. أكمل جميع الزنازين، واعثر على كل المناطق السرية، وأعد لعب كل الزنازين حتى نهاية الفصل 4 دون تلقي أي ضرر.</string>
+    <string name="class_consciousness">وعي الفئة</string>
+    <string name="class_consciousness_desc">تعلّم مهارة فئتك الخاصة ونفّذها في الفصل 1، الزنزانة رقم 6.</string>
+    <string name="unlock_all_survival">افتح جميع مستويات البقاء</string>
+    <string name="unlock_all_survival_desc">افتح كل مستوى بقاء عن طريق بلوغ جميع النقاط الدنيا.</string>
+    <string name="dragonslayer">قاتل التنين</string>
+    <string name="dragonslayer_desc">اهزم التنين الأحمر العظيم.</string>
+    <string name="breaker_of_chains_2">كاسر القيود 2</string>
+    <string name="breaker_of_chains_2_desc">حرّر حارس القمر في الفصل 4، الزنزانة رقم 9.</string>
+    <string name="bound_together">مرتبطان معًا</string>
+    <string name="bound_together_desc">انضم إلى الملك بعد هزيمة الساحر.</string>
+    <string name="bank_for_your_buck">قيمة مقابل المال</string>
+    <string name="bank_for_your_buck_desc">أودِع عنصرًا في البنك.</string>
+    <string name="dirty_faced_rookie">مبتدئ ذو وجه متّسخ</string>
+    <string name="dirty_faced_rookie_desc">أنهِ زنزانة فردية في الوضع التنافسي.</string>
+    <string name="bring_it_on">هاتِ ما عندك!</string>
+    <string name="bring_it_on_desc">ابدأ مباراة ضد لاعب آخر في الوضع التنافسي.</string>
+    <string name="veni_vidi_vici">جئت، رأيت، انتصرت</string>
+    <string name="veni_vidi_vici_desc">اربح مباراة ضد لاعب آخر في الوضع التنافسي.</string>
+    <string name="taking_part_counts">المهم هو المشاركة…</string>
+    <string name="taking_part_counts_desc">لا تحاول أبدًا خسارة مباراة ضد لاعب آخر، لكن إن فعلت، فسيُفتح هذا الإنجاز.</string>
+    <string name="add_friend">الأصدقاء يبقون أصدقاء</string>
+    <string name="add_friend_desc">أضِف صديقًا في الوضع التنافسي.</string>
+    <string name="challenge_friend">نيران صديقة</string>
+    <string name="challenge_friend_desc">تحدَّ صديقًا في الوضع التنافسي.</string>
+    <string name="r_for_revenge">حرف R للانتقام</string>
+    <string name="r_for_revenge_desc">اربح مباراة انتقام في الوضع التنافسي.</string>
+    <string name="bronze_rank_achievement">وحش البرونز</string>
+    <string name="bronze_rank_achievement_desc">ارفع رتبتك إلى البرونزية في الوضع التنافسي.</string>
+    <string name="silver_rank_achievement">جندي الفضة</string>
+    <string name="silver_rank_achievement_desc">ارفع رتبتك إلى الفضية في الوضع التنافسي.</string>
+    <string name="gold_rank_achievement">نحو الذهب!</string>
+    <string name="gold_rank_achievement_desc">ارفع رتبتك إلى الذهبية في الوضع التنافسي.</string>
+    <string name="platinum_rank_achievement">بلاتين خالص!</string>
+    <string name="platinum_rank_achievement_desc">ارفع رتبتك إلى البلاتينية في الوضع التنافسي.</string>
+    <string name="diamond_rank_achievement">أيها الماسة المجنونة!</string>
+    <string name="diamond_rank_achievement_desc">ارفع رتبتك إلى الماسية في الوضع التنافسي. تألّق!</string>
+    <string name="champion_slayer">قاتل الأبطال</string>
+    <string name="champion_slayer_desc">اهزم أي بطل في قاعة الأبطال.</string>
+    <string name="ranked_top_1">رقم واحد!</string>
+    <string name="ranked_top_1_desc">اصعد إلى قمة لوحة الترتيب.</string>
+    <string name="ranked_top_15">نحن الأبطال!</string>
+    <string name="ranked_top_15_desc">انضم إلى أفضل 15 لاعبًا المعروضين في قاعة الأبطال.</string>
+    <string name="its_time">حان الوقت!</string>
+    <string name="its_time_desc">اجمع الـ ¾420 العائمة في الهواء عند 3\-6. افعل ذلك خلال وقت محدد من اليوم.</string>
+    <string name="bag_expanded_2">مساحة تخزين أكبر!</string>
+    <string name="bag_expanded_2_desc">اشترِ صندوق التوسعة الثاني من المتجر.</string>
+    <string name="ranked_top_100">بطل حقيقي</string>
+    <string name="ranked_top_100_desc">كن ضمن قائمة أفضل 100 لاعب من حيث الترتيب. يمكنك رؤية موقعك الحالي في قسم الترتيب داخل مخزونك.</string>
+    <string name="ranked_top_500">المُخرِّب المخضرم</string>
+    <string name="ranked_top_500_desc">كن ضمن قائمة أفضل 500 لاعب من حيث الترتيب. يمكنك رؤية موقعك الحالي في قسم الترتيب داخل مخزونك.</string>
+    <string name="challenge_accepted">تم قبول التحدي</string>
+    <string name="challenge_accepted_desc">أنهِ تحديًا من بوابة التحدي الأسبوعي.</string>
+    <string name="salesman_payback">وقت الانتقام</string>
+    <string name="salesman_payback_desc">اقتل البائع في الواقع البديل.</string>
+    <string name="time_patrollers_time">وقت دورية الزمن</string>
+    <string name="time_patrollers_time_desc">اقتل دورية الزمن في الواقع البديل.</string>
+    <string name="kingslayer_time">قاتل الملك</string>
+    <string name="kingslayer_time_desc">اقتل الملك في الواقع البديل.</string>
+    <string name="pixelated_arsenal">ترسانة بكسلية</string>
+    <string name="pixelated_arsenal_desc">اجمع عنصرًا بطراز ريترو في الواقع البديل.</string>
+    <string name="the_end_of_the_world">نهاية العالم</string>
+    <string name="the_end_of_the_world_desc">اصعد إلى السطح لأول مرة في الزنزانة 5\-1.</string>
+    <string name="bag_expanded_3">ضخم بشكل لا يُصدّق</string>
+    <string name="bag_expanded_3_desc">اشترِ صندوق التوسعة الثالث.</string>
+    <string name="its_amazing">إنه مذهل!</string>
+    <string name="its_amazing_desc">حقّق هدف النقاط \"المذهل\" في الزنازين الأسبوعية. عليك أولًا تحقيق هدفَي \"العادي\" و\"الفائق\".</string>
+    <string name="weekly_dungeons_completed_15">حامل ميدالية الياقوت الأزرق</string>
+    <string name="weekly_dungeons_completed_15_desc">أنهِ 15 زنزانة أسبوعية مختلفة.</string>
+    <string name="weekly_dungeons_completed_30">حامل ميدالية الزمرّد</string>
+    <string name="weekly_dungeons_completed_30_desc">أنهِ 30 زنزانة أسبوعية مختلفة.</string>
+    <string name="weekly_dungeons_completed_50">حامل ميدالية الياقوت الأحمر</string>
+    <string name="weekly_dungeons_completed_50_desc">أنهِ 50 زنزانة أسبوعية مختلفة.</string>
+    <string name="weekly_dungeons_star_30">النجمة المشرّفة</string>
+    <string name="weekly_dungeons_star_30_desc">أكمل 30 تحدي نجمة في 30 زنزانة أسبوعية مختلفة.</string>
+    <string name="weekly_dungeons_star_50">النجمة الجبّارة</string>
+    <string name="weekly_dungeons_star_50_desc">أكمل 50 تحدي نجمة في 50 زنزانة أسبوعية مختلفة.</string>
+    <string name="weekly_dungeons_time_30">عدّاء مشرّف</string>
+    <string name="weekly_dungeons_time_30_desc">أكمل 30 تحدي وقت في 30 زنزانة أسبوعية مختلفة.</string>
+    <string name="weekly_dungeons_time_50">عدّاء جبّار</string>
+    <string name="weekly_dungeons_time_50_desc">أكمل 50 تحدي وقت في 50 زنزانة أسبوعية مختلفة.</string>
+    <string name="story_to_be_told">قصة تستحق أن تُروى</string>
+    <string name="story_to_be_told_desc">استمع إلى ما يقوله الرجل في مقدمة 5\-3 عن العبور المضطرب للبوابة.</string>
+    <string name="the_untold_story_3">القصة غير المروية 3</string>
+    <string name="the_untold_story_3_desc">استمع إلى ما يقوله الملك في مختبره ضمن مقدمة 5–3.</string>
+    <string name="skilled_dirty_faced">ماهر لكن بوجه متّسخ</string>
+    <string name="skilled_dirty_faced_desc">تعلّم ثلاث مهارات من شجرة المهارات.</string>
+    <string name="super_skill">المهارة الفائقة!</string>
+    <string name="super_skill_desc">تعلّم إحدى المهارات الفائقة من شجرة المهارات.</string>
+    <string name="complete_103">الرثاءات الـ103</string>
+    <string name="complete_103_desc">أكمل 103%. أكمل جميع الزنازين، واعثر على كل المناطق السرية في اللعبة، وأعد لعب كل الزنازين حتى نهاية الفصل 5 دون تلقي أي ضرر.</string>
+    <string name="ninth_circle">الدائرة التاسعة</string>
+    <string name="ninth_circle_desc">اصِل إلى الغرف الجوفية المتجمدة للكوكب في الزنزانة 5–4.</string>
+    <string name="the_darkest_side">الجانب الأكثر ظلامًا من القمر</string>
+    <string name="the_darkest_side_desc">شاهد المشهد الإضافي بعد إنهاء الزنزانة 5–4 بحوزتك الماسات الثلاث جميعها.</string>
+    <string name="sharp_dressed_minion">تابع أنيق المظهر</string>
+    <string name="sharp_dressed_minion_desc">غيّر مظهر تابعك باستخدام مظهر مخصّص. يمكنك شراء مظاهر جديدة في غرفة الجوائز.</string>
+    <string name="dirty_faced_souls">أرواح ذات وجوه متّسخة</string>
+    <string name="dirty_faced_souls_desc">أكمل 100% في وضع &lt;new-game-plus&gt;. اعثر على جميع المناطق السرية والماسات.</string>
+    <string name="time_patroller">مثل دورية الزمن!</string>
+    <string name="time_patroller_desc">أكمل 101% في وضع &lt;new-game-plus&gt;. اعثر على جميع المناطق السرية، وأعد لعب الفصول 1 و2 و3 دون تلقي أي ضرر.</string>
+    <string name="the_king">انحنِ أمام الملك!</string>
+    <string name="the_king_desc">أكمل 102% من اللعبة في وضع &lt;new-game-plus&gt;. أكمل جميع الزنازين، واعثر على جميع المناطق السرية، وأعد لعب جميع الزنازين حتى نهاية الفصل 4 دون تلقي أي ضرر.</string>
+    <string name="bound_together_plus">مرتبطان معًا+</string>
+    <string name="bound_together_plus_desc">انضم إلى الملك بعد هزيمة الساحر الأسود (وارلوك) في وضع &lt;new-game-plus&gt;.</string>
+    <string name="witch_hunt_plus">مطاردة الساحرات+</string>
+    <string name="witch_hunt_plus_desc">اهزم زعيم الساحر الأسود (وارلوك) في وضع &lt;new-game-plus&gt;.</string>
+    <string name="sinister_riddle">اللغز المشؤوم</string>
+    <string name="sinister_riddle_desc">حل لغز المسلة المشؤومة.</string>
+    <string name="have_a_toast">على شرفك، فلنشرب نخبًا!</string>
+    <string name="have_a_toast_desc">اشترِ مشروبًا للاعب آخر في الحانة.</string>
+    <string name="bullseye_wizard">ساحر الإصابة المثالية</string>
+    <string name="bullseye_wizard_desc">احصل على 990,000 نقطة أو أكثر في لعبة السهام داخل الحانة.</string>
+    <string name="settle_a_score">تسوية حساب</string>
+    <string name="settle_a_score_desc">احصل على 35,000 نقطة أو أكثر في لعبة سماكداون البائع (Salesman\'s Smackdown) داخل الحانة.</string>
+    <string name="meet_me_outside">قابلني في الخارج!</string>
+    <string name="meet_me_outside_desc">تحدَّ صديقًا في مباراة مبارزة. يمكنك إضافة الأصدقاء وتحديهم في مبارزة داخل الحانة.</string>
+    <string name="duels_of_destiny">سيد القدر!</string>
+    <string name="duels_of_destiny_desc">افز بمباراة مبارزة مصنفة. يمكنك إيجاد الخصوم عبر بوابة مبارزات القدر (Duels of Destiny) الموجودة في الحانة.</string>
+    <string name="taste_of_victory">طعم النصر</string>
+    <string name="taste_of_victory_desc">افز بأول مبارزة ودية لك. يمكنك إيجاد الخصوم في الحانة.</string>
+    <string name="bronze_duel_rank_achievement">نهوض الحارس</string>
+    <string name="bronze_duel_rank_achievement_desc">ارفع رتبتك حتى الحارس الأعلى (Master Sentinel) في المبارزات.</string>
+    <string name="silver_duel_rank_achievement">حارس المملكة</string>
+    <string name="silver_duel_rank_achievement_desc">ارفع رتبتك حتى الحارس الأكبر (Grandmaster Sentinel) في المبارزات.</string>
+    <string name="gold_duel_rank_achievement">عبر الشقوق</string>
+    <string name="gold_duel_rank_achievement_desc">ارفع رتبتك حتى مسافر الزمن (Time Traveller) في المبارزات.</string>
+    <string name="platinum_duel_rank_achievement">حارس الزمن</string>
+    <string name="platinum_duel_rank_achievement_desc">ارفع رتبتك حتى دورية الزمن (Time Patroller) في المبارزات.</string>
+    <string name="diamond_duel_rank_achievement">حارس الكون</string>
+    <string name="diamond_duel_rank_achievement_desc">ارفع رتبتك حتى دورية الكون (Cosmic Patroller) في المبارزات!</string>
+    <string name="first_steps_into_destiny">الخطوات الأولى نحو القدر</string>
+    <string name="first_steps_into_destiny_desc">استكشف كل منطقة قتال وأكمل تدريبك الأولي لمبارزات القدر.</string>
+    <string name="enemy_stat_health">الصحة: </string>
+    <string name="enemy_stat_damage">الضرر: </string>
+    <string name="enemy_stat_touch_damage">ضرر اللمس: </string>
+    <string name="enemy_stat_armor">الدرع: </string>
+    <string name="enemy_stat_speed">السرعة: </string>
+    <string name="enemy_stat_jump">القفز: </string>
+    <string name="enemy_stat_patrol_behaviour">سلوك الدورية: </string>
+    <string name="enemy_stat_attack_behaviour">سلوك الهجوم: </string>
+    <string name="dungeon_1">الزنزانة 1</string>
+    <string name="tips_and_tricks">نصائح وحيل:</string>
+    <string name="secret_areas">المناطق السرية:</string>
+    <string name="dungeon_2">الزنزانة 2</string>
+    <string name="dungeon_3_bonus">مكافأة الزنزانة 3</string>
+    <string name="tutorial">الدليل التعليمي:</string>
+    <string name="dungeon_5">الزنزانة 5</string>
+    <string name="dungeon_6">الزنزانة 6</string>
+    <string name="dungeon_5_bonus">مكافأة الزنزانة 5</string>
+    <string name="dungeon_7">الزنزانة 7</string>
+    <string name="dungeon_7_bonus">مكافأة الزنزانة 7</string>
+    <string name="dungeon_8">الزنزانة 8</string>
+    <string name="dungeon_10">الزنزانة 10</string>
+    <string name="bossfight_tips_and_tricks">نصائح وحيل قتال الزعيم</string>
+    <string name="dungeon_11">الزنزانة 11</string>
+    <string name="dungeon_11_bonus">مكافأة الزنزانة 11</string>
+    <string name="dungeon_12">الزنزانة 12</string>
+    <string name="dungeon_13">الزنزانة 13</string>
+    <string name="dungeon_13_bonus">مكافأة الزنزانة 13</string>
+    <string name="dungeon_14">الزنزانة 14</string>
+    <string name="dungeon_15">الزنزانة 15</string>
+    <string name="dungeon_16">الزنزانة 16</string>
+    <string name="dungeon_17">الزنزانة 17</string>
+    <string name="dungeon_17_bonus">مكافأة الزنزانة 17</string>
+    <string name="dungeon_18">الزنزانة 18</string>
+    <string name="dungeon_19">الزنزانة 19</string>
+    <string name="dungeon_19_bonus">مكافأة الزنزانة 19</string>
+    <string name="dungeon_20">الزنزانة 20</string>
+    <string name="dungeon_21">الزنزانة 21</string>
+    <string name="dungeon_22">الزنزانة 22</string>
+    <string name="dungeon_23">الزنزانة 23</string>
+    <string name="dungeon_23_bonus">مكافأة الزنزانة 23</string>
+    <string name="dungeon_24">الزنزانة 24</string>
+    <string name="dungeon_25">الزنزانة 25</string>
+    <string name="dungeon_26">الزنزانة 26</string>
+    <string name="dungeon_27">الزنزانة 27</string>
+    <string name="dungeon_27_bonus">مكافأة الزنزانة 27</string>
+    <string name="dungeon_28">الزنزانة 28</string>
+    <string name="dungeon_29">الزنزانة 29</string>
+    <string name="dungeon_29_bonus">مكافأة الزنزانة 29</string>
+    <string name="dungeon_30">الزنزانة 30</string>
+    <string name="dungeon_31">الزنزانة 31</string>
+    <string name="dungeon_31_bonus">مكافأة الزنزانة 31</string>
+    <string name="dungeon_32">الزنزانة 32</string>
+    <string name="dungeon_33">الزنزانة 33</string>
+    <string name="dungeon_34">الزنزانة 34</string>
+    <string name="dungeon_35">الزنزانة 35</string>
+    <string name="dungeon_36">الزنزانة 36</string>
+    <string name="dungeon_37">الزنزانة 37</string>
+    <string name="dungeon_38">الزنزانة 38</string>
+    <string name="dungeon_39">الزنزانة 39</string>
+    <string name="dungeon_40">الزنزانة 40</string>
+    <string name="dungeon_41">الزنزانة 41</string>
+    <string name="dungeon_42">الزنزانة 42</string>
+    <string name="dungeon_42_bonus">مكافأة الزنزانة 42</string>
+    <string name="dungeon_43">الزنزانة 43</string>
+    <string name="dungeon_43_bonus">مكافأة الزنزانة 43</string>
+    <string name="dungeon_44">الزنزانة 44</string>
+    <string name="dungeon_3">الزنزانة 3</string>
+    <string name="dungeon_4">الزنزانة 4</string>
+    <string name="dungeon_9">الزنزانة 9</string>
+    <string name="select_element">اختر العنصر</string>
+    <string name="news">📰 الأخبار 📰</string>
+    <string name="translating">جارٍ تنزيل الترجمة. يستغرق هذا بعض الوقت ويستهلك البيانات. يرجى الانتظار.</string>
+    <string name="waypoints">نقاط المسار</string>
+    <string name="stone_thrower">رامي الحجارة</string>
+    <string name="knife_thrower">رامي السكاكين</string>
+    <string name="failed_to_load_news">فشل تحميل الأخبار.\n يرجى التحقق من اتصالك.</string>
+    <string name="open_with">فتح باستخدام</string>
+    <string name="no_app_to_open_link_copied">لم يتم العثور على تطبيق لفتح الرابط. تم نسخ رابط الدعوة إلى الحافظة.</string>
+    <string name="element">"العنصر: "</string>
+    <string name="type">"النوع: "</string>
+    <string name="armor_bonus">"مكافأة الدرع: "</string>
+    <string name="pierce_area_damage">ضرر اختراق المنطقة</string>
+    <string name="magic_bonus">"مكافأة السحر: "</string>
+    <string name="sword_bonus">"مكافأة السيف: "</string>
+    <string name="staff_bonus">"مكافأة العصا: "</string>
+    <string name="dagger_bonus">"مكافأة الخنجر: "</string>
+    <string name="axe_bonus">"مكافأة الفأس: "</string>
+    <string name="hammer_bonus">"مكافأة المطرقة: "</string>
+    <string name="spear_bonus">"مكافأة الرمح: "</string>
+    <string name="max_sets_reached">تم الوصول إلى الحد الأقصى لعدد المجموعات!</string>
+    <string name="pick_item_first">يرجى اختيار عنصر أولاً!</string>
+    <string name="arcane_precision_tonic">منشّط الدقة الغامضة</string>
+    <string name="elixir_of_duplication">إكسير المضاعفة</string>
+    <string name="forbidden_flowers_extract">خلاصة الأزهار المحرّمة</string>
+    <string name="instant_charge_blast">إنفجار الشحن الفوري</string>
+    <string name="instant_dark_twin">التوأم المظلم الفوري</string>
+    <string name="instant_gust">العصفة الفورية</string>
+    <string name="instant_radiant_shield">الدرع المتوهج الفوري</string>
+    <string name="instant_thunder_wave">موجة الرعد الفورية</string>
+    <string name="levitation_liqueur">شراب التحليق</string>
+    <string name="monsters_juice">عصير الوحوش</string>
+    <string name="moonjump_mixture">خليط القفز القمري</string>
+    <string name="pepper_brew">منقوع الفلفل</string>
+    <string name="starlight_supertonic">منشّط ضوء النجوم الفائق</string>
+    <string name="tonic_of_invulnerability">منشّط المناعة</string>
+    <string name="umbranian_water">ماء أومبرانيان</string>
+    <string name="arcane_precision_tonic_desc">ستتعقّب المقذوفات المطلقة الأهداف، مقابل انخفاض طفيف في الدرع.</string>
+    <string name="elixir_of_duplication_desc">يضاعف عدد المقذوفات المطلقة مع خفض الدرع قليلاً.</string>
+    <string name="forbidden_flowers_extract_desc">يمنح القدرة على إطلاق كرات نارية مرتدّة.</string>
+    <string name="instant_charge_blast_desc">يشحن هجوماً يطلق ضرراً هائلاً عند تحريره. للتفعيل، أطلق هجوماً.</string>
+    <string name="instant_dark_twin_desc">يستدعي توأماً مظلماً ليقاتل إلى جانب الجندي ذي الوجه المتّسخ. للتفعيل، أطلق هجوماً.</string>
+    <string name="instant_gust_desc">يدفع الأعداء إلى الوراء بعصفة قوية مع كل هجوم.</string>
+    <string name="instant_radiant_shield_desc">يوفّر حماية ممتازة من الضرر، يقي من التهديدات الخارجية لمدة قصيرة.</string>
+    <string name="instant_thunder_wave_desc">يستدعي موجة من الصواعق تضرب جميع الأعداء المحيطين. للتفعيل، أطلق هجوماً.</string>
+    <string name="levitation_liqueur_desc">يمنع السقوط في الحُفر السحيقة ويمنح قفزات إضافية في الهواء. بالإضافة إلى ذلك، تُلحق المقذوفات المطلقة في الهواء ضرراً متزايداً.</string>
+    <string name="monsters_juice_desc">يضخّم براعة الهجوم مقابل انخفاض الدرع.</string>
+    <string name="moonjump_mixture_desc">يقلّل تأثيرات الجاذبية.</string>
+    <string name="pepper_brew_desc">يمنح الحماية من تأثيرات الصقيع ويزيد الدرع.</string>
+    <string name="starlight_supertonic_desc">يمنح مناعة مؤقتة ويعزّز ضرر السلاح لمدة قصيرة.</string>
+    <string name="tonic_of_invulnerability_desc">يوفّر مناعة من تأثيرات السمّ ويزيد الدرع.</string>
+    <string name="umbranian_water_desc">يزيل تأثير التعزيز النشط.</string>
+    <string name="new_set">مجموعة جديدة</string>
+    <string name="recommend">احصل على مجموعة</string>
+    <string name="load">تحميل المجموعة</string>
+    <string name="saved">تم حفظ المجموعة!</string>
+    <string name="nothing_to_load">لا شيء للتحميل!</string>
+    <string name="load_set_title">اختر مجموعة!</string>
+    <string name="load_failed">فشل التحميل!</string>
+    <string name="enter_set_name_hint">أدخل اسم المجموعة</string>
+    <string name="save_set_title">أدخل اسماً لمجموعتك:</string>
+    <string name="set_name_empty">اسم المجموعة فارغ!</string>
+    <string name="overwrite_question">هل تريد الكتابة فوق المجموعة التي تحمل الاسم نفسه؟</string>
+    <string name="overwrite">الكتابة فوقها؟</string>
+    <string name="loaded_named">تم تحميل المجموعة!</string>
+    <string name="delete_question">هل تريد حذف هذه المجموعة؟</string>
+    <string name="delete">حذف</string>
+    <string name="set_stats_title">الإحصائيات الحالية:</string>
+    <string name="no_reward_sets">لم يتم تحديد أي مجموعات مكافآت!</string>
+    <string name="ad_failed">"فشل الإعلان: "</string>
+    <string name="ad_still_loading">لا يزال الإعلان قيد التحميل، يرجى المحاولة مرة أخرى بعد لحظة.</string>
+    <string name="sovereigns_ruby_sword">سيف الياقوت الملكي</string>
+    <string name="app_name">Magic Rampage: Companion</string>
+    <string name="blaze_armor">درع اللهب</string>
+    <string name="sovereigns_onyx_sword">سيف العقيق الملكي</string>
+    <string name="skin_black_mage1">قَلَنسوة الساحر المنبوذ</string>
+    <string name="skin_black_mage2">قَلَنسوة الساحر المتمرّد</string>
+    <string name="skin_druid1">قناع الكاهن القديم</string>
+    <string name="skin_druid2">خوذة الكاهن العنيد</string>
+    <string name="skin_elite_warrior1">خوذة الفارس المظلم</string>
+    <string name="skin_elite_warrior2">خوذة الفارس المتمرّد</string>
+    <string name="skin_high_mage1">قبعة ساحر الغابة</string>
+    <string name="skin_high_mage2">قبعة ساحر المستنقع</string>
+    <string name="skin_mage1">قبعة ساحر الصحراء</string>
+    <string name="skin_mage2">قبعة الساحر الدخانية</string>
+    <string name="skin_paladin1">خوذة فارس النور</string>
+    <string name="skin_paladin2">خوذة فارس العدالة</string>
+    <string name="skin_priest1">تاج الأسقف الأبيض</string>
+    <string name="skin_priest2">كوفية النبيّ البيضاء</string>
+    <string name="skin_ranger1">خوذة الحارس الهارب</string>
+    <string name="skin_ranger2">خوذة الحارس المنبوذ</string>
+    <string name="skin_rogue1">قبعة اللص البارع</string>
+    <string name="skin_rogue2">قبعة اللص الشهم</string>
+    <string name="skin_thief1">قَلَنسوة النينجا الأسود</string>
+    <string name="skin_thief2">قَلَنسوة نينجا الصحراء</string>
+    <string name="skin_warlock1">قَلَنسوة الساحر الملعون</string>
+    <string name="skin_warlock2">قَلَنسوة الساحر الوحشي</string>
+    <string name="skin_warrior1">خوذة المقاتل الجبّار</string>
+    <string name="skin_warrior2">خوذة المجالد</string>
+    <string name="skin_witchdoctor1">قناع طبيب الساحرات الخفي</string>
+    <string name="skin_witchdoctor2">قناع طبيب أمبرانيا</string>
+    <string name="skin_black_mage3">قبعة الكرة الحمراء</string>
+    <string name="skin_druid3">ساحرة الطبيعة المقنّعة</string>
+    <string name="skin_elite_warrior3">خوذة البيرسيركر</string>
+    <string name="skin_high_mage3">الساحرة العليا</string>
+    <string name="skin_mage3">قبعة النار البرية</string>
+    <string name="skin_paladin3">خوذة بطل النور</string>
+    <string name="skin_priest3">خوذة الكاهنة العليا</string>
+    <string name="skin_ranger3">البونيتيه الرسمية</string>
+    <string name="skin_rogue3">موريون الهلال</string>
+    <string name="skin_thief3">قبعة الشقي</string>
+    <string name="skin_warlock3">قناع الشيطان المهرّج</string>
+    <string name="skin_warrior3">خوذة الفالكيري</string>
+    <string name="skin_witchdoctor3">قناع طبيب البوم</string>
+    <string name="skin_black_mage4">الساحرة الخبيثة</string>
+    <string name="skin_druid4">قناع الشامان</string>
+    <string name="skin_elite_warrior4">أمير الحرب المظلم</string>
+    <string name="skin_high_mage4">الساحر الأعلى الخفي</string>
+    <string name="skin_mage4">مشعل النار</string>
+    <string name="skin_paladin4">خوذة رئيس الملائكة</string>
+    <string name="skin_priest4">عمامة الصمت</string>
+    <string name="skin_ranger4">خوذة العذاب الصامت</string>
+    <string name="skin_rogue4">نينجا كايت</string>
+    <string name="skin_thief4">قناع المرتزق</string>
+    <string name="skin_warlock4">تاج القرون</string>
+    <string name="skin_warrior4">كابوتو</string>
+    <string name="skin_witchdoctor4">غطاء رأس طبيب الساحرات</string>
+    <string name="skin_black_mage5">المُلتفّ بالظلال</string>
+    <string name="skin_druid5">الغضب المتوحش</string>
+    <string name="skin_elite_warrior5">المشاة المدرّعون</string>
+    <string name="skin_high_mage5">حكيم الزمرّد</string>
+    <string name="skin_mage5">المرصّع المتوهّج</string>
+    <string name="skin_paladin5">بشير السماء</string>
+    <string name="skin_priest5">محقّق ما وراء الأبعاد</string>
+    <string name="skin_ranger5">المتمرّد المحطّم</string>
+    <string name="skin_rogue5">القرصان القرمزي</string>
+    <string name="skin_thief5">المغامر الجريء</string>
+    <string name="skin_warlock5">المعذِّب ذو الألسنة</string>
+    <string name="skin_warrior5">الحارس القرمزي</string>
+    <string name="skin_witchdoctor5">طبيب الأعشاب المروّع</string>
+    <string name="skin_black_mage6">الدمية المسكونة</string>
+    <string name="skin_druid6">ساحرة نسج الشباك</string>
+    <string name="skin_elite_warrior6">الأوني الأبيض</string>
+    <string name="skin_high_mage6">ساحر الكوارتز الوردي</string>
+    <string name="skin_mage6">وهّام الاشتعال</string>
+    <string name="skin_paladin6">خلاص الوصيفة</string>
+    <string name="skin_priest6">نبي الشامان</string>
+    <string name="skin_ranger6">الكشّاف المطلي بالفضة</string>
+    <string name="skin_rogue6">اللص ذو العباءة القرمزية</string>
+    <string name="skin_thief6">لص الفلامنغو</string>
+    <string name="skin_warlock6">حاصد الأرواح ذو القرون الحمراء</string>
+    <string name="skin_warrior6">محارب اليوكاي</string>
+    <string name="skin_witchdoctor6">مستحضر الأرواح المتوَّج</string>
+    <string name="skin_black_mage7">ساحر الكفن القرمزي الخفي</string>
+    <string name="skin_druid7">الدرويد البدائي ذو العرف المتوحش</string>
+    <string name="skin_elite_warrior7">قائد الطليعة البرونزي</string>
+    <string name="skin_high_mage7">ماهر سقوط النجوم الجمشتي</string>
+    <string name="skin_mage7">ماهر لهب الشمس</string>
+    <string name="skin_paladin7">فارس الهالة المصهور بالشمس</string>
+    <string name="skin_priest7">عرّاف الجمجمة الذهبية</string>
+    <string name="skin_ranger7">حارس الأرغونوت</string>
+    <string name="skin_rogue7">شبح الكفن الأبيض</string>
+    <string name="skin_thief7">المهرّج النشّال</string>
+    <string name="skin_warlock7">ساحر الترايكلوبس السحيق</string>
+    <string name="skin_warrior7">الجندي ذو الأشواك العظمية</string>
+    <string name="skin_witchdoctor7">معالج الغار الذهبي</string>
+    <string name="skin_black_mage8">غطاء رأس عابد الهاوية</string>
+    <string name="skin_druid8">حارس الحصاد</string>
+    <string name="skin_elite_warrior8">عرف أمير الحرب المتوَّج</string>
+    <string name="skin_high_mage8">ساحر الانفجار النجمي الأثيري</string>
+    <string name="skin_mage8">قائد النار</string>
+    <string name="skin_paladin8">خوذة حارس السيرافيم</string>
+    <string name="skin_priest8">الكاهن ذو العرف السماوي</string>
+    <string name="skin_ranger8">حارس السلالة</string>
+    <string name="skin_rogue8">اللص الخفي المخطّط</string>
+    <string name="skin_thief8">لص البحر</string>
+    <string name="skin_warlock8">ساحر الفراغ</string>
+    <string name="skin_warrior8">محارب الزمرّد</string>
+    <string name="skin_witchdoctor8">طبيب الساحرات النخبوي ذو البوم</string>
+    <string name="skin_black_mage11">قبعة النيكرومانسر النبيل</string>
+    <string name="skin_druid11">خوذة الذئب العاوي</string>
+    <string name="skin_elite_warrior11">الحارس القرمزي ذو القرون</string>
+    <string name="skin_high_mage11">قبعة الساحر الشرير</string>
+    <string name="skin_mage11">رداء الساحر الطيفي</string>
+    <string name="skin_paladin11">قناع الفارس الجليدي</string>
+    <string name="skin_priest11">غطاء الشبح الغامض</string>
+    <string name="skin_ranger11">قبعة الروح المُحبّة</string>
+    <string name="skin_rogue11">القبعة المقرّنة الوردية الشيطانية</string>
+    <string name="skin_thief11">غطاء الابتسامة المرعبة</string>
+    <string name="skin_warlock11">فك الصقيع الوحشي</string>
+    <string name="skin_warrior11">قناع الجوهرة الغامض</string>
+    <string name="skin_witchdoctor11">كفن الفولاذ الشاماني</string>
+    <string name="skin_black_mage12">غطاء الظل الخفي</string>
+    <string name="skin_druid12">قبعة روح الغابة</string>
+    <string name="skin_elite_warrior12">خوذة حرب قلب التنين</string>
+    <string name="skin_high_mage12">قبعة الساحر الأعلى الخفي</string>
+    <string name="skin_mage12">عمامة مستحضر النار</string>
+    <string name="skin_paladin12">خوذة المنارة المقدّسة</string>
+    <string name="skin_priest12">قلنسوة الحارس الورع</string>
+    <string name="skin_ranger12">خوذة حارس الشوغون</string>
+    <string name="skin_rogue12">قناع القاتل الشبح</string>
+    <string name="skin_thief12">قبعة اللص الصامت</string>
+    <string name="skin_warlock12">خوذة العهد المظلم</string>
+    <string name="skin_warrior12">خوذة المدافع المدرع</string>
+    <string name="skin_witchdoctor12">خوذة مستدعي الأرواح</string>
+    <string name="skin_black_mage13">عمامة بصيرة الكريستال</string>
+    <string name="skin_druid13">محيا الروح المتوحشة</string>
+    <string name="skin_elite_warrior13">خوذة حرب القرن المدبب</string>
+    <string name="skin_high_mage13">خوذة الحكيم الغامض</string>
+    <string name="skin_mage13">خوذة الهاوية اليقظة</string>
+    <string name="skin_paladin13">خوذة التنين البار</string>
+    <string name="skin_priest13">قلنسوة مخلب التنين</string>
+    <string name="skin_ranger13">خوذة حارس الشمس</string>
+    <string name="skin_rogue13">قناع الكروم الهامسة</string>
+    <string name="skin_thief13">قناع توهج القمر</string>
+    <string name="skin_warlock13">قلنسوة كائن الأعماق</string>
+    <string name="skin_warrior13">أجنحة الغضب</string>
+    <string name="skin_witchdoctor13">قناع سيد الغربان</string>
+    <string name="skin_black_mage14">خوذة الفارس الطيفي</string>
+    <string name="skin_druid14">فارس البرية</string>
+    <string name="skin_elite_warrior14">حصن القلعة</string>
+    <string name="skin_high_mage14">تاج الملكة الغامضة</string>
+    <string name="skin_mage14">قلنسوة البيدق الصوفي</string>
+    <string name="skin_paladin14">معقل القلعة</string>
+    <string name="skin_priest14">حجاب الأسقف المقدس</string>
+    <string name="skin_ranger14">خوذة البيدق الجريء</string>
+    <string name="skin_rogue14">تاج ملك الظلال</string>
+    <string name="skin_thief14">قناع فك البيدق</string>
+    <string name="skin_warlock14">قناع الأسقف الملعون</string>
+    <string name="skin_warrior14">محيا أمير الحرب الملكي</string>
+    <string name="skin_witchdoctor14">ملكة الدوامة الملعونة</string>
+    <string name="skin_black_mage15">حجاب الشيفرة المظلمة</string>
+    <string name="skin_druid15">حامي البستان</string>
+    <string name="skin_elite_warrior15">طليعة التيتانيوم</string>
+    <string name="skin_high_mage15">شعار رئيس السحرة العصبي</string>
+    <string name="skin_mage15">خوذة الساحر العصبي</string>
+    <string name="skin_paladin15">درع التفرد</string>
+    <string name="skin_priest15">قناع القديس الهولوغرامي</string>
+    <string name="skin_ranger15">واقي عين الصياد الهولوغرامي</string>
+    <string name="skin_rogue15">قناع المخرب الظلي</string>
+    <string name="skin_thief15">قناع الدائرة الظلية</string>
+    <string name="skin_warlock15">تاج رابط الشياطين</string>
+    <string name="skin_warrior15">واقي عين سائر الأعماق</string>
+    <string name="skin_witchdoctor15">قناع دائرة الطاعون</string>
+    <string name="skin_black_mage16">محيا تنين النار الظلية</string>
+    <string name="skin_druid16">تاج التنين البري</string>
+    <string name="skin_elite_warrior16">خوذة أمير الحرب التنيني</string>
+    <string name="skin_high_mage16">تاج التنين الغامض</string>
+    <string name="skin_mage16">رئيس سحرة لهب التنين</string>
+    <string name="skin_paladin16">خوذة التنين المقدس</string>
+    <string name="skin_priest16">هالة التنين المقدس</string>
+    <string name="skin_ranger16">متعقب ناب التنين</string>
+    <string name="skin_rogue16">خوذة التنين الصامت</string>
+    <string name="skin_thief16">قلنسوة الناب السام</string>
+    <string name="skin_warlock16">قناع التنين الجهنمي</string>
+    <string name="skin_warrior16">خوذة الغضب التنيني</string>
+    <string name="skin_witchdoctor16">محيا تنين الطاعون</string>
+    <string name="skin_black_mage17">محيا ليتش الفراغ</string>
+    <string name="skin_druid17">خوذة لعنة الخضرة</string>
+    <string name="skin_elite_warrior17">خوذة طليعة العظام</string>
+    <string name="skin_high_mage17">تاج رئيس السحرة الطيفي</string>
+    <string name="skin_mage17">ساحر لهب الجمجمة</string>
+    <string name="skin_paladin17">صفيحة الجمجمة المقدسة</string>
+    <string name="skin_priest17">هالة كاهن العظام</string>
+    <string name="skin_ranger17">متعقب الصيد الأجوف</string>
+    <string name="skin_rogue17">ظل الجمجمة المبتسمة</string>
+    <string name="skin_thief17">قلنسوة الشبح المبتسم</string>
+    <string name="skin_warlock17">قناع الجمجمة الملعونة</string>
+    <string name="skin_warrior17">قناع حرب ساحق الجماجم</string>
+    <string name="skin_witchdoctor17">حامل الجمجمة الطوطمي</string>
+    <string name="skin_black_mage18">ساحرة الشفق</string>
+    <string name="skin_druid18">روح بستان الأزهار</string>
+    <string name="skin_elite_warrior18">المخلب المتوج</string>
+    <string name="skin_high_mage18">الإمبراطورة الغامضة</string>
+    <string name="skin_mage18">تلميذ رائي الرونية</string>
+    <string name="skin_paladin18">الحارس المتألق</string>
+    <string name="skin_priest18">عرافة القمر</string>
+    <string name="skin_ranger18">متعقبة ضفيرة القمر</string>
+    <string name="skin_rogue18">الشريط الصامت</string>
+    <string name="skin_thief18">فتاة خطوة الظل</string>
+    <string name="skin_warlock18">ساحرة القرن الهامس</string>
+    <string name="skin_warrior18">صيادة عاصفة النصال</string>
+    <string name="skin_witchdoctor18">المرتل الغامض</string>
+    <string name="skin_black_mage19">ساحرة الشفق</string>
+    <string name="skin_druid19">سكارفانغ</string>
+    <string name="skin_elite_warrior19">الفيلق المتوج</string>
+    <string name="skin_high_mage19">ساحرة الشموع</string>
+    <string name="skin_mage19">ساحر النار المريش</string>
+    <string name="skin_paladin19">حارس الهالة</string>
+    <string name="skin_priest19">العرافة ذات القرون</string>
+    <string name="skin_ranger19">حارس قفل العقل</string>
+    <string name="skin_rogue19">الحبيبة الفتاكة</string>
+    <string name="skin_thief19">المخادع المقنع</string>
+    <string name="skin_warlock19">الساحر المقيد بالجحيم</string>
+    <string name="skin_warrior19">كاسر التاج العملاق</string>
+    <string name="skin_witchdoctor19">وعاء الروح</string>
+    <string name="skin_black_mage20">راكب الظل</string>
+    <string name="skin_black_mage21">ساحر الأسلاف</string>
+    <string name="skin_druid20">وايلد رايدر</string>
+    <string name="skin_druid21">شامان السماء</string>
+    <string name="skin_elite_warrior20">ستيل سترايكر</string>
+    <string name="skin_elite_warrior21">بطل الشمس</string>
+    <string name="skin_high_mage20">آركين كوب</string>
+    <string name="skin_high_mage21">عرّاف السماء</string>
+    <string name="skin_mage20">بليز سترايكر</string>
+    <string name="skin_mage21">شامان اللهب</string>
+    <string name="skin_paladin20">جاستيس رينجر</string>
+    <string name="skin_paladin21">حارس الأفق</string>
+    <string name="skin_priest20">سيكريد سنتينل</string>
+    <string name="skin_priest21">كاهن الشمس</string>
+    <string name="skin_ranger20">سايبر رينجر</string>
+    <string name="skin_ranger21">صيّاد السماء</string>
+    <string name="skin_rogue20">فانتوم سترايكر</string>
+    <string name="skin_rogue21">متعقّب الغسق</string>
+    <string name="skin_thief20">هورنت رايدر</string>
+    <string name="skin_thief21">عدّاء الكثبان</string>
+    <string name="skin_warlock20">هيكس نايت</string>
+    <string name="skin_warlock21">عرّاف الجماجم</string>
+    <string name="skin_warrior20">آيرون سترايكر</string>
+    <string name="skin_warrior21">الطليعة الحمراء</string>
+    <string name="skin_witchdoctor20">سبيريت رايدر</string>
+    <string name="skin_witchdoctor21">هامس العظام</string>
+    <string name="search_hint">ابحث عن عنصر…</string>
+    <string name="search_enemy_hint">ابحث عن عدو…</string>
+    <string name="all">الكل</string>
+    <string name="skins">👺 الأزياء 👺</string>
+    <string name="suffix_colored">(ملوّن)</string>
+    <string name="class_ranger">رينجر</string>
+    <string name="class_priest">بريست</string>
+    <string name="class_warlock">وورلوك</string>
+    <string name="class_black_mage">بلاك ميج</string>
+    <string name="class_rogue">روغ</string>
+    <string name="class_thief">ثيف</string>
+    <string name="class_warrior">ووريور</string>
+    <string name="class_mage">ميج</string>
+    <string name="class_druid">درويد</string>
+    <string name="class_paladin">بالادين</string>
+    <string name="class_high_mage">هاي ميج</string>
+    <string name="class_elite_warrior">إيليت ووريور</string>
+    <string name="class_witchdoctor">ويتش دكتور</string>
+    <string name="root_of_judgement">جذر الحكم</string>
+    <string name="eye_of_the_rift">عين الصدع</string>
+    <string name="staff_of_withering">عصا الذبول</string>
+    <string name="crowned_dragonhead">رأس التنين المتوّج</string>
+    <string name="knight_of_discord">فارس الفتنة</string>
+    <string name="bloodforged_charm_earring">تعويذة الدم المطروق</string>
+    <string name="moonbound_necklace">قلادة قيد القمر</string>
+    <string name="skybreaker_band">سوار كاسر السماء</string>
+    <string name="price_freemium_gold">سعر الذهب المجاني: </string>
+    <string name="price_premium_gold">سعر الذهب المميّز: </string>
+    <string name="price_freemium_token">سعر الرمز المجاني: </string>
+    <string name="price_premium_token">سعر الرمز المميّز: </string>
+    <string name="price_freemium_sell">سعر البيع المجاني: </string>
+    <string name="price_premium_sell">سعر البيع المميّز: </string>
+    <string name="chapter_one_random_drop">إسقاط عشوائي للفصل 1</string>
+    <string name="chapter_two_random_drop">إسقاط عشوائي للفصل 2</string>
+    <string name="chapter_three_random_drop">إسقاط عشوائي للفصل 3</string>
+    <string name="chapter_four_random_drop">إسقاط عشوائي للفصل 4</string>
+    <string name="chapter_five_random_drop">إسقاط عشوائي للفصل 5</string>
+    <string name="shop">المتجر</string>
+    <string name="pvp_golden_blue_chest">صندوق PvP الأزرق الذهبي</string>
+    <string name="pvp_golden_red_chest">صندوق PvP الأحمر</string>
+    <string name="pvp_golden_purple_chest">صندوق PvP البنفسجي الذهبي</string>
+    <string name="pvp_silver_purple_chest">صندوق PvP البنفسجي الفضي</string>
+    <string name="achievement">إنجاز</string>
+    <string name="weekly_dungeon_golden_chest">الصندوق الذهبي للزنزانة الأسبوعية</string>
+    <string name="survival_mode_1">وضع البقاء 1</string>
+    <string name="survival_mode_2">وضع البقاء 2</string>
+    <string name="survival_mode_3">وضع البقاء 3</string>
+    <string name="survival_mode_4">وضع البقاء 4</string>
+    <string name="survival_mode_5">وضع البقاء 5</string>
+    <string name="survival_mode_6">وضع البقاء 6</string>
+    <string name="for_content_makers">لصنّاع المحتوى</string>
+    <string name="obtainability">إمكانية الحصول: </string>
+    <string name="loading_translation">جارٍ الترجمة…</string>
+    <string name="all_seeing_hammer">المطرقة كلّية الرؤية</string>
+    <string name="staff_shooting_star_staff">عصا النجم الساقط</string>
+    <string name="black_shuriken">شوريكن أسود</string>
+    <string name="scorpion_fang">ناب العقرب</string>
+    <string name="oasis_blade">نصل الواحة</string>
+    <string name="dungeon_40_1">الزنزانة 40.1</string>
+    <string name="dungeon_41_1">الزنزانة 41.1</string>
+    <string name="dungeon_42_1">الزنزانة 42.1</string>
+    <string name="dungeon_43_1">الزنزانة 43.1</string>
+    <string name="dungeon_36_1">الزنزانة 36.1</string>
+    <string name="dungeon_37_mono">الزنزانة 37 مونو</string>
+    <string name="dungeon_38_1">الزنزانة 38.1</string>
+    <string name="dungeon_44_1">الزنزانة 44.1</string>
+    <string name="dungeon_44_bonus">الزنزانة 44 المكافأة</string>
+    <string name="utility_markers_visible">علامات الأدوات: ظاهرة</string>
+    <string name="utility_markers_hidden">علامات الأدوات: مخفية</string>
+    <string name="unlock_secret_areas_title">فتح المناطق السرّية</string>
+    <string name="unlock_secret_areas_message">هل تريد مشاهدة إعلان لفتح مواقع جميع المناطق السرّية في هذه المرحلة بشكل دائم؟</string>
+    <string name="watch_ad">مشاهدة الإعلان</string>
+    <string name="maybe_later">ربما لاحقًا</string>
+    <string name="no_secret_areas">لم يتم العثور على مناطق سرّية في هذه المرحلة.</string>
+    <string name="no_secret_area_available">لا تحتوي هذه الزنزانة على منطقة سرّية.</string>
+    <string name="select_secret_area">اختر المنطقة السرية</string>
+    <string name="moved_to_secret_area">تم الانتقال إلى المنطقة السرية %d</string>
+    <string name="secret_area_item">المنطقة السرية %d</string>
+    <string name="close">إغلاق</string>
+    <string name="secrets_revealed">تم كشف المناطق السرية لهذه المرحلة بشكل دائم!</string>
+    <string name="bunny_spear">رمح الأرنب</string>
+    <string name="steelblow_shuriken">شوريكن الفولاذ الصلب</string>
+    <string name="arcane_rod_staff">عصا القضيب السحري</string>
+    <string name="empty_no_results">لم يتم العثور على نتائج</string>
+    <string name="empty_no_enemies">لا يوجد أعداء لعرضهم</string>
+    <string name="empty_no_levels">لا توجد مراحل متاحة</string>
+    <string name="cd_ad_preferences">تفضيلات الإعلانات</string>
+    <string name="cd_chapter_1">الفصل 1</string>
+    <string name="cd_chapter_2">الفصل 2</string>
+    <string name="cd_chapter_3">الفصل 3</string>
+    <string name="cd_chapter_4">الفصل 4</string>
+    <string name="cd_chapter_5">الفصل 5</string>
+    <string name="cd_facebook">Facebook</string>
+    <string name="cd_instagram">Instagram</string>
+    <string name="cd_twitter">Twitter / X</string>
+    <string name="cd_discord">Discord</string>
+    <string name="cd_item_image">صورة العنصر</string>
+    <string name="cd_enemy_image">صورة العدو</string>
+    <string name="cd_back">رجوع</string>
+    <string name="cd_show_secrets">إظهار المناطق السرية</string>
+    <string name="cd_toggle_logic">تبديل كيانات المنطق</string>
+    <string name="section_stats">الإحصائيات</string>
+    <string name="section_attack">الهجوم</string>
+    <string name="section_bonuses">المكافآت</string>
+    <string name="section_economy">الاقتصاد</string>
+    <string name="section_behaviour">السلوك</string>
+    <string name="section_properties">الخصائص</string>
+    <string name="coming_soon">قريباً</string>
+    <string name="privacy_options_unavailable">خيارات الخصوصية غير متاحة: %1$s</string>
+    <string name="ad_consent_not_required">موافقة الإعلانات غير مطلوبة في منطقتك.</string>
+    <string name="no_skill_points_left">لم تتبق لديك نقاط مهارة</string>
+    <string name="not_enough_skill_points">لا توجد نقاط مهارة كافية لفتح جميع المهارات السابقة.</string>
+    <string name="no_level_file_provided">لم يتم توفير ملف مرحلة</string>
+    <string name="failed_to_load_level">فشل تحميل المرحلة: %1$s</string>
+    <string name="translation_model_failed">فشل تنزيل نموذج الترجمة.</string>
+    <string name="add">إضافة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="cd_add_entity">إضافة كيان</string>
+    <string name="cd_add_field">إضافة حقل</string>
+    <string name="cd_delete_entity">حذف الكيان</string>
+    <string name="cd_duplicate_entity">تكرار الكيان</string>
+    <string name="cd_entity_list">البحث عن كيان</string>
+    <string name="cd_field_exists">يوجد بالفعل حقل بهذا الاسم</string>
+    <string name="cd_field_name">الاسم</string>
+    <string name="cd_field_name_empty">أدخل اسم الحقل</string>
+    <string name="cd_field_value">القيمة</string>
+    <string name="cd_marquee">تحديد بالإطار</string>
+    <string name="cd_redo">إعادة</string>
+    <string name="cd_remove_field">إزالة الحقل</string>
+    <string name="cd_save">حفظ المرحلة</string>
+    <string name="cd_toggle_edit">تبديل وضع التحرير</string>
+    <string name="cd_toggle_snap">تبديل المحاذاة للشبكة</string>
+    <string name="cd_undo">تراجع</string>
+    <string name="confirm_delete_entity">حذف هذا الكيان؟</string>
+    <string name="confirm_delete_group">حذف %1$d كيانات؟</string>
+    <string name="customdata_dialog_title">تحرير البيانات المخصصة</string>
+    <string name="edit_mode_off">وضع التحرير: متوقف</string>
+    <string name="edit_mode_on">وضع التحرير: مفعّل</string>
+    <string name="empty_no_my_levels">لا توجد مراحل محفوظة بعد — حرّر مرحلة واضغط على حفظ.</string>
+    <string name="entities_selected">تم تحديد %1$d كيانات</string>
+    <string name="entity_browser_empty">هذه المرحلة لا تحتوي على كيانات.</string>
+    <string name="entity_browser_title">البحث عن كيان</string>
+    <string name="export">تصدير…</string>
+    <string name="export_failed">فشل التصدير: %1$s</string>
+    <string name="export_success">تم التصدير. انقل ملف ‎.esc إلى مجلد Magic Rampage/scenes/ على جهاز الكمبيوتر الخاص بك.</string>
+    <string name="inspector_angle">الزاوية</string>
+    <string name="inspector_blend">المزج %1$d</string>
+    <string name="inspector_flip_x">قلب X</string>
+    <string name="inspector_flip_y">قلب Y</string>
+    <string name="inspector_no_sprite">(لا يوجد سبرايت)</string>
+    <string name="inspector_scale_x">المقياس X</string>
+    <string name="inspector_scale_y">المقياس Y</string>
+    <string name="inspector_x">X</string>
+    <string name="inspector_y">Y</string>
+    <string name="inspector_z">Z</string>
+    <string name="level_tab_mine">مراحلي</string>
+    <string name="marquee_off">التحديد بالإطار: متوقف</string>
+    <string name="marquee_on">التحديد بالإطار: مفعّل — اسحب مربعاً للتحديد</string>
+    <string name="palette_search_hint">البحث عن الكيانات…</string>
+    <string name="palette_title">إضافة كيان</string>
+    <string name="save">حفظ</string>
+    <string name="save_dialog_title">حفظ المرحلة</string>
+    <string name="save_failed">فشل الحفظ: %1$s</string>
+    <string name="save_success">تم الحفظ: %1$s</string>
+    <string name="snap_off">المحاذاة للشبكة: متوقفة</string>
+    <string name="snap_on">المحاذاة للشبكة: مفعّلة</string>
+    <string name="validate_empty_level">المرحلة فارغة — لا تحتوي على كيانات.</string>
+    <string name="validate_intro">تحتوي هذه المرحلة على مشكلات قد تمنع تحميلها في Magic Rampage:</string>
+    <string name="validate_no_spawn">لا يوجد موضع ظهور للاعب (spawn0) — لا يوجد مكان يبدأ منه اللاعب.</string>
+    <string name="validate_save_anyway">احفظ على أي حال</string>
+    <string name="validate_title">قبل أن تحفظ</string>
+    <string name="news_refresh_failed">تعذّر التحديث. يتم عرض الأخبار المحفوظة.</string>
+    <string name="all_seeing_staff">عصا البصيرة الكاملة</string>
+    <string name="dawnfang">ناب الفجر</string>
+</resources>

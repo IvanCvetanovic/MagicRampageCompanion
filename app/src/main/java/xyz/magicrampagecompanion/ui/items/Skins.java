@@ -23,6 +23,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.Insets;
+import androidx.core.text.BidiFormatter;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.widget.TextViewCompat;
@@ -193,7 +194,8 @@ public class Skins extends BaseActivity {
         public void onBindViewHolder(@NonNull SecVH holder, int position) {
             Section section = data.get(position);
             // Show skin count alongside class name
-            holder.title.setText(section.title + "  (" + section.items.size() + ")");
+            holder.title.setText(section.title + "  "
+                    + BidiFormatter.getInstance().unicodeWrap("(" + section.items.size() + ")"));
             holder.horizontal.setAdapter(new ImageAdapter(section.items, Skins.this::playClick));
         }
 

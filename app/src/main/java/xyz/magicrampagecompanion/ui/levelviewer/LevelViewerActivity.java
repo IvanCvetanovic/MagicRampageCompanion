@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -25,9 +26,11 @@ import android.util.LruCache;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.TooltipCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -81,6 +84,11 @@ public class LevelViewerActivity extends BaseActivity {
     private View btnEditGold;
     private TextView inspectorHeader;
     private TextView inspectorMeta;
+    private TextView groupSelectionInfo;
+    private TextView levelTitleView;
+    private String baseTitle = "";
+    private String sessionSaveName;   // remembers the last Save/Export name within this session
+    private static final int TOGGLE_ACCENT = 0xFF00DCFF;   // active-toggle tint (alpha stays for disabled)
     private EditText etX, etY, etZ, etScaleX, etScaleY, etAngle;
     private CheckBox cbFlipX, cbFlipY;
     private boolean suppressWatchers = false;
@@ -136,17 +144,22 @@ public class LevelViewerActivity extends BaseActivity {
             return WindowInsetsCompat.CONSUMED;
         });
 
-        TextView title = findViewById(R.id.levelViewerTitle);
+        levelTitleView = findViewById(R.id.levelViewerTitle);
         java.util.regex.Matcher titleMatcher = java.util.regex.Pattern.compile("dungeon(\\d+)")
                 .matcher(levelKey.replace(".esc", ""));
         String titleKey = titleMatcher.find()
                 ? titleMatcher.replaceFirst("dungeon_" + (Integer.parseInt(titleMatcher.group(1)) + 1)).replace(".", "_")
                 : levelKey.replace(".esc", "");
         int titleResId = getResources().getIdentifier(titleKey, "string", getPackageName());
-        title.setText(titleResId != 0 ? getString(titleResId) : levelKey.replace(".esc", ""));
+        baseTitle = titleResId != 0 ? getString(titleResId) : levelKey.replace(".esc", "");
+        levelTitleView.setText(baseTitle);
 
         ImageButton btnBack = findViewById(R.id.btnLevelBack);
-        btnBack.setOnClickListener(v -> { playClick(); finish(); });
+        btnBack.setOnClickListener(v -> { playClick(); handleBackPressed(); });
+        // Guard system back too, so unsaved edits aren't silently lost (data-loss fix).
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override public void handleOnBackPressed() { handleBackPressed(); }
+        });
 
         renderView = findViewById(R.id.levelRenderView);
 
@@ -157,12 +170,12 @@ public class LevelViewerActivity extends BaseActivity {
 
         // --- Toggle Logic Button ---
         ImageButton btnToggleLogic = findViewById(R.id.btnToggleLogic);
-        btnToggleLogic.setAlpha(0.4f); // starts hidden
+        setToggleActive(btnToggleLogic, false); // starts hidden
         btnToggleLogic.setOnClickListener(v -> {
             playClick();
             boolean current = renderView.isShowingLogicEntities();
             renderView.setShowLogicEntities(!current);
-            btnToggleLogic.setAlpha(renderView.isShowingLogicEntities() ? 1.0f : 0.4f);
+            setToggleActive(btnToggleLogic, renderView.isShowingLogicEntities());
             int statusRes = renderView.isShowingLogicEntities() ? R.string.utility_markers_visible : R.string.utility_markers_hidden;
             Toast.makeText(this, statusRes, Toast.LENGTH_SHORT).show();
         });
@@ -172,6 +185,9 @@ public class LevelViewerActivity extends BaseActivity {
         editorInspector   = findViewById(R.id.editorInspector);
         inspectorHeader   = findViewById(R.id.inspectorHeader);
         inspectorMeta     = findViewById(R.id.inspectorMeta);
+        groupSelectionInfo = findViewById(R.id.groupSelectionInfo);
+        View btnDeselect  = findViewById(R.id.btnDeselect);
+        btnDeselect.setOnClickListener(v -> { playClick(); renderView.clearSelection(); });
         btnEditEnemy      = findViewById(R.id.btnEditEnemy);
         btnEditEnemy.setOnClickListener(v -> { playClick(); showEnemyEditDialog(renderView.getSelectedEntity()); });
         btnEditGold       = findViewById(R.id.btnEditGold);
@@ -188,47 +204,55 @@ public class LevelViewerActivity extends BaseActivity {
         renderView.setOnSelectionChangedListener(this::populateInspector);
 
         ImageButton btnToggleSnap = findViewById(R.id.btnToggleSnap);
-        btnToggleSnap.setAlpha(renderView.isSnapToGrid() ? 1.0f : 0.4f);
+        setToggleActive(btnToggleSnap, renderView.isSnapToGrid());
         btnToggleSnap.setOnClickListener(v -> {
             playClick();
             boolean snap = !renderView.isSnapToGrid();
             renderView.setSnapToGrid(snap);
-            btnToggleSnap.setAlpha(snap ? 1.0f : 0.4f);
+            setToggleActive(btnToggleSnap, snap);
+            Toast.makeText(this, snap ? R.string.snap_on : R.string.snap_off, Toast.LENGTH_SHORT).show();
         });
 
         ImageButton btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(v -> { playClick(); attemptSave(); });
 
+        View btnFitScreen = findViewById(R.id.btnFitScreen);
+        btnFitScreen.setOnClickListener(v -> { playClick(); renderView.resetView(); });
+
         ImageButton btnEntityList = findViewById(R.id.btnEntityList);
         btnEntityList.setOnClickListener(v -> { playClick(); showEntityBrowser(); });
 
         ImageButton btnMarquee = findViewById(R.id.btnMarquee);
-        btnMarquee.setAlpha(0.4f);
+        setToggleActive(btnMarquee, false);
         btnMarquee.setOnClickListener(v -> {
             playClick();
             boolean on = !renderView.isMarqueeMode();
             renderView.setMarqueeMode(on);
-            btnMarquee.setAlpha(on ? 1.0f : 0.4f);
+            setToggleActive(btnMarquee, on);
+            Toast.makeText(this, on ? R.string.marquee_on : R.string.marquee_off, Toast.LENGTH_SHORT).show();
         });
 
-        renderView.setOnMultiSelectionChangedListener(count -> {
-            if (count > 1) Toast.makeText(this, getString(R.string.entities_selected, count), Toast.LENGTH_SHORT).show();
-        });
+        // Group selection is reflected as a persistent count line in the inspector area.
+        renderView.setOnMultiSelectionChangedListener(count -> populateInspector(renderView.getSelectedEntity()));
 
         ImageButton btnToggleEdit = findViewById(R.id.btnToggleEdit);
-        btnToggleEdit.setAlpha(0.4f); // starts in VIEW mode
+        setToggleActive(btnToggleEdit, false); // starts in VIEW mode
+        btnToggleEdit.setOnLongClickListener(v -> { showEditorLegend(); return true; });
         btnToggleEdit.setOnClickListener(v -> {
             playClick();
             boolean enable = !renderView.isEditMode();
             renderView.setEditMode(enable);
-            btnToggleEdit.setAlpha(enable ? 1.0f : 0.4f);
+            updateEditModeChrome(enable);
             editorBottomPanel.setVisibility(enable ? View.VISIBLE : View.GONE);
             btnToggleSnap.setVisibility(enable ? View.VISIBLE : View.GONE);
             btnSave.setVisibility(enable ? View.VISIBLE : View.GONE);
             btnEntityList.setVisibility(enable ? View.VISIBLE : View.GONE);
             btnMarquee.setVisibility(enable ? View.VISIBLE : View.GONE);
-            if (!enable) { renderView.setMarqueeMode(false); btnMarquee.setAlpha(0.4f); }
-            if (enable) populateInspector(renderView.getSelectedEntity());
+            if (!enable) { renderView.setMarqueeMode(false); setToggleActive(btnMarquee, false); }
+            if (enable) {
+                populateInspector(renderView.getSelectedEntity());
+                maybeShowFirstRunLegend();
+            }
         });
 
         // --- Editor toolbar actions (Phase 4) ---
@@ -246,6 +270,29 @@ public class LevelViewerActivity extends BaseActivity {
         btnRedo.setOnClickListener(v -> { playClick(); renderView.redo(); });
         renderView.setOnHistoryChangedListener(this::updateUndoRedoButtons);
         updateUndoRedoButtons();
+
+        // Tooltips / long-press labels on the icon buttons (discoverability for sighted users).
+        int[][] tips = {
+                {R.id.btnLevelBack, R.string.cd_back},
+                {R.id.btnShowSecrets, R.string.cd_show_secrets},
+                {R.id.btnToggleLogic, R.string.cd_toggle_logic},
+                {R.id.btnToggleEdit, R.string.cd_toggle_edit},
+                {R.id.btnToggleSnap, R.string.cd_toggle_snap},
+                {R.id.btnMarquee, R.string.cd_marquee},
+                {R.id.btnEntityList, R.string.cd_entity_list},
+                {R.id.btnSave, R.string.cd_save},
+                {R.id.btnFitScreen, R.string.cd_fit_screen},
+                {R.id.btnAddEntity, R.string.cd_add_entity},
+                {R.id.btnDuplicateEntity, R.string.cd_duplicate_entity},
+                {R.id.btnDeleteEntity, R.string.cd_delete_entity},
+                {R.id.btnUndo, R.string.cd_undo},
+                {R.id.btnRedo, R.string.cd_redo},
+                {R.id.btnDeselect, R.string.cd_deselect},
+        };
+        for (int[] t : tips) {
+            View vb = findViewById(t[0]);
+            if (vb != null) TooltipCompat.setTooltipText(vb, getString(t[1]));
+        }
 
         // --- Show Secrets Button (Ad-locked + Navigation) ---
         btnShowSecrets = findViewById(R.id.btnShowSecrets);
@@ -293,6 +340,42 @@ public class LevelViewerActivity extends BaseActivity {
         bindFloatField(etAngle, e -> e.angle, (e, v) -> e.angle = v);
         cbFlipX.setOnCheckedChangeListener((b, checked) -> onFlipChanged(true, checked));
         cbFlipY.setOnCheckedChangeListener((b, checked) -> onFlipChanged(false, checked));
+
+        // −/+ steppers: precise nudges without summoning the keyboard. Position by one tile (64),
+        // depth by 1, scale by 0.1, angle by 15°. Each tap is one undoable command.
+        wireStepper(R.id.stepXMinus, R.id.stepXPlus, e -> e.x, (e, v) -> e.x = v, etX, 64f);
+        wireStepper(R.id.stepYMinus, R.id.stepYPlus, e -> e.y, (e, v) -> e.y = v, etY, 64f);
+        wireStepper(R.id.stepZMinus, R.id.stepZPlus, e -> e.z, (e, v) -> e.z = v, etZ, 1f);
+        wireStepper(R.id.stepSXMinus, R.id.stepSXPlus, e -> e.scaleX, (e, v) -> { e.scaleX = v; e.scaleEdited = true; }, etScaleX, 0.1f);
+        wireStepper(R.id.stepSYMinus, R.id.stepSYPlus, e -> e.scaleY, (e, v) -> { e.scaleY = v; e.scaleEdited = true; }, etScaleY, 0.1f);
+        wireStepper(R.id.stepAngMinus, R.id.stepAngPlus, e -> e.angle, (e, v) -> e.angle = v, etAngle, 15f);
+    }
+
+    /** Wires a −/+ stepper pair to nudge a numeric field by ±step. */
+    private void wireStepper(int minusId, int plusId, EntityFloatGetter g, EntityFloatSetter s, EditText field, float step) {
+        View minus = findViewById(minusId), plus = findViewById(plusId);
+        if (minus != null) minus.setOnClickListener(v -> { playClick(); nudgeField(g, s, field, -step); });
+        if (plus  != null) plus.setOnClickListener(v -> { playClick(); nudgeField(g, s, field, step); });
+    }
+
+    /** Applies ±delta to the selected entity's field and records one undoable command. */
+    private void nudgeField(EntityFloatGetter g, EntityFloatSetter s, EditText field, float delta) {
+        LevelEntity e = renderView.getSelectedEntity();
+        if (e == null) return;
+        commitPendingPropertyEdit();   // flush any in-progress typed edit as its own command first
+        final LevelEntity ent = e;
+        final EntityFloatSetter st = s;
+        final float before = g.get(e);
+        final float after = before + delta;
+        st.set(ent, after);
+        suppressWatchers = true;
+        field.setText(fmt(after));
+        suppressWatchers = false;
+        renderView.invalidate();
+        renderView.pushCommand(new LevelRenderView.EditCommand() {
+            @Override public void undo() { st.set(ent, before); }
+            @Override public void redo() { st.set(ent, after); }
+        });
     }
 
     /** Applies a flip toggle live and records it as an undoable command. */
@@ -363,6 +446,12 @@ public class LevelViewerActivity extends BaseActivity {
     }
 
     private void populateInspector(LevelEntity e) {
+        // Persistent group-selection count (shown instead of the single-entity inspector).
+        boolean group = renderView.hasMultiSelection();
+        if (groupSelectionInfo != null) {
+            groupSelectionInfo.setVisibility(group ? View.VISIBLE : View.GONE);
+            if (group) groupSelectionInfo.setText(getString(R.string.entities_selected, renderView.getMultiSelectionCount()));
+        }
         suppressWatchers = true;
         if (e == null) {
             editorInspector.setVisibility(View.GONE);
@@ -421,6 +510,64 @@ public class LevelViewerActivity extends BaseActivity {
     private void updateUndoRedoButtons() {
         if (btnUndo != null) { boolean u = renderView.canUndo(); btnUndo.setEnabled(u); btnUndo.setAlpha(u ? 1f : 0.4f); }
         if (btnRedo != null) { boolean r = renderView.canRedo(); btnRedo.setEnabled(r); btnRedo.setAlpha(r ? 1f : 0.4f); }
+    }
+
+    /** Active toggle = accent tint; inactive = no tint + slight dim. Alpha (0.4) stays reserved for the
+     *  genuinely-disabled action buttons, so dim no longer ambiguously means off / unavailable. */
+    private void setToggleActive(ImageButton b, boolean active) {
+        if (b == null) return;
+        if (active) { b.setColorFilter(TOGGLE_ACCENT); b.setAlpha(1f); }
+        else { b.clearColorFilter(); b.setAlpha(0.7f); }
+    }
+
+    /** Reflects EDIT vs VIEW in the pencil tint and a persistent title badge. */
+    private void updateEditModeChrome(boolean enable) {
+        setToggleActive(findViewById(R.id.btnToggleEdit), enable);
+        if (levelTitleView != null) {
+            levelTitleView.setText(enable
+                    ? baseTitle + "   •   " + getString(R.string.editor_title_badge)
+                    : baseTitle);
+        }
+    }
+
+    /** First time the user enters EDIT, show the quick-guide once (re-openable via long-press on the pencil). */
+    private void maybeShowFirstRunLegend() {
+        SharedPreferences p = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        if (!p.getBoolean("editor_coach_shown", false)) {
+            showEditorLegend();
+            p.edit().putBoolean("editor_coach_shown", true).apply();
+        }
+    }
+
+    private void showEditorLegend() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.editor_help_title)
+                .setMessage(R.string.editor_help_message)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
+    }
+
+    /** Back/exit guard: prompts if there are unsaved edits (the undo stack is the dirty flag). */
+    private void handleBackPressed() {
+        if (renderView != null && renderView.canUndo()) {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.discard_changes_title)
+                    .setMessage(R.string.discard_changes_message)
+                    .setPositiveButton(R.string.save, (d, w) -> attemptSave())
+                    .setNeutralButton(R.string.discard, (d, w) -> finish())
+                    .setNegativeButton(R.string.cancel, null)
+                    .show();
+        } else {
+            finish();
+        }
+    }
+
+    /** Shows a dialog with the soft keyboard resizing the window, so its buttons stay reachable. */
+    private void showWithResize(AlertDialog dialog) {
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        }
+        dialog.show();
     }
 
     // ── Edit Enemy: fast Health / Attack / Size on an individually-placed character ───────────────
@@ -501,13 +648,15 @@ public class LevelViewerActivity extends BaseActivity {
         friendly.setLayoutParams(flp);
         box.addView(friendly);
 
-        new AlertDialog.Builder(this)
+        android.widget.ScrollView scroll = new android.widget.ScrollView(this);
+        scroll.addView(box);
+        showWithResize(new AlertDialog.Builder(this)
                 .setTitle(R.string.enemy_edit_title)
-                .setView(box)
+                .setView(scroll)
                 .setPositiveButton(R.string.character_save, (d, w) -> applyEnemyEdit(e, key, suffix, baseName, category,
                         doc, weapon, hp.getText().toString().trim(), atk.getText().toString().trim(), friendly.isChecked()))
                 .setNegativeButton(R.string.cancel, null)
-                .show();
+                .create());
     }
 
     private EditText labeledNumber(LinearLayout box, String label, String value) {
@@ -600,12 +749,14 @@ public class LevelViewerActivity extends BaseActivity {
         LinearLayout box = new LinearLayout(this);
         box.setPadding(pad, pad / 2, pad, 0);
         box.addView(input);
-        new AlertDialog.Builder(this)
+        android.widget.ScrollView scroll = new android.widget.ScrollView(this);
+        scroll.addView(box);
+        showWithResize(new AlertDialog.Builder(this)
                 .setTitle(R.string.gold_dialog_title)
-                .setView(box)
+                .setView(scroll)
                 .setPositiveButton(android.R.string.ok, (d, w) -> applyGoldEdit(e, input.getText().toString().trim()))
                 .setNegativeButton(R.string.cancel, null)
-                .show();
+                .create());
     }
 
     private void applyGoldEdit(final LevelEntity e, String value) {
@@ -679,7 +830,7 @@ public class LevelViewerActivity extends BaseActivity {
 
         android.widget.ScrollView scroll = new android.widget.ScrollView(this);
         scroll.addView(container);
-        new AlertDialog.Builder(this)
+        AlertDialog cdDlg = new AlertDialog.Builder(this)
                 .setTitle(R.string.customdata_dialog_title)
                 .setView(scroll)
                 .setPositiveButton(R.string.save, (d, w) -> {
@@ -713,7 +864,8 @@ public class LevelViewerActivity extends BaseActivity {
                     populateInspector(renderView.getSelectedEntity());
                 })
                 .setNegativeButton(R.string.cancel, null)
-                .show();
+                .create();
+        showWithResize(cdDlg);
     }
 
     /** Adds one CustomData editor row (key label + value field + ✕ remove) to the dialog. */
@@ -825,7 +977,7 @@ public class LevelViewerActivity extends BaseActivity {
         valF.setHint(R.string.cd_field_value);
         c.addView(valF);
 
-        new AlertDialog.Builder(this)
+        AlertDialog afDlg = new AlertDialog.Builder(this)
                 .setTitle(R.string.cd_add_field)
                 .setView(c)
                 .setPositiveButton(R.string.add, (d, w) -> {
@@ -839,7 +991,8 @@ public class LevelViewerActivity extends BaseActivity {
                     addCustomDataRow(rowsArea, rows, name, valF.getText().toString());
                 })
                 .setNegativeButton(R.string.cancel, null)
-                .show();
+                .create();
+        showWithResize(afDlg);
     }
 
     private void confirmDeleteSelected() {
@@ -1158,15 +1311,15 @@ public class LevelViewerActivity extends BaseActivity {
     private void showSaveDialog() {
         if (currentLevel == null) return;
         final EditText input = new EditText(this);
-        input.setText(defaultSaveName());
+        input.setText(sessionSaveName != null ? sessionSaveName : defaultSaveName());
         input.setSelection(input.getText().length());
-        new AlertDialog.Builder(this)
+        showWithResize(new AlertDialog.Builder(this)
                 .setTitle(R.string.save_dialog_title)
                 .setView(input)
-                .setPositiveButton(R.string.save, (d, w) -> doSave(input.getText().toString().trim()))
-                .setNeutralButton(R.string.export, (d, w) -> startExport(input.getText().toString().trim()))
+                .setPositiveButton(R.string.save, (d, w) -> { sessionSaveName = input.getText().toString().trim(); doSave(sessionSaveName); })
+                .setNeutralButton(R.string.export, (d, w) -> { sessionSaveName = input.getText().toString().trim(); startExport(sessionSaveName); })
                 .setNegativeButton(R.string.cancel, null)
-                .show();
+                .create());
     }
 
     private InputStream openSource() throws IOException {

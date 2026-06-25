@@ -250,8 +250,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void showLanguageDialog() {
-        final String[] languages = {"System Default", "English", "Deutsch", "Español", "Français", "Italiano", "Português", "Русский", "Türkçe", "Українська", "日本語"};
-        final String[] langCodes = {"system", "en", "de", "es", "fr", "it", "pt", "ru", "tr", "uk", "ja"};
+        final String[] languages = {"System Default", "English", "Deutsch", "Español", "Français", "Italiano", "Português", "Русский", "Türkçe", "Українська", "日本語", "العربية"};
+        final String[] langCodes = {"system", "en", "de", "es", "fr", "it", "pt", "ru", "tr", "uk", "ja", "ar"};
 
         SharedPreferences prefs = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
         String currentLang = prefs.getString("language", "system");
