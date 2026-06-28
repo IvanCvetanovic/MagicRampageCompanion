@@ -1781,6 +1781,8 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="edit_mode_off">Bearbeitungsmodus: Aus</string>
     <string name="edit_mode_on">Bearbeitungsmodus: An</string>
     <string name="empty_no_my_levels">Noch keine gespeicherten Level – bearbeite ein Level und tippe auf Speichern.</string>
+    <string name="new_level_card_title">Neues Level erstellen</string>
+    <string name="new_level_card_subtitle">Mit leerer Leinwand beginnen</string>
     <string name="entities_selected">%1$d Entitäten ausgewählt</string>
     <string name="entity_browser_empty">Dieses Level hat keine Entitäten.</string>
     <string name="entity_browser_title">Entität finden</string>

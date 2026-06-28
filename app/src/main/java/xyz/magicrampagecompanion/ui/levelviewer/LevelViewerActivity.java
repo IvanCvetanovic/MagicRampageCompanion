@@ -75,6 +75,7 @@ public class LevelViewerActivity extends BaseActivity {
     private Level currentLevel;
     private String levelFile;   // asset name (null when opened from storage)
     private String levelPath;   // absolute storage path (null when opened from assets)
+    private boolean blankLevel; // true for a brand-new from-scratch level (source = bundled blank envelope)
     private String levelKey;    // file basename for title / secrets / zoom checks (both sources)
 
     // Editor property inspector (Phase 2)
@@ -112,12 +113,15 @@ public class LevelViewerActivity extends BaseActivity {
 
         levelFile = getIntent().getStringExtra("levelFile");
         levelPath = getIntent().getStringExtra("levelPath");
-        if (levelFile == null && levelPath == null) {
+        blankLevel = getIntent().getBooleanExtra("blankLevel", false);
+        if (!blankLevel && levelFile == null && levelPath == null) {
             Toast.makeText(this, R.string.no_level_file_provided, Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
-        levelKey = (levelPath != null) ? new File(levelPath).getName() : levelFile;
+        // A brand-new blank-canvas level: seeded from the bundled empty envelope, named on first Save.
+        levelKey = blankLevel ? "new_level.esc"
+                : (levelPath != null) ? new File(levelPath).getName() : levelFile;
 
         rewardedAdManager.loadAd(this);
 
@@ -145,13 +149,17 @@ public class LevelViewerActivity extends BaseActivity {
         });
 
         levelTitleView = findViewById(R.id.levelViewerTitle);
-        java.util.regex.Matcher titleMatcher = java.util.regex.Pattern.compile("dungeon(\\d+)")
-                .matcher(levelKey.replace(".esc", ""));
-        String titleKey = titleMatcher.find()
-                ? titleMatcher.replaceFirst("dungeon_" + (Integer.parseInt(titleMatcher.group(1)) + 1)).replace(".", "_")
-                : levelKey.replace(".esc", "");
-        int titleResId = getResources().getIdentifier(titleKey, "string", getPackageName());
-        baseTitle = titleResId != 0 ? getString(titleResId) : levelKey.replace(".esc", "");
+        if (blankLevel) {
+            baseTitle = getString(R.string.new_level_title);
+        } else {
+            java.util.regex.Matcher titleMatcher = java.util.regex.Pattern.compile("dungeon(\\d+)")
+                    .matcher(levelKey.replace(".esc", ""));
+            String titleKey = titleMatcher.find()
+                    ? titleMatcher.replaceFirst("dungeon_" + (Integer.parseInt(titleMatcher.group(1)) + 1)).replace(".", "_")
+                    : levelKey.replace(".esc", "");
+            int titleResId = getResources().getIdentifier(titleKey, "string", getPackageName());
+            baseTitle = titleResId != 0 ? getString(titleResId) : levelKey.replace(".esc", "");
+        }
         levelTitleView.setText(baseTitle);
 
         ImageButton btnBack = findViewById(R.id.btnLevelBack);
@@ -313,7 +321,13 @@ public class LevelViewerActivity extends BaseActivity {
 
         // --- Parse and display level ---
         try {
-            if (levelPath != null) {
+            if (blankLevel) {
+                // Brand-new level: load the bundled empty envelope and center the camera on the origin.
+                try (InputStream is = getAssets().open("blank_level.esc")) {
+                    currentLevel = LevelParser.parse(this, is, levelKey);
+                }
+                renderView.setCenterOriginWhenEmpty(true);
+            } else if (levelPath != null) {
                 try (InputStream is = new FileInputStream(levelPath)) {
                     currentLevel = LevelParser.parse(this, is, levelKey);
                 }
@@ -324,6 +338,11 @@ public class LevelViewerActivity extends BaseActivity {
                 renderView.setInitialZoomMultiplier(4.0f);
             }
             renderView.setLevel(currentLevel);
+            if (blankLevel) {
+                // A new level only makes sense in EDIT mode — drop the user straight in (also shows the
+                // first-run editor guide). performClick() reuses the exact toggle wiring set up above.
+                btnToggleEdit.performClick();
+            }
         } catch (Exception e) {
             Log.e(TAG, "Failed to load level " + levelKey, e);
             Toast.makeText(this, getString(R.string.failed_to_load_level, e.getMessage()), Toast.LENGTH_LONG).show();
@@ -1323,10 +1342,12 @@ public class LevelViewerActivity extends BaseActivity {
     }
 
     private InputStream openSource() throws IOException {
+        if (blankLevel) return getAssets().open("blank_level.esc"); // all placed entities are "added" → appended
         return (levelPath != null) ? new FileInputStream(levelPath) : getAssets().open("levels/" + levelFile);
     }
 
     private String defaultSaveName() {
+        if (blankLevel) return "my_level"; // friendly first-save name for a from-scratch level
         String base = (levelKey != null ? levelKey : "level").replaceAll("\\.esc$", "");
         // Stock level → suggest an "_edited" copy; an already-saved My Level → overwrite same name.
         return (levelPath != null) ? base : base + "_edited";

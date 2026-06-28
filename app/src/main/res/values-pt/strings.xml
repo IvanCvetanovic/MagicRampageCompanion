@@ -1780,6 +1780,8 @@ Acima do terceiro pote dourado, há uma adaga de luz, que é muito boa para o in
     <string name="edit_mode_off">Modo de edição: Desativado</string>
     <string name="edit_mode_on">Modo de edição: Ativado</string>
     <string name="empty_no_my_levels">Nenhum nível salvo ainda — edite um nível e toque em Salvar.</string>
+    <string name="new_level_card_title">Criar novo nível</string>
+    <string name="new_level_card_subtitle">Comece com uma tela em branco</string>
     <string name="entities_selected">%1$d entidades selecionadas</string>
     <string name="entity_browser_empty">Este nível não tem entidades.</string>
     <string name="entity_browser_title">Localizar entidade</string>

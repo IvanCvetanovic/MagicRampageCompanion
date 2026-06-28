@@ -1782,6 +1782,8 @@
     <string name="edit_mode_off">Режим редактирования: выкл.</string>
     <string name="edit_mode_on">Режим редактирования: вкл.</string>
     <string name="empty_no_my_levels">Пока нет сохранённых уровней — отредактируйте уровень и нажмите «Сохранить».</string>
+    <string name="new_level_card_title">Создать новый уровень</string>
+    <string name="new_level_card_subtitle">Начните с чистого листа</string>
     <string name="entities_selected">Выбрано объектов: %1$d</string>
     <string name="entity_browser_empty">На этом уровне нет объектов.</string>
     <string name="entity_browser_title">Найти объект</string>

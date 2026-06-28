@@ -39,6 +39,7 @@ public class LevelListActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private TextView emptyStateText;
     private Button tabStory, tabOthers, tabMine;
+    private View newLevelCard; // "Create New Level" card — shown only on the My Levels tab
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,15 @@ public class LevelListActivity extends BaseActivity {
         tabStory       = findViewById(R.id.tabStory);
         tabOthers      = findViewById(R.id.tabOthers);
         tabMine        = findViewById(R.id.tabMine);
+        newLevelCard   = findViewById(R.id.newLevelCard);
+
+        newLevelCard.setOnClickListener(v -> {
+            playClick();
+            // Open the editor on a brand-new blank canvas (true from-scratch authoring).
+            Intent intent = new Intent(LevelListActivity.this, LevelViewerActivity.class);
+            intent.putExtra("blankLevel", true);
+            startActivity(intent);
+        });
 
         // Apply system insets: status bar to tab bar top, nav bar to recycler bottom
         View root    = findViewById(R.id.levelListRoot);
@@ -90,6 +100,9 @@ public class LevelListActivity extends BaseActivity {
         tabStory.setSelected(tab == 0);
         tabOthers.setSelected(tab == 1);
         tabMine.setSelected(tab == 2);
+        // Tab-gated: the create card belongs only to My Levels. When GONE it collapses, so the list
+        // fills from the tab bar exactly as on the Story/Others tabs.
+        newLevelCard.setVisibility(tab == 2 ? View.VISIBLE : View.GONE);
         activeList = (tab == 0) ? storyFiles : (tab == 1) ? otherFiles : myPaths;
         emptyStateText.setText(tab == 2 ? R.string.empty_no_my_levels : R.string.empty_no_levels);
         showList(activeList);

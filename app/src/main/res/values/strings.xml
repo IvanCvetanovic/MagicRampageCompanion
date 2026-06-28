@@ -2095,6 +2095,11 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="empty_no_enemies">No enemies to display</string>
     <string name="empty_no_levels">No levels available</string>
     <string name="empty_no_my_levels">No saved levels yet — edit a level and tap Save.</string>
+    <!-- "Create New Level" card on the My Levels tab -->
+    <string name="new_level_card_title">Create New Level</string>
+    <string name="new_level_card_subtitle">Start from a blank canvas</string>
+    <!-- Editor title for a brand-new blank level (editor UI is English-only, like the rest of the editor) -->
+    <string name="new_level_title">New Level</string>
     <string name="arcane_rod_staff">Arcane Rod Staff</string>
     <string name="coming_soon">Coming Soon</string>
 

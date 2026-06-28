@@ -83,6 +83,9 @@ public class LevelRenderView extends View {
 
     // Editor move tool (Phase 3): drag-to-move state + grid snapping.
     private boolean snapToGrid = true;
+    // When the scene has no visible entities (a brand-new blank-canvas level), there are no bounds to
+    // fit to, so center the world origin at a comfortable zoom instead of leaving the camera at 1:1 / top-left.
+    private boolean centerOriginWhenEmpty = false;
     private boolean dragCandidate = false;    // DOWN landed on the selection; may become a move
     private boolean isDraggingEntity = false; // movement passed the tap threshold
     private float grabOffX, grabOffYr;        // offset from the entity's rendered center at grab time
@@ -239,12 +242,28 @@ public class LevelRenderView extends View {
             logLevelStats();
         }
 
-        // If the view is already laid out, fit now; otherwise onSizeChanged will do it.
-        if (getWidth() > 0 && getHeight() > 0 && boundsReady) {
-            fitToScreen();
+        // If the view is already laid out, position the camera now; otherwise onSizeChanged will do it.
+        if (getWidth() > 0 && getHeight() > 0) {
+            if (boundsReady) fitToScreen();
+            else if (centerOriginWhenEmpty) centerBlankCanvas();
         }
 
         invalidate();
+    }
+
+    /** A brand-new blank-canvas level has no visible entities, so {@link #computeBounds()} can't produce a
+     *  fit. Park the camera on the world origin at a comfortable, device-independent editing zoom (~10 tiles
+     *  across) so the user sees a centered grid rather than a 1:1 top-left corner. */
+    public void setCenterOriginWhenEmpty(boolean enabled) {
+        this.centerOriginWhenEmpty = enabled;
+    }
+
+    private void centerBlankCanvas() {
+        if (getWidth() <= 0 || getHeight() <= 0) return;
+        scale = getWidth() / (10f * BASE_TILE);
+        minFitScale = scale; // keep reset/secret zoom math sane (a blank level has neither)
+        offsetX = getWidth() / 2f;   // world (0,0) centered: getWidth()/2 - 0*scale
+        offsetY = getHeight() / 2f;
     }
 
     public void setShowLogicEntities(boolean show) {
@@ -419,8 +438,9 @@ public class LevelRenderView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldW, int oldH) {
         super.onSizeChanged(w, h, oldW, oldH);
-        if (boundsReady && w > 0 && h > 0) {
-            fitToScreen();
+        if (w > 0 && h > 0) {
+            if (boundsReady) fitToScreen();
+            else if (centerOriginWhenEmpty) centerBlankCanvas();
         }
     }
 
@@ -455,7 +475,20 @@ public class LevelRenderView extends View {
         }
         canvas.drawRect(0, 0, getWidth(), getHeight(), bgPaint);
 
-        if (sortedEntities.isEmpty()) return;
+        if (sortedEntities.isEmpty()) {
+            // Blank canvas: still show the editing grid + a guiding hint so it isn't a featureless void.
+            if (editMode) {
+                if (snapToGrid) {
+                    canvas.save();
+                    canvas.translate(offsetX, offsetY);
+                    canvas.scale(scale, scale);
+                    drawGrid(canvas);
+                    canvas.restore();
+                }
+                drawEmptyCanvasHint(canvas);
+            }
+            return;
+        }
 
         canvas.save();
         canvas.translate(offsetX, offsetY);
@@ -1681,6 +1714,30 @@ public class LevelRenderView extends View {
         float startY = (float) Math.floor(top / BASE_TILE) * BASE_TILE;
         for (float x = startX; x <= right; x += BASE_TILE) canvas.drawLine(x, top, x, bottom, gridPaint);
         for (float y = startY; y <= bottom; y += BASE_TILE) canvas.drawLine(left, y, right, y, gridPaint);
+    }
+
+    /** Centered, screen-space guidance shown only on a brand-new blank canvas (EDIT mode, no entities yet).
+     *  Names the recipe for a playable level so the user isn't left guessing at an empty grid. */
+    private void drawEmptyCanvasHint(Canvas canvas) {
+        float density = getResources().getDisplayMetrics().density;
+        float cx = getWidth() / 2f;
+        float cy = getHeight() / 2f;
+
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setShadowLayer(4f, 0f, 2f, Color.BLACK);
+
+        textPaint.setColor(0xFFEDE6FF);
+        textPaint.setTextSize(20f * density);
+        canvas.drawText("Blank canvas", cx, cy - 14f * density, textPaint);
+
+        textPaint.setColor(0xCCB9A8E8);
+        textPaint.setTextSize(13f * density);
+        canvas.drawText("Tap  +  Add to place tiles, then a player spawn and an exit",
+                cx, cy + 14f * density, textPaint);
+
+        // Restore defaults so other draw passes (once entities exist) are unaffected.
+        textPaint.setShadowLayer(0f, 0f, 0f, 0);
+        textPaint.setTextAlign(Paint.Align.LEFT);
     }
 
     public void setSnapToGrid(boolean snap) { this.snapToGrid = snap; invalidate(); }

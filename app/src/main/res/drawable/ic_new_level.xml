@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="44dp"
+    android:height="44dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Bold "create" plus -->
+    <path
+        android:fillColor="#EDE6FF"
+        android:pathData="M8.8,10 h2.4 v2.8 h2.8 v2.4 h-2.8 v2.8 h-2.4 v-2.8 h-2.8 v-2.4 h2.8 z" />
+
+    <!-- Large four-point sparkle -->
+    <path
+        android:fillColor="#F2C14E"
+        android:pathData="M17,4 L17.9,6.1 L20,7 L17.9,7.9 L17,10 L16.1,7.9 L14,7 L16.1,6.1 Z" />
+
+    <!-- Small four-point sparkle -->
+    <path
+        android:fillColor="#F2C14E"
+        android:pathData="M20,10.4 L20.5,11.5 L21.6,12 L20.5,12.5 L20,13.6 L19.5,12.5 L18.4,12 L19.5,11.5 Z" />
+</vector>

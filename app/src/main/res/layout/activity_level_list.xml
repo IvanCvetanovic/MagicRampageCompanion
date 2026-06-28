@@ -61,13 +61,83 @@
 
     </LinearLayout>
 
+    <!-- "Create New Level" action card — shown ONLY on the My Levels tab (tab-gated in code, NOT a
+         top-right "+"). Anchored to the tab bar; when GONE it collapses to a point so the list fills
+         from the tab bar exactly as before. Survives the empty-list state (so a first-time user with
+         zero levels still has a way to create one). -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/newLevelCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:cardCornerRadius="14dp"
+        app:cardBackgroundColor="#0D1320"
+        app:strokeColor="@color/menu_accent_editor"
+        app:strokeWidth="2dp"
+        app:rippleColor="@color/menu_accent_editor"
+        app:layout_constraintTop_toBottomOf="@id/tabBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="84dp"
+            android:background="@drawable/new_level_card_glow"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="18dp"
+                android:src="@drawable/ic_new_level"
+                android:contentDescription="@string/new_level_card_title" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="76dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/new_level_card_title"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/new_level_card_subtitle"
+                    android:textColor="#D7C7A9F0"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/levelRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="8dp"
         android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/tabBar"
+        app:layout_constraintTop_toBottomOf="@id/newLevelCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -82,7 +152,7 @@
         android:textSize="16sp"
         android:gravity="center"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/tabBar"
+        app:layout_constraintTop_toBottomOf="@id/newLevelCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

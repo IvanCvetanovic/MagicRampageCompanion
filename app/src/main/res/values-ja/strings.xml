@@ -1780,6 +1780,8 @@
     <string name="edit_mode_off">編集モード: オフ</string>
     <string name="edit_mode_on">編集モード: オン</string>
     <string name="empty_no_my_levels">保存されたレベルはまだありません。レベルを編集して保存をタップしてください。</string>
+    <string name="new_level_card_title">新しいレベルを作成</string>
+    <string name="new_level_card_subtitle">空のキャンバスから始める</string>
     <string name="entities_selected">%1$d 個のエンティティを選択中</string>
     <string name="entity_browser_empty">このレベルにはエンティティがありません。</string>
     <string name="entity_browser_title">エンティティを検索</string>

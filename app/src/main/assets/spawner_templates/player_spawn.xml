@@ -1,0 +1,7 @@
+<Entity id="4783" spriteFrame="0">
+            <EntityName>spawn0</EntityName>
+            <Position x="517" y="-113" z="0" angle="0" />
+            <Entity shape="0" applyLight="0" castShadow="0" type="0" static="1" blendMode="0">
+                <CustomData />
+            </Entity>
+        </Entity>

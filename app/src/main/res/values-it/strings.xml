@@ -1782,6 +1782,8 @@ Sopra il terzo vaso d\'oro, c\'è una daga di luce, che è molto buona per l\'in
     <string name="edit_mode_off">Modalità modifica: Disattivata</string>
     <string name="edit_mode_on">Modalità modifica: Attivata</string>
     <string name="empty_no_my_levels">Nessun livello salvato — modifica un livello e tocca Salva.</string>
+    <string name="new_level_card_title">Crea nuovo livello</string>
+    <string name="new_level_card_subtitle">Parti da una tela vuota</string>
     <string name="entities_selected">%1$d entità selezionate</string>
     <string name="entity_browser_empty">Questo livello non ha entità.</string>
     <string name="entity_browser_title">Trova entità</string>

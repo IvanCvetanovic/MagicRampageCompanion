@@ -1,5 +1,7 @@
 package xyz.magicrampagecompanion.level;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -48,9 +50,22 @@ public class LevelSaver {
     public static void save(InputStream sourceEsc, Level level, File dest) throws Exception {
         File parent = dest.getParentFile();
         if (parent != null) parent.mkdirs();
+        // Buffer the source FIRST. dest may BE the source file — re-saving a "My Level" under its own
+        // name (the core authoring loop, especially for blank-canvas levels). Opening a FileOutputStream
+        // truncates the file immediately, which would zero out the source before the DOM is parsed and
+        // destroy the level. Reading it fully up front makes same-file save safe.
+        byte[] srcBytes = readFully(sourceEsc);
         try (OutputStream os = new FileOutputStream(dest)) {
-            save(sourceEsc, level, os);
+            save(new ByteArrayInputStream(srcBytes), level, os);
         }
+    }
+
+    private static byte[] readFully(InputStream is) throws java.io.IOException {
+        ByteArrayOutputStream buf = new ByteArrayOutputStream();
+        byte[] chunk = new byte[8192];
+        int n;
+        while ((n = is.read(chunk)) != -1) buf.write(chunk, 0, n);
+        return buf.toByteArray();
     }
 
     /** Same reconcile as {@link #save(InputStream, Level, File)} but writes to an arbitrary stream

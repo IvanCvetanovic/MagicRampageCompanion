@@ -7,6 +7,44 @@
 **Status:** Phases 0–8 COMPLETE + **ALL** Phase 8 extras shipped (validation warnings · palette thumbnails · on-canvas rotate/scale handles · inline-spawner palette · **entity browser** · **multi-select**). Full editor verified on emulator: find-entity(search+center) / select / inspect / move(+snap) / rotate+scale on canvas / add(+sprite-preview palette, +inline-spawner templates) / duplicate / delete / undo-redo, Save→"My Levels"→reopen, Export (SAF) to Downloads, CustomData value editing, and validation. Saves are surgical (no-op = 0 diffs; each edit = exactly its change; inline-spawner blocks round-trip faithfully incl. NPC `<Scale>`).
 **Next action:** **Edit Enemy** (in-level character stat editing) is DONE & phone-verified (2026-06-21). NEXT extension: **equipment-swap** in that popup (weapon/armor/ring — needs `CharacterDocument` block add/replace) + per-item colour. See "Edit Enemy" below.
 
+## Blank-canvas levels — create a level from scratch — DONE (emulator-verified 2026-06-28, user-requested)
+Reverses the old "skip blank-canvas" decision. A **unique themed "Create New Level" card** sits at the
+top of the **My Levels** tab in `LevelListActivity` (NOT a top-right "+": a purple `MaterialCardView` with
+a glow, a sparkle/plus icon, title + subtitle — matches the hub-card aesthetic). It is **tab-gated**
+(visible only on My Levels, so it survives the empty-list state — `setActiveTab` toggles it; when GONE it
+collapses and the list fills from the tab bar as before).
+- **Flow:** card → `LevelViewerActivity` with extra `blankLevel=true` → loads the bundled minimal envelope
+  `assets/blank_level.esc` (SceneProperties+Ambient+ZAxisDirection + **empty** EntitiesInScene), titles it
+  "New Level", and **auto-enters EDIT mode** (`btnToggleEdit.performClick()`). Every placed entity is an
+  "added" entity (editOrdinal −1) → appended by the existing `LevelSaver`. **No new save logic.**
+- **Source-stream:** `openSource()` returns the `blank_level.esc` asset for blank levels (asset source ≠
+  storage dest ⇒ first save can't truncate). `defaultSaveName()` → `my_level`.
+- **Empty-scene UX (renderer):** `LevelRenderView.setCenterOriginWhenEmpty(true)` + `centerBlankCanvas()`
+  park the camera on world origin at ~10 tiles across (fitToScreen can't fit a sceneless level). `onDraw`'s
+  empty early-return now still draws the **grid + an on-canvas hint** ("Blank canvas / Tap + Add to place
+  tiles, then a player spawn and an exit") in EDIT mode. A placed `spawn0` is visible as a labeled box via
+  the **existing** EDIT-mode logic-entity fallback (`drawEntityFallback`), so the invisible-spawn gap is
+  already covered.
+- **Player spawn:** new harvested template `assets/spawner_templates/player_spawn.xml` (the real `spawn0`
+  inline block from dungeon31, `shape=0`) → appears as "★ player spawn" in the Add palette (spawn0 is
+  inline-only, so otherwise unplaceable). Exit/door are already FileName `.ent`s in the palette.
+- **DATA-LOSS FIX (critical, shipped here):** `LevelSaver.save(InputStream,Level,File)` now **buffers the
+  source into a byte[] BEFORE** opening the dest `FileOutputStream`. dest can BE the source (re-saving a My
+  Level under its own name — the core authoring loop). `FileOutputStream` truncates on open, which used to
+  zero the source before `db.parse` read it → 0-byte level. **Verified:** reopen `my_level` → add platform →
+  Save (same name) → file = 1394 B with BOTH `spawn0` (survivor) + platform (id 2, full Collision+CustomData).
+- **Localization:** card title/subtitle (`new_level_card_title`/`_subtitle`) translated across all 10 locales
+  (the My Levels page is localized); `new_level_title` + the on-canvas hint stay English (editor convention).
+- **Code:** `LevelListActivity` (card find/click/tab-gate), `activity_level_list.xml` (card + re-anchor),
+  `LevelViewerActivity` (`blankLevel` field, load/title/openSource/defaultSaveName + auto-edit), `LevelRenderView`
+  (`centerBlankCanvas`/empty-grid+hint), `LevelSaver` (truncation fix), `assets/blank_level.esc`,
+  `assets/spawner_templates/player_spawn.xml`, `drawable/ic_new_level.xml`, `drawable/new_level_card_glow.xml`, strings.
+- **Known limits:** (1) **in-game playability of a from-scratch level is NOT verified** — structurally
+  identical to stock levels + loads in-editor, but only the PC game confirms it loads/plays; test one export
+  before relying on it. (2) "Fit to screen" no-ops on a freshly-created blank level until it's saved & reopened
+  (bounds only compute in `setLevel`). (3) true-blank by design — no auto-seeded spawn (it'd be invisible &
+  duplicable); the on-canvas hint + the player-spawn template + the save-time "no spawn0" warning guide instead.
+
 ## Edit Enemy — in-level stat editing — DONE (phone-verified 2026-06-21, user-requested)
 Select an **individually-placed character** in EDIT mode (`EntityName=character_spawn`; has a `fileName`/`type` CustomData ending `.character`; ~936 `fileName`+660 `type` placements across levels) → the inspector shows an **"Edit Enemy"** button → popup edits **Health (`resistance`) / Attack (the weapon block's `damage`) / Size (`scale`)**.
 - **Apply** (`applyEnemyEdit`): edits a `CharacterDocument` (`setOrAdd` resistance/scale + weapon `damage`), saves a **per-entity custom copy** `usercharacters/<base>-e<id>.character` (re-edits the same file if already custom), **repoints** the entity's `fileName`/`type` CustomData → the custom path (`customDataEdited=true`, persisted by the existing CustomData saver), and updates `characterScale`+`scaleX/Y` for a **live size change**. Crucially does **NOT** set `scaleEdited` — so the level save won't write a per-entity `<Scale>` (the NPC 4→1 corruption trap); size persists via the custom `.character`'s `scale`, which the game reads. One undoable `EditCommand`.
@@ -59,8 +97,11 @@ game by replacing a stock scene file with one of the same exact name (PC: drop i
   + Position + `<FileName>`) — trivially game-valid since the `.ent` (all 2,239 are
   bundled) holds the heavy data. Inline-defined entities (spawners) = copy a complete
   block from a real level and tweak.
-- **Scope target:** Tier B mechanics + DOM-patch save + export. Consciously SKIP
-  heavyweight blank-canvas / full-schema authoring.
+- **Scope target:** Tier B mechanics + DOM-patch save + export.
+  ~~Consciously SKIP heavyweight blank-canvas / full-schema authoring.~~
+  **REVERSED 2026-06-28 (user-requested):** blank-canvas authoring is now IN scope —
+  see "Blank-canvas levels" below. (We did NOT add full-schema authoring; a new level
+  is seeded from a minimal bundled `.esc` envelope and built up via the existing palette.)
 
 ## Key technical notes & hazards
 - **`computeRenderY` (LevelRenderView.java:901):** stored `y` != on-screen `y`.
