@@ -1781,7 +1781,10 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="edit_mode_on">Mode édition : Activé</string>
     <string name="empty_no_my_levels">Aucun niveau enregistré pour l\'instant — modifiez un niveau et appuyez sur Enregistrer.</string>
     <string name="new_level_card_title">Créer un nouveau niveau</string>
-    <string name="new_level_card_subtitle">Commencer avec une toile vierge</string>
+    <string name="new_level_card_subtitle">Toile vierge ou modifier un niveau</string>
+    <string name="new_level_option_blank">Niveau vide</string>
+    <string name="new_level_option_existing">Modifier un niveau existant</string>
+    <string name="new_level_pick_existing_title">Choisir un niveau à modifier</string>
     <string name="entities_selected">%1$d entités sélectionnées</string>
     <string name="entity_browser_empty">Ce niveau ne contient aucune entité.</string>
     <string name="entity_browser_title">Trouver une entité</string>

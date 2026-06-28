@@ -1780,7 +1780,10 @@
     <string name="edit_mode_on">Режим редагування: увімк.</string>
     <string name="empty_no_my_levels">Поки немає збережених рівнів — відредагуйте рівень і торкніться «Зберегти».</string>
     <string name="new_level_card_title">Створити новий рівень</string>
-    <string name="new_level_card_subtitle">Почніть з чистого аркуша</string>
+    <string name="new_level_card_subtitle">Порожнє полотно або редагувати рівень</string>
+    <string name="new_level_option_blank">Порожній рівень</string>
+    <string name="new_level_option_existing">Редагувати наявний рівень</string>
+    <string name="new_level_pick_existing_title">Виберіть рівень для редагування</string>
     <string name="entities_selected">Вибрано об\'єктів: %1$d</string>
     <string name="entity_browser_empty">На цьому рівні немає об\'єктів.</string>
     <string name="entity_browser_title">Знайти об\'єкт</string>

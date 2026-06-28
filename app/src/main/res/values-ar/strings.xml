@@ -1814,7 +1814,10 @@
     <string name="edit_mode_on">وضع التحرير: مفعّل</string>
     <string name="empty_no_my_levels">لا توجد مراحل محفوظة بعد — حرّر مرحلة واضغط على حفظ.</string>
     <string name="new_level_card_title">إنشاء مستوى جديد</string>
-    <string name="new_level_card_subtitle">ابدأ من لوحة فارغة</string>
+    <string name="new_level_card_subtitle">لوحة فارغة أو تعديل مستوى</string>
+    <string name="new_level_option_blank">مستوى فارغ</string>
+    <string name="new_level_option_existing">تعديل مستوى موجود</string>
+    <string name="new_level_pick_existing_title">اختر مستوى للتعديل</string>
     <string name="entities_selected">تم تحديد %1$d كيانات</string>
     <string name="entity_browser_empty">هذه المرحلة لا تحتوي على كيانات.</string>
     <string name="entity_browser_title">البحث عن كيان</string>

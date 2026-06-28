@@ -1780,7 +1780,10 @@ Gizli alan 3\'e bir kutu artı Jumpman kostümü veya bunun yerine iki kutu kull
     <string name="edit_mode_on">Düzenleme modu: Açık</string>
     <string name="empty_no_my_levels">Henüz kayıtlı seviye yok — bir seviyeyi düzenleyip Kaydet\'e dokunun.</string>
     <string name="new_level_card_title">Yeni Seviye Oluştur</string>
-    <string name="new_level_card_subtitle">Boş bir tuvalle başlayın</string>
+    <string name="new_level_card_subtitle">Boş tuval veya bir seviyeyi düzenle</string>
+    <string name="new_level_option_blank">Boş seviye</string>
+    <string name="new_level_option_existing">Mevcut bir seviyeyi düzenle</string>
+    <string name="new_level_pick_existing_title">Düzenlenecek seviyeyi seç</string>
     <string name="entities_selected">%1$d nesne seçildi</string>
     <string name="entity_browser_empty">Bu seviyede hiç nesne yok.</string>
     <string name="entity_browser_title">Nesne bul</string>

@@ -1782,7 +1782,10 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="edit_mode_on">Modo de edición: Activado</string>
     <string name="empty_no_my_levels">Aún no hay niveles guardados: edita un nivel y toca Guardar.</string>
     <string name="new_level_card_title">Crear nivel nuevo</string>
-    <string name="new_level_card_subtitle">Empieza desde un lienzo en blanco</string>
+    <string name="new_level_card_subtitle">Lienzo en blanco o editar un nivel</string>
+    <string name="new_level_option_blank">Nivel vacío</string>
+    <string name="new_level_option_existing">Editar un nivel existente</string>
+    <string name="new_level_pick_existing_title">Elige un nivel para editar</string>
     <string name="entities_selected">%1$d entidades seleccionadas</string>
     <string name="entity_browser_empty">Este nivel no tiene entidades.</string>
     <string name="entity_browser_title">Buscar entidad</string>

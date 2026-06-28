@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -53,13 +54,7 @@ public class LevelListActivity extends BaseActivity {
         tabMine        = findViewById(R.id.tabMine);
         newLevelCard   = findViewById(R.id.newLevelCard);
 
-        newLevelCard.setOnClickListener(v -> {
-            playClick();
-            // Open the editor on a brand-new blank canvas (true from-scratch authoring).
-            Intent intent = new Intent(LevelListActivity.this, LevelViewerActivity.class);
-            intent.putExtra("blankLevel", true);
-            startActivity(intent);
-        });
+        newLevelCard.setOnClickListener(v -> { playClick(); showCreateLevelChooser(); });
 
         // Apply system insets: status bar to tab bar top, nav bar to recycler bottom
         View root    = findViewById(R.id.levelListRoot);
@@ -93,6 +88,64 @@ public class LevelListActivity extends BaseActivity {
 
         // Default to Story tab
         setActiveTab(0);
+    }
+
+    /** The "Create New Level" card asks how to start: from scratch, or by remixing a stock level. */
+    private void showCreateLevelChooser() {
+        String[] options = {
+                getString(R.string.new_level_option_blank),
+                getString(R.string.new_level_option_existing)
+        };
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.new_level_card_title)
+                .setItems(options, (d, which) -> {
+                    playClick();
+                    if (which == 0) startBlankLevel();
+                    else showPickExistingDialog();
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private void startBlankLevel() {
+        // Brand-new from-scratch level (true blank canvas, opens straight into EDIT mode).
+        Intent intent = new Intent(this, LevelViewerActivity.class);
+        intent.putExtra("blankLevel", true);
+        startActivity(intent);
+    }
+
+    /** Lets the user pick a stock level (Story + Others) to open as an EDITABLE copy. This is the only
+     *  way to edit a stock level now — tapping one on the Story/Others tabs is view-only. */
+    private void showPickExistingDialog() {
+        final List<String> files = new ArrayList<>();
+        files.addAll(storyFiles);
+        files.addAll(otherFiles);
+        if (files.isEmpty()) return;
+        String[] names = new String[files.size()];
+        for (int i = 0; i < files.size(); i++) names[i] = displayNameForStock(files.get(i));
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.new_level_pick_existing_title)
+                .setItems(names, (d, which) -> {
+                    playClick();
+                    Intent intent = new Intent(this, LevelViewerActivity.class);
+                    intent.putExtra("levelFile", files.get(which));
+                    intent.putExtra("editable", true);     // remixing → an editable copy
+                    intent.putExtra("startInEdit", true);  // drop straight into EDIT mode
+                    startActivity(intent);
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    /** Friendly display name for a stock level file (localized via its string resource, else the bare name). */
+    private String displayNameForStock(String fileName) {
+        java.util.regex.Matcher m = java.util.regex.Pattern.compile("dungeon(\\d+)")
+                .matcher(fileName.replace(".esc", ""));
+        String key = m.find()
+                ? m.replaceFirst("dungeon_" + (Integer.parseInt(m.group(1)) + 1)).replace(".", "_")
+                : fileName.replace(".esc", "").replace("-", "_").replace(".", "_").toLowerCase();
+        int resId = getResources().getIdentifier(key, "string", getPackageName());
+        return resId != 0 ? getString(resId) : fileName.replace(".esc", "");
     }
 
     private void setActiveTab(int tab) {
@@ -205,8 +258,13 @@ public class LevelListActivity extends BaseActivity {
 
                 String entry = activeList.get(pos);
                 Intent intent = new Intent(LevelListActivity.this, LevelViewerActivity.class);
-                if (activeTab == 2) intent.putExtra("levelPath", entry);
-                else intent.putExtra("levelFile", entry);
+                if (activeTab == 2) {
+                    intent.putExtra("levelPath", entry);   // My Levels: the user's own project, editable
+                    intent.putExtra("editable", true);
+                } else {
+                    intent.putExtra("levelFile", entry);   // Story / Others: stock levels are VIEW-ONLY
+                    intent.putExtra("editable", false);
+                }
                 startActivity(intent);
             });
         }
@@ -216,13 +274,7 @@ public class LevelListActivity extends BaseActivity {
                 name.setText(new File(fileName).getName().replaceAll("\\.esc$", ""));
                 return;
             }
-            java.util.regex.Matcher m = java.util.regex.Pattern.compile("dungeon(\\d+)")
-                    .matcher(fileName.replace(".esc", ""));
-            String key = m.find()
-                    ? m.replaceFirst("dungeon_" + (Integer.parseInt(m.group(1)) + 1)).replace(".", "_")
-                    : fileName.replace(".esc", "").replace("-", "_").replace(".", "_").toLowerCase();
-            int resId = getResources().getIdentifier(key, "string", getPackageName());
-            name.setText(resId != 0 ? getString(resId) : fileName.replace(".esc", ""));
+            name.setText(displayNameForStock(fileName));
         }
     }
 }

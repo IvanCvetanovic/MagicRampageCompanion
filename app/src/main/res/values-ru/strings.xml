@@ -1783,7 +1783,10 @@
     <string name="edit_mode_on">Режим редактирования: вкл.</string>
     <string name="empty_no_my_levels">Пока нет сохранённых уровней — отредактируйте уровень и нажмите «Сохранить».</string>
     <string name="new_level_card_title">Создать новый уровень</string>
-    <string name="new_level_card_subtitle">Начните с чистого листа</string>
+    <string name="new_level_card_subtitle">Пустой холст или редактировать уровень</string>
+    <string name="new_level_option_blank">Пустой уровень</string>
+    <string name="new_level_option_existing">Редактировать существующий уровень</string>
+    <string name="new_level_pick_existing_title">Выберите уровень для редактирования</string>
     <string name="entities_selected">Выбрано объектов: %1$d</string>
     <string name="entity_browser_empty">На этом уровне нет объектов.</string>
     <string name="entity_browser_title">Найти объект</string>

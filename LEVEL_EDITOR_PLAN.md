@@ -13,10 +13,17 @@ top of the **My Levels** tab in `LevelListActivity` (NOT a top-right "+": a purp
 a glow, a sparkle/plus icon, title + subtitle — matches the hub-card aesthetic). It is **tab-gated**
 (visible only on My Levels, so it survives the empty-list state — `setActiveTab` toggles it; when GONE it
 collapses and the list fills from the tab bar as before).
-- **Flow:** card → `LevelViewerActivity` with extra `blankLevel=true` → loads the bundled minimal envelope
-  `assets/blank_level.esc` (SceneProperties+Ambient+ZAxisDirection + **empty** EntitiesInScene), titles it
-  "New Level", and **auto-enters EDIT mode** (`btnToggleEdit.performClick()`). Every placed entity is an
-  "added" entity (editOrdinal −1) → appended by the existing `LevelSaver`. **No new save logic.**
+- **Authoring is now gated to the My Levels tab (2026-06-28):** the **Story/Others tabs are VIEW-ONLY** —
+  tapping a stock level passes `editable=false` and `LevelViewerActivity` **hides the pencil**, so there's no
+  way into EDIT mode. Editing a stock level happens ONLY via the card → "Edit an existing level".
+- **Flow:** the card opens a small chooser — **"Empty level"** (→ `blankLevel=true`) or **"Edit an existing
+  level"** (→ a picker of all stock levels → opens the chosen one with `editable=true, startInEdit=true`, i.e.
+  the remix-to-a-copy path that used to live behind the Story-tab pencil). Blank levels load the bundled
+  minimal envelope `assets/blank_level.esc` (SceneProperties+Ambient+ZAxisDirection + **empty**
+  EntitiesInScene), title "New Level", and **auto-enter EDIT mode** (`btnToggleEdit.performClick()`). Every
+  placed entity is an "added" entity (editOrdinal −1) → appended by the existing `LevelSaver`. **No new save logic.**
+- **Intent contract:** `editable` (default true; false = view-only stock level) + `startInEdit` (auto-enter
+  EDIT — blank canvas or remix). My Levels rows pass `editable=true` (the user's own projects stay editable).
 - **Source-stream:** `openSource()` returns the `blank_level.esc` asset for blank levels (asset source ≠
   storage dest ⇒ first save can't truncate). `defaultSaveName()` → `my_level`.
 - **Empty-scene UX (renderer):** `LevelRenderView.setCenterOriginWhenEmpty(true)` + `centerBlankCanvas()`

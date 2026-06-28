@@ -76,6 +76,8 @@ public class LevelViewerActivity extends BaseActivity {
     private String levelFile;   // asset name (null when opened from storage)
     private String levelPath;   // absolute storage path (null when opened from assets)
     private boolean blankLevel; // true for a brand-new from-scratch level (source = bundled blank envelope)
+    private boolean editable;   // false for stock levels opened to VIEW from Story/Others (no edit toggle)
+    private boolean startInEdit; // open directly in EDIT mode (blank canvas, or remixing a stock level)
     private String levelKey;    // file basename for title / secrets / zoom checks (both sources)
 
     // Editor property inspector (Phase 2)
@@ -114,6 +116,8 @@ public class LevelViewerActivity extends BaseActivity {
         levelFile = getIntent().getStringExtra("levelFile");
         levelPath = getIntent().getStringExtra("levelPath");
         blankLevel = getIntent().getBooleanExtra("blankLevel", false);
+        editable = getIntent().getBooleanExtra("editable", true) || blankLevel;
+        startInEdit = getIntent().getBooleanExtra("startInEdit", false) || blankLevel;
         if (!blankLevel && levelFile == null && levelPath == null) {
             Toast.makeText(this, R.string.no_level_file_provided, Toast.LENGTH_SHORT).show();
             finish();
@@ -245,6 +249,9 @@ public class LevelViewerActivity extends BaseActivity {
 
         ImageButton btnToggleEdit = findViewById(R.id.btnToggleEdit);
         setToggleActive(btnToggleEdit, false); // starts in VIEW mode
+        // Stock levels opened from the Story/Others tabs are VIEW-ONLY — no way into EDIT mode.
+        // Editing a stock level happens only via My Levels → "Create New Level" → "Edit an existing level".
+        btnToggleEdit.setVisibility(editable ? View.VISIBLE : View.GONE);
         btnToggleEdit.setOnLongClickListener(v -> { showEditorLegend(); return true; });
         btnToggleEdit.setOnClickListener(v -> {
             playClick();
@@ -338,8 +345,8 @@ public class LevelViewerActivity extends BaseActivity {
                 renderView.setInitialZoomMultiplier(4.0f);
             }
             renderView.setLevel(currentLevel);
-            if (blankLevel) {
-                // A new level only makes sense in EDIT mode — drop the user straight in (also shows the
+            if (startInEdit) {
+                // Blank canvas, or remixing a stock level — drop straight into EDIT mode (also shows the
                 // first-run editor guide). performClick() reuses the exact toggle wiring set up above.
                 btnToggleEdit.performClick();
             }
