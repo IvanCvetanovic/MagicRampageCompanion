@@ -562,27 +562,28 @@ public class LevelRenderView extends View {
         Log.d(TAG, "=== END SPRITE LOAD SUMMARY ===");
     }
 
-    private void drawEntity(Canvas canvas, LevelEntity entity) {
-        if (entity == null) return;
+    /**
+     * Resolves an NPC/miniboss spawn entity's real sprites by reading its {@code .character}/{@code .ent}
+     * asset. Pure asset-reads + writes to {@code entity.*} fields (no {@code spriteCache}/canvas state),
+     * so it is safe to call off the UI thread during loading — which is the point: doing this here keeps
+     * the first {@code onDraw} from doing file I/O (the ANR fix). Idempotent (guarded by
+     * {@code isNPCResolved}) and a no-op for entities that aren't NPC/miniboss spawns, so it is safe to
+     * run over every entity in the level. The internal mario_sheet-marker early-stop mirrors
+     * {@link #drawEntity}'s ordering exactly, so pre-resolving can't change which entities draw.
+     */
+    public void resolveEntitySprites(LevelEntity entity) {
+        if (entity == null || entity.isNPCResolved) return;
 
-        // Purely runtime/cinematic entities that have no meaningful visual in the level viewer.
-        if ("curtain_properties".equalsIgnoreCase(entity.entityName)) return;
-        if ("character_spawn_list".equalsIgnoreCase(entity.entityName)) return;
-
-        // dungeon43.1.esc: gradient_bg overlays appear out-of-place due to extreme z values.
-        if (level != null && "dungeon43.1.esc".equals(level.name)
-                && "gradient_bg.png".equalsIgnoreCase(entity.spriteFile)) return;
-
-        // Resolve NPC-specific sprites at runtime for spawn entities.
-        if (!entity.isNPCResolved && "mario_sheet.png".equalsIgnoreCase(entity.spriteFile) && entity.customData.containsKey("fileName")) {
+        // Spawn entities that use the mario_sheet placeholder + a fileName in customData.
+        if ("mario_sheet.png".equalsIgnoreCase(entity.spriteFile) && entity.customData.containsKey("fileName")) {
             String npcFile = entity.customData.get("fileName");
             if (npcFile == null) npcFile = entity.customData.get("type");
-            
+
             android.util.Log.d("LevelRenderView", "Resolving NPC for id=" + entity.id + " file=" + npcFile);
 
             if (npcFile != null && !npcFile.trim().isEmpty()) {
                 String oldSprite = entity.spriteFile;
-                
+
                 if (npcFile.endsWith(".character")) {
                     LevelParser.parseCharacterFile(getContext(), entity, npcFile);
                 } else if (npcFile.endsWith(".ent")) {
@@ -594,7 +595,7 @@ public class LevelRenderView extends View {
                         LevelParser.parseEntFile(getContext(), entity, npcFile);
                     }
                 }
-                
+
                 if (!entity.spriteFile.equals(oldSprite) || !entity.hairSprite.isEmpty() || !entity.armorSprite.isEmpty() || !entity.weaponSprite.isEmpty()) {
                     android.util.Log.d("LevelRenderView", "Successfully resolved " + npcFile + " to sprite " + entity.spriteFile);
                     // Reset frame to 0 since numbers use spriteFrame for team ID
@@ -608,30 +609,55 @@ public class LevelRenderView extends View {
                 }
             }
             entity.isNPCResolved = true;
+            return;
         }
 
-        // _number.ent and similar entities use mario_sheet.png without a fileName —
-        // they are pure runtime room-counter markers with no visual relevance in the viewer.
+        // mario_sheet.png without a fileName = a pure runtime room-counter marker (_number.ent etc.),
+        // not a miniboss spawn. drawEntity early-returns on these before reaching the miniboss block,
+        // so mirror that here: leave them unresolved and never apply the miniboss path below.
         if ("mario_sheet.png".equalsIgnoreCase(entity.spriteFile) && !entity.customData.containsKey("fileName")) {
             return;
         }
 
-        // Resolve miniboss spawn entities: entity name encodes the boss type,
+        // Miniboss spawn entities: entity name encodes the boss type,
         // e.g. "miniboss_spawn_beholder" → load beholder.character.
-        if (!entity.isNPCResolved) {
-            String nameLower = entity.entityName.toLowerCase();
-            if (nameLower.startsWith("miniboss_spawn_")) {
-                String bossName = entity.entityName.substring("miniboss_spawn_".length());
-                String oldSprite = entity.spriteFile;
-                LevelParser.parseCharacterFile(getContext(), entity, bossName);
-                if (!entity.spriteFile.equals(oldSprite) || !entity.hairSprite.isEmpty()
-                        || !entity.armorSprite.isEmpty() || !entity.weaponSprite.isEmpty()) {
-                    entity.spriteFrame = 0;
-                    entity.scaleX = entity.characterScale;
-                    entity.scaleY = entity.characterScale;
-                }
-                entity.isNPCResolved = true;
+        String nameLower = entity.entityName.toLowerCase();
+        if (nameLower.startsWith("miniboss_spawn_")) {
+            String bossName = entity.entityName.substring("miniboss_spawn_".length());
+            String oldSprite = entity.spriteFile;
+            LevelParser.parseCharacterFile(getContext(), entity, bossName);
+            if (!entity.spriteFile.equals(oldSprite) || !entity.hairSprite.isEmpty()
+                    || !entity.armorSprite.isEmpty() || !entity.weaponSprite.isEmpty()) {
+                entity.spriteFrame = 0;
+                entity.scaleX = entity.characterScale;
+                entity.scaleY = entity.characterScale;
             }
+            entity.isNPCResolved = true;
+        }
+    }
+
+    private void drawEntity(Canvas canvas, LevelEntity entity) {
+        if (entity == null) return;
+
+        // Purely runtime/cinematic entities that have no meaningful visual in the level viewer.
+        if ("curtain_properties".equalsIgnoreCase(entity.entityName)) return;
+        if ("character_spawn_list".equalsIgnoreCase(entity.entityName)) return;
+
+        // dungeon43.1.esc: gradient_bg overlays appear out-of-place due to extreme z values.
+        if (level != null && "dungeon43.1.esc".equals(level.name)
+                && "gradient_bg.png".equalsIgnoreCase(entity.spriteFile)) return;
+
+        // Resolve NPC/miniboss spawn sprites from their .character/.ent asset. Normally already done
+        // off the UI thread during load (resolveEntitySprites is run for every entity before the first
+        // draw — the ANR fix); this lazy call only does file I/O for entities created after load
+        // (e.g. added in the editor) — a single small file read, never an ANR.
+        resolveEntitySprites(entity);
+
+        // _number.ent and similar entities use mario_sheet.png without a fileName — they are pure
+        // runtime room-counter markers with no visual relevance in the viewer (resolveEntitySprites
+        // leaves these unresolved, so spriteFile is still mario_sheet here).
+        if ("mario_sheet.png".equalsIgnoreCase(entity.spriteFile) && !entity.customData.containsKey("fileName")) {
+            return;
         }
 
         // Resolve item_spawn: draw the actual item sprite instead of the mario_items_sheet placeholder.

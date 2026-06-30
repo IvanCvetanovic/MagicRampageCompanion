@@ -326,35 +326,68 @@ public class LevelViewerActivity extends BaseActivity {
             }
         });
 
-        // --- Parse and display level ---
-        try {
-            if (blankLevel) {
-                // Brand-new level: load the bundled empty envelope and center the camera on the origin.
-                try (InputStream is = getAssets().open("blank_level.esc")) {
-                    currentLevel = LevelParser.parse(this, is, levelKey);
+        // --- Parse and display level, OFF the UI thread ---
+        // Parsing did heavy asset I/O on the main thread here (full level XML + a .ent read per entity),
+        // and the first onDraw resolved every NPC/miniboss sprite + scanned all .character files — both
+        // tripped ANRs on large levels/slow devices. We now parse, warm the shared caches
+        // (LevelParser.prewarm) and pre-resolve every sprite (resolveEntitySprites) on a worker, then
+        // hand the finished level to the view on the UI thread so the first frame does zero file I/O.
+        if (blankLevel) renderView.setCenterOriginWhenEmpty(true); // cheap; must be set before setLevel()
+        if (!levelKey.matches("dungeon\\d+.*\\.esc")) renderView.setInitialZoomMultiplier(4.0f);
+
+        showLoadingOverlay(true);
+        final ExecutorService loadExec = Executors.newSingleThreadExecutor();
+        loadExec.execute(() -> {
+            try {
+                Level loaded;
+                if (blankLevel) {
+                    // Brand-new level: the bundled empty envelope.
+                    try (InputStream is = getAssets().open("blank_level.esc")) {
+                        loaded = LevelParser.parse(this, is, levelKey);
+                    }
+                } else if (levelPath != null) {
+                    try (InputStream is = new FileInputStream(levelPath)) {
+                        loaded = LevelParser.parse(this, is, levelKey);
+                    }
+                } else {
+                    loaded = LevelParser.parse(this, "levels/" + levelFile);
                 }
-                renderView.setCenterOriginWhenEmpty(true);
-            } else if (levelPath != null) {
-                try (InputStream is = new FileInputStream(levelPath)) {
-                    currentLevel = LevelParser.parse(this, is, levelKey);
+                // Warm the shared caches + pre-resolve every NPC/miniboss sprite (still off the UI
+                // thread) so the first onDraw never touches the asset manager.
+                LevelParser.prewarm(this);
+                if (loaded.entities != null) {
+                    for (LevelEntity e : loaded.entities) renderView.resolveEntitySprites(e);
                 }
-            } else {
-                currentLevel = LevelParser.parse(this, "levels/" + levelFile);
+                final Level result = loaded;
+                runOnUiThread(() -> {
+                    if (isFinishing() || isDestroyed()) return;
+                    currentLevel = result;
+                    renderView.setLevel(currentLevel);
+                    showLoadingOverlay(false);
+                    // Blank canvas / remixing a stock level — drop straight into EDIT mode (also shows
+                    // the first-run editor guide). performClick() reuses the toggle wiring set up above.
+                    if (startInEdit) btnToggleEdit.performClick();
+                });
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to load level " + levelKey, e);
+                runOnUiThread(() -> {
+                    if (isFinishing() || isDestroyed()) return;
+                    showLoadingOverlay(false);
+                    Toast.makeText(this, getString(R.string.failed_to_load_level, e.getMessage()), Toast.LENGTH_LONG).show();
+                    finish();
+                });
+            } finally {
+                loadExec.shutdown();
             }
-            if (!levelKey.matches("dungeon\\d+.*\\.esc")) {
-                renderView.setInitialZoomMultiplier(4.0f);
-            }
-            renderView.setLevel(currentLevel);
-            if (startInEdit) {
-                // Blank canvas, or remixing a stock level — drop straight into EDIT mode (also shows the
-                // first-run editor guide). performClick() reuses the exact toggle wiring set up above.
-                btnToggleEdit.performClick();
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Failed to load level " + levelKey, e);
-            Toast.makeText(this, getString(R.string.failed_to_load_level, e.getMessage()), Toast.LENGTH_LONG).show();
-            finish();
-        }
+        });
+    }
+
+    private View loadingOverlay;
+
+    /** Shows/hides the full-screen loading gate while the level is parsed on a worker thread. */
+    private void showLoadingOverlay(boolean show) {
+        if (loadingOverlay == null) loadingOverlay = findViewById(R.id.levelLoadingOverlay);
+        if (loadingOverlay != null) loadingOverlay.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
     private void setupInspectorBindings() {

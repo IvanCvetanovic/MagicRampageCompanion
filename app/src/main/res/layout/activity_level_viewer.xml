@@ -450,4 +450,23 @@
 
     </LinearLayout>
 
+    <!-- Loading gate: shown while the level is parsed off the UI thread (ANR fix). clickable=true so
+         it swallows taps on the controls underneath until the level is ready; system back still works. -->
+    <FrameLayout
+        android:id="@+id/levelLoadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_overlay_dark"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="#FF00DCFF" />
+
+    </FrameLayout>
+
 </FrameLayout>

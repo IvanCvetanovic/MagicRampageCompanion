@@ -24,6 +24,7 @@ public class LevelParser {
 
     // Global mapping for heads/hairs from .enml files
     private static final Map<String, String> headMap = new HashMap<>();
+    private static boolean headMapLoaded = false;
 
     // Armor set name (lowercase) -> character sprite filename, built lazily from .character files
     private static final Map<String, String> armorSetSpriteMap = new HashMap<>();
@@ -51,9 +52,7 @@ public class LevelParser {
      */
     public static Level parse(Context ctx, InputStream is, String name) throws Exception {
         // Ensure head mappings are loaded
-        if (headMap.isEmpty()) {
-            loadEnmlMapping(ctx, "entities/npc-head.enml");
-        }
+        ensureHeadMap(ctx);
 
         {
             // Load localized strings for this level (best-effort; empty map if missing)
@@ -245,6 +244,30 @@ public class LevelParser {
         }
     }
 
+    /**
+     * Pre-builds the shared, expensive static caches up front: the head/hair {@code .enml} map and
+     * the armor-set sprite map (which scans <em>every</em> {@code .character} file in assets via
+     * {@link android.content.res.AssetManager#list}). Call this off the UI thread while a level is
+     * loading — otherwise the first {@code onDraw} that resolves an armor "reference" pays the whole
+     * asset scan on the main thread and can ANR. Idempotent and cheap once warm.
+     */
+    public static void prewarm(Context ctx) {
+        if (ctx == null) return;
+        ensureHeadMap(ctx);
+        ensureArmorSetSpriteMap(ctx);
+    }
+
+    /**
+     * Loads the head/hair {@code .enml} map exactly once, thread-safely. Replaces scattered
+     * {@code if (headMap.isEmpty()) loadEnmlMapping(...)} checks — those raced once parsing moved off
+     * the UI thread (two concurrent loads could both pass the isEmpty() check and mutate the map at once).
+     */
+    private static synchronized void ensureHeadMap(Context ctx) {
+        if (headMapLoaded) return;
+        headMapLoaded = true;
+        loadEnmlMapping(ctx, "entities/npc-head.enml");
+    }
+
     public static void parseEntFile(Context ctx, LevelEntity entity, String fileName) {
         if (fileName == null || fileName.isEmpty()) return;
 
@@ -357,7 +380,7 @@ public class LevelParser {
     public static void parseCharacterStream(Context ctx, LevelEntity entity, InputStream is) {
         // Heads/faces are a separate layer resolved via headMap (e.g. rat0 -> character_rat_head_0.png).
         // The level path loads this in parse(); ensure it's loaded here too or composited faces vanish.
-        if (ctx != null && headMap.isEmpty()) loadEnmlMapping(ctx, "entities/npc-head.enml");
+        if (ctx != null) ensureHeadMap(ctx);
         try { parseCharacterInternal(ctx, entity, is); } catch (Exception ignored) {}
     }
 
@@ -452,7 +475,10 @@ public class LevelParser {
      * Lazily builds armorSetSpriteMap by scanning all .character files in assets/entities/.
      * Also seeds a small set of hardcoded fallbacks for sets not defined in any character file.
      */
-    private static void ensureArmorSetSpriteMap(Context ctx) {
+    // synchronized: level loads now run on a worker thread, so an Activity recreate (rotation) or quick
+    // relaunch can run two builders at once. The lock serializes them; the loaded-flag set before the
+    // scan is therefore never observable half-built by another thread (it blocks here until we finish).
+    private static synchronized void ensureArmorSetSpriteMap(Context ctx) {
         if (armorSetSpriteMapLoaded) return;
         armorSetSpriteMapLoaded = true;
 
