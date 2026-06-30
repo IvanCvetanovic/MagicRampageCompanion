@@ -230,8 +230,14 @@ public class MainActivity extends BaseActivity {
     private void onConsentFlowFinished() {
         Log.d(TAG, "Consent flow finished. canRequestAds = "
                 + (consentInformation != null && consentInformation.canRequestAds()));
-        MobileAds.initialize(this, initializationStatus ->
-                ((MyApplication) getApplication()).initializeAds());
+        MobileAds.initialize(this, initializationStatus -> {
+            // This callback fires asynchronously and may land after a live Play Store
+            // app update, where a ClassLoader mismatch can make getApplication() not
+            // cast to MyApplication. Guard the cast so a rare update race never crashes us.
+            if (getApplication() instanceof MyApplication app) {
+                app.initializeAds();
+            }
+        });
     }
 
     public static AdRequest buildAdRequest(Context context) {
