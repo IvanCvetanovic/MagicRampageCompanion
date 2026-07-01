@@ -90,21 +90,26 @@ public class LevelListActivity extends BaseActivity {
         setActiveTab(0);
     }
 
-    /** The "Create New Level" card asks how to start: from scratch, or by remixing a stock level. */
+    /** The "Create New Level" card asks how to start: from scratch, or by remixing a stock level.
+     *  Two tappable option cards (see dialog_create_level.xml) that echo the launcher card. */
     private void showCreateLevelChooser() {
-        String[] options = {
-                getString(R.string.new_level_option_blank),
-                getString(R.string.new_level_option_existing)
-        };
-        new AlertDialog.Builder(this)
+        View body = getLayoutInflater().inflate(R.layout.dialog_create_level, null);
+        AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.new_level_card_title)
-                .setItems(options, (d, which) -> {
-                    playClick();
-                    if (which == 0) startBlankLevel();
-                    else showPickExistingDialog();
-                })
+                .setView(body)
                 .setNegativeButton(R.string.cancel, null)
-                .show();
+                .create();
+        body.findViewById(R.id.cardEmptyLevel).setOnClickListener(v -> {
+            playClick();
+            dialog.dismiss();
+            startBlankLevel();
+        });
+        body.findViewById(R.id.cardExistingLevel).setOnClickListener(v -> {
+            playClick();
+            dialog.dismiss();
+            showPickExistingDialog();
+        });
+        dialog.show();
     }
 
     private void startBlankLevel() {

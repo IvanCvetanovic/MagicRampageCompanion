@@ -37,6 +37,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -1075,30 +1080,68 @@ public class LevelViewerActivity extends BaseActivity {
     private void showPaletteDialog() {
         if (entFiles == null) entFiles = loadEntFileList();
         if (spawnerTemplates == null) spawnerTemplates = loadSpawnerTemplates();
+        if (paletteCategories == null) loadPaletteManifest();
+
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_entity_palette, null);
         EditText search = dialogView.findViewById(R.id.paletteSearch);
         ListView list = dialogView.findViewById(R.id.paletteList);
+        ChipGroup chips = dialogView.findViewById(R.id.paletteChips);
 
         if (thumbExecutor == null || thumbExecutor.isShutdown()) {
             thumbExecutor = Executors.newFixedThreadPool(3);
         }
-        // Inline-template entities (spawners / buttons / invisible collision) first, then FileName .ent files.
-        List<String> items = new ArrayList<>(spawnerTemplates.keySet());
-        items.addAll(entFiles);
-        PaletteAdapter adapter = new PaletteAdapter(items);
+
+        final PaletteAdapter adapter = new PaletteAdapter(new ArrayList<>());
         list.setAdapter(adapter);
+
+        // The selected chip's full entity list; the search box narrows it live.
+        final List<String> current = new ArrayList<>();
+        final Runnable refresh = () ->
+                adapter.setDisplayList(current, search.getText().toString().trim().toLowerCase());
+
+        // Category chips. "common"/"all" are computed in buildCategoryItems(); the rest come from the
+        // bundled entity_palette.json manifest. Default = Common; "All" reveals every entity (incl. the
+        // 1,500+ effect/sub-entity files that never appear in real levels).
+        final String[][] cats = {
+                {"common",    getString(R.string.palette_cat_common)},
+                {"platforms", getString(R.string.palette_cat_platforms)},
+                {"enemies",   getString(R.string.palette_cat_enemies)},
+                {"items",     getString(R.string.palette_cat_items)},
+                {"doors",     getString(R.string.palette_cat_doors)},
+                {"hazards",   getString(R.string.palette_cat_hazards)},
+                {"logic",     getString(R.string.palette_cat_logic)},
+                {"decor",     getString(R.string.palette_cat_decor)},
+                {"all",       getString(R.string.palette_cat_all)},
+        };
+        for (String[] cat : cats) {
+            Chip chip = (Chip) getLayoutInflater().inflate(R.layout.item_palette_chip, chips, false);
+            chip.setText(cat[1]);
+            chip.setTag(cat[0]);
+            chips.addView(chip);
+        }
+        chips.setOnCheckedStateChangeListener((group, checkedIds) -> {
+            if (checkedIds.isEmpty()) return;
+            View c = group.findViewById(checkedIds.get(0));
+            if (!(c instanceof Chip)) return;
+            current.clear();
+            current.addAll(buildCategoryItems((String) c.getTag()));
+            refresh.run();
+        });
+
+        search.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
+            @Override public void onTextChanged(CharSequence s, int a, int b, int c) { refresh.run(); }
+            @Override public void afterTextChanged(Editable s) {}
+        });
+
+        // Default to the Common chip (first) → its listener populates the list.
+        ((Chip) chips.getChildAt(0)).setChecked(true);
 
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.palette_title)
                 .setView(dialogView)
                 .setNegativeButton(R.string.close, null)
                 .create();
-
-        search.addTextChangedListener(new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
-            @Override public void onTextChanged(CharSequence s, int a, int b, int c) { adapter.getFilter().filter(s); }
-            @Override public void afterTextChanged(Editable s) {}
-        });
 
         list.setOnItemClickListener((parent, v, position, id) -> {
             String name = adapter.getItem(position);
@@ -1111,6 +1154,51 @@ public class LevelViewerActivity extends BaseActivity {
 
         dialog.setOnDismissListener(d -> shutdownThumbExecutor());
         dialog.show();
+    }
+
+    // Add-palette categories: id → placeable .ent filenames (usage-sorted), from entity_palette.json.
+    private Map<String, List<String>> paletteCategories;
+    private List<String> paletteCommon;
+
+    /** Builds the entity list for a category chip. "common"/"all" are computed (spawner templates —
+     *  incl. ★ player spawn — pinned to both); the other categories come straight from the manifest. */
+    private List<String> buildCategoryItems(String catId) {
+        List<String> out = new ArrayList<>();
+        if ("all".equals(catId)) {
+            out.addAll(spawnerTemplates.keySet());   // ★ templates first
+            out.addAll(entFiles);                     // then every .ent (incl. effect noise)
+        } else if ("common".equals(catId)) {
+            out.addAll(spawnerTemplates.keySet());
+            if (paletteCommon != null) out.addAll(paletteCommon);
+        } else if (paletteCategories != null) {
+            List<String> items = paletteCategories.get(catId);
+            if (items != null) out.addAll(items);
+        }
+        return out;
+    }
+
+    /** Loads the bundled entity_palette.json (category → placeable .ent filenames, usage-sorted).
+     *  On failure the categories stay empty; the "All" chip still lists every entity from assets. */
+    private void loadPaletteManifest() {
+        paletteCategories = new LinkedHashMap<>();
+        paletteCommon = new ArrayList<>();
+        try (InputStream is = getAssets().open("entity_palette.json")) {
+            JSONObject root = new JSONObject(readAll(is));
+            JSONArray common = root.optJSONArray("common");
+            if (common != null) for (int i = 0; i < common.length(); i++) paletteCommon.add(common.getString(i));
+            JSONArray catsArr = root.optJSONArray("categories");
+            if (catsArr != null) {
+                for (int i = 0; i < catsArr.length(); i++) {
+                    JSONObject c = catsArr.getJSONObject(i);
+                    List<String> lst = new ArrayList<>();
+                    JSONArray items = c.optJSONArray("items");
+                    if (items != null) for (int j = 0; j < items.length(); j++) lst.add(items.getString(j));
+                    paletteCategories.put(c.getString("id"), lst);
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to load entity_palette.json", e);
+        }
     }
 
     // ── Palette thumbnails ──────────────────────────────────────────────────────
@@ -1134,6 +1222,22 @@ public class LevelViewerActivity extends BaseActivity {
      *  field's built-in filtering keeps working on the .ent filenames. */
     private final class PaletteAdapter extends ArrayAdapter<String> {
         PaletteAdapter(List<String> data) { super(LevelViewerActivity.this, 0, data); }
+
+        /** Replaces the visible rows with `full`, narrowed by `query` (matches display name or filename).
+         *  Category-switch + search both route through here, so ArrayAdapter's built-in filter is unused. */
+        void setDisplayList(List<String> full, String query) {
+            setNotifyOnChange(false);
+            clear();
+            if (query == null || query.isEmpty()) {
+                addAll(full);
+            } else {
+                for (String f : full) {
+                    if (f == null) continue;
+                    if (displayName(f).toLowerCase().contains(query) || f.toLowerCase().contains(query)) add(f);
+                }
+            }
+            notifyDataSetChanged();
+        }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {

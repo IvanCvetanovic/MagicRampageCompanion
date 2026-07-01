@@ -42,6 +42,10 @@ public class ItemSyncer {
         add("clockwork soldier");
         add("nutcracker guard");
         add("unholy storm");
+        // NPC-only item (never obtainable by the player), so not catalogued.
+        // Matched against both name and name_en, hence both spellings.
+        add("path of exile plus");
+        add("path of exile+");
     }};
 
     // Always-latest JSON URL

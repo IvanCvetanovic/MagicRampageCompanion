@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -7,10 +8,28 @@
     android:paddingEnd="16dp"
     android:paddingTop="8dp">
 
+    <!-- Category filter chips (single-select). Default = Common; "All" reveals every entity
+         including the effect/sub-entity noise that never appears in real levels. -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/paletteChips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:chipSpacingHorizontal="6dp" />
+    </HorizontalScrollView>
+
     <EditText
         android:id="@+id/paletteSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:hint="@string/palette_search_hint"
         android:inputType="text"
         android:imeOptions="actionSearch"
@@ -20,7 +39,7 @@
     <ListView
         android:id="@+id/paletteList"
         android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_height="360dp"
         android:layout_marginTop="8dp" />
 
 </LinearLayout>

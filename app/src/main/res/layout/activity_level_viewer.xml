@@ -395,7 +395,7 @@
                 android:layout_height="48dp"
                 android:layout_marginEnd="8dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@android:drawable/ic_menu_mylocation"
+                android:src="@drawable/ic_fit_screen"
                 android:contentDescription="@string/cd_fit_screen" />
 
             <ImageButton

@@ -1624,6 +1624,19 @@
     <string name="skin_warrior21">Червоний авангард</string>
     <string name="skin_witchdoctor20">Spirit Rider</string>
     <string name="skin_witchdoctor21">Той, хто шепоче кісткам</string>
+    <string name="skin_black_mage22">Serpent Hexer</string>
+    <string name="skin_druid22">Threefold Beast</string>
+    <string name="skin_elite_warrior22">Azure Scarab</string>
+    <string name="skin_high_mage22">Arcane Prismhead</string>
+    <string name="skin_mage22">Flame Vessel</string>
+    <string name="skin_paladin22">Royal Plume</string>
+    <string name="skin_priest22">Divine Witness</string>
+    <string name="skin_ranger22">Lunar Pathfinder</string>
+    <string name="skin_rogue22">Crimson Jester</string>
+    <string name="skin_thief22">Steel Punk</string>
+    <string name="skin_warlock22">Forgotten Wyrm</string>
+    <string name="skin_warrior22">Ram Vanguard</string>
+    <string name="skin_witchdoctor22">Siren of the Swamp</string>
 
     <string name="search_hint">Знайти предмет…</string>
     <string name="search_enemy_hint">Знайти ворога…</string>
@@ -1783,6 +1796,8 @@
     <string name="new_level_card_subtitle">Порожнє полотно або редагувати рівень</string>
     <string name="new_level_option_blank">Порожній рівень</string>
     <string name="new_level_option_existing">Редагувати наявний рівень</string>
+    <string name="new_level_option_blank_sub">Почати з порожнього полотна</string>
+    <string name="new_level_option_existing_sub">Скопіювати рівень як основу</string>
     <string name="new_level_pick_existing_title">Виберіть рівень для редагування</string>
     <string name="entities_selected">Вибрано об\'єктів: %1$d</string>
     <string name="entity_browser_empty">На цьому рівні немає об\'єктів.</string>

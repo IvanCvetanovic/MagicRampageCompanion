@@ -1625,6 +1625,19 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="skin_warrior21">Avant-garde Rouge</string>
     <string name="skin_witchdoctor20">Spirit Rider</string>
     <string name="skin_witchdoctor21">Murmureur d\'Os</string>
+    <string name="skin_black_mage22">Serpent Hexer</string>
+    <string name="skin_druid22">Threefold Beast</string>
+    <string name="skin_elite_warrior22">Azure Scarab</string>
+    <string name="skin_high_mage22">Arcane Prismhead</string>
+    <string name="skin_mage22">Flame Vessel</string>
+    <string name="skin_paladin22">Royal Plume</string>
+    <string name="skin_priest22">Divine Witness</string>
+    <string name="skin_ranger22">Lunar Pathfinder</string>
+    <string name="skin_rogue22">Crimson Jester</string>
+    <string name="skin_thief22">Steel Punk</string>
+    <string name="skin_warlock22">Forgotten Wyrm</string>
+    <string name="skin_warrior22">Ram Vanguard</string>
+    <string name="skin_witchdoctor22">Siren of the Swamp</string>
 
     <string name="search_hint">Rechercher un objet…</string>
     <string name="search_enemy_hint">Rechercher un ennemi…</string>
@@ -1784,6 +1797,8 @@ Au-dessus du troisième pot doré, il y a une dague de lumière, qui est très b
     <string name="new_level_card_subtitle">Toile vierge ou modifier un niveau</string>
     <string name="new_level_option_blank">Niveau vide</string>
     <string name="new_level_option_existing">Modifier un niveau existant</string>
+    <string name="new_level_option_blank_sub">Partir d\'une toile vierge</string>
+    <string name="new_level_option_existing_sub">Copier un niveau comme point de départ</string>
     <string name="new_level_pick_existing_title">Choisir un niveau à modifier</string>
     <string name="entities_selected">%1$d entités sélectionnées</string>
     <string name="entity_browser_empty">Ce niveau ne contient aucune entité.</string>

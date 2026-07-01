@@ -1626,6 +1626,19 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="skin_warrior21">Rote Vorhut</string>
     <string name="skin_witchdoctor20">Spirit Rider</string>
     <string name="skin_witchdoctor21">Knochensprecher</string>
+    <string name="skin_black_mage22">Serpent Hexer</string>
+    <string name="skin_druid22">Threefold Beast</string>
+    <string name="skin_elite_warrior22">Azure Scarab</string>
+    <string name="skin_high_mage22">Arcane Prismhead</string>
+    <string name="skin_mage22">Flame Vessel</string>
+    <string name="skin_paladin22">Royal Plume</string>
+    <string name="skin_priest22">Divine Witness</string>
+    <string name="skin_ranger22">Lunar Pathfinder</string>
+    <string name="skin_rogue22">Crimson Jester</string>
+    <string name="skin_thief22">Steel Punk</string>
+    <string name="skin_warlock22">Forgotten Wyrm</string>
+    <string name="skin_warrior22">Ram Vanguard</string>
+    <string name="skin_witchdoctor22">Siren of the Swamp</string>
 
     <string name="search_hint">Ein Element suchen…</string>
     <string name="search_enemy_hint">Einen Gegner suchen…</string>
@@ -1785,6 +1798,8 @@ Du kannst den geheimen Bereich 3 erreichen, indem du eine Kiste plus den Jumpman
     <string name="new_level_card_subtitle">Leere Leinwand oder Level bearbeiten</string>
     <string name="new_level_option_blank">Leeres Level</string>
     <string name="new_level_option_existing">Vorhandenes Level bearbeiten</string>
+    <string name="new_level_option_blank_sub">Mit einer leeren Leinwand beginnen</string>
+    <string name="new_level_option_existing_sub">Ein Level als Vorlage kopieren</string>
     <string name="new_level_pick_existing_title">Level zum Bearbeiten wählen</string>
     <string name="entities_selected">%1$d Entitäten ausgewählt</string>
     <string name="entity_browser_empty">Dieses Level hat keine Entitäten.</string>

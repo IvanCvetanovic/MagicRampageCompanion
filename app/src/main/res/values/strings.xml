@@ -1946,6 +1946,19 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="skin_warrior21">Red Vanguard</string>
     <string name="skin_witchdoctor20">Spirit Rider</string>
     <string name="skin_witchdoctor21">Bone Whisperer</string>
+    <string name="skin_black_mage22">Serpent Hexer</string>
+    <string name="skin_druid22">Threefold Beast</string>
+    <string name="skin_elite_warrior22">Azure Scarab</string>
+    <string name="skin_high_mage22">Arcane Prismhead</string>
+    <string name="skin_mage22">Flame Vessel</string>
+    <string name="skin_paladin22">Royal Plume</string>
+    <string name="skin_priest22">Divine Witness</string>
+    <string name="skin_ranger22">Lunar Pathfinder</string>
+    <string name="skin_rogue22">Crimson Jester</string>
+    <string name="skin_thief22">Steel Punk</string>
+    <string name="skin_warlock22">Forgotten Wyrm</string>
+    <string name="skin_warrior22">Ram Vanguard</string>
+    <string name="skin_witchdoctor22">Siren of the Swamp</string>
 
     <string name="suffix_colored">(Colored)</string>
 
@@ -2049,6 +2062,15 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="cd_duplicate_entity">Duplicate Entity</string>
     <string name="cd_delete_entity">Delete Entity</string>
     <string name="palette_title">Add Entity</string>
+    <string name="palette_cat_common">Common</string>
+    <string name="palette_cat_platforms">Platforms</string>
+    <string name="palette_cat_enemies">Enemies</string>
+    <string name="palette_cat_items">Items</string>
+    <string name="palette_cat_doors">Doors/Nav</string>
+    <string name="palette_cat_hazards">Hazards</string>
+    <string name="palette_cat_logic">Logic</string>
+    <string name="palette_cat_decor">Decor</string>
+    <string name="palette_cat_all">All</string>
     <string name="palette_search_hint">Search entities…</string>
     <string name="cd_entity_list">Find Entity</string>
     <string name="entity_browser_title">Find Entity</string>
@@ -2100,6 +2122,8 @@ Above the third golden pot, there is a dagger of light, which is very good for e
     <string name="new_level_card_subtitle">Blank canvas or remix a level</string>
     <string name="new_level_option_blank">Empty level</string>
     <string name="new_level_option_existing">Edit an existing level</string>
+    <string name="new_level_option_blank_sub">Start from a blank canvas</string>
+    <string name="new_level_option_existing_sub">Copy a level as a starting point</string>
     <string name="new_level_pick_existing_title">Choose a level to edit</string>
     <!-- Editor title for a brand-new blank level (editor UI is English-only, like the rest of the editor) -->
     <string name="new_level_title">New Level</string>

@@ -1625,6 +1625,19 @@
     <string name="skin_warrior21">紅の前衛</string>
     <string name="skin_witchdoctor20">スピリットライダー</string>
     <string name="skin_witchdoctor21">骨を囁く者</string>
+    <string name="skin_black_mage22">Serpent Hexer</string>
+    <string name="skin_druid22">Threefold Beast</string>
+    <string name="skin_elite_warrior22">Azure Scarab</string>
+    <string name="skin_high_mage22">Arcane Prismhead</string>
+    <string name="skin_mage22">Flame Vessel</string>
+    <string name="skin_paladin22">Royal Plume</string>
+    <string name="skin_priest22">Divine Witness</string>
+    <string name="skin_ranger22">Lunar Pathfinder</string>
+    <string name="skin_rogue22">Crimson Jester</string>
+    <string name="skin_thief22">Steel Punk</string>
+    <string name="skin_warlock22">Forgotten Wyrm</string>
+    <string name="skin_warrior22">Ram Vanguard</string>
+    <string name="skin_witchdoctor22">Siren of the Swamp</string>
 
     <string name="search_hint">アイテムを検索…</string>
     <string name="search_enemy_hint">敵を検索…</string>
@@ -1784,6 +1797,8 @@
     <string name="new_level_card_subtitle">空のキャンバスまたは既存レベルを編集</string>
     <string name="new_level_option_blank">空のレベル</string>
     <string name="new_level_option_existing">既存のレベルを編集</string>
+    <string name="new_level_option_blank_sub">空のキャンバスから始める</string>
+    <string name="new_level_option_existing_sub">既存レベルをコピーして開始</string>
     <string name="new_level_pick_existing_title">編集するレベルを選択</string>
     <string name="entities_selected">%1$d 個のエンティティを選択中</string>
     <string name="entity_browser_empty">このレベルにはエンティティがありません。</string>

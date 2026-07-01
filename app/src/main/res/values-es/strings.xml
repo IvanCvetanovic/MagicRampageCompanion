@@ -1626,6 +1626,19 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="skin_warrior21">Vanguardia Roja</string>
     <string name="skin_witchdoctor20">Spirit Rider</string>
     <string name="skin_witchdoctor21">Susurrador de Huesos</string>
+    <string name="skin_black_mage22">Hechicero Serpiente</string>
+    <string name="skin_druid22">Bestia Triple</string>
+    <string name="skin_elite_warrior22">Escarabajo Azur</string>
+    <string name="skin_high_mage22">Prisma Arcano</string>
+    <string name="skin_mage22">Vasija Ígnea</string>
+    <string name="skin_paladin22">Pluma Real</string>
+    <string name="skin_priest22">Testigo Divino</string>
+    <string name="skin_ranger22">Explorador Lunar</string>
+    <string name="skin_rogue22">Bufón Carmesí</string>
+    <string name="skin_thief22">Punk de Acero</string>
+    <string name="skin_warlock22">Dragón Olvidado</string>
+    <string name="skin_warrior22">Vanguardia del Carnero</string>
+    <string name="skin_witchdoctor22">Sirena del Pantano</string>
 
     <string name="search_hint">Buscar un elemento…</string>
     <string name="search_enemy_hint">Buscar un enemigo…</string>
@@ -1785,6 +1798,8 @@ Sobre la tercera vasija dorada, hay una daga de luz, que es muy buena para el pr
     <string name="new_level_card_subtitle">Lienzo en blanco o editar un nivel</string>
     <string name="new_level_option_blank">Nivel vacío</string>
     <string name="new_level_option_existing">Editar un nivel existente</string>
+    <string name="new_level_option_blank_sub">Empieza con un lienzo en blanco</string>
+    <string name="new_level_option_existing_sub">Copia un nivel como punto de partida</string>
     <string name="new_level_pick_existing_title">Elige un nivel para editar</string>
     <string name="entities_selected">%1$d entidades seleccionadas</string>
     <string name="entity_browser_empty">Este nivel no tiene entidades.</string>

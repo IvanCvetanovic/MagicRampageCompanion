@@ -709,6 +709,7 @@ public class ItemData {
         rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger19), R.drawable.skin_ranger19));
         rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger20), R.drawable.skin_ranger20));
         rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger21), R.drawable.skin_ranger21));
+        rangerSkins.add(new SkinItem(context.getString(R.string.skin_ranger22), R.drawable.skin_ranger22));
 
 // --- Priest ---
         priestSkins.add(new SkinItem(context.getString(R.string.skin_priest1),  R.drawable.skin_priest1));
@@ -733,6 +734,7 @@ public class ItemData {
         priestSkins.add(new SkinItem(context.getString(R.string.skin_priest19), R.drawable.skin_priest19));
         priestSkins.add(new SkinItem(context.getString(R.string.skin_priest20), R.drawable.skin_priest20));
         priestSkins.add(new SkinItem(context.getString(R.string.skin_priest21), R.drawable.skin_priest21));
+        priestSkins.add(new SkinItem(context.getString(R.string.skin_priest22), R.drawable.skin_priest22));
 
 // --- Warlock ---
         warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock1),  R.drawable.skin_warlock1));
@@ -757,6 +759,7 @@ public class ItemData {
         warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock19), R.drawable.skin_warlock19));
         warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock20), R.drawable.skin_warlock20));
         warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock21), R.drawable.skin_warlock21));
+        warlockSkins.add(new SkinItem(context.getString(R.string.skin_warlock22), R.drawable.skin_warlock22));
 
 // --- Black Mage ---
         blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage1),  R.drawable.skin_black_mage1));
@@ -782,6 +785,7 @@ public class ItemData {
         blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage19), R.drawable.skin_black_mage19));
         blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage20), R.drawable.skin_black_mage20));
         blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage21), R.drawable.skin_black_mage21));
+        blackMageSkins.add(new SkinItem(context.getString(R.string.skin_black_mage22), R.drawable.skin_black_mage22));
 
 // --- Rogue ---
         rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue1),  R.drawable.skin_rogue1));
@@ -806,6 +810,7 @@ public class ItemData {
         rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue19), R.drawable.skin_rogue19));
         rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue20), R.drawable.skin_rogue20));
         rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue21), R.drawable.skin_rogue21));
+        rogueSkins.add(new SkinItem(context.getString(R.string.skin_rogue22), R.drawable.skin_rogue22));
 
 // --- Thief ---
         thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief1),  R.drawable.skin_thief1));
@@ -830,6 +835,7 @@ public class ItemData {
         thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief19), R.drawable.skin_thief19));
         thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief20), R.drawable.skin_thief20));
         thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief21), R.drawable.skin_thief21));
+        thiefSkins.add(new SkinItem(context.getString(R.string.skin_thief22), R.drawable.skin_thief22));
 
 // --- Warrior ---
         warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior1),  R.drawable.skin_warrior1));
@@ -854,6 +860,7 @@ public class ItemData {
         warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior19), R.drawable.skin_warrior19));
         warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior20), R.drawable.skin_warrior20));
         warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior21), R.drawable.skin_warrior21));
+        warriorSkins.add(new SkinItem(context.getString(R.string.skin_warrior22), R.drawable.skin_warrior22));
 
 // --- Mage ---
         mageSkins.add(new SkinItem(context.getString(R.string.skin_mage1),  R.drawable.skin_mage1));
@@ -880,6 +887,7 @@ public class ItemData {
         mageSkins.add(new SkinItem(context.getString(R.string.skin_mage19), R.drawable.skin_mage19));
         mageSkins.add(new SkinItem(context.getString(R.string.skin_mage20), R.drawable.skin_mage20));
         mageSkins.add(new SkinItem(context.getString(R.string.skin_mage21), R.drawable.skin_mage21));
+        mageSkins.add(new SkinItem(context.getString(R.string.skin_mage22), R.drawable.skin_mage22));
 
 // --- Druid ---
         druidSkins.add(new SkinItem(context.getString(R.string.skin_druid1),  R.drawable.skin_druid1));
@@ -904,6 +912,7 @@ public class ItemData {
         druidSkins.add(new SkinItem(context.getString(R.string.skin_druid19), R.drawable.skin_druid19));
         druidSkins.add(new SkinItem(context.getString(R.string.skin_druid20), R.drawable.skin_druid20));
         druidSkins.add(new SkinItem(context.getString(R.string.skin_druid21), R.drawable.skin_druid21));
+        druidSkins.add(new SkinItem(context.getString(R.string.skin_druid22), R.drawable.skin_druid22));
 
 // --- Paladin ---
         paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin1),  R.drawable.skin_paladin1));
@@ -928,6 +937,7 @@ public class ItemData {
         paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin19), R.drawable.skin_paladin19));
         paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin20), R.drawable.skin_paladin20));
         paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin21), R.drawable.skin_paladin21));
+        paladinSkins.add(new SkinItem(context.getString(R.string.skin_paladin22), R.drawable.skin_paladin22));
 
 // --- High Mage ---
         highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage1),  R.drawable.skin_high_mage1));
@@ -952,6 +962,7 @@ public class ItemData {
         highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage19), R.drawable.skin_high_mage19));
         highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage20), R.drawable.skin_high_mage20));
         highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage21), R.drawable.skin_high_mage21));
+        highMageSkins.add(new SkinItem(context.getString(R.string.skin_high_mage22), R.drawable.skin_high_mage22));
 
         // --- Elite Warrior ---
         eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior1),  R.drawable.skin_elite_warrior1));
@@ -977,6 +988,7 @@ public class ItemData {
         eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior19), R.drawable.skin_elite_warrior19));
         eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior20), R.drawable.skin_elite_warrior20));
         eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior21), R.drawable.skin_elite_warrior21));
+        eliteWarriorSkins.add(new SkinItem(context.getString(R.string.skin_elite_warrior22), R.drawable.skin_elite_warrior22));
 
         // --- Witchdoctor ---
         witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor1),  R.drawable.skin_witchdoctor1));
@@ -1001,6 +1013,7 @@ public class ItemData {
         witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor19), R.drawable.skin_witchdoctor19));
         witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor20), R.drawable.skin_witchdoctor20));
         witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor21), R.drawable.skin_witchdoctor21));
+        witchdoctorSkins.add(new SkinItem(context.getString(R.string.skin_witchdoctor22), R.drawable.skin_witchdoctor22));
 
         // Elixirs
         elixirList.add(new Elixir(
